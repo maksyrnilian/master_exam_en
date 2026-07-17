@@ -1,0 +1,66 @@
+% =====================================================================
+%  preamble.tex --- packages, styling, title metadata
+% =====================================================================
+
+\usepackage[margin=3cm]{geometry}
+
+% --- encoding and language -------------------------------------------
+% NOTE: the Polish original loaded {polski}; replaced by British English.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+% --- maths -----------------------------------------------------------
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}   % NOTE: added --- \Box (D'Alembertian) needs it
+\usepackage{braket}
+\usepackage{nicefrac}
+
+% --- floats, tables, graphics ----------------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+% --- layout ----------------------------------------------------------
+\usepackage{titlesec}
+\usepackage{needspace}
+\usepackage[nottoc]{tocbibind}
+\usepackage{parskip}   % blank line between paragraphs, no first-line indent
+
+% --- colours and links -----------------------------------------------
+\usepackage[dvipsnames]{xcolor}
+
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{RoyalPurple}
+\colorlet{mycitecolor}{RoyalPurple}
+\colorlet{myurlcolor}{RoyalPurple}
+
+% --- marker for substantive errors carried over from the Polish source -----
+% \merr renders a bold red (!) inline, and works in both text and maths mode.
+% Every occurrence sits beside a "% NOTE:" comment in content.tex explaining
+% the issue. The marker flags content that is WRONG OR DOUBTFUL AS PRINTED ---
+% source typos that were silently repaired carry a NOTE comment but no marker.
+\newcommand{\merr}{\textcolor{red}{\textbf{(!)}}}
+
+\usepackage{hyperref}
+\hypersetup{
+	linkcolor  = Black, %mylinkcolor
+	citecolor  = Black,
+	urlcolor   = Black,
+	colorlinks = true,
+	breaklinks = true
+}
+
+% --- title page metadata ---------------------------------------------
+\title{%
+	\vspace*{2cm}
+	{\Huge Master Diploma Examination}\thanks{Translated into English with minor modifications from an analogous text of \textit{Krokosz et al.}}\\[1cm]
+	{\Large Revision Notes---Physics (Studies in English)}\\[0.4cm]
+	{\large Faculty of Physics, University of Warsaw}\\
+}
+\author{???}
+\date{\today}
+
