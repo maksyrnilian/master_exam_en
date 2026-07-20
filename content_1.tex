@@ -96,6 +96,7 @@ gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & s=2 \\
 \end{tabular}
 \end{table}
 
+\todo{Rewrite this section and verify claims}
 It follows from the Heisenberg uncertainty principle, $\Delta E \Delta t \geq \frac{\hbar}{2}$\merr, that field quanta may exist for a finite time, set by the magnitude of these energies, such that the product of these quantities is of the order of the Planck constant. The uncertainty principle allows the range of an interaction to be estimated, this range depending on the rest mass of the carrier particle. The masslessness of photons, as well as the expected masslessness of gravitons, is on this account the reason why these forces are long-ranged. Particles of zero energy, and hence of zero rest mass, would have infinite range.\merr
 
 Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.385 \pm 0.015$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
@@ -113,43 +114,68 @@ As carriers of the strong interaction, gluons have double charges: one colour an
 The symmetries of physical systems are closely connected with conservation laws. Noether's theorem formalises this connection, stating that to every continuous symmetry of the action there corresponds a conservation law.
 
 \subsection{Noether's theorem}
+In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
 
-Noether's theorem states that if the action \( S \) is invariant with respect to some group of continuous transformations, then there exists a physical quantity that is conserved. Mathematically, if
-
+Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action \( S \) is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
 \begin{equation}
-\delta S = 0,
+S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
 \end{equation}
-
-then there exists a conserved current \( j^\mu \) such that
-
+where \( \Lagr \) is the Lagrangian of the system,
 \begin{equation}
-\partial_\mu j^\mu = 0.
+\Lagr \equiv \underbrace{T}_{\text{kinetic energy}} - \underbrace{V}_{\text{potential energy}}.
 \end{equation}
+The dynamics of the system are governed by the Euler--Lagrange equation,
+\begin{equation}\label{eq:euler-lagr}
+\frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
+\end{equation}
+where $q$ is some coordinate relevant to the system. This is consistent with classical Newtonian mechanics.
 
 \subsection{Examples of the application of Noether's theorem}
 
 \subsubsection{Conservation of energy}
 
-Time symmetry (homogeneity of time) leads to the law of conservation of energy. If the Lagrangian \( L \) does not depend explicitly on time, then energy is conserved:
-
+Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian \( \Lagr \) does not depend explicitly on time,
 \begin{equation}
-H = \frac{\partial L}{\partial \dot{q}} \dot{q} - L = \text{const}.
+    \frac{\partial \Lagr}{\partial t} = 0,
 \end{equation}
+then the energy of the system is conserved. Using this together with eq.~\ref{eq:euler-lagr} leads to
+\begin{equation}
+\frac{\partial L}{\partial \dot{q}}\,\dot{q} - L = \text{const} = \Ham,
+\end{equation}
+which is the Hamiltonian,
+\begin{equation}
+    \Ham = T + V,
+\end{equation}
+which corresponds to the total energy of the system.
 
 \subsubsection{Conservation of momentum}
 
-Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position, then momentum is conserved:
-
+Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position,
 \begin{equation}
-\vec{p} = \frac{\partial L}{\partial \dot{\vec{q}}} = \text{const}.
+    \frac{\partial \Lagr}{\partial \vec{r}} = 0,
+\end{equation}
+then inserting this into eq.~\ref{eq:euler-lagr} leads to
+\begin{equation}
+    \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0,
+\end{equation}
+so that the momentum is conserved,
+\begin{equation}
+\vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \text{const}.
 \end{equation}
 
 \subsubsection{Conservation of angular momentum}
 
-Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant with respect to rotations, then angular momentum is conserved:
-
+Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation \( \delta\vec{\phi} \), for which \( \delta\vec{r} = \delta\vec{\phi} \times \vec{r} \) and \( \delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}} \), then
 \begin{equation}
-\vec{L} = \vec{q} \times \vec{p} = \text{const}.
+\delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
+\end{equation}
+Using eq.~\ref{eq:euler-lagr} together with \( \vec{p} = \partial \Lagr / \partial \dot{\vec{r}} \) leads to
+\begin{equation}
+\delta\vec{\phi} \cdot \frac{d}{dt}\left( \vec{r} \times \vec{p} \right) = 0,
+\end{equation}
+and since \( \delta\vec{\phi} \) is arbitrary, the angular momentum is conserved,
+\begin{equation}
+\vec{L} = \vec{r} \times \vec{p} = \text{const}.
 \end{equation}
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
