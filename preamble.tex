@@ -2,10 +2,7 @@
 %  preamble.tex --- packages, styling, title metadata
 % =====================================================================
 
-\usepackage[margin=3cm]{geometry}
-
 % --- encoding and language -------------------------------------------
-% NOTE: the Polish original loaded {polski}; replaced by British English.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[british]{babel}
@@ -28,39 +25,36 @@
 \usepackage{titlesec}
 \usepackage{needspace}
 \usepackage[nottoc]{tocbibind}
-\usepackage{parskip}   % blank line between paragraphs, no first-line indent
+\usepackage{parskip}   	% blank line between paragraphs, no first-line indent
+\usepackage[margin=3cm]{geometry}
 
 % --- colours and links -----------------------------------------------
 \usepackage[dvipsnames]{xcolor}
-
-% --- comments -----------------------------------------------
-\usepackage{todonotes}
-
-
 \newcommand\myshade{85}
 \colorlet{mylinkcolor}{RoyalPurple}
 \colorlet{mycitecolor}{RoyalPurple}
 \colorlet{myurlcolor}{RoyalPurple}
 
-% --- marker for substantive errors carried over from the Polish source -----
-% \merr renders a bold red (!) inline, and works in both text and maths mode.
-% Every occurrence sits beside a "% NOTE:" comment in content.tex explaining
-% the issue. The marker flags content that is WRONG OR DOUBTFUL AS PRINTED ---
-% source typos that were silently repaired carry a NOTE comment but no marker.
-\newcommand{\merr}{\textcolor{red}{\textbf{(!)}}}
+% --- comments --------------------------------------------------------
+\usepackage{todonotes}
+\newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanataions in `%-comments`)
 
+
+% --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}
 \newcommand{\Ham}{\mathcal{H}}
 
+
+% --- hyperlinks ------------------------------------------------------
 \usepackage{hyperref}
 \hypersetup{
-	linkcolor  = Black, %mylinkcolor
-	citecolor  = Black,
-	urlcolor   = Black,
+	linkcolor  = RoyalPurple,
+	citecolor  = RoyalPurple,
+	urlcolor   = RoyalPurple,
 	colorlinks = true,
 	breaklinks = true
 }
-
+\usepackage[capitalize,nameinlink]{cleveref}
 % --- title page metadata ---------------------------------------------
 \title{%
 	\vspace*{2cm}
@@ -68,6 +62,15 @@
 	{\Large Revision Notes---Physics (Studies in English)}\\[0.4cm]
 	{\large Faculty of Physics, University of Warsaw}\\
 }
+
+% --- toc-link --------------------------------------------------------
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all default header and footer fields
+\renewcommand{\headrulewidth}{0pt} % Remove the top horizontal line
+\fancyfoot[C]{\thepage}	% Place the page number in the centre
+\fancyfoot[R]{\hyperref[toc]{TOC}} % Place the TOC link on the right-hand side ([L] for left). 
+
 \author{???}
 \date{\today}
 
