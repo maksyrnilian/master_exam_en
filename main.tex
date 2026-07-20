@@ -6,6 +6,7 @@
 
 \maketitle
 
+\setcounter{tocdepth}{1}
 \phantomsection
 \label{toc}
 \tableofcontents
@@ -14,5 +15,40 @@
 
 \input{content_1}
 \input{content_2}
+%\input{content_3}
 
 \end{document}
+
+
+
+% =====================================================================
+% VS Code Guide
+% =====================================================================
+
+% --- hotkey shortcuts ------------------------------------------------
+% alt + z to toggle between wrapping
+% ctrl + alt + t to switch theme
+% ctrl + alt + r to reload
+% ctrl + click in PDF to go to source location
+
+% --- debugging --------------------------------------------------------
+% Ctrl+Shift+M to open Problems panel — lists errors with clickable file/line
+% full log lives in build/<rootfile>.log (matches your -outdir setting)
+% search log for "! " (exclamation + space) to find fatal errors fast
+% search log for "Undefined" for missing refs, citations, or control sequences
+% error format: "l.47" means the problem is on line 47 of your source
+% last lines of log confirm success ("Output written on main.pdf ...")
+%   or failure ("Fatal error occurred, no output PDF file produced")
+% log file location: build/<rootfile>.log (matches your -outdir setting)
+
+% --- multi-file projects -----------------------------------------------
+% add this as the first line of any \input{}'d file (e.g. preamble.tex):
+%   % !TeX root = main.tex
+% forces compilation of main.tex regardless of which tab is focused
+% without it, compiling a non-root file directly causes
+%   "Emergency stop... no legal \end found"
+
+% --- build output --------------------------------------------------------
+% latexmk args use -outdir=build to keep aux/log/synctex files out of root
+% .gitignore should exclude the whole folder: build/
+% PDF also lands in build/ — this is expected, not an error

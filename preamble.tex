@@ -39,12 +39,6 @@
 \usepackage{todonotes}
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanataions in `%-comments`)
 
-
-% --- macro constants -------------------------------------------------
-\newcommand{\Lagr}{\mathcal{L}}
-\newcommand{\Ham}{\mathcal{H}}
-
-
 % --- hyperlinks ------------------------------------------------------
 \usepackage{hyperref}
 \hypersetup{
@@ -58,7 +52,7 @@
 % --- title page metadata ---------------------------------------------
 \title{%
 	\vspace*{2cm}
-	{\Huge Master Diploma Examination}\thanks{Translated into English with minor modifications from an analogous text of \textit{Krokosz et al.}}\\[1cm]
+	{\Huge Master Diploma Examination}\thanks{Translated into English with some modifications from an analogous text of \textit{Krokosz et al.}}\\[1cm]
 	{\Large Revision Notes---Physics (Studies in English)}\\[0.4cm]
 	{\large Faculty of Physics, University of Warsaw}\\
 }
@@ -74,3 +68,31 @@
 \author{???}
 \date{\today}
 
+% --- TOC: add dot leaders to section-level entries (none by default) -
+\makeatletter
+\renewcommand{\l@section}[2]{%
+  \ifnum \c@tocdepth >\z@
+    \addpenalty{\@secpenalty}%
+    \addvspace{1.0em \@plus\p@}%
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \bfseries
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\leaders\hbox{$\m@th\mkern \@dotsep mu.\mkern \@dotsep mu$}\hfill
+      \nobreak\hb@xt@\@pnumwidth{\hss #2}\par
+    \endgroup
+  \fi}
+\makeatother
+
+% --- macro constants -------------------------------------------------
+\newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
+\newcommand{\Ham}{\mathcal{H}}				  % Hamiltonian	
+\newcommand{\kB}{k_{B}}                       % Boltzmann constant
+\newcommand{\muB}{\mu_{B}}                    % Bohr magneton
+\newcommand{\const}{\mathrm{const.}}          % "constant"
+\newcommand{\ev}[1]{\langle #1 \rangle}       % expectation / mean value
+\newcommand{\comm}[2]{\left[#1,#2\right]}     % commutator
+\newcommand{\acomm}[2]{\left\{#1,#2\right\}}  % anticommutator
