@@ -143,9 +143,9 @@ then the energy of the system is conserved. Using this together with \cref{eq:eu
 % NOTE: source wrote plain L here; changed to \Lagr for consistency with the
 % rest of the section.
 which is the Hamiltonian,
-\begin{equation*}
+\begin{equation}\label{eq:hamiltonian}
     \Ham \equiv T + V,
-\end{equation*}
+\end{equation}
 which corresponds to the total energy of the system.
 
 \subsubsection{Conservation of momentum}
@@ -378,21 +378,26 @@ A separate contribution appears when the particle is accelerated, and unlike Lar
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 
-A variational principle expresses the equations of motion as a condition on an entire trajectory rather than on the instantaneous state. Its central object is the \textbf{action} $S$, a \textit{functional}: a rule assigning a single real number to each candidate trajectory. The \textbf{principle of least action} states that the path a system actually follows is the one for which $S$ is \textbf{stationary} --- unchanged to first order under any small deformation of the path (a minimum in the simplest cases, whence the name).
+There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
 
-The idea originates in optics, with Fermat's principle that light takes the path of least travel time between two points. Its migration into mechanics grew from the brachistochrone problem (Johann Bernoulli, 1696): the curve down which a bead slides under gravity from one point to another in the \textit{least time} --- a cycloid, notably not the straight line, which only minimises \textit{length}. Extremising such quantities systematically required the calculus of variations, developed by Euler and Lagrange.
+That rule is stated using a single number, the \textbf{action} $S$, which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \textbf{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
 
-For a mechanical system the action (\cref{eq:action}) is the time integral of the Lagrangian (\cref{eq:lagrangian}). Requiring the first variation to vanish, $\delta S = 0$, singles out the stationary paths and yields the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). This reproduces Newton's second law, but written in arbitrary \textit{generalised coordinates} $q_i$ --- any convenient parameters fixing the configuration --- which is what makes the formalism so powerful for constrained or awkward systems.
+The \textbf{principle of least action} says that the path the system follows is the one for which the action is \textbf{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
 
-A Legendre transformation trades the velocities $\dot q_i$ for momenta and leads to the Hamiltonian formulation, built on $\Ham = T + V$, the total energy, which is the natural starting point for statistical physics and quantum mechanics. Carrying the variational idea further and regarding the action as a function of its endpoint gives the Hamilton--Jacobi equation,
+The idea began in optics as \textbf{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \textbf{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \textbf{calculus of variations} of Euler and Lagrange was created to handle.
+
+For a mechanical system, the action (\cref{eq:action}) is the \textbf{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \textbf{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
+
+The same content can be repackaged. A standard change of variables (a \textbf{Legendre transformation}) trades the velocities $\dot q_i$ for momenta and leads to the \textbf{Hamiltonian} formulation, built on the total energy (\cref{eq:hamiltonian}). This version is the usual starting point for statistical physics and quantum mechanics. Taking the variational idea one step further, and treating the action as a function of the point at which the path ends, gives the \textbf{Hamilton--Jacobi equation},
 
 \begin{equation}\label{eq:hamilton-jacobi}
 \Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
 \end{equation}
+\todo{why is the hamiltionian a function of such awkward arguments?}
 
-which is strikingly close in form to the Schrödinger equation and is the natural classical gateway to wave mechanics (here $S$ is Hamilton's principal function, equal in value to the action). The quantum counterpart, Feynman's path integral, assigns every trajectory a probability amplitude and recovers the classical, stationary-action path in the appropriate limit.
+a single equation for the action $S$ (here called Hamilton's principal function). What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
 
-The principle reaches well beyond mechanics. Applied to the electromagnetic field Lagrangian $\Lagr = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ it produces Maxwell's equations in tensor form, and applied to the Einstein--Hilbert action it produces the full Einstein field equations of general relativity.
+The principle is not restricted to mechanics. The general recipe is always the same --- write down an action for the system and demand that it be stationary. The action of the electromagnetic field yields Maxwell's equations, and the action of general relativity (the Einstein--Hilbert action) yields Einstein's field equations for gravity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
 
 \section{The laws of thermodynamics}
 
