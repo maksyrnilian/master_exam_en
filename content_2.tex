@@ -1,15 +1,19 @@
 % !TeX root = main.tex
 \section{The uncertainty principle and the limits of measurement accuracy}
+\label{sec:uncertainty}
 
 % NOTE: as written in the source, the left-hand side is a product of variances
 % while the right-hand side is not squared; the standard Robertson relation is
 % $\Delta^2\hat A\,\Delta^2\hat B \geq \frac{1}{4}|\langle[\hat A,\hat B]\rangle|^2$.
 The Heisenberg uncertainty principle states that there exist pairs of quantities which cannot be measured simultaneously to arbitrary accuracy. Let $\hat{A}$, $\hat{B}$ be observables and $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$. Then:
 
-\begin{equation}
-    \Delta^2 \hat{A} \Delta^2 \hat{B} \geq \frac{1}{4}\left| \langle [\hat{A},\hat{B}] \rangle  \right| \qquad \merr
+\begin{equation}\label{eq:uncertainty}
+    \Delta^2 \hat{A} \Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}}  \right| \qquad \merr
 \end{equation}
 
+% CLARITY: for a weaker-QM reader, one plain line helps before the formula ---
+% "if two observables do not commute, no state can have a sharp value of both
+% at once" --- and a note that $\comm{\hat A}{\hat B}=\hat A\hat B-\hat B\hat A$.
 In particular, $\Delta^2 x \cdot \Delta^2 p_x \geq \frac{\hbar^2}{4}$. The state that saturates this inequality is a Gaussian wave packet. This means that there exist no states guaranteeing better localisation of the particle in position and momentum space.
 
 The uncertainty principle should not be confused with ``Heisenberg's microscope'', which states that in order to measure the position of a particle ever more accurately, a stream of photons of ever shorter wavelength must be used. However, the photons used for illumination consequently have ever greater momentum and in consequence cause a greater uncertainty of momentum.
@@ -17,6 +21,7 @@ The uncertainty principle should not be confused with ``Heisenberg's microscope'
 It is worth noting that such reasoning does not capture the meaning of the uncertainty principle, since it assumes the existence of an objective position of the electron which can be measured.
 
 \section{Approximate methods of quantum mechanics; perturbation theory for eigenvalues, Fermi's golden rule, the Born approximation for scattering amplitudes}
+\label{sec:approximate-methods}
 
 Quantum mechanics describes the behaviour of systems at the atomic and subatomic level. However, it rests to a large extent on solving differential equations which we are able to solve analytically only in relatively simple cases. Sometimes even determining the Hamiltonian itself is difficult, and therefore for more complex systems approximate methods are used, which make it possible to obtain useful results.
 
@@ -24,19 +29,21 @@ Quantum mechanics describes the behaviour of systems at the atomic and subatomic
 
 Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:
 
-\begin{align*}
-    E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \\
-    \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \\
-    E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}}
-\end{align*}
+% NOTE: the source wrote the kets on the right as \ket{n^{(0)}}; changed to
+% \ket{\psi_n^{(0)}} for consistency with the bra notation.
+\begin{align}
+    E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
+    \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
+    E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
+\end{align}
 
 \subsection{Fermi's golden rule}
 
 The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
 
-\[
+\begin{equation}\label{eq:fermi-golden-rule}
 \Gamma_{n\rightarrow{}m} \approx \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
-\]
+\end{equation}
 
 \subsection{The Born approximation}
 
@@ -45,7 +52,9 @@ The method of stationary perturbation theory described above assumes that the pe
 % f(\theta) = -\frac{2m}{K\hbar^2}\int_0^\infty r'V(r')\sin(Kr')dr'.
 A further important result of perturbation theory is the Born approximation for scattering amplitudes. The problem itself is formulated as the scattering of a given particle on a spherically symmetric potential $V$, treating its wave function as infinite, thereby reducing the problem to the stationary case. At large distances we obtain incoming and scattered plane waves, described spatially by $f(\theta, \phi)$. This quantity is a probability amplitude which, on taking the squared modulus, gives the differential cross-section. In general the problem is solved by writing the Schrödinger equation in the implicit form known as the Lippmann--Schwinger equation, and then solving it iteratively. Restricting oneself to the first iteration is called the Born approximation and has the form:
 
-\[f(\theta) = \frac{2m}{K\hbar}\int_0^\infty dr' r'V(r')\sin(Kr') \qquad \merr\]
+\begin{equation}\label{eq:born}
+f(\theta) = \frac{2m}{K\hbar}\int_0^\infty dr' r'V(r')\sin(Kr') \qquad \merr
+\end{equation}
 
 where $K=\left|\vec k_0 - k_0\frac{\vec r}{r}\right|$.
 
@@ -55,7 +64,7 @@ where $K=\left|\vec k_0 - k_0\frac{\vec r}{r}\right|$.
 
 The Schrödinger equation is an equation of the form:
 
-\begin{equation}
+\begin{equation}\label{eq:schrodinger}
     i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
 \end{equation}
 
@@ -63,7 +72,7 @@ The Schrödinger equation is an equation of the form:
 % z-component, which is what is meant.
 In the course of solving the equation it is found that it has meaning only for a specific set of natural numbers---the quantum numbers: the principal $n$, the azimuthal $l$ and the magnetic $m$. This is equivalent to showing that the energy of the electron, the square of the angular momentum and the $z$-component of the angular momentum are quantised. Each of the eigenfunctions so obtained, $\Psi_{nlm}\left(r,\theta,\phi\right)$, is an orbital.
 
-In chemistry, the \textbf{electron shell} around a given atom is taken to be the set of atomic orbitals having the same principal quantum number $\mathsf{n}$.
+In chemistry, the \textbf{electron shell} around a given atom is taken to be the set of atomic orbitals having the same principal quantum number $n$.
 
 The Schrödinger equation also permits the binding energy of the electron to be determined.
 
@@ -75,6 +84,7 @@ The Schrödinger equation also permits the binding energy of the electron to be 
 \textbf{The periodic table of the elements} --- a compilation, in the form of a table, of all the chemical elements, ordered according to their increasing atomic number, grouping the elements according to their cyclically recurring similarities of properties, in accordance with \textbf{Dmitri Mendeleev's periodic law}. It states that the properties of the elements are periodically dependent on their atomic masses.\merr The vertical columns in the periodic table are groups. Chemical similarity within a group is explained by the identical or similar electron configuration of the valence shell of the atoms of the elements of that group. The number of the period (the horizontal row), in turn, corresponds to the number of the valence shell of the atom.
 
 \section{Quantum tunnelling; examples}
+\label{sec:tunnelling}
 
 Quantum tunnelling is the phenomenon of a particle passing through a potential barrier of height greater than the energy of the particle. It has no classical counterpart or analogy. In quantum mechanics a particle is not a rigid body of definite size and precisely specified position, although the interpretation of the wave function of a stationary state should incline one to the opposite conclusion (if the wave function is interpreted as a mechanical wave, then the particle should always be located in the middle of the potential well; the stationarity of the solutions at any instant would deprive the particle of any motion whatsoever, were this not accompanied by a change of energy levels). It is represented by a wave function which determines the probability of localising the particle in a specified region of space through the squared modulus of the wave function in that region.
 
@@ -82,15 +92,15 @@ The solution of the Schrödinger equation for a particle with a potential barrie
 
 % NOTE: as in the source, both terms carry the same amplitude A; in general the
 % forward- and backward-travelling amplitudes differ.
-\begin{equation}
+\begin{equation*}
     \psi(x) = Ae^{i k_1 x} + Ae^{-i k_1 x} \qquad \merr
-\end{equation}
+\end{equation*}
 
 In the middle of the potential barrier the wave function of the particle undergoes exponential damping, dependent on the height of the barrier and on the energy of the particle. Outside the potential barrier the wave function takes the form of a wave travelling outwards:
 
-\begin{equation}
+\begin{equation*}
     \psi(x) = Be^{i k_2 x}
-\end{equation}
+\end{equation*}
 
 where $k_1$ and $k_2$ are wave numbers dependent on the energy of the particle. Accordingly, the amplitude of the wave function on the far side of the barrier, $B$, is always smaller than the amplitude of the wave function inside, $A$. The tunnelling coefficient is expressed as $T = \frac{B^2}{A^2}$.
 
@@ -130,9 +140,9 @@ In the case of \textbf{molecules} the system of electron energy levels is more c
 
 The phenomenon occurs universally and is responsible for almost every kind of luminescence of bodies, e.g.\ of heated gases, excited atoms, liquid and solid bodies, and also of electronic devices such as light-emitting diodes. In the absence of new excitations, the equation determining the number of atoms remaining in the excited state has the form:
 
-\begin{equation}
-    \mathsf{N}\left(t\right) = \mathsf{N}\left(0\right)e^{-\frac{t}{\tau}}
-\end{equation}
+\begin{equation*}
+    N\left(t\right) = N\left(0\right)e^{-\frac{t}{\tau}}
+\end{equation*}
 
 where $\tau$ is the lifetime.
 
@@ -146,15 +156,15 @@ where $\tau$ is the lifetime.
 
 The Stark effect is the phenomenon consisting in the splitting of energy levels in an external electric field. Let us define the electric field along the $z$ axis:
 
-\begin{equation}
+\begin{equation*}
     \vec{E} = E\hat{e}_z \xrightarrow[]{} V = -Ez = -Er\cos(\theta)
-\end{equation}
+\end{equation*}
 
-This corresponds to the perturbing Hamiltonian $\hat{H}' = eEr\cos(\theta)$, so we may calculate the first-order correction to the ground state $\ket{nlm} = \ket{100}$:
+This corresponds to the perturbing Hamiltonian $\hat{H}' = eEr\cos(\theta)$, so we may calculate the first-order correction (\cref{eq:pt-e1}) to the ground state $\ket{nlm} = \ket{100}$:
 
-\begin{equation}
+\begin{equation*}
     E^{(1)}_{100} = \bra{100}\hat{H}'\ket{100} = eE\int\psi^*_{100}r\cos(\theta)\psi_{100}d^3r = 0
-\end{equation}
+\end{equation*}
 
 Since the ground state has $l=0$ it is spherically symmetric, and consequently the first-order correction $E^{(1)}_{100} = 0$.
 
@@ -163,11 +173,11 @@ Since the ground state has $l=0$ it is spherically symmetric, and consequently t
 % the n=2 manifold.
 We may, however, calculate the correction in second-order perturbation theory\merr, i.e.\ find the matrix elements $\bra{2lm}\hat{H}'\ket{2lm}$. The only non-zero elements are:
 
-\begin{equation}
+\begin{equation*}
     \bra{200}\hat{H}'\ket{210} = \bra{210}\hat{H}'\ket{200} = -3eEa_0
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
 \hat{H}' =
     \begin{pmatrix}
         0 & -3eEa_0 & 0 & 0 \\
@@ -175,21 +185,21 @@ We may, however, calculate the correction in second-order perturbation theory\me
          0 & 0& 0 & 0\\
          0 & 0& 0 & 0\\
     \end{pmatrix}
-\end{equation}
+\end{equation*}
 
 Calculating the eigenvectors and eigenvalues of this matrix we obtain $\lambda_1 = \lambda_2 = 0$, $\lambda_3 = -\lambda_4 = 3eEa_0$. In the presence of an electric field two states arise:
 
-\begin{equation}
+\begin{equation*}
     \frac{1}{\sqrt{2}}(\ket{200}\pm\ket{210})
-\end{equation}
+\end{equation*}
 
 with energies:
 
 % NOTE: the source writes E^{(0)}_{100}; since the states involved belong to the
 % n=2 manifold, this should be E^{(0)}_{200}.
-\begin{equation}
+\begin{equation*}
     E = E^{(0)}_{200} \pm 3eEa_0
-\end{equation}
+\end{equation*}
 
 \paragraph{The Zeeman effect}
 
@@ -197,32 +207,32 @@ The Zeeman effect is the phenomenon consisting in the splitting of energy levels
 
 Energy correction --- we introduce the Hamiltonian perturbing by a field $B$ in the $z$ direction:
 
-\begin{equation}
+\begin{equation*}
     \hat{H}' = -\mu B_z
-\end{equation}
+\end{equation*}
 
 where $\mu$ is the magnetic moment:
 
 % NOTE: as in the source, the braces do not render as a bracket and L, S are
 % vectors: \mu = -\frac{\mu_B}{\hbar}\left(\vec{L} + g_S\vec{S}\right).
-\begin{equation}
-    \mu=-\frac{\mu_B}{\hbar}\left(\vec{L} + g_S \vec{S}\right)
-\end{equation}
+\begin{equation*}
+    \mu=-\frac{\muB}{\hbar}\left(\vec{L} + g_S \vec{S}\right)
+\end{equation*}
 
-$\mu_B$ is the Bohr magneton and $g_S \approx 2$ is the Landé factor for the electron. In the case where $S = 0$ we have the so-called normal Zeeman splitting, and the correction to the energy is:
+$\muB$ is the Bohr magneton and $g_S \approx 2$ is the Landé factor for the electron. In the case where $S = 0$ we have the so-called normal Zeeman splitting, and the correction to the energy (\cref{eq:pt-e1}) is:
 
 % NOTE: the superscript should be (1), not (0); moreover, since the eigenvalue of
 % L_z is \hbar m_l, the \hbar in the denominator cancels and the correction is
 % -\mu_B B m_l. Retained as in the source.
-\begin{equation}
-    E^{(0)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = -\frac{\mu_B}{\hbar}Bm_l \qquad \merr
-\end{equation}
+\begin{equation*}
+    E^{(0)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = -\frac{\muB}{\hbar}Bm_l \qquad \merr
+\end{equation*}
 
 In the case where $S\neq 0$ we have the anomalous Zeeman effect, and the correction to the energy is
 
-\begin{equation}
-    E^{(0)}_{nlm_lm_s} = -\frac{\mu_B}{\hbar}B(m_l + 2m_s) \qquad \merr
-\end{equation}
+\begin{equation*}
+    E^{(0)}_{nlm_lm_s} = -\frac{\muB}{\hbar}B(m_l + 2m_s) \qquad \merr
+\end{equation*}
 
 \paragraph{Experimental methods of studying spin}
 
@@ -246,7 +256,9 @@ Kirchhoff's law of thermal radiation states that at a fixed temperature the func
 
 The formula for the emissivity of a black body is the Planck distribution, which arose initially from fitting a function and was later derived on the assumption of the quantum nature of photons, and is given by:
 
-\[\varepsilon(\nu,T) = \frac{2\pi\nu^2}{c^2}\frac{h\nu}{e^{h\nu/k_BT} - 1}\]
+\begin{equation}\label{eq:planck}
+\varepsilon(\nu,T) = \frac{2\pi\nu^2}{c^2}\frac{h\nu}{e^{h\nu/\kB T} - 1}
+\end{equation}
 
 Auxiliary laws describing black-body radiation are: Wien's law, giving the wavelength at which it attains its maximum as depending on the temperature according to $\lambda_{max} = b / T$, and the Stefan--Boltzmann law, giving the total power emitted at a given temperature, $\Phi = \sigma T^4$.
 
@@ -261,36 +273,30 @@ The phenomenon of interference, that is, of the superposition of waves, occurs o
 The interference of waves emitted by two coherent sources was demonstrated in Young's experiment. A beam of light originating from a single source, having passed through one narrow slit, falls on two further slits separated from one another by $d$. We treat these slits as two point sources of coherent spherical waves. On a screen located at a large distance from the slits, dark and bright fringes are recorded. The waves originating from both slits are described by the wave functions:
 
 % NOTE: the second line in the source is also labelled \psi_1; it should be \psi_2.
-\begin{equation}
-    \begin{matrix}
-        \psi_{1}\left(r_{1},t\right) = A\left(r_{1}\right)\cos{\left(kr_{1} - \omega t\right)}\\
-        \psi_{2}\left(r_{2},t\right) = A\left(r_{2}\right)\cos{\left(kr_{2} - \omega t\right)}
-    \end{matrix}
-\end{equation}
+\begin{align*}
+    \psi_{1}\left(r_{1},t\right) &= A\left(r_{1}\right)\cos{\left(kr_{1} - \omega t\right)}\\
+    \psi_{2}\left(r_{2},t\right) &= A\left(r_{2}\right)\cos{\left(kr_{2} - \omega t\right)}
+\end{align*}
 
 On the screen we observe the result of the summation of the waves:
 
-\begin{equation}
+\begin{equation*}
     \psi_{1}\left(r_{1},t\right) + \psi_{2}\left(r_{2},t\right) = 2A\left(r_{av}\right)\cos{\left(k\frac{r_{1} - r_{2}}{2}\right)}\cos{\left(kr_{av} - \omega t\right)}
-\end{equation}
+\end{equation*}
 
 The first factor (the cosine) describes the spatial modulation, while the second term, with the amplitude, describes the spherical wave. On the screen we obtain interference maxima (bright fringes) when the following condition is satisfied:
 
-\begin{equation}
-    \begin{matrix}
-        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} = \pm 1\\
-        k\frac{r_{1} - r_{2}}{2} = m\pi
-    \end{matrix}
-\end{equation}
+\begin{align*}
+        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} &= \pm 1\\
+        k\frac{r_{1} - r_{2}}{2} &= m\pi
+\end{align*}
 
 That is, the difference of the optical paths of the two rays is equal to a multiple of the wavelength: $r_{1} - r_{2} = m\lambda$, where $m$ is an integer. Cancellation of the waves (dark fringes) occurs when:
 
-\begin{equation}
-    \begin{matrix}
-        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} = 0\\
-        k\frac{r_{1} - r_{2}}{2} = \frac{2m+1}{2}\pi
-    \end{matrix}
-\end{equation}
+\begin{align*}
+        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} &= 0\\
+        k\frac{r_{1} - r_{2}}{2} &= \frac{2m+1}{2}\pi
+\end{align*}
 
 and thus for a difference of the optical paths of both rays equal to an odd multiple of half the wavelength: $r_{1} - r_{2} = \frac{2m+1}{2}\lambda$.
 
@@ -302,7 +308,7 @@ There is no essential difference between the phenomena of diffraction and interf
 
 \textbf{Bragg's law} --- a relation linking the structure of a crystal with the wavelength of the radiation incident on the crystal and the angle at which the interference maximum is observed. This law concerns so-called Bragg diffraction. When X-radiation falls on a crystal, diffraction of this radiation occurs at each of its atoms. The Bragg condition assumes diffraction on the planes on which the atoms of the crystal are arranged. With a known interplanar spacing and wavelength, Bragg's law determines the angle at which the wave must fall on the crystal for constructive interference (reinforcement) to occur. This means that for X-rays falling on a crystal the maxima of the diffracted radiation occur only for certain angles of incidence.
 
-\begin{equation}
+\begin{equation}\label{eq:bragg}
     n\lambda = 2d\sin{\theta}
 \end{equation}
 
@@ -320,9 +326,9 @@ A crystal consists of many parallel planes on which atoms are arranged---in an i
 
 In the case of identical elementary particles, e.g.\ electrons, quarks or photons, the wave function of any system of them is written in the form:
 
-\begin{equation}
+\begin{equation*}
     \psi (1,2,\dots,N,t)
-\end{equation}
+\end{equation*}
 
 where $(1,2,\dots,N)$ denotes the set of position and spin coordinates of the individual particles of the quantum system, the remaining parameters having to be the same. If it is assumed that these particles have been labelled unambiguously, so that each of them has an individual number, then on exchanging two particles (e.g.\ the first and the second) the wave function may change only by a phase factor $e^{i\varphi}$, i.e.:
 
@@ -332,17 +338,17 @@ where $(1,2,\dots,N)$ denotes the set of position and spin coordinates of the in
 
 where $\varphi$ is an arbitrary real number, and such a change does not cause a change in the modulus of the wave function. When the particles are exchanged back, the phase factor changes again and we obtain
 
-\begin{equation}
-    \Tilde{\psi} (2,1,\dots,N,t) = e^{i\varphi} \psi (1,2,\dots,N,t)
-\end{equation}
+\begin{equation*}
+    \tilde{\psi} (2,1,\dots,N,t) = e^{i\varphi} \psi (1,2,\dots,N,t)
+\end{equation*}
 
-Returning to equation \ref{eq:identical} we obtain:
+Returning to \cref{eq:identical} we obtain:
 
-\begin{equation}
-    \Tilde{\psi} (1,2,\dots,N,t) = e^{i\varphi}e^{i\varphi} \psi (1,2,\dots,N,t)
-\end{equation}
+\begin{equation*}
+    \tilde{\psi} (1,2,\dots,N,t) = e^{i\varphi}e^{i\varphi} \psi (1,2,\dots,N,t)
+\end{equation*}
 
-Since the wave functions $\Tilde{\psi}$ and $\psi$ correspond to the same configuration of particles, their moduli must be equal to one another, and therefore $e^{2i\varphi} = \pm 1$. Consequently, the wave function of identical particles must be either symmetric or antisymmetric.
+Since the wave functions $\tilde{\psi}$ and $\psi$ correspond to the same configuration of particles, their moduli must be equal to one another, and therefore $e^{2i\varphi} = \pm 1$. Consequently, the wave function of identical particles must be either symmetric or antisymmetric.
 
 \paragraph{The spin--statistics postulate}
 
@@ -350,17 +356,20 @@ The wave function of a system of indistinguishable particles with half-integer s
 
 \paragraph{Bose--Einstein condensation}
 
-The statistics refers to a non-interacting gas of bosons at low temperatures. Bosons are not subject to the Pauli exclusion principle, and therefore many particles may occupy the same state within a single system. On the basis of these assumptions one obtains the formula for the occupation density of the $k$-th state:
+% NOTE: below, k denotes the Boltzmann constant, but the same symbol k is also
+% used in the text for the wave-vector index --- an overload worth flagging to
+% the reader. Written here as \kB in the formula for clarity.
+The statistics refers to a non-interacting gas of bosons at low temperatures. Bosons are not subject to the Pauli exclusion principle, and therefore many particles may occupy the same state within a single system. On the basis of these assumptions one obtains the formula for the occupation density of the $k$-th state (cf.\ \cref{eq:bose-einstein}):
 
-\begin{equation}
-    n_k = \frac{1}{e^{(\varepsilon_k - \mu)/kT} - 1}
-\end{equation}
+\begin{equation*}
+    n_k = \frac{1}{e^{(\varepsilon_k - \mu)/\kB T} - 1}
+\end{equation*}
 
-$\varepsilon_k$ denotes the energy of the $k$-th state, $\mu$ the chemical potential, $k$ the Boltzmann constant and $T$ the temperature. It is worth emphasising that the index $k$ corresponds to the wave vector $\vec{k}$. On account of the difference appearing in the denominator, under appropriate conditions the density of the lowest states is very large. The effect of condensation is the collective behaviour of all the particles taking part in it (approximately, they all behave like a single particle). This is not a matter of condensation in the ordinary sense in position space---the particles are not located in one place---but of the ``condensation'' of particles in momentum space: a considerable number of particles have the same momentum. The critical temperature is given by the formula:
+$\varepsilon_k$ denotes the energy of the $k$-th state, $\mu$ the chemical potential, $\kB$ the Boltzmann constant and $T$ the temperature. It is worth emphasising that the index $k$ corresponds to the wave vector $\vec{k}$. On account of the difference appearing in the denominator, under appropriate conditions the density of the lowest states is very large. The effect of condensation is the collective behaviour of all the particles taking part in it (approximately, they all behave like a single particle). This is not a matter of condensation in the ordinary sense in position space---the particles are not located in one place---but of the ``condensation'' of particles in momentum space: a considerable number of particles have the same momentum. The critical temperature is given by the formula:
 
-\begin{equation}
-    T_c \approx 3.3125 \frac{\hbar^2 n^{2/3}}{m k_B}
-\end{equation}
+\begin{equation*}
+    T_c \approx 3.3125 \frac{\hbar^2 n^{2/3}}{m \kB}
+\end{equation*}
 
 where $n$ is the density of atoms and $m$ the mass of a single atom.
 
@@ -372,7 +381,9 @@ Statistical ensembles are a concept used in statistical mechanics to describe th
 
 All microstates are equally probable, and their partition function $\Omega$ is simply the number of all microstates. Boltzmann connected such a sum with the entropy by means of the formula
 
-\[S=k_B \log\Omega\]
+\begin{equation}\label{eq:boltzmann-entropy}
+S=\kB \log\Omega
+\end{equation}
 
 \subsection{The canonical ensemble}
 
@@ -380,21 +391,29 @@ All microstates are equally probable, and their partition function $\Omega$ is s
 % microstates r, not over the N particles.
 Imposing a constraint on the energy significantly complicates the calculations, which may be simplified by introducing a constraint on the temperature and assuming that the system exchanges energy with a heat reservoir at constant temperature $T$. The microstates are then subject to the Boltzmann distribution, and the partition function is given by
 
-\[Q_N(V,T) = \sum_{r}\exp\left(-E_r / k_BT\right)\]
+\begin{equation}\label{eq:canonical-partition}
+Q_N(V,T) = \sum_{r}\exp\left(-E_r / \kB T\right)
+\end{equation}
 
 and gives directly the Helmholtz free energy
 
-\[A=-k_BT\log Q_N\]
+\begin{equation}\label{eq:helmholtz}
+A=-\kB T\log Q_N
+\end{equation}
 
 \subsection{The grand canonical ensemble}
 
 Just as summing over all energies simplified the calculations relative to the microcanonical ensemble, so here we are dealing with a further change of constraint. The number of particles is also difficult to define or measure, and so here too it becomes a variable, while the chemical potential $\mu$ is constrained. Counting over all possible numbers of particles with the generalised Boltzmann distribution, we obtain the partition function
 
-\[Q=\sum_{r,s}\exp\left(-\alpha N_r - \beta E_s\right) \]
+\begin{equation}\label{eq:grand-partition}
+Q=\sum_{r,s}\exp\left(-\alpha N_r - \beta E_s\right)
+\end{equation}
 
-where $\beta = 1/k_BT$ and $\mu = - \alpha/\beta$. This sum is connected with the grand thermodynamic potential by:
+where $\beta = 1/\kB T$ and $\mu = - \alpha/\beta$. This sum is connected with the grand thermodynamic potential by:
 
-\[ \Xi = -k_BT\log Q\]
+\begin{equation}\label{eq:grand-potential}
+\Xi = -\kB T\log Q
+\end{equation}
 
 \subsection{Quantum statistics}
 
@@ -403,9 +422,13 @@ The theory of statistical ensembles may be successfully applied also within the 
 \begin{enumerate}
     \item the classical one, where the occupations are given by the Maxwell--Boltzmann distribution. This is an approach analogous to the above, but it does not explain the phenomena observed for a gas of electrons (fermions) or photons (bosons). This distribution does not assume that the particles are indistinguishable, but on account of the scale this has no significant effect on the correctness of the results.
     \item Fermi--Dirac, which takes into account the Pauli exclusion principle, to which fermions are subject. It states that a given state may be occupied by only one particle. This gives the following occupation distribution:
-    \[\langle n_\varepsilon\rangle=\frac{1}{e^{\beta(\varepsilon - \mu)} + 1}\]
+    \begin{equation}\label{eq:fermi-dirac}
+    \ev{n_\varepsilon}=\frac{1}{e^{\beta(\varepsilon - \mu)} + 1}
+    \end{equation}
     \item Bose--Einstein, which describes particles not subject to the Pauli exclusion principle, but still indistinguishable. The distribution is given by:
-    \[\langle n_\varepsilon\rangle=\frac{1}{e^{\beta(\varepsilon - \mu)} - 1}\]
+    \begin{equation}\label{eq:bose-einstein}
+    \ev{n_\varepsilon}=\frac{1}{e^{\beta(\varepsilon - \mu)} - 1}
+    \end{equation}
 \end{enumerate}
 
 In the classical limit both quantum statistics converge to the Maxwell--Boltzmann distribution.
@@ -435,9 +458,9 @@ An equation of state is a relation between the parameters (state functions) of a
 
 which may be written in the form:
 
-\begin{equation}
+\begin{equation*}
     p = p\left(\rho,T,s,u,...\right)
-\end{equation}
+\end{equation*}
 
 The most commonly used equations of state in thermodynamics are the ideal gas equation of state and the van der Waals equation:
 
@@ -445,12 +468,10 @@ The most commonly used equations of state in thermodynamics are the ideal gas eq
 % with a lower-case v (should be pV = nRT), and the van der Waals equation mixes
 % the molar form (a/V^2, V-b) with nRT on the right-hand side. The consistent
 % n-mole form is (p + an^2/V^2)(V - nb) = nRT.
-\begin{equation}
-    \begin{matrix}
-        \mathsf{pV} = \mathsf{nRT}\\
-        \left(\mathsf{p} + \frac{\mathsf{a}}{\mathsf{V}^{2}}\right)\left(\mathsf{V}-\mathsf{b}\right) = \mathsf{nRT} \qquad \merr
-    \end{matrix}
-\end{equation}
+\begin{align}
+        pV &= nRT \label{eq:ideal-gas}\\
+        \left(p + \frac{a}{V^{2}}\right)\left(V-b\right) &= nRT \label{eq:van-der-waals} \qquad \merr
+\end{align}
 
 where the parameter $b$ accounts for the volume of the molecules, while the parameter $\frac{a}{V^{2}}$ accounts for their mutual interaction.
 
@@ -458,59 +479,55 @@ where the parameter $b$ accounts for the volume of the molecules, while the para
 
 \textbf{Specific heat} --- the heat needed to change the temperature of a body of unit mass by one unit
 
-\begin{equation}
-    \mathsf{c} = \frac{\Delta \mathsf{Q}}{m\Delta T}
-\end{equation}
+\begin{equation*}
+    c = \frac{\Delta Q}{m\Delta T}
+\end{equation*}
 
-The heat capacity of a gas at constant parameter $\mathsf{x}$ may be calculated from the formula:
+The heat capacity of a gas at constant parameter $x$ may be calculated from the formula:
 
-\begin{equation}
-    c_{x} = \left(\frac{\partial \mathsf{Q}}{\partial\mathsf{T}}\right)_{x}
-\end{equation}
+\begin{equation*}
+    c_{x} = \left(\frac{\partial Q}{\partial T}\right)_{x}
+\end{equation*}
 
 The most commonly encountered heat capacities are those at constant volume and at constant pressure, $c_{V}$ and $c_{p}$. For a monatomic ideal gas:
 
-\begin{equation}
-    \begin{matrix}
-        c_{V} = \frac{3}{2}R\\
-        c_{p} = \frac{5}{2}R
-    \end{matrix}
-\end{equation}
+\begin{align*}
+        c_{V} &= \frac{3}{2}R\\
+        c_{p} &= \frac{5}{2}R
+\end{align*}
 
 \subsection{Magnetic susceptibility}
 
 For magnetic systems we have the relation:
 
-\begin{equation}
-    \mathsf{dW} = \mu_{0}\mathsf{H}\mathsf{dM}
-\end{equation}
+\begin{equation*}
+    dW = \mu_{0}H\,dM
+\end{equation*}
 
-where $\mathsf{M}$ denotes the magnetic moment. Magnetisation is the magnetic moment per unit volume:
+where $M$ denotes the magnetic moment. Magnetisation is the magnetic moment per unit volume:
 
-\begin{equation}
-    \mathsf{m} = \frac{\mathsf{M}}{V}
-\end{equation}
+\begin{equation*}
+    m = \frac{M}{V}
+\end{equation*}
 
 The magnetic susceptibilities at constant temperature and the adiabatic one may be calculated:
 
-\begin{equation}
-    \begin{matrix}
-        \chi_{T} = \frac{1}{\mu_{0}}\left(\frac{\partial\mathsf{M}}{\partial\mathsf{H}}\right)_{T}\\
-        \chi_{S} = \frac{1}{\mu_{0}}\left(\frac{\partial\mathsf{M}}{\partial\mathsf{H}}\right)_{S}
-    \end{matrix}
-\end{equation}
+\begin{align*}
+        \chi_{T} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{T}\\
+        \chi_{S} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{S}
+\end{align*}
 
 \section{The Dirac and Klein--Gordon equations; the form of the equations and examples of objects governed by each of them}
 
 The Klein--Gordon equation may be derived by using the representation of energy and momentum as operators: $E \xrightarrow[]{} i\hbar \frac{\partial}{\partial t}$ and $\vec{p}\xrightarrow[]{} - i\hbar\nabla$. Substituting the operators so obtained into the relativistic energy relation:
 
-\begin{equation}
+\begin{equation}\label{eq:rel-energy}
     E^2 = p^2c^2 + m^2c^4
 \end{equation}
 
 we obtain:
 
-\begin{equation}
+\begin{equation}\label{eq:klein-gordon}
     \left( \Box + \frac{m^2c^2}{\hbar^2}  \right)\psi(\vec{r},t) = 0
 \end{equation}
 
@@ -520,9 +537,9 @@ This equation describes scalar or pseudoscalar particles of zero spin. The simpl
 % source; treat the numerical form with caution.
 One of the applications of the Klein--Gordon equation is the determination of the increase of the mass of an electron in the field of an electromagnetic wave $A$ of field energy density $\rho$.
 
-\begin{equation}
+\begin{equation*}
     M^2 = m_0^2 + \frac{\hbar^3e^2\rho}{\omega c^2} \qquad \merr
-\end{equation}
+\end{equation*}
 
 It is worth noting that when the mass $m_0$ is formally equal to zero, i.e.\ the Klein--Gordon equation describes a massless particle, this particle acquires a mass through the interaction with the electromagnetic field $A$ alone.
 
@@ -530,24 +547,24 @@ It is worth noting that when the mass $m_0$ is formally equal to zero, i.e.\ the
 
 The Dirac equation for a free particle takes the form:
 
-\begin{equation}
+\begin{equation}\label{eq:dirac}
 (i\hbar \gamma^{\mu}\partial_{\mu} - mc)\Psi(x^{\nu}) = 0
 \end{equation}
 
-where $\gamma^{\mu}$ are the Dirac gamma matrices and $\partial_{\mu}$ are the components of the four-gradient. The Dirac matrices must satisfy the relation $\{\gamma^{\mu},\gamma^{\nu}\} = 2g^{\mu \nu }I$, where the most common representation is: % NOTE: in the source the anticommutator braces were not escaped and did not render.
+where $\gamma^{\mu}$ are the Dirac gamma matrices and $\partial_{\mu}$ are the components of the four-gradient. The Dirac matrices must satisfy the relation $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu \nu }I$, where the most common representation is:
 
-\begin{align}
-    \gamma^0 =
+\begin{align*}
+    \gamma^0 &=
     \begin{pmatrix}
         I & 0\\
         0 & -I
     \end{pmatrix}\\
-    \gamma^i =
+    \gamma^i &=
     \begin{pmatrix}
         0 & \sigma_i\\
         -\sigma_i & 0
     \end{pmatrix}
-\end{align}
+\end{align*}
 
 where $\sigma_i$ are the Pauli matrices. The equation is valid for particles of arbitrarily large energies (so-called relativistic particles) with spin 1/2 (fermions, e.g.\ electrons, quarks), both free and interacting with the electromagnetic field. The existence of spin follows from the very requirement of relativistic invariance of the equation of motion of particles. The Dirac equation was confirmed in relation to the fine structure of the spectrum of the hydrogen atom, showing excellent agreement with measurements. It predicts the existence of antiparticles.
 
@@ -603,7 +620,7 @@ The largest stars, when they end their lives, explode as supernovae. In this pro
 
 A \textbf{thermonuclear reaction} is a phenomenon consisting in the joining of two lighter nuclei into one heavier nucleus. As a result of the exothermic reaction the energy released (in the form of the kinetic energy of the products and gamma radiation) is dissipated on the surrounding atoms and is transformed into thermal energy. The energy released during the reaction may be determined without carrying out the reaction, on the basis of the mass defect, that is, the difference of the masses of the reactants and the products of the reaction.
 
-In not overly massive main-sequence stars the basic reaction is the synthesis of the helium nucleus. For synthesis to occur, the hydrogen nuclei (protons) must approach within the range of the nuclear interaction (about $1\,\mathrm{fm} = 10^{-15}$~m). The protons, however, repel one another electrostatically, and must therefore overcome a potential barrier of value about $E = 1$~MeV. Such thermal energy is possessed by particles at a temperature of $10^{10}$~K. Such a high temperature does not exist inside stars, but the course of the phenomenon at a lower temperature is explained by the tunnelling phenomenon.
+In not overly massive main-sequence stars the basic reaction is the synthesis of the helium nucleus. For synthesis to occur, the hydrogen nuclei (protons) must approach within the range of the nuclear interaction (about $1\,\mathrm{fm} = 10^{-15}$~m). The protons, however, repel one another electrostatically, and must therefore overcome a potential barrier of value about $E = 1$~MeV. Such thermal energy is possessed by particles at a temperature of $10^{10}$~K. Such a high temperature does not exist inside stars, but the course of the phenomenon at a lower temperature is explained by the tunnelling phenomenon (\cref{sec:tunnelling}).
 
 \subsection{The proton--proton chain}
 

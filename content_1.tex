@@ -1,5 +1,7 @@
 % !TeX root = main.tex
+
 \section{Inertial frames, principles of relativity, the Galilean transformation, the Lorentz transformation and its consequences}
+\label{sec:inertial-frames}
 
 An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion. An inertial frame of reference may equivalently be defined as a frame in which no fictitious inertial forces appear.
 
@@ -7,7 +9,7 @@ The Galilean principle of relativity states that the laws of motion are identica
 
 Einstein additionally postulated that in every inertial frame of reference the speed of light must have the same value. He based this assumption on an analysis of the transformations that leave Maxwell's equations invariant. The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate.
 
-Consider two frames of reference: the first at rest and the second---the primed one---moving with velocity $v$ along the $x$ axis. The Lorentz transformation between these two frames takes the following form: 
+Consider two frames of reference: the first at rest and the second---the primed one---moving with velocity $v$ along the $x$ axis. The Lorentz transformation between these two frames takes the following form:
 
 \begin{align*}
     t' &= \frac{t-xv/c^2}{\sqrt{1-v^2/c^2}} \\
@@ -24,12 +26,14 @@ The following notation may also be adopted:
 
 which yields:
 
-\begin{align}
-    t' &= \gamma\cdot(t-xv/c^2) \\
-    x' &= \gamma\cdot(x-tv) \\
+\begin{equation}\label{eq:lorentz}
+\begin{aligned}
+    t' &= \gamma\left(t-xv/c^2\right) \\
+    x' &= \gamma\left(x-tv\right) \\
     y' &= y \\
     z' &= z
-\end{align}
+\end{aligned}
+\end{equation}
 
 The parameter $\gamma$ is also known as the Lorentz factor, and strictly: $\gamma > 1$. Note that in the limit $c \xrightarrow{} \infty$ the transformation reduces to the Galilean transformation.
 
@@ -41,7 +45,7 @@ The consequences of the Lorentz transformation include:
     \item Relativity of simultaneity: two events determined by one observer to be simultaneous need not be simultaneous for another observer. Simultaneity translates to other frames only for the events that happen at the same point in space.
     \item The description of vector quantities in four dimensions. Position, momentum and potential are described respectively by a four-vector, a four-momentum and a four-potential. For example:
     % Four-momentum as an explicit column vector
-    \begin{equation}
+    \begin{equation*}
         p^{\mu} =
         \begin{bmatrix}
             p^{0} \\ p^{1} \\ p^{2} \\ p^{3}
@@ -50,8 +54,8 @@ The consequences of the Lorentz transformation include:
         \begin{bmatrix}
             E/c \\ p_x \\ p_y \\ p_z
         \end{bmatrix}
-    \end{equation}
-    
+    \end{equation*}
+
 \end{enumerate}
 
 \section{Fundamental interactions; carriers and range of interactions, charges and characteristic energy scales}
@@ -85,6 +89,12 @@ gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & s=2 \\
 \end{table}
 
 \todo{Rewrite this section and verify claims}
+% NOTE: the relation used here is the energy--time uncertainty relation; it is
+% heuristic and distinct from the Robertson relation \cref{eq:uncertainty}.
+% The \merr is retained from the source.
+% CLARITY: for a weaker-QM reader it is worth one plain sentence --- "a state
+% that exists only for a short time cannot have a sharply defined energy" ---
+% before invoking the formula.
 It follows from the Heisenberg uncertainty principle, $\Delta E \Delta t \geq \frac{\hbar}{2}$\merr, that field quanta may exist for a finite time, set by the magnitude of these energies, such that the product of these quantities is of the order of the Planck constant. The uncertainty principle allows the range of an interaction to be estimated, this range depending on the rest mass of the carrier particle. The masslessness of photons, as well as the expected masslessness of gravitons, is on this account the reason why these forces are long-ranged. Particles of zero energy, and hence of zero rest mass, would have infinite range.\merr
 
 Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.385 \pm 0.015$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
@@ -104,14 +114,14 @@ The symmetries of physical systems are closely connected with conservation laws.
 \subsection{Noether's theorem}
 In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
 
-Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action \( S \) is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
+Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action $S$ is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
 \begin{equation}\label{eq:action}
 S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
 \end{equation}
-where \( \Lagr \) is the Lagrangian of the system,
-\begin{equation}
+where $\Lagr$ is the Lagrangian of the system,
+\begin{equation*}
 \Lagr \equiv T-V,
-\end{equation}
+\end{equation*}
 where $T$ is the kinetic energy and $V$ is the potential energy of the system.
 The dynamics of the system are governed by the Euler--Lagrange equation,
 \begin{equation}\label{eq:euler-lagr}
@@ -123,18 +133,20 @@ where $q$ is some coordinate relevant to the system. This is consistent with cla
 
 \subsubsection{Conservation of energy}
 
-Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian \( \Lagr \) does not depend explicitly on time,
+Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian $\Lagr$ does not depend explicitly on time,
 \begin{equation*}
     \frac{\partial \Lagr}{\partial t} = 0,
 \end{equation*}
 then the energy of the system is conserved. Using this together with \cref{eq:euler-lagr} leads to
 \begin{equation*}
-\frac{\partial L}{\partial \dot{q}}\,\dot{q} - L = \text{const} = \Ham,
+\frac{\partial \Lagr}{\partial \dot{q}}\,\dot{q} - \Lagr = \const = \Ham,
 \end{equation*}
+% NOTE: source wrote plain L here; changed to \Lagr for consistency with the
+% rest of the section.
 which is the Hamiltonian,
-\begin{equation}
+\begin{equation*}
     \Ham \equiv T + V,
-\end{equation}
+\end{equation*}
 which corresponds to the total energy of the system.
 
 \subsubsection{Conservation of momentum}
@@ -149,22 +161,22 @@ then inserting this into \cref{eq:euler-lagr} leads to
 \end{equation*}
 so that the momentum is conserved,
 \begin{equation*}
-\vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \text{const}.
+\vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \const.
 \end{equation*}
 
 \subsubsection{Conservation of angular momentum}
 
-Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation \( \delta\vec{\phi} \), for which \( \delta\vec{r} = \delta\vec{\phi} \times \vec{r} \) and \( \delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}} \), then
+Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation $\delta\vec{\phi}$, for which $\delta\vec{r} = \delta\vec{\phi} \times \vec{r}$ and $\delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}}$, then
 \begin{equation*}
 \delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
 \end{equation*}
-Using \cref{eq:euler-lagr} together with \( \vec{p} = \partial \Lagr / \partial \dot{\vec{r}} \) leads to
+Using \cref{eq:euler-lagr} together with $\vec{p} = \partial \Lagr / \partial \dot{\vec{r}}$ leads to
 \begin{equation*}
 \delta\vec{\phi} \cdot \frac{d}{dt}\left( \vec{r} \times \vec{p} \right) = 0,
 \end{equation*}
-and since \( \delta\vec{\phi} \) is arbitrary, the angular momentum is conserved,
+and since $\delta\vec{\phi}$ is arbitrary, the angular momentum is conserved,
 \begin{equation*}
-\vec{L} \equiv \vec{r} \times \vec{p} = \text{const}.
+\vec{L} \equiv \vec{r} \times \vec{p} = \const.
 \end{equation*}
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
@@ -175,6 +187,9 @@ Newton's laws of motion are three laws lying at the foundation of classical mech
 
 In an inertial frame of reference, if no force acts on a body, or if the acting forces balance one another, then the body remains at rest or moves in uniform rectilinear motion.
 
+% NOTE: this definition of an inertial frame repeats the one in
+% \cref{sec:inertial-frames}. Kept here so the answer stands alone for oral
+% delivery, but you may prefer to replace it with a cross-reference.
 An inertial frame is a frame of reference with respect to which every body not subject to external interactions with other bodies moves without acceleration (i.e.\ in uniform rectilinear motion) or remains at rest.
 
 The first law assumes the existence of an inertial frame of reference but does not indicate how such a frame is to be sought, and it is therefore a postulate of the existence of an inertial frame of reference, and is formulated as follows:
@@ -185,16 +200,16 @@ The first law assumes the existence of an inertial frame of reference but does n
 
 If an unbalanced force acts on a body, then the body moves with an acceleration directly proportional to the force and inversely proportional to the mass of the body.
 
-\begin{equation}
+\begin{equation}\label{eq:newton2}
 \vec{F} = m \vec{a},
 \end{equation}
-where \(\vec{F}\) --- the force, \(m\) --- the mass, \(\vec{a}\) --- the acceleration.
+where $\vec{F}$ --- the force, $m$ --- the mass, $\vec{a}$ --- the acceleration.
 
 \subsection{Newton's third law}
 
 Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, opposite directions, and different points of application (each acts on a different body).
 
-\begin{equation}
+\begin{equation}\label{eq:newton3}
 \vec{F}_{12} = -\vec{F}_{21}
 \end{equation}
 
@@ -205,21 +220,22 @@ In classical mechanics, Newton's third law and the law of conservation of moment
 Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used.
 In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{eq:action}), work better.
 
-Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories. 
+Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories.
 
 All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers the results of quantum mechanics must agree with the classical ones. In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always striclty the case and some pheonmena are inherently quantum.
 
 Moreover, Newton assumed that time must be absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galillean transformatiions are replaced by the Lorentz transformations and they agreee only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
 
 \section{The postulates of quantum mechanics; measurement, state of a physical system}
+\label{sec:postulates}
 
 \subsection{The photon hypothesis and its consequences}
 
 \begin{itemize}
     \item \textbf{Light and matter transfer energy to one another in finite portions}
-    \begin{equation}
+    \begin{equation*}
     E = \hbar\omega
-    \end{equation}
+    \end{equation*}
     \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
     \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
     \item \textbf{Systems with several degrees of freedom.} If a physical system possesses more than one degree of freedom (for instance, a single photon is characterised not only by position but also by polarisation; one may also consider systems composed of a larger number of particles), then to each degree of freedom there corresponds a separate Hilbert space $H_{i}$, while the Hilbert space of the total system has the structure of a tensor product of the Hilbert subspaces corresponding to the subsystems: $H =\otimes_{i}H_{i}$. The dimension of the total Hilbert space is therefore the product, and not the sum, of the dimensions of all the subspaces.
@@ -235,15 +251,18 @@ The probability amplitude of a process (for example, one consisting in a photon 
 
 \begin{itemize}
     \item \textbf{Observables.} A physical measurement may give many different outcomes, corresponding to finding the system in one of the possible states $\phi_{k}$. If to each of the possible outcomes we assign some real measured value $a_{k} \in \mathbb{R}$, obtained with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$, then the mean measurement outcome is obtained from the classical formula of probability theory: % NOTE: the source has a malformed bra-ket here; corrected to |<phi_k|psi>|^2.
+    % CLARITY: this running expression is dense for a first read. Consider
+    % breaking the final chain out into its own display equation, and defining
+    % the projector \ket{\phi_k}\bra{\phi_k} in one plain sentence.
     (mean measurement outcome) $= \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\left(\sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}\right)\ket{\psi}$, where $\ket{\psi_{k}}\bra{\psi_{k}}$ is the projection operator onto the state $\ket{\psi_{k}}$. To every possible observable, that is, to every physical quantity that can be measured on the system and that leads exclusively to real measurement outcomes, there corresponds some Hermitian operator $\hat{A} = \hat{A}^{\dag}$. In the case of an observable giving the possible numerical outcomes $a_{k}$, corresponding to finding the system in the corresponding states $\ket{\psi_{k}}$, this operator is:
     \todo{Make clear; not understandable}
-    \begin{equation}
+    \begin{equation*}
         \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}
-    \end{equation}
+    \end{equation*}
     The mean value of the observable so defined takes the form:
-    \begin{equation}
-        \langle\hat{A}\rangle = \braket{\psi|\hat{A}|\psi}
-    \end{equation}
+    \begin{equation*}
+        \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}
+    \end{equation*}
 \end{itemize}
 
 \subsection{Time evolution of the quantum state}
@@ -252,16 +271,19 @@ The probability amplitude of a process (for example, one consisting in a photon 
     \item \textbf{Unitarity of the evolution.} Consider two distinguishable, and hence orthogonal, quantum states $\psi$ and $\phi$ prepared at the initial instant. We adopt as a postulate the thesis that under the passage of time these states will remain fully distinguishable. Since the degree of distinguishability of two states is given by the amplitude $\braket{\phi|\psi}$, we shall assume in general that the evolution of quantum states does not change the scalar products between the corresponding vectors.
     \todo{Make clear; not understandable}
     \item \textbf{Evolution equation of the quantum state vector}
-    \begin{equation}
+    % NOTE: this is the Schrodinger equation; its labelled "home" is
+    % \cref{eq:schrodinger} in content_2. Kept unlabelled here to avoid a
+    % duplicate label.
+    \begin{equation*}
         i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
-    \end{equation}
+    \end{equation*}
     In the case of a time-independent Hamiltonian:
-    \begin{equation}
-        \hat{H}\ket{\psi\left(r\right)} = \mathsf{E}\ket{\psi\left(r\right)}
+    \begin{equation}\label{eq:tise}
+        \hat{H}\ket{\psi\left(r\right)} = E\ket{\psi\left(r\right)}
     \end{equation}
-    \begin{equation}
-        \ket{\psi\left(r,t\right)} = e^{-\frac{i}{\hbar}\mathsf{E}t}\ket{\psi\left(r\right)}
-    \end{equation}
+    \begin{equation*}
+        \ket{\psi\left(r,t\right)} = e^{-\frac{i}{\hbar}Et}\ket{\psi\left(r\right)}
+    \end{equation*}
 \end{itemize}
 
 \subsection{The wave function}
@@ -269,61 +291,61 @@ The probability amplitude of a process (for example, one consisting in a photon 
 The wave function is a mathematical description of the quantum state. It takes complex values, and its squared modulus has the interpretation of a probability density over the space on which it is defined.
 
 % NOTE: the source has \int_{b}^{b}; the lower limit should be a.
-\begin{equation}
+\begin{equation*}
     P_{a \le x \le b}\left(t\right) = \int^{b}_{a}|\Psi(x,t)|^{2}dx
-\end{equation}
+\end{equation*}
 
 The wave function satisfies a normalisation condition:
 
-\begin{equation}
+\begin{equation*}
     \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1
-\end{equation}
+\end{equation*}
 
 Knowing the form of the wave function, the quantum state vector may be determined:
 
-\begin{equation}
+\begin{equation*}
     \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
-\end{equation}
+\end{equation*}
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
 
 The classical angular momentum is defined as:
 
-\begin{equation}
+\begin{equation*}
     \vec{L} = \sum_i \vec{r}_i \times \vec{p}_i
-\end{equation}
+\end{equation*}
 
 where $r$ is the position and $p$ the momentum of the $i$-th element of the system.
 
 In quantum mechanics the orbital angular momentum is defined as an operator composed of three components and given by the formula
 
-\begin{equation}
+\begin{equation*}
     \hat{L} = -i\hbar(\hat{r}\times \nabla),
-\end{equation}
+\end{equation*}
 
-where 
-\begin{equation}
-    \nabla \equiv    
+where
+\begin{equation*}
+    \nabla \equiv
                     \begin{bmatrix}
                     \frac{\partial}{\partial x} \\[1ex] \frac{\partial}{\partial y} \\[1ex] \frac{\partial}{\partial z}
                     \end{bmatrix}.
-\end{equation}
+\end{equation*}
 
-A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes. 
-\begin{equation}
-    \hat{S} \equiv      
+A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes.
+\begin{equation*}
+    \hat{S} \equiv
                     \begin{bmatrix}
                     S_{x} \\ S_{y} \\ S_{z}
                     \end{bmatrix}.
-\end{equation}
+\end{equation*}
 
 The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.
 
-\begin{equation}
+\begin{equation*}
     \hat{J} = \hat{L} + \hat{S}.
-\end{equation}
+\end{equation*}
 
-Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L_z}\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
+Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L}_z\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
 
 \subsection{Classical precession}
 
@@ -333,19 +355,20 @@ The angular momentum $\vec{L}$ of the spinning body points along its spin axis. 
 
 The precession frequency is given by
 
-\begin{equation}
+\begin{equation*}
     \omega_p = \frac{\tau}{I_s\omega_s\sin(\theta)}
-\end{equation}
+\end{equation*}
 
 where $\tau$ is the torque, $I_s$ the moment of inertia, $\omega_s$ the spin angular velocity, and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
 
 \subsection{Quantum precession}
+\label{subsec:quantum-precession}
 
 A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$ --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
-\begin{equation}
+\begin{equation*}
     \vec{\tau} = \vec{\mu}\times \vec{B},
-\end{equation}
+\end{equation*}
 
 which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is Larmor precession, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
 
@@ -360,13 +383,13 @@ A variational principle expresses the equations of motion as a condition on an e
 
 The idea originates in optics, with Fermat's principle that light takes the path of least travel time between two points. Its migration into mechanics grew from the brachistochrone problem (Johann Bernoulli, 1696): the curve down which a bead slides under gravity from one point to another in the \textit{least time} --- a cycloid, notably not the straight line, which only minimises \textit{length}. Extremising such quantities systematically required the calculus of variations, developed by Euler and Lagrange.
 
-For a mechanical system the action is the time integral of the \textbf{Lagrangian} $\Lagr = T - V$ (kinetic minus potential energy), as given in eq.~\ref{eq:action}. Requiring the first variation to vanish, $\delta S = 0$, singles out the stationary paths and yields the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). This reproduces Newton's second law, but written in arbitrary \textit{generalised coordinates} $q_i$ --- any convenient parameters fixing the configuration --- which is what makes the formalism so powerful for constrained or awkward systems.
+For a mechanical system the action is the time integral of the \textbf{Lagrangian} $\Lagr = T - V$ (kinetic minus potential energy), as given in \cref{eq:action}. Requiring the first variation to vanish, $\delta S = 0$, singles out the stationary paths and yields the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). This reproduces Newton's second law, but written in arbitrary \textit{generalised coordinates} $q_i$ --- any convenient parameters fixing the configuration --- which is what makes the formalism so powerful for constrained or awkward systems.
 
 A Legendre transformation trades the velocities $\dot q_i$ for momenta and leads to the Hamiltonian formulation, built on $\Ham = T + V$, the total energy, which is the natural starting point for statistical physics and quantum mechanics. Carrying the variational idea further and regarding the action as a function of its endpoint gives the Hamilton--Jacobi equation,
 
-\[
+\begin{equation}\label{eq:hamilton-jacobi}
 \Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
-\]
+\end{equation}
 
 which is strikingly close in form to the Schrödinger equation and is the natural classical gateway to wave mechanics (here $S$ is Hamilton's principal function, equal in value to the action). The quantum counterpart, Feynman's path integral, assigns every trajectory a probability amplitude and recovers the classical, stationary-action path in the appropriate limit.
 
@@ -382,9 +405,9 @@ If systems A and B, capable of exchanging heat with one another, are in thermal 
 
 The change in the internal energy of a system is equal to the sum of the heat supplied and the work done on the system.
 
-\begin{equation}
-    \Delta\mathsf{U} = \mathsf{W} + \mathsf{Q}
-\end{equation}
+\begin{equation*}
+    \Delta U = W + Q
+\end{equation*}
 
 \subsection{The second law of thermodynamics}
 
@@ -399,6 +422,7 @@ The change in the internal energy of a system is equal to the sum of the heat su
 The Nernst heat theorem: \textit{It is not possible, by means of a finite number of steps, to attain the temperature of absolute zero (zero kelvin) if we take a non-zero absolute temperature as our starting point.}
 
 \section{Mechanical properties of material media: liquids, elastic media, mechanical waves}
+\label{sec:mechanical-media}
 
 Liquids are substances intermediate between a gas and a solid, having an easily variable shape but little compressibility. The properties of a liquid follow from the behaviour of its molecules:
 
@@ -434,9 +458,9 @@ Let us begin by defining the assumptions of the problem. It is an example from t
 
 Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
 
-\[
-\frac{v^2}{2} + gz + \frac{p}{\rho} = const
-\]
+\begin{equation}\label{eq:bernoulli}
+\frac{v^2}{2} + gz + \frac{p}{\rho} = \const
+\end{equation}
 
 % NOTE: the source's explanation of the hydrodynamic paradox is garbled and
 % repeats the term twice; retained as written.
@@ -446,52 +470,55 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
 \subsection{Maxwell's equations in vacuum}
 
-\begin{equation}
-    \begin{matrix}
-    \nabla \vec{E} = \frac{\rho}{\epsilon_{0}}\\
-    \nabla \vec{B} = 0\\
-    \nabla\times\vec{E} = -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} = \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-    \end{matrix}
+% NOTE: the \nabla\cdot dot products for the divergence terms were missing in
+% the source (written \nabla\vec E); inserted here throughout the Maxwell
+% blocks so the operators read as divergence and curl.
+\begin{equation}\label{eq:maxwell-vacuum}
+\begin{aligned}
+    \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_{0}}\\
+    \nabla \cdot \vec{B} &= 0\\
+    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+    \nabla\times\vec{B} &= \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
+\end{aligned}
 \end{equation}
 
 \subsection{Maxwell's equations in terms of free currents and charges}
 
 We define the electric displacement field $\vec{D}$ and the magnetic field strength $\vec{H}$ as:
 
-\begin{equation}
-    \begin{matrix}
-        \vec{D} = \epsilon_{0}\vec{E} + \vec{P}\\
-        \vec{H} = \frac{1}{\mu_{0}}\vec{B} - \vec{M}
-    \end{matrix}
+\begin{equation}\label{eq:constitutive-DH}
+\begin{aligned}
+        \vec{D} &= \epsilon_{0}\vec{E} + \vec{P}\\
+        \vec{H} &= \frac{1}{\mu_{0}}\vec{B} - \vec{M}
+\end{aligned}
 \end{equation}
 
 Maxwell's equations may then be rewritten as
 
-\begin{equation}
-    \begin{matrix}
-    \nabla \vec{D} = \rho_{f}\\
-    \nabla \vec{B} = 0\\
-    \nabla\times\vec{E} = -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{H} = \vec{J}_{f} + \frac{\partial\vec{D}}{\partial t}
-    \end{matrix}
+\begin{equation}\label{eq:maxwell-media}
+\begin{aligned}
+    \nabla \cdot \vec{D} &= \rho_{f}\\
+    \nabla \cdot \vec{B} &= 0\\
+    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+    \nabla\times\vec{H} &= \vec{J}_{f} + \frac{\partial\vec{D}}{\partial t}
+\end{aligned}
 \end{equation}
 
 \subsection{The vector potential of the electromagnetic field}
 
 The magnetic vector potential $\vec{A}$ is a three-dimensional vector field whose curl is the magnetic field.
 
-\begin{equation}
+\begin{equation*}
     \vec{B} = \nabla\times\vec{A}
-\end{equation}
+\end{equation*}
 
 \subsection{The scalar potential of the electromagnetic field}
 
 For time-dependent potentials the electric field may be written in the form:
 
-\begin{equation}
+\begin{equation*}
     \vec{E} = -\nabla\Phi - \frac{\partial\vec{A}}{\partial t}
-\end{equation}
+\end{equation*}
 
 where $\Phi$ is the electric potential.
 
@@ -501,9 +528,9 @@ where $\Phi$ is the electric potential.
 
 Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. The polarisation vector arising as a result of the action of the external field may, in the linear approximation, be written as:
 
-\begin{equation}
+\begin{equation*}
     \vec{P} = \varepsilon_0\chi\vec{E}
-\end{equation}
+\end{equation*}
 
 Dielectric polarisation is the result of several basic phenomena:
 
@@ -511,9 +538,9 @@ Dielectric polarisation is the result of several basic phenomena:
 
 Electronic polarisation is the result of the displacement, under the influence of an electric field, of the negatively charged electron clouds with respect to the positive nuclei. It occurs in all materials. It is a very fast process, and therefore, when investigated with an alternating electric field, the effects associated with it are observed up to frequencies corresponding to the ultraviolet. The dipole moment $p_e$ is determined by the electronic polarisability $\alpha_e$:
 
-\begin{equation}
+\begin{equation*}
     p_e = \alpha_e \cdot E
-\end{equation}
+\end{equation*}
 
 \paragraph{Ionic polarisation}
 
@@ -527,15 +554,17 @@ Orientational polarisation, also called dipolar polarisation, occurs only in pol
 
 Conduction is the phenomenon of the flow of electric charges occurring in a material under the influence of an electric field. The quantity characterising electrical conduction is the conductivity $\sigma$:
 
-\begin{equation}
+\begin{equation*}
     \sigma = q n \mu
-\end{equation}
+\end{equation*}
 
 where $q$ is the charge of the carriers, $n$ their concentration and $\mu$ the carrier mobility. The mobility of the carriers depends on the applied field and on the drift velocity. Temperature is one of the factors affecting conductivity. A change in temperature may affect a change both in the concentration and in the mobility of the carriers. The most common types of conduction are: electronic, where the charge carriers are electrons, hole conduction, where the charge carriers are electrons moving in the valence band, and ionic, where the charge carriers are ions.
 
 \section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
 
 On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field:
+% NOTE: the first line below repeats the definition of \vec{H} from
+% \cref{eq:constitutive-DH}.
 
 \begin{align*}
     \vec{H} &= \frac{1}{\mu_0}\vec{B} - \vec{M} \\
@@ -559,7 +588,7 @@ The most common group, characterised by positive magnetic susceptibility and hen
 Diamagnetism is the phenomenon of inducing a magnetisation opposite to the magnetic field strength, which may be expressed by a negative susceptibility. It occurs in every material, but is usually weaker than paramagnetism, and therefore we classify as diamagnets those media in which it is the dominant effect. Thus the condition is usually that all electrons be paired. A special case is that of superconductors, which expel the magnetic field completely through the Meissner effect, while the remainder are described by:
 
 \begin{itemize}
-    \item Langevin diamagnetism --- describes the diamagnetism of dielectrics, where electrons under the influence of an external field begin to circulate, which is called Larmor precession. A charge moving in a circle is de facto a loop through which a current flows, which effectively gives a magnetic moment of opposite direction.
+    \item Langevin diamagnetism --- describes the diamagnetism of dielectrics, where electrons under the influence of an external field begin to circulate, which is called Larmor precession (see \cref{subsec:quantum-precession}). A charge moving in a circle is de facto a loop through which a current flows, which effectively gives a magnetic moment of opposite direction.
     \item Landau diamagnetism --- similarly, it considers the Fermi gas in metals, except that in this case the orbital moment, and not the spin of the particles, is taken into account.
 \end{itemize}
 
@@ -573,63 +602,63 @@ It is also worth mentioning the existence of antiferromagnets and ferrimagnets. 
 
 \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
-Let us recall the general Maxwell equations:
+Let us recall the general Maxwell equations (\cref{eq:maxwell-vacuum}):
 
-\begin{equation}
-    \begin{matrix}
-    \nabla \vec{E} = \frac{\rho}{\epsilon_{0}}\\
-    \nabla \vec{B} = 0\\
-    \nabla\times\vec{E} = -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} = \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-    \end{matrix}
-\end{equation}
+\begin{equation*}
+\begin{aligned}
+    \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_{0}}\\
+    \nabla \cdot \vec{B} &= 0\\
+    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+    \nabla\times\vec{B} &= \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
+\end{aligned}
+\end{equation*}
 
 We shall find an electromagnetic wave that is a solution of this system of equations in vacuum, that is, when $\rho = 0$ and $\vec{J} = 0$. The equations then take the following form:
 
-\begin{equation}
-    \begin{matrix}
-    \nabla \vec{E} = 0\\
-    \nabla \vec{B} = 0\\
-    \nabla\times\vec{E} = -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} = \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-    \end{matrix}
-\end{equation}
+\begin{equation*}
+\begin{aligned}
+    \nabla \cdot \vec{E} &= 0\\
+    \nabla \cdot \vec{B} &= 0\\
+    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+    \nabla\times\vec{B} &= \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
+\end{aligned}
+\end{equation*}
 
 We take the curl of the third and fourth Maxwell equations. Consider the third equation:
 
-\begin{equation}
+\begin{equation*}
     \nabla\times\left(\nabla\times\vec{E}\right) = -\nabla\times\left(\frac{\partial\vec{B}}{\partial t}\right)
-\end{equation}
+\end{equation*}
 
 We make use of the $\vec{BAC}-\vec{CAB}$ identity:
 
-\begin{equation}
+\begin{equation*}
     \vec{A}\times\left(\vec{B}\times\vec{C}\right) = \vec{B}\cdot\left(\vec{A}\cdot\vec{C}\right) - \vec{C}\cdot\left(\vec{A}\cdot\vec{B}\right)
-\end{equation}
+\end{equation*}
 
 The left-hand side of the third Maxwell equation:
 
-\begin{equation}
+\begin{equation*}
     \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\vec{E} = -\Delta\vec{E}
-\end{equation}
+\end{equation*}
 
 The right-hand side of the third Maxwell equation:
 
-\begin{equation}
+\begin{equation*}
     \mathrm{RHS} = -\nabla\times\left(\frac{\partial\vec{B}}{\partial t}\right) = - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = -\mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}}
-\end{equation}
+\end{equation*}
 
 Equating both sides we obtain:
 
-\begin{equation}
+\begin{equation}\label{eq:em-wave}
     \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = 0
 \end{equation}
 
 We proceed analogously with the fourth Maxwell equation and find the equation for $\vec{B}$.
 
-\begin{equation}
+\begin{equation*}
     \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
-\end{equation}
+\end{equation*}
 
 From the above two equations it follows that the speed of propagation of an electromagnetic wave in vacuum is $c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}$.
 
@@ -643,7 +672,7 @@ Polarisation is a property of a transverse wave concerning the ordered relation 
 
 \textbf{The law of refraction.} The law of refraction (Snell's law) states that the incident and refracted rays and the normal to the surface lie in one plane, and that the angles satisfy the relation:
 
-\begin{equation}
+\begin{equation}\label{eq:snell}
     \frac{\sin{\theta_{1}}}{\sin{\theta_{2}}} = \frac{n_{2}}{n_{1}}
 \end{equation}
 
@@ -651,7 +680,7 @@ where $n_{1}$ is the refractive index of the first medium, $n_{2}$ the refractiv
 
 \textbf{The Brewster angle} --- the angle of incidence of light on the surface of a dielectric at which the reflected ray is completely linearly polarised. When unpolarised light falls on the boundary between transparent media at such an angle that the reflected and refracted rays form a right angle, the reflected light is completely polarised. The Brewster angle is given by the formula:
 
-\begin{equation}
+\begin{equation}\label{eq:brewster}
     \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}}
 \end{equation}
 
@@ -665,15 +694,15 @@ where $n_{1} < n_{2}$, and the light is incident on the interface from the side 
 
 In the case where the observer is moving, the wave speed is effectively changed
 
-\begin{equation}
+\begin{equation*}
     f' = \frac{V_{o} + V}{\lambda} = \frac{V}{\lambda}\frac{V_{o} + V}{V} = f\frac{V_{o} + V}{V}
-\end{equation}
+\end{equation*}
 
 where $f$ is the frequency of the wave emitted by the source and $V_{o}, V$ are the velocities of the observer and of the wave. In this convention an observer approaching the source has a velocity of positive sign. In the case where the source is moving, the wavelength emitted is effectively changed:
 
-\begin{equation}
+\begin{equation*}
     f' = \frac{V}{\lambda'} = \frac{V}{\lambda - V_{z}T} = \frac{V}{VT - V_{z}T} = f\frac{V}{V - V_{z}},
-\end{equation}
+\end{equation*}
 
 where $T$ is the period of the wave and $V_{z}$ is the velocity of the source. In this convention a source approaching the observer has a velocity of positive value.
 
@@ -681,13 +710,13 @@ where $T$ is the period of the wave and $V_{z}$ is the velocity of the source. I
 
 Here the effect is already a relativistic one. We take into account only the relative velocity, i.e.\ it does not matter whether the source (or the observer) is in motion. On passing from one frame of reference to another, for a source or observer receding from one another, the frequency of the wave is:
 
-\begin{equation}
+\begin{equation*}
     f' = f\frac{\sqrt{1-\beta^{2}}}{1+\beta}
-\end{equation}
+\end{equation*}
 
 where $\beta = \frac{v}{c}$. If the motion takes place at an angle $\phi$, then:
 
-\begin{equation}
+\begin{equation}\label{eq:doppler-em}
     f' = f\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}
 \end{equation}
 
@@ -696,21 +725,25 @@ For the angle $\phi = \frac{\pi}{2}$ the so-called transverse Doppler effect occ
 \section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
 
 Electromagnetic waves are described by the equation:
+% NOTE: this is the wave equation derived in \cref{eq:em-wave}.
 
-\begin{equation}
+\begin{equation*}
     \nabla^2\vec{E} = \mu_0 \varepsilon_0\frac{\partial^2}{\partial t^2}\vec{E}
-\end{equation}
+\end{equation*}
 
 For a plane wave propagating in the $z$ direction with angular frequency $\omega$ and wave number $k$, one of the solutions of the above equations is:
 
-\begin{equation}
+\begin{equation*}
     E(z,t) = E_0\cos \left( \omega t - kz  \right)
-\end{equation}
+\end{equation*}
 
 In quantum mechanics, electromagnetic radiation is described as a stream of photons---wave packets. The energy of a single photon depends on the oscillation frequency of the electromagnetic wave, $E = \hbar \omega$, while the momentum is described as $p = \hbar k$.
 
 Matter waves --- every material object may be described in two ways: as a collection of particles or as a wave. Effects confirming the wave nature of matter are observed in the form of the diffraction of elementary particles, and even of whole atomic nuclei. The formula for the de Broglie wavelength is $\lambda = \frac{h}{mv}$. It is relatively easy to observe wave effects in the case of light particles, e.g.\ electrons (small objects manifest wave properties). The diffraction and interference of electron waves are exploited in electron diffraction imaging and in low-energy electron diffraction. The above considerations concern the free motion of particles (to which plane waves would correspond). In real cases a certain group of matter waves, a so-called wave packet, must be assigned to the particle.
 
+% NOTE: this mechanical-waves paragraph repeats the description in
+% \cref{sec:mechanical-media}. Kept for standalone delivery; consider trimming
+% to a cross-reference if you want to shorten.
 Mechanical waves --- if we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium.
 
 All waves are subject to typically wave-like phenomena such as interference and diffraction, and satisfy the laws of reflection and refraction. As a result of superposition a standing wave may arise.
@@ -729,7 +762,9 @@ The aforementioned discontinuous changes of the parameters of the system at a ph
 
 The conditions for the coexistence of phases are given by the Gibbs phase rule. It states what the number of intensive parameters $f$ is that may be varied without changing the number of phases in equilibrium, and is given by:
 
-\[ f = s - r + 2 \]
+\begin{equation}\label{eq:gibbs-phase}
+f = s - r + 2
+\end{equation}
 
 where $s$ is the number of chemical substances and $r$ the number of phases. For the rule to be satisfied, the system must be in thermal, mechanical and chemical equilibrium. For example, for a single substance, $s=1$, we have:
 
