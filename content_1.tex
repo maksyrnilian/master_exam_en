@@ -368,29 +368,21 @@ A separate contribution appears when the particle is accelerated, and unlike Lar
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 
-Variational principles allow the equations of motion to be formulated by minimising a certain function called the action functional. The basic idea is that the actual trajectory of a physical system is the one that minimises (or renders stationary) the action $S$. A functional is a certain mapping from a vector space into $\mathbb{R}$, and the task of the calculus of variations is to find the extremum of such an action. The considerations born of variational principles created a tool which turned out to be easy to adapt to the description of quantum phenomena, and it is precisely in them that the theoretical foundations for their application may be sought. The trajectories that may be taken are associated with different probability amplitudes.
+A variational principle expresses the equations of motion as a condition on an entire trajectory rather than on the instantaneous state. Its central object is the \textbf{action} $S$, a \textit{functional}: a rule assigning a single real number to each candidate trajectory. The \textbf{principle of least action} states that the path a system actually follows is the one for which $S$ is \textbf{stationary} --- unchanged to first order under any small deformation of the path (a minimum in the simplest cases, whence the name).
 
-The aforementioned idea is called the principle of least action and has its beginnings as far back as antiquity, when it was stated that light travels along a trajectory that minimises distance and time simultaneously. This principle was carried over into the field of classical mechanics, in part from the brachistochrone problem. The puzzle formulated by Bernoulli consisted in determining the curve along which a rolling bead would reach a lower-lying point most quickly and by the shortest route. Years later, the particular solution led Lagrange to create a general analytical formalism permitting the equations of motion to be written in the calculus of variations, and the trajectories then to be determined. The action is here defined as the integral over time of the Lagrangian $\mathcal{L}$, which is the difference of the kinetic energy $T$ and the potential energy $V$:
+The idea originates in optics, with Fermat's principle that light takes the path of least travel time between two points. Its migration into mechanics grew from the brachistochrone problem (Johann Bernoulli, 1696): the curve down which a bead slides under gravity from one point to another in the \textit{least time} --- a cycloid, notably not the straight line, which only minimises \textit{length}. Extremising such quantities systematically required the calculus of variations, developed by Euler and Lagrange.
 
-\[
-S = \int_{t_1}^{t_2}\mathcal{L}dt = \int_{t_1}^{t_2}(T-V)dt
-\]
+For a mechanical system the action is the time integral of the \textbf{Lagrangian} $\Lagr = T - V$ (kinetic minus potential energy), as given in eq.~\ref{eq:action}. Requiring the first variation to vanish, $\delta S = 0$, singles out the stationary paths and yields the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). This reproduces Newton's second law, but written in arbitrary \textit{generalised coordinates} $q_i$ --- any convenient parameters fixing the configuration --- which is what makes the formalism so powerful for constrained or awkward systems.
 
-The principle of least action assumes that the action is stationary, that is, just as in the case of the extremum of a function, infinitesimally small deviations will not change the result. From this condition we obtain the variational principle for classical mechanics in the form of the Euler--Lagrange equation:
+A Legendre transformation trades the velocities $\dot q_i$ for momenta and leads to the Hamiltonian formulation, built on $\Ham = T + V$, the total energy, which is the natural starting point for statistical physics and quantum mechanics. Carrying the variational idea further and regarding the action as a function of its endpoint gives the Hamilton--Jacobi equation,
 
 \[
-\frac{d}{dt}\left(\frac{\partial \mathcal{L}}{\partial \dot q_i}\right) - \frac{\partial\mathcal{L}}{\partial q_i} = 0
+\Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
 \]
 
-where $q_i$ are the generalised coordinates and $\dot q_i$ the corresponding generalised velocities. The formalism created by Lagrange works excellently for calculating trajectories in complicated systems, especially on account of the generalised variables. By means of a Legendre transformation, on the other hand, one may pass over to Hamiltonian mechanics. While in the context of classical mechanics both formalisms describe essentially the same phenomena, the latter has far more applications. The Hamiltonian, as a measure of the total energy of the system, also permits a convenient description of problems in statistical physics, and even in quantum mechanics. Applying the calculus of variations and representing the motion of a particle as a wave, one may formulate the Hamilton--Jacobi equation, which is very close in idea to the Schrödinger equation:
+which is strikingly close in form to the Schrödinger equation and is the natural classical gateway to wave mechanics (here $S$ is Hamilton's principal function, equal in value to the action). The quantum counterpart, Feynman's path integral, assigns every trajectory a probability amplitude and recovers the classical, stationary-action path in the appropriate limit.
 
-\[
-H \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0
-\]
-
-% NOTE: the source writes the Lagrangian as -\frac{1}{4}F_{\mu\nu}^{\mu\nu};
-% the correct form is -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}.
-The applications of the variational principle are not, however, limited to classical mechanics. For example, it is also possible to obtain Maxwell's equations in tensor form by applying it to the Lagrangian of the electromagnetic field in vacuum, $\mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$. Moreover, it is possible to obtain the full Einstein equations by applying the principle to the Hilbert action.
+The principle reaches well beyond mechanics. Applied to the electromagnetic field Lagrangian $\Lagr = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu}$ it produces Maxwell's equations in tensor form, and applied to the Einstein--Hilbert action it produces the full Einstein field equations of general relativity.
 
 \section{The laws of thermodynamics}
 
