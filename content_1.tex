@@ -30,18 +30,18 @@ Consider two frames of reference: the first at rest and the second---the primed 
 
 The following notation may also be adopted:
 
-\begin{equation*}
+\begin{equation}\label{eq:gamma}
     \gamma = \frac{1}{\sqrt{1 - \beta^2}},\; \beta=\frac{v}{c},
-\end{equation*}
+\end{equation}
 
 which yields:
 
-\begin{align*}
+\begin{align}
     t' &= \gamma\cdot(t-xv/c^2) \\
     x' &= \gamma\cdot(x-tv) \\
     y' &= y \\
     z' &= z
-\end{align*}
+\end{align}
 
 The parameter $\gamma$ is also known as the Lorentz factor, and strictly: $\gamma > 1$. Note that in the limit $c \xrightarrow{} \infty$ the transformation reduces to the Galilean transformation.
 
@@ -53,7 +53,7 @@ The consequences of the Lorentz transformation include:
     \item Relativity of simultaneity: two events determined by one observer to be simultaneous need not be simultaneous for another observer. Simultaneity translates to other frames only for the events that happen at the same point in space.
     \item The description of vector quantities in four dimensions. Position, momentum and potential are described respectively by a four-vector, a four-momentum and a four-potential. For example:
     % Four-momentum as an explicit column vector
-    \begin{equation*}
+    \begin{equation}
         p^{\mu} =
         \begin{bmatrix}
             p^{0} \\ p^{1} \\ p^{2} \\ p^{3}
@@ -62,7 +62,7 @@ The consequences of the Lorentz transformation include:
         \begin{bmatrix}
             E/c \\ p_x \\ p_y \\ p_z
         \end{bmatrix}
-    \end{equation*}
+    \end{equation}
     
 \end{enumerate}
 
@@ -117,13 +117,14 @@ The symmetries of physical systems are closely connected with conservation laws.
 In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
 
 Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action \( S \) is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
-\begin{equation}
+\begin{equation}\label{eq:action}
 S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
 \end{equation}
 where \( \Lagr \) is the Lagrangian of the system,
 \begin{equation}
-\Lagr \equiv \underbrace{T}_{\text{kinetic energy}} - \underbrace{V}_{\text{potential energy}}.
+\Lagr \equiv T-V,
 \end{equation}
+where $T$ is the kinetic energy and $V$ is the potential energy of the system.
 The dynamics of the system are governed by the Euler--Lagrange equation,
 \begin{equation}\label{eq:euler-lagr}
 \frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
@@ -135,48 +136,48 @@ where $q$ is some coordinate relevant to the system. This is consistent with cla
 \subsubsection{Conservation of energy}
 
 Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian \( \Lagr \) does not depend explicitly on time,
-\begin{equation}
+\begin{equation*}
     \frac{\partial \Lagr}{\partial t} = 0,
-\end{equation}
+\end{equation*}
 then the energy of the system is conserved. Using this together with eq.~\ref{eq:euler-lagr} leads to
-\begin{equation}
+\begin{equation*}
 \frac{\partial L}{\partial \dot{q}}\,\dot{q} - L = \text{const} = \Ham,
-\end{equation}
+\end{equation*}
 which is the Hamiltonian,
 \begin{equation}
-    \Ham = T + V,
+    \Ham \equiv T + V,
 \end{equation}
 which corresponds to the total energy of the system.
 
 \subsubsection{Conservation of momentum}
 
 Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position,
-\begin{equation}
+\begin{equation*}
     \frac{\partial \Lagr}{\partial \vec{r}} = 0,
-\end{equation}
+\end{equation*}
 then inserting this into eq.~\ref{eq:euler-lagr} leads to
-\begin{equation}
+\begin{equation*}
     \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0,
-\end{equation}
+\end{equation*}
 so that the momentum is conserved,
-\begin{equation}
+\begin{equation*}
 \vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \text{const}.
-\end{equation}
+\end{equation*}
 
 \subsubsection{Conservation of angular momentum}
 
 Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation \( \delta\vec{\phi} \), for which \( \delta\vec{r} = \delta\vec{\phi} \times \vec{r} \) and \( \delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}} \), then
-\begin{equation}
+\begin{equation*}
 \delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
-\end{equation}
+\end{equation*}
 Using eq.~\ref{eq:euler-lagr} together with \( \vec{p} = \partial \Lagr / \partial \dot{\vec{r}} \) leads to
-\begin{equation}
+\begin{equation*}
 \delta\vec{\phi} \cdot \frac{d}{dt}\left( \vec{r} \times \vec{p} \right) = 0,
-\end{equation}
+\end{equation*}
 and since \( \delta\vec{\phi} \) is arbitrary, the angular momentum is conserved,
-\begin{equation}
-\vec{L} = \vec{r} \times \vec{p} = \text{const}.
-\end{equation}
+\begin{equation*}
+\vec{L} \equiv \vec{r} \times \vec{p} = \text{const}.
+\end{equation*}
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
 
@@ -196,37 +197,33 @@ The first law assumes the existence of an inertial frame of reference but does n
 
 If an unbalanced force acts on a body, then the body moves with an acceleration directly proportional to the force and inversely proportional to the mass of the body.
 
-\[
-\vec{F} = m \vec{a}
-\]
-
-where:
-\begin{itemize}
-    \item \(\vec{F}\) --- the force acting on the body,
-    \item \(m\) --- the mass of the body,
-    \item \(\vec{a}\) --- the acceleration of the body.
-\end{itemize}
+\begin{equation}
+\vec{F} = m \vec{a},
+\end{equation}
+where \(\vec{F}\) --- the force, \(m\) --- the mass, \(\vec{a}\) --- the acceleration.
 
 \subsection{Newton's third law}
 
-Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, the same direction, opposite senses and different points of application (each acts on a different body).
+Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, opposite directions, and different points of application (each acts on a different body).
 
-\[
+\begin{equation}
 \vec{F}_{12} = -\vec{F}_{21}
-\]
+\end{equation}
 
-In classical mechanics, Newton's third law and the law of conservation of momentum are for the most part equivalent. Neither holds when the physical system is not isolated, or during the creation of virtual particle pairs. The laws of motion can also be written for angular quantities in rotational motion, but a straightforward analogy holds only in cases where the axis of rotation does not change direction (a fixed axis, rectilinear rolling). These laws may also be applied in non-inertial frames once inertial forces are taken into account.
+In classical mechanics, Newton's third law and the law of conservation of momentum are essentially equivalent.
 
 \subsection{Limits of applicability of Newton's laws of motion}
 
-Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce inertial forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used. % NOTE: the source says "units" (jednostek) where the sentence clearly means "coordinate systems".
-In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action, work better.
+Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used.
+In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (eq.~\ref{eq:action}), work better.
 
-Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism describing the motion of macroscopic bodies does not apply. For example, the uncertainty principle tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories. All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers, or of large scales of size or energy, the results of quantum mechanics must agree with the classical ones. In particular, the limiting passage of the Planck constant to $0$ may be regarded as such a transition from a discrete to a continuous system. In that case the Schrödinger equation becomes the classical Hamilton--Jacobi equation.
+Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories. 
 
-In his considerations Newton adopted the assumption that time must be absolute, which was only countered 300 years later by Einstein and his special theory of relativity. In that case, when the velocity of the observer is taken into account, the Galilean transformation must be replaced by the Lorentz transformation, in which the Lorentz factor $\gamma=\frac{1}{\sqrt{1 - v^2/c^2}}$ plays an essential role. The resulting phenomena, including those following from general relativity, are again impossible to describe using classical mechanics. They are, however, negligible when $v \ll c$. For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
+All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers the results of quantum mechanics must agree with the classical ones. In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always striclty the case and some pheonmena are inherently quantum.
 
-\section{The postulates of quantum mechanics; measurement, description of the state of a system}
+Moreover, Newton assumed that time must be absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galillean transformatiions are replaced by the Lorentz transformations and they agreee only in the limits of small $v \ll c$ to the factor of $\gamma$ (eq.~\ref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
+
+\section{The postulates of quantum mechanics; measurement, state of a physical system}
 
 \subsection{The photon hypothesis and its consequences}
 
@@ -236,8 +233,9 @@ In his considerations Newton adopted the assumption that time must be absolute, 
     E = \hbar\omega
     \end{equation}
     \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
-    \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $\mathcal{H}$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in \mathcal{H}$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $\mathcal{H}$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
-    \item \textbf{Systems with several degrees of freedom.} If a physical system possesses more than one degree of freedom (for instance, a single photon is characterised not only by position but also by polarisation; one may also consider systems composed of a larger number of particles), then to each degree of freedom there corresponds a separate Hilbert space $\mathcal{H}_{i}$, while the Hilbert space of the total system has the structure of a tensor product of the Hilbert subspaces corresponding to the subsystems: $\mathcal{H} =\otimes_{i}\mathcal{H}_{i}$. The dimension of the total Hilbert space is therefore the product, and not the sum, of the dimensions of all the subspaces.
+    \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
+    \item \textbf{Systems with several degrees of freedom.} If a physical system possesses more than one degree of freedom (for instance, a single photon is characterised not only by position but also by polarisation; one may also consider systems composed of a larger number of particles), then to each degree of freedom there corresponds a separate Hilbert space $H_{i}$, while the Hilbert space of the total system has the structure of a tensor product of the Hilbert subspaces corresponding to the subsystems: $H =\otimes_{i}H_{i}$. The dimension of the total Hilbert space is therefore the product, and not the sum, of the dimensions of all the subspaces.
+    \todo{Delete or simplify above}
     \item \textbf{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
 \end{itemize}
 
@@ -250,6 +248,7 @@ The probability amplitude of a process (for example, one consisting in a photon 
 \begin{itemize}
     \item \textbf{Observables.} A physical measurement may give many different outcomes, corresponding to finding the system in one of the possible states $\phi_{k}$. If to each of the possible outcomes we assign some real measured value $a_{k} \in \mathbb{R}$, obtained with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$, then the mean measurement outcome is obtained from the classical formula of probability theory: % NOTE: the source has a malformed bra-ket here; corrected to |<phi_k|psi>|^2.
     (mean measurement outcome) $= \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\left(\sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}\right)\ket{\psi}$, where $\ket{\psi_{k}}\bra{\psi_{k}}$ is the projection operator onto the state $\ket{\psi_{k}}$. To every possible observable, that is, to every physical quantity that can be measured on the system and that leads exclusively to real measurement outcomes, there corresponds some Hermitian operator $\hat{A} = \hat{A}^{\dag}$. In the case of an observable giving the possible numerical outcomes $a_{k}$, corresponding to finding the system in the corresponding states $\ket{\psi_{k}}$, this operator is:
+    \todo{Make clear; not understandable}
     \begin{equation}
         \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}
     \end{equation}
@@ -263,6 +262,7 @@ The probability amplitude of a process (for example, one consisting in a photon 
 
 \begin{itemize}
     \item \textbf{Unitarity of the evolution.} Consider two distinguishable, and hence orthogonal, quantum states $\psi$ and $\phi$ prepared at the initial instant. We adopt as a postulate the thesis that under the passage of time these states will remain fully distinguishable. Since the degree of distinguishability of two states is given by the amplitude $\braket{\phi|\psi}$, we shall assume in general that the evolution of quantum states does not change the scalar products between the corresponding vectors.
+    \todo{Make clear; not understandable}
     \item \textbf{Evolution equation of the quantum state vector}
     \begin{equation}
         i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
@@ -287,7 +287,6 @@ The wave function is a mathematical description of the quantum state. It takes c
 
 The wave function satisfies a normalisation condition:
 
-% NOTE: the source has an extra "dt" in the integrand; the normalisation is over x only.
 \begin{equation}
     \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1
 \end{equation}
@@ -311,31 +310,58 @@ where $r$ is the position and $p$ the momentum of the $i$-th element of the syst
 In quantum mechanics the orbital angular momentum is defined as an operator composed of three components and given by the formula
 
 \begin{equation}
-    \hat{L} = -i\hbar(\hat{r}\times \nabla)
+    \hat{L} = -i\hbar(\hat{r}\times \nabla),
 \end{equation}
 
-A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes. The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.\ $\hat{J} = \hat{L} + \hat{S}$. Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L_z}\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
+where 
+\begin{equation}
+    \nabla \equiv    
+                    \begin{bmatrix}
+                    \frac{\partial}{\partial x} \\[1ex] \frac{\partial}{\partial y} \\[1ex] \frac{\partial}{\partial z}
+                    \end{bmatrix}.
+\end{equation}
 
-Precession of a rigid body occurs when the axis about which the body rotates does not coincide with any of the principal axes of the inertia tensor. Forced precession occurs when a torque perpendicular to the angular momentum acts on a rotating body. The axis of rotation then executes a motion tracing out a surface in the shape of the lateral surface of a cone. This phenomenon may be observed in the example of a spinning top.
+A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes. 
+\begin{equation}
+    \hat{S} \equiv      
+                    \begin{bmatrix}
+                    S_{x} \\ S_{y} \\ S_{z}
+                    \end{bmatrix}.
+\end{equation}
 
-Classically, the precession frequency is given by the formula
+The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.
+
+\begin{equation}
+    \hat{J} = \hat{L} + \hat{S}.
+\end{equation}
+
+Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L_z}\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
+
+\subsection{Classical precession}
+
+Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
+
+This happens when a torque (a twisting force) acts at right angles to the angular momentum of the spinning body. For the top, gravity supplies this torque.
+
+The precession frequency is given by
 
 \begin{equation}
     \omega_p = \frac{\tau}{I_s\omega_s\sin(\theta)}
 \end{equation}
 
-% NOTE: the source does not define omega_s; it is the spin angular velocity of the body.
-where $I_s$ is the moment of inertia of the object, $\omega_s$ its spin angular velocity, $\tau$ the torque and $\theta$ the angle between the axis of rotation and the axis of precession.
+where $\tau$ is the torque, $I_s$ the moment of inertia (a measure of how hard it is to change the body's spin), $\omega_s$ the spin angular velocity (how fast the body spins), and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
 
-In quantum mechanics one of the corrections to the spin--orbit interaction is the phenomenon of Thomas precession, which takes into account relativistic time dilation. It describes the phenomenon whereby objects undergo precession when they accelerate in special relativity. Larmor precession is a phenomenon exploited in studying the interaction of electrons with a magnetic field. It is the precession of the magnetic moment of an electron in an external magnetic field. This phenomenon is used in magnetic resonance, because the precession frequency does not depend on the spatial orientation of the spins.
+\subsection{Quantum precession}
 
-The torque induced by a magnetic field $\vec{B}$ is given by the formula
+A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin. Placed in an external magnetic field $\vec{B}$, this moment feels a torque
 
 \begin{equation}
-    \vec{\mu}\times \vec{B}
+    \vec{\tau} = \vec{\mu}\times \vec{B},
 \end{equation}
 
-where $\vec{\mu}$ is the magnetic dipole moment.
+which makes it precess around the direction of the field, in direct analogy with gravity making a top precess. This is Larmor precession. Its frequency depends only on the strength of the field and not on the orientation of the spin, which is why it underlies magnetic resonance techniques.
+
+A separate contribution is Thomas precession, which is purely relativistic. It arises because a spin that is accelerating undergoes an additional precession in special relativity, and it enters as a correction to the spin--orbit interaction.
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 
