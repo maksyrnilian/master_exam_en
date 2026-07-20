@@ -339,9 +339,9 @@ Quantisation permits the eigenvalues of the squares of the angular momentum oper
 
 \subsection{Classical precession}
 
-Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
+Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-This happens when a torque (a twisting force) acts at right angles to the angular momentum of the spinning body. For the top, gravity supplies this torque.
+The angular momentum $\vec{L}$ of the spinning body points along its spin axis. Precession happens when a torque acts at a right angle to that axis. A torque perpendicular to $\vec{L}$ nudges it sideways, but it actually moves in a perpendicular direction, tracing out a cone. For the toy top, gravity supplies this torque, where one of its components is perpendicular to the spin axis, unless it is perfectly vertical.
 
 The precession frequency is given by
 
@@ -349,19 +349,22 @@ The precession frequency is given by
     \omega_p = \frac{\tau}{I_s\omega_s\sin(\theta)}
 \end{equation}
 
-where $\tau$ is the torque, $I_s$ the moment of inertia (a measure of how hard it is to change the body's spin), $\omega_s$ the spin angular velocity (how fast the body spins), and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
+where $\tau$ is the torque, $I_s$ the moment of inertia, $\omega_s$ the spin angular velocity, and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
 
 \subsection{Quantum precession}
 
-A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin. Placed in an external magnetic field $\vec{B}$, this moment feels a torque
+A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$ --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
 \begin{equation}
     \vec{\tau} = \vec{\mu}\times \vec{B},
 \end{equation}
 
-which makes it precess around the direction of the field, in direct analogy with gravity making a top precess. This is Larmor precession. Its frequency depends only on the strength of the field and not on the orientation of the spin, which is why it underlies magnetic resonance techniques.
+which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is Larmor precession, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
 
-A separate contribution is Thomas precession, which is purely relativistic. It arises because a spin that is accelerating undergoes an additional precession in special relativity, and it enters as a correction to the spin--orbit interaction.
+The rate of this precession depends only on the field strength, not on how far $\vec{S}$ is tilted from $\vec{B}$ (two factors of $\sin\theta$ cancel each other out). This orientation-independence is what makes Larmor precession useful for magnetic resonance techniques.
+
+A separate contribution appears when the particle is accelerated, and unlike Larmor precession it is driven by no torque at all. Thomas precession is a purely kinematic effect of special relativity: for a particle on a curved path --- such as an electron orbiting a nucleus --- the successive inertial frames in which it is momentarily at rest are slightly rotated relative to one another, so its spin angular momentum precesses even though nothing twists it. In the hydrogen atom this modifies the spin--orbit interaction, reducing it by a factor of two (the Thomas factor).
+\todo{Check if correct.}
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 
