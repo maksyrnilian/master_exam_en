@@ -87,6 +87,14 @@
   \fi}
 \makeatother
 
+% --- paragraph styling -----------------------------------------------
+
+\titleformat{\paragraph}[hang]
+    {\normalfont\normalsize} % Normal font size and standard weight
+    {}                       % Empty label --- suppresses numbering
+    {0pt}                    % Zero separation space since there is no number
+    {\underline}             % Underlines the heading text
+
 % --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
 \newcommand{\Ham}{\mathcal{H}}				  % Hamiltonian	

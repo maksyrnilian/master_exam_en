@@ -393,7 +393,7 @@ The same content can be repackaged. A standard change of variables (a \textbf{Le
 \begin{equation}\label{eq:hamilton-jacobi}
 \Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
 \end{equation}
-\todo{why is the hamiltionian a function of such awkward arguments?}
+\todo{why is the hamiltonian a function of such awkward arguments?}
 
 a single equation for the action $S$ (here called Hamilton's principal function). What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
 
@@ -405,21 +405,46 @@ The principle is not restricted to mechanics. The general recipe is always the s
 
 If systems A and B, capable of exchanging heat with one another, are in thermal equilibrium with each other, and the same is true of systems B and C, then systems A and C are also in thermal equilibrium with each other.
 
+Thermal equilibrium implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
+
 \subsection{The first law of thermodynamics}
 
-The change in the internal energy of a system is equal to the sum of the heat supplied and the work done on the system.
+The change in the internal energy of a system is equal to the sum of the heat supplied and the work done \textit{on the system}.
 
-\begin{equation*}
-    \Delta U = W + Q
-\end{equation*}
+\begin{equation}\label{eq:first-law}
+    \Delta U = Q + W,
+\end{equation}
+
+or in a differential form:
+
+\begin{equation}\label{eq:first-law-differential}
+    dU = dQ - p\, dV,
+\end{equation}
+
+where $dV$ is the change in volume of the system (positive when the system expands --- it does work and loses internal energy, $W<0$).
 
 \subsection{The second law of thermodynamics}
 
 \begin{itemize}
     \item Clausius statement: \textit{There is no thermodynamic process whose sole result would be the absorption of heat from a reservoir at a lower temperature and its transfer to a reservoir at a higher temperature.}
     \item Kelvin statement: \textit{No process is possible whose sole effect would be the absorption of a certain quantity of heat from a reservoir and its conversion into an equivalent amount of work.}
-    \item Ostwald statement: \textit{There is no perpetual motion machine of the second kind (a heat engine taking thermal energy from a system and converting it entirely into work).}
+    \item Planck statement: \textit{It is impossible to construct an engine which will work in a complete cycle, and produce no effect except the production of work and cooling of a heat reservoir.}
 \end{itemize}
+
+For all 
+
+\begin{equation}\label{eq:clausius-inequality}
+dS \geq \frac{\delta Q}{T},
+\end{equation}
+
+where the equality holds only for \textit{reversible} processes. The quantity $S$ is called the \textit{entropy} of the system. For isolated systems
+
+\begin{equation*}
+    ds \geq 0.
+\end{equation*}
+
+Spontaneous processes in an isolated system drive it towards higher entropy, and equilibrium is the state of maximum entropy.
+\todo{Maybe expand a little and add better justification for entropy.}
 
 \subsection{The third law of thermodynamics}
 
@@ -428,27 +453,30 @@ The Nernst heat theorem: \textit{It is not possible, by means of a finite number
 \section{Mechanical properties of material media: liquids, elastic media, mechanical waves}
 \label{sec:mechanical-media}
 
+\paragraph{Liquids}
+
 Liquids are substances intermediate between a gas and a solid, having an easily variable shape but little compressibility. The properties of a liquid follow from the behaviour of its molecules:
 
 \begin{itemize}
     \item they have complete freedom of movement within the volume occupied by the liquid
-    \item intermolecular interactions occur between them, which within the bulk of the liquid cancel one another out
+    \item the intermolecular interactions occur between them, which within the bulk of the liquid cancel one another out
     \item the intermolecular interactions do not cancel at the interface between the liquid and another phase, as a result of which the phenomenon of surface tension occurs.
 \end{itemize}
 
-An elastic medium is a medium in which an external force gives rise to stresses whose effect is the appearance of an outwardly directed force. This force causes a body forming part of that medium to return to its original shape. Strain is understood as a change in the size of the medium.
+\paragraph{Elastic media}
 
-While most solids are elastic over a very wide range of stresses, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
+An elastic medium is a medium in which an external force gives rise to stress whose effect is the appearance of an outwardly directed force. This force pushes the affected body to return to its original shape.
+
+While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
+\todo{Is this the only state in which fluids are elastic?}
 
 \paragraph{Mechanical waves}
 
-If we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium. According to the shape of the wavefront we may distinguish plane waves and spherical waves.
-
-According to the direction of oscillation of the particles of the medium relative to the propagation of the waves, we may distinguish transverse waves and longitudinal waves.
+If we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium. According to the shape of the wavefront we may distinguish transverse waves and longitudinal waves.
 
 A wave is longitudinal when the direction of oscillation of the particles of the medium is parallel to the direction of propagation of the wave and at the same time to the direction of energy transport. Examples here are sound waves in air, or the oscillations of a spring alternately compressed and extended.
 
-A wave is transverse when the direction of oscillation of the particles of the medium is perpendicular to the direction of propagation of the wave and at the same time to the direction of energy transport. An example here may be the oscillations of a taut string one end of which we move cyclically up and down.
+A wave is transverse when the direction of oscillation of the particles of the medium is perpendicular to the direction of propagation of the wave and at the same time to the direction of energy transport. An example here may be the oscillations of a string, ruler.
 
 \section{Flow of an incompressible liquid; Bernoulli's principle}
 
