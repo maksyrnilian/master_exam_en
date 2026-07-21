@@ -498,67 +498,112 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
-\subsection{Maxwell's equations in vacuum}
+    \subsection{Maxwell's equations in vacuum}
 
-\begin{equation}\label{eq:maxwell-vacuum}
-    \begin{alignedat}{2}
-    \text{Gauss's Law}           & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho}{\epsilon_{0}}\\
-    \text{No Magnetic Monopoles} & : \quad & \nabla \cdot \vec{B}  & = 0\\
-    \text{Faraday's Law}         & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
-    \text{Ampère-Maxwell Law}    & : \quad & \nabla \times \vec{B} & = \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t},
-    \end{alignedat}
-\end{equation}
-where $\vec{J}$ is the current density, $\vec{B}$ is the magnetic induction field. \todo{free vs bound distinction? reuse notes from plazmonika?}
+        \begin{equation}\label{eq:maxwell-vacuum}
+            \begin{alignedat}{2}
+            \text{Gauss's Law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\epsilon_{0}}\\
+            \text{Gauss's Law for } \vec{B} \text{ (no mag. monopoles)}     & : \quad & \nabla \cdot \vec{B}  & = 0\\
+            \text{Faraday's Law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+            \text{Ampère-Maxwell Law}                                       & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
+            \end{alignedat}
+        \end{equation}
+        where $\vec{J}$ is the current density, $\vec{B}$ is the magnetic induction field.
 
-The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
-\begin{equation}
-    \begin{aligned}
-        \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
-        \nabla \times \vec{A} &\text{ --- curl of a vector field}\\
-        \nabla f &\text{ --- gradient of a scalar field}
-    \end{aligned}
-\end{equation}
+        The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
+        \begin{equation}
+            \begin{aligned}
+                \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
+                \nabla \times \vec{A} &\text{ --- curl of a vector field}\\
+                \nabla f &\text{ --- gradient of a scalar field}
+            \end{aligned}
+        \end{equation}
 
-Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
+        Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
 
-\subsection{Maxwell's equations in terms of free currents and charges}
+        Maxwell's equations are related to the Lorentz force:
 
-We define the electric displacement field $\vec{D}$ and the magnetic field $\vec{H}$ as:
+        \begin{equation}\label{eq:lorentz-force}
+            \vec{F}=q\,(\vec{E}+\vec{v}\times\vec{B})
+        \end{equation}
 
-\begin{equation}\label{eq:constitutive-DH}
-    \begin{aligned}
-        \vec{D} &\equiv \epsilon_{0}\vec{E} + \vec{P}\\
-        \vec{H} &\equiv \frac{1}{\mu_{0}}\vec{B} - \vec{M},
-    \end{aligned}
-\end{equation}
+    \subsection{Maxwell's equations in matter}
 
-where $\vec{P}$ and $\vec{M}$ are the medium polarisation (\cref{sec:electric-field}) and magnetisation (\cref{sec:magentic-field}) respectively.
+        Electric field induces an electric dipole moment $\vec{p}=q\vec{r}$ in matter. Its avaraged value per volume is the polarisation vector
 
-Maxwell's equations may then be rewritten as
+        \begin{equation}\label{eq:polarisation-vector}
+            \vec{P}=\chi \epsilon_0\vec{E},
+        \end{equation}
 
-\begin{equation}\label{eq:maxwell-media}
-\begin{aligned}
-    \nabla \cdot \vec{D} &= \rho_{f}\\
-    \nabla \cdot \vec{B} &= 0\\
-    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{H} &= \vec{J}_{f} + \frac{\partial\vec{D}}{\partial t}
-\end{aligned}
-\end{equation} \todo{same as above}
+        where $\chi$ --- electric suceptibility of a material. Polarisation is only cause by bound charges
 
-\subsection{The vector potential of the electromagnetic field}
+        \begin{equation}
+            \nabla\cdot\vec{P}=-\rho_{\text{b}}.
+        \end{equation}
 
-The magnetic vector potential $\vec{A}$ is a three-dimensional vector field whose curl is the magnetic field.
+        From Gauss's Law for electric field, we have
 
-\begin{equation*}
-    \vec{B} = \nabla\times\vec{A}
-\end{equation*}
+        \begin{equation}
+            \begin{aligned}
+                \nabla(\epsilon_0\vec{E})          &= \rho_{\text{f}} + \rho_{\text{b}} \\
+                \nabla(\epsilon_0\vec{E}+\vec{P})) &= \rho_{\text{f}}, \\
+                \nabla(\vec{D}) &= \rho_{\text{f}},
+            \end{aligned}
+        \end{equation}
 
-\subsection{The scalar potential of the electromagnetic field}
+        where $\vec{D}$ --- dielectric displacement field: 
 
-For time-dependent potentials the electric field may be written in the form:
+        \begin{equation}
+            \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{electric field due to $\vec{P}$ points in opposite direction} \\ \text{$\Rightarrow$ subtracting the contribution of bound charges}}}
+        \end{equation}
 
-\begin{equation*}
-    \vec{E} = -\nabla\Phi - \frac{\partial\vec{A}}{\partial t}
-\end{equation*}
+        Bound current is given by
 
-where $\Phi$ is the electric potential.
+        \begin{equation}
+            \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
+        \end{equation}
+
+        From Ampère-Maxwell Law, we then have:
+
+        \begin{equation}
+            \begin{aligned}
+                \nabla\times\vec{B}                                     & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
+                                                                        & = \mu_{0}\left(\vec{J_{\text{f}}} + \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\ 
+                \nabla\times\vec{H}  & = \vec{J_{\text{f}}} + \frac{\partial \vec{D}}{\partial t},
+            \end{aligned}
+        \end{equation}
+
+        where $\vec{H}$ --- magnetic field intensity
+
+        \begin{equation}
+            \underbrace{\vec{H}}_{\substack{\text{magnetic field intensity} \\ \text{contribution from free currents only}}} = \underbrace{\frac{\vec{B}}{\mu_{0}}}_{\text{total magnetic field}} - \underbrace{\vec{M}}_{\substack{\text{magnetic field due to $\vec{M}$} \\ \text{points in opposite direction}}}
+        \end{equation}
+
+        Maxwell's equation in matter may then finally be rewritten as:
+
+        \begin{equation}\label{eq:maxwell-media}
+            \begin{aligned}
+                \nabla \cdot \vec{D} &= \rho_{f}\\
+                \nabla \cdot \vec{B} &= 0\\
+                \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+                \nabla\times\vec{H} &= \vec{J}_{f} + \frac{\partial\vec{D}}{\partial t}
+            \end{aligned}
+        \end{equation}
+
+    \subsection{The vector potential of the electromagnetic field}
+
+        The magnetic vector potential $\vec{A}$ is a three-dimensional vector field whose curl is the magnetic field.
+
+        \begin{equation*}
+            \vec{B} = \nabla\times\vec{A}
+        \end{equation*}
+
+    \subsection{The scalar potential of the electromagnetic field}
+
+        For time-dependent potentials the electric field may be written in the form:
+
+        \begin{equation*}
+            \vec{E} = -\nabla\Phi - \frac{\partial\vec{A}}{\partial t}
+        \end{equation*}
+
+        where $\Phi$ is the electric potential.
