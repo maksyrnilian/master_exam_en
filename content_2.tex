@@ -1,42 +1,42 @@
 % !TeX root = main.tex
 \section{The electric field in material media; dielectric polarisation, conductivity, mobility of charge carriers}
-\label{sec:electric-field}
+    \label{sec:electric-field}
 
-\subsection{Polarisation}
+    \subsection{Polarisation}
 
-Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. The polarisation vector arising as a result of the action of the external field may, in the linear approximation, be written as:
+        Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. The polarisation vector arising as a result of the action of the external field may, in the linear approximation, be written as:
 
-\begin{equation*}
-    \vec{P} = \varepsilon_0\chi\vec{E}
-\end{equation*}
+        \begin{equation*}
+            \vec{P} = \varepsilon_0\chi\vec{E}
+        \end{equation*}
 
-Dielectric polarisation is the result of several basic phenomena:
+        Dielectric polarisation is the result of several basic phenomena:
 
-\paragraph{Electronic polarisation}
+    \paragraph{Electronic polarisation}
 
-Electronic polarisation is the result of the displacement, under the influence of an electric field, of the negatively charged electron clouds with respect to the positive nuclei. It occurs in all materials. It is a very fast process, and therefore, when investigated with an alternating electric field, the effects associated with it are observed up to frequencies corresponding to the ultraviolet. The dipole moment $p_e$ is determined by the electronic polarisability $\alpha_e$:
+        Electronic polarisation is the result of the displacement, under the influence of an electric field, of the negatively charged electron clouds with respect to the positive nuclei. It occurs in all materials. It is a very fast process, and therefore, when investigated with an alternating electric field, the effects associated with it are observed up to frequencies corresponding to the ultraviolet. The dipole moment $p_e$ is determined by the electronic polarisability $\alpha_e$:
 
-\begin{equation*}
-    p_e = \alpha_e \cdot E
-\end{equation*}
+        \begin{equation*}
+            p_e = \alpha_e \cdot E
+        \end{equation*}
 
-\paragraph{Ionic polarisation}
+    \paragraph{Ionic polarisation}
 
-Ionic polarisation occurs only in materials with ionic bonds. It is the result of the displacement of ions in the crystal lattice of the material---those of one sign in one direction, those of the other sign in the other. It is the slowest of all the polarisation processes, since it requires the movement of many atoms bound in the crystal lattice.
+        Ionic polarisation occurs only in materials with ionic bonds. It is the result of the displacement of ions in the crystal lattice of the material---those of one sign in one direction, those of the other sign in the other. It is the slowest of all the polarisation processes, since it requires the movement of many atoms bound in the crystal lattice.
 
-\paragraph{Orientational polarisation}
+    \paragraph{Orientational polarisation}
 
-Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, those whose molecules form permanent dipoles (they possess their own dipole moment). In an electric field an ordering torque acts on them. At the same time the ordering is destroyed by thermal vibrations, which causes orientational polarisation to be temperature dependent.
+        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, those whose molecules form permanent dipoles (they possess their own dipole moment). In an electric field an ordering torque acts on them. At the same time the ordering is destroyed by thermal vibrations, which causes orientational polarisation to be temperature dependent.
 
-\subsection{Conductivity and mobility}
+    \subsection{Conductivity and mobility}
 
-Conduction is the phenomenon of the flow of electric charges occurring in a material under the influence of an electric field. The quantity characterising electrical conduction is the conductivity $\sigma$:
+        Conduction is the phenomenon of the flow of electric charges occurring in a material under the influence of an electric field. The quantity characterising electrical conduction is the conductivity $\sigma$:
 
-\begin{equation*}
-    \sigma = q n \mu
-\end{equation*}
+        \begin{equation*}
+            \sigma = q n \mu
+        \end{equation*}
 
-where $q$ is the charge of the carriers, $n$ their concentration and $\mu$ the carrier mobility. The mobility of the carriers depends on the applied field and on the drift velocity. Temperature is one of the factors affecting conductivity. A change in temperature may affect a change both in the concentration and in the mobility of the carriers. The most common types of conduction are: electronic, where the charge carriers are electrons, hole conduction, where the charge carriers are electrons moving in the valence band, and ionic, where the charge carriers are ions.
+        where $q$ is the charge of the carriers, $n$ their concentration and $\mu$ the carrier mobility. The mobility of the carriers depends on the applied field and on the drift velocity. Temperature is one of the factors affecting conductivity. A change in temperature may affect a change both in the concentration and in the mobility of the carriers. The most common types of conduction are: electronic, where the charge carriers are electrons, hole conduction, where the charge carriers are electrons moving in the valence band, and ionic, where the charge carriers are ions.
 
 \section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
 \label{sec:magentic-field}
@@ -81,51 +81,45 @@ It is also worth mentioning the existence of antiferromagnets and ferrimagnets. 
 
 \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
-Let us recall the general Maxwell equations (\cref{eq:maxwell-vacuum}):
+Let us recall the general Maxwell's equations in vacuum:
 
 \begin{equation*}
-\begin{aligned}
-    \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_{0}}\\
-    \nabla \cdot \vec{B} &= 0\\
-    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} &= \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
+    \begin{aligned}
+        \nabla \cdot \vec{E} &= 0\\
+        \nabla \cdot \vec{B} &= 0\\
+        \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+        \nabla\times\vec{B} &= \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
+    \end{aligned}
 \end{equation*}
 
-We shall find an electromagnetic wave that is a solution of this system of equations in vacuum, that is, when $\rho = 0$ and $\vec{J} = 0$. The equations then take the following form:
+We shall find an electromagnetic wave  is a solution of this system of equations. To do it, take the curl of the third equation:
 
 \begin{equation*}
-\begin{aligned}
-    \nabla \cdot \vec{E} &= 0\\
-    \nabla \cdot \vec{B} &= 0\\
-    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} &= \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
+    \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
 \end{equation*}
 
-We take the curl of the third and fourth Maxwell equations. Consider the third equation:
+We make use of the following identity:
 
 \begin{equation*}
-    \nabla\times\left(\nabla\times\vec{E}\right) = -\nabla\times\left(\frac{\partial\vec{B}}{\partial t}\right)
+    \nabla\times(\nabla\times\vec{F}) = \nabla\cdot(\nabla\cdot\vec{F}) - \nabla^{2}\cdot\vec{F}.
 \end{equation*}
 
-We make use of the $\vec{BAC}-\vec{CAB}$ identity:
+Then, we have:
 
 \begin{equation*}
-    \vec{A}\times\left(\vec{B}\times\vec{C}\right) = \vec{B}\cdot\left(\vec{A}\cdot\vec{C}\right) - \vec{C}\cdot\left(\vec{A}\cdot\vec{B}\right)
+    \begin{aligned}
+        \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right)                 &= \nabla\cdot\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\cdot\vec{E} =  \nabla\cdot\left( 0 \right) - \nabla^{2}\cdot\vec{E} = - \Delta \vec{E}\\
+        \mathrm{RHS} = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right) &= - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = - \frac{\partial}{\partial t} \left( \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t} \right) = - \mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}},
+    \end{aligned}
 \end{equation*}
 
-The left-hand side of the third Maxwell equation:
+where, for the LHS, we have used the identity and the first Maxwell equation, and for the RHS, we have used the fourth Maxwell equation and  
 
-\begin{equation*}
-    \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\vec{E} = -\Delta\vec{E}
-\end{equation*}
+\begin{equation}
+    \Delta \vec{F} = \nabla^{2} \vec{F} = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \vec{F}
+\end{equation}
 
-The right-hand side of the third Maxwell equation:
-
-\begin{equation*}
-    \mathrm{RHS} = -\nabla\times\left(\frac{\partial\vec{B}}{\partial t}\right) = - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = -\mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}}
-\end{equation*}
+is the Laplacian operator.
 
 Equating both sides we obtain:
 
@@ -139,11 +133,43 @@ We proceed analogously with the fourth Maxwell equation and find the equation fo
     \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
 \end{equation*}
 
-From the above two equations it follows that the speed of propagation of an electromagnetic wave in vacuum is $c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}$.
+Both of these equations are standard forms of the wave equation, generally written as:
+
+\begin{equation*}
+    \left(\Delta - \frac{1}{v^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{F} = 0,
+\end{equation*}
+
+where $v$ is the propagation speed. From this it follows that the speed of propagation of an electromagnetic wave in vacuum is 
+
+\begin{equation}
+    v = c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}.
+\end{equation}
+
+Performing an analagous derivation for the Maxwell equations in a medium, we find:
+
+\begin{equation}
+    \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \overbrace{\nabla\left( \frac{\rho}{\epsilon_{0}} \right) + \underbrace{\mu_{0}\frac{\partial\vec{J_{\text{f}}}}{\partial t}}_{\substack{\text{Important in} \\ \text{conductors}}} + \underbrace{\mu_0\frac{\partial^2 \vec{P}}{\partial t^2}}_{\substack{\text{Important in} \\ \text{insulators}}}}^{\text{0 in vacuum}}
+\end{equation}
+
+\paragraph{Solution to the wave equation}
+
+The wave equation is solved by a plane polarised wave of the form:
+
+\begin{equation}
+    \vec{E}(\vec{r},t) = \vec{E_0}e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
+\end{equation}
+
+where
+
+\begin{equation*}
+    e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}
+\end{equation*}
+
+is used. 
 
 \subsection{Polarisation of a wave}
 
-Polarisation is a property of a transverse wave concerning the ordered relation between the direction of oscillation of the disturbance and the direction of propagation of the wave. The best known polarisations are linear and circular. Polarisation occurs only for those kinds of wave, and under those conditions, in which the oscillations may take place in various directions perpendicular to the direction of propagation of the wave.
+Polarisation is a property of a transverse wave concerning the ordered relation between the direction of oscillation of the disturbance and the direction of propagation of the wave. The best known polarisations are linear and circular. Polarisation occurs only for those kinds of waves, and under those conditions, in which the oscillations may take place in various directions perpendicular to the direction of propagation of the wave.
 
 \subsection{The laws of reflection and refraction of electromagnetic waves}
 
