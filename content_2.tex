@@ -47,39 +47,39 @@
     where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
 
     \subsection{Paramagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined the Curie constant and its temperature dependence, and ``Fermi gas'' in plain terms.}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined the Curie constant and its temperature dependence and ``Fermi gas'' in plain terms; added material examples.}
 
-        The most common group. They have positive susceptibility, so the induced magnetisation points along the applied field. It comes from unpaired electrons, whose magnetic moments turn to line up with an external field. Two standard models:
+        The most common group. They have positive susceptibility, so the induced magnetisation points along the applied field. It comes from unpaired electrons, whose magnetic moments turn to line up with an external field. Common paramagnets are aluminium, platinum and oxygen. Two standard models:
 
         \begin{itemize}
-            \item Curie paramagnetism --- a set of independent atomic moments that do not interact with one another. Balancing their alignment against the randomising effect of heat gives Curie's law for the susceptibility,
+            \item Curie paramagnetism --- a set of independent atomic moments that do not interact with one another, as in the paramagnetic salts of transition-metal or rare-earth ions. Balancing their alignment against the randomising effect of heat gives Curie's law for the susceptibility,
             \begin{equation*}
                 \chi_m = \frac{C}{T},
             \end{equation*}
             where $T$ is the absolute temperature and $C$ (the Curie constant) is fixed by the size and number of the atomic moments. The susceptibility falls as the temperature rises because thermal agitation fights the alignment.
-            \item Pauli paramagnetism --- in a metal the conduction electrons are treated as a \emph{Fermi gas}: a gas of electrons that barely interact, but which (because no two electrons may share the same quantum state) fill the available energy levels from the bottom up to a top level called the Fermi level. Only the few electrons near that top level are free to reorient in a field, so the resulting paramagnetism is weak and almost independent of temperature.
+            \item Pauli paramagnetism --- in a metal the conduction electrons (as in an ordinary metal such as sodium) are treated as a \emph{Fermi gas}: a gas of electrons that barely interact, but which (because no two electrons may share the same quantum state) fill the available energy levels from the bottom up to a top level called the Fermi level. Only the few electrons near that top level are free to reorient in a field, so the resulting paramagnetism is weak and almost independent of temperature.
         \end{itemize}
 
     \subsection{Diamagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified ``all electrons paired'' and how bound electrons respond in an insulator (Larmor precession, not free circulation).}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified ``all electrons paired'' and how bound electrons respond in an insulator (Larmor precession, not free circulation); added material examples.}
 
-        Diamagnetism is the appearance of a magnetisation \emph{opposite} to the applied field, i.e.\ a negative susceptibility. Every material has this response, but it is very weak, so we call a material a diamagnet only when it is the dominant effect. That happens when the atoms carry no permanent magnetic moment---all electron spins paired---so there is no paramagnetic contribution to mask it.
+        Diamagnetism is the appearance of a magnetisation \emph{opposite} to the applied field, i.e.\ a negative susceptibility. Every material has this response, but it is very weak, so we call a material a diamagnet only when it is the dominant effect. That happens when the atoms carry no permanent magnetic moment---all electron spins paired---so there is no paramagnetic contribution to mask it. Typical diamagnets are bismuth (the strongest ordinary one), copper, gold and water.
 
         A special case is that of superconductors, which expel the magnetic field from their interior completely through the Meissner effect. The remaining diamagnets are described by:
 
         \begin{itemize}
-            \item Langevin diamagnetism --- describes insulators, where the electrons are bound in atoms rather than free to conduct. An applied field makes each bound electron orbit precess (Larmor precession, \cref{subsec:quantum-precession}). A precessing orbit is effectively a small current loop, and the magnetic moment it produces points against the applied field, which is the origin of the diamagnetic response.
-            \item Landau diamagnetism --- treats the same Fermi gas of conduction electrons as Pauli paramagnetism, but now accounts for the field bending the electrons' orbital motion rather than flipping their spin. This orbital effect is diamagnetic.
+            \item Langevin diamagnetism --- describes insulators (such as water and the inert gases), where the electrons are bound in atoms rather than free to conduct. An applied field makes each bound electron orbit precess (Larmor precession, \cref{subsec:quantum-precession}). A precessing orbit is effectively a small current loop, and the magnetic moment it produces points against the applied field, which is the origin of the diamagnetic response.
+            \item Landau diamagnetism --- treats the same Fermi gas of conduction electrons in a metal as Pauli paramagnetism, but now accounts for the field bending the electrons' orbital motion rather than flipping their spin. This orbital effect is diamagnetic.
         \end{itemize}
 
     \subsection{Ferromagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined remanence, gave one-line meanings of the Ising/XY/Heisenberg models, and stated the macroscopic effect of antiferro-/ferrimagnets.}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined remanence, gave one-line meanings of the Ising/XY/Heisenberg models, and stated the macroscopic effect of antiferro-/ferrimagnets; added material examples.}
 
-        A third category appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to point the same way as each other, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet.
+        A third category appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to point the same way as each other, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
 
         Such materials are analysed with statistical-physics lattice models that differ in how freely each moment may point: the Ising model allows only up or down, the XY model allows any direction in a plane, and the Heisenberg model allows any direction in space (the most general).
 
-        Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation. In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example). \todo{examples: one for each type}
+        Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
 
 \section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
 
@@ -221,7 +221,7 @@ where the upper signs apply when that party moves \emph{towards} the other (rais
 
 \begin{equation*}
     f' = f\,\sqrt{\frac{1-\beta}{1+\beta}} \qquad (\text{redshift}),
-\end{equation*}\todo{use the same upper sig/lower sign convention as above}
+\end{equation*}
 
 and swapping the sign of $\beta$ gives the approaching (blueshift) case. If the relative velocity makes an angle $\phi$ with the line of sight,
 
@@ -278,47 +278,71 @@ where $s$ is the number of chemical components, $r$ the number of coexisting pha
 \end{itemize}
 
 \section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened all four effects, fixed typos, added the photoelectric and Compton relations, and cross-referenced the Planck distribution.}
 
     \subsection{The photoelectric effect}
 
-        The photoelectric effect is the emission of electrons from a material caused by electromagnetic radiation. Classically, we would expect the energy of the emitted electrons to depend on the intensity of the light. However, in reality, we see that the energy of individual photoelectrons depends on the frequency of light and changing the intensity only varies the number of photoelectrons. Quantum mechanically, we know that photon energy depends on the frequency and the energy a photoelectron can have depends on how much energy photon can give it rather than how many photons there are. This is also why below a certain frequency of light the photoelectric effect does not occur --- photons do no have enough energy to dislodge the electrons
+        The photoelectric effect is the emission of electrons from a material illuminated by electromagnetic radiation. Classically the energy of the emitted electrons should grow with the intensity of the light. Experimentally, however, the kinetic energy of each electron depends only on the \emph{frequency} of the light, while the intensity sets only the \emph{number} of electrons. This is explained if light arrives in quanta (photons) of energy $E = h\nu$: one photon frees one electron, giving it an energy $h\nu$ less the work function $W$ (the energy binding the electron to the material),
+
+        \begin{equation*}
+            E_\text{kin} = h\nu - W.
+        \end{equation*}
+
+        Below a threshold frequency no electrons are emitted at all, because a single photon then lacks the energy to free one.
 
     \subsection{The Compton effect}
 
-        The phenomenon of the scattering of X-radiation and gamma radiation on free or weakly bound electrons, as a result of which the wavelength of the radiation increases. The scattering is caused by collisions of individual quanta of radiation with electrons during which some of the photon energy is taken by the electron.
+        The Compton effect is the scattering of X-ray or gamma radiation on free or weakly bound electrons, in which the scattered radiation emerges with a longer wavelength. It is explained by treating the photon as a particle carrying both energy and momentum: in the collision it hands some of each to the electron, so the scattered photon has less energy and hence a longer wavelength. The shift grows with the scattering angle $\theta$,
+
+        \begin{equation*}
+            \Delta\lambda = \frac{h}{m_e c}\left(1 - \cos\theta\right),
+        \end{equation*}
+
+        and has no classical explanation, since a classical wave would scatter without changing its wavelength.
 
     \subsection{Young's experiment}
 
-        An experiment consisting in passing coherent light through two closely spaced slits and observing the pattern formed on a screen. As a result of interference, bright and dark fringes appear on the screen in the regions where the light is cancelled or reinforced. This is expected for waves such as light but in other objects on small scale, such as electrons, exhibit the same behaviour when they are fired towards a double slit. Moreover, it has been observed that the detection of the individual discrete impacts is inherently probabilistic, which is inexplicable using classical mechanics.
+        Coherent light passed through two closely spaced slits produces bright and dark interference fringes on a screen, exactly as expected for waves. The quantum surprise is that particles such as electrons, fired one at a time at a double slit, gradually build up the same interference pattern---yet each arrives as a single discrete impact at an unpredictable point. The wave nature governs where each particle is \emph{likely} to land, but the individual outcome is inherently probabilistic, which classical mechanics cannot account for.
 
     \subsection{Quantisation of the energy levels in the hydrogen atom}
 
-        Atomic spectroscopy shows that there exists a discrete infinite set of states in which the hydrogen atom (or any other) may exist, contrary to the predictions of classical physics which does not qunatise the orbits. Attempts at a theoretical understanding of the states of the hydrogen atom were important for the history of quantum mechanics, because all other atoms can be roughly understood once this simplest atomic structure is known in detail. However, classical non-quantised hydrogen atoms with orbiting electrons are also impossible beacuse accelarating charges would emit their energy very quickly and collapse. \todo{reword, remove redundant}
+        Atomic spectra show that the hydrogen atom can occupy only a discrete set of energy levels, whereas classical physics allows a continuous range of orbits. Classical physics fails here in two ways: it cannot explain the sharp spectral lines, and it cannot even keep the atom stable---a classically orbiting electron is an accelerating charge, so it would radiate its energy away and spiral into the nucleus almost at once. Quantisation of the allowed energies removes both problems.
 
     \subsection{The ultraviolet catastrophe}
 
-        The ultraviolet catastrophe, also called the Rayleigh--Jeans catastrophe, was a prediction of classical physics from the end of the nineteenth and the beginning of the twentieth century, that an ideal black body in thermal equilibrium would emit an unbounded amount of energy as the wavelength fell into the ultraviolet range. In 1900 Max Planck derived the correct form of the spectral intensity distribution function by adopting certain assumptions that were strange (by the standards of the time). In particular, Planck assumed that electromagnetic radiation may be emitted or absorbed only in discrete packets of energy, called quanta. \todo{remove verbose sentences and make it more to the point and more specific.}
+        Classical physics (the Rayleigh--Jeans law) predicted that a black body in thermal equilibrium would radiate ever more strongly at shorter wavelengths, so that the total emitted power would diverge to infinity in the ultraviolet---plainly at odds with experiment. In 1900 Planck removed the divergence by assuming that radiation is emitted and absorbed only in discrete packets of energy $E = h\nu$. This suppresses the high-frequency modes and yields the correct spectrum, the Planck distribution (\cref{eq:planck}).
 
 \section{The uncertainty principle and the limits of measurement accuracy}
 \label{sec:uncertainty}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the Robertson relation (squared right-hand side), added a plain-language commutator introduction and the sine-wave/localised-spike example.}
 
-    % NOTE: as written in the source, the left-hand side is a product of variances
-    % while the right-hand side is not squared; the standard Robertson relation is
-    % $\Delta^2\hat A\,\Delta^2\hat B \geq \frac{1}{4}|\langle[\hat A,\hat B]\rangle|^2$.
-    The Heisenberg uncertainty principle states that there exist pairs of quantities which cannot be measured simultaneously to arbitrary accuracy. Let $\hat{A}$, $\hat{B}$ be observables and $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$. Then:
+    The Heisenberg uncertainty principle states that certain pairs of observables cannot both have a sharp value in the same state: the more precisely one is fixed, the less precisely the other can be. This is a fundamental feature of quantum states, not a shortcoming of our instruments.
+
+    Whether two observables $\hat{A}$ and $\hat{B}$ can be sharp together is decided by their \emph{commutator}
+
+    \begin{equation*}
+        \comm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A},
+    \end{equation*}
+
+    which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the Robertson relation
 
     \begin{equation}\label{eq:uncertainty}
-        \Delta^2 \hat{A} \Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}}  \right| \qquad \merr
+        \Delta^2 \hat{A}\,\Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}} \right|^2,
     \end{equation}
 
-    % CLARITY: for a weaker-QM reader, one plain line helps before the formula ---
-    % "if two observables do not commute, no state can have a sharp value of both
-    % at once" --- and a note that $\comm{\hat A}{\hat B}=\hat A\hat B-\hat B\hat A$.
-    In particular, $\Delta^2 x \cdot \Delta^2 p_x \geq \frac{\hbar^2}{4}$. The state that saturates this inequality is a Gaussian wave packet. This means that there exist no states guaranteeing better localisation of the particle in position and momentum space.
+    where the variance $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$ measures the spread of $\hat{A}$ about its mean.
 
-    The uncertainty principle should not be confused with ``Heisenberg's microscope'', which states that in order to measure the position of a particle ever more accurately, a stream of photons of ever shorter wavelength must be used. However, the photons used for illumination consequently have ever greater momentum and in consequence cause a greater uncertainty of momentum.
+    The most important case is position and momentum. Since $\comm{\hat{x}}{\hat{p}_x} = i\hbar$, the relation gives
 
-    It is worth noting that such reasoning does not capture the meaning of the uncertainty principle, since it assumes the existence of an objective position of the electron which can be measured. \todo{This should be rewritten completely with better introduction exmplanation what a commutator is and introduction of pairs of values that cannot be measured simultaneously with some examples: wave would have momentum/position pair undefined since perfect sine fixes momentum but gives zero knoweldge on position etc.}
+    \begin{equation*}
+        \Delta^2 x\,\Delta^2 p_x \geq \frac{\hbar^2}{4},
+    \end{equation*}
+
+    saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once.
+
+    The trade-off is easiest to see for a wave. A pure sine wave has a single wavelength, so by the de Broglie relation ($p = \hbar k$, \cref{eq:de-broglie}) its momentum is perfectly defined---but it extends over all space, so its position is completely undefined. A sharply localised spike has a definite position, but building it requires adding together waves of every wavelength, so its momentum is completely undefined. Any real state is a compromise between these extremes.
+
+    This should not be confused with ``Heisenberg's microscope'', the argument that pinning down a particle's position needs light of ever shorter wavelength, whose photons then carry ever larger momentum and so disturb the particle more. That picture is misleading, because it still assumes the particle has a definite position waiting to be measured, which is exactly what the principle denies.
 
 \section{Approximate methods of quantum mechanics; perturbation theory for eigenvalues, Fermi's golden rule, the Born approximation for scattering amplitudes}
 \label{sec:approximate-methods}
@@ -346,56 +370,76 @@ where $s$ is the number of chemical components, $r$ the number of coexisting pha
     \end{equation}
 
     \subsection{The Born approximation}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the scattering amplitude (factor $\hbar^2$ and minus sign), clarified the plane-wave set-up, defined the momentum transfer $K$, and distinguished it from the Born--Oppenheimer approximation.}
 
-    A further important result of perturbation theory is the Born approximation for scattering amplitudes. The problem itself is formulated as the scattering of a given particle on a spherically symmetric potential $V$, treating its wave function as infinite, thereby reducing the problem to the stationary case. At large distances we obtain incoming and scattered plane waves, described spatially by $f(\theta, \phi)$. This quantity is a probability amplitude which, on taking the squared modulus, gives the differential cross-section. In general the problem is solved by writing the Schrödinger equation in the implicit form known as the Lippmann--Schwinger equation, and then solving it iteratively. Restricting oneself to the first iteration is called the Born approximation and has the form:
+    A further application of perturbation theory is the Born approximation for scattering. A particle is scattered off a fixed, spherically symmetric potential $V(r)$. The incident particle is described by a plane wave, and far from the potential the state is this incident wave plus an outgoing spherical wave whose angular amplitude $f(\theta, \phi)$ is the \emph{scattering amplitude}. Its squared modulus $|f|^2$ is the differential cross-section, that is, how much is scattered into each direction.
+
+    Writing the Schrödinger equation in an equivalent integral form (the Lippmann--Schwinger equation) and keeping only its first iteration gives the (first) Born approximation. For a spherically symmetric potential,
 
     \begin{equation}\label{eq:born}
-    f(\theta) = \frac{2m}{K\hbar}\int_0^\infty dr' r'V(r')\sin(Kr') \qquad \merr
+    f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
     \end{equation}
 
-    where $K=\left|\vec k_0 - k_0\frac{\vec r}{r}\right|$. \todo{probably wrong. also is it not the born-oppenheimer approximation? NOTE: the source's prefactor is $2m/(K\hbar)$; the standard first Born result for a spherically symmetric potential carries $\hbar^2$ and a minus sign: $f(\theta) = -\frac{2m}{K\hbar^2}\int_0^\infty r'V(r')\sin(Kr')dr'$.}
+    where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
 
     \subsection{The Schrödinger equation}
 
-        The Schrödinger equation is an equation of the form:
+        The Schrödinger equation governs how a quantum state evolves in time:
 
         \begin{equation}\label{eq:schrodinger}
             i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
         \end{equation}
 
-
-        In the course of solving the equation it is found that it has meaning only for a specific set of natural numbers---the quantum numbers: the principal $n$, the azimuthal $l$ and the magnetic $m$. This is equivalent to showing that the energy of the electron, the square of the angular momentum and the $z$-component of the angular momentum are quantised. Each of the eigenfunctions so obtained, $\Psi_{nlm}\left(r,\theta,\phi\right)$, is an orbital.
-
-        In chemistry, the \textbf{electron shell} around a given atom is taken to be the set of atomic orbitals having the same principal quantum number $n$.
-
-        The Schrödinger equation also permits the binding energy of the electron to be determined. \todo{this should be rewritten to be much clearer}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified the quantum numbers, the meaning of an orbital, and the binding energy (with the hydrogen value).}
+        Solving it for an atom, physically acceptable solutions exist only for particular integer \emph{quantum numbers}: the principal $n$ (which sets the energy and the shell), the azimuthal $l$ (the magnitude of the orbital angular momentum) and the magnetic $m$ (its projection on the $z$ axis). Equivalently, the energy, the squared angular momentum and its $z$-component are quantised. Each solution $\Psi_{nlm}\left(r,\theta,\phi\right)$ is an \emph{orbital}---a spatial probability distribution for the electron. In chemistry the \textbf{electron shell} is the set of orbitals sharing the same principal quantum number $n$. Solving the equation also gives the \emph{binding energy}, the energy needed to remove the electron from the atom (for the hydrogen ground state, $13.6$~eV).
 
     \subsection{The periodic table of the elements}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the periodic law to depend on atomic number (not mass) and defined atomic number, mass number, period and group.}
 
-        \textbf{The periodic table of the elements} --- a compilation, in the form of a table, of all the chemical elements, ordered according to their increasing atomic number, grouping the elements according to their cyclically recurring similarities of properties, in accordance with \textbf{Dmitri Mendeleev's periodic law}. It states that the properties of the elements are periodically dependent on their atomic masses.\merr The vertical columns in the periodic table are groups. Chemical similarity within a group is explained by the identical or similar electron configuration of the valence shell of the atoms of the elements of that group. The number of the period (the horizontal row), in turn, corresponds to the number of the valence shell of the atom. \todo{rewrite to fix mistakes. make explicit what meant by atomic numbers, mass numebrs, periods, groups etc}
+        The \textbf{periodic table} arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom. (The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table.) The modern \textbf{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
 
-    \subsection{Different types of chemical bonds} \todo{names and general charactersitics}
+        The layout of the table reflects the electron configuration:
+
+        \begin{itemize}
+            \item a \textbf{group} (vertical column) collects elements with a similar valence-shell configuration, and hence similar chemical behaviour.
+            \item a \textbf{period} (horizontal row) corresponds to the principal quantum number $n$ of the outermost occupied shell.
+        \end{itemize}
+
+    \subsection{Different types of chemical bonds}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: named the main bond types with one-line characteristics.}
+
+        A chemical bond is an attraction that holds atoms together, arising in each case from the valence electrons rearranging to lower the energy. The main types are:
+
+        \begin{itemize}
+            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and forms crystalline solids (e.g.\ NaCl).
+            \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons so that each attains a filled valence shell. It is strong and directional (e.g.\ H$_2$, diamond).
+            \item \textbf{Metallic} --- positive ion cores sit in a shared ``sea'' of delocalised valence electrons, which accounts for the conductivity and malleability of metals (e.g.\ copper).
+            \item \textbf{Hydrogen bonds and van der Waals forces} --- much weaker attractions. A hydrogen bond links a hydrogen atom to a nearby electronegative atom (it holds water together and binds the two strands of DNA), while van der Waals forces arise from weak, fluctuating dipoles.
+        \end{itemize}
 
 \section{Quantum tunnelling; examples}
 \label{sec:tunnelling}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the three-region wave function (oscillating outside, exponential inside) and the transmission coefficient (transmitted/incident, not reflected/incident).}
 
-    Quantum tunnelling is the phenomenon of a particle passing through a potential barrier of height greater than the energy of the particle. It has no classical counterpart or analogy. In quantum mechanics a particle is not a rigid body of definite size and precisely specified position. It is represented by a wave function which determines the probability of localising the particle in a specified region of space through the squared modulus of the wave function in that region.
+    Quantum tunnelling is the passage of a particle through a potential barrier higher than the particle's own energy---something forbidden in classical mechanics, where the particle simply lacks the energy to get over. It is possible because a quantum particle is described by a wave function whose squared modulus gives the probability of finding it at each point.
 
-    The solution of the Schrödinger equation for a particle with a potential barrier allows the wave function to be found for a particle located outside the barrier. The wave function inside the potential barrier takes the form of waves travelling in two directions:
+    Consider a particle of energy $E$ meeting a barrier of height $V_0 > E$. Solving the Schrödinger equation in the three regions gives:
+
+    \begin{itemize}
+        \item \textbf{before the barrier} --- an incident plus a reflected wave, $\psi(x) = Ae^{i k x} + Be^{-i k x}$.
+        \item \textbf{inside the barrier} --- since $E < V_0$ the wave does not oscillate but decays exponentially, $\psi(x) = Ce^{-\kappa x} + De^{\kappa x}$, with $\kappa = \sqrt{2m(V_0 - E)}/\hbar$.
+        \item \textbf{beyond the barrier} --- a transmitted wave travelling outwards, $\psi(x) = Fe^{i k x}$, with a smaller amplitude, $|F| < |A|$.
+    \end{itemize}
+
+    Because the exponential tail inside the barrier is still nonzero at the far edge, the transmitted amplitude does not vanish: there is a finite probability of the particle emerging. This is measured by the transmission coefficient
 
     \begin{equation*}
-        \psi(x) = Ae^{i k_1 x} + Be^{-i k_1 x}
+        T = \frac{|F|^2}{|A|^2},
     \end{equation*}
 
-    In the middle of the potential barrier the wave function of the particle undergoes exponential damping, dependent on the height of the barrier and on the energy of the particle. Outside the potential barrier the wave function takes the form of a wave travelling outwards:
-
-    \begin{equation*}
-        \psi(x) = Be^{i k_2 x}
-    \end{equation*}
-
-    where $k_1$ and $k_2$ are wave numbers dependent on the energy of the particle. Accordingly, the amplitude of the wave function on the far side of the barrier, $B$, is always smaller than the amplitude of the wave function inside, $A$. The tunnelling coefficient is expressed as $T = \frac{B^2}{A^2}$.\todo{rewrite to fix mistakes.}
+    which falls off exponentially with the width of the barrier and with $\sqrt{m(V_0 - E)}$.
 
     Nuclear fusion, the source of the Sun's energy, occurs to a large extent thanks to the tunnelling phenomenon. This phenomenon makes it possible to overcome the barrier of Coulomb repulsion of atomic nuclei at a temperature lower than would follow from the laws of thermodynamics. The tunnel effect also raises hopes of lowering the temperature of fusion carried out in a controlled manner. Thanks to the tunnelling phenomenon, the emission of $\alpha$ particles occurs in the radioactive decay of massive atomic nuclei.
 
