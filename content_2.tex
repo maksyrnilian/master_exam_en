@@ -47,30 +47,39 @@
     where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
 
     \subsection{Paramagnets}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined the Curie constant and its temperature dependence, and ``Fermi gas'' in plain terms.}
 
-        The most common group, characterised by positive magnetic susceptibility and hence by a magnetisation whose direction coincides with that of the magnetic field. It arises from the presence of unpaired electrons which, under the influence of an external field, align their magnetic moments with its direction. The most commonly considered models of paramagnetism are:
+        The most common group. They have positive susceptibility, so the induced magnetisation points along the applied field. It comes from unpaired electrons, whose magnetic moments turn to line up with an external field. Two standard models:
 
         \begin{itemize}
-            \item Curie paramagnetism --- considering a system of isolated magnetic moments, one may derive a formula for the susceptibility of the whole medium as $\chi_m = \frac{C}{T}$. \todo{explain terms}
-            \item Pauli paramagnetism --- carriers moving freely inside a metal may be treated as a Fermi gas, and their interactions with an external field lead to macroscopic magnetisation. \todo{what is fermi gas}
+            \item Curie paramagnetism --- a set of independent atomic moments that do not interact with one another. Balancing their alignment against the randomising effect of heat gives Curie's law for the susceptibility,
+            \begin{equation*}
+                \chi_m = \frac{C}{T},
+            \end{equation*}
+            where $T$ is the absolute temperature and $C$ (the Curie constant) is fixed by the size and number of the atomic moments. The susceptibility falls as the temperature rises because thermal agitation fights the alignment.
+            \item Pauli paramagnetism --- in a metal the conduction electrons are treated as a \emph{Fermi gas}: a gas of electrons that barely interact, but which (because no two electrons may share the same quantum state) fill the available energy levels from the bottom up to a top level called the Fermi level. Only the few electrons near that top level are free to reorient in a field, so the resulting paramagnetism is weak and almost independent of temperature.
         \end{itemize}
 
     \subsection{Diamagnets}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified ``all electrons paired'' and how bound electrons respond in an insulator (Larmor precession, not free circulation).}
 
-        Diamagnetism is the phenomenon of inducing a magnetisation opposite to the magnetic field strength, which may be expressed by a negative susceptibility. It occurs in every material, but is usually weaker than paramagnetism, and therefore we classify as diamagnets those media in which it is the dominant effect. Thus the condition is usually that all electrons be paired. \todo{what?} 
+        Diamagnetism is the appearance of a magnetisation \emph{opposite} to the applied field, i.e.\ a negative susceptibility. Every material has this response, but it is very weak, so we call a material a diamagnet only when it is the dominant effect. That happens when the atoms carry no permanent magnetic moment---all electron spins paired---so there is no paramagnetic contribution to mask it.
 
-        A special case is that of superconductors, which expel the magnetic field outside the body completely through the Meissner effect, while the remainder are described by:
+        A special case is that of superconductors, which expel the magnetic field from their interior completely through the Meissner effect. The remaining diamagnets are described by:
 
         \begin{itemize}
-            \item Langevin diamagnetism --- describes the diamagnetism of dielectrics, where electrons under the influence of an external field begin to circulate \todo{how can elecetrons circulate in a dielectric?}, which is called Larmor precession (see \cref{subsec:quantum-precession}). A charge moving in a circle is de facto a loop through which a current flows, which effectively gives a magnetic moment of opposite direction.
-            \item Landau diamagnetism --- similarly, it considers the Fermi gas in metals, except that in this case the orbital moment, and not the spin of the particles, is taken into account.
+            \item Langevin diamagnetism --- describes insulators, where the electrons are bound in atoms rather than free to conduct. An applied field makes each bound electron orbit precess (Larmor precession, \cref{subsec:quantum-precession}). A precessing orbit is effectively a small current loop, and the magnetic moment it produces points against the applied field, which is the origin of the diamagnetic response.
+            \item Landau diamagnetism --- treats the same Fermi gas of conduction electrons as Pauli paramagnetism, but now accounts for the field bending the electrons' orbital motion rather than flipping their spin. This orbital effect is diamagnetic.
         \end{itemize}
 
     \subsection{Ferromagnets}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined remanence, gave one-line meanings of the Ising/XY/Heisenberg models, and stated the macroscopic effect of antiferro-/ferrimagnets.}
 
-        Taking into account the exchange interactions between microscopic magnetic moments leads to a third category, ferromagnetism. Here the particles tend to align not only with the external field but also with their neighbours, leading to the formation of magnetic domains within the material, resulting in a strong magnetic susceptibility and also in the occurrence of remanent \todo{meaning?} magnetisation. The analysis of such materials is carried out by means of statistical physics, and depending on the material one may make use of the Ising, XY or Heisenberg models. The most general is the last of these, which permits arbitrary alignments of the moments, while the Ising model distinguishes only up and down, and the XY model rotation about a single axis. \todo{skip the terms that are not explained}
+        A third category appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to point the same way as each other, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet.
 
-        It is also worth mentioning the existence of antiferromagnets and ferrimagnets. In contrast to ferromagnets, their domains are not aligned in one direction. For the former they cancel completely, and for the latter only partially. \todo{what is the macroscopic effect?}
+        Such materials are analysed with statistical-physics lattice models that differ in how freely each moment may point: the Ising model allows only up or down, the XY model allows any direction in a plane, and the Heisenberg model allows any direction in space (the most general).
+
+        Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation. In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example). \todo{examples: one for each type}
 
 \section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
 
@@ -147,130 +156,126 @@ Performing an analagous derivation for the Maxwell equations in a medium, we fin
 \end{equation}
 
 \paragraph{Solution to the wave equation}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: noted the physical field is the real part and that the direction of $\vec{E_0}$ sets the polarisation, leading into the next subsection.}
 
-The wave equation is solved by a plane polarised wave of the form:
+The wave equation is solved by a plane wave of the form
 
 \begin{equation}
-    \vec{E}(\vec{r},t) = \vec{E_0}e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
+    \vec{E}(\vec{r},t) = \vec{E_0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
 \end{equation}
 
-where
-
-\begin{equation*}
-    e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}
-\end{equation*}
-
-is used. \todo{Look for mistakes and amiguities and say more about polarisaion below in reference to the plane wave solution. Jones vectors?}
+with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E_0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = |\vec{E}|/c$. The direction in which $\vec{E_0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
 \subsection{Polarisation of a wave}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: gave concrete linear/circular/elliptical cases tied to the plane-wave solution, with a light mention of the Jones vector.}
 
-Polarisation is a property of a transverse wave concerning the ordered relation between the direction of oscillation of the disturbance and the direction of propagation of the wave. The best known polarisations are linear and circular. Polarisation occurs only for those kinds of waves, and under those conditions, in which the oscillations may take place in various directions perpendicular to the direction of propagation of the wave. \todo{Same as above.}
-
-\subsection{The laws of reflection and refraction of electromagnetic waves}
-
-\textbf{The law of reflection.} The angle of reflection is equal to the angle of incidence, and the incident ray, the reflected ray and the normal to the reflecting surface lie in one plane. As a result of reflection only the direction of propagation of the wave changes, and its wavelength does not change. \todo{what is a ray?}
-
-\textbf{The law of refraction.} The law of refraction (Snell's law) states that the incident and refracted rays and the normal to the surface lie in one plane, and that the angles satisfy the relation:
-
-\begin{equation}\label{eq:snell}
-    \sin \theta_1 \,\cdot\, n_1 = \sin \theta_2 \,\cdot\, n_2
-\end{equation}
-
-where $n_{1}$ is the refractive index of the first medium, $n_{2}$ the refractive index of the second medium, $\theta_{1}$ the angle of incidence, that is, the angle between the incident ray and the normal to the interface between the media, and $\theta_{2}$ the angle of refraction, the angle between the refracted ray and the normal.
-
-\textbf{The Brewster angle} --- the angle of incidence of light on the surface of a dielectric at which the reflected ray is completely linearly polarised. When unpolarised light falls on the boundary between transparent media at such an angle that the reflected and refracted rays form a right angle, the reflected light is completely polarised. The Brewster angle is given by the formula:
-
-\begin{equation}\label{eq:brewster}
-    \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}}
-\end{equation}
-
-where $n_{1} < n_{2}$, and the light is incident on the interface from the side of medium $n_{1}$. \todo{Define polarisations s and p. Which is reflected which is not. Mention Fresnel amplitude coeffcients maybe without explicit forms.}
-
-\subsection{The Doppler effect}
-
-\textbf{The Doppler effect} --- a physical phenomenon occurring for waves, consisting in the appearance of a difference between the frequency of the wave emitted by its source and the frequency of the wave recorded by an observer who is moving with respect to that source. For waves propagating in a medium, such as for example sound waves, the magnitude of the effect depends on the velocities of the observer and of the source relative to the medium in which these waves propagate. 
-
-In the case of waves propagating without the participation of a material medium, such as for example light in vacuum, only the difference of the velocities of source and observer matters.
-
-\paragraph{Acoustic waves}
-
-In the case where the observer is moving, the wave speed is effectively changed
-
-\begin{equation*}
-    f' = \frac{V_{o} + V}{\lambda} = \frac{V}{\lambda}\frac{V_{o} + V}{V} = f\frac{V_{o} + V}{V}
-\end{equation*}
-
-where $f$ is the frequency of the wave emitted by the source and $V_{o}, V$ are the velocities of the observer and of the wave. In this convention an observer approaching the source has a velocity of positive sign. In the case where the source is moving, the wavelength emitted is effectively changed:
-
-\begin{equation*}
-    f' = \frac{V}{\lambda'} = \frac{V}{\lambda - V_{z}T} = \frac{V}{VT - V_{z}T} = f\frac{V}{V - V_{z}},
-\end{equation*}
-
-where $T$ is the period of the wave and $V_{z}$ is the velocity of the source. In this convention a source approaching the observer has a velocity of positive value.
-
-\paragraph{Electromagnetic waves}
-
-Here the effect is already a relativistic one. We take into account only the relative velocity, i.e.\ it does not matter whether the source (or the observer) is in motion. On passing from one frame of reference to another, for a source or observer receding from one another, the frequency of the wave is:
-
-\begin{equation*}
-    f' = f\frac{\sqrt{1-\beta^{2}}}{1+\beta}
-\end{equation*}
-
-where $\beta = \frac{v}{c}$. If the motion takes place at an angle $\phi$, then:
-
-\begin{equation}\label{eq:doppler-em}
-    f' = f\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}
-\end{equation}
-
-For the angle $\phi = \frac{\pi}{2}$ the so-called transverse Doppler effect occurs, which does not arise for mechanical waves. \todo{The entire Doppler effect section should be rewritten because it is very unintuitively written with convolutions. Use standard formulae with $\pm$ instead of this and call the EM case relativistic. Referecence to $\beta$ instead of restating it.}
-
-\section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
-
-Electromagnetic waves are described by the equation:
-% NOTE: this is the wave equation derived in \cref{eq:em-wave}.
-
-\begin{equation*}
-    \nabla^2\vec{E} = \mu_0 \varepsilon_0\frac{\partial^2}{\partial t^2}\vec{E}
-\end{equation*}
-
-For a plane wave propagating in the $z$ direction with angular frequency $\omega$ and wave number $k$, one of the solutions of the above equations is:
-
-\begin{equation*}
-    E(z,t) = E_0\cos \left( \omega t - kz  \right)
-\end{equation*}
-
-In quantum mechanics, electromagnetic radiation is described as a stream of photons---wave packets. The energy of a single photon depends on the oscillation frequency of the electromagnetic wave, $E = \hbar \omega$, while the momentum is described as $p = \hbar k$.
-
-Matter waves --- every material object may be described in two ways: as a collection of particles or as a wave. Effects confirming the wave nature of matter are observed in the form of the diffraction of elementary particles, and even of whole atomic nuclei. The formula for the de Broglie wavelength is $\lambda = \frac{h}{mv}$. It is relatively easy to observe wave effects in the case of light particles, e.g.\ electrons (small objects manifest wave properties). The diffraction and interference of electron waves are exploited in electron diffraction imaging and in low-energy electron diffraction. The above considerations concern the free motion of particles (to which plane waves would correspond). In real cases a certain group of matter waves, a so-called wave packet, must be assigned to the particle.
-
-% NOTE: this mechanical-waves paragraph repeats the description in
-% \cref{sec:mechanical-media}. Kept for standalone delivery; consider trimming
-% to a cross-reference if you want to shorten.
-Mechanical waves --- if we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium.
-
-All waves are subject to typically wave-like phenomena such as interference and diffraction, and satisfy the laws of reflection and refraction. As a result of superposition a standing wave may arise.
-
-Electromagnetic waves do not need a medium in order to propagate, i.e.\ they can propagate in vacuum. \todo{Make it consistent with above sections. Properly define the Brogile waves with labels. Make it more clear.}
-
-\section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
-
-A substance which is physically and chemically homogeneous throughout its volume is called a phase.\todo{is it a definition?} With a change in external factors, such as temperature or pressure, an abrupt change in these properties may however occur, which is termed a phase transition. These changes may concern the state of matter, the crystal structure, magnetic properties or superconductivity. In the phenomenological description of thermodynamics, phase transitions are described by means of free energy \todo{what is it? or is it enthalpy?} dependent on the order parameter of the transition. Depending on the case, this is a dynamical variable which takes lower values for the phase of lower entropy\todo{wrong, rewrite. the opposite entropy behaviour may be true}, i.e.\ for example the magnetisation for ferromagnets or the density for liquids.
-
-The aforementioned discontinuous changes of the parameters of the system at a phase transition lead to the Ehrenfest classification, in which changes of the chemical potential $\mu$ are considered. By a phase transition of the $n$-th kind we understand one in which the lowest partial derivative $\frac{\partial^n \mu}{\partial T^n}$ is discontinuous. Examples of first-order phase transitions are changes of the state of matter, where a discontinuous change of density occurs. An example of the second order, on the other hand, is that of ferromagnets, which below the Curie temperature begin to increase their magnetic susceptibility. In practice, third-order phase transitions do not occur. This classification also allows for continuous phase transitions, an example of which may be the superfluid state.
-
-The conditions for the coexistence of phases are given by the Gibbs phase rule. It states what the number of intensive parameters $f$ is that may be varied without changing the number of phases in equilibrium, and is given by:
-
-\begin{equation}\label{eq:gibbs-phase}
-f = s - r + 2
-\end{equation}
-
-where $s$ is the number of chemical substances and $r$ the number of phases. For the rule to be satisfied, the system must be in thermal, mechanical and chemical equilibrium. For example, for a single substance, $s=1$, we have:
+Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Taking propagation along $z$, the field lies in the $x$--$y$ plane and the main cases are:
 
 \begin{itemize}
-    \item $r=1$, one phase, i.e.\ $f=2$ --- a surface
-    \item $r=2$, two phases at once, $f=1$ --- a curve
-    \item $r=3$, three phases, $f=0$ --- a (triple) point
-\end{itemize} \todo{The entire section needs to be rewritten in simpler terms with more cathy intuitive examples and minimised niche terminology}
+    \item linear --- the two perpendicular components oscillate in phase, so $\vec{E}$ stays along a fixed line.
+    \item circular --- the components have equal amplitude but are a quarter-period ($90^\circ/\frac{\pi}{2}$) out of phase, so the tip of $\vec{E}$ traces a circle.
+    \item elliptical --- the general case, tracing an ellipse.
+\end{itemize}
+
+The two complex components $(E_x, E_y)$ of the plane wave above therefore fix the polarisation through their relative amplitude and phase. This pair is known as the Jones vector.
+
+\subsection{The laws of reflection and refraction of electromagnetic waves}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined ``ray'' and the s/p polarisations, and stated what Brewster's angle does to them (Fresnel coefficients named, forms omitted).}
+
+A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
+
+\textbf{The law of reflection.} The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
+
+\textbf{The law of refraction (Snell's law).} The incident and refracted rays and the normal lie in one plane, and the angles satisfy
+
+\begin{equation}\label{eq:snell}
+    n_1 \sin \theta_1 = n_2 \sin \theta_2,
+\end{equation}
+
+where $n_1$, $n_2$ are the refractive indices of the two media, $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
+
+To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular/senkrecht) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
+
+\textbf{The Brewster angle} $\alpha_B$ is the angle of incidence at which the reflected and refracted rays are perpendicular to one another. At this angle the reflected $p$-component vanishes, so the reflected light is completely $s$-polarised (perpendicular to the plane of incidence). It is given by
+
+\begin{equation}\label{eq:brewster}
+    \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}},
+\end{equation}
+
+with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$).
+
+\subsection{The Doppler effect}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: replaced the convoluted derivations with standard $\pm$ formulae, split acoustic vs.\ relativistic EM, and cross-referenced $\beta$ instead of restating it.}
+
+\textbf{The Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
+
+\paragraph{Acoustic (mechanical) waves} With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
+
+\begin{equation}\label{eq:doppler-acoustic}
+    f' = f\,\frac{v \pm v_o}{v \mp v_s},
+\end{equation}
+
+where the upper signs apply when that party moves \emph{towards} the other (raising the pitch) and the lower signs when it moves away. Observer and source enter differently: the observer changes the wave speed it meets, while the source changes the wavelength it emits.
+
+\paragraph{Electromagnetic waves} Here the effect is relativistic and depends only on the relative speed through $\beta = v/c$ (\cref{eq:gamma}). For source and observer separating along the line of sight,
+
+\begin{equation*}
+    f' = f\,\sqrt{\frac{1-\beta}{1+\beta}} \qquad (\text{redshift}),
+\end{equation*}\todo{use the same upper sig/lower sign convention as above}
+
+and swapping the sign of $\beta$ gives the approaching (blueshift) case. If the relative velocity makes an angle $\phi$ with the line of sight,
+
+\begin{equation}\label{eq:doppler-em}
+    f' = f\,\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}.
+\end{equation}
+
+At $\phi = \tfrac{\pi}{2}$ this leaves the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = f/\gamma$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
+
+\section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten for consistency: cross-referenced the wave equation and the mechanical-waves description (removing the repeated paragraph), and labelled the de Broglie relation.}
+
+\textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k$ the wave number.
+
+\textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
+
+\textbf{Matter waves} express the fact that every particle also behaves as a wave. The associated (de Broglie) wavelength is
+
+\begin{equation}\label{eq:de-broglie}
+    \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
+\end{equation}
+
+so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
+
+\textbf{Common features and differences.} All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle, while for light it corresponds to the number of photons.
+
+\section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Full rewrite: fixed the reversed entropy claim for the order parameter, identified the potential as the Gibbs free energy (not enthalpy), and simplified the terminology with concrete examples.}
+
+A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
+
+To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (it is not the enthalpy). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
+
+The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\partial^{n}\mu/\partial T^{n}$ is the first that is discontinuous.
+
+\begin{itemize}
+    \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
+    \item Second order (continuous) --- the first derivatives are continuous but a second derivative jumps or diverges, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
+    \item Third and higher orders essentially do not occur in practice. Continuous transitions such as the onset of superfluidity also belong here.
+\end{itemize}
+
+The conditions for phases to coexist are given by the \emph{Gibbs phase rule},
+
+\begin{equation}\label{eq:gibbs-phase}
+    f = s - r + 2,
+\end{equation}
+
+where $s$ is the number of chemical components, $r$ the number of coexisting phases and $f$ the number of intensive variables (such as temperature and pressure) that may be changed while keeping those phases in equilibrium. It requires the system to be in thermal, mechanical and chemical equilibrium. For a single substance ($s = 1$):
+
+\begin{itemize}
+    \item $r = 1$: one phase, $f = 2$ --- an area on the pressure--temperature diagram.
+    \item $r = 2$: two phases coexisting, $f = 1$ --- a coexistence curve.
+    \item $r = 3$: three phases, $f = 0$ --- the triple point.
+\end{itemize}
 
 \section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
 
