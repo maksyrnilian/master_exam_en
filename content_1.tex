@@ -2,505 +2,487 @@
 \section{Inertial frames, principles of relativity, the Galilean transformation, the Lorentz transformation and its consequences}
 \label{sec:inertial-frames}
 
-An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion. An inertial frame of reference may equivalently be defined as a frame in which no fictitious inertial forces appear.
+    An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion. An inertial frame of reference may equivalently be defined as a frame in which no fictitious inertial forces appear.
 
-The Galilean principle of relativity states that the laws of motion are identical in all inertial frames of reference, i.e.\ there is no privileged frame of reference. It was formulated in 1604 in the form of the following law: all frames of reference moving with respect to one another at constant velocity (including $\vec{v}=0$) are equivalent. Its consequence is the set of Galilean transformations, in which time and the distance between any two points remain constant regardless of the frame of reference.
+    The Galilean principle of relativity states that the laws of motion are identical in all inertial frames of reference, i.e.\ there is no privileged frame of reference. It was formulated in 1604 in the form of the following law: all frames of reference moving with respect to one another at constant velocity (including $\vec{v}=0$) are equivalent. Its consequence is the set of Galilean transformations, in which time and the distance between any two points remain constant regardless of the frame of reference.
 
-Einstein additionally postulated that in every inertial frame of reference the speed of light must have the same value. He based this assumption on an analysis of the transformations that leave Maxwell's equations invariant. The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate.
+    Einstein additionally postulated that in every inertial frame of reference the speed of light must have the same value. He based this assumption on an analysis of the transformations that leave Maxwell's equations invariant. The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate.
 
-Consider two frames of reference: the first at rest and the second---the primed one---moving with velocity $v$ along the $x$ axis. The Lorentz transformation between these two frames takes the following form:
+    Consider two frames of reference: the first at rest and the second---the primed one---moving with velocity $v$ along the $x$ axis. The Lorentz transformation between these two frames takes the following form:
 
-\begin{align*}
-    t' &= \frac{t-xv/c^2}{\sqrt{1-v^2/c^2}} \\
-    x' &= \frac{x-tv}{\sqrt{1-v^2/c^2}} \\
-    y' &= y \\
-    z' &= z
-\end{align*}
+    \begin{align*}
+        t' &= \frac{t-xv/c^2}{\sqrt{1-v^2/c^2}} \\
+        x' &= \frac{x-tv}{\sqrt{1-v^2/c^2}} \\
+        y' &= y \\
+        z' &= z
+    \end{align*}
 
-The following notation may also be adopted:
+    The following notation may also be adopted:
 
-\begin{equation}\label{eq:gamma}
-    \gamma = \frac{1}{\sqrt{1 - \beta^2}},\; \beta=\frac{v}{c},
-\end{equation}
+    \begin{equation}\label{eq:gamma}
+        \gamma = \frac{1}{\sqrt{1 - \beta^2}},\; \beta=\frac{v}{c},
+    \end{equation}
 
-which yields:
+    which yields:
 
-\begin{equation}\label{eq:lorentz}
-\begin{aligned}
-    t' &= \gamma\left(t-xv/c^2\right) \\
-    x' &= \gamma\left(x-tv\right) \\
-    y' &= y \\
-    z' &= z
-\end{aligned}
-\end{equation}
+    \begin{equation}\label{eq:lorentz}
+        \begin{aligned}
+            t' &= \gamma\left(t-xv/c^2\right) \\
+            x' &= \gamma\left(x-tv\right) \\
+            y' &= y \\
+            z' &= z
+        \end{aligned}
+    \end{equation}
 
-The parameter $\gamma$ is also known as the Lorentz factor, and strictly: $\gamma > 1$. Note that in the limit $c \xrightarrow{} \infty$ the transformation reduces to the Galilean transformation.
+    The parameter $\gamma$ is also known as the Lorentz factor, and strictly: $\gamma > 1$. Note that in the limit $c \xrightarrow{} \infty$ the transformation reduces to the Galilean transformation.
 
-\needspace{4\baselineskip}
-The consequences of the Lorentz transformation include:
-\begin{enumerate}
-    \item Time dilation, described by the formula $\Delta t = \gamma\Delta t_0$, where $\Delta t_0$ is the duration of a phenomenon recorded by an observer at rest with respect to that phenomenon, and $\Delta t$ is the duration of the same phenomenon recorded by another observer moving with velocity $v$ with respect to the first. The event appears \textit{shortest} observed in its own frame.
-    \item Lorentz contraction, described by the formula $L = {L_0}/{\gamma}$, where $L_0$ is the length of an object at rest and $L$ is the length of the object recorded by an observer moving with respect to it at velocity $v$. The object appears \textit{longest} in in its own frame.
-    \item Relativity of simultaneity: two events determined by one observer to be simultaneous need not be simultaneous for another observer. Simultaneity translates to other frames only for the events that happen at the same point in space.
-    \item The description of vector quantities in four dimensions. Position, momentum and potential are described respectively by a four-vector, a four-momentum and a four-potential. For example:
-    % Four-momentum as an explicit column vector
-    \begin{equation*}
-        p^{\mu} =
-        \begin{bmatrix}
-            p^{0} \\ p^{1} \\ p^{2} \\ p^{3}
-        \end{bmatrix}
-        =
-        \begin{bmatrix}
-            E/c \\ p_x \\ p_y \\ p_z
-        \end{bmatrix}
-    \end{equation*}
-
-\end{enumerate}
+    \needspace{4\baselineskip}
+    The consequences of the Lorentz transformation include:
+    \begin{enumerate}
+        \item Time dilation, described by the formula $\Delta t = \gamma\Delta t_0$, where $\Delta t_0$ is the duration of a phenomenon recorded by an observer at rest with respect to that phenomenon, and $\Delta t$ is the duration of the same phenomenon recorded by another observer moving with velocity $v$ with respect to the first. The event appears \textit{shortest} in its own frame.
+        \item Lorentz contraction, described by the formula $L = {L_0}/{\gamma}$, where $L_0$ is the length of an object at rest and $L$ is the length of the object recorded by an observer moving with respect to it at velocity $v$. The object appears \textit{longest} in its own frame.
+        \item Relativity of simultaneity: two events determined by one observer to be simultaneous need not be simultaneous for another observer. Simultaneity translates to other frames only for the events that happen at the same point in space.
+        \item The description of vector quantities in four dimensions. Position, momentum and potential are described respectively by a four-vector, a four-momentum and a four-potential. For example:
+        % Four-momentum as an explicit column vector
+        \begin{equation*}
+            p^{\mu} =
+            \begin{bmatrix}
+                p^{0} \\ p^{1} \\ p^{2} \\ p^{3}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+                E/c \\ p_x \\ p_y \\ p_z
+            \end{bmatrix}
+        \end{equation*}
+    \end{enumerate}
 
 \section{Fundamental interactions; carriers and range of interactions, charges and characteristic energy scales}
 
-Four types of fundamental interaction are currently known, each mediated by its own carrier:
+    Four types of fundamental interaction are currently known, each mediated by its own carrier:
 
-\begin{itemize}
-    \item the strong interaction
-    \item the weak interaction
-    \item the electromagnetic interaction
-    \item the gravitational interaction
-\end{itemize}
+    \begin{itemize}
+        \item the strong interaction
+        \item the weak interaction
+        \item the electromagnetic interaction
+        \item the gravitational interaction
+    \end{itemize}
 
-In quantum theories, interactions are transmitted by certain particles called interaction carriers or interaction quanta. There are two categories of such particles---real particles (transmitting the fundamental interactions) and quasiparticles (pseudoparticles: the phonon, the plasmon, the magnon).
+    In quantum theories, interactions are transmitted by certain particles called interaction carriers or interaction quanta. There are two categories of such particles---real particles (transmitting the fundamental interactions) and quasiparticles (pseudoparticles: the phonon, the plasmon, the magnon).
 
-\begin{table}[h!]
-\centering
-\begin{tabular}{|c|c|c|c|c|c|}
-\hline
-interaction & carrier & range & charge & mass & spin \\
-\hline
-strong & gluon & $10^{-15}$\,m & colour & 0 & 1 \\
-\hline
-weak & $W^+, W^-, Z^0$ boson & $10^{-18}$\,m & isospin & $m_0>0$ & 1 \\
-\hline
-electromagnetic & photon & $\infty$ & --- & 0 & s=1 \\
-\hline
-gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & s=2 \\
-\hline
-\end{tabular}
-\end{table}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            interaction & carrier & range & charge & mass & spin \\
+            \hline
+            strong & gluon & $10^{-15}$\,m & colour & 0 & 1 \\
+            \hline
+            weak & $W^+, W^-, Z^0$ boson & $10^{-18}$\,m & isospin & $m_0>0$ & 1 \\
+            \hline
+            electromagnetic & photon & $\infty$ & --- & 0 & s=1 \\
+            \hline
+            gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & s=2 \\
+            \hline
+        \end{tabular}
+    \end{table}
 
-\todo{Rewrite this section and verify claims}
-% NOTE: the relation used here is the energy--time uncertainty relation; it is
-% heuristic and distinct from the Robertson relation \cref{eq:uncertainty}.
-% The \merr is retained from the source.
-% CLARITY: for a weaker-QM reader it is worth one plain sentence --- "a state
-% that exists only for a short time cannot have a sharply defined energy" ---
-% before invoking the formula.
-It follows from the Heisenberg uncertainty principle, $\Delta E \Delta t \geq \frac{\hbar}{2}$\merr, that field quanta may exist for a finite time, set by the magnitude of these energies, such that the product of these quantities is of the order of the Planck constant. The uncertainty principle allows the range of an interaction to be estimated, this range depending on the rest mass of the carrier particle. The masslessness of photons, as well as the expected masslessness of gravitons, is on this account the reason why these forces are long-ranged. Particles of zero energy, and hence of zero rest mass, would have infinite range.\merr
+    It follows from the Heisenberg uncertainty principle that a state that exists only for a short time cannot have a sharply defined energy, $\Delta E \Delta t \geq \frac{\hbar}{2}$. So, field quanta may exist for a finite time, set by the magnitude of these energies, such that the product of these quantities is of the order of the Planck constant. The uncertainty principle allows the range of an interaction to be estimated, this range depending on the rest mass of the carrier particle. The masslessness of photons, as well as the expected masslessness of gravitons, is on this account the reason why these forces are long-ranged. Particles of zero energy, and hence of zero rest mass, would have infinite range.
 
-Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.385 \pm 0.015$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
+    Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.369 \pm 0.013$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
 
-The graviton is a hypothetical particle whose existence is assumed by the theory of quantum gravity based on quantum field theory, but not on the Standard Model. The graviton has neither mass nor electric charge, and is a boson of spin $s = 2$.
+    The graviton is a hypothetical particle whose existence is assumed by the theory of quantum gravity based on quantum field theory, but not on the Standard Model. The graviton has neither mass nor electric charge, and is a boson of spin $s = 2$.
 
-There is no physical law implying that the detection of a graviton is impossible, but the required detector mass makes it impossible in practice. For example, it is estimated that a detector of Jupiter's mass operating at 100\% efficiency would be capable of detecting one graviton in ten years. The reason for this is the very small cross-section of the graviton for interaction with matter. A further problem is shielding from background noise. The two basic sources of noise are cosmic radiation and neutrinos.
+    There is no physical law implying that the detection of a graviton is impossible, but the required detector mass makes it impossible in practice. For example, it is estimated that a detector of Jupiter's mass operating at 100\% efficiency would be capable of detecting one graviton in ten years. The reason for this is the very small cross-section of the graviton for interaction with matter. A further problem is shielding from background noise. The two basic sources of noise are cosmic radiation and neutrinos.
 
-The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
+    The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
 
-As carriers of the strong interaction, gluons have double charges: one colour and one anticolour. For example, there exists a red--antiblue gluon (red/antiblue gluon), which carries the colour red. When a quark emits or absorbs a gluon, the colour of the quark changes. Suppose, for instance, that a red quark turns into a blue quark and emits a red--antiblue gluon. Such a gluon is absorbed by another blue quark. As a result of absorbing the red--antiblue gluon, the blue quark turns into a red quark.
+    As carriers of the strong interaction, gluons have double charges: one colour and one anticolour. For example, there exists a red--antiblue gluon (red/antiblue gluon), which carries the colour red. When a quark emits or absorbs a gluon, the colour of the quark changes. Suppose, for instance, that a red quark turns into a blue quark and emits a red--antiblue gluon. Such a gluon is absorbed by another blue quark. As a result of absorbing the red--antiblue gluon, the blue quark turns into a red quark. \todo{Rewrite this section and verify claims}
 
 \section{Conservation laws in physics and their connection with symmetry laws}
 
-The symmetries of physical systems are closely connected with conservation laws. Noether's theorem formalises this connection, stating that to every continuous symmetry of the action there corresponds a conservation law.
+    The symmetries of physical systems are closely connected with conservation laws. Noether's theorem formalises this connection, stating that to every continuous symmetry of the action there corresponds a conservation law.
 
-\subsection{Noether's theorem}
-In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
+    \subsection{Noether's theorem}
 
-Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action $S$ is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
-\begin{equation}\label{eq:action}
-S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
-\end{equation}
-where $\Lagr$ is the Lagrangian of the system,
-\begin{equation}\label{eq:lagrangian}
-\Lagr \equiv T-V,
-\end{equation}
-where $T$ is the kinetic energy and $V$ is the potential energy of the system.
-The dynamics of the system are governed by the Euler--Lagrange equation,
-\begin{equation}\label{eq:euler-lagr}
-\frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
-\end{equation}
-where $q$ is some coordinate relevant to the system. This is consistent with classical Newtonian mechanics.
+        In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
 
-\subsection{Examples of the application of Noether's theorem}
+        Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action $S$ is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
+        \begin{equation}\label{eq:action}
+            S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
+        \end{equation}
+        where $\Lagr$ is the Lagrangian of the system,
+        \begin{equation}\label{eq:lagrangian}
+            \Lagr \equiv T-V,
+        \end{equation}
+        where $T$ is the kinetic energy and $V$ is the potential energy of the system.
+        The dynamics of the system are governed by the Euler--Lagrange equation,
+        \begin{equation}\label{eq:euler-lagr}
+            \frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
+        \end{equation}
+        where $q$ is some coordinate relevant to the system. This is consistent with classical Newtonian mechanics.
 
-\subsubsection{Conservation of energy}
+    \subsection{Examples of the application of Noether's theorem}
 
-Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian $\Lagr$ does not depend explicitly on time,
-\begin{equation*}
-    \frac{\partial \Lagr}{\partial t} = 0,
-\end{equation*}
-then the energy of the system is conserved. Using this together with \cref{eq:euler-lagr} leads to
-\begin{equation*}
-\frac{\partial \Lagr}{\partial \dot{q}}\,\dot{q} - \Lagr = \const = \Ham,
-\end{equation*}
-% NOTE: source wrote plain L here; changed to \Lagr for consistency with the
-% rest of the section.
-which is the Hamiltonian,
-\begin{equation}\label{eq:hamiltonian}
-    \Ham \equiv T + V,
-\end{equation}
-which corresponds to the total energy of the system.
+        \subsubsection{Conservation of energy}
 
-\subsubsection{Conservation of momentum}
+            Time symmetry (homogeneity of time) leads to the law of conservation of energy. Suppose the Lagrangian $\Lagr$ does not depend explicitly on time,
+            \begin{equation*}
+                \frac{\partial \Lagr}{\partial t} = 0,
+            \end{equation*}
+            then the energy of the system is conserved. Using this together with \cref{eq:euler-lagr} leads to
+            \begin{equation*}
+                \frac{\partial \Lagr}{\partial \dot{q}}\,\dot{q} - \Lagr = \const = \Ham,
+            \end{equation*}
+            % NOTE: source wrote plain L here; changed to \Lagr for consistency with the
+            % rest of the section.
+            which is the Hamiltonian,
+            \begin{equation}\label{eq:hamiltonian}
+                \Ham \equiv T + V,
+            \end{equation}
+            which corresponds to the total energy of the system.
 
-Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position,
-\begin{equation*}
-    \frac{\partial \Lagr}{\partial \vec{r}} = 0,
-\end{equation*}
-then inserting this into \cref{eq:euler-lagr} leads to
-\begin{equation*}
-    \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0,
-\end{equation*}
-so that the momentum is conserved,
-\begin{equation*}
-\vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \const.
-\end{equation*}
+        \subsubsection{Conservation of momentum}
 
-\subsubsection{Conservation of angular momentum}
+            Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position,
+            \begin{equation*}
+                \frac{\partial \Lagr}{\partial \vec{r}} = 0,
+            \end{equation*}
+            then inserting this into \cref{eq:euler-lagr} leads to
+            \begin{equation*}
+                \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0,
+            \end{equation*}
+            so that the momentum is conserved,
+            \begin{equation*}
+                \vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \const.
+            \end{equation*}
 
-Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation $\delta\vec{\phi}$, for which $\delta\vec{r} = \delta\vec{\phi} \times \vec{r}$ and $\delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}}$, then
-\begin{equation*}
-\delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
-\end{equation*}
-Using \cref{eq:euler-lagr} together with $\vec{p} = \partial \Lagr / \partial \dot{\vec{r}}$ leads to
-\begin{equation*}
-\delta\vec{\phi} \cdot \frac{d}{dt}\left( \vec{r} \times \vec{p} \right) = 0,
-\end{equation*}
-and since $\delta\vec{\phi}$ is arbitrary, the angular momentum is conserved,
-\begin{equation*}
-\vec{L} \equiv \vec{r} \times \vec{p} = \const.
-\end{equation*}
+        \subsubsection{Conservation of angular momentum}
+
+            Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation $\delta\vec{\phi}$, for which $\delta\vec{r} = \delta\vec{\phi} \times \vec{r}$ and $\delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}}$, then
+            \begin{equation*}
+                \delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
+            \end{equation*}
+            Using \cref{eq:euler-lagr} together with $\vec{p} = \partial \Lagr / \partial \dot{\vec{r}}$ leads to
+            \begin{equation*}
+                \delta\vec{\phi} \cdot \frac{d}{dt}\left( \vec{r} \times \vec{p} \right) = 0,
+            \end{equation*}
+            and since $\delta\vec{\phi}$ is arbitrary, the angular momentum is conserved,
+            \begin{equation*}
+                \vec{L} \equiv \vec{r} \times \vec{p} = \const.
+            \end{equation*}
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
 
-Newton's laws of motion are three laws lying at the foundation of classical mechanics, specifying the relations between the motion of a body and the forces acting on it, which is why they are also called the laws of motion. In quantum mechanics they are for the most part inapplicable, and in relativistic mechanics they hold only within a limited range.
+    Newton's laws of motion are three laws lying at the foundation of classical mechanics, specifying the relations between the motion of a body and the forces acting on it, which is why they are also called the laws of motion. In quantum mechanics they are for the most part inapplicable, and in relativistic mechanics they hold only within a limited range.
 
-\subsection{Newton's first law}
+    \subsection{Newton's first law}
 
-In an inertial frame of reference, if no force acts on a body, or if the acting forces balance one another, then the body remains at rest or moves in uniform rectilinear motion.
+        In an inertial frame of reference (\cref{sec:inertial-frames}), if no force acts on a body, or if the acting forces balance one another, then the body remains at rest or moves in uniform rectilinear motion.
 
-% NOTE: this definition of an inertial frame repeats the one in
-% \cref{sec:inertial-frames}. Kept here so the answer stands alone for oral
-% delivery, but you may prefer to replace it with a cross-reference.
-An inertial frame is a frame of reference with respect to which every body not subject to external interactions with other bodies moves without acceleration (i.e.\ in uniform rectilinear motion) or remains at rest.
+        The first law assumes the existence of an inertial frame of reference but does not indicate how such a frame is to be sought, and it is therefore a postulate of the existence of an inertial frame of reference, and is formulated as follows:
 
-The first law assumes the existence of an inertial frame of reference but does not indicate how such a frame is to be sought, and it is therefore a postulate of the existence of an inertial frame of reference, and is formulated as follows:
+        \textit{There exists a frame of reference in which a particle not subject to interaction with its surroundings remains at rest or moves along a straight line with constant velocity.}
 
-\textit{There exists a frame of reference in which a particle not subject to interaction with its surroundings remains at rest or moves along a straight line with constant velocity.}
+    \subsection{Newton's second law}
 
-\subsection{Newton's second law}
+        If an unbalanced force acts on a body, then the body moves with an acceleration directly proportional to the force and inversely proportional to the mass of the body.
 
-If an unbalanced force acts on a body, then the body moves with an acceleration directly proportional to the force and inversely proportional to the mass of the body.
+        \begin{equation}\label{eq:newton2}
+            \vec{F} = m \vec{a},
+        \end{equation}
+        where $\vec{F}$ --- the force, $m$ --- the mass, $\vec{a}$ --- the acceleration.
 
-\begin{equation}\label{eq:newton2}
-\vec{F} = m \vec{a},
-\end{equation}
-where $\vec{F}$ --- the force, $m$ --- the mass, $\vec{a}$ --- the acceleration.
+    \subsection{Newton's third law}
 
-\subsection{Newton's third law}
+        Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, opposite directions, and different points of application (each acts on a different body).
 
-Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, opposite directions, and different points of application (each acts on a different body).
+        \begin{equation}\label{eq:newton3}
+            \vec{F}_{12} = -\vec{F}_{21}
+        \end{equation}
 
-\begin{equation}\label{eq:newton3}
-\vec{F}_{12} = -\vec{F}_{21}
-\end{equation}
+        In classical mechanics, Newton's third law and the law of conservation of momentum are essentially equivalent.
 
-In classical mechanics, Newton's third law and the law of conservation of momentum are essentially equivalent.
+    \subsection{Limits of applicability of Newton's laws of motion}
 
-\subsection{Limits of applicability of Newton's laws of motion}
+        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used.
+        In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{eq:action}), work better.
 
-Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used.
-In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{eq:action}), work better.
+        Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories.
 
-Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories.
+        All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers the results of quantum mechanics must agree with the classical ones. In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always strictly the case and some phenomena are inherently quantum.
 
-All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers the results of quantum mechanics must agree with the classical ones. In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always striclty the case and some pheonmena are inherently quantum.
-
-Moreover, Newton assumed that time must be absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galillean transformatiions are replaced by the Lorentz transformations and they agreee only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
+        Moreover, Newton assumed that time must be absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galilean transformations are replaced by the Lorentz transformations and they agree only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
 
 \section{The postulates of quantum mechanics; measurement, state of a physical system}
 \label{sec:postulates}
 
-\subsection{The photon hypothesis and its consequences}
+    \subsection{The photon hypothesis and its consequences}
 
-\begin{itemize}
-    \item \textbf{Light and matter transfer energy to one another in finite portions}
-    \begin{equation*}
-    E = \hbar\omega
-    \end{equation*}
-    \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
-    \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
-    \item \textbf{Systems with several degrees of freedom.} If a physical system possesses more than one degree of freedom (for instance, a single photon is characterised not only by position but also by polarisation; one may also consider systems composed of a larger number of particles), then to each degree of freedom there corresponds a separate Hilbert space $H_{i}$, while the Hilbert space of the total system has the structure of a tensor product of the Hilbert subspaces corresponding to the subsystems: $H =\otimes_{i}H_{i}$. The dimension of the total Hilbert space is therefore the product, and not the sum, of the dimensions of all the subspaces.
-    \todo{Delete or simplify above}
-    \item \textbf{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
-\end{itemize}
+        \begin{itemize}
+            \item \textbf{Light and matter transfer energy to one another in finite portions}
+            \begin{equation*}
+                E = \hbar\omega
+            \end{equation*}
+            \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
+            \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
+            \item \textbf{Systems with several degrees of freedom.} If a system has more than one degree of freedom (a photon, for instance, carries both position and polarisation), each degree of freedom has its own Hilbert space $H_i$, and the space of the whole system is their tensor product, $H = \otimes_i H_i$.
+            \todo{Delete or simplify above, what is a tensor product?}
+            \item \textbf{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
+        \end{itemize}
 
-\subsection{The law of composition of probability amplitudes}
+    \subsection{The law of composition of probability amplitudes}
 
-The probability amplitude of a process (for example, one consisting in a photon travelling from the source to the screen) composed of a number of subprocesses (for example, consisting in the photon traversing the path between successive slits) is the product of the probability amplitudes of the individual subprocesses. If, on the other hand, a system starting from some initial state can reach a final state in several ways which are not verified by measurement, then the total amplitude for the system to reach the final state is the sum of the probability amplitudes corresponding to the individual ways of realisation. In other words, if a system may be in one of several possible states and we have no way of determining which is currently realised, then the state of the system is a superposition of all the admissible states.
+        The probability amplitude of a process (for example, one consisting in a photon travelling from the source to the screen) composed of a number of subprocesses (for example, consisting in the photon traversing the path between successive slits) is the product of the probability amplitudes of the individual subprocesses. If, on the other hand, a system starting from some initial state can reach a final state in several ways which are not verified by measurement, then the total amplitude for the system to reach the final state is the sum of the probability amplitudes corresponding to the individual ways of realisation. In other words, if a system may be in one of several possible states and we have no way of determining which is currently realised, then the state of the system is a superposition of all the admissible states.
 
-\subsection{Measurement of a quantum system}
+    \subsection{Measurement of a quantum system}
 
-\begin{itemize}
-    \item \textbf{Observables.} A physical measurement may give many different outcomes, corresponding to finding the system in one of the possible states $\phi_{k}$. If to each of the possible outcomes we assign some real measured value $a_{k} \in \mathbb{R}$, obtained with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$, then the mean measurement outcome is obtained from the classical formula of probability theory: % NOTE: the source has a malformed bra-ket here; corrected to |<phi_k|psi>|^2.
-    % CLARITY: this running expression is dense for a first read. Consider
-    % breaking the final chain out into its own display equation, and defining
-    % the projector \ket{\phi_k}\bra{\phi_k} in one plain sentence.
-    (mean measurement outcome) $= \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\left(\sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}\right)\ket{\psi}$, where $\ket{\psi_{k}}\bra{\psi_{k}}$ is the projection operator onto the state $\ket{\psi_{k}}$. To every possible observable, that is, to every physical quantity that can be measured on the system and that leads exclusively to real measurement outcomes, there corresponds some Hermitian operator $\hat{A} = \hat{A}^{\dag}$. In the case of an observable giving the possible numerical outcomes $a_{k}$, corresponding to finding the system in the corresponding states $\ket{\psi_{k}}$, this operator is:
-    \todo{Make clear; not understandable}
-    \begin{equation*}
-        \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}
-    \end{equation*}
-    The mean value of the observable so defined takes the form:
-    \begin{equation*}
-        \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}
-    \end{equation*}
-\end{itemize}
+        \begin{itemize}
+            \item \textbf{Observables.} A measurement yields one of several outcomes, each corresponding to finding the system in a state $\ket{\phi_{k}}$ with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$. Assigning a real value $a_{k} \in \mathbb{R}$ to each outcome, the mean outcome is the classical probability average
+            \begin{equation*}
+                \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\hat{A}\ket{\psi},
+            \end{equation*}
+            where $\ket{\phi_{k}}\bra{\phi_{k}}$ is the projection operator onto $\ket{\phi_{k}}$ (it picks out the $\ket{\phi_{k}}$ component of a state) and
+            \begin{equation*}
+                \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}.
+            \end{equation*}
+            To every observable there corresponds such a Hermitian operator $\hat{A} = \hat{A}^{\dag}$, whose mean value in the state $\ket{\psi}$ is
+            \begin{equation*}
+                \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}.
+            \end{equation*}
+        \end{itemize}
 
-\subsection{Time evolution of the quantum state}
+    \subsection{Time evolution of the quantum state}
 
-\begin{itemize}
-    \item \textbf{Unitarity of the evolution.} Consider two distinguishable, and hence orthogonal, quantum states $\psi$ and $\phi$ prepared at the initial instant. We adopt as a postulate the thesis that under the passage of time these states will remain fully distinguishable. Since the degree of distinguishability of two states is given by the amplitude $\braket{\phi|\psi}$, we shall assume in general that the evolution of quantum states does not change the scalar products between the corresponding vectors.
-    \todo{Make clear; not understandable}
-    \item \textbf{Evolution equation of the quantum state vector}
-    % NOTE: this is the Schrodinger equation; its labelled "home" is
-    % \cref{eq:schrodinger} in content_2. Kept unlabelled here to avoid a
-    % duplicate label.
-    \begin{equation*}
-        i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
-    \end{equation*}
-    In the case of a time-independent Hamiltonian:
-    \begin{equation}\label{eq:tise}
-        \hat{H}\ket{\psi\left(r\right)} = E\ket{\psi\left(r\right)}
-    \end{equation}
-    \begin{equation*}
-        \ket{\psi\left(r,t\right)} = e^{-\frac{i}{\hbar}Et}\ket{\psi\left(r\right)}
-    \end{equation*}
-\end{itemize}
+        \begin{itemize}
+            \item \textbf{Unitarity of the evolution.} Two states that are distinguishable at the start stay distinguishable as they evolve. Distinguishability is measured by the overlap $\braket{\phi|\psi}$, so we postulate that time evolution leaves all such overlaps (scalar products) unchanged. Evolution that preserves scalar products in this way is called unitary.
+            \item \textbf{Evolution equation of the quantum state vector}
+            \begin{equation*}
+                i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
+            \end{equation*}
+            In the case of a time-independent Hamiltonian:
+            \begin{equation}\label{eq:tise}
+                \hat{H}\ket{\psi\left(r\right)} = E\ket{\psi\left(r\right)}
+            \end{equation}
+            \begin{equation*}
+                \ket{\psi\left(r,t\right)} = e^{-\frac{i}{\hbar}Et}\ket{\psi\left(r\right)}
+            \end{equation*}
+        \end{itemize}
 
-\subsection{The wave function}
+    \subsection{The wave function}
 
-The wave function is a mathematical description of the quantum state. It takes complex values, and its squared modulus has the interpretation of a probability density over the space on which it is defined.
+        The wave function is a mathematical description of the quantum state. It takes complex values, and its squared modulus has the interpretation of a probability density over the space on which it is defined.
 
-% NOTE: the source has \int_{b}^{b}; the lower limit should be a.
-\begin{equation*}
-    P_{a \le x \le b}\left(t\right) = \int^{b}_{a}|\Psi(x,t)|^{2}dx
-\end{equation*}
+        % NOTE: the source has \int_{b}^{b}; the lower limit should be a.
+        \begin{equation*}
+            P_{a \le x \le b}\left(t\right) = \int^{b}_{a}|\Psi(x,t)|^{2}dx
+        \end{equation*}
 
-The wave function satisfies a normalisation condition:
+        The wave function satisfies a normalisation condition:
 
-\begin{equation*}
-    \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1
-\end{equation*}
+        \begin{equation*}
+            \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1
+        \end{equation*}
 
-Knowing the form of the wave function, the quantum state vector may be determined:
+        Knowing the form of the wave function, the quantum state vector may be determined:
 
-\begin{equation*}
-    \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
-\end{equation*}
+        \begin{equation*}
+            \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
+        \end{equation*} \todo{QM section needs to be checked}
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
 
-The classical angular momentum is defined as:
+    The classical angular momentum is defined as:
 
-\begin{equation*}
-    \vec{L} = \sum_i \vec{r}_i \times \vec{p}_i
-\end{equation*}
+    \begin{equation*}
+        \vec{L} = \sum_i \vec{r}_i \times \vec{p}_i
+    \end{equation*}
 
-where $r$ is the position and $p$ the momentum of the $i$-th element of the system.
+    where $r$ is the position and $p$ the momentum of the $i$-th element of the system.
 
-In quantum mechanics the orbital angular momentum is defined as an operator composed of three components and given by the formula
+    In quantum mechanics the orbital angular momentum is defined as an operator composed of three components and given by the formula
 
-\begin{equation*}
-    \hat{L} = -i\hbar(\hat{r}\times \nabla),
-\end{equation*}
+    \begin{equation*}
+        \hat{L} = -i\hbar(\hat{r}\times \nabla),
+    \end{equation*}
 
-where
-\begin{equation}\label{eq:nabla}
-    \nabla \equiv
-                    \begin{bmatrix}
-                    \frac{\partial}{\partial x} \\[1ex] \frac{\partial}{\partial y} \\[1ex] \frac{\partial}{\partial z}
-                    \end{bmatrix}.
-\end{equation}
+    where
+    \begin{equation}\label{eq:nabla}
+        \nabla \equiv
+            \begin{bmatrix}
+                \frac{\partial}{\partial x} \\[1ex] \frac{\partial}{\partial y} \\[1ex] \frac{\partial}{\partial z}
+            \end{bmatrix}.
+    \end{equation}
 
-A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes.
-\begin{equation*}
-    \hat{S} \equiv
-                    \begin{bmatrix}
-                    S_{x} \\ S_{y} \\ S_{z}
-                    \end{bmatrix}.
-\end{equation*}
+    A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes.
+    \begin{equation*}
+        \hat{S} \equiv
+            \begin{bmatrix}
+                S_{x} \\ S_{y} \\ S_{z}
+            \end{bmatrix}.
+    \end{equation*}
 
-The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.
+    The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.
 
-\begin{equation*}
-    \hat{J} = \hat{L} + \hat{S}.
-\end{equation*}
+    \begin{equation*}
+        \hat{J} = \hat{L} + \hat{S}.
+    \end{equation*}
 
-Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L}_z\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
+    Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L}_z\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
 
-\subsection{Classical precession}
+    \subsection{Classical precession}
 
-Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
+        Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-The angular momentum $\vec{L}$ of the spinning body points along its spin axis. Precession happens when a torque acts at a right angle to that axis. A torque perpendicular to $\vec{L}$ nudges it sideways, but it actually moves in a perpendicular direction, tracing out a cone. For the toy top, gravity supplies this torque, where one of its components is perpendicular to the spin axis, unless it is perfectly vertical.
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis. Precession happens when a torque acts at a right angle to that axis. A torque perpendicular to $\vec{L}$ nudges it sideways, but it actually moves in a perpendicular direction, tracing out a cone. For the toy top, gravity supplies this torque, where one of its components is perpendicular to the spin axis, unless it is perfectly vertical.
 
-The precession frequency is given by
+        The precession frequency is given by
 
-\begin{equation*}
-    \omega_p = \frac{\tau}{I_s\omega_s\sin(\theta)}
-\end{equation*}
+        \begin{equation*}
+            \omega_p = \frac{\tau}{I_s\omega_s\sin(\theta)}
+        \end{equation*}
 
-where $\tau$ is the torque, $I_s$ the moment of inertia, $\omega_s$ the spin angular velocity, and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
+        where $\tau$ is the torque, $I_s$ the moment of inertia, $\omega_s$ the spin angular velocity, and $\theta$ the angle between the spin axis and the vertical axis about which it precesses.
 
-\subsection{Quantum precession}
-\label{subsec:quantum-precession}
+    \subsection{Quantum precession}
+    \label{subsec:quantum-precession}
 
-A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$ --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
+        A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$ --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
-\begin{equation*}
-    \vec{\tau} = \vec{\mu}\times \vec{B},
-\end{equation*}
+        \begin{equation*}
+            \vec{\tau} = \vec{\mu}\times \vec{B},
+        \end{equation*}
 
-which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is Larmor precession, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
+        which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is Larmor precession, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
 
-The rate of this precession depends only on the field strength, not on how far $\vec{S}$ is tilted from $\vec{B}$ (two factors of $\sin\theta$ cancel each other out). This orientation-independence is what makes Larmor precession useful for magnetic resonance techniques.
+        The rate of this precession depends only on the field strength, not on how far $\vec{S}$ is tilted from $\vec{B}$ (two factors of $\sin\theta$ cancel each other out). This orientation-independence is what makes Larmor precession useful for magnetic resonance techniques.
 
-A separate contribution appears when the particle is accelerated, and unlike Larmor precession it is driven by no torque at all. Thomas precession is a purely kinematic effect of special relativity: for a particle on a curved path --- such as an electron orbiting a nucleus --- the successive inertial frames in which it is momentarily at rest are slightly rotated relative to one another, so its spin angular momentum precesses even though nothing twists it. In the hydrogen atom this modifies the spin--orbit interaction, reducing it by a factor of two (the Thomas factor).
-\todo{Check if correct.}
+        A separate contribution appears when the particle is accelerated, and unlike Larmor precession it is driven by no torque at all. Thomas precession is a purely kinematic effect of special relativity: for a particle on a curved path --- such as an electron orbiting a nucleus --- the successive inertial frames in which it is momentarily at rest are slightly rotated relative to one another, so its spin angular momentum precesses even though nothing twists it. In the hydrogen atom this modifies the spin--orbit interaction, reducing it by a factor of two (the Thomas factor).
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 
-There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
+    There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
 
-That rule is stated using a single number, the \textbf{action} $S$, which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \textbf{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
+    That rule is stated using a single number, the \textbf{action} $S$, which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \textbf{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
 
-The \textbf{principle of least action} says that the path the system follows is the one for which the action is \textbf{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
+    The \textbf{principle of least action} says that the path the system follows is the one for which the action is \textbf{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
 
-The idea began in optics as \textbf{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \textbf{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \textbf{calculus of variations} of Euler and Lagrange was created to handle.
+    The idea began in optics as \textbf{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \textbf{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \textbf{calculus of variations} of Euler and Lagrange was created to handle.
 
-For a mechanical system, the action (\cref{eq:action}) is the \textbf{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \textbf{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
+    For a mechanical system, the action (\cref{eq:action}) is the \textbf{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \textbf{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
 
-The same content can be repackaged. A standard change of variables (a \textbf{Legendre transformation}) trades the velocities $\dot q_i$ for momenta and leads to the \textbf{Hamiltonian} formulation, built on the total energy (\cref{eq:hamiltonian}). This version is the usual starting point for statistical physics and quantum mechanics. Taking the variational idea one step further, and treating the action as a function of the point at which the path ends, gives the \textbf{Hamilton--Jacobi equation},
+    The same content can be repackaged. A standard change of variables (a \textbf{Legendre transformation}) trades the velocities $\dot q_i$ for momenta and leads to the \textbf{Hamiltonian} formulation, built on the total energy (\cref{eq:hamiltonian}). This version is the usual starting point for statistical physics and quantum mechanics. Taking the variational idea one step further, and treating the action as a function of the point at which the path ends, gives the \textbf{Hamilton--Jacobi equation},
 
-\begin{equation}\label{eq:hamilton-jacobi}
-\Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
-\end{equation}
-\todo{why is the hamiltonian a function of such awkward arguments?}
+    \begin{equation}\label{eq:hamilton-jacobi}
+        \Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
+    \end{equation}
 
-a single equation for the action $S$ (here called Hamilton's principal function). What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
+    a single equation for the action $S$ (here called Hamilton's principal function). The reason $\Ham$ takes these particular arguments is that each momentum has been replaced by a derivative of the action, $p_i = \partial S/\partial q_i$, so the usual $\Ham(\vec q, \vec p, t)$ is evaluated at $\vec p = \partial S/\partial \vec q$. What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
 
-The principle is not restricted to mechanics. The general recipe is always the same --- write down an action for the system and demand that it be stationary. The action of the electromagnetic field yields Maxwell's equations, and the action of general relativity (the Einstein--Hilbert action) yields Einstein's field equations for gravity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
+    The principle is not restricted to mechanics. The general recipe is always the same --- write down an action for the system and demand that it be stationary. The action of the electromagnetic field yields Maxwell's equations, and the action of general relativity (the Einstein--Hilbert action) yields Einstein's field equations for gravity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
+    \todo{Verify}
 
 \section{The laws of thermodynamics}
 
-\subsection{The zeroth law of thermodynamics}
+    \subsection{The zeroth law of thermodynamics}
 
-If systems A and B, capable of exchanging heat with one another, are in thermal equilibrium with each other, and the same is true of systems B and C, then systems A and C are also in thermal equilibrium with each other.
+        If systems A and B, capable of exchanging heat with one another, are in thermal equilibrium with each other, and the same is true of systems B and C, then systems A and C are also in thermal equilibrium with each other.
 
-Thermal equilibrium implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
+        Thermal equilibrium implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
 
-\subsection{The first law of thermodynamics}
+    \subsection{The first law of thermodynamics}
 
-The change in the internal energy of a system is equal to the sum of the heat supplied and the work done \textit{on the system}.
+        The change in the internal energy of a system is equal to the sum of the heat supplied and the work done \textit{on the system}.
 
-\begin{equation}\label{eq:first-law}
-    \Delta U = Q + W,
-\end{equation}
+        \begin{equation}\label{eq:first-law}
+            \Delta U = Q + W,
+        \end{equation}
 
-or in a differential form:
+        or in a differential form:
 
-\begin{equation}\label{eq:first-law-differential}
-    dU = dQ - p\, dV,
-\end{equation}
+        \begin{equation}\label{eq:first-law-differential}
+            dU = dQ - p\, dV,
+        \end{equation}
 
-where $dV$ is the change in volume of the system (positive when the system expands --- it does work and loses internal energy, $W<0$).
+        where $dV$ is the change in volume of the system (positive when the system expands --- it does work and loses internal energy, $W<0$).
 
-\subsection{The second law of thermodynamics}
+    \subsection{The second law of thermodynamics}
 
-\begin{itemize}
-    \item Clausius statement: \textit{There is no thermodynamic process whose sole result would be the absorption of heat from a reservoir at a lower temperature and its transfer to a reservoir at a higher temperature.}
-    \item Kelvin statement: \textit{No process is possible whose sole effect would be the absorption of a certain quantity of heat from a reservoir and its conversion into an equivalent amount of work.}
-    \item Planck statement: \textit{It is impossible to construct an engine which will work in a complete cycle, and produce no effect except the production of work and cooling of a heat reservoir.}
-\end{itemize}
+        \begin{itemize}
+            \item Clausius statement: \textit{There is no thermodynamic process whose sole result would be the absorption of heat from a reservoir at a lower temperature and its transfer to a reservoir at a higher temperature.}
+            \item Kelvin statement: \textit{No process is possible whose sole effect would be the absorption of a certain quantity of heat from a reservoir and its conversion into an equivalent amount of work.}
+            \item Planck statement: \textit{It is impossible to construct an engine which will work in a complete cycle, and produce no effect except the production of work and cooling of a heat reservoir.}
+        \end{itemize}
 
-For all 
+        For all \todo{For all what?}
 
-\begin{equation}\label{eq:clausius-inequality}
-dS \geq \frac{\delta Q}{T},
-\end{equation}
+        \begin{equation}\label{eq:clausius-inequality}
+            dS \geq \frac{\delta Q}{T},
+        \end{equation}
 
-where the equality holds only for \textit{reversible} processes. The quantity $S$ is called the \textit{entropy} of the system. For isolated systems
+        where the equality holds only for \textit{reversible} processes. The quantity $S$ is called the \textit{entropy} of the system. For isolated systems
 
-\begin{equation*}
-    ds \geq 0.
-\end{equation*}
+        \begin{equation*}
+            dS \geq 0.
+        \end{equation*}
 
-Spontaneous processes in an isolated system drive it towards higher entropy, and equilibrium is the state of maximum entropy.
-\todo{Maybe expand a little and add better justification for entropy.}
+        Spontaneous processes in an isolated system drive it towards higher entropy, and equilibrium is the state of maximum entropy. Microscopically, entropy counts the number of microstates $\Omega$ compatible with the macrostate, $S = \kB\log\Omega$ (\cref{eq:boltzmann-entropy}): left to itself a system drifts towards the macrostate realised by the overwhelmingly largest number of microstates, which is why entropy tends to increase.
 
-\subsection{The third law of thermodynamics}
+    \subsection{The third law of thermodynamics}
 
-The Nernst heat theorem: \textit{It is not possible, by means of a finite number of steps, to attain the temperature of absolute zero (zero kelvin) if we take a non-zero absolute temperature as our starting point.}
+        The Nernst heat theorem: \textit{It is not possible, by means of a finite number of steps, to attain the temperature of absolute zero (zero kelvin) if we take a non-zero absolute temperature as our starting point.}
 
 \section{Mechanical properties of material media: liquids, elastic media, mechanical waves}
 \label{sec:mechanical-media}
 
-\paragraph{Liquids}
+    \paragraph{Liquids}
 
-Liquids are substances intermediate between a gas and a solid, having an easily variable shape but little compressibility. The properties of a liquid follow from the behaviour of its molecules:
+    Liquids are substances intermediate between a gas and a solid, having an easily variable shape but little compressibility. The properties of a liquid follow from the behaviour of its molecules:
 
-\begin{itemize}
-    \item they have complete freedom of movement within the volume occupied by the liquid
-    \item the intermolecular interactions occur between them, which within the bulk of the liquid cancel one another out
-    \item the intermolecular interactions do not cancel at the interface between the liquid and another phase, as a result of which the phenomenon of surface tension occurs.
-\end{itemize}
+    \begin{itemize}
+        \item they have complete freedom of movement within the volume occupied by the liquid
+        \item the intermolecular interactions occur between them, which within the bulk of the liquid cancel one another out
+        \item the intermolecular interactions do not cancel at the interface between the liquid and another phase, as a result of which the phenomenon of surface tension occurs.
+    \end{itemize}
 
-\paragraph{Elastic media}
+    \paragraph{Elastic media}
 
-An elastic medium is a medium in which an external force gives rise to stress whose effect is the appearance of an outwardly directed force. This force pushes the affected body to return to its original shape.
+    An elastic medium is a medium in which an external force gives rise to stress whose effect is the appearance of an outwardly directed force. This force pushes the affected body to return to its original shape.
 
-While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
-\todo{Is this the only state in which fluids are elastic?}
+    While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
 
-\paragraph{Mechanical waves}
+    More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid is confined. \todo{fluid vs liquid}
 
-If we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium. According to the shape of the wavefront we may distinguish transverse waves and longitudinal waves.
+    \paragraph{Mechanical waves}
 
-A wave is longitudinal when the direction of oscillation of the particles of the medium is parallel to the direction of propagation of the wave and at the same time to the direction of energy transport. Examples here are sound waves in air, or the oscillations of a spring alternately compressed and extended.
+    If we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium. According to the shape of the wavefront we may distinguish transverse waves and longitudinal waves.
 
-A wave is transverse when the direction of oscillation of the particles of the medium is perpendicular to the direction of propagation of the wave and at the same time to the direction of energy transport. An example here may be the oscillations of a string, ruler.
+    A wave is longitudinal when the direction of oscillation of the particles of the medium is parallel to the direction of propagation of the wave and at the same time to the direction of energy transport. Examples here are sound waves in air, or the oscillations of a spring alternately compressed and extended.
+
+    A wave is transverse when the direction of oscillation of the particles of the medium is perpendicular to the direction of propagation of the wave and at the same time to the direction of energy transport. An example here may be the oscillations of a string, ruler.
 
 \section{Flow of an incompressible liquid; Bernoulli's principle}
 
-Let us begin by defining the assumptions of the problem. It is an example from the field of ideal-fluid hydrodynamics, and therefore adopts certain simplifications:
+    Let us begin by defining the assumptions of the problem. It is an example from the field of ideal-fluid hydrodynamics, and therefore adopts certain simplifications:
 
-\begin{itemize}
-    \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
-    \item friction arising from the viscosity of the liquid is negligible
-    \item the flow of the liquid is stationary and irrotational, which amounts to its parameters (velocity, density, \ldots) being independent of time \todo{use more human language}
-\end{itemize}
+    \begin{itemize}
+        \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
+        \item friction arising from the viscosity of the liquid is negligible
+        \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves \todo{is irrotational needed?}
+    \end{itemize}
 
-Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
+    Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
 
-\begin{equation}\label{eq:bernoulli}
-\frac{v^2}{2} + gh + \frac{p}{\rho} = \const
-\end{equation}
+    \begin{equation}\label{eq:bernoulli}
+        \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
+    \end{equation}
 
-where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. For example, one may demonstrate the so-called hydrodynamic paradox by analysing a widening pipe. For a smaller cross-section the liquid flows faster, which must be compensated by a lower pressure over the shorter section. This counter-intuitive property is also known as the hydrodynamic paradox. \todo{The explanation of the hydrodynamic paradox is garbled and repeats the term twice}
+    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster (the same volume must pass each second through a smaller area); by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast. \todo{verify if true}
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
     \subsection{Maxwell's equations --- general form}
 
-        \begin{equation}\label{eq:maxwell-vacuum}
+        \begin{equation}\label{eq:maxwell-general}
             \begin{alignedat}{2}
                 \text{Gauss's Law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\epsilon_{0}}\\
                 \text{Gauss's Law for } \vec{B} \text{ (no mag. monopoles)}     & : \quad & \nabla \cdot \vec{B}  & = 0\\
@@ -531,14 +513,14 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
     \subsection{Maxwell's equations in vacuum}
 
-        In vacuum, there are no bound charges or currents, and Maxwell's equations reduce to:
+        In vacuum there are no charges or currents at all, free or bound, so $\rho = 0$ and $\vec{J} = 0$, and Maxwell's equations reduce to their source-free form:
 
         \begin{equation}\label{eq:maxwell-vacuum}
             \begin{aligned}
-                \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}}}{\epsilon_{0}}\\
+                \nabla \cdot \vec{E}  & = 0\\
                 \nabla \cdot \vec{B}  & = 0\\
                 \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
-                \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
+                \nabla \times \vec{B} & = \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
             \end{aligned}
         \end{equation}
 
@@ -566,12 +548,12 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
             \end{aligned}
         \end{equation}
 
-        where $\vec{D}$ --- dielectric displacement field: 
+        where $\vec{D}$ --- dielectric displacement field:
 
         \begin{equation}
             \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{field due to } \vec{P} \text{ points in the} \\ \text{opposite direction to } \vec{P} \\ \Rightarrow\ +\vec{P} \text{ subtracts the} \\ \text{bound-charge contribution}}}
         \end{equation}
-        
+
         Bound current is given by
 
         \begin{equation}
@@ -583,14 +565,14 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
         \begin{equation}
             \begin{aligned}
                 \nabla\times\vec{B}                                     & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
-                                                                        & = \mu_{0}\left(\vec{J_{\text{f}}} + \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\ 
+                                                                        & = \mu_{0}\left(\vec{J_{\text{f}}} + \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
                 \nabla\times\vec{H}  & = \vec{J_{\text{f}}} + \frac{\partial \vec{D}}{\partial t},
             \end{aligned}
         \end{equation}
 
         where $\vec{H}$ --- magnetic field intensity
 
-        \begin{equation}
+        \begin{equation}\label{eq:H-def}
             \underbrace{\vec{H}}_{\substack{\text{magnetic field intensity} \\ \text{contribution from free currents only}}} = \underbrace{\frac{\vec{B}}{\mu_{0}}}_{\text{total magnetic field}} - \underbrace{\vec{M}}_{\substack{\text{magnetic field due to $\vec{M}$} \\ \text{points in opposite direction}}}
         \end{equation}
 

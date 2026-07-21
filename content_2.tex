@@ -1,16 +1,12 @@
 % !TeX root = main.tex
 \section{The electric field in material media; dielectric polarisation, conductivity, mobility of charge carriers}
-    \label{sec:electric-field}
+    \label{sec:electric-field}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 2 starts here}
 
     \subsection{Polarisation}
 
-        Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. The polarisation vector arising as a result of the action of the external field may, in the linear approximation, be written as:
-
-        \begin{equation*}
-            \vec{P} = \varepsilon_0\chi\vec{E}
-        \end{equation*}
-
-        Dielectric polarisation is the result of several basic phenomena:
+        Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. In the linear approximation the polarisation is proportional to the field, $\vec{P} = \varepsilon_0\chi\vec{E}$ (\cref{eq:polarisation-vector}), with $\chi$ the electric susceptibility.
+        % NOTE (dedup): folded the standalone P = eps0 chi E display into the sentence and
+        % cross-referenced \cref{eq:polarisation-vector} in content_1 instead of repeating it.
 
     \paragraph{Electronic polarisation}
 
@@ -41,15 +37,15 @@
 \section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
 \label{sec:magentic-field}
 
-On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field:
-% NOTE: the first line below repeats the definition of \vec{H} from
-% \cref{eq:constitutive-DH}.
+On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field. Recalling the definition of the magnetic field strength $\vec{H} = \vec{B}/\mu_0 - \vec{M}$ (\cref{eq:H-def}), and writing the magnetisation as linear in $\vec{H}$:
 
 \begin{align*}
-    \vec{H} &= \frac{1}{\mu_0}\vec{B} - \vec{M} \\
     \vec{M} &= \chi_m\vec{H} \\
     \vec{H} &= \frac{1}{\mu_0(1+\chi_m)}\vec{B}
 \end{align*}
+% NOTE (dedup): dropped the repeated first line H = B/mu_0 - M, now cross-referenced
+% to \cref{eq:H-def} in content_1 (this fixes the previously dangling
+% \cref{eq:constitutive-DH}). Kept M = chi_m H and the resulting H(B) relation.
 
 where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
 
@@ -81,7 +77,7 @@ It is also worth mentioning the existence of antiferromagnets and ferrimagnets. 
 
 \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
-Let us recall the general Maxwell's equations in vacuum:
+Let us recall the general Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}):
 
 \begin{equation*}
     \begin{aligned}
