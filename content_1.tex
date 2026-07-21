@@ -323,12 +323,12 @@ In quantum mechanics the orbital angular momentum is defined as an operator comp
 \end{equation*}
 
 where
-\begin{equation*}
+\begin{equation}\label{eq:nabla}
     \nabla \equiv
                     \begin{bmatrix}
                     \frac{\partial}{\partial x} \\[1ex] \frac{\partial}{\partial y} \\[1ex] \frac{\partial}{\partial z}
                     \end{bmatrix}.
-\end{equation*}
+\end{equation}
 
 A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes.
 \begin{equation*}
@@ -485,45 +485,54 @@ Let us begin by defining the assumptions of the problem. It is an example from t
 \begin{itemize}
     \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
     \item friction arising from the viscosity of the liquid is negligible
-    \item the flow of the liquid is stationary and irrotational, which amounts to its parameters (velocity, density, \ldots) being independent of time
+    \item the flow of the liquid is stationary and irrotational, which amounts to its parameters (velocity, density, \ldots) being independent of time \todo{use more human language}
 \end{itemize}
 
 Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
 
 \begin{equation}\label{eq:bernoulli}
-\frac{v^2}{2} + gz + \frac{p}{\rho} = \const
+\frac{v^2}{2} + gh + \frac{p}{\rho} = \const
 \end{equation}
 
-% NOTE: the source's explanation of the hydrodynamic paradox is garbled and
-% repeats the term twice; retained as written.
-where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. For example, one may demonstrate the so-called hydrodynamic paradox by analysing a widening pipe. For a smaller cross-section the liquid flows faster, which must be compensated by a lower pressure over the shorter section. This counter-intuitive property is also known as the hydrodynamic paradox.\merr
+where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. For example, one may demonstrate the so-called hydrodynamic paradox by analysing a widening pipe. For a smaller cross-section the liquid flows faster, which must be compensated by a lower pressure over the shorter section. This counter-intuitive property is also known as the hydrodynamic paradox. \todo{The explanation of the hydrodynamic paradox is garbled and repeats the term twice}
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
 \subsection{Maxwell's equations in vacuum}
 
-% NOTE: the \nabla\cdot dot products for the divergence terms were missing in
-% the source (written \nabla\vec E); inserted here throughout the Maxwell
-% blocks so the operators read as divergence and curl.
 \begin{equation}\label{eq:maxwell-vacuum}
-\begin{aligned}
-    \nabla \cdot \vec{E} &= \frac{\rho}{\epsilon_{0}}\\
-    \nabla \cdot \vec{B} &= 0\\
-    \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
-    \nabla\times\vec{B} &= \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
+    \begin{alignedat}{2}
+    \text{Gauss's Law}           & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho}{\epsilon_{0}}\\
+    \text{No Magnetic Monopoles} & : \quad & \nabla \cdot \vec{B}  & = 0\\
+    \text{Faraday's Law}         & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+    \text{Ampère-Maxwell Law}    & : \quad & \nabla \times \vec{B} & = \mu_{0}\vec{J} + \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t},
+    \end{alignedat}
 \end{equation}
+where $\vec{J}$ is the current density, $\vec{B}$ is the magnetic induction field. \todo{free vs bound distinction? reuse notes from plazmonika?}
+
+The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
+\begin{equation}
+    \begin{aligned}
+        \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
+        \nabla \times \vec{A} &\text{ --- curl of a vector field}\\
+        \nabla f &\text{ --- gradient of a scalar field}
+    \end{aligned}
+\end{equation}
+
+Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
 
 \subsection{Maxwell's equations in terms of free currents and charges}
 
-We define the electric displacement field $\vec{D}$ and the magnetic field strength $\vec{H}$ as:
+We define the electric displacement field $\vec{D}$ and the magnetic field $\vec{H}$ as:
 
 \begin{equation}\label{eq:constitutive-DH}
-\begin{aligned}
-        \vec{D} &= \epsilon_{0}\vec{E} + \vec{P}\\
-        \vec{H} &= \frac{1}{\mu_{0}}\vec{B} - \vec{M}
-\end{aligned}
+    \begin{aligned}
+        \vec{D} &\equiv \epsilon_{0}\vec{E} + \vec{P}\\
+        \vec{H} &\equiv \frac{1}{\mu_{0}}\vec{B} - \vec{M},
+    \end{aligned}
 \end{equation}
+
+where $\vec{P}$ and $\vec{M}$ are the medium polarisation (\cref{sec:electric-field}) and magnetisation (\cref{sec:magentic-field}) respectively.
 
 Maxwell's equations may then be rewritten as
 
@@ -534,7 +543,7 @@ Maxwell's equations may then be rewritten as
     \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
     \nabla\times\vec{H} &= \vec{J}_{f} + \frac{\partial\vec{D}}{\partial t}
 \end{aligned}
-\end{equation}
+\end{equation} \todo{same as above}
 
 \subsection{The vector potential of the electromagnetic field}
 
