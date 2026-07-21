@@ -498,19 +498,21 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
-    \subsection{Maxwell's equations in vacuum}
+    \subsection{Maxwell's equations --- general form}
 
         \begin{equation}\label{eq:maxwell-vacuum}
             \begin{alignedat}{2}
-            \text{Gauss's Law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\epsilon_{0}}\\
-            \text{Gauss's Law for } \vec{B} \text{ (no mag. monopoles)}     & : \quad & \nabla \cdot \vec{B}  & = 0\\
-            \text{Faraday's Law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
-            \text{Ampère-Maxwell Law}                                       & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
+                \text{Gauss's Law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\epsilon_{0}}\\
+                \text{Gauss's Law for } \vec{B} \text{ (no mag. monopoles)}     & : \quad & \nabla \cdot \vec{B}  & = 0\\
+                \text{Faraday's Law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+                \text{Ampère-Maxwell Law}                                       & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
             \end{alignedat}
         \end{equation}
+
         where $\vec{J}$ is the current density, $\vec{B}$ is the magnetic induction field.
 
         The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
+
         \begin{equation}
             \begin{aligned}
                 \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
@@ -521,21 +523,34 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
         Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
 
-        Maxwell's equations are related to the Lorentz force:
+        Fields act on charges through the Lorentz force:
 
         \begin{equation}\label{eq:lorentz-force}
             \vec{F}=q\,(\vec{E}+\vec{v}\times\vec{B})
         \end{equation}
 
+    \subsection{Maxwell's equations in vacuum}
+
+        In vacuum, there are no bound charges or currents, and Maxwell's equations reduce to:
+
+        \begin{equation}\label{eq:maxwell-vacuum}
+            \begin{aligned}
+                \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}}}{\epsilon_{0}}\\
+                \nabla \cdot \vec{B}  & = 0\\
+                \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+                \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
+            \end{aligned}
+        \end{equation}
+
     \subsection{Maxwell's equations in matter}
 
-        Electric field induces an electric dipole moment $\vec{p}=q\vec{r}$ in matter. Its avaraged value per volume is the polarisation vector
+        Electric field induces an electric dipole moment $\vec{p}=\pm|q|\vec{d}$ in matter. Its averaged value per volume is the polarisation vector
 
         \begin{equation}\label{eq:polarisation-vector}
             \vec{P}=\chi \epsilon_0\vec{E},
         \end{equation}
 
-        where $\chi$ --- electric suceptibility of a material. Polarisation is only cause by bound charges
+        where $\chi$ --- electric susceptibility of a material. Polarisation is only caused by bound charges
 
         \begin{equation}
             \nabla\cdot\vec{P}=-\rho_{\text{b}}.
@@ -545,18 +560,18 @@ where we have, in turn, the kinetic energy, the potential energy and the energy 
 
         \begin{equation}
             \begin{aligned}
-                \nabla(\epsilon_0\vec{E})          &= \rho_{\text{f}} + \rho_{\text{b}} \\
-                \nabla(\epsilon_0\vec{E}+\vec{P})) &= \rho_{\text{f}}, \\
-                \nabla(\vec{D}) &= \rho_{\text{f}},
+                \nabla\cdot(\epsilon_0\vec{E})          &= \rho_{\text{f}} + \rho_{\text{b}} \\
+                \nabla\cdot(\epsilon_0\vec{E}+\vec{P})) &= \rho_{\text{f}}, \\
+                \nabla\cdot(\vec{D}) &= \rho_{\text{f}},
             \end{aligned}
         \end{equation}
 
         where $\vec{D}$ --- dielectric displacement field: 
 
         \begin{equation}
-            \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{electric field due to $\vec{P}$ points in opposite direction} \\ \text{$\Rightarrow$ subtracting the contribution of bound charges}}}
+            \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{field due to } \vec{P} \text{ points in the} \\ \text{opposite direction to } \vec{P} \\ \Rightarrow\ +\vec{P} \text{ subtracts the} \\ \text{bound-charge contribution}}}
         \end{equation}
-
+        
         Bound current is given by
 
         \begin{equation}
