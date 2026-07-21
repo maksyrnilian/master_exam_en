@@ -1,72 +1,78 @@
 % !TeX root = main.tex
 \section{Physical foundations of optical spectroscopy; electronic, vibrational and rotational excitations of molecules and the corresponding ranges of the electromagnetic spectrum}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 3 starts here}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: added the energy ordering of the three excitation types with rough scales, tying each to its spectral range.}
 
-Optical spectroscopy is an analytical technique which consists in studying the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, information may be obtained about their electronic, vibrational and rotational structure.
+Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.
+
+A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. The larger the energy of a transition, the higher the frequency (and the shorter the wavelength) of the photon absorbed or emitted, since $E = h\nu$. In decreasing order of energy these are electronic, vibrational and rotational excitations. In molecules all three can be present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it.
 
 \subsection{Electronic excitations}
 
-Electronic excitations refer to transitions of electrons between bound energy levels in atoms or molecules. When an atom or molecule absorbs a photon of appropriate energy, an electron may jump from a lower energy level to a higher one, which is visible in the absorption spectrum. These transitions usually have frequencies in the range of visible light or the near ultraviolet.
+Electronic excitations are jumps of an electron between bound energy levels of an atom or molecule. When a photon of the right energy is absorbed, an electron moves from a lower to a higher level, which shows up as a line (or band) in the absorption spectrum. These are the largest energy steps, of order a few electronvolts, so they fall in the visible and near-ultraviolet range.
 
 \subsection{Vibrational excitations}
 
-Vibrational excitations concern the vibrations of atoms in molecules. When a molecule absorbs electromagnetic radiation, its atoms may begin to oscillate about their equilibrium positions. In particular, the stretching and bending of chemical bonds may occur. The order of magnitude is smaller than in the case of electronic transitions and covers the infrared range.
+Vibrational excitations concern the oscillation of atoms within a molecule about their equilibrium positions, for example the stretching or bending of chemical bonds. They are roughly one to two orders of magnitude smaller in energy than electronic transitions (of order $0.1$~eV), and therefore lie in the infrared range.
 
 \subsection{Rotational excitations}
 
-Rotational excitations refer to the rotations of molecules about their centres of mass. When a molecule absorbs energy, its angular momentum may change, which causes a rotational excitation. Together with vibrational excitations they constitute an important source of knowledge about the structure of molecules, especially organic ones, although these spectra can be very complicated and harder to analyse. Rotational transitions occur in the far infrared and microwave range.
+Rotational excitations are changes in the rotation of a molecule about its centre of mass, and so change its angular momentum. They are the smallest energy steps of the three (of order a few $\mathrm{meV}$) and lie in the far-infrared and microwave range. Together with the vibrational spectra they are a rich source of information about molecular structure, though the resulting spectra can be dense and hard to disentangle.
 
 \section{Phenomena accompanying the interaction of electromagnetic radiation with atoms and molecules; stimulated and spontaneous emission, absorption}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened the three processes and made explicit why stimulated emission gives identical (coherent) photons, hence lasers.}
+
+An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon (stimulated emission). The condition in every case is that the photon energy $h\nu$ match the gap between two levels.
 
 \subsection{Absorption}
 
-\textbf{Absorption} is the process of the taking up of the energy of an electromagnetic wave by a substance. The intensity of the light of a beam passing through the substance is thereby reduced.
+\textbf{Absorption} is the taking up of the energy of an electromagnetic wave by a substance, which reduces the intensity of the transmitted beam.
 
-In cold and rarefied \textbf{atomic gases} the energy levels characterising the excited states lie relatively far from one another. These substances may therefore absorb only certain photons of strictly defined energies. If the spectrum of the incident light is a continuous spectrum, this causes dark lines to appear in that spectrum.
+In cold, rarefied \textbf{atomic gases} the excited levels are well separated, so only photons of a few sharply defined energies can be absorbed. If white (continuous-spectrum) light passes through such a gas, dark lines appear in the transmitted spectrum at exactly those energies.
 
-In the case of \textbf{molecules} the system of electron energy levels is more complex, because besides the levels associated with the electron configuration there are additionally vibrational levels---associated with the vibrations of atoms within the molecule---and rotational levels---associated with rotations of the whole molecule. The energy levels lie so close to one another that they merge into whole bands spanning a given range of energy.
+In \textbf{molecules} the level scheme is richer, because on top of the electronic levels there are vibrational levels (atoms vibrating within the molecule) and rotational levels (the whole molecule rotating). These lie so close together that they merge into broad absorption \emph{bands} rather than sharp lines.
 
 \subsection{Spontaneous emission}
 
-\textbf{Spontaneous emission} --- the emission of photons occurring when electrons occupying excited levels return spontaneously to lower energy levels.
-
-The phenomenon occurs universally and is responsible for almost every kind of luminescence of bodies, e.g.\ of heated gases, excited atoms, liquid and solid bodies, and also of electronic devices such as light-emitting diodes. In the absence of new excitations, the equation determining the number of atoms remaining in the excited state has the form:
+\textbf{Spontaneous emission} is the emission of a photon when an electron in an excited level drops, of its own accord, to a lower level. It happens without any external trigger and at a random moment, and is responsible for almost all everyday luminescence (heated gases, excited atoms, light-emitting diodes, and so on). With no re-excitation, the number of atoms still excited decays exponentially:
 
 \begin{equation*}
-    N\left(t\right) = N\left(0\right)e^{-\frac{t}{\tau}}
+    N\left(t\right) = N\left(0\right)e^{-t/\tau},
 \end{equation*}
 
-where $\tau$ is the lifetime.
+where $\tau$ is the mean lifetime of the excited state.
 
 \subsection{Stimulated emission}
 
-\textbf{Stimulated emission} --- the process of emission of photons by matter as a result of interaction with an initiating photon. The condition for stimulated emission to occur is the equality of the photon energy with the excitation energy of the atom. The photon initiating the emission is not absorbed by the matter---it plays only the role of triggering the process. The photon emitted by the atom has the same frequency (and hence also energy), phase and polarisation as the photon causing the emission. The direction of motion of both photons is also the same. Light composed of such identical photons is called coherent light. This phenomenon is the basis of the operation of lasers.
+\textbf{Stimulated emission} is the emission of a photon triggered by an incoming photon whose energy equals the level gap. The triggering photon is \emph{not} absorbed, it only sets the process off. The emitted photon is a copy of it: same frequency, phase, polarisation and direction of travel. A beam built from such identical photons is \emph{coherent}, and this multiplication of identical photons is the physical basis of the laser.
 
 \section{Atoms in strong electric and magnetic fields (the Stark effect, the Zeeman effect); experimental methods of studying spin}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: the source's ``second-order'' Stark calculation is actually degenerate first-order perturbation theory in the $n=2$ manifold (fixed) --- split the Stark effect into the quadratic ground-state case and the linear $n=2$ case, corrected the Zeeman energy shifts (the $\hbar$ cancels, giving $\muB B m_l$) and distinguished the weak-field anomalous shift (Land\'e $g_J$) from the strong-field $(m_l+2m_s)$ form.}
 
 \paragraph{The Stark effect}
 
-The Stark effect is the phenomenon consisting in the splitting of energy levels in an external electric field. Let us define the electric field along the $z$ axis:
+The Stark effect is the splitting or shifting of atomic energy levels in an external electric field. We take the field along $z$, so the extra potential energy of the electron is
 
 \begin{equation*}
-    \vec{E} = E\hat{e}_z \xrightarrow[]{} V = -Ez = -Er\cos(\theta)
+    \vec{E} = E\hat{e}_z \xrightarrow{} \hat{H}' = eEz = eEr\cos\theta,
 \end{equation*}
 
-This corresponds to the perturbing Hamiltonian $\hat{H}' = eEr\cos(\theta)$, so we may calculate the first-order correction (\cref{eq:pt-e1}) to the ground state $\ket{nlm} = \ket{100}$:
+a perturbation added to the atomic Hamiltonian (perturbation theory and the first-order shift are set out in \cref{eq:pt-e1}).
+
+For the hydrogen \emph{ground state} $\ket{100}$ the first-order shift vanishes:
 
 \begin{equation*}
-    E^{(1)}_{100} = \bra{100}\hat{H}'\ket{100} = eE\int\psi^*_{100}r\cos(\theta)\psi_{100}d^3r = 0
+    E^{(1)}_{100} = \bra{100}\hat{H}'\ket{100} = eE\int\psi^*_{100}\,r\cos\theta\,\psi_{100}\,d^3r = 0,
 \end{equation*}
 
-Since the ground state has $l=0$ it is spherically symmetric, and consequently the first-order correction $E^{(1)}_{100} = 0$.
+because the ground state is spherically symmetric, so the positive and negative $z$ contributions cancel. The ground state therefore shifts only at \emph{second} order, proportionally to $E^2$ (the quadratic Stark effect).
 
-% NOTE: the source calls what follows a second-order correction, but the
-% procedure carried out is degenerate first-order perturbation theory within
-% the n=2 manifold.
-We may, however, calculate the correction in second-order perturbation theory\merr, i.e.\ find the matrix elements $\bra{2lm}\hat{H}'\ket{2lm}$. The only non-zero elements are:
+Excited levels behave differently when they are degenerate. The $n=2$ states $\ket{200}$ and $\ket{210}$ have the same energy and are mixed by the field, so here we must use \emph{degenerate} perturbation theory: diagonalise $\hat H'$ within the $n=2$ manifold. The only non-zero matrix elements are
 
 \begin{equation*}
-    \bra{200}\hat{H}'\ket{210} = \bra{210}\hat{H}'\ket{200} = -3eEa_0
+    \bra{200}\hat{H}'\ket{210} = \bra{210}\hat{H}'\ket{200} = -3eEa_0,
 \end{equation*}
+
+so that in the basis $\{\ket{200},\ket{210},\ket{211},\ket{21\text{-}1}\}$
 
 \begin{equation*}
 \hat{H}' =
@@ -75,503 +81,409 @@ We may, however, calculate the correction in second-order perturbation theory\me
         -3eEa_0 & 0 & 0 & 0\\
          0 & 0& 0 & 0\\
          0 & 0& 0 & 0\\
-    \end{pmatrix}
+    \end{pmatrix}.
 \end{equation*}
 
-Calculating the eigenvectors and eigenvalues of this matrix we obtain $\lambda_1 = \lambda_2 = 0$, $\lambda_3 = -\lambda_4 = 3eEa_0$. In the presence of an electric field two states arise:
+Its eigenvalues are $\lambda_{1}=\lambda_{2}=0$ and $\lambda_{3}=-\lambda_{4}=3eEa_0$, and the two states that split off are
 
 \begin{equation*}
-    \frac{1}{\sqrt{2}}(\ket{200}\pm\ket{210})
+    \frac{1}{\sqrt{2}}\left(\ket{200}\pm\ket{210}\right),
 \end{equation*}
 
-with energies:
+with energies
 
-% NOTE: the source writes E^{(0)}_{100}; since the states involved belong to the
-% n=2 manifold, this should be E^{(0)}_{200}.
 \begin{equation*}
-    E = E^{(0)}_{200} \pm 3eEa_0
+    E = E^{(0)}_{200} \pm 3eEa_0.
 \end{equation*}
+
+This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate.
 
 \paragraph{The Zeeman effect}
 
-The Zeeman effect is the phenomenon consisting in the splitting of energy levels in an external magnetic field. Most energy levels in atoms and molecules are degenerate with respect to energy---this means that there exist several levels of the same energy. What distinguishes the degenerate levels are other physical quantities characterising the electron in the atom---the orbital angular momentum, the spin, and so on. The presence of an external magnetic field may lift the degeneracy, because it interacts in different ways with electrons of different magnetic moment. A separation of the energy levels then takes place. In consequence, in the observed pattern of radiation emitted during electronic transitions, several closely spaced spectral lines appear in place of a single line.
+The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, splitting one spectral line into several closely spaced ones.
 
-Energy correction --- we introduce the Hamiltonian perturbing by a field $B$ in the $z$ direction:
-
-\begin{equation*}
-    \hat{H}' = -\mu B_z
-\end{equation*}
-
-where $\mu$ is the magnetic moment:
-
-% NOTE: as in the source, the braces do not render as a bracket and L, S are
-% vectors: \mu = -\frac{\mu_B}{\hbar}\left(\vec{L} + g_S\vec{S}\right).
-\begin{equation*}
-    \mu=-\frac{\muB}{\hbar}\left(\vec{L} + g_S \vec{S}\right)
-\end{equation*}
-
-$\muB$ is the Bohr magneton and $g_S \approx 2$ is the Landé factor for the electron. In the case where $S = 0$ we have the so-called normal Zeeman splitting, and the correction to the energy (\cref{eq:pt-e1}) is:
-
-% NOTE: the superscript should be (1), not (0); moreover, since the eigenvalue of
-% L_z is \hbar m_l, the \hbar in the denominator cancels and the correction is
-% -\mu_B B m_l. Retained as in the source.
-\begin{equation*}
-    E^{(0)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = -\frac{\muB}{\hbar}Bm_l \qquad \merr
-\end{equation*}
-
-In the case where $S\neq 0$ we have the anomalous Zeeman effect, and the correction to the energy is
+Taking the field along $z$, the perturbation is $\hat{H}' = -\mu_z B$, where the magnetic moment of the electron is
 
 \begin{equation*}
-    E^{(0)}_{nlm_lm_s} = -\frac{\muB}{\hbar}B(m_l + 2m_s) \qquad \merr
+    \vec{\mu} = -\frac{\muB}{\hbar}\left(\vec{L} + g_S\,\vec{S}\right),
 \end{equation*}
+
+with $\muB$ the Bohr magneton and $g_S \approx 2$ the electron spin $g$-factor.
+
+If the spin plays no role ($S=0$), we have the \emph{normal} Zeeman effect. Since $L_z$ has eigenvalue $\hbar m_l$, the $\hbar$ cancels and the shift is evenly spaced:
+
+\begin{equation*}
+    E^{(1)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = \muB B\,m_l .
+\end{equation*}
+
+If the spin does contribute ($S\neq0$) we have the \emph{anomalous} Zeeman effect, with a more complicated pattern of lines. In a weak field the level splits according to the total angular momentum $\vec J = \vec L + \vec S$ with the Land\'e factor $g_J$:
+
+\begin{equation*}
+    E^{(1)} = \muB g_J B\,m_j,\qquad g_J = 1 + \frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)} .
+\end{equation*}
+
+Only in a \emph{strong} field, where $\vec L$ and $\vec S$ effectively decouple (the Paschen--Back regime), does the shift simplify to the naive form $\muB B\,(m_l + 2m_s)$.
 
 \paragraph{Experimental methods of studying spin}
 
-One of the best known methods of experimentally studying spin is the Stern--Gerlach experiment. In its original version, the experiment consisted in passing a beam of silver atoms through an inhomogeneous magnetic field and observing the image of the beam on a screen. Charged fundamental particles with non-zero spin, and also the bound states known to us with non-zero spin, have a non-zero magnetic moment whose magnitude and projection onto a chosen axis are related to the magnitude and projection of the spin. An unpolarised beam of such particles may be passed through an inhomogeneous magnetic field, and its splitting into several beams observed, depending on the value of the total spin. According to quantum mechanics, in the experiment with silver atoms we should therefore register atoms reaching only two points of the screen, in the case of a perfectly homogeneous beam of atoms with very small transverse dimensions. In practice, on account of the finite transverse dimensions of the beam and the unavoidable spread of atomic velocities, two separated spots are obtained.
+The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\tfrac12$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds).
 
 \section{Thermal radiation; the emissive and absorptive power of bodies, Kirchhoff's law, black-body radiation}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the Planck expression given is the spectral emissive power $2\pi h\nu^{3}/c^{2}\cdot(e^{h\nu/\kB T}-1)^{-1}$. Wien ($\lambda_{\max}=b/T$) and Stefan--Boltzmann ($\Phi=\sigma T^{4}$) confirmed.}
 
-Thermal radiation is a kind of electromagnetic radiation emitted by all bodies at a temperature above absolute zero. It is the result of the thermal motion of particles in the material and spans a wide range of wavelengths, from the infrared to visible radiation and even the ultraviolet. The basic concept is that of the black body, which is an ideal emitter and absorber of thermal radiation. It absorbs all radiation incident upon it regardless of wavelength, direction and polarisation, and emits radiation with the maximum possible efficiency for a given temperature.
+Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the thermal motion of its charged particles. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises. The key idealisation is the \textbf{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature.
 
 \subsection{Emissive and absorptive power}
 
-\textbf{Emissive power} ($E(\nu, T)$) determines the capacity of a body to emit radiation and is equal to the energy of the radiation emitted at a given frequency and temperature per unit area.
+\textbf{Emissive power} $E(\nu,T)$ measures how strongly a body emits: the energy radiated per unit area, per unit time, per unit frequency, at frequency $\nu$ and temperature $T$.
 
-\textbf{Absorptive power} ($A(\nu,T)$) is the ratio of the power absorbed by the body to the incident power. Together with the reflection and transmission coefficients it sums to unity.
+\textbf{Absorptive power} $A(\nu,T)$ is the fraction of incident power that the body absorbs (the rest being reflected or transmitted), so it lies between $0$ and $1$.
 
 \subsection{Kirchhoff's law}
 
-Kirchhoff's law of thermal radiation states that at a fixed temperature the function $\varepsilon(\nu,T)=\frac{E(\nu,T)}{A(\nu,T)}$ is universal for all bodies. Since for a black body $A=1$, this function is the emissive power of the black body.
+Kirchhoff's law of thermal radiation states that at a fixed temperature the ratio $\varepsilon(\nu,T)=E(\nu,T)/A(\nu,T)$ is the same universal function for \emph{all} bodies. Since a black body has $A=1$, this universal function is simply the emissive power of the black body.
 
 \subsection{The black body}
 
-The formula for the emissivity of a black body is the Planck distribution, which arose initially from fitting a function and was later derived on the assumption of the quantum nature of photons, and is given by:
+The black-body emissive power is given by the Planck distribution, first found by fitting the data and later derived by assuming that radiation is exchanged in quanta of energy $h\nu$:
 
 \begin{equation}\label{eq:planck}
-\varepsilon(\nu,T) = \frac{2\pi\nu^2}{c^2}\frac{h\nu}{e^{h\nu/\kB T} - 1}
+\varepsilon(\nu,T) = \frac{2\pi\nu^2}{c^2}\,\frac{h\nu}{e^{h\nu/\kB T} - 1}.
 \end{equation}
 
-Auxiliary laws describing black-body radiation are: Wien's law, giving the wavelength at which it attains its maximum as depending on the temperature according to $\lambda_{max} = b / T$, and the Stefan--Boltzmann law, giving the total power emitted at a given temperature, $\Phi = \sigma T^4$.
+Two limiting laws follow from it: \textbf{Wien's displacement law}, giving the wavelength of peak emission, $\lambda_{\max} = b/T$ (so hotter bodies peak at shorter wavelengths), and the \textbf{Stefan--Boltzmann law}, giving the total power radiated per unit area, $\Phi = \sigma T^4$.
 
 \section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the mislabelled $\psi_2$, trimmed the Young's-fringe algebra to the result needed orally, kept the bright/dark path-difference conditions and Bragg's law.}
 
 \subsection{Interference and coherence}
 
-The phenomenon of interference, that is, of the superposition of waves, occurs only in the case where the interfering waves are coherent.
+Interference is the superposition of waves. Where two waves meet in phase they reinforce (a bright fringe), where they meet out of phase they cancel (a dark fringe). This produces a stable pattern only if the waves are \textbf{coherent}, meaning the phase difference between them at a given point stays constant in time (a laser is the standard coherent source).
 
-\textbf{Coherence} --- the difference of the phases arriving at a given point is constant in time, e.g.\ a laser.
+The classic demonstration is \textbf{Young's double-slit experiment}. Light from a single source passes through one slit and then through two further slits a distance $d$ apart, which act as two point sources of coherent spherical waves:
 
-The interference of waves emitted by two coherent sources was demonstrated in Young's experiment. A beam of light originating from a single source, having passed through one narrow slit, falls on two further slits separated from one another by $d$. We treat these slits as two point sources of coherent spherical waves. On a screen located at a large distance from the slits, dark and bright fringes are recorded. The waves originating from both slits are described by the wave functions:
-
-% NOTE: the second line in the source is also labelled \psi_1; it should be \psi_2.
 \begin{align*}
-    \psi_{1}\left(r_{1},t\right) &= A\left(r_{1}\right)\cos{\left(kr_{1} - \omega t\right)}\\
-    \psi_{2}\left(r_{2},t\right) &= A\left(r_{2}\right)\cos{\left(kr_{2} - \omega t\right)}
+    \psi_{1}\left(r_{1},t\right) &= A\left(r_{1}\right)\cos\left(kr_{1} - \omega t\right)\\
+    \psi_{2}\left(r_{2},t\right) &= A\left(r_{2}\right)\cos\left(kr_{2} - \omega t\right).
 \end{align*}
 
-On the screen we observe the result of the summation of the waves:
+Adding them gives a wave whose amplitude is modulated by a factor $\cos\!\big(k(r_1-r_2)/2\big)$. This factor is largest (a \textbf{bright fringe}) when the two path lengths differ by a whole number of wavelengths,
 
 \begin{equation*}
-    \psi_{1}\left(r_{1},t\right) + \psi_{2}\left(r_{2},t\right) = 2A\left(r_{av}\right)\cos{\left(k\frac{r_{1} - r_{2}}{2}\right)}\cos{\left(kr_{av} - \omega t\right)}
+    r_{1} - r_{2} = m\lambda,
 \end{equation*}
 
-The first factor (the cosine) describes the spatial modulation, while the second term, with the amplitude, describes the spherical wave. On the screen we obtain interference maxima (bright fringes) when the following condition is satisfied:
+and vanishes (a \textbf{dark fringe}) when they differ by an odd number of half-wavelengths,
 
-\begin{align*}
-        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} &= \pm 1\\
-        k\frac{r_{1} - r_{2}}{2} &= m\pi
-\end{align*}
+\begin{equation*}
+    r_{1} - r_{2} = \frac{2m+1}{2}\lambda,
+\end{equation*}
 
-That is, the difference of the optical paths of the two rays is equal to a multiple of the wavelength: $r_{1} - r_{2} = m\lambda$, where $m$ is an integer. Cancellation of the waves (dark fringes) occurs when:
-
-\begin{align*}
-        \cos{\left(k\frac{r_{1} - r_{2}}{2}\right)} &= 0\\
-        k\frac{r_{1} - r_{2}}{2} &= \frac{2m+1}{2}\pi
-\end{align*}
-
-and thus for a difference of the optical paths of both rays equal to an odd multiple of half the wavelength: $r_{1} - r_{2} = \frac{2m+1}{2}\lambda$.
+with $m$ an integer.
 
 \subsection{Diffraction}
 
-There is no essential difference between the phenomena of diffraction and interference. It has been agreed that the changes of intensity arising as a result of the superposition of waves produced by a finite number of discrete coherent sources are called interference, while those produced by coherent sources distributed in a continuous manner are conventionally called diffraction. In general one may say that diffraction is the set of phenomena arising during the propagation of waves in a medium with sharp inhomogeneities---if a wave encounters an obstacle on its path, then that part of the wave which passes beyond the obstacle will become a source of new spherical waves (Huygens' principle), that is, will undergo bending (diffraction). At every point beyond the obstacle there occurs a superposition of these partial waves, taking into account the amplitudes and phases of the waves.
+There is no sharp distinction between diffraction and interference. By convention, the pattern from a \emph{finite number} of discrete coherent sources is called interference, and that from a \emph{continuous} distribution of sources is called diffraction. Physically, diffraction is the bending of waves around obstacles or through apertures: by Huygens' principle every point of a wavefront acts as a source of new spherical wavelets, and their superposition beyond the obstacle (taking amplitudes and phases into account) gives the diffracted pattern.
 
 \subsection{Diffraction of radiation on crystals}
 
-\textbf{Bragg's law} --- a relation linking the structure of a crystal with the wavelength of the radiation incident on the crystal and the angle at which the interference maximum is observed. This law concerns so-called Bragg diffraction. When X-radiation falls on a crystal, diffraction of this radiation occurs at each of its atoms. The Bragg condition assumes diffraction on the planes on which the atoms of the crystal are arranged. With a known interplanar spacing and wavelength, Bragg's law determines the angle at which the wave must fall on the crystal for constructive interference (reinforcement) to occur. This means that for X-rays falling on a crystal the maxima of the diffracted radiation occur only for certain angles of incidence.
+When X-rays fall on a crystal they scatter off the regularly spaced atoms. Because the atoms sit on parallel planes a fixed distance $d$ apart, the waves scattered from successive planes interfere. They reinforce only when the extra path travelled between neighbouring planes is a whole number of wavelengths, which is \textbf{Bragg's law}:
 
 \begin{equation}\label{eq:bragg}
-    n\lambda = 2d\sin{\theta}
+    n\lambda = 2d\sin\theta,
 \end{equation}
 
-where $n$ is the order of diffraction, $\lambda$ the wavelength of the radiation, $d$ the interplanar spacing---the distance between the planes on which the scattering occurs---and $\theta$ the glancing angle---the angle of incidence defined as the angle between the beam of primary rays and the plane of the crystal.
+where $n$ is the diffraction order, $\lambda$ the wavelength, $d$ the interplanar spacing and $\theta$ the glancing angle (measured between the beam and the crystal plane, not the normal). Strong diffracted beams therefore appear only at particular angles.
 
-A crystal consists of many parallel planes on which atoms are arranged---in an identical manner on each of the planes---and each pair of neighbouring planes is separated from one another by a constant distance. The beam under consideration falls on the crystal and is diffracted on each of the planes, and as a result many scattered beams appear (there are as many of them as there are planes), but all of them are scattered in the same direction, and their interference takes place. The diffraction of the incident beam occurs at each of the atoms, but since these are arranged periodically in planes, one considers the diffraction on the planes. The wave diffracted on a single atom is spherical, but for atoms lying on a given plane the fronts of these spherical waves form the front of a plane wave, and thus the beam scattered---diffracted---on that whole plane. Let us consider the part of the incident beam falling on a given plane and diffracted on that plane, and the part of the incident beam falling on another plane and diffracted on that other plane. If the difference of the optical paths for such pairs of incident and reflected beams (equal in this case to the difference of the geometrical paths) is equal to an integer multiple of the wavelength, then as a result of interference a reinforcement of the diffracted beam will occur---and it is precisely this case that the Bragg condition describes. On account of the fact that the angle at which the reinforcement occurs is equal to the angle of incidence of the radiation, the phenomenon discussed is often called reflection---however, diffraction on a crystal differs from reflection:
-
-\begin{itemize}
-    \item the beam diffracted on a crystal consists of rays scattered on all the atoms of the crystal, whereas in ordinary reflection this occurs only for the surface layer;
-    \item diffraction on a crystal occurs only for particular angles of incidence determined by the Bragg equation, whereas reflection occurs for all angles;
-    \item the intensity of the beam diffracted on a crystal is much smaller than the intensity of the incident beam, whereas good mirrors reflect close to 100 per cent of the light falling on them.
-\end{itemize}
+Although the reinforced beam emerges at an angle equal to the angle of incidence, so the effect is often loosely called ``reflection'', it differs from ordinary reflection: it uses the whole three-dimensional stack of atomic planes rather than just the surface, occurs only at the special Bragg angles rather than at every angle, and yields a much weaker beam than a good mirror.
 
 \section{Indistinguishability of elementary particles; the connection between spin and statistics, Bose--Einstein condensation}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: kept the exchange-phase argument but tightened it, clarified the $k$ notation clash flagged in the source, and verified the condensation temperature constant ($\approx 3.31$, i.e.\ $2\pi/\zeta(3/2)^{2/3}$).}
 
-In the case of identical elementary particles, e.g.\ electrons, quarks or photons, the wave function of any system of them is written in the form:
+Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase: \todo{Something more about indistinguishability. Is it analogous that 2 electrons being excittations or some underlying quantum field are indistinguishable in a way that is similar to how two C sounds played on guitar strings are indistinguishable becayuse they are fundamentally the same?}
 
-\begin{equation*}
-    \psi (1,2,\dots,N,t)
-\end{equation*}
-
-where $(1,2,\dots,N)$ denotes the set of position and spin coordinates of the individual particles of the quantum system, the remaining parameters having to be the same. If it is assumed that these particles have been labelled unambiguously, so that each of them has an individual number, then on exchanging two particles (e.g.\ the first and the second) the wave function may change only by a phase factor $e^{i\varphi}$, i.e.:
-
-\begin{equation} \label{eq:identical}
-    \psi (1,2,\dots,N,t) = e^{i\varphi} \psi (2,1,\dots,N,t)
+\begin{equation}\label{eq:identical}
+    \psi(1,2,\dots,N,t) = e^{i\varphi}\,\psi(2,1,\dots,N,t).
 \end{equation}
 
-where $\varphi$ is an arbitrary real number, and such a change does not cause a change in the modulus of the wave function. When the particles are exchanged back, the phase factor changes again and we obtain
-
-\begin{equation*}
-    \tilde{\psi} (2,1,\dots,N,t) = e^{i\varphi} \psi (1,2,\dots,N,t)
-\end{equation*}
-
-Returning to \cref{eq:identical} we obtain:
-
-\begin{equation*}
-    \tilde{\psi} (1,2,\dots,N,t) = e^{i\varphi}e^{i\varphi} \psi (1,2,\dots,N,t)
-\end{equation*}
-
-Since the wave functions $\tilde{\psi}$ and $\psi$ correspond to the same configuration of particles, their moduli must be equal to one another, and therefore $e^{2i\varphi} = \pm 1$. Consequently, the wave function of identical particles must be either symmetric or antisymmetric.
+Swapping the same pair a second time returns the original configuration, which forces $e^{2i\varphi}=\pm1$. Hence the wave function of identical particles must be either completely \emph{symmetric} ($+$) or completely \emph{antisymmetric} ($-$) under exchange.
 
 \paragraph{The spin--statistics postulate}
 
-The wave function of a system of indistinguishable particles with half-integer spin (i.e.\ 1/2, 3/2, etc.) must be antisymmetric with respect to the exchange of the spatial and spin coordinates of any pair of particles. Analogously, for particles of integer spin (i.e.\ 0, 1, 2, etc.) it must be symmetric. It follows from this that two fermions (particles of half-integer spin) cannot be in the same quantum state (the Pauli exclusion principle).
+Which sign applies is fixed by the spin. Particles of half-integer spin ($\tfrac12, \tfrac32, \dots$), the \textbf{fermions}, have an antisymmetric wave function. Particles of integer spin ($0,1,2,\dots$), the \textbf{bosons}, have a symmetric one. An immediate corollary for fermions is the \textbf{Pauli exclusion principle}: an antisymmetric wave function vanishes if two particles share the same state, so no two fermions can occupy the same quantum state.
 
 \paragraph{Bose--Einstein condensation}
 
-% NOTE: below, k denotes the Boltzmann constant, but the same symbol k is also
-% used in the text for the wave-vector index --- an overload worth flagging to
-% the reader. Written here as \kB in the formula for clarity.
-The statistics refers to a non-interacting gas of bosons at low temperatures. Bosons are not subject to the Pauli exclusion principle, and therefore many particles may occupy the same state within a single system. On the basis of these assumptions one obtains the formula for the occupation density of the $k$-th state (cf.\ \cref{eq:bose-einstein}):
+Bosons are not bound by the exclusion principle, so any number of them may share one state. For a gas of non-interacting bosons the mean occupation of a state of energy $\varepsilon_k$ is the Bose--Einstein distribution (\cref{eq:bose-einstein}),
 
 \begin{equation*}
-    n_k = \frac{1}{e^{(\varepsilon_k - \mu)/\kB T} - 1}
+    n_k = \frac{1}{e^{(\varepsilon_k - \mu)/\kB T} - 1},
 \end{equation*}
 
-$\varepsilon_k$ denotes the energy of the $k$-th state, $\mu$ the chemical potential, $\kB$ the Boltzmann constant and $T$ the temperature. It is worth emphasising that the index $k$ corresponds to the wave vector $\vec{k}$. On account of the difference appearing in the denominator, under appropriate conditions the density of the lowest states is very large. The effect of condensation is the collective behaviour of all the particles taking part in it (approximately, they all behave like a single particle). This is not a matter of condensation in the ordinary sense in position space---the particles are not located in one place---but of the ``condensation'' of particles in momentum space: a considerable number of particles have the same momentum. The critical temperature is given by the formula:
+where $\mu$ is the chemical potential, $\kB$ the Boltzmann constant and $T$ the temperature. (Here the label $k$ is the wave vector of the state, not to be confused with $\kB$.) Because of the $-1$ in the denominator, the occupation of the lowest state can grow without limit. Below a critical temperature a large fraction of the particles pile into that single lowest-energy state and behave collectively, almost as one object. This is \textbf{Bose--Einstein condensation}. It is not condensation in ordinary space (the atoms are not gathered in one place) but in momentum space, since so many particles come to share the same momentum. The critical temperature is
 
 \begin{equation*}
-    T_c \approx 3.3125 \frac{\hbar^2 n^{2/3}}{m \kB}
+    T_c \approx 3.31\,\frac{\hbar^2 n^{2/3}}{m\,\kB},
 \end{equation*}
 
-where $n$ is the density of atoms and $m$ the mass of a single atom.
+with $n$ the number density of atoms and $m$ the mass of one atom.
 
 \section{Statistical ensembles; classical and quantum statistics, thermodynamic potentials and their connection with the partition functions of the corresponding ensembles}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the canonical sum (over microstates $r$, not over the $N$ particles), and made explicit which macroscopic variable is fixed in each ensemble and which potential it yields.}
 
-Statistical ensembles are a concept used in statistical mechanics to describe the macroscopic properties of physical systems on the basis of the statistics of the microscopic states of the particles. Statistical ensembles are hypothetical collections of very many copies of the same system, where each copy may be in a different microscopic state consistent with the adopted macroscopic conditions. To begin with, we shall assume that the fixed macroscopic parameters will be the number of particles $N$, the energy $E$ and the volume $V$.
+A statistical ensemble is a large imaginary collection of copies of a system, each in some microscopic state (microstate) consistent with the same fixed macroscopic conditions. Averaging over the ensemble reproduces the macroscopic (thermodynamic) properties. The three standard ensembles differ in which macroscopic quantities are held fixed, and each is tied to a particular thermodynamic potential through its partition function (the weighted count of microstates).
 
 \subsection{The microcanonical ensemble}
 
-All microstates are equally probable, and their partition function $\Omega$ is simply the number of all microstates. Boltzmann connected such a sum with the entropy by means of the formula
+Here the number of particles $N$, the volume $V$ and the energy $E$ are all fixed. Every accessible microstate is equally likely, and the partition function $\Omega$ is just the total number of them. Boltzmann linked this count to the entropy:
 
 \begin{equation}\label{eq:boltzmann-entropy}
-S=\kB \log\Omega
+S = \kB \log\Omega .
 \end{equation}
 
 \subsection{The canonical ensemble}
 
-% NOTE: the source writes the sum as \sum_{r=1}^{N}; the sum runs over all
-% microstates r, not over the N particles.
-Imposing a constraint on the energy significantly complicates the calculations, which may be simplified by introducing a constraint on the temperature and assuming that the system exchanges energy with a heat reservoir at constant temperature $T$. The microstates are then subject to the Boltzmann distribution, and the partition function is given by
+Fixing the energy exactly is awkward, so instead we let the system exchange heat with a reservoir at fixed temperature $T$ (with $N$ and $V$ still fixed). The microstates are then weighted by the Boltzmann factor, and the partition function is a sum over all microstates $r$:
 
 \begin{equation}\label{eq:canonical-partition}
-Q_N(V,T) = \sum_{r}\exp\left(-E_r / \kB T\right)
+Q_N(V,T) = \sum_{r}\exp\left(-E_r / \kB T\right).
 \end{equation}
 
-and gives directly the Helmholtz free energy
+It yields directly the Helmholtz free energy,
 
 \begin{equation}\label{eq:helmholtz}
-A=-\kB T\log Q_N
+A = -\kB T\log Q_N .
 \end{equation}
 
 \subsection{The grand canonical ensemble}
 
-Just as summing over all energies simplified the calculations relative to the microcanonical ensemble, so here we are dealing with a further change of constraint. The number of particles is also difficult to define or measure, and so here too it becomes a variable, while the chemical potential $\mu$ is constrained. Counting over all possible numbers of particles with the generalised Boltzmann distribution, we obtain the partition function
+Taking one further step, we also let the particle number vary, fixing instead the chemical potential $\mu$ (with $V$ and $T$). Summing over all microstates \emph{and} all particle numbers gives
 
 \begin{equation}\label{eq:grand-partition}
-Q=\sum_{r,s}\exp\left(-\alpha N_r - \beta E_s\right)
+Q = \sum_{r,s}\exp\left(-\alpha N_r - \beta E_s\right),
 \end{equation}
 
-where $\beta = 1/\kB T$ and $\mu = - \alpha/\beta$. This sum is connected with the grand thermodynamic potential by:
+with $\beta = 1/\kB T$ and $\mu = -\alpha/\beta$. This connects to the grand thermodynamic potential by
 
 \begin{equation}\label{eq:grand-potential}
-\Xi = -\kB T\log Q
+\Xi = -\kB T\log Q .
 \end{equation}
 
 \subsection{Quantum statistics}
 
-The theory of statistical ensembles may be successfully applied also within the formalism of quantum mechanics. Considering the case of a system of $N$ free particles, and hence by means of the canonical ensemble, additional constraints are however imposed on the occupations of the energy states. This leads to the formulation of three statistics:
+The same machinery works in quantum mechanics, but for identical particles the allowed occupations of each energy state are further restricted, giving three statistics:
 
 \begin{enumerate}
-    \item the classical one, where the occupations are given by the Maxwell--Boltzmann distribution. This is an approach analogous to the above, but it does not explain the phenomena observed for a gas of electrons (fermions) or photons (bosons). This distribution does not assume that the particles are indistinguishable, but on account of the scale this has no significant effect on the correctness of the results.
-    \item Fermi--Dirac, which takes into account the Pauli exclusion principle, to which fermions are subject. It states that a given state may be occupied by only one particle. This gives the following occupation distribution:
+    \item \textbf{Maxwell--Boltzmann} (classical): treats particles as distinguishable. It is a good approximation at high temperature and low density, but fails for a dense gas of electrons or photons.
+    \item \textbf{Fermi--Dirac}: for fermions, which obey the Pauli exclusion principle (at most one particle per state):
     \begin{equation}\label{eq:fermi-dirac}
-    \ev{n_\varepsilon}=\frac{1}{e^{\beta(\varepsilon - \mu)} + 1}
+    \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} + 1}.
     \end{equation}
-    \item Bose--Einstein, which describes particles not subject to the Pauli exclusion principle, but still indistinguishable. The distribution is given by:
+    \item \textbf{Bose--Einstein}: for bosons, which are indistinguishable but not exclusion-bound:
     \begin{equation}\label{eq:bose-einstein}
-    \ev{n_\varepsilon}=\frac{1}{e^{\beta(\varepsilon - \mu)} - 1}
+    \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} - 1}.
     \end{equation}
 \end{enumerate}
 
-In the classical limit both quantum statistics converge to the Maxwell--Boltzmann distribution.
+In the classical limit both quantum distributions reduce to the Maxwell--Boltzmann one.
 
 \section{Statistical explanation of the macroscopic properties of systems of very many particles: extensive and intensive parameters of the state of a system, the equation of state, specific heats (of gases and solids), magnetic susceptibilities, etc.}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the van der Waals equation to a consistent $n$-mole form $(p+an^{2}/V^{2})(V-nb)=nRT$, and labelled $c_V,c_p$ as molar heat capacities of a monatomic ideal gas.}
 
 \subsection{Extensive and intensive parameters}
 
-The parameters used in the description of thermodynamic systems may be:
+State parameters come in two kinds:
 
 \begin{itemize}
-    \item intensive, i.e.\ independent of the size of the system, e.g.\ pressure, temperature, concentrations of the components, molar volumes, molar internal energies, entropies and other molar quantities
-    \item extensive, i.e.\ dependent on the size of the system, e.g.\ volume, masses or numbers of moles of the components, total volume, internal energy, entropy
+    \item \textbf{intensive} --- independent of the amount of material, e.g.\ pressure, temperature, density and any ``per-mole'' quantity.
+    \item \textbf{extensive} --- proportional to the amount of material, e.g.\ volume, mass, particle number, total internal energy and total entropy.
 \end{itemize}
 
 \subsection{The equation of state}
 
-An equation of state is a relation between the parameters (state functions) of a thermodynamic system, such as:
-
-\begin{itemize}
-    \item pressure
-    \item density
-    \item temperature
-    \item entropy
-    \item internal energy
-\end{itemize}
-
-which may be written in the form:
+An equation of state relates the state parameters of a system, and may be written schematically as
 
 \begin{equation*}
-    p = p\left(\rho,T,s,u,...\right)
+    p = p\left(\rho,T,s,u,\dots\right).
 \end{equation*}
 
-The most commonly used equations of state in thermodynamics are the ideal gas equation of state and the van der Waals equation:
+The two most common are the ideal-gas law and the van der Waals equation (the latter in a consistent $n$-mole form):
 
-% NOTE: two issues carried over from the source: the ideal gas law is written
-% with a lower-case v (should be pV = nRT), and the van der Waals equation mixes
-% the molar form (a/V^2, V-b) with nRT on the right-hand side. The consistent
-% n-mole form is (p + an^2/V^2)(V - nb) = nRT.
 \begin{align}
         pV &= nRT \label{eq:ideal-gas}\\
-        \left(p + \frac{a}{V^{2}}\right)\left(V-b\right) &= nRT \label{eq:van-der-waals} \qquad \merr
+        \left(p + \frac{a n^{2}}{V^{2}}\right)\left(V - nb\right) &= nRT \label{eq:van-der-waals} .
 \end{align}
 
-where the parameter $b$ accounts for the volume of the molecules, while the parameter $\frac{a}{V^{2}}$ accounts for their mutual interaction.
+The correction $b$ accounts for the finite volume of the molecules, and $a n^{2}/V^{2}$ for their mutual attraction.
 
 \subsection{Specific heats}
 
-\textbf{Specific heat} --- the heat needed to change the temperature of a body of unit mass by one unit
+\textbf{Specific heat} is the heat needed to raise the temperature of unit mass by one degree,
 
 \begin{equation*}
-    c = \frac{\Delta Q}{m\Delta T}
+    c = \frac{\Delta Q}{m\,\Delta T}.
 \end{equation*}
 
-The heat capacity of a gas at constant parameter $x$ may be calculated from the formula:
-
-\begin{equation*}
-    c_{x} = \left(\frac{\partial Q}{\partial T}\right)_{x}
-\end{equation*}
-
-The most commonly encountered heat capacities are those at constant volume and at constant pressure, $c_{V}$ and $c_{p}$. For a monatomic ideal gas:
+The heat capacity measured while holding some quantity $x$ fixed is $c_x = \left(\partial Q/\partial T\right)_x$. The two usual cases are constant volume and constant pressure. For one mole of a monatomic ideal gas,
 
 \begin{align*}
-        c_{V} &= \frac{3}{2}R\\
-        c_{p} &= \frac{5}{2}R
+        c_{V} &= \frac{3}{2}R, & c_{p} &= \frac{5}{2}R,
 \end{align*}
+
+so that $c_p - c_V = R$ (the extra energy at constant pressure goes into the work of expansion).
 
 \subsection{Magnetic susceptibility}
 
-For magnetic systems we have the relation:
-
-\begin{equation*}
-    dW = \mu_{0}H\,dM
-\end{equation*}
-
-where $M$ denotes the magnetic moment. Magnetisation is the magnetic moment per unit volume:
-
-\begin{equation*}
-    m = \frac{M}{V}
-\end{equation*}
-
-The magnetic susceptibilities at constant temperature and the adiabatic one may be calculated:
+For a magnetic system the work done in changing the magnetisation is $dW = \mu_{0}H\,dM$, where $M$ is the total magnetic moment. The magnetisation is the moment per unit volume, $m = M/V$. The isothermal and adiabatic magnetic susceptibilities measure how the moment responds to the applied field:
 
 \begin{align*}
-        \chi_{T} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{T}\\
-        \chi_{S} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{S}
+        \chi_{T} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{T}, & \chi_{S} &= \frac{1}{\mu_{0}}\left(\frac{\partial M}{\partial H}\right)_{S}.
 \end{align*}
 
 \section{The Dirac and Klein--Gordon equations; the form of the equations and examples of objects governed by each of them}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: removed the source's ``electron mass increase in a field'' formula $M^{2}=m_0^{2}+\hbar^{3}e^{2}\rho/(\omega c^{2})$, which could not be verified against any standard source and is dimensionally suspect --- replaced the examples with standard ones (spin-0 mesons/Higgs for Klein--Gordon, spin-$\tfrac12$ fermions for Dirac).}
 
-The Klein--Gordon equation may be derived by using the representation of energy and momentum as operators: $E \xrightarrow[]{} i\hbar \frac{\partial}{\partial t}$ and $\vec{p}\xrightarrow[]{} - i\hbar\nabla$. Substituting the operators so obtained into the relativistic energy relation:
+Both equations are relativistic wave equations, built by combining quantum mechanics with special relativity. They start from the relativistic energy--momentum relation
 
 \begin{equation}\label{eq:rel-energy}
-    E^2 = p^2c^2 + m^2c^4
+    E^2 = p^2c^2 + m^2c^4,
 \end{equation}
 
-we obtain:
+and differ in the spin of the particles they describe.
+
+\paragraph{The Klein--Gordon equation}
+
+Replacing energy and momentum by the operators $E \to i\hbar\,\partial/\partial t$ and $\vec{p} \to -i\hbar\nabla$ in \cref{eq:rel-energy} gives
 
 \begin{equation}\label{eq:klein-gordon}
-    \left( \Box + \frac{m^2c^2}{\hbar^2}  \right)\psi(\vec{r},t) = 0
+    \left( \Box + \frac{m^2c^2}{\hbar^2} \right)\psi(\vec{r},t) = 0,
 \end{equation}
 
-This equation describes scalar or pseudoscalar particles of zero spin. The simplest solution of the Klein--Gordon equation is a plane wave $\psi \propto e^{ik^jx^j - i\omega_k t}$, giving the relativistic dependence of the energy $\varepsilon_k = \hbar\omega_k$ on the momentum in the form $\varepsilon_k = \pm c\sqrt{p^2 + m_0^2c^2}$. The negative-energy solution of the Klein--Gordon equation has no direct physical meaning. This is caused by the erroneous assumption that relativistic wave equations can describe the dynamics of relativistic particles.
-
-% NOTE: this "mass increase" formula could not be verified against a standard
-% source; treat the numerical form with caution.
-One of the applications of the Klein--Gordon equation is the determination of the increase of the mass of an electron in the field of an electromagnetic wave $A$ of field energy density $\rho$.
-
-\begin{equation*}
-    M^2 = m_0^2 + \frac{\hbar^3e^2\rho}{\omega c^2} \qquad \merr
-\end{equation*}
-
-It is worth noting that when the mass $m_0$ is formally equal to zero, i.e.\ the Klein--Gordon equation describes a massless particle, this particle acquires a mass through the interaction with the electromagnetic field $A$ alone.
+where $\Box = \tfrac{1}{c^2}\partial_t^2 - \nabla^2$ is the d'Alembertian (the relativistic four-dimensional analogue of the Laplacian). This describes \emph{spin-0} particles (scalar or pseudoscalar), for example pions and other spin-0 mesons, and the Higgs boson. A plane wave $\psi \propto e^{i(\vec k\cdot\vec r - \omega t)}$ solves it, with energy $\varepsilon = \pm c\sqrt{p^2 + m_0^2c^2}$. The appearance of \emph{negative}-energy solutions was the historical difficulty of the equation, and is properly resolved only in quantum field theory, where they are reinterpreted as antiparticles.
 
 \paragraph{The Dirac equation}
 
-The Dirac equation for a free particle takes the form:
+Dirac sought an equation \emph{first} order in time (and space), which forces the wave function to have several components. For a free particle,
 
 \begin{equation}\label{eq:dirac}
-(i\hbar \gamma^{\mu}\partial_{\mu} - mc)\Psi(x^{\nu}) = 0
+(i\hbar \gamma^{\mu}\partial_{\mu} - mc)\Psi(x^{\nu}) = 0,
 \end{equation}
 
-where $\gamma^{\mu}$ are the Dirac gamma matrices and $\partial_{\mu}$ are the components of the four-gradient. The Dirac matrices must satisfy the relation $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu \nu }I$, where the most common representation is:
+where $\partial_\mu$ are the components of the four-gradient and the $\gamma^{\mu}$ are the $4\times4$ Dirac gamma matrices, satisfying $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu\nu}I$. A common representation is
 
 \begin{align*}
     \gamma^0 &=
     \begin{pmatrix}
         I & 0\\
         0 & -I
-    \end{pmatrix}\\
+    \end{pmatrix}, &
     \gamma^i &=
     \begin{pmatrix}
         0 & \sigma_i\\
         -\sigma_i & 0
-    \end{pmatrix}
+    \end{pmatrix},
 \end{align*}
 
-where $\sigma_i$ are the Pauli matrices. The equation is valid for particles of arbitrarily large energies (so-called relativistic particles) with spin 1/2 (fermions, e.g.\ electrons, quarks), both free and interacting with the electromagnetic field. The existence of spin follows from the very requirement of relativistic invariance of the equation of motion of particles. The Dirac equation was confirmed in relation to the fine structure of the spectrum of the hydrogen atom, showing excellent agreement with measurements. It predicts the existence of antiparticles.
+with $\sigma_i$ the Pauli matrices. The Dirac equation describes \emph{spin-$\tfrac12$} particles (fermions such as electrons and quarks), both free and coupled to the electromagnetic field. Its successes are striking: spin emerges automatically from the mere requirement of relativistic invariance, it reproduces the fine structure of the hydrogen spectrum, and it predicts the existence of antiparticles.
 
 \section{The structure of atomic nuclei and nuclear reactions; nuclear binding energy, fission and fusion reactions, alpha and beta decay, radioactive decay series, the limits of the world of nuclides}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected ``four natural'' decay series to three (the neptunium series is extinct), and fixed the self-contradictory drip-line paragraph using current experimental limits (proton drip line crossed to $Z=83$ but firmly established only to $\sim Z=13$, and the neutron drip line confirmed only to neon, $Z=10$).}
 
-The atomic nucleus consists of protons and neutrons, which are called nucleons. The number of protons in the nucleus defines the chemical element, and the number of neutrons determines the isotopes of that element. The nucleons are bound in the nucleus by nuclear forces, which are considerably stronger than the electromagnetic forces but act over a very short range (about 1--2 femtometres).
+The atomic nucleus is made of protons and neutrons, collectively \textbf{nucleons}. The number of protons ($Z$) fixes the chemical element, and the number of neutrons distinguishes its isotopes. The nucleons are held together by the strong nuclear force, far stronger than the electromagnetic force but of very short range (about $1$--$2$~femtometres).
 
-The binding energy is the energy needed to separate an atomic nucleus into its constituents (protons and neutrons). It is a measure of the stability of the nucleus. The greater the binding energy, the more stable the nucleus is, since it requires more energy to break it up into individual nucleons.
+The \textbf{binding energy} is the energy needed to pull a nucleus apart into free nucleons. It measures stability: the larger the binding energy per nucleon, the harder the nucleus is to break up.
 
-There exist various models of the structure of the atomic nucleus. For a long time the liquid drop model was dominant. It assumes that the nucleons in the nucleus behave like molecules in a drop of liquid, and consequently that the properties of the nucleus as a whole should be similar to the properties of a liquid drop. The microscopic interactions---the strong nuclear interaction and the electrostatic forces---are represented in this model by analogy with the forces of viscosity and surface tension. The formulae obtained in this way predict a constant binding energy per nucleon for light nuclei and a smaller one for nuclei of large mass. This leads to the conclusion that in large nuclei a separation into two fragments may occur, which explains the phenomena of fission of the atomic nuclei of heavy elements. This model is very approximate and does not explain all the properties of nuclei.
+Two models capture the structure. The \textbf{liquid-drop model} treats the nucleus like a drop of incompressible fluid, with the strong force and the electrostatic repulsion playing the roles of surface tension and internal pressure. It reproduces the gross trend of binding energy and explains why very heavy nuclei can split (fission). The \textbf{shell model}, by analogy with atomic electron shells, has nucleons filling discrete energy shells. It explains the deviations from the liquid-drop trend and the \emph{magic numbers} $2, 8, 20, 28, 50, 82, 126$, at which nuclei are especially tightly bound.
 
-It was replaced by the shell model of the atomic nucleus, which arose by analogy with the shell model of the atom and, in accordance with observations of the excitation levels of atomic nuclei, assumes that nucleons within the nucleus cannot take arbitrary energy states, but only those consistent with the energies of successive shells. The model explains the deviations of the binding energies of nuclei from the energy determined in the liquid drop model. It also explains the existence of the ``magic numbers'': 2, 8, 20, 28, 50, 82, 126, for which atomic nuclei are the most stable. If a nucleus has one nucleon fewer or more, then its binding energy is markedly smaller.
-
-Nuclear reactions are processes in which transformations of atomic nuclei occur under bombardment with particles (e.g.\ neutrons, protons):
+Nuclear reactions transform nuclei, often under bombardment by neutrons or protons:
 
 \begin{itemize}
-    \item fission --- a process in which a heavy nucleus divides into two (or more) lighter nuclei, emitting neutrons and releasing a large amount of energy.
-    \item fusion --- two light nuclei combine to form a heavier nucleus, releasing energy.
-    \item alpha decay --- the emission of an alpha particle (a helium-4 nucleus) by a nucleus.
-    \item beta decay --- the emission of a beta particle (an electron or a positron) and an antineutrino/neutrino, as a result of the weak interaction.
-    \item gamma decay --- the emission of high-energy electromagnetic radiation (gamma photons) by a nucleus. It usually follows alpha or beta decay, when the nucleus is in an excited state and returns to the ground state.
+    \item \textbf{fission} --- a heavy nucleus splits into two (or more) lighter ones, releasing neutrons and a large amount of energy.
+    \item \textbf{fusion} --- two light nuclei merge into a heavier one, releasing energy.
+    \item \textbf{alpha decay} --- emission of an alpha particle (a helium-4 nucleus).
+    \item \textbf{beta decay} --- emission of an electron or positron together with an (anti)neutrino, via the weak interaction.
+    \item \textbf{gamma decay} --- emission of a high-energy photon by an excited nucleus returning to its ground state, usually following an alpha or beta decay.
 \end{itemize}
 
-% NOTE: the neptunium series is usually classed as extinct in nature (its longest
-% half-life, ~2.14 Myr, is short on geological timescales); the source calls all
-% four "natural".
-Radioactive decay series are sequences of successive radioactive decays which lead from one isotope to another until a stable isotope is reached. There are four natural radioactive series: the uranium, thorium, actinium and neptunium series.\merr
+A \textbf{radioactive decay series} is a chain of successive decays leading from one unstable isotope to the next until a stable one is reached. There are four such series in principle, but only three occur naturally today (the thorium, uranium and actinium series). The fourth, the neptunium series, has effectively died out, because its longest-lived member ($^{237}$Np, half-life $\sim2.1$~million years) is short-lived compared with the age of the Earth.
 
-The limits of the world of nuclides are set by the proton and neutron drip lines and by the stability of superheavy nuclei.
+The \textbf{limits of the world of nuclides} are set by how many protons or neutrons a nucleus can hold before it becomes unbound (the proton and neutron ``drip lines''), and, for the heaviest nuclei, by fission.
 
-% NOTE: the two sentences in the first item are in tension with one another
-% (bismuth is Z = 83, yet the limit is said to lie beyond reach for Z > 30);
-% retained as in the source.
 \begin{itemize}
-    \item \textbf{The proton drip line}: experimentally the proton drip line has been reached as far as bismuth (Z = 83). However, thanks to the Coulomb barrier, many nuclides beyond this line have long lifetimes and undergo beta transitions. The limit of stability with respect to proton emission is still far beyond the reach of experiments for $Z > 30$.\merr
-    \item \textbf{The neutron drip line}: it has been reached almost up to N = 32. For larger N it is far beyond the reach of contemporary experiments. The structure of nuclei with a great excess of neutrons conceals many puzzles and remains the subject of intensive research.
-    \item \textbf{The limit of stability for superheavy nuclei}: the limit for superheavy nuclei is spontaneous fission. A key role in their stability is played by shell effects, that is, by the microscopic structure of the nuclei. The existence of an island of superheavy, metastable nuclides is still an open question and constitutes one of the main challenges in research on nuclear matter.
+    \item \textbf{The proton drip line}: because the Coulomb barrier traps protons and lengthens the lifetime of proton-unbound nuclei, the proton-rich edge is comparatively easy to reach. It has been crossed as far as bismuth ($Z=83$), though it is firmly established only up to about aluminium ($Z\approx13$).
+    \item \textbf{The neutron drip line}: neutrons feel no Coulomb barrier, so the neutron-rich edge is far harder to pin down. It has been experimentally confirmed only up to neon ($Z=10$), and mapping it further is a major current challenge.
+    \item \textbf{Superheavy nuclei}: here the limit is spontaneous fission. Their stability rests on shell effects, and the existence of a predicted ``island of stability'' of long-lived superheavy nuclides is still an open question.
 \end{itemize}
 
 \section{Nucleosynthesis and the energy sources of stars}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the ${}^{56}$Fe (lowest mass per nucleon) versus ${}^{62}$Ni (highest binding energy per nucleon) distinction is correct, as is the ${}^{56}$Ni $\to$ ${}^{56}$Fe route --- tightened the prose.}
 
-Three ways of the natural production of the elements may be distinguished (leaving decays aside). These are primordial nucleosynthesis, nucleosynthesis through thermonuclear reactions occurring in stars, and nucleosynthesis taking place in supernova explosions.
+The elements are produced in three natural ways (setting decays aside): primordial nucleosynthesis just after the Big Bang, nucleosynthesis by fusion inside stars, and nucleosynthesis in supernova explosions.
 
-The first hydrogen nuclei (protons) came into being when the temperature had cooled sufficiently for quarks to be able to bind into hadrons. The period of hadron dominance is taken to be the period $10^{-6}$~s--1~s after the Big Bang (pBB). The further formation of the elements took place during primordial nucleosynthesis, which is dated to 10~s--$10^{3}$~s pBB. There arose then the nuclei of deuterium $(^{2}\mathrm{H})$, tritium $(^{3}\mathrm{H})$, helium ($^{3}\mathrm{He}$ and $^{4}\mathrm{He}$), lithium $(^{7}\mathrm{Li})$ and beryllium $(^{7}\mathrm{Be})$. The samples of beryllium-7 that are found are not regarded as originating from that period on account of its short half-life (53 days). In the course of decay, $^{7}\mathrm{Be}$ transformed into $^{7}\mathrm{Li}$.
+The first protons formed once the Universe had cooled enough for quarks to bind into hadrons (roughly $10^{-6}$~s to $1$~s after the Big Bang). \textbf{Primordial nucleosynthesis} then followed (about $10$~s to $10^{3}$~s), producing the light nuclei: deuterium ($^{2}$H), tritium ($^{3}$H), helium ($^{3}$He and $^{4}$He), lithium ($^{7}$Li) and beryllium ($^{7}$Be). The $^{7}$Be seen today is not primordial, as its half-life is only about $53$~days, it long ago captured an electron and turned into $^{7}$Li.
 
-Stars, which formed considerably later, were responsible for the next round of nucleosynthesis. Thanks to them the elements up to and including iron came into being. The primary substrate was hydrogen, which was burned into helium. Further, the helium nuclei were synthesised into atoms of heavier elements, up to iron.
+\textbf{Stars} formed much later and drove the next round. Fusing hydrogen into helium and then building up heavier nuclei, they produce elements up to iron. It is often said that fusion ``stops at iron'' because $^{56}$Fe is the most stable nucleus, but this needs care: $^{56}$Fe has the smallest \emph{mass per nucleon}, whereas the largest \emph{binding energy per nucleon} belongs to nickel, $^{62}$Ni (the two differ because the proton and neutron masses are not equal). In practice stellar fusion favours $^{56}$Ni, which is less stable and decays to $^{56}$Fe.
 
-It is often said that synthesis ends at iron, because the iron nucleus $^{56}\mathrm{Fe}$ is the most stable nucleus in nature. In reality $^{56}\mathrm{Fe}$ possesses the smallest mass per nucleon, while the most stable nucleus in nature is nickel $^{62}\mathrm{Ni}$. It possesses the greatest binding energy per nucleon (mass per nucleon $\neq$ binding energy per nucleon, because the mass of the proton $\neq$ the mass of the neutron). Synthesis processes in stars favour the production of the isotope $^{56}\mathrm{Ni}$ (instead of $^{62}\mathrm{Ni}$), which is less stable and decays to iron $^{56}\mathrm{Fe}$.
-
-The largest stars, when they end their lives, explode as supernovae. In this process a great pressure arises and a great deal of energy is released. It is precisely then that the remainder of the periodic table known to us comes into being.
+The heaviest elements are made when the largest stars die as \textbf{supernovae}. The enormous pressures and energy released then forge the rest of the periodic table.
 
 \subsection{Thermonuclear reaction}
 
-A \textbf{thermonuclear reaction} is a phenomenon consisting in the joining of two lighter nuclei into one heavier nucleus. As a result of the exothermic reaction the energy released (in the form of the kinetic energy of the products and gamma radiation) is dissipated on the surrounding atoms and is transformed into thermal energy. The energy released during the reaction may be determined without carrying out the reaction, on the basis of the mass defect, that is, the difference of the masses of the reactants and the products of the reaction.
+A \textbf{thermonuclear reaction} fuses two light nuclei into a heavier one. Being exothermic, it releases energy (as kinetic energy of the products and gamma rays) that is then shared with the surroundings as heat. The energy released can be found from the \emph{mass defect}, the difference between the total mass of the reactants and that of the products.
 
-In not overly massive main-sequence stars the basic reaction is the synthesis of the helium nucleus. For synthesis to occur, the hydrogen nuclei (protons) must approach within the range of the nuclear interaction (about $1\,\mathrm{fm} = 10^{-15}$~m). The protons, however, repel one another electrostatically, and must therefore overcome a potential barrier of value about $E = 1$~MeV. Such thermal energy is possessed by particles at a temperature of $10^{10}$~K. Such a high temperature does not exist inside stars, but the course of the phenomenon at a lower temperature is explained by the tunnelling phenomenon (\cref{sec:tunnelling}).
+For hydrogen nuclei (protons) to fuse they must come within the range of the strong force ($\sim1$~fm), but they first have to overcome their mutual electrostatic repulsion, a barrier of order $1$~MeV. Classically this needs a temperature of about $10^{10}$~K, far hotter than any stellar core. Fusion nonetheless proceeds at the much lower core temperatures because of \emph{quantum tunnelling} (\cref{sec:tunnelling}), which lets protons pass through the barrier rather than over it.
 
 \subsection{The proton--proton chain}
 
-The \textbf{proton--proton chain} is a cycle of nuclear reactions in which a stable helium nucleus is formed from four hydrogen nuclei. During the transformations nuclear energy is released, which is the main source of the energy of the Sun and of other stars. The pp chain takes place in the cores of stars at temperatures from a few to a few tens of millions of kelvin.
+The \textbf{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It is the main energy source of the Sun and similar stars, and operates in stellar cores at temperatures of a few to a few tens of millions of kelvin.
 
 \section{Classification of elementary particles; quarks and leptons and the particles transmitting the interactions, the structure of hadrons}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected ``quarks form hadrons in threes'' (baryons are three quarks, mesons a quark--antiquark pair), fixed the ``neutrons''$\to$``neutrinos'' slip, and corrected the lepton charges (charged leptons $-1$, their antiparticles $+1$, neutrinos neutral).}
 
-% NOTE: "quarks form hadrons in threes" contradicts the description of mesons
-% (quark--antiquark) further down; retained as in the source.
-The elementary particles building up matter are leptons and quarks. Leptons may occur on their own, whereas quarks form hadrons in threes.\merr The leptons are a group of 12 particles:
+The building blocks of matter are the \textbf{leptons} and the \textbf{quarks}, both spin-$\tfrac12$ fermions. Leptons can exist on their own, whereas quarks are always found bound inside composite particles (hadrons).
 
-\begin{itemize}
-    \item the electron and the electron neutrino
-    \item the muon and the muon neutrino
-    \item the tau and the tau neutrino
-\end{itemize}
-
-% NOTE: the source reads "neutrons" (neutronami) where it must mean "neutrinos";
-% moreover, the charge of -1 applies to the charged leptons, while the
-% corresponding antileptons carry +1.
-and the corresponding antiparticles. Apart from the neutrinos, all of them have an electric charge equal to ``$-1$'' and interact weakly.\merr
-
-There are likewise 12 quarks:
+The \textbf{leptons} come in six types (three charged, three neutral), plus their antiparticles:
 
 \begin{itemize}
-    \item up (u) --- charge $+\frac{2}{3}$
-    \item down (d) --- charge $-\frac{1}{3}$
-    \item strange (s) --- charge $-\frac{1}{3}$
-    \item charm (c) --- charge $+\frac{2}{3}$
-    \item bottom (b) --- charge $-\frac{1}{3}$
-    \item top (t) --- charge $+\frac{2}{3}$
+    \item the electron and the electron neutrino,
+    \item the muon and the muon neutrino,
+    \item the tau and the tau neutrino.
 \end{itemize}
 
-and the corresponding antiparticles. Besides electromagnetic and weak interactions, they also interact strongly, which is connected with their colour charge (green, blue, red---these are only names and are in no way connected with optics). The bosons of this interaction are 8 massless gluons, which themselves also possess colour (they couple to themselves). It is necessary, in order to form a hadron, that the effective colour charge be neutral, which can be achieved by combining three quarks of three different colours (a baryon) or from two in pairs, e.g.\ red--antired (a meson). A characteristic quantum number is the baryon number (1 for baryons, 0 for mesons), which as yet is not associated with any symmetry following from deeper laws of physics (hence the searches for proton decay, the proton being the lightest hadron). Hadrons (baryons) are, for example, the proton and the neutron, together called ``nucleons''.
+The three charged leptons carry electric charge $-1$ (their antiparticles $+1$), while the three neutrinos are electrically neutral. All of them feel the weak interaction.
+
+The \textbf{quarks} likewise come in six types (``flavours''), plus antiquarks:
+
+\begin{itemize}
+    \item up (u), charge $+\tfrac{2}{3}$,
+    \item down (d), charge $-\tfrac{1}{3}$,
+    \item strange (s), charge $-\tfrac{1}{3}$,
+    \item charm (c), charge $+\tfrac{2}{3}$,
+    \item bottom (b), charge $-\tfrac{1}{3}$,
+    \item top (t), charge $+\tfrac{2}{3}$.
+\end{itemize}
+
+Besides the electromagnetic and weak interactions, quarks also feel the strong interaction, because they carry \textbf{colour charge} (labelled red, green, blue, names with no connection to optics). The carriers of the strong force are $8$ massless \textbf{gluons}, which themselves carry colour and therefore interact with one another.
+
+A hadron must be colour-neutral overall. This is achieved either by combining three quarks of three different colours (a \textbf{baryon}, such as the proton or neutron) or a quark with an antiquark of the matching anticolour (a \textbf{meson}). A useful bookkeeping quantum number is the \emph{baryon number} ($+1$ for baryons, $0$ for mesons). The proton is the lightest baryon, which is why the search for possible proton decay is of such interest.
 
 \section{Band structure of electronic states in crystals; metals, semiconductors, insulators}
+\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the ``GaAS'' typo, and noted that the $6$~eV semiconductor/insulator threshold is only a rough convention (other texts place it nearer $3$--$4$~eV) --- band gaps of Ge/Si/GaAs retained.}
 
-A quantum-mechanical theory describing electrical conduction. In contrast to the classical theory, the starting point of this theory is Fermi--Dirac statistics and the wave nature of electrons. The most important concept of this theory is the energy band, that is, the range of energy that electrons in a conductor may possess. The existence of a continuous energy spectrum is connected with the interaction of the individual atoms with one another (it is a set of very closely spaced line spectra), while the occurrence of forbidden regions follows from the conditions imposed on the periodicity of the wave function of the electrons.
+Band theory is the quantum-mechanical account of electrical conduction. Unlike the classical picture, it starts from the wave nature of electrons and from Fermi--Dirac statistics. Its central idea is the \textbf{energy band}: a continuous range of energies that electrons in a solid may occupy. When many atoms are brought together in a crystal, each sharp atomic level broadens into a band of very closely spaced levels, and between the bands there are \emph{forbidden gaps} where no electron states exist, a consequence of the periodicity of the lattice.
 
-In an atom the individual electrons may be found in strictly defined, discrete energy states. Additionally, in a solid the atoms are bound to one another, which gives further restrictions on the admissible energies of the electrons. The allowed energy levels of isolated atoms are, as a result of interaction with other atoms in the crystal lattice, shifted, forming so-called allowed bands, i.e.\ the ranges of energy which electrons located in the individual orbits may take; levels lying outside the allowed bands are termed forbidden bands.
-
-Electronics usually makes use of a simplified energy model, in which the energies of the valence electrons are described by two allowed bands:
-
-\begin{itemize}
-    \item the valence band --- the range of energy possessed by valence electrons bound to the atomic nucleus
-    \item the conduction band --- the range of energy possessed by valence electrons freed from the atom, being then free carriers in the solid
-\end{itemize}
-
-There is also a forbidden band, where electrons cannot reside. In metallic conductors there is no forbidden band, which follows from two reasons:
+For the outer (valence) electrons two bands matter:
 
 \begin{itemize}
-    \item The valence band is only partially filled with electrons and they can move freely, and so the valence band in conductors plays a role analogous to that of the conduction band in semiconductors and insulators
-    \item The conduction and valence bands overlap, and therefore in the common band there are many free electrons and the flow of current is possible.
+    \item the \textbf{valence band} --- the energies of electrons still bound to their atoms,
+    \item the \textbf{conduction band} --- the energies of electrons freed from their atoms, which can then carry current.
 \end{itemize}
 
-% NOTE: "GaAS" in the source is a typo for GaAs (band gap ~1.42 eV). The 0-6 eV
-% and >6 eV thresholds are a convention of the source; other texts commonly place
-% the semiconductor/insulator boundary nearer 3-4 eV.
-Semiconductors possess a forbidden band between the valence band and the conduction band in the range from 0 to 6 eV\merr{} (for example Ge 0.7 eV, Si 1.1 eV, GaAs 1.4 eV, etc.).
+Between them lies the forbidden \textbf{band gap}. The size of this gap sorts materials into three classes:
 
-It is assumed that at the temperature of absolute zero there are no electrons in the conduction band, whereas at higher temperatures electron--hole pairs arise; the higher the temperature, the more such pairs there are. Semiconductors may be doped by adding admixtures of other atoms into the structure of the crystal. In this way n-type semiconductors (donor-doped, ``giving up an electron'') and p-type semiconductors (acceptor-doped, ``accepting an electron'') arise.
+\begin{itemize}
+    \item \textbf{Metals} have no gap: either the valence band is only partly filled, so its electrons move freely, or the valence and conduction bands overlap. Either way there are many mobile electrons and current flows easily.
+    \item \textbf{Semiconductors} have a small gap (for example Ge $\approx0.7$~eV, Si $\approx1.1$~eV, GaAs $\approx1.4$~eV). At absolute zero the conduction band is empty, but at higher temperatures electrons are thermally excited across the gap, leaving mobile ``holes'' behind, so conductivity rises with temperature. Semiconductors can also be \emph{doped}: adding donor atoms gives an n-type semiconductor (extra electrons), adding acceptor atoms gives a p-type one (extra holes).
+    \item \textbf{Insulators} have a large gap, so almost no electrons reach the conduction band and current barely flows.
+\end{itemize}
 
-Insulators have a forbidden band with an energy gap greater than 6 eV.\merr
+There is no sharp dividing line between a small-gap semiconductor and a large-gap insulator. The figure of about $6$~eV used here is only a convention, and many texts place the boundary lower, nearer $3$--$4$~eV.

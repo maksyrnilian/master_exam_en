@@ -29,27 +29,22 @@
 \usepackage{parskip}   	% blank line between paragraphs, no first-line indent
 \usepackage[margin=3cm, marginparwidth=2.5cm]{geometry}
 
-% --- colours and links -----------------------------------------------
+% --- colours  --------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}
-\newcommand\myshade{85}
-\colorlet{mylinkcolor}{RoyalPurple}
-\colorlet{mycitecolor}{RoyalPurple}
-\colorlet{myurlcolor}{RoyalPurple}
-
-% --- comments --------------------------------------------------------
-\usepackage{todonotes}
-\newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanataions in `%-comments`)
+\colorlet{linkcolor}{Maroon}
 
 % --- hyperlinks ------------------------------------------------------
 \usepackage{hyperref}
 \hypersetup{
-	linkcolor  = RoyalPurple,
-	citecolor  = RoyalPurple,
-	urlcolor   = RoyalPurple,
+	linkcolor  = linkcolor,
+	citecolor  = linkcolor,
+	urlcolor   = linkcolor,
 	colorlinks = true,
 	breaklinks = true
 }
 \usepackage[capitalize,nameinlink]{cleveref}
+\creflabelformat{equation}{#2#1#3}
+
 % --- title page metadata ---------------------------------------------
 \title{%
 	\vspace*{2cm}
@@ -57,6 +52,10 @@
 	{\Large Revision Notes---Physics (Studies in English)}\\[0.4cm]
 	{\large Faculty of Physics, University of Warsaw}\\
 }
+
+% --- comments --------------------------------------------------------
+\usepackage{todonotes}
+\newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanataions in `%-comments`)
 
 % --- toc-link --------------------------------------------------------
 \usepackage{fancyhdr}
@@ -98,7 +97,7 @@
 
 % --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
-\newcommand{\Ham}{\mathcal{H}}				  % Hamiltonian	
+\newcommand{\Ham}{\mathcal{H}}				        % Hamiltonian	
 \newcommand{\kB}{k_{B}}                       % Boltzmann constant
 \newcommand{\muB}{\mu_{B}}                    % Bohr magneton
 \newcommand{\const}{\mathrm{const.}}          % "constant"
