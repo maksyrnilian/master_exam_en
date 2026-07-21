@@ -37,41 +37,40 @@
 \section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
 \label{sec:magentic-field}
 
-On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field. Recalling the definition of the magnetic field strength $\vec{H} = \vec{B}/\mu_0 - \vec{M}$ (\cref{eq:H-def}), and writing the magnetisation as linear in $\vec{H}$:
+    On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field. Recalling the definition of the magnetic field strength $\vec{H} = \vec{B}/\mu_0 - \vec{M}$ (\cref{eq:H-def}), and writing the magnetisation as linear in $\vec{H}$:
 
-\begin{align*}
-    \vec{M} &= \chi_m\vec{H} \\
-    \vec{H} &= \frac{1}{\mu_0(1+\chi_m)}\vec{B}
-\end{align*}
-% NOTE (dedup): dropped the repeated first line H = B/mu_0 - M, now cross-referenced
-% to \cref{eq:H-def} in content_1 (this fixes the previously dangling
-% \cref{eq:constitutive-DH}). Kept M = chi_m H and the resulting H(B) relation.
+    \begin{align*}
+        \vec{M} &= \chi_m\vec{H} \\
+        \vec{H} &= \frac{1}{\mu_0(1+\chi_m)}\vec{B}
+    \end{align*}
 
-where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
+    where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
 
-\subsection{Paramagnets}
+    \subsection{Paramagnets}
 
-The most common group, characterised by positive magnetic susceptibility and hence by a magnetisation whose direction coincides with that of the magnetic field strength. It arises from the presence of unpaired electrons which, under the influence of an external field, align their magnetic moments with its direction. The most commonly considered models of paramagnetism are:
+        The most common group, characterised by positive magnetic susceptibility and hence by a magnetisation whose direction coincides with that of the magnetic field. It arises from the presence of unpaired electrons which, under the influence of an external field, align their magnetic moments with its direction. The most commonly considered models of paramagnetism are:
 
-\begin{itemize}
-    \item Curie paramagnetism --- considering a system of isolated magnetic moments, one may derive a formula for the susceptibility of the whole medium as $\chi_m = \frac{C}{T}$.
-    \item Pauli paramagnetism --- carriers moving freely inside a metal may be treated as a Fermi gas, and their interactions with an external field lead to macroscopic magnetisation.
-\end{itemize}
+        \begin{itemize}
+            \item Curie paramagnetism --- considering a system of isolated magnetic moments, one may derive a formula for the susceptibility of the whole medium as $\chi_m = \frac{C}{T}$. \todo{explain terms}
+            \item Pauli paramagnetism --- carriers moving freely inside a metal may be treated as a Fermi gas, and their interactions with an external field lead to macroscopic magnetisation. \todo{what is fermi gas}
+        \end{itemize}
 
-\subsection{Diamagnets}
+    \subsection{Diamagnets}
 
-Diamagnetism is the phenomenon of inducing a magnetisation opposite to the magnetic field strength, which may be expressed by a negative susceptibility. It occurs in every material, but is usually weaker than paramagnetism, and therefore we classify as diamagnets those media in which it is the dominant effect. Thus the condition is usually that all electrons be paired. A special case is that of superconductors, which expel the magnetic field completely through the Meissner effect, while the remainder are described by:
+        Diamagnetism is the phenomenon of inducing a magnetisation opposite to the magnetic field strength, which may be expressed by a negative susceptibility. It occurs in every material, but is usually weaker than paramagnetism, and therefore we classify as diamagnets those media in which it is the dominant effect. Thus the condition is usually that all electrons be paired. \todo{what?} 
 
-\begin{itemize}
-    \item Langevin diamagnetism --- describes the diamagnetism of dielectrics, where electrons under the influence of an external field begin to circulate, which is called Larmor precession (see \cref{subsec:quantum-precession}). A charge moving in a circle is de facto a loop through which a current flows, which effectively gives a magnetic moment of opposite direction.
-    \item Landau diamagnetism --- similarly, it considers the Fermi gas in metals, except that in this case the orbital moment, and not the spin of the particles, is taken into account.
-\end{itemize}
+        A special case is that of superconductors, which expel the magnetic field outside the body completely through the Meissner effect, while the remainder are described by:
 
-\subsection{Ferromagnets}
+        \begin{itemize}
+            \item Langevin diamagnetism --- describes the diamagnetism of dielectrics, where electrons under the influence of an external field begin to circulate \todo{how can elecetrons circulate in a dielectric?}, which is called Larmor precession (see \cref{subsec:quantum-precession}). A charge moving in a circle is de facto a loop through which a current flows, which effectively gives a magnetic moment of opposite direction.
+            \item Landau diamagnetism --- similarly, it considers the Fermi gas in metals, except that in this case the orbital moment, and not the spin of the particles, is taken into account.
+        \end{itemize}
 
-Taking into account the exchange interactions between microscopic magnetic moments leads to a third category, ferromagnetism. Here the particles tend to align not only with the external field but also with their neighbours, leading to the formation of magnetic domains within the material, resulting in a strong magnetic susceptibility and also in the occurrence of remanent magnetisation. The analysis of such materials is carried out by means of statistical physics, and depending on the material one may make use of the Ising, XY or Heisenberg models. The most general is the last of these, which permits arbitrary alignments of the moments, while the Ising model distinguishes only up and down, and the XY model rotation about a single axis.
+    \subsection{Ferromagnets}
 
-It is also worth mentioning the existence of antiferromagnets and ferrimagnets. In contrast to ferromagnets, their domains are not aligned in one direction. For the former they cancel completely, and for the latter only partially.
+        Taking into account the exchange interactions between microscopic magnetic moments leads to a third category, ferromagnetism. Here the particles tend to align not only with the external field but also with their neighbours, leading to the formation of magnetic domains within the material, resulting in a strong magnetic susceptibility and also in the occurrence of remanent \todo{meaning?} magnetisation. The analysis of such materials is carried out by means of statistical physics, and depending on the material one may make use of the Ising, XY or Heisenberg models. The most general is the last of these, which permits arbitrary alignments of the moments, while the Ising model distinguishes only up and down, and the XY model rotation about a single axis. \todo{skip the terms that are not explained}
+
+        It is also worth mentioning the existence of antiferromagnets and ferrimagnets. In contrast to ferromagnets, their domains are not aligned in one direction. For the former they cancel completely, and for the latter only partially. \todo{what is the macroscopic effect?}
 
 \section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
 
@@ -255,11 +254,7 @@ Electromagnetic waves do not need a medium in order to propagate, i.e.\ they can
 
 \section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
 
-% NOTE: two points below follow the source but are questionable:
-% (i) the Landau description uses a free energy, not the enthalpy;
-% (ii) the order parameter conventionally takes larger (non-zero) values in
-% the lower-entropy, ordered phase --- the source states the opposite.
-A substance which is physically and chemically homogeneous throughout its volume is called a phase. With a change in external factors, such as temperature or pressure, an abrupt change in these properties may however occur, which is termed a phase transition. These changes may concern the state of matter, the crystal structure, magnetic properties or superconductivity. In the phenomenological description of thermodynamics, phase transitions are described by means of an enthalpy\merr{} dependent on the order parameter of the transition. Depending on the case, this is a dynamical variable which takes lower values for the phase of lower entropy\merr, i.e.\ for example the magnetisation for ferromagnets or the density for liquids.
+A substance which is physically and chemically homogeneous throughout its volume is called a phase.\todo{is it a definition?} With a change in external factors, such as temperature or pressure, an abrupt change in these properties may however occur, which is termed a phase transition. These changes may concern the state of matter, the crystal structure, magnetic properties or superconductivity. In the phenomenological description of thermodynamics, phase transitions are described by means of free energy \todo{what is it? or is it enthalpy?} dependent on the order parameter of the transition. Depending on the case, this is a dynamical variable which takes lower values for the phase of lower entropy\todo{wrong, rewrite. the opposite entropy behaviour may be true}, i.e.\ for example the magnetisation for ferromagnets or the density for liquids.
 
 The aforementioned discontinuous changes of the parameters of the system at a phase transition lead to the Ehrenfest classification, in which changes of the chemical potential $\mu$ are considered. By a phase transition of the $n$-th kind we understand one in which the lowest partial derivative $\frac{\partial^n \mu}{\partial T^n}$ is discontinuous. Examples of first-order phase transitions are changes of the state of matter, where a discontinuous change of density occurs. An example of the second order, on the other hand, is that of ferromagnets, which below the Curie temperature begin to increase their magnetic susceptibility. In practice, third-order phase transitions do not occur. This classification also allows for continuous phase transitions, an example of which may be the superfluid state.
 
@@ -275,136 +270,128 @@ where $s$ is the number of chemical substances and $r$ the number of phases. For
     \item $r=1$, one phase, i.e.\ $f=2$ --- a surface
     \item $r=2$, two phases at once, $f=1$ --- a curve
     \item $r=3$, three phases, $f=0$ --- a (triple) point
-\end{itemize}
+\end{itemize} \todo{The entire section needs to be rewritten in simpler terms with more cathy intuitive examples and minimised niche terminology}
 
-\section{Experimental grounds for the emergence of quantum mechanics; examples of phenomena incomprehensible on classical grounds and their explanations within quantum theory}
+\section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
 
-\subsection{The photoelectric effect}
+    \subsection{The photoelectric effect}
 
-The photoelectric effect is the emission of electrons from a material caused by electromagnetic radiation (light). Electrons emitted in this way are called photoelectrons. The quantum hypothesis explains why the energy of the photoelectrons depends on the frequency of the light, and why below a certain frequency of light the photoelectric effect does not occur.
+        The photoelectric effect is the emission of electrons from a material caused by electromagnetic radiation. Classically, we would expect the energy of the emitted electrons to depend on the intensity of the light. However, in reality, we see that the energy of individual photoelectrons depends on the frequency of light and changing the intensity only varies the number of photoelectrons. Quantum mechanically, we know that photon energy depends on the frequency and the energy a photoelectron can have depends on how much energy photon can give it rather than how many photons there are. This is also why below a certain frequency of light the photoelectric effect does not occur --- photons do no have enough energy to dislodge the electrons
 
-\subsection{The Compton effect}
+    \subsection{The Compton effect}
 
-The phenomenon of the scattering of X-radiation and gamma radiation, that is, of electromagnetic radiation of high frequency, on free or weakly bound electrons, as a result of which the wavelength of the radiation increases. The scattering is caused by collisions of individual quanta of radiation with electrons.
+        The phenomenon of the scattering of X-radiation and gamma radiation on free or weakly bound electrons, as a result of which the wavelength of the radiation increases. The scattering is caused by collisions of individual quanta of radiation with electrons during which some of the photon energy is taken by the electron.
 
-\subsection{Young's experiment}
+    \subsection{Young's experiment}
 
-An experiment consisting in passing coherent light through two closely spaced slits and observing the pattern formed on a screen. As a result of interference, bright and dark fringes appear on the screen in the regions where the light is cancelled or reinforced. Other objects on the atomic scale, such as electrons, exhibit the same behaviour when they are fired towards a double slit. Moreover, it has been observed that the detection of the individual discrete impacts is inherently probabilistic, which is inexplicable using classical mechanics.
+        An experiment consisting in passing coherent light through two closely spaced slits and observing the pattern formed on a screen. As a result of interference, bright and dark fringes appear on the screen in the regions where the light is cancelled or reinforced. This is expected for waves such as light but in other objects on small scale, such as electrons, exhibit the same behaviour when they are fired towards a double slit. Moreover, it has been observed that the detection of the individual discrete impacts is inherently probabilistic, which is inexplicable using classical mechanics.
 
-\subsection{Quantisation of the energy levels in the hydrogen atom}
+    \subsection{Quantisation of the energy levels in the hydrogen atom}
 
-Atomic spectroscopy shows that there exists a discrete infinite set of states in which the hydrogen atom (or any other) may exist, contrary to the predictions of classical physics. Attempts at a theoretical understanding of the states of the hydrogen atom were important for the history of quantum mechanics, because all other atoms can be roughly understood once this simplest atomic structure is known in detail.
+        Atomic spectroscopy shows that there exists a discrete infinite set of states in which the hydrogen atom (or any other) may exist, contrary to the predictions of classical physics which does not qunatise the orbits. Attempts at a theoretical understanding of the states of the hydrogen atom were important for the history of quantum mechanics, because all other atoms can be roughly understood once this simplest atomic structure is known in detail. However, classical non-quantised hydrogen atoms with orbiting electrons are also impossible beacuse accelarating charges would emit their energy very quickly and collapse. \todo{reword, remove redundant}
 
-\subsection{The ultraviolet catastrophe}
+    \subsection{The ultraviolet catastrophe}
 
-The ultraviolet catastrophe, also called the Rayleigh--Jeans catastrophe, was a prediction of classical physics from the end of the nineteenth and the beginning of the twentieth century, that an ideal black body in thermal equilibrium would emit an unbounded amount of energy as the wavelength fell into the ultraviolet range. In 1900 Max Planck derived the correct form of the spectral intensity distribution function by adopting certain assumptions that were strange (by the standards of the time). In particular, Planck assumed that electromagnetic radiation may be emitted or absorbed only in discrete packets of energy, called quanta.
-
+        The ultraviolet catastrophe, also called the Rayleigh--Jeans catastrophe, was a prediction of classical physics from the end of the nineteenth and the beginning of the twentieth century, that an ideal black body in thermal equilibrium would emit an unbounded amount of energy as the wavelength fell into the ultraviolet range. In 1900 Max Planck derived the correct form of the spectral intensity distribution function by adopting certain assumptions that were strange (by the standards of the time). In particular, Planck assumed that electromagnetic radiation may be emitted or absorbed only in discrete packets of energy, called quanta. \todo{remove verbose sentences and make it more to the point and more specific.}
 
 \section{The uncertainty principle and the limits of measurement accuracy}
 \label{sec:uncertainty}
 
-% NOTE: as written in the source, the left-hand side is a product of variances
-% while the right-hand side is not squared; the standard Robertson relation is
-% $\Delta^2\hat A\,\Delta^2\hat B \geq \frac{1}{4}|\langle[\hat A,\hat B]\rangle|^2$.
-The Heisenberg uncertainty principle states that there exist pairs of quantities which cannot be measured simultaneously to arbitrary accuracy. Let $\hat{A}$, $\hat{B}$ be observables and $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$. Then:
+    % NOTE: as written in the source, the left-hand side is a product of variances
+    % while the right-hand side is not squared; the standard Robertson relation is
+    % $\Delta^2\hat A\,\Delta^2\hat B \geq \frac{1}{4}|\langle[\hat A,\hat B]\rangle|^2$.
+    The Heisenberg uncertainty principle states that there exist pairs of quantities which cannot be measured simultaneously to arbitrary accuracy. Let $\hat{A}$, $\hat{B}$ be observables and $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$. Then:
 
-\begin{equation}\label{eq:uncertainty}
-    \Delta^2 \hat{A} \Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}}  \right| \qquad \merr
-\end{equation}
+    \begin{equation}\label{eq:uncertainty}
+        \Delta^2 \hat{A} \Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}}  \right| \qquad \merr
+    \end{equation}
 
-% CLARITY: for a weaker-QM reader, one plain line helps before the formula ---
-% "if two observables do not commute, no state can have a sharp value of both
-% at once" --- and a note that $\comm{\hat A}{\hat B}=\hat A\hat B-\hat B\hat A$.
-In particular, $\Delta^2 x \cdot \Delta^2 p_x \geq \frac{\hbar^2}{4}$. The state that saturates this inequality is a Gaussian wave packet. This means that there exist no states guaranteeing better localisation of the particle in position and momentum space.
+    % CLARITY: for a weaker-QM reader, one plain line helps before the formula ---
+    % "if two observables do not commute, no state can have a sharp value of both
+    % at once" --- and a note that $\comm{\hat A}{\hat B}=\hat A\hat B-\hat B\hat A$.
+    In particular, $\Delta^2 x \cdot \Delta^2 p_x \geq \frac{\hbar^2}{4}$. The state that saturates this inequality is a Gaussian wave packet. This means that there exist no states guaranteeing better localisation of the particle in position and momentum space.
 
-The uncertainty principle should not be confused with ``Heisenberg's microscope'', which states that in order to measure the position of a particle ever more accurately, a stream of photons of ever shorter wavelength must be used. However, the photons used for illumination consequently have ever greater momentum and in consequence cause a greater uncertainty of momentum.
+    The uncertainty principle should not be confused with ``Heisenberg's microscope'', which states that in order to measure the position of a particle ever more accurately, a stream of photons of ever shorter wavelength must be used. However, the photons used for illumination consequently have ever greater momentum and in consequence cause a greater uncertainty of momentum.
 
-It is worth noting that such reasoning does not capture the meaning of the uncertainty principle, since it assumes the existence of an objective position of the electron which can be measured.
+    It is worth noting that such reasoning does not capture the meaning of the uncertainty principle, since it assumes the existence of an objective position of the electron which can be measured. \todo{This should be rewritten completely with better introduction exmplanation what a commutator is and introduction of pairs of values that cannot be measured simultaneously with some examples: wave would have momentum/position pair undefined since perfect sine fixes momentum but gives zero knoweldge on position etc.}
 
 \section{Approximate methods of quantum mechanics; perturbation theory for eigenvalues, Fermi's golden rule, the Born approximation for scattering amplitudes}
 \label{sec:approximate-methods}
 
-Quantum mechanics describes the behaviour of systems at the atomic and subatomic level. However, it rests to a large extent on solving differential equations which we are able to solve analytically only in relatively simple cases. Sometimes even determining the Hamiltonian itself is difficult, and therefore for more complex systems approximate methods are used, which make it possible to obtain useful results.
+    Quantum mechanics describes the behaviour of systems at the atomic and subatomic level. However, it rests to a large extent on solving differential equations which we are able to solve analytically only in relatively simple cases. Sometimes even determining the Hamiltonian itself is difficult, and therefore for more complex systems approximate methods are used, which make it possible to obtain useful results.
 
-\subsection{Stationary perturbation theory}
+    \subsection{Stationary perturbation theory}
 
-Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:
+    Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:
 
-% NOTE: the source wrote the kets on the right as \ket{n^{(0)}}; changed to
-% \ket{\psi_n^{(0)}} for consistency with the bra notation.
-\begin{align}
-    E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
-    \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
-    E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
-\end{align}
+    % NOTE: the source wrote the kets on the right as \ket{n^{(0)}}; changed to
+    % \ket{\psi_n^{(0)}} for consistency with the bra notation.
+    \begin{align}
+        E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
+        \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
+        E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
+    \end{align}
 
-\subsection{Fermi's golden rule}
+    \subsection{Fermi's golden rule}
 
-The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
+    The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
 
-\begin{equation}\label{eq:fermi-golden-rule}
-\Gamma_{n\rightarrow{}m} \approx \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
-\end{equation}
+    \begin{equation}\label{eq:fermi-golden-rule}
+    \Gamma_{n\rightarrow{}m} \approx \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
+    \end{equation}
 
-\subsection{The Born approximation}
+    \subsection{The Born approximation}
 
-% NOTE: the source's prefactor is 2m/(K\hbar); the standard first Born result
-% for a spherically symmetric potential carries \hbar^2 and a minus sign:
-% f(\theta) = -\frac{2m}{K\hbar^2}\int_0^\infty r'V(r')\sin(Kr')dr'.
-A further important result of perturbation theory is the Born approximation for scattering amplitudes. The problem itself is formulated as the scattering of a given particle on a spherically symmetric potential $V$, treating its wave function as infinite, thereby reducing the problem to the stationary case. At large distances we obtain incoming and scattered plane waves, described spatially by $f(\theta, \phi)$. This quantity is a probability amplitude which, on taking the squared modulus, gives the differential cross-section. In general the problem is solved by writing the Schrödinger equation in the implicit form known as the Lippmann--Schwinger equation, and then solving it iteratively. Restricting oneself to the first iteration is called the Born approximation and has the form:
+    A further important result of perturbation theory is the Born approximation for scattering amplitudes. The problem itself is formulated as the scattering of a given particle on a spherically symmetric potential $V$, treating its wave function as infinite, thereby reducing the problem to the stationary case. At large distances we obtain incoming and scattered plane waves, described spatially by $f(\theta, \phi)$. This quantity is a probability amplitude which, on taking the squared modulus, gives the differential cross-section. In general the problem is solved by writing the Schrödinger equation in the implicit form known as the Lippmann--Schwinger equation, and then solving it iteratively. Restricting oneself to the first iteration is called the Born approximation and has the form:
 
-\begin{equation}\label{eq:born}
-f(\theta) = \frac{2m}{K\hbar}\int_0^\infty dr' r'V(r')\sin(Kr') \qquad \merr
-\end{equation}
+    \begin{equation}\label{eq:born}
+    f(\theta) = \frac{2m}{K\hbar}\int_0^\infty dr' r'V(r')\sin(Kr') \qquad \merr
+    \end{equation}
 
-where $K=\left|\vec k_0 - k_0\frac{\vec r}{r}\right|$.
+    where $K=\left|\vec k_0 - k_0\frac{\vec r}{r}\right|$. \todo{probably wrong. also is it not the born-oppenheimer approximation? NOTE: the source's prefactor is $2m/(K\hbar)$; the standard first Born result for a spherically symmetric potential carries $\hbar^2$ and a minus sign: $f(\theta) = -\frac{2m}{K\hbar^2}\int_0^\infty r'V(r')\sin(Kr')dr'$.}
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
 
-\subsection{The Schrödinger equation}
+    \subsection{The Schrödinger equation}
 
-The Schrödinger equation is an equation of the form:
+        The Schrödinger equation is an equation of the form:
 
-\begin{equation}\label{eq:schrodinger}
-    i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
-\end{equation}
+        \begin{equation}\label{eq:schrodinger}
+            i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
+        \end{equation}
 
-% NOTE: the source has a corrupted word ("kota skladowa"); rendered here as the
-% z-component, which is what is meant.
-In the course of solving the equation it is found that it has meaning only for a specific set of natural numbers---the quantum numbers: the principal $n$, the azimuthal $l$ and the magnetic $m$. This is equivalent to showing that the energy of the electron, the square of the angular momentum and the $z$-component of the angular momentum are quantised. Each of the eigenfunctions so obtained, $\Psi_{nlm}\left(r,\theta,\phi\right)$, is an orbital.
 
-In chemistry, the \textbf{electron shell} around a given atom is taken to be the set of atomic orbitals having the same principal quantum number $n$.
+        In the course of solving the equation it is found that it has meaning only for a specific set of natural numbers---the quantum numbers: the principal $n$, the azimuthal $l$ and the magnetic $m$. This is equivalent to showing that the energy of the electron, the square of the angular momentum and the $z$-component of the angular momentum are quantised. Each of the eigenfunctions so obtained, $\Psi_{nlm}\left(r,\theta,\phi\right)$, is an orbital.
 
-The Schrödinger equation also permits the binding energy of the electron to be determined.
+        In chemistry, the \textbf{electron shell} around a given atom is taken to be the set of atomic orbitals having the same principal quantum number $n$.
 
-\subsection{The periodic table of the elements}
+        The Schrödinger equation also permits the binding energy of the electron to be determined. \todo{this should be rewritten to be much clearer}
 
-% NOTE: the source is internally inconsistent here --- the table is ordered by
-% atomic number, while the periodic law is stated in terms of atomic masses
-% (Mendeleev's original, pre-Moseley formulation).
-\textbf{The periodic table of the elements} --- a compilation, in the form of a table, of all the chemical elements, ordered according to their increasing atomic number, grouping the elements according to their cyclically recurring similarities of properties, in accordance with \textbf{Dmitri Mendeleev's periodic law}. It states that the properties of the elements are periodically dependent on their atomic masses.\merr The vertical columns in the periodic table are groups. Chemical similarity within a group is explained by the identical or similar electron configuration of the valence shell of the atoms of the elements of that group. The number of the period (the horizontal row), in turn, corresponds to the number of the valence shell of the atom.
+    \subsection{The periodic table of the elements}
+
+        \textbf{The periodic table of the elements} --- a compilation, in the form of a table, of all the chemical elements, ordered according to their increasing atomic number, grouping the elements according to their cyclically recurring similarities of properties, in accordance with \textbf{Dmitri Mendeleev's periodic law}. It states that the properties of the elements are periodically dependent on their atomic masses.\merr The vertical columns in the periodic table are groups. Chemical similarity within a group is explained by the identical or similar electron configuration of the valence shell of the atoms of the elements of that group. The number of the period (the horizontal row), in turn, corresponds to the number of the valence shell of the atom. \todo{rewrite to fix mistakes. make explicit what meant by atomic numbers, mass numebrs, periods, groups etc}
+
+    \subsection{Different types of chemical bonds} \todo{names and general charactersitics}
 
 \section{Quantum tunnelling; examples}
 \label{sec:tunnelling}
 
-Quantum tunnelling is the phenomenon of a particle passing through a potential barrier of height greater than the energy of the particle. It has no classical counterpart or analogy. In quantum mechanics a particle is not a rigid body of definite size and precisely specified position, although the interpretation of the wave function of a stationary state should incline one to the opposite conclusion (if the wave function is interpreted as a mechanical wave, then the particle should always be located in the middle of the potential well; the stationarity of the solutions at any instant would deprive the particle of any motion whatsoever, were this not accompanied by a change of energy levels). It is represented by a wave function which determines the probability of localising the particle in a specified region of space through the squared modulus of the wave function in that region.
+    Quantum tunnelling is the phenomenon of a particle passing through a potential barrier of height greater than the energy of the particle. It has no classical counterpart or analogy. In quantum mechanics a particle is not a rigid body of definite size and precisely specified position. It is represented by a wave function which determines the probability of localising the particle in a specified region of space through the squared modulus of the wave function in that region.
 
-The solution of the Schrödinger equation for a particle with a potential barrier allows the wave function to be found for a particle located outside the barrier. The wave function inside the potential barrier takes the form of waves travelling in two directions:
+    The solution of the Schrödinger equation for a particle with a potential barrier allows the wave function to be found for a particle located outside the barrier. The wave function inside the potential barrier takes the form of waves travelling in two directions:
 
-% NOTE: as in the source, both terms carry the same amplitude A; in general the
-% forward- and backward-travelling amplitudes differ.
-\begin{equation*}
-    \psi(x) = Ae^{i k_1 x} + Ae^{-i k_1 x} \qquad \merr
-\end{equation*}
+    \begin{equation*}
+        \psi(x) = Ae^{i k_1 x} + Be^{-i k_1 x}
+    \end{equation*}
 
-In the middle of the potential barrier the wave function of the particle undergoes exponential damping, dependent on the height of the barrier and on the energy of the particle. Outside the potential barrier the wave function takes the form of a wave travelling outwards:
+    In the middle of the potential barrier the wave function of the particle undergoes exponential damping, dependent on the height of the barrier and on the energy of the particle. Outside the potential barrier the wave function takes the form of a wave travelling outwards:
 
-\begin{equation*}
-    \psi(x) = Be^{i k_2 x}
-\end{equation*}
+    \begin{equation*}
+        \psi(x) = Be^{i k_2 x}
+    \end{equation*}
 
-where $k_1$ and $k_2$ are wave numbers dependent on the energy of the particle. Accordingly, the amplitude of the wave function on the far side of the barrier, $B$, is always smaller than the amplitude of the wave function inside, $A$. The tunnelling coefficient is expressed as $T = \frac{B^2}{A^2}$.
+    where $k_1$ and $k_2$ are wave numbers dependent on the energy of the particle. Accordingly, the amplitude of the wave function on the far side of the barrier, $B$, is always smaller than the amplitude of the wave function inside, $A$. The tunnelling coefficient is expressed as $T = \frac{B^2}{A^2}$.\todo{rewrite to fix mistakes.}
 
-Nuclear fusion, the source of the Sun's energy, occurs to a large extent thanks to the tunnelling phenomenon. This phenomenon makes it possible to overcome the barrier of Coulomb repulsion of atomic nuclei at a temperature lower than would follow from the laws of thermodynamics. The tunnel effect also raises hopes of lowering the temperature of fusion carried out in a controlled manner. Thanks to the tunnelling phenomenon, the emission of $\alpha$ particles occurs in the radioactive decay of massive atomic nuclei.
+    Nuclear fusion, the source of the Sun's energy, occurs to a large extent thanks to the tunnelling phenomenon. This phenomenon makes it possible to overcome the barrier of Coulomb repulsion of atomic nuclei at a temperature lower than would follow from the laws of thermodynamics. The tunnel effect also raises hopes of lowering the temperature of fusion carried out in a controlled manner. Thanks to the tunnelling phenomenon, the emission of $\alpha$ particles occurs in the radioactive decay of massive atomic nuclei.
 
-In modern technology, the operation of many semiconductor electronic components (e.g.\ the tunnel diode) and of devices such as the scanning tunnelling microscope is based on the tunnelling phenomenon.
+    In modern technology, the operation of many semiconductor electronic components (e.g.\ the tunnel diode) and of devices such as the scanning tunnelling microscope is based on the tunnelling phenomenon.
