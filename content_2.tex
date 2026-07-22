@@ -1,6 +1,6 @@
 % !TeX root = main.tex
 \section{The electric field in material media; dielectric polarisation, conductivity, mobility of charge carriers}
-    \label{sec:electric-field}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 2 starts here}
+\label{sec:electric-field}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 2 starts here}
 
     \subsection{Polarisation}
 
@@ -8,7 +8,7 @@
         % NOTE (dedup): folded the standalone P = eps0 chi E display into the sentence and
         % cross-referenced \cref{eq:polarisation-vector} in content_1 instead of repeating it.
 
-    \paragraph{Electronic polarisation}
+        \paragraph{Electronic polarisation}
 
         Electronic polarisation is the result of the displacement, under the influence of an electric field, of the negatively charged electron clouds with respect to the positive nuclei. It occurs in all materials. It is a very fast process, and therefore, when investigated with an alternating electric field, the effects associated with it are observed up to frequencies corresponding to the ultraviolet. The dipole moment $p_e$ is determined by the electronic polarisability $\alpha_e$:
 
@@ -16,11 +16,11 @@
             p_e = \alpha_e \cdot E
         \end{equation*}
 
-    \paragraph{Ionic polarisation}
+        \paragraph{Ionic polarisation}
 
         Ionic polarisation occurs only in materials with ionic bonds. It is the result of the displacement of ions in the crystal lattice of the material---those of one sign in one direction, those of the other sign in the other. It is the slowest of all the polarisation processes, since it requires the movement of many atoms bound in the crystal lattice.
 
-    \paragraph{Orientational polarisation}
+        \paragraph{Orientational polarisation}
 
         Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, those whose molecules form permanent dipoles (they possess their own dipole moment). In an electric field an ordering torque acts on them. At the same time the ordering is destroyed by thermal vibrations, which causes orientational polarisation to be temperature dependent.
 
@@ -83,199 +83,189 @@
 
 \section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
 
-\subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
+    \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
-Let us recall the general Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}):
+        An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$:
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Fixed: the vector identity now reads $\nabla(\nabla\cdot\vec F)-\nabla^2\vec F$ (grad of the divergence, no stray dots). Also removed the restated vacuum Maxwell block (now \cref{eq:maxwell-vacuum}) and unnumbered the intermediate derivation steps.}
 
-\begin{equation*}
-    \begin{aligned}
-        \nabla \cdot \vec{E} &= 0\\
-        \nabla \cdot \vec{B} &= 0\\
-        \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
-        \nabla\times\vec{B} &= \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t}
-    \end{aligned}
-\end{equation*}
+        \begin{equation*}
+            \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
+        \end{equation*}
 
-We shall find an electromagnetic wave  is a solution of this system of equations. To do it, take the curl of the third equation:
+        We make use of the following identity:
 
-\begin{equation*}
-    \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
-\end{equation*}
+        \begin{equation*}
+            \nabla\times(\nabla\times\vec{F}) = \nabla(\nabla\cdot\vec{F}) - \nabla^{2}\vec{F}.
+        \end{equation*}
 
-We make use of the following identity:
+        Then, we have:
 
-\begin{equation*}
-    \nabla\times(\nabla\times\vec{F}) = \nabla\cdot(\nabla\cdot\vec{F}) - \nabla^{2}\cdot\vec{F}.
-\end{equation*}
+        \begin{equation*}
+            \begin{aligned}
+                \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right)                 &= \nabla\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\vec{E} =  \nabla\left( 0 \right) - \nabla^{2}\vec{E} = - \Delta \vec{E}\\
+                \mathrm{RHS} = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right) &= - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = - \frac{\partial}{\partial t} \left( \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t} \right) = - \mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}},
+            \end{aligned}
+        \end{equation*}
 
-Then, we have:
+        where, for the LHS, we have used the identity and the first Maxwell equation, and for the RHS, we have used the fourth Maxwell equation and
 
-\begin{equation*}
-    \begin{aligned}
-        \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right)                 &= \nabla\cdot\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\cdot\vec{E} =  \nabla\cdot\left( 0 \right) - \nabla^{2}\cdot\vec{E} = - \Delta \vec{E}\\
-        \mathrm{RHS} = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right) &= - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = - \frac{\partial}{\partial t} \left( \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t} \right) = - \mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}},
-    \end{aligned}
-\end{equation*}
+        \begin{equation*}
+            \Delta \vec{F} = \nabla^{2} \vec{F} = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \vec{F}
+        \end{equation*}
 
-where, for the LHS, we have used the identity and the first Maxwell equation, and for the RHS, we have used the fourth Maxwell equation and  
+        is the Laplacian operator.
 
-\begin{equation}
-    \Delta \vec{F} = \nabla^{2} \vec{F} = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \vec{F}
-\end{equation}
+        Equating both sides we obtain:
 
-is the Laplacian operator.
+        \begin{equation}\label{eq:em-wave}
+            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = 0
+        \end{equation}
 
-Equating both sides we obtain:
+        We proceed analogously with the fourth Maxwell equation and find the equation for $\vec{B}$.
 
-\begin{equation}\label{eq:em-wave}
-    \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = 0
-\end{equation}
+        \begin{equation*}
+            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
+        \end{equation*}
 
-We proceed analogously with the fourth Maxwell equation and find the equation for $\vec{B}$.
+        Both of these equations are standard forms of the wave equation, generally written as:
 
-\begin{equation*}
-    \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
-\end{equation*}
+        \begin{equation*}
+            \left(\Delta - \frac{1}{v^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{F} = 0,
+        \end{equation*}
 
-Both of these equations are standard forms of the wave equation, generally written as:
+        where $v$ is the propagation speed. From this it follows that the speed of propagation of an electromagnetic wave in vacuum is
 
-\begin{equation*}
-    \left(\Delta - \frac{1}{v^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{F} = 0,
-\end{equation*}
+        \begin{equation*}
+            v = c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}.
+        \end{equation*}
 
-where $v$ is the propagation speed. From this it follows that the speed of propagation of an electromagnetic wave in vacuum is 
+        Performing an analogous derivation for the Maxwell equations in a medium, we find:
 
-\begin{equation}
-    v = c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}.
-\end{equation}
+        \begin{equation*}
+            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \overbrace{\nabla\left( \frac{\rho}{\epsilon_{0}} \right) + \underbrace{\mu_{0}\frac{\partial\vec{J_{\text{f}}}}{\partial t}}_{\substack{\text{Important in} \\ \text{conductors}}} + \underbrace{\mu_0\frac{\partial^2 \vec{P}}{\partial t^2}}_{\substack{\text{Important in} \\ \text{insulators}}}}^{\text{0 in vacuum}}
+        \end{equation*}
 
-Performing an analagous derivation for the Maxwell equations in a medium, we find:
+        \paragraph{Solution to the wave equation}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: noted the physical field is the real part and that the direction of $\vec{E_0}$ sets the polarisation, leading into the next subsection.}
 
-\begin{equation}
-    \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \overbrace{\nabla\left( \frac{\rho}{\epsilon_{0}} \right) + \underbrace{\mu_{0}\frac{\partial\vec{J_{\text{f}}}}{\partial t}}_{\substack{\text{Important in} \\ \text{conductors}}} + \underbrace{\mu_0\frac{\partial^2 \vec{P}}{\partial t^2}}_{\substack{\text{Important in} \\ \text{insulators}}}}^{\text{0 in vacuum}}
-\end{equation}
+        The wave equation is solved by a plane wave of the form
 
-\paragraph{Solution to the wave equation}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: noted the physical field is the real part and that the direction of $\vec{E_0}$ sets the polarisation, leading into the next subsection.}
+        \begin{equation*}
+            \vec{E}(\vec{r},t) = \vec{E_0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
+        \end{equation*}
 
-The wave equation is solved by a plane wave of the form
+        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E_0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = |\vec{E}|/c$. The direction in which $\vec{E_0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
-\begin{equation}
-    \vec{E}(\vec{r},t) = \vec{E_0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
-\end{equation}
+    \subsection{Polarisation of a wave}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: gave concrete linear/circular/elliptical cases tied to the plane-wave solution, with a light mention of the Jones vector.}
 
-with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E_0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = |\vec{E}|/c$. The direction in which $\vec{E_0}$ points is called the \emph{polarisation} of the wave, discussed next.
+        Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Taking propagation along $z$, the field lies in the $x$--$y$ plane and the main cases are:
 
-\subsection{Polarisation of a wave}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: gave concrete linear/circular/elliptical cases tied to the plane-wave solution, with a light mention of the Jones vector.}
+        \begin{itemize}
+            \item linear --- the two perpendicular components oscillate in phase, so $\vec{E}$ stays along a fixed line.
+            \item circular --- the components have equal amplitude but are a quarter-period ($90^\circ/\frac{\pi}{2}$) out of phase, so the tip of $\vec{E}$ traces a circle.
+            \item elliptical --- the general case, tracing an ellipse.
+        \end{itemize}
 
-Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Taking propagation along $z$, the field lies in the $x$--$y$ plane and the main cases are:
+        The two complex components $(E_x, E_y)$ of the plane wave above therefore fix the polarisation through their relative amplitude and phase. This pair is known as the Jones vector.
 
-\begin{itemize}
-    \item linear --- the two perpendicular components oscillate in phase, so $\vec{E}$ stays along a fixed line.
-    \item circular --- the components have equal amplitude but are a quarter-period ($90^\circ/\frac{\pi}{2}$) out of phase, so the tip of $\vec{E}$ traces a circle.
-    \item elliptical --- the general case, tracing an ellipse.
-\end{itemize}
+    \subsection{The laws of reflection and refraction of electromagnetic waves}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined ``ray'' and the s/p polarisations, and stated what Brewster's angle does to them (Fresnel coefficients named, forms omitted).}
 
-The two complex components $(E_x, E_y)$ of the plane wave above therefore fix the polarisation through their relative amplitude and phase. This pair is known as the Jones vector.
+        A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
 
-\subsection{The laws of reflection and refraction of electromagnetic waves}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined ``ray'' and the s/p polarisations, and stated what Brewster's angle does to them (Fresnel coefficients named, forms omitted).}
+        \textbf{The law of reflection.} The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
 
-A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
+        \textbf{The law of refraction (Snell's law).} The incident and refracted rays and the normal lie in one plane, and the angles satisfy
 
-\textbf{The law of reflection.} The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
+        \begin{equation}\label{eq:snell}
+            n_1 \sin \theta_1 = n_2 \sin \theta_2,
+        \end{equation}
 
-\textbf{The law of refraction (Snell's law).} The incident and refracted rays and the normal lie in one plane, and the angles satisfy
+        where $n_1$, $n_2$ are the refractive indices of the two media, $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
 
-\begin{equation}\label{eq:snell}
-    n_1 \sin \theta_1 = n_2 \sin \theta_2,
-\end{equation}
+        To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular/senkrecht) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
 
-where $n_1$, $n_2$ are the refractive indices of the two media, $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
+        \textbf{The Brewster angle} $\alpha_B$ is the angle of incidence at which the reflected and refracted rays are perpendicular to one another. At this angle the reflected $p$-component vanishes, so the reflected light is completely $s$-polarised (perpendicular to the plane of incidence). It is given by
 
-To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular/senkrecht) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
+        \begin{equation}\label{eq:brewster}
+            \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}},
+        \end{equation}
 
-\textbf{The Brewster angle} $\alpha_B$ is the angle of incidence at which the reflected and refracted rays are perpendicular to one another. At this angle the reflected $p$-component vanishes, so the reflected light is completely $s$-polarised (perpendicular to the plane of incidence). It is given by
+        with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$).
 
-\begin{equation}\label{eq:brewster}
-    \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}},
-\end{equation}
+    \subsection{The Doppler effect}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: replaced the convoluted derivations with standard $\pm$ formulae, split acoustic vs.\ relativistic EM, and cross-referenced $\beta$ instead of restating it.}
 
-with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$).
+        \textbf{The Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
 
-\subsection{The Doppler effect}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: replaced the convoluted derivations with standard $\pm$ formulae, split acoustic vs.\ relativistic EM, and cross-referenced $\beta$ instead of restating it.}
+        \paragraph{Acoustic (mechanical) waves} With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
 
-\textbf{The Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
+        \begin{equation}\label{eq:doppler-acoustic}
+            f' = f\,\frac{v \pm v_o}{v \mp v_s},
+        \end{equation}
 
-\paragraph{Acoustic (mechanical) waves} With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
+        where the upper signs apply when that party moves \emph{towards} the other (raising the pitch) and the lower signs when it moves away. Observer and source enter differently: the observer changes the wave speed it meets, while the source changes the wavelength it emits.
 
-\begin{equation}\label{eq:doppler-acoustic}
-    f' = f\,\frac{v \pm v_o}{v \mp v_s},
-\end{equation}
+        \paragraph{Electromagnetic waves} Here the effect is relativistic and depends only on the relative speed through $\beta = v/c$ (\cref{eq:gamma}). For source and observer separating along the line of sight,
 
-where the upper signs apply when that party moves \emph{towards} the other (raising the pitch) and the lower signs when it moves away. Observer and source enter differently: the observer changes the wave speed it meets, while the source changes the wavelength it emits.
+        \begin{equation*}
+            f' = f\,\sqrt{\frac{1-\beta}{1+\beta}} \qquad (\text{redshift}),
+        \end{equation*}
 
-\paragraph{Electromagnetic waves} Here the effect is relativistic and depends only on the relative speed through $\beta = v/c$ (\cref{eq:gamma}). For source and observer separating along the line of sight,
+        and swapping the sign of $\beta$ gives the approaching (blueshift) case. If the relative velocity makes an angle $\phi$ with the line of sight,
 
-\begin{equation*}
-    f' = f\,\sqrt{\frac{1-\beta}{1+\beta}} \qquad (\text{redshift}),
-\end{equation*}
+        \begin{equation}\label{eq:doppler-em}
+            f' = f\,\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}.
+        \end{equation}
 
-and swapping the sign of $\beta$ gives the approaching (blueshift) case. If the relative velocity makes an angle $\phi$ with the line of sight,
-
-\begin{equation}\label{eq:doppler-em}
-    f' = f\,\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}.
-\end{equation}
-
-At $\phi = \tfrac{\pi}{2}$ this leaves the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = f/\gamma$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
+        At $\phi = \tfrac{\pi}{2}$ this leaves the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = f/\gamma$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
 
 \section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
 \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten for consistency: cross-referenced the wave equation and the mechanical-waves description (removing the repeated paragraph), and labelled the de Broglie relation.}
 
-\textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k$ the wave number.
+    \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k$ the wave number.
 
-\textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
+    \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
 
-\textbf{Matter waves} express the fact that every particle also behaves as a wave. The associated (de Broglie) wavelength is
+    \textbf{Matter waves} express the fact that every particle also behaves as a wave. The associated (de Broglie) wavelength is
 
-\begin{equation}\label{eq:de-broglie}
-    \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
-\end{equation}
+    \begin{equation}\label{eq:de-broglie}
+        \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
+    \end{equation}
 
-so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
+    so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
 
-\textbf{Common features and differences.} All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle, while for light it corresponds to the number of photons.
+    \textbf{Common features and differences.} All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle, while for light it corresponds to the number of photons.
 
 \section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
 \todo[backgroundcolor=green!25,linecolor=green!55!black]{Full rewrite: fixed the reversed entropy claim for the order parameter, identified the potential as the Gibbs free energy (not enthalpy), and simplified the terminology with concrete examples.}
 
-A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
+    A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
 
-To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (it is not the enthalpy). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
+    To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (it is not the enthalpy). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
 
-The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\partial^{n}\mu/\partial T^{n}$ is the first that is discontinuous.
+    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\partial^{n}\mu/\partial T^{n}$ is the first that is discontinuous.
 
-\begin{itemize}
-    \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
-    \item Second order (continuous) --- the first derivatives are continuous but a second derivative jumps or diverges, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
-    \item Third and higher orders essentially do not occur in practice. Continuous transitions such as the onset of superfluidity also belong here.
-\end{itemize}
+    \begin{itemize}
+        \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
+        \item Second order (continuous) --- the first derivatives are continuous but a second derivative jumps or diverges, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
+        \item Third and higher orders essentially do not occur in practice. Continuous transitions such as the onset of superfluidity also belong here.
+    \end{itemize}
 
-The conditions for phases to coexist are given by the \emph{Gibbs phase rule},
+    The conditions for phases to coexist are given by the \emph{Gibbs phase rule},
 
-\begin{equation}\label{eq:gibbs-phase}
-    f = s - r + 2,
-\end{equation}
+    \begin{equation}\label{eq:gibbs-phase}
+        f = s - r + 2,
+    \end{equation}
 
-where $s$ is the number of chemical components, $r$ the number of coexisting phases and $f$ the number of intensive variables (such as temperature and pressure) that may be changed while keeping those phases in equilibrium. It requires the system to be in thermal, mechanical and chemical equilibrium. For a single substance ($s = 1$):
+    where $s$ is the number of chemical components, $r$ the number of coexisting phases and $f$ the number of intensive variables (such as temperature and pressure) that may be changed while keeping those phases in equilibrium. It requires the system to be in thermal, mechanical and chemical equilibrium. For a single substance ($s = 1$):
 
-\begin{itemize}
-    \item $r = 1$: one phase, $f = 2$ --- an area on the pressure--temperature diagram.
-    \item $r = 2$: two phases coexisting, $f = 1$ --- a coexistence curve.
-    \item $r = 3$: three phases, $f = 0$ --- the triple point.
-\end{itemize}
+    \begin{itemize}
+        \item $r = 1$: one phase, $f = 2$ --- an area on the pressure--temperature diagram.
+        \item $r = 2$: two phases coexisting, $f = 1$ --- a coexistence curve.
+        \item $r = 3$: three phases, $f = 0$ --- the triple point.
+    \end{itemize}
 
 \section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
 \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened all four effects, fixed typos, added the photoelectric and Compton relations, and cross-referenced the Planck distribution.}
@@ -351,36 +341,36 @@ where $s$ is the number of chemical components, $r$ the number of coexisting pha
 
     \subsection{Stationary perturbation theory}
 
-    Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:
+        Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:
 
-    % NOTE: the source wrote the kets on the right as \ket{n^{(0)}}; changed to
-    % \ket{\psi_n^{(0)}} for consistency with the bra notation.
-    \begin{align}
-        E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
-        \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
-        E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
-    \end{align}
+        % NOTE: the source wrote the kets on the right as \ket{n^{(0)}}; changed to
+        % \ket{\psi_n^{(0)}} for consistency with the bra notation.
+        \begin{align}
+            E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
+            \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
+            E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
+        \end{align}
 
     \subsection{Fermi's golden rule}
 
-    The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
+        The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
 
-    \begin{equation}\label{eq:fermi-golden-rule}
-    \Gamma_{n\rightarrow{}m} \approx \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
-    \end{equation}
+        \begin{equation}\label{eq:fermi-golden-rule}
+            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
+        \end{equation}
 
     \subsection{The Born approximation}
     \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the scattering amplitude (factor $\hbar^2$ and minus sign), clarified the plane-wave set-up, defined the momentum transfer $K$, and distinguished it from the Born--Oppenheimer approximation.}
 
-    A further application of perturbation theory is the Born approximation for scattering. A particle is scattered off a fixed, spherically symmetric potential $V(r)$. The incident particle is described by a plane wave, and far from the potential the state is this incident wave plus an outgoing spherical wave whose angular amplitude $f(\theta, \phi)$ is the \emph{scattering amplitude}. Its squared modulus $|f|^2$ is the differential cross-section, that is, how much is scattered into each direction.
+        A further application of perturbation theory is the Born approximation for scattering. A particle is scattered off a fixed, spherically symmetric potential $V(r)$. The incident particle is described by a plane wave, and far from the potential the state is this incident wave plus an outgoing spherical wave whose angular amplitude $f(\theta, \phi)$ is the \emph{scattering amplitude}. Its squared modulus $|f|^2$ is the differential cross-section, that is, how much is scattered into each direction.
 
-    Writing the Schrödinger equation in an equivalent integral form (the Lippmann--Schwinger equation) and keeping only its first iteration gives the (first) Born approximation. For a spherically symmetric potential,
+        Writing the Schrödinger equation in an equivalent integral form (the Lippmann--Schwinger equation) and keeping only its first iteration gives the (first) Born approximation. For a spherically symmetric potential,
 
-    \begin{equation}\label{eq:born}
-    f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
-    \end{equation}
+        \begin{equation}\label{eq:born}
+            f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
+        \end{equation}
 
-    where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.
+        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
 

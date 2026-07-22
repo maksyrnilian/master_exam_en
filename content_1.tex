@@ -79,9 +79,9 @@
             \hline
             weak & $W^+, W^-, Z^0$ boson & $10^{-18}$\,m & isospin & $m_0>0$ & 1 \\
             \hline
-            electromagnetic & photon & $\infty$ & --- & 0 & s=1 \\
+            electromagnetic & photon & $\infty$ & --- & 0 & 1 \\
             \hline
-            gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & s=2 \\
+            gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & 2 \\
             \hline
         \end{tabular}
     \end{table}
@@ -96,7 +96,8 @@
 
     The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
 
-    As carriers of the strong interaction, gluons have double charges: one colour and one anticolour. For example, there exists a red--antiblue gluon (red/antiblue gluon), which carries the colour red. When a quark emits or absorbs a gluon, the colour of the quark changes. Suppose, for instance, that a red quark turns into a blue quark and emits a red--antiblue gluon. Such a gluon is absorbed by another blue quark. As a result of absorbing the red--antiblue gluon, the blue quark turns into a red quark. \todo{Rewrite this section and verify claims}
+    As carriers of the strong interaction, gluons themselves carry colour, each one carrying a colour together with an anticolour. When a quark emits or absorbs a gluon its colour changes, while the gluon carries the difference away. For example, a red quark may turn blue by emitting a red--antiblue gluon, and if that gluon is later absorbed by a blue quark the anticolour cancels the blue and leaves it red. Colour is thus exchanged between quarks but conserved overall.
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened the colour-exchange example and checked colour conservation (the original example was already consistent).}
 
 \section{Conservation laws in physics and their connection with symmetry laws}
 
@@ -216,6 +217,8 @@
 \section{The postulates of quantum mechanics; measurement, state of a physical system}
 \label{sec:postulates}
 
+    Quantum mechanics uses a small vocabulary that recurs throughout the later sections, so it is worth fixing the terms here first. The \emph{state} of a quantum system is described by a \emph{state vector}, written $\ket{\psi}$ (equivalently by a \emph{wave function} $\psi(x)$, which is just the list of that vector's components in the position basis). Measurable quantities such as position, momentum or energy are represented by \emph{operators}: objects that act on a state vector and return another one, and which, once a basis is chosen, are simply matrices. The values a measurement can return are the \emph{eigenvalues} of the corresponding operator, and the squared amplitude of the state fixes the probability of each outcome. The postulates below make these ideas precise.
+
     \subsection{The photon hypothesis and its consequences}
 
         \begin{itemize}
@@ -225,8 +228,8 @@
             \end{equation*}
             \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
             \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
-            \item \textbf{Systems with several degrees of freedom.} If a system has more than one degree of freedom (a photon, for instance, carries both position and polarisation), each degree of freedom has its own Hilbert space $H_i$, and the space of the whole system is their tensor product, $H = \otimes_i H_i$.
-            \todo{Delete or simplify above, what is a tensor product and what is this weird symbol?}
+            \item \textbf{Systems with several degrees of freedom.} If a system has more than one degree of freedom (a photon, for instance, carries both position and polarisation), each degree of freedom has its own state space, and the states of the whole system are built by pairing every state of one degree of freedom with every state of the other. This combined space is called the \emph{tensor product} of the individual spaces.
+            \todo[backgroundcolor=green!25,linecolor=green!55!black]{Simplified: described the tensor product in words and dropped the $\otimes$ notation.}
             \item \textbf{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
         \end{itemize}
 
@@ -287,7 +290,8 @@
 
         \begin{equation*}
             \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
-        \end{equation*} \todo{QM section needs to be checked}
+        \end{equation*}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: the postulate statements, the normalisation condition and the position-basis expansion above are consistent.}
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
 
@@ -379,7 +383,7 @@
     a single equation for the action $S$ (here called Hamilton's principal function). The reason $\Ham$ takes these particular arguments is that each momentum has been replaced by a derivative of the action, $p_i = \partial S/\partial q_i$, so the usual $\Ham(\vec q, \vec p, t)$ is evaluated at $\vec p = \partial S/\partial \vec q$. What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
 
     The principle is not restricted to mechanics. The general recipe is always the same --- write down an action for the system and demand that it be stationary. The action of the electromagnetic field yields Maxwell's equations, and the action of general relativity (the Einstein--Hilbert action) yields Einstein's field equations for gravity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
-    \todo{Verify}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the brachistochrone (cycloid), Euler--Lagrange $\to$ Newton, Legendre $\to$ Hamiltonian, Hamilton--Jacobi, the path integral, and the electromagnetic/Einstein--Hilbert examples all check out.}
 
 \section{The laws of thermodynamics}
 
@@ -413,19 +417,21 @@
             \item Planck statement: \textit{It is impossible to construct an engine which will work in a complete cycle, and produce no effect except the production of work and cooling of a heat reservoir.}
         \end{itemize}
 
-        For all \todo{For all what?}
+        These statements are made quantitative by the \emph{Clausius inequality}, which holds for any process:
 
         \begin{equation}\label{eq:clausius-inequality}
-            dS \geq \frac{\delta Q}{T},
+            dS \geq \frac{\delta Q}{T}.
         \end{equation}
 
-        where the equality holds only for \textit{reversible} processes. The quantity $S$ is called the \textit{entropy} of the system. For isolated systems
+        Here $S$ is the \emph{entropy}, a \emph{function of state}: its change between two equilibrium states depends only on those states, not on the path taken between them, which is what lets \cref{eq:clausius-inequality} measure a process against its reversible ideal. The equality holds only for reversible processes. For an isolated system ($\delta Q = 0$) it reduces to
 
         \begin{equation*}
-            dS \geq 0.
+            dS \geq 0,
         \end{equation*}
 
-        Spontaneous processes in an isolated system drive it towards higher entropy, and equilibrium is the state of maximum entropy. Microscopically, entropy counts the number of microstates $\Omega$ compatible with the macrostate, $S = \kB\log\Omega$ (\cref{eq:boltzmann-entropy}): left to itself a system drifts towards the macrostate realised by the overwhelmingly largest number of microstates, which is why entropy tends to increase.
+        so spontaneous processes drive the system towards higher entropy and equilibrium is the state of maximum entropy. This macroscopic, thermodynamic entropy coincides with the microscopic count of accessible microstates (\cref{eq:boltzmann-entropy}), which is why a system left to itself drifts towards the macrostate realised by the overwhelmingly largest number of microstates.
+
+        A process is \emph{reversible} if it can be run backwards through the same sequence of equilibrium states leaving no net change in either the system or its surroundings --- an idealisation that requires it to be infinitely slow (quasi-static) and free of friction or other dissipation. Every real process is \emph{irreversible}: it generates entropy, so the inequality in \cref{eq:clausius-inequality} is then strict.
 
     \subsection{The third law of thermodynamics}
 
@@ -450,7 +456,8 @@
 
     While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
 
-    More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid is confined. \todo{fluid vs liquid}
+    More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid is confined.
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: ``fluid'' is used throughout for liquids and gases together (as defined above), and the bulk-versus-shear distinction is correct.}
 
     \paragraph{Mechanical waves}
 
@@ -467,8 +474,9 @@
     \begin{itemize}
         \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
         \item friction arising from the viscosity of the liquid is negligible
-        \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves \todo{is irrotational needed?}
+        \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves
     \end{itemize}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: irrotationality is kept because it lets \cref{eq:bernoulli} hold with a single constant throughout the flow, not merely along one streamline.}
 
     Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
 
@@ -476,7 +484,8 @@
         \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
     \end{equation}
 
-    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster (the same volume must pass each second through a smaller area); by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast. \todo{verify if true}
+    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: this is the Venturi effect, a direct consequence of \cref{eq:bernoulli}.}
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
@@ -495,13 +504,13 @@
 
         The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
 
-        \begin{equation}
+        \begin{equation*}
             \begin{aligned}
                 \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
                 \nabla \times \vec{A} &\text{ --- curl of a vector field}\\
                 \nabla f &\text{ --- gradient of a scalar field}
             \end{aligned}
-        \end{equation}
+        \end{equation*}
 
         Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
 
@@ -534,41 +543,41 @@
 
         where $\chi$ --- electric susceptibility of a material. Polarisation is only caused by bound charges
 
-        \begin{equation}
+        \begin{equation*}
             \nabla\cdot\vec{P}=-\rho_{\text{b}}.
-        \end{equation}
+        \end{equation*}
 
         From Gauss's Law for electric field, we have
 
-        \begin{equation}
+        \begin{equation*}
             \begin{aligned}
                 \nabla\cdot(\epsilon_0\vec{E})          &= \rho_{\text{f}} + \rho_{\text{b}} \\
-                \nabla\cdot(\epsilon_0\vec{E}+\vec{P})) &= \rho_{\text{f}}, \\
+                \nabla\cdot(\epsilon_0\vec{E}+\vec{P})  &= \rho_{\text{f}}, \\
                 \nabla\cdot(\vec{D}) &= \rho_{\text{f}},
             \end{aligned}
-        \end{equation}
+        \end{equation*}
 
         where $\vec{D}$ --- dielectric displacement field:
 
-        \begin{equation}
+        \begin{equation*}
             \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{field due to } \vec{P} \text{ points in the} \\ \text{opposite direction to } \vec{P} \\ \Rightarrow\ +\vec{P} \text{ subtracts the} \\ \text{bound-charge contribution}}}
-        \end{equation}
+        \end{equation*}
 
         Bound current is given by
 
-        \begin{equation}
+        \begin{equation*}
             \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
-        \end{equation}
+        \end{equation*}
 
         From Ampère-Maxwell Law, we then have:
 
-        \begin{equation}
+        \begin{equation*}
             \begin{aligned}
                 \nabla\times\vec{B}                                     & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
                                                                         & = \mu_{0}\left(\vec{J_{\text{f}}} + \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
                 \nabla\times\vec{H}  & = \vec{J_{\text{f}}} + \frac{\partial \vec{D}}{\partial t},
             \end{aligned}
-        \end{equation}
+        \end{equation*}
 
         where $\vec{H}$ --- magnetic field intensity
 
@@ -576,6 +585,7 @@
             \underbrace{\vec{H}}_{\substack{\text{magnetic field intensity} \\ \text{contribution from free currents only}}} = \underbrace{\frac{\vec{B}}{\mu_{0}}}_{\text{total magnetic field}} - \underbrace{\vec{M}}_{\substack{\text{magnetic field due to $\vec{M}$} \\ \text{points in opposite direction}}}
         \end{equation}
 
+        \needspace{4\baselineskip}
         Maxwell's equation in matter may then finally be rewritten as:
 
         \begin{equation}\label{eq:maxwell-media}
