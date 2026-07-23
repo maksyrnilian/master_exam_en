@@ -228,26 +228,25 @@
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
 
+    \subsection{Newton's laws of motion}
+
     Newton's laws of motion are three laws lying at the foundation of classical mechanics, specifying the relations between the motion of a body and the forces acting on it, which is why they are also called the laws of motion. In quantum mechanics they are for the most part inapplicable, and in relativistic mechanics they hold only within a limited range.
 
-    \subsection{Newton's first law}
+    \paragraph{Newton's first law}
 
         In an inertial frame of reference (\cref{sec:inertial-frames}), if no force acts on a body, or if the acting forces balance one another, then the body remains at rest or moves in uniform rectilinear motion.
 
-        The first law assumes the existence of an inertial frame of reference but does not indicate how such a frame is to be sought, and it is therefore a postulate of the existence of an inertial frame of reference, and is formulated as follows:
+        The first law assumes the existence of an inertial frame of reference but does not indicate how such a frame is to be sought, and it is therefore a postulate of the existence of an inertial frame of reference---\textit{there exists a frame of reference in which a particle, not subject to interaction with its surroundings, remains at rest or moves along a straight line with constant velocity.}
 
-        \textit{There exists a frame of reference in which a particle not subject to interaction with its surroundings remains at rest or moves along a straight line with constant velocity.}
-
-    \subsection{Newton's second law}
+    \paragraph{Newton's second law}
 
         If an unbalanced force acts on a body, then the body moves with an acceleration directly proportional to the force and inversely proportional to the mass of the body.
 
         \begin{equation}\label{eq:newton2}
-            \vec{F} = m \vec{a},
+            \vec{F} = m \vec{a}.
         \end{equation}
-        where $\vec{F}$ --- the force, $m$ --- the mass, $\vec{a}$ --- the acceleration.
 
-    \subsection{Newton's third law}
+    \paragraph{Newton's third law}
 
         Interactions between bodies are always mutual. In an inertial frame of reference the forces of mutual interaction of two bodies have the same magnitude, opposite directions, and different points of application (each acts on a different body).
 
@@ -255,25 +254,54 @@
             \vec{F}_{12} = -\vec{F}_{21}
         \end{equation}
 
-        In classical mechanics, Newton's third law and the law of conservation of momentum are essentially equivalent.
+        In classical mechanics, Newton's third and second laws combined are equivalent with the law of conservation of momentum.
 
-    \subsection{Limits of applicability of Newton's laws of motion}
+    \subsection{Limits of applicability of Newton's laws}
 
-        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces. Newtonian mechanics also becomes more complicated when coordinate systems other than the traditional Cartesian one are used.
-        In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{eq:action}), work better.
+        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes more complicated in more intricate coordinate systems. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{eq:action}), work better.
 
-        Quantum mechanics describes the motion of particles on the atomic or subatomic scale, where the Newtonian formalism does not apply. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously know the position and the momentum of a particle, whereas classical mechanics rests on their exact trajectories.
+        Quantum mechanics describes the behaviour of particles on small scale, where  Newtonian mechanics fails. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously arbitrarily well know the position and the momentum of a particle, whereas classical mechanics rests \emph{on their exact trajectories}.
 
-        All of this is, however, a matter of scale: Bohr's correspondence principle tells us that in the limit of large quantum numbers the results of quantum mechanics must agree with the classical ones. In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always strictly the case and some phenomena are inherently quantum.
+        The results of quantum mechanics in the limit of large quantum numbers should generally agree with the results of classical mechanics (Bohr's correspondence principle). In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. This is not always the case and some phenomena are inherently quantum and their macroscopic consequences are not explainable at all with classical mechanics.
+        \todo{Link to where they are. Stability of matter etc.}
 
-        Moreover, Newton assumed that time must be absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galilean transformations are replaced by the Lorentz transformations and they agree only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena.
+        Moreover, Newton assumed that time is absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galilean transformations are replaced by the Lorentz transformations and they agree only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena. Again, certain phenomena are inherently relativistic and cannot be explained with classical mechanics, even ones that are directly observable.
+        \todo{like?}
 
 \section{The postulates of quantum mechanics; measurement, state of a physical system}
 \label{sec:postulates}
 
-    Quantum mechanics uses a small vocabulary that recurs throughout the later sections, so it is worth fixing the terms here first. The \emph{state} of a quantum system is described by a \emph{state vector}, written $\ket{\psi}$ (equivalently by a \emph{wave function} $\psi(x)$, which is just the list of that vector's components in the position basis). Measurable quantities such as position, momentum or energy are represented by \emph{operators}: objects that act on a state vector and return another one, and which, once a basis is chosen, are simply matrices. The values a measurement can return are the \emph{eigenvalues} of the corresponding operator, and the squared amplitude of the state fixes the probability of each outcome. The postulates below make these ideas precise.
+    \subsection{Language of quantum mechanics}\label{sec:qm-language}
 
-    \subsection{The photon hypothesis and its consequences}
+    The \emph{state} of a quantum system is described by a \emph{state vector}, written $\ket{\psi}$ (equivalently by a \emph{wave function} $\psi(x)$, which is just the list of that vector's components in the position basis). Measurable quantities such as position, momentum or energy are represented by \emph{operators}: objects that act on a state vector and return another one, and which, once a basis is chosen, are simply matrices. The values a measurement can return are the \emph{eigenvalues} of the corresponding operator, and the squared amplitude of the state fixes the probability of each outcome. The postulates below make these ideas precise.
+    \todo{Add a matric multiplication rule}
+
+    \subsection{Postulates of quantum mechanics}
+        
+        Historically the quantisiation of energy, $E = \hbar\omega$, would be considered a defining feature of quantum mechanics or a postulate, but the reality is more nuanced. An unbound system has continuous energy spectrum, and the quantisation of energy is a consequence of the boundary conditions or confinement of the system. It is a mathematical feature similar to a guitar string having qunatised frequencies. The postulates of quantum mechanics (QM) are fundamental.
+
+        \paragraph{Quantum State}
+
+            The state of a quantum system is described by a state vector $\ket{\psi}$, which is an element of a complex Hilbert space $H$. The state vector contains all the information about the system, and its evolution is governed by the Schrödinger equation. The state vector can be expressed in different bases, such as position or momentum, and can be represented as a wave function $\psi(x)$ in the position basis.
+
+        \paragraph{Operators}
+
+            All measurable quantities (observables) are represented by Hermitian lienar operators $\hat{A}$ acting on the Hilbert space of states. The eigenvalues of the operator are the possible results of a measurement of the observable, and the corresponding eigenvectors are the states in which the system is found after the measurement.
+
+        \paragraph{Observables and the collapse}
+
+            The only values that are obtained in a measurement of an 
+            observable “A” are the eigenvalues “an” of the corresponding operator “ A ˆ”. The 
+            measurement changes the state of the system to the eigenfunction of A ˆ with 
+            eigenvalue an. 
+
+        \paragraph{Born rule of probability}
+
+            the average value of an observable corresponding to A ˆ is...
+
+        \paragraph{Evolution}
+
+            The time evolution of the state vector is governed by the Schrödinger equation, which describes how the state changes over time. The Schrödinger equation is a linear partial differential equation that relates the time derivative of the state vector to the Hamiltonian operator, which represents the total energy of the system.
 
         \begin{itemize}
             \item \emph{Light and matter transfer energy to one another in finite portions}
