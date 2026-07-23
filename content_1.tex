@@ -2,48 +2,49 @@
 \section{Inertial frames, principles of relativity, the Galilean transformation, the Lorentz transformation and its consequences}
 \label{sec:inertial-frames}
 
-    An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion. An inertial frame of reference may equivalently be defined as a frame in which no fictitious inertial forces appear.
+    An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion.
 
-    The Galilean principle of relativity states that the laws of motion are identical in all inertial frames of reference, i.e.\ there is no privileged frame of reference. It was formulated in 1604 in the form of the following law: all frames of reference moving with respect to one another at constant velocity (including $\vec{v}=0$) are equivalent. Its consequence is the set of Galilean transformations, in which time and the distance between any two points remain constant regardless of the frame of reference.
+    The Galilean principle of relativity states that the laws of motion are identical in all inertial frames of reference, i.e.\ there is no privileged frame of reference. It was formulated in 1604 in the form of the following law: all frames of reference moving with respect to one another at constant velocity (including $\vec{v}=0$) are equivalent. Its consequence is the set of Galilean transformations between two frames of reference $(t,x,y,z)$ and $(t',x',y',z')$ with the primed one moving with velocity $v$ with respect to the unprimed one along the $x$ axis:
 
-    Einstein additionally postulated that in every inertial frame of reference the speed of light must have the same value. He based this assumption on an analysis of the transformations that leave Maxwell's equations invariant. The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate.
-
-    Consider two frames of reference: the first at rest and the second---the primed one---moving with velocity $v$ along the $x$ axis. The Lorentz transformation between these two frames takes the following form:
-
-    \begin{align*}
-        t' &= \frac{t-xv/c^2}{\sqrt{1-v^2/c^2}} \\
-        x' &= \frac{x-tv}{\sqrt{1-v^2/c^2}} \\
-        y' &= y \\
-        z' &= z
-    \end{align*}
-
-    The following notation may also be adopted:
-
-    \begin{equation}\label{eq:gamma}
-        \gamma = \frac{1}{\sqrt{1 - \beta^2}},\; \beta=\frac{v}{c},
+    \begin{equation}\label{eq:gallilean}
+        \begin{aligned}
+            t' &= t \\
+            x' &= x - vt \\
+            y' &= y \\
+            z' &= z
+        \end{aligned}
     \end{equation}
 
-    which yields:
+    Einstein additionally postulated that in every inertial frame of reference the speed of light must have the same value. He made this assumption in 1905 based on an analysis of the transformations of Maxwell's equations, where he found that magnetic and electric field may be interchanged on the transofrmation of coordinate system.
+    \todo{Language}
 
-    \begin{equation}\label{eq:lorentz}
+    The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate:
+
+    \begin{empheq}[box=\fbox]{equation}\label{eq:lorentz}
         \begin{aligned}
             t' &= \gamma\left(t-xv/c^2\right) \\
             x' &= \gamma\left(x-tv\right) \\
             y' &= y \\
             z' &= z
         \end{aligned}
-    \end{equation}
+    \end{empheq}
 
-    The parameter $\gamma$ is also known as the Lorentz factor, and strictly: $\gamma > 1$. Note that in the limit $c \xrightarrow{} \infty$ the transformation reduces to the Galilean transformation.
+    where the parameter $\gamma$ is known as the Lorentz factor:
+
+    \begin{equation}\label{eq:gamma}
+        \gamma = \frac{1}{\sqrt{1 - \beta^2}} > 1,\quad \beta=\frac{v}{c},
+    \end{equation}
+    
+    Note that in the limit $\nicefrac{v}{c} \xrightarrow{} 0$ the transformation reduces to the Galilean transformation (\cref{eq:gallilean}).
 
     \needspace{4\baselineskip}
     The consequences of the Lorentz transformation include:
     \begin{enumerate}
-        \item Time dilation, described by the formula $\Delta t = \gamma\Delta t_0$, where $\Delta t_0$ is the duration of a phenomenon recorded by an observer at rest with respect to that phenomenon, and $\Delta t$ is the duration of the same phenomenon recorded by another observer moving with velocity $v$ with respect to the first. The event appears \textit{shortest} in its own frame.
-        \item Lorentz contraction, described by the formula $L = {L_0}/{\gamma}$, where $L_0$ is the length of an object at rest and $L$ is the length of the object recorded by an observer moving with respect to it at velocity $v$. The object appears \textit{longest} in its own frame.
+        \item Time dilation, described by the formula $\Delta t = \gamma\Delta t_0$, where $\Delta t_0$ is the \emph{proper time}---time recorded in the rest frame of the timed event, and $\Delta t$ is the time recorded by another observer moving with velocity $v$ with respect to the first. \emph{The event appears \emph{shortest} in its own frame.}
+        \item Lorentz contraction, described by the formula $L = {L_0}/{\gamma}$, where $L_0$ is the \emph{proper length}---length of an object at rest, and $L$ is the length of the object recorded by an observer moving with respect to it at velocity $v$. \emph{The object appears \emph{longest} in its own frame.}
         \item Relativity of simultaneity: two events determined by one observer to be simultaneous need not be simultaneous for another observer. Simultaneity translates to other frames only for the events that happen at the same point in space.
         \item The description of vector quantities in four dimensions. Position, momentum and potential are described respectively by a four-vector, a four-momentum and a four-potential. For example:
-        % Four-momentum as an explicit column vector
+        \todo{elaborate a little}
         \begin{equation*}
             p^{\mu} =
             \begin{bmatrix}
@@ -84,12 +85,10 @@
             gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & 2 \\
             \hline
         \end{tabular}
-    \end{table}
+    \end{table}\todo{bolder line at the top; add hydrogen atom size for reference}
 
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: added the paragraph on energy units, mass--energy equivalence and the $\hbar c$ conversion. Figures computed from the SI constants: $\hbar c = 197.3$~MeV~fm, $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg.}
-    Energies here are quoted in \emph{electronvolts}: $1$~eV is the energy an electron gains on being accelerated through a potential difference of one volt, $1\,\mathrm{eV} = 1.602\times10^{-19}$~J, with the usual multiples keV, MeV and GeV. Masses are quoted in the same units, which is possible because of \emph{mass--energy equivalence}, $E = mc^{2}$: a mass is given by the rest energy it corresponds to. Strictly this makes the unit of mass the eV$/c^{2}$, but the $c^{2}$ is almost always left out and one simply says that the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg. One combination is worth remembering, $\hbar c \approx 197$~MeV~fm, because dividing it by a rest energy converts a mass straight into a length, which is exactly what is needed to turn the masses of the carriers into the ranges listed above.
+    Energies here are quoted in \emph{electronvolts}: $1$~eV is the energy an electron gains on being accelerated through a potential difference of one volt, $1\,\mathrm{eV} = 1.602\times10^{-19}$~J, with the usual multiples keV, MeV and GeV. Masses are quoted in the same units, which is possible because of \emph{mass--energy equivalence}, $E = mc^{2}$: a mass is given by the rest energy it corresponds to. Strictly this makes the unit of mass the eV$/c^{2}$, but the $c^{2}$ is almost always left out and one simply says that the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg.
 
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: the source's argument was muddled and its last sentence had it backwards. Replaced with the standard Yukawa range estimate $R\sim\hbar/mc$, stated as the heuristic it is, with the point you raised made explicit --- the relation concerns the energy spread of a short-lived state, not our knowledge of a fixed mass. Also added the caveat that the strong force's $1$~fm range comes from confinement and pion exchange, not from a gluon mass, which the table alone would contradict.}
     The ranges in the table are not independent facts: they follow from the masses of the carriers, by the following order-of-magnitude argument. The energy--time uncertainty relation, $\Delta E\,\Delta t \geq \hbar/2$, says that a state which exists only for a short time cannot have a sharply defined energy. Note what it is about: the spread of energy of a short-lived state itself, not the precision of our measurements, and not the mass of the particle species, which is a fixed number obtained from real particles produced in accelerators.
 
     A carrier exchanged between two particles is never observed directly, and so is not obliged to balance the energy books: it may in effect be borrowed from the vacuum, provided the loan is repaid quickly enough. Borrowing at least the rest energy $mc^{2}$ of the carrier limits its life to $\Delta t \sim \hbar/mc^{2}$, and moving at most at the speed of light it can cover a distance
@@ -118,35 +117,47 @@
     The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
 
     As carriers of the strong interaction, gluons themselves carry colour, each one carrying a colour together with an anticolour. When a quark emits or absorbs a gluon its colour changes, while the gluon carries the difference away. For example, a red quark may turn blue by emitting a red--antiblue gluon, and if that gluon is later absorbed by a blue quark the anticolour cancels the blue and leaves it red. Colour is thus exchanged between quarks but conserved overall.
+    \todo{Whole section needs to be rewritten, verbose and not to the point and not udnerstandable.}
 
     \FloatBarrier
 
 \section{Conservation laws in physics and their connection with symmetry laws}
 
-    The symmetries of physical systems are closely connected with conservation laws. Noether's theorem formalises this connection, stating that to every continuous symmetry of the action there corresponds a conservation law.
+    The \emph{symmetries} of physical systems are closely connected with \emph{conservation laws}. In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
+    
+    Noether's theorem formalises this connection, stating that to every continuous symmetry of the action there corresponds a conservation law.
 
     \subsection{Noether's theorem}
 
-        In physics, symmetries mean that a system continues to behave in the same way under certain transformations.
-
-        Noether's theorem states that symmetries are linked to conservation laws. In particular, if the action $S$ is invariant with respect to a transformation, then there exists a physical quantity that is conserved. The action is defined as:
+        If the action $S$ of a physical system is invariant with respect to a transformation, then there exists a corresponding conservation law. The action is defined as:
+        \todo{S is a function/functional}
+        
         \begin{equation}\label{eq:action}
             S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
         \end{equation}
+
         where $\Lagr$ is the Lagrangian of the system,
+
         \begin{equation}\label{eq:lagrangian}
             \Lagr \equiv T-V,
         \end{equation}
+
         where $T$ is the kinetic energy and $V$ is the potential energy of the system.
 
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Resolved: kept the definition here (its first occurrence) and gave $S$ something to do --- it is what the equation of motion itself follows from, and a symmetry of $\Lagr$ is a symmetry of $S$, which is why the examples below test $\Lagr$ and not the integral. Added a label to the variational-principles section so it can be cross-referenced from here.}
-        The theorem is stated in terms of the action because the action is also what the equation of motion follows from: requiring $S$ to be stationary yields the Euler--Lagrange equation below, which is the principle of least action (\cref{sec:variational}). Since $S$ is nothing but the Lagrangian added up over time, a transformation that leaves $\Lagr$ unchanged leaves $S$ unchanged as well, and it is in fact enough that $\Lagr$ change by a total time derivative. This is why the examples that follow test the symmetry on the Lagrangian rather than on the integral.
+        The theorem is stated in terms of the action because the action is also what the equation of motion follows from: requiring $S$ to be stationary (\textit{minimum, maximum, saddle point}) yields the Euler--Lagrange equation below, which is the principle of least action (\cref{sec:variational}). 
+        
+        Since $S$ is nothing but the Lagrangian added up over time, a transformation that leaves $\Lagr$ unchanged leaves $S$ unchanged as well. This is why the examples that follow test the symmetry on the Lagrangian rather than on the integral.
+        \todo{Do I understand it?}
 
         The dynamics of the system are governed by the Euler--Lagrange equation,
-        \begin{equation}\label{eq:euler-lagr}
+
+        \begin{empheq}[box=\fbox]{equation}\label{eq:euler-lagr}
             \frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
-        \end{equation}
-        where $q$ is some coordinate relevant to the system. This is consistent with classical Newtonian mechanics.
+        \end{empheq}
+        \todo{Add a note on partial vs total derivatives.}
+
+        where $q$ is some coordinate relevant to the system and $\dot{q} = \nicefrac{dq}{dt}$.
+        \todo{Order seems wrong. Maybe this should go up and theorem should go after.}
 
     \subsection{Examples of the application of Noether's theorem}
 
@@ -160,30 +171,38 @@
             \begin{equation*}
                 \frac{\partial \Lagr}{\partial \dot{q}}\,\dot{q} - \Lagr = \const = \Ham,
             \end{equation*}
-            % NOTE: source wrote plain L here; changed to \Lagr for consistency with the
-            % rest of the section.
+            \todo[backgroundcolor=red!25,linecolor=red!55]{Check the maths}
+  
             which is the Hamiltonian,
+
             \begin{equation}\label{eq:hamiltonian}
                 \Ham \equiv T + V,
             \end{equation}
+
             which corresponds to the total energy of the system.
 
         \subsubsection{Conservation of momentum}
 
             Spatial symmetry (homogeneity of space) leads to the law of conservation of momentum. If the Lagrangian does not depend explicitly on position,
+
             \begin{equation*}
                 \frac{\partial \Lagr}{\partial \vec{r}} = 0,
             \end{equation*}
+
             then inserting this into \cref{eq:euler-lagr} leads to
+
             \begin{equation*}
-                \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0,
-            \end{equation*}
-            so that the momentum is conserved,
-            \begin{equation*}
-                \vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \const.
+                \frac{d}{dt}\left( \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \right) = 0.
             \end{equation*}
 
-            \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: added the uniform-gravity example of a position-dependent Lagrangian, which also shows that the conservation law holds only in the directions in which the symmetry actually holds.}
+            With $ \vec{p} \equiv \nicefrac{\partial \Lagr}{\partial \dot{\vec{r}}} $, we have
+
+            \begin{equation*}
+                \frac{d\vec{p}}{dt} = 0 \, \Rightarrow \, \vec{p}=\const,
+            \end{equation*}
+
+            so that the momentum is conserved.
+
             For contrast, take a particle of mass $m$ in a uniform gravitational field, for which
             \begin{equation*}
                 \Lagr = \tfrac{1}{2}m\dot{\vec{r}}^{\,2} - mgz .
@@ -193,6 +212,8 @@
         \subsubsection{Conservation of angular momentum}
 
             Rotational symmetry (isotropy of space) leads to the law of conservation of angular momentum. If the Lagrangian is invariant under an infinitesimal rotation $\delta\vec{\phi}$, for which $\delta\vec{r} = \delta\vec{\phi} \times \vec{r}$ and $\delta\dot{\vec{r}} = \delta\vec{\phi} \times \dot{\vec{r}}$, then
+            \todo{Simplify for oral delivery}
+            \todo[backgroundcolor=red!25,linecolor=red!55]{Watch Allan Adams on it.}
             \begin{equation*}
                 \delta\Lagr = \frac{\partial \Lagr}{\partial \vec{r}} \cdot \delta\vec{r} + \frac{\partial \Lagr}{\partial \dot{\vec{r}}} \cdot \delta\dot{\vec{r}} = 0.
             \end{equation*}
@@ -263,11 +284,8 @@
             \item \emph{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\delta_{kl}$ is the Kronecker delta, equal to $1$ when $k=l$ and to $0$ otherwise, so that distinct basis states are orthogonal and each is normalised to unit length. (It is not the Dirac delta, which takes over this role only for a basis with a continuous label, such as position.) Here $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
             \item \emph{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
         \end{itemize}
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Deleted as you asked: the bullet on systems with several degrees of freedom and the tensor product. Nothing later in the note depends on it.}
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: $\delta_{kl}$ is the Kronecker delta, not the Dirac delta --- defined in place in the bullet above, with a note on where the Dirac delta does play that role.}
 
     \subsection{The law of composition of probability amplitudes}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: separated the two rules (multiply along a path, add across indistinguishable alternatives) and worked the double slit through explicitly, so that it is clear where the interference term comes from and at which point probabilities rather than amplitudes are added.}
 
         Two rules govern how amplitudes combine. If a process consists of several steps in succession, its amplitude is the \emph{product} of the amplitudes of the individual steps. If instead a process can come about in several alternative ways, and nothing in the experiment records which way was taken, its amplitude is the \emph{sum} of the amplitudes of the alternatives. Probabilities are formed only at the very end, by taking the squared modulus of the total amplitude.
 
@@ -303,7 +321,6 @@
                 \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}.
             \end{equation*}
         \end{itemize}
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: the notation clash flagged in the source. $\ket{\psi}$ is the state of the system and the $\ket{\phi_{k}}$ are the outcome states picked out by the apparatus, now said explicitly in the bullet above.}
 
     \subsection{Time evolution of the quantum state}
 
@@ -343,7 +360,6 @@
             \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
         \end{equation*}
 
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: what $\ket{x}$ means and why the expansion is an integral rather than a sum.}
         Here $\ket{x}$ is the state of a particle located definitely at the point $x$. These states form a basis in exactly the sense used above, except that their label is continuous rather than discrete, so the sum over basis states $\ket{\Psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ becomes an integral. The wave function $\Psi(x,t)$ is then simply the set of components of $\ket{\Psi}$ in that basis, that is, the amplitude for finding the particle at $x$.
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
@@ -420,7 +436,6 @@
 
     There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
 
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Resolved: rather than repeating the display, the action is now cross-referenced to its definition (\cref{eq:action}) at its first mention here, and the Noether section says why it is introduced there. Say if you would rather the display itself moved down here and Noether referred forwards to it.}
     That rule is stated using a single number, the \emph{action} $S$ (defined in \cref{eq:action}, and unpacked below), which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \emph{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
 
     The \emph{principle of least action} says that the path the system follows is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.

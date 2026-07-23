@@ -15,6 +15,7 @@
 \usepackage{amssymb}              % extra maths symbols --- \Box (d'Alembertian) needs it
 \usepackage{braket}               % Dirac bra-ket notation (\bra, \ket, \braket)
 \usepackage{nicefrac}             % compact slanted in-line fractions (\nicefrac)
+\usepackage{empheq}
 
 % --- floats, tables, graphics ----------------------------------------
 \usepackage{graphicx}             % include images (\includegraphics)
@@ -28,7 +29,7 @@
 \usepackage{needspace}            % reserve N lines so a block is not split across a page
 \usepackage[nottoc]{tocbibind}    % list bibliography/index in the ToC (not the ToC itself)
 \usepackage{parskip}   	          % blank line between paragraphs, no first-line indent
-\usepackage[margin=3cm, marginparwidth=2.5cm]{geometry}  % page margins; width of \todo notes
+\usepackage[margin=3.5cm, marginparwidth=2.9cm]{geometry}  % page margins; width of \todo notes
 \usepackage{marginfix}
 
 % --- colours  --------------------------------------------------------
@@ -56,8 +57,8 @@
 }
 
 % --- comments --------------------------------------------------------
-\usepackage[disable]{todonotes}                  % disable all \todo notes (e.g. for a clean, printable version)
-%\usepackage{todonotes}                            % margin \todo notes used as revision flags
+\usepackage{todonotes}                            % margin \todo notes used as revision flags
+
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanations in `%-comments`)
 
 % --- toc-link --------------------------------------------------------
