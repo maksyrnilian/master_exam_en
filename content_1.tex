@@ -85,9 +85,29 @@
             \hline
         \end{tabular}
     \end{table}
-    \todo{Check the masses. Check which particles live how long. In the begining state, what each is responsible for.}
 
-    It follows from the Heisenberg uncertainty principle that a state that exists only for a short time cannot have a sharply defined energy, $\Delta E \Delta t \geq \frac{\hbar}{2}$. So, field quanta may exist for a finite time, set by the magnitude of these energies, such that the product of these quantities is of the order of the Planck constant. The uncertainty principle allows the range of an interaction to be estimated, this range depending on the rest mass of the carrier particle. The masslessness of photons, as well as the expected masslessness of gravitons, is on this account the reason why these forces are long-ranged. Particles of zero energy, and hence of zero rest mass, would have infinite range.
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: added the paragraph on energy units, mass--energy equivalence and the $\hbar c$ conversion. Figures computed from the SI constants: $\hbar c = 197.3$~MeV~fm, $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg.}
+    Energies here are quoted in \emph{electronvolts}: $1$~eV is the energy an electron gains on being accelerated through a potential difference of one volt, $1\,\mathrm{eV} = 1.602\times10^{-19}$~J, with the usual multiples keV, MeV and GeV. Masses are quoted in the same units, which is possible because of \emph{mass--energy equivalence}, $E = mc^{2}$: a mass is given by the rest energy it corresponds to. Strictly this makes the unit of mass the eV$/c^{2}$, but the $c^{2}$ is almost always left out and one simply says that the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg. One combination is worth remembering, $\hbar c \approx 197$~MeV~fm, because dividing it by a rest energy converts a mass straight into a length, which is exactly what is needed to turn the masses of the carriers into the ranges listed above.
+
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: the source's argument was muddled and its last sentence had it backwards. Replaced with the standard Yukawa range estimate $R\sim\hbar/mc$, stated as the heuristic it is, with the point you raised made explicit --- the relation concerns the energy spread of a short-lived state, not our knowledge of a fixed mass. Also added the caveat that the strong force's $1$~fm range comes from confinement and pion exchange, not from a gluon mass, which the table alone would contradict.}
+    The ranges in the table are not independent facts: they follow from the masses of the carriers, by the following order-of-magnitude argument. The energy--time uncertainty relation, $\Delta E\,\Delta t \geq \hbar/2$, says that a state which exists only for a short time cannot have a sharply defined energy. Note what it is about: the spread of energy of a short-lived state itself, not the precision of our measurements, and not the mass of the particle species, which is a fixed number obtained from real particles produced in accelerators.
+
+    A carrier exchanged between two particles is never observed directly, and so is not obliged to balance the energy books: it may in effect be borrowed from the vacuum, provided the loan is repaid quickly enough. Borrowing at least the rest energy $mc^{2}$ of the carrier limits its life to $\Delta t \sim \hbar/mc^{2}$, and moving at most at the speed of light it can cover a distance
+
+    \begin{equation}\label{eq:yukawa-range}
+        R \sim c\,\Delta t \sim \frac{\hbar}{mc},
+    \end{equation}
+
+    the Compton wavelength of the carrier. A heavy carrier therefore gives a short-ranged force and a massless one an unlimited range, which is why electromagnetism and gravitation reach as far as they do. For the weak interaction, $\hbar c \approx 197$~MeV~fm divided by a carrier rest energy of about $80$~GeV gives $R \approx 2\times10^{-18}$~m, the figure in the table.
+
+    The strong interaction is the exception, since its carrier is massless and yet the force does not reach beyond the nucleus. Its range is set instead by \emph{confinement}: colour charge cannot be isolated, so gluons never travel freely between well-separated particles. What acts between nucleons is a residual force carried by pions, of rest energy about $140$~MeV, and the same estimate then gives the familiar $1.4\times10^{-15}$~m.
+
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.6\linewidth]{graphics/Standard_Model_of_Elementary_Particles.pdf}
+        \caption{Standard Model of Elementary Particles.}
+        \label{fig:standard-model-particles}
+    \end{figure}
 
     Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.369 \pm 0.013$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
 
@@ -98,6 +118,8 @@
     The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
 
     As carriers of the strong interaction, gluons themselves carry colour, each one carrying a colour together with an anticolour. When a quark emits or absorbs a gluon its colour changes, while the gluon carries the difference away. For example, a red quark may turn blue by emitting a red--antiblue gluon, and if that gluon is later absorbed by a blue quark the anticolour cancels the blue and leaves it red. Colour is thus exchanged between quarks but conserved overall.
+
+    \FloatBarrier
 
 \section{Conservation laws in physics and their connection with symmetry laws}
 
@@ -116,6 +138,10 @@
             \Lagr \equiv T-V,
         \end{equation}
         where $T$ is the kinetic energy and $V$ is the potential energy of the system.
+
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Resolved: kept the definition here (its first occurrence) and gave $S$ something to do --- it is what the equation of motion itself follows from, and a symmetry of $\Lagr$ is a symmetry of $S$, which is why the examples below test $\Lagr$ and not the integral. Added a label to the variational-principles section so it can be cross-referenced from here.}
+        The theorem is stated in terms of the action because the action is also what the equation of motion follows from: requiring $S$ to be stationary yields the Euler--Lagrange equation below, which is the principle of least action (\cref{sec:variational}). Since $S$ is nothing but the Lagrangian added up over time, a transformation that leaves $\Lagr$ unchanged leaves $S$ unchanged as well, and it is in fact enough that $\Lagr$ change by a total time derivative. This is why the examples that follow test the symmetry on the Lagrangian rather than on the integral.
+
         The dynamics of the system are governed by the Euler--Lagrange equation,
         \begin{equation}\label{eq:euler-lagr}
             \frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
@@ -156,7 +182,13 @@
             \begin{equation*}
                 \vec{p} \equiv \frac{\partial \Lagr}{\partial \dot{\vec{r}}} = \const.
             \end{equation*}
-            \todo{Example of how a Langrangian can be *depend* on position.}
+
+            \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: added the uniform-gravity example of a position-dependent Lagrangian, which also shows that the conservation law holds only in the directions in which the symmetry actually holds.}
+            For contrast, take a particle of mass $m$ in a uniform gravitational field, for which
+            \begin{equation*}
+                \Lagr = \tfrac{1}{2}m\dot{\vec{r}}^{\,2} - mgz .
+            \end{equation*}
+            This does depend on position, through $z$: moving the whole experiment upwards changes the potential energy, so space is not homogeneous in that direction. The vertical momentum is accordingly not conserved and the particle accelerates downwards. The horizontal coordinates $x$ and $y$ still do not appear, so $p_x$ and $p_y$ are conserved. A conservation law follows from a symmetry only in the directions in which that symmetry actually holds.
 
         \subsubsection{Conservation of angular momentum}
 
@@ -223,27 +255,42 @@
     \subsection{The photon hypothesis and its consequences}
 
         \begin{itemize}
-            \item \textbf{Light and matter transfer energy to one another in finite portions}
+            \item \emph{Light and matter transfer energy to one another in finite portions}
             \begin{equation*}
                 E = \hbar\omega
             \end{equation*}
-            \item \textbf{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
-            \item \textbf{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
-            \item \textbf{Systems with several degrees of freedom.} If a system has more than one degree of freedom (a photon, for instance, carries both position and polarisation), each degree of freedom has its own state space, and the states of the whole system are built by pairing every state of one degree of freedom with every state of the other. This combined space is called the \emph{tensor product} of the individual spaces.
-            \todo[backgroundcolor=green!25,linecolor=green!55!black]{Simplified: described the tensor product in words and dropped the $\otimes$ notation.}
-            \todo{Delete the section}
-            \item \textbf{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
+            \item \emph{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
+            \item \emph{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\delta_{kl}$ is the Kronecker delta, equal to $1$ when $k=l$ and to $0$ otherwise, so that distinct basis states are orthogonal and each is normalised to unit length. (It is not the Dirac delta, which takes over this role only for a basis with a continuous label, such as position.) Here $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
+            \item \emph{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
         \end{itemize}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Deleted as you asked: the bullet on systems with several degrees of freedom and the tensor product. Nothing later in the note depends on it.}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: $\delta_{kl}$ is the Kronecker delta, not the Dirac delta --- defined in place in the bullet above, with a note on where the Dirac delta does play that role.}
 
     \subsection{The law of composition of probability amplitudes}
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: separated the two rules (multiply along a path, add across indistinguishable alternatives) and worked the double slit through explicitly, so that it is clear where the interference term comes from and at which point probabilities rather than amplitudes are added.}
 
-        The probability amplitude of a process (for example, one consisting in a photon travelling from the source to the screen) composed of a number of subprocesses (for example, consisting in the photon traversing the path between successive slits) is the product of the probability amplitudes of the individual subprocesses. If, on the other hand, a system starting from some initial state can reach a final state in several ways which are not verified by measurement, then the total amplitude for the system to reach the final state is the sum of the probability amplitudes corresponding to the individual ways of realisation. In other words, if a system may be in one of several possible states and we have no way of determining which is currently realised, then the state of the system is a superposition of all the admissible states. \todo{Clearer and more pedagogical; this is important}
-        \todo{What is psi and what is phi in this section?}
+        Two rules govern how amplitudes combine. If a process consists of several steps in succession, its amplitude is the \emph{product} of the amplitudes of the individual steps. If instead a process can come about in several alternative ways, and nothing in the experiment records which way was taken, its amplitude is the \emph{sum} of the amplitudes of the alternatives. Probabilities are formed only at the very end, by taking the squared modulus of the total amplitude.
+
+        The double slit shows why the second rule matters. Let $A_1$ be the amplitude for a photon to reach a chosen point of the screen by way of slit 1, and $A_2$ the amplitude for it to reach the same point by way of slit 2. With both slits open and nothing recording which one was used, the two alternatives are indistinguishable, so the amplitudes are added and the probability of arrival is
+
+        \begin{equation*}
+            P = |A_1 + A_2|^{2} = |A_1|^{2} + |A_2|^{2} + 2\,\mathrm{Re}\!\left(A_1^{*}A_2\right).
+        \end{equation*}
+
+        The final term is the interference term. It depends on the relative phase of the two amplitudes, which changes across the screen as the difference between the two path lengths changes, and it is what produces the fringes.
+
+        If a detector is now added that records which slit the photon went through, the alternatives become distinguishable. They are then two separate processes, each with its own probability, and it is the probabilities that add:
+
+        \begin{equation*}
+            P = |A_1|^{2} + |A_2|^{2},
+        \end{equation*}
+
+        with no interference term and no fringes. Amplitudes add when the alternatives are not distinguished, probabilities add when they are.
 
     \subsection{Measurement of a quantum system}
 
         \begin{itemize}
-            \item \textbf{Observables.} A measurement yields one of several outcomes, each corresponding to finding the system in a state $\ket{\phi_{k}}$ with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$. Assigning a real value $a_{k} \in \mathbb{R}$ to each outcome, the mean outcome is the classical probability average
+            \item \emph{Observables.} A measurement yields one of several outcomes, each corresponding to finding the system in a state $\ket{\phi_{k}}$ with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$. Here $\ket{\psi}$ is the state the system is actually in, while the $\ket{\phi_{k}}$ are the states the particular apparatus can return as its outcomes---a basis singled out by the measurement, which need not be the basis $\ket{\psi_{k}}$ used above to write the state down. Assigning a real value $a_{k} \in \mathbb{R}$ to each outcome, the mean outcome is the classical probability average
             \begin{equation*}
                 \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\hat{A}\ket{\psi},
             \end{equation*}
@@ -256,12 +303,13 @@
                 \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}.
             \end{equation*}
         \end{itemize}
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: the notation clash flagged in the source. $\ket{\psi}$ is the state of the system and the $\ket{\phi_{k}}$ are the outcome states picked out by the apparatus, now said explicitly in the bullet above.}
 
     \subsection{Time evolution of the quantum state}
 
         \begin{itemize}
-            \item \textbf{Unitarity of the evolution.} Two states that are distinguishable at the start stay distinguishable as they evolve. Distinguishability is measured by the overlap $\braket{\phi|\psi}$, so we postulate that time evolution leaves all such overlaps (scalar products) unchanged. Evolution that preserves scalar products in this way is called unitary.
-            \item \textbf{Evolution equation of the quantum state vector}
+            \item \emph{Unitarity of the evolution.} Two states that are distinguishable at the start stay distinguishable as they evolve. Distinguishability is measured by the overlap $\braket{\phi|\psi}$, so we postulate that time evolution leaves all such overlaps (scalar products) unchanged. Evolution that preserves scalar products in this way is called unitary.
+            \item \emph{Evolution equation of the quantum state vector}
             \begin{equation*}
                 i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
             \end{equation*}
@@ -294,7 +342,9 @@
         \begin{equation*}
             \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
         \end{equation*}
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: the postulate statements, the normalisation condition and the position-basis expansion above are consistent.}
+
+        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Answered: what $\ket{x}$ means and why the expansion is an integral rather than a sum.}
+        Here $\ket{x}$ is the state of a particle located definitely at the point $x$. These states form a basis in exactly the sense used above, except that their label is continuous rather than discrete, so the sum over basis states $\ket{\Psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ becomes an integral. The wave function $\Psi(x,t)$ is then simply the set of components of $\ket{\Psi}$ in that basis, that is, the amplitude for finding the particle at $x$.
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
 
@@ -366,27 +416,28 @@
         A separate contribution appears when the particle is accelerated, and unlike Larmor precession it is driven by no torque at all. Thomas precession is a purely kinematic effect of special relativity: for a particle on a curved path --- such as an electron orbiting a nucleus --- the successive inertial frames in which it is momentarily at rest are slightly rotated relative to one another, so its spin angular momentum precesses even though nothing twists it. In the hydrogen atom this modifies the spin--orbit interaction, reducing it by a factor of two (the Thomas factor).
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
+\label{sec:variational}
 
     There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
 
-    That rule is stated using a single number, the \textbf{action} $S$, which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \textbf{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
+    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Resolved: rather than repeating the display, the action is now cross-referenced to its definition (\cref{eq:action}) at its first mention here, and the Noether section says why it is introduced there. Say if you would rather the display itself moved down here and Noether referred forwards to it.}
+    That rule is stated using a single number, the \emph{action} $S$ (defined in \cref{eq:action}, and unpacked below), which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \emph{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
 
-    The \textbf{principle of least action} says that the path the system follows is the one for which the action is \textbf{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
+    The \emph{principle of least action} says that the path the system follows is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
 
-    The idea began in optics as \textbf{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \textbf{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \textbf{calculus of variations} of Euler and Lagrange was created to handle.
+    The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \emph{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \emph{calculus of variations} of Euler and Lagrange was created to handle.
 
-    For a mechanical system, the action (\cref{eq:action}) is the \textbf{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \textbf{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \textbf{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
+    For a mechanical system, the action (\cref{eq:action}) is the \emph{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \emph{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \emph{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
 
-    The same content can be repackaged. A standard change of variables (a \textbf{Legendre transformation}) trades the velocities $\dot q_i$ for momenta and leads to the \textbf{Hamiltonian} formulation, built on the total energy (\cref{eq:hamiltonian}). This version is the usual starting point for statistical physics and quantum mechanics. Taking the variational idea one step further, and treating the action as a function of the point at which the path ends, gives the \textbf{Hamilton--Jacobi equation},
+    The same content can be repackaged. A standard change of variables (a \emph{Legendre transformation}) trades the velocities $\dot q_i$ for momenta and leads to the \emph{Hamiltonian} formulation, built on the total energy (\cref{eq:hamiltonian}). This version is the usual starting point for statistical physics and quantum mechanics. Taking the variational idea one step further, and treating the action as a function of the point at which the path ends, gives the \emph{Hamilton--Jacobi equation},
 
     \begin{equation}\label{eq:hamilton-jacobi}
         \Ham \left( \vec{q}, \frac{\partial S}{\partial \vec{q}}, t \right) + \frac{\partial S}{\partial t} = 0,
     \end{equation}
 
-    a single equation for the action $S$ (here called Hamilton's principal function). The reason $\Ham$ takes these particular arguments is that each momentum has been replaced by a derivative of the action, $p_i = \partial S/\partial q_i$, so the usual $\Ham(\vec q, \vec p, t)$ is evaluated at $\vec p = \partial S/\partial \vec q$. What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \textbf{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
+    a single equation for the action $S$ (here called Hamilton's principal function). The reason $\Ham$ takes these particular arguments is that each momentum has been replaced by a derivative of the action, $p_i = \partial S/\partial q_i$, so the usual $\Ham(\vec q, \vec p, t)$ is evaluated at $\vec p = \partial S/\partial \vec q$. What matters for us is that its form is strikingly close to the Schrödinger equation, which is why it is regarded as the classical doorway to wave mechanics. The fully quantum version of the whole scheme is \emph{Feynman's path integral}: rather than selecting one path, it gives \textit{every} path a contribution and adds them together, and when quantum effects are negligible the sum is dominated by the single stationary-action path, recovering the classical principle.
 
     The principle is not restricted to mechanics. The general recipe is always the same --- write down an action for the system and demand that it be stationary. The action of the electromagnetic field yields Maxwell's equations, and the action of general relativity (the Einstein--Hilbert action) yields Einstein's field equations for gravity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the brachistochrone (cycloid), Euler--Lagrange $\to$ Newton, Legendre $\to$ Hamiltonian, Hamilton--Jacobi, the path integral, and the electromagnetic/Einstein--Hilbert examples all check out.}
 
 \section{The laws of thermodynamics}
 
@@ -460,7 +511,6 @@
     While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
 
     More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid is confined.
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: ``fluid'' is used throughout for liquids and gases together (as defined above), and the bulk-versus-shear distinction is correct.}
 
     \paragraph{Mechanical waves}
 
@@ -479,7 +529,6 @@
         \item friction arising from the viscosity of the liquid is negligible
         \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves
     \end{itemize}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Checked: irrotationality is kept because it lets \cref{eq:bernoulli} hold with a single constant throughout the flow, not merely along one streamline.}
 
     Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
 
@@ -488,7 +537,6 @@
     \end{equation}
 
     where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: this is the Venturi effect, a direct consequence of \cref{eq:bernoulli}.}
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 

@@ -47,7 +47,6 @@
     where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
 
     \subsection{Paramagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined the Curie constant and its temperature dependence and ``Fermi gas'' in plain terms; added material examples.}
 
         The most common group. They have positive susceptibility, so the induced magnetisation points along the applied field. It comes from unpaired electrons, whose magnetic moments turn to line up with an external field. Common paramagnets are aluminium, platinum and oxygen. Two standard models:
 
@@ -61,7 +60,6 @@
         \end{itemize}
 
     \subsection{Diamagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified ``all electrons paired'' and how bound electrons respond in an insulator (Larmor precession, not free circulation); added material examples.}
 
         Diamagnetism is the appearance of a magnetisation \emph{opposite} to the applied field, i.e.\ a negative susceptibility. Every material has this response, but it is very weak, so we call a material a diamagnet only when it is the dominant effect. That happens when the atoms carry no permanent magnetic moment---all electron spins paired---so there is no paramagnetic contribution to mask it. Typical diamagnets are bismuth (the strongest ordinary one), copper, gold and water.
 
@@ -73,7 +71,6 @@
         \end{itemize}
 
     \subsection{Ferromagnets}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined remanence, gave one-line meanings of the Ising/XY/Heisenberg models, and stated the macroscopic effect of antiferro-/ferrimagnets; added material examples.}
 
         A third category appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to point the same way as each other, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
 
@@ -86,7 +83,6 @@
     \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
         An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$:
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Fixed: the vector identity now reads $\nabla(\nabla\cdot\vec F)-\nabla^2\vec F$ (grad of the divergence, no stray dots). Also removed the restated vacuum Maxwell block (now \cref{eq:maxwell-vacuum}) and unnumbered the intermediate derivation steps.}
 
         \begin{equation*}
             \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
@@ -146,7 +142,6 @@
         \end{equation*}
 
         \paragraph{Solution to the wave equation}
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: noted the physical field is the real part and that the direction of $\vec{E_0}$ sets the polarisation, leading into the next subsection.}
 
         The wave equation is solved by a plane wave of the form
 
@@ -157,7 +152,6 @@
         with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E_0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = |\vec{E}|/c$. The direction in which $\vec{E_0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
     \subsection{Polarisation of a wave}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: gave concrete linear/circular/elliptical cases tied to the plane-wave solution, with a light mention of the Jones vector.}
 
         Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Taking propagation along $z$, the field lies in the $x$--$y$ plane and the main cases are:
 
@@ -168,10 +162,9 @@
         \end{itemize}
 
         The two complex components $(E_x, E_y)$ of the plane wave above therefore fix the polarisation through their relative amplitude and phase. This pair is known as the Jones vector.
+        \todo{mathematical example of a jones vector for circular polarisation and lienar polarisation with full showcasing how the imaginary parts of th jones vector affect the field vector.}
 
     \subsection{The laws of reflection and refraction of electromagnetic waves}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: defined ``ray'' and the s/p polarisations, and stated what Brewster's angle does to them (Fresnel coefficients named, forms omitted).}
-
         A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
 
         \textbf{The law of reflection.} The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
@@ -195,7 +188,6 @@
         with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$).
 
     \subsection{The Doppler effect}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: replaced the convoluted derivations with standard $\pm$ formulae, split acoustic vs.\ relativistic EM, and cross-referenced $\beta$ instead of restating it.}
 
         \textbf{The Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
 
@@ -217,12 +209,11 @@
 
         \begin{equation}\label{eq:doppler-em}
             f' = f\,\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}.
-        \end{equation}
+        \end{equation}\todo{can this also be restated to fit the style above with $\pm$?}
 
         At $\phi = \tfrac{\pi}{2}$ this leaves the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = f/\gamma$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
 
 \section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten for consistency: cross-referenced the wave equation and the mechanical-waves description (removing the repeated paragraph), and labelled the de Broglie relation.}
 
     \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k$ the wave number.
 
@@ -239,7 +230,6 @@
     \textbf{Common features and differences.} All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle, while for light it corresponds to the number of photons.
 
 \section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Full rewrite: fixed the reversed entropy claim for the order parameter, identified the potential as the Gibbs free energy (not enthalpy), and simplified the terminology with concrete examples.}
 
     A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
 
@@ -268,7 +258,6 @@
     \end{itemize}
 
 \section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened all four effects, fixed typos, added the photoelectric and Compton relations, and cross-referenced the Planck distribution.}
 
     \subsection{The photoelectric effect}
 
@@ -304,7 +293,6 @@
 
 \section{The uncertainty principle and the limits of measurement accuracy}
 \label{sec:uncertainty}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the Robertson relation (squared right-hand side), added a plain-language commutator introduction and the sine-wave/localised-spike example.}
 
     The Heisenberg uncertainty principle states that certain pairs of observables cannot both have a sharp value in the same state: the more precisely one is fixed, the less precisely the other can be. This is a fundamental feature of quantum states, not a shortcoming of our instruments.
 
@@ -360,7 +348,6 @@
         \end{equation}
 
     \subsection{The Born approximation}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the scattering amplitude (factor $\hbar^2$ and minus sign), clarified the plane-wave set-up, defined the momentum transfer $K$, and distinguished it from the Born--Oppenheimer approximation.}
 
         A further application of perturbation theory is the Born approximation for scattering. A particle is scattered off a fixed, spherically symmetric potential $V(r)$. The incident particle is described by a plane wave, and far from the potential the state is this incident wave plus an outgoing spherical wave whose angular amplitude $f(\theta, \phi)$ is the \emph{scattering amplitude}. Its squared modulus $|f|^2$ is the differential cross-section, that is, how much is scattered into each direction.
 
@@ -382,11 +369,9 @@
             i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
         \end{equation}
 
-        \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: clarified the quantum numbers, the meaning of an orbital, and the binding energy (with the hydrogen value).}
         Solving it for an atom, physically acceptable solutions exist only for particular integer \emph{quantum numbers}: the principal $n$ (which sets the energy and the shell), the azimuthal $l$ (the magnitude of the orbital angular momentum) and the magnetic $m$ (its projection on the $z$ axis). Equivalently, the energy, the squared angular momentum and its $z$-component are quantised. Each solution $\Psi_{nlm}\left(r,\theta,\phi\right)$ is an \emph{orbital}---a spatial probability distribution for the electron. In chemistry the \textbf{electron shell} is the set of orbitals sharing the same principal quantum number $n$. Solving the equation also gives the \emph{binding energy}, the energy needed to remove the electron from the atom (for the hydrogen ground state, $13.6$~eV).
 
     \subsection{The periodic table of the elements}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the periodic law to depend on atomic number (not mass) and defined atomic number, mass number, period and group.}
 
         The \textbf{periodic table} arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom. (The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table.) The modern \textbf{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
 
@@ -398,7 +383,6 @@
         \end{itemize}
 
     \subsection{Different types of chemical bonds}
-    \todo[backgroundcolor=green!25,linecolor=green!55!black]{Filled in: named the main bond types with one-line characteristics.}
 
         A chemical bond is an attraction that holds atoms together, arising in each case from the valence electrons rearranging to lower the energy. The main types are:
 
@@ -411,7 +395,6 @@
 
 \section{Quantum tunnelling; examples}
 \label{sec:tunnelling}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected the three-region wave function (oscillating outside, exponential inside) and the transmission coefficient (transmitted/incident, not reflected/incident).}
 
     Quantum tunnelling is the passage of a particle through a potential barrier higher than the particle's own energy---something forbidden in classical mechanics, where the particle simply lacks the energy to get over. It is possible because a quantum particle is described by a wave function whose squared modulus gives the probability of finding it at each point.
 

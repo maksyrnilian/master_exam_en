@@ -23,6 +23,7 @@
 \usepackage{tabularx}             % tables with auto-stretching X columns
 
 % --- layout ----------------------------------------------------------
+\usepackage{placeins}             % \FloatBarrier to prevent floats from crossing a barrier 
 \usepackage{titlesec}             % customise section/paragraph heading styles
 \usepackage{needspace}            % reserve N lines so a block is not split across a page
 \usepackage[nottoc]{tocbibind}    % list bibliography/index in the ToC (not the ToC itself)
@@ -55,8 +56,8 @@
 }
 
 % --- comments --------------------------------------------------------
-%\usepackage[disable]{todonotes}                  % disable all \todo notes (e.g. for a clean, printable version)
-\usepackage{todonotes}                            % margin \todo notes used as revision flags
+\usepackage[disable]{todonotes}                  % disable all \todo notes (e.g. for a clean, printable version)
+%\usepackage{todonotes}                            % margin \todo notes used as revision flags
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanations in `%-comments`)
 
 % --- toc-link --------------------------------------------------------
