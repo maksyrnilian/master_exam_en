@@ -56,72 +56,80 @@
         \end{equation*}
     \end{enumerate}
 
-\section{Fundamental interactions; carriers and range of interactions, charges and characteristic energy scales}
-\todo{Entire section should be written from scratch in a more logical and concise way. The introduction and the table is okay but the table should have a better separation of column headings and contents. Then the text goes all oveer the palce. It should be all in reference to the section title which is the question the contents should answer. do not digress too much. it should explain things and make them quickly relevant.}
-\todo{Somehwere at the begining it should be statet what each interaction carrier is responsible for e.g. the strong interaction is responsible for binding quarks into hadrons and hadrons into nuclei, the weak interaction is.... etc. Stanard model should be briefly characterised. The level of delivery should be suitbale for someone who has never studied particle physics before and needs to remember the basics.}
-\todo{changes should not make this section longer. it can be made shorter.}
 
-    Four types of fundamental interaction are currently known, each mediated by its own carrier:
+
+% !TeX root = main.tex
+% Fundamental interactions --- follows the particle-physics lecture; carrier
+% masses from PDG 2024 (rounded for oral delivery).
+
+\section{Fundamental interactions; carriers and range of interactions, charges and characteristic energy scales}
+
+    Every process in physics comes down to particles interacting, and every known interaction belongs to one of four families. In a quantum theory an interaction is not a force reaching across empty space but an \emph{exchange}: two particles interact by passing a third particle between them, called the \emph{interaction carrier}. The properties of the carrier---its mass, its spin, and the kind of charge it responds to---fix everything else, in particular how far the interaction reaches and how strong it is.
+
+    What each interaction is responsible for:
 
     \begin{itemize}
-        \item the strong interaction
-        \item the weak interaction
-        \item the electromagnetic interaction
-        \item the gravitational interaction
+        \item \textbf{Strong.} Binds quarks into protons, neutrons and other \emph{hadrons}, meaning particles built out of quarks. What is left over from this binding reaches slightly beyond each nucleon and holds protons and neutrons together in the nucleus.
+        \item \textbf{Electromagnetic.} Binds electrons to nuclei, atoms into molecules and molecules into solids, so all of chemistry and all of ordinary matter's rigidity. Light is a propagating disturbance of the same field.\todo{If not mentioned later, state here or above that protons repel each other due to EM but STRONG overcomes it and allows multi-proton nuceleous to exist}
+        \item \textbf{Weak.} Converts one kind of quark or lepton into another. It drives beta decay, the first step of hydrogen fusion in stars, and essentially every interaction a neutrino ever has.
+        \item \textbf{Gravitational.} Acts on everything that carries energy. It is by far the feeblest between two individual particles, but it dominates on astronomical scales because its charge---mass--energy---comes with one sign only and never cancels.
     \end{itemize}
 
-    In quantum theories, interactions are transmitted by certain particles called interaction carriers or interaction quanta. There are two categories of such particles---real particles (transmitting the fundamental interactions) and quasiparticles (pseudoparticles: the phonon, the plasmon, the magnon).
+    The first three are described by the \emph{Standard Model}, the quantum field theory of elementary particles. Matter in it consists of twelve spin-\nicefrac{1}{2} particles arranged in three generations: six quarks (up and down, charm and strange, top and bottom) and six leptons (electron, muon and tau, each with its neutrino). Ordinary matter uses only the first generation---up and down quarks and the electron---while the heavier generations are copies that decay quickly. The interactions are carried by spin-1 bosons: eight gluons, the photon, and the $W^{+}$, $W^{-}$ and $Z^{0}$ bosons. One further particle, the spin-0 \emph{Higgs boson} of mass about $125$~GeV, is the quantum of the field that gives the $W$, the $Z$ and the charged fermions their masses. Gravitation stands outside this framework and has no accepted quantum description.
 
-    \begin{table}[h!]
-        \centering
-        \begin{tabular}{|c|c|c|c|c|c|}
-            \hline
-            interaction & carrier & range & charge & mass & spin \\
-            \hline
-            strong & gluon & $10^{-15}$\,m & colour & 0 & 1 \\
-            \hline
-            weak & $W^+, W^-, Z^0$ boson & $10^{-18}$\,m & isospin & $m_0>0$ & 1 \\
-            \hline
-            electromagnetic & photon & $\infty$ & --- & 0 & 1 \\
-            \hline
-            gravitational & graviton (hypothetical) & $\infty$ & --- & 0 & 2 \\
-            \hline
-        \end{tabular}
-    \end{table}
-
-    Energies here are quoted in \emph{electronvolts}: $1$~eV is the energy an electron gains on being accelerated through a potential difference of one volt, $1\,\mathrm{eV} = 1.602\times10^{-19}$~J, with the usual multiples keV, MeV and GeV. Masses are quoted in the same units, which is possible because of \emph{mass--energy equivalence}, $E = mc^{2}$: a mass is given by the rest energy it corresponds to. Strictly this makes the unit of mass the eV$/c^{2}$, but the $c^{2}$ is almost always left out and one simply says that the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2} = 1.783\times10^{-36}$~kg.
-
-    The ranges in the table are not independent facts: they follow from the masses of the carriers, by the following order-of-magnitude argument. The energy--time uncertainty relation, $\Delta E\,\Delta t \geq \hbar/2$, says that a state which exists only for a short time cannot have a sharply defined energy. Note what it is about: the spread of energy of a short-lived state itself, not the precision of our measurements, and not the mass of the particle species, which is a fixed number obtained from real particles produced in accelerators.
-
-    A carrier exchanged between two particles is never observed directly, and so is not obliged to balance the energy books: it may in effect be borrowed from the vacuum, provided the loan is repaid quickly enough. Borrowing at least the rest energy $mc^{2}$ of the carrier limits its life to $\Delta t \sim \hbar/mc^{2}$, and moving at most at the speed of light it can cover a distance
-
-    \begin{equation}\label{eq:yukawa-range}
-        R \sim c\,\Delta t \sim \frac{\hbar}{mc},
-    \end{equation}
-
-    the Compton wavelength of the carrier. A heavy carrier therefore gives a short-ranged force and a massless one an unlimited range, which is why electromagnetism and gravitation reach as far as they do. For the weak interaction, $\hbar c \approx 197$~MeV~fm divided by a carrier rest energy of about $80$~GeV gives $R \approx 2\times10^{-18}$~m, the figure in the table.
-
-    The strong interaction is the exception, since its carrier is massless and yet the force does not reach beyond the nucleus. Its range is set instead by \emph{confinement}: colour charge cannot be isolated, so gluons never travel freely between well-separated particles. What acts between nucleons is a residual force carried by pions, of rest energy about $140$~MeV, and the same estimate then gives the familiar $1.4\times10^{-15}$~m.
-
-    \begin{figure}[h]
+    \begin{figure}[H]
         \centering
         \includegraphics[width=0.6\linewidth]{graphics/Standard_Model_of_Elementary_Particles.pdf}
         \caption{Standard Model of Elementary Particles.}
         \label{fig:standard-model-particles}
     \end{figure}
 
-    Intermediate bosons are exchanged by electrons, neutrinos and other particles participating in the weak interaction during collisions. The $W$ boson occurs in two basic forms: the particle $W^+$ and its antiparticle $W^-$. Both have the same spin and mass, $80.369 \pm 0.013$~GeV, and differ only in electric charge. The $W$ bosons carry one of the charges of the electroweak interaction, namely weak isospin. Its value is $+1$ and $-1$ for the $W^+$ and $W^-$ bosons respectively. The most important phenomenon involving $W$ bosons is beta decay. In this process a down quark (d) contained in a neutron decays into an up quark (u) and a $W$ boson, which in turn decays into a lepton--neutrino pair for a given lepton (more precisely: $W^-$ decays into a lepton plus an antineutrino, and $W^+$ into an antilepton plus a neutrino). As the energy increases, these leptons may be the electron, the muon or the tau. The $Z$ boson is simultaneously its own antiparticle. The mass (rest energy) of the $Z^0$ boson is $91.1876 \pm 0.0021$~GeV, and it is electrically neutral. The $Z$ boson decays into pairs of charged leptons (electron--antielectron, muon--antimuon) and into pairs of quarks or neutrinos (neutrino--antineutrino).
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabular}{@{}llllc@{}}
+            \hline
+            \textbf{interaction} & \textbf{carrier} & \textbf{charge} & \textbf{range} & \textbf{strength} \\
+            \hline
+            \rule{0pt}{2.6ex}strong & 8 gluons, massless & colour & $\sim10^{-15}$\,m & $1$ \\
+            electromagnetic & photon, massless & electric & $\infty$ & $\sim10^{-2}$ \\
+            weak & $W^{\pm}$ ($80$\,GeV), $Z^{0}$ ($91$\,GeV) & weak isospin & $\sim10^{-18}$\,m & $\sim10^{-6}$ \\
+            gravitational & graviton, hypothetical & mass--energy & $\infty$ & $\sim10^{-39}$ \\
+            \hline
+        \end{tabular}
+        \caption{The four interactions. All carriers have spin 1 except the graviton, which would have spin 2. Strengths are orders of magnitude only, for two protons about $10^{-15}$\,m apart, and different textbooks quote somewhat different figures because the comparison itself is not unique.}
+        \label{tab:interactions}
+    \end{table}\todo{why is isopsin labelled as charge and not as spin}
 
-    The graviton is a hypothetical particle whose existence is assumed by the theory of quantum gravity based on quantum field theory, but not on the Standard Model. The graviton has neither mass nor electric charge, and is a boson of spin $s = 2$.
+    A particle feels an interaction only if it carries the matching charge, which is what the third column lists. Colour charge comes in three values conventionally called red, green and blue, and is carried by quarks and gluons alone. Weak isospin is the charge of the weak interaction and is carried by all quarks and leptons. A neutrino has neither electric charge nor colour, which is why it interacts only weakly and passes through the Earth almost undisturbed. Carriers may themselves be charged: each gluon carries one colour and one anticolour, so gluons attract one another, whereas the photon is electrically neutral and ignores other photons. This self-attraction of the gluon field is the reason the strong interaction behaves so differently from the other three.
 
-    There is no physical law implying that the detection of a graviton is impossible, but the required detector mass makes it impossible in practice. For example, it is estimated that a detector of Jupiter's mass operating at 100\% efficiency would be capable of detecting one graviton in ten years. The reason for this is the very small cross-section of the graviton for interaction with matter. A further problem is shielding from background noise. The two basic sources of noise are cosmic radiation and neutrinos.
+    Energies are quoted in \emph{electronvolts}, $1$~eV being the energy an electron gains across a potential difference of one volt, $1\,\mathrm{eV}=1.602\times10^{-19}$~J, with the multiples keV, MeV and GeV. Masses are quoted in the same units by \emph{mass--energy equivalence}, $E=mc^{2}$, a mass being named by the rest energy it corresponds to. Strictly the unit is then eV$/c^{2}$, but the $c^{2}$ is left out and one simply says the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2}=1.783\times10^{-36}$~kg.
 
-    The gluon is the carrier of the strong interaction, which means that this interaction consists in the exchange of gluons between quarks or between other gluons. The theory describing the interactions of gluons and quarks is quantum chromodynamics. The gluon carries colour charge. Gluons exchanged between quarks form a field of colour forces. Gluons have their own colour, and therefore, besides transmitting interactions between quarks, they are able to interact with themselves, which leads for instance to the appearance of so-called gluon loops in Feynman diagrams.
+    The ranges in \cref{tab:interactions} are not independent facts but follow from the carrier masses. The energy--time uncertainty relation $\Delta E\,\Delta t\geq\nicefrac{\hbar}{2}$ says that a state existing only briefly cannot have a sharply defined energy. Note what this is about: the energy spread of a short-lived state itself, not the precision of our instruments and not the mass of the particle species, which is a fixed number measured on real particles in accelerators. An exchanged carrier is never observed directly and so need not balance the energy books---it is \emph{virtual}, in effect borrowed from the vacuum provided the loan is repaid quickly. Borrowing at least the rest energy $mc^{2}$ limits its life to $\Delta t\sim\nicefrac{\hbar}{mc^{2}}$, and travelling at most at the speed of light it covers
 
-    As carriers of the strong interaction, gluons themselves carry colour, each one carrying a colour together with an anticolour. When a quark emits or absorbs a gluon its colour changes, while the gluon carries the difference away. For example, a red quark may turn blue by emitting a red--antiblue gluon, and if that gluon is later absorbed by a blue quark the anticolour cancels the blue and leaves it red. Colour is thus exchanged between quarks but conserved overall.
-    \todo{Whole section needs to be rewritten, verbose and not to the point and not udnerstandable.}
+    \begin{empheq}[box=\fbox]{equation}\label{eq:yukawa-range}
+        R \sim c\,\Delta t \sim \frac{\hbar}{mc},
+    \end{empheq}
+
+    the Compton wavelength of the carrier. A heavy carrier therefore gives a short-ranged interaction and a massless one an unlimited range, which is why electromagnetism and gravitation reach as far as they do. Using $\hbar c\approx197$~MeV\,fm with a carrier rest energy of $80$~GeV gives $R\approx2\times10^{-18}$~m for the weak interaction, the figure in the table.
+
+    The strong interaction is the apparent exception, since its carrier is massless and yet it does not reach beyond the nucleus. Its range is set instead by \emph{confinement}: because gluons attract one another, colour charge can never be isolated, and gluons do not travel freely between well-separated particles. What acts between nucleons is a residual effect carried by \emph{pions}, the lightest hadrons, of rest energy about $140$~MeV, and \cref{eq:yukawa-range} then returns the familiar $1.4\times10^{-15}$~m.
+
+    Beta decay shows the pieces working together. A down quark inside a neutron turns into an up quark and emits a $W^{-}$, which decays at once into an electron and an electron antineutrino, so that overall $n\to p+e^{-}+\bar{\nu}_{e}$. The energy released is a few MeV, thousands of times less than the $80$~GeV needed to make a real $W$. The boson can therefore only ever be virtual, and it is this mismatch of scales---not any small coupling---that makes the weak interaction weak and slow at everyday energies.
+
+    Each interaction accordingly has its own characteristic energy scale:
+
+    \begin{itemize}
+        \item \textbf{Electromagnetic.} Atomic and molecular binding, from about $1$~eV for a chemical bond to $13.6$~eV to ionise hydrogen, rising to keV for inner electrons of heavy atoms.
+        \item \textbf{Strong.} Nuclear binding of roughly $8$~MeV per nucleon, hadron masses of order $1$~GeV, and an underlying scale of a few hundred MeV at which the interaction becomes strong.
+        \item \textbf{Weak.} Set by the carrier masses, of order $100$~GeV, even though the energy actually released in weak decays is only of order MeV.
+        \item \textbf{Gravitational.} No scale at all in everyday physics, since the interaction has no intrinsic energy of its own. Quantum effects are expected only at the \emph{Planck energy}, about $10^{19}$~GeV, which is beyond any conceivable accelerator.
+    \end{itemize}\todo{is this not repeated?}
 
     \FloatBarrier
+
+
+
 
 \section{Conservation laws in physics and their connection with symmetry laws}
 
@@ -132,7 +140,7 @@
     \subsection{Noether's theorem}
 
         If the action $S$ of a physical system is invariant with respect to a transformation, then there exists a corresponding conservation law. The action is defined as:
-        \todo{S is a function/functional}
+        \todo{S is a function/functional not number}
         
         \begin{equation}\label{eq:action}
             S \equiv \int_{t_1}^{t_2} \Lagr \, dt,
@@ -149,7 +157,7 @@
         The theorem is stated in terms of the action because the action is also what the equation of motion follows from: requiring $S$ to be stationary (\textit{minimum, maximum, saddle point}) yields the Euler--Lagrange equation below, which is the principle of least action (\cref{sec:variational}). 
         
         Since $S$ is nothing but the Lagrangian added up over time, a transformation that leaves $\Lagr$ unchanged leaves $S$ unchanged as well. This is why the examples that follow test the symmetry on the Lagrangian rather than on the integral.
-        \todo{Do I understand it?}
+        \todo{I am not sure I understand it fully}
 
         The dynamics of the system are governed by the Euler--Lagrange equation,
 
@@ -159,7 +167,7 @@
         \todo{Add a note on partial vs total derivatives.}
 
         where $q$ is some coordinate relevant to the system and $\dot{q} = \nicefrac{dq}{dt}$.
-        \todo{Order seems wrong. Maybe this should go up and theorem should go after.}
+        \todo{Order seems wrong. Maybe the Lagrangian/action should be covered before the theorem is stated.}
 
     \subsection{Examples of the application of Noether's theorem}
 
@@ -533,17 +541,17 @@
 
     The classical angular momentum is defined as:
 
-    \begin{equation*}
-        \vec{L} = \sum_i \vec{r}_i \times \vec{p}_i
-    \end{equation*}
+    \begin{equation}\label{eq:momentum}
+        \vec{L} \equiv \sum_i \vec{r}_i \times \vec{p}_i
+    \end{equation}
 
     where $r$ is the position and $p$ the momentum of the $i$-th element of the system.
 
     In quantum mechanics the orbital angular momentum is defined as an operator composed of three components and given by the formula
 
-    \begin{equation*}
+    \begin{equation}\label{eq:orbital-angular-momentum}
         \hat{L} = -i\hbar(\hat{r}\times \nabla),
-    \end{equation*}
+    \end{equation}
 
     where
     \begin{equation}\label{eq:nabla}
@@ -554,12 +562,13 @@
     \end{equation}
 
     A further operator corresponding to angular momentum is the spin angular momentum operator $\hat{S}$, which likewise consists of three components, being the projections onto the respective axes.
-    \begin{equation*}
+    \begin{equation}\label{eq:spin-angular-momentum}
         \hat{S} \equiv
             \begin{bmatrix}
                 S_{x} \\ S_{y} \\ S_{z}
             \end{bmatrix}.
-    \end{equation*}
+    \end{equation}\todo{I am not sure I understand how this definition corresponds with the examples using this operator from the postulates section. Unify it and make a reference from there to here to avoid repetitions.}
+    \todo{the narrative aboput measuring spin eigenstates etc from \cref{sec:postulates} should be referenced or sth.}
 
     The total angular momentum $\hat{J}$ is the sum of the spin and orbital angular momenta, i.e.
 
@@ -567,13 +576,13 @@
         \hat{J} = \hat{L} + \hat{S}.
     \end{equation*}
 
-    Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L}_z\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.
+    Quantisation permits the eigenvalues of the squares of the angular momentum operators and of their projections onto the $z$ axis to be found, i.e.\ $\hat{L}^2\ket{l} = \hbar^2 l(l+1)\ket{l}$, $\hat{L}_z\ket{m} = \hbar m\ket{m}$. Quantum numbers for $\hat{S}$ and $\hat{J}$ may be defined analogously.\todo{elaborate a little also make a paragraph that clearly explains all three quantum numebrs and their physical meaning, how they are related to each other and how they are used in teh context of the hydrogen atom or another simple system.}
 
     \subsection{Classical precession}
 
         Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-        The angular momentum $\vec{L}$ of the spinning body points along its spin axis. Precession happens when a torque acts at a right angle to that axis. A torque perpendicular to $\vec{L}$ nudges it sideways, but it actually moves in a perpendicular direction, tracing out a cone. For the toy top, gravity supplies this torque, where one of its components is perpendicular to the spin axis, unless it is perfectly vertical.
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis. Precession happens when a torque acts at a right angle to that axis. A torque perpendicular to $\vec{L}$ nudges it sideways, but it actually moves in a perpendicular direction, tracing out a cone. For the toy top, gravity supplies this torque, where one of its components is perpendicular to the spin axis, unless it is perfectly vertical.\todo{can this be exaplined intuitviely in the context of a single spinning particle or somethinb? is there an intuitive pciture at all? thinkig of a body as individual partyicles? skip if no straightforward clarification can be made.}
 
         The precession frequency is given by
 
@@ -586,7 +595,7 @@
     \subsection{Quantum precession}
     \label{subsec:quantum-precession}
 
-        A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$ --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
+        A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum $\vec{S}$\todo{shoul it be in vector notation?} --- the two are proportional and lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
         \begin{equation*}
             \vec{\tau} = \vec{\mu}\times \vec{B},
@@ -594,20 +603,19 @@
 
         which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is Larmor precession, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
 
-        The rate of this precession depends only on the field strength, not on how far $\vec{S}$ is tilted from $\vec{B}$ (two factors of $\sin\theta$ cancel each other out). This orientation-independence is what makes Larmor precession useful for magnetic resonance techniques.
-
-        A separate contribution appears when the particle is accelerated, and unlike Larmor precession it is driven by no torque at all. Thomas precession is a purely kinematic effect of special relativity: for a particle on a curved path --- such as an electron orbiting a nucleus --- the successive inertial frames in which it is momentarily at rest are slightly rotated relative to one another, so its spin angular momentum precesses even though nothing twists it. In the hydrogen atom this modifies the spin--orbit interaction, reducing it by a factor of two (the Thomas factor).
+        The rate of this precession depends only on the field strength, not on how far $\vec{S}$ is tilted from $\vec{B}$ (two factors of $\sin\theta$ cancel each other out). This orientation-independence is what makes Larmor precession\todoper{watch youtube about it}useful for magnetic resonance techniques.
 
 \section{Variational principles of physics; examples of equations that can be derived from them}
 \label{sec:variational}
+    \todo{Rewrite the latter part of the section such that it is clear what are the variational principles and examples of equations are given in a spearate part i want the distincion which paragraphs answer which parts of the question more clear.}
 
-    There are two complementary ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.
+    There are two \emph{complementary} ways to describe how a system moves. Newton's approach is \textit{local}: at each instant the force fixes the acceleration, and the trajectory is built up step by step. A variational principle takes the opposite, \textit{global} view. Out of all the paths a system \textit{could} in principle follow between a fixed start point and a fixed end point, nature singles out one, and the principle is the rule that picks it.\todo{The lagragian vs newtonian apporach should explained more clearly}
 
-    That rule is stated using a single number, the \emph{action} $S$ (defined in \cref{eq:action}, and unpacked below), which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \emph{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
+    That rule is stated using a single number, the \emph{action} $S$ (\cref{eq:action}), which can be worked out for \textit{any} candidate path, not only the true one. A quantity that takes in a whole path (a function) and returns one number is called a \emph{functional} --- as opposed to an ordinary function, which takes in a number and returns a number.
 
-    The \emph{principle of least action} says that the path the system follows is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.
+    The \emph{principle of least action} says that the path the system follows is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change. This is the direct analogue of locating the minimum of an ordinary function by setting its derivative to zero --- at the bottom of a valley the ground is momentarily flat, so a small step in any direction barely changes your height. Here the ``height'' is the action and the ``step'' is a small change to the entire path. In the simplest cases the stationary path is a true minimum, which is where the name comes from, but in general it need only be a flat spot and may be a saddle.\todo{a little too metaphorical. make it more to the point; substantial}
 
-    The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \emph{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \emph{calculus of variations} of Euler and Lagrange was created to handle.
+    The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route that takes the least time. A mechanical version was posed as the \emph{brachistochrone problem} (Johann Bernoulli, 1696) --- find the shape of a ramp down which a bead released from rest slides from one point to a lower one in the shortest time. The answer is a cycloid (the curve traced by a point on the rim of a rolling wheel), not the straight line, which only wins if what you want to minimise is length. Problems of this kind, where a whole curve is chosen to make some accumulated quantity as small as possible, are what the \emph{calculus of variations} of Euler and Lagrange was created to handle.\todo{I udnerstand how fermat principle is relevant but not the brachistochrone. it seems that physics does not choose the path from some available ones like in the case of optics but rather the experimentalist gives some paths and one turns out to have shortest time. how is that analogous?}
 
     For a mechanical system, the action (\cref{eq:action}) is the \emph{Lagrangian} (\cref{eq:lagrangian}) integrated over time. Requiring this total to be stationary, written $\delta S = 0$, converts the loose instruction ``choose the best path'' into a definite differential equation the path must satisfy at every instant --- the \emph{Euler--Lagrange equation} (\cref{eq:euler-lagr}). For a single particle this reduces to Newton's second law, but now expressed in whatever coordinates are convenient. These \emph{generalised coordinates} $q_i$ are any set of numbers that fixes the configuration of the system, such as an angle or a distance along a track, and the freedom to choose them is what makes the method far easier than Newton's for constrained or awkwardly shaped systems.
 
@@ -623,15 +631,15 @@
 
 \section{The laws of thermodynamics}
 
+    \emph{Thermal equilibrium} implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
+
     \subsection{The zeroth law of thermodynamics}
 
         If systems A and B, capable of exchanging heat with one another, are in thermal equilibrium with each other, and the same is true of systems B and C, then systems A and C are also in thermal equilibrium with each other.
 
-        Thermal equilibrium implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
-
     \subsection{The first law of thermodynamics}
 
-        The change in the internal energy of a system is equal to the sum of the heat supplied and the work done \textit{on the system}.
+        The change in the internal energy of a system is equal to the sum of the heat supplied and the \emph{work done on the system}.
 
         \begin{equation}\label{eq:first-law}
             \Delta U = Q + W,
@@ -657,7 +665,7 @@
 
         \begin{equation}\label{eq:clausius-inequality}
             dS \geq \frac{\delta Q}{T}.
-        \end{equation}
+        \end{equation}\todo{This should be better justified. It seems that rhs is simply calculatable and the LHS cannot ever be measured so why is that equation even useful? elaborate its interpretation or something but make it easily understandable.}
 
         Here $S$ is the \emph{entropy}, a \emph{function of state}: its change between two equilibrium states depends only on those states, not on the path taken between them, which is what lets \cref{eq:clausius-inequality} measure a process against its reversible ideal. The equality holds only for reversible processes. For an isolated system ($\delta Q = 0$) it reduces to
 
@@ -682,19 +690,20 @@
 
     \begin{itemize}
         \item they have complete freedom of movement within the volume occupied by the liquid
-        \item the intermolecular interactions occur between them, which within the bulk of the liquid cancel one another out
+        \item the intermolecular interactions\todo{briefly define what are intermolecular interactions} occur between them, which within the bulk of the liquid cancel one another out
         \item the intermolecular interactions do not cancel at the interface between the liquid and another phase, as a result of which the phenomenon of surface tension occurs.
     \end{itemize}
 
     \paragraph{Elastic media}
 
-    An elastic medium is a medium in which an external force gives rise to stress whose effect is the appearance of an outwardly directed force. This force pushes the affected body to return to its original shape.
+    An elastic medium is a medium in which an external force gives rise to stress whose effect is the appearance of an outwardly directed force.\todo{not outwardly but one that counteracts the stress} This force pushes the affected body to return to its original shape.\todo{for the medium to be *elastic*, does the force need to *elastic* (F=-kx?) or any force that conteracts the external one is enough?}
 
-    While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic. If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
+    While most solids are elastic over a very wide range of stresses under small stress, the elasticity of fluids (liquids and gases) depends on several conditions. If a fluid is enclosed in an elastic container, e.g.\ air in a balloon, such a system is elastic.\todo{footnote digression about how baloon actually makes eveything elastic beacuse it itself is elastic or gravity create elastic response. piston is a better example.} If an external force acts at high frequency on a fluid in the free state, then such a system is also elastic. In this way sound propagates in air as a mechanical wave.
 
-    More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid is confined.
+    More precisely, fluids always resist a change of \emph{volume} (they have bulk elasticity, which is what lets sound propagate), but a fluid at rest offers no resistance to a change of \emph{shape} (it has no static shear elasticity). The shape elasticity described above therefore shows up only dynamically (fast forcing) or when the fluid\todo{liquid too?} is confined.\todo{is it all becase}\todo{is it all becuse every force is elastic for small delta x? so small disturbances always meet elastic repsonse even if the actual response is much weaker than linear?}
 
     \paragraph{Mechanical waves}
+    \todo{this section should  be reconciled with what is above. fast forcing -> mechanical waves. repetition is unnecesary}
 
     If we displace some fragment of an elastic medium from its equilibrium position, it will consequently oscillate about that position. These oscillations, thanks to the elastic properties of the medium, are transmitted to successive parts of the medium, which begin to oscillate. In this way the disturbance passes through the whole medium. The speed of propagation of waves depends on the properties of the medium. According to the shape of the wavefront we may distinguish transverse waves and longitudinal waves.
 
@@ -718,7 +727,7 @@
         \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
     \end{equation}
 
-    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
+    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure of a unit of fluid. For a chosen piece of liquid\todo{what is a piece of liquid} this equation will always be satisfied, and it permits the description of flow through a pipe changing its cross-section or height. It also explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $v^2/2$ must then be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
 
 \section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
 
@@ -727,7 +736,7 @@
         \begin{equation}\label{eq:maxwell-general}
             \begin{alignedat}{2}
                 \text{Gauss's Law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\epsilon_{0}}\\
-                \text{Gauss's Law for } \vec{B} \text{ (no mag. monopoles)}     & : \quad & \nabla \cdot \vec{B}  & = 0\\
+                \text{Gauss's Law for } \vec{B}                                 & : \quad & \nabla \cdot \vec{B}  & = 0\\
                 \text{Faraday's Law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
                 \text{Ampère-Maxwell Law}                                       & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \epsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
             \end{alignedat}
@@ -745,7 +754,7 @@
             \end{aligned}
         \end{equation*}
 
-        Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field.
+        Divergence measures the magnitude of a source or sink at a given point in a vector field, while curl measures the rotation of the field around a point. The gradient points in the direction of the greatest rate of increase of a scalar field. \todo{divergence theorem and curl theorem should be stated in a way that would inform the interpratatioon of the equations: divergence E -> charge enclosed by a surface....}\todo{also there should be an english interpratation fo each equation that may draw from the theorems (for eample say that there are no mag. monopoles because...). This entire paragrah may be rewritten to accomodate new knowdlege better. }\todo{also explian what is meant by bound and free charges/currents}
 
         Fields act on charges through the Lorentz force:
 
@@ -772,7 +781,7 @@
 
         \begin{equation}\label{eq:polarisation-vector}
             \vec{P}=\chi \epsilon_0\vec{E},
-        \end{equation}
+        \end{equation}\todo{why minus here}
 
         where $\chi$ --- electric susceptibility of a material. Polarisation is only caused by bound charges
 
@@ -790,13 +799,13 @@
             \end{aligned}
         \end{equation*}
 
-        where $\vec{D}$ --- dielectric displacement field:
+        where $\vec{D}$ --- electric displacement field:
 
         \begin{equation*}
             \underbrace{\vec{D}}_{\substack{\text{contribution from} \\ \text{free charges only}}} = \underbrace{\epsilon_0\vec{E}}_{\text{total electric field}} + \underbrace{\vec{P}}_{\substack{\text{field due to } \vec{P} \text{ points in the} \\ \text{opposite direction to } \vec{P} \\ \Rightarrow\ +\vec{P} \text{ subtracts the} \\ \text{bound-charge contribution}}}
         \end{equation*}
 
-        Bound current is given by
+        Bound current is given by\todo{this is stated randomly without justification}
 
         \begin{equation*}
             \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
@@ -815,8 +824,8 @@
         where $\vec{H}$ --- magnetic field intensity
 
         \begin{equation}\label{eq:H-def}
-            \underbrace{\vec{H}}_{\substack{\text{magnetic field intensity} \\ \text{contribution from free currents only}}} = \underbrace{\frac{\vec{B}}{\mu_{0}}}_{\text{total magnetic field}} - \underbrace{\vec{M}}_{\substack{\text{magnetic field due to $\vec{M}$} \\ \text{points in opposite direction}}}
-        \end{equation}
+            \underbrace{\vec{H}}_{\substack{\text{magnetic field intensity} \\ \text{contribution from free currents only}}} = \underbrace{\frac{\vec{B}}{\mu_{0}}}_{\text{total magnetic field}} - \underbrace{\vec{M}}_{\substack{\text{magnetic field due to $\vec{M}$} \\ \text{points in opposite direction to M}}}
+        \end{equation}\todo{if magn. field from M points in opposite direction to M, then why is it subtracted? also vector arrow add.}
 
         \needspace{4\baselineskip}
         Maxwell's equation in matter may then finally be rewritten as:
@@ -831,6 +840,7 @@
         \end{equation}
 
     \subsection{The vector potential of the electromagnetic field}
+    \todo{verify both sections and explain a little bit why these things exist.}
 
         The magnetic vector potential $\vec{A}$ is a three-dimensional vector field whose curl is the magnetic field.
 

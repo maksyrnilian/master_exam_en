@@ -26,7 +26,7 @@ Bold never appears inside a sentence. If a term is important enough to stand out
   ```
   Three or four per section at most, or the emphasis stops meaning anything.
 
-## Symbols reserved across the note
+## Symbols reserved across the note (macros in preamble)
 
 | Macro / symbol | Meaning |
 | --- | --- |
@@ -37,6 +37,7 @@ Bold never appears inside a sentence. If a term is important enough to stand out
 | `\ev{}` | expectation value |
 | `\comm{}{}`, `\acomm{}{}` | commutator, anticommutator |
 | `\kB`, `\muB`, `\const` | Boltzmann constant, Bohr magneton, constant |
+| `\equiv` | definitional equality |
 
 ## Quantum-mechanics notation
 
@@ -75,11 +76,36 @@ Capital `\Psi`, `\Phi` is the full time-dependent wave function. Lower-case `\ps
 | Colour | Meaning |
 | --- | --- |
 | default (orange) | outstanding question or gap |
-| green | rewritten and checked |
-| red | structural or correctness flag needing attention before the exam |
+| green | rewritten and checked (comment from AI)|
+| red (`\todoper`) | persistent note for my own check later |
+
+## Tables
+
+- Three horizontal rules only: above the header, below the header, below the last row. No vertical rules, no full grid.
+- `\renewcommand{\arraystretch}{1.25}` inside the float, and `\rule{0pt}{2.6ex}` on the first data row to lift it off the header rule.
+- Header cells in `\textbf{}`. This is the one place besides a list label where bold is allowed.
+- `[H]` placement (`float` package) so the table sits where it is written.
+- Every table gets a `\caption` and a `\label{tab:...}`, referenced with `\cref{tab:...}`.
+- Caveats about the numbers (order-of-magnitude only, source disagreement, conditions of comparison) go in the caption, not in the body text.
+
+## Numerical values
+
+- Quote values rounded to what is worth saying aloud. Uncertainties only where the uncertainty is itself the point.
+- Units in text mode with a thin space: `$80$~GeV`, `$10^{-15}$\,m`. Never a bare space.
+- Particle masses and physical constants follow PDG. Name the year in the file's top comment block when a value could drift.
 
 ## LaTeX source formatting
 
 - One paragraph per line. No hard wrapping inside a paragraph.
 - Blank line between paragraphs.
-- Comment block at the top of each file naming the lecture or source the section follows.
+- hierarchical indentetaions in environments: 
+```latex
+\section{}
+  text
+  \subsection{}
+    text
+    \begin{}
+      text
+    \end{}
+\section{}
+```
