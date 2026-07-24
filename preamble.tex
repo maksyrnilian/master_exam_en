@@ -15,7 +15,9 @@
 \usepackage{amssymb}              % extra maths symbols --- \Box (d'Alembertian) needs it
 \usepackage{braket}               % Dirac bra-ket notation (\bra, \ket, \braket)
 \usepackage{nicefrac}             % compact slanted in-line fractions (\nicefrac)
-\usepackage{empheq}
+\usepackage{empheq}               % \empheq environment for boxing equations
+\usepackage{mathrsfs}             % \mathscr --- used for the Hilbert space
+
 
 % --- floats, tables, graphics ----------------------------------------
 \usepackage{graphicx}             % include images (\includegraphics)
@@ -25,7 +27,7 @@
 
 % --- layout ----------------------------------------------------------
 \usepackage{placeins}             % \FloatBarrier to prevent floats from crossing a barrier 
-\usepackage{titlesec}             % customise section/paragraph heading styles
+\usepackage[nobottomtitles*]{titlesec} % customise section/paragraph heading styles
 \usepackage{needspace}            % reserve N lines so a block is not split across a page
 \usepackage[nottoc]{tocbibind}    % list bibliography/index in the ToC (not the ToC itself)
 \usepackage{parskip}   	          % blank line between paragraphs, no first-line indent
@@ -92,27 +94,51 @@
 \makeatother
 
 % --- paragraph styling -----------------------------------------------
-
 \titleformat{\paragraph}[hang]
     {\normalfont\normalsize} % Normal font size and standard weight
     {}                       % Empty label --- suppresses numbering
     {0pt}                    % Zero separation space since there is no number
     {\underline}             % Underlines the heading text
 \titlespacing*{\section}{0pt}{3cm}{0.75cm}
+\renewcommand{\bottomtitlespace}{.15\textheight}
 
-% --- postulate environment -------------------------------------------
+% --- postulate environment (numbered) --------------------------------
+% Roman numerals, counter runs document-wide, \label works inside so
+% postulates can be cross-referenced with \cref{post:...}.
+% \Needspace* (not \needspace) keeps the label, the italic body and a
+% boxed equation together instead of splitting them over a page break.
+\newcounter{postulate}
+\renewcommand{\thepostulate}{\Roman{postulate}}
 \newenvironment{postulate}[1]
-    {\par\needspace{3\baselineskip}\medskip
+    {\par\Needspace*{5\baselineskip}\medskip
+     \refstepcounter{postulate}%
      \begingroup\leftskip=1.5em \rightskip=1.5em
-     \noindent\textbf{Postulate ---\ #1.}\ \itshape\ignorespaces}
+     \noindent\textbf{Postulate \thepostulate\ ---\ #1.}\ \itshape\ignorespaces}
     {\par\endgroup\medskip}
+\crefname{postulate}{postulate}{postulates}
+\Crefname{postulate}{Postulate}{Postulates}
 
 % --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
 \newcommand{\Ham}{\mathcal{H}}				        % Hamiltonian	
+\newcommand{\Hilb}{\mathscr{H}}               % Hilbert space
 \newcommand{\kB}{k_{B}}                       % Boltzmann constant
 \newcommand{\muB}{\mu_{B}}                    % Bohr magneton
 \newcommand{\const}{\mathrm{const.}}          % "constant"
 \newcommand{\ev}[1]{\langle #1 \rangle}       % expectation / mean value
 \newcommand{\comm}[2]{\left[#1,#2\right]}     % commutator
 \newcommand{\acomm}[2]{\left\{#1,#2\right\}}  % anticommutator
+
+
+% =====================================================================
+%  House style --- full version in STYLE.md
+% =====================================================================
+% \emph{} for defined terms and for emphasis in prose.
+% \textbf{} ONLY as a label at the head of a list item. Never mid-sentence.
+% \nicefrac{}{} for inline fraction (including diff. operators). \frac and \tfrac in display maths only.
+% bmatrix (square brackets) for every vector and matrix, never pmatrix.
+% Inline matrices: \left[\begin{smallmatrix}...\end{smallmatrix}\right].
+% Equations that must be memorised: \begin{empheq}[box=\fbox]{equation}.
+% No semicolons in prose. British spelling. \enquote{} for quotation marks.
+% Em-dash as --- with no surrounding spaces.
+% \todo with green background = rewritten and checked.
