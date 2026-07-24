@@ -8,6 +8,7 @@ House style for the revision note. Settled while rewriting `pos_qm.tex`. Apply t
 | --- | --- |
 | `\emph{}` | first use of a defined term, and emphasis in prose |
 | `\textbf{}` | label at the head of an `itemize` or `description` item, nothing else |
+| `\textit{}` | a law, principle or theorem quoted as a self-contained statement (Newton's first law, the Clausius statement, the statement of Noether's theorem). Nowhere else |
 
 Bold never appears inside a sentence. If a term is important enough to stand out, `\emph` does it.
 
@@ -16,6 +17,7 @@ Bold never appears inside a sentence. If a term is important enough to stand out
 - **Inline fractions**: `\nicefrac{a}{b}`. Never a bare `a/b`, never `\frac` inline.
 - **Display fractions**: `\frac`, or `\tfrac` where a stacked fraction would be too tall.
 - **Vectors and matrices**: `bmatrix`, square brackets. Never `pmatrix`.
+- **Vector-valued operators** carry both a hat and an arrow: `\hat{\vec{L}}`, `\hat{\vec{S}}`, `\hat{\vec{J}}`. A single component is `\hat{L}_{z}`, hat only. Classical vectors are `\vec{L}` with no hat.
 - **Inline matrices**: `\left[\begin{smallmatrix}...\end{smallmatrix}\right]`.
 - **Operators carry hats**: `\hat{Q}`, `\hat{H}`, `\hat{p}`, `\hat{x}`.
 - **Equations to be memorised** are boxed:
@@ -38,6 +40,10 @@ Bold never appears inside a sentence. If a term is important enough to stand out
 | `\comm{}{}`, `\acomm{}{}` | commutator, anticommutator |
 | `\kB`, `\muB`, `\const` | Boltzmann constant, Bohr magneton, constant |
 | `\equiv` | definitional equality |
+| `\simeq` | for approximate values |
+| `\varepsilon_{0}` | vacuum permittivity. Never `\epsilon_{0}` |
+| `\varphi` | electric scalar potential --- `\Phi` is reserved for a wave function |
+| `\rho_{\text{f}}`, `\rho_{\text{b}}` | free and bound charge, likewise `\vec{J}_{\text{f}}`, `\vec{J}_{\text{b}}`. Subscripts in `\text{}`, never italic |
 
 ## Quantum-mechanics notation
 
@@ -59,13 +65,18 @@ Capital `\Psi`, `\Phi` is the full time-dependent wave function. Lower-case `\ps
 - Postulates go in the `postulate` environment. Roman numerals, counter runs document-wide, so numbering must stay consistent if sections are reordered.
 - `\label{post:...}` inside a postulate, referenced with `\cref{post:...}`.
 - Section headings are the exam questions verbatim, semicolons included.
-- Subsection titles are short and plain.
+- Subsection titles are short and plain. Where a question has several parts, the subsections map onto those parts one for one, so it is visible which paragraphs answer which part.
+- Every `\section` carries a `\label{sec:...}`, whether or not anything points at it yet.
+- Labels must be unique across `content_1`--`content_3`, since all three are `\input` into one document. Prefixes: `sec:`, `eq:`, `tab:`, `fig:`, `post:`.
+- Cross-reference with `\cref`, never with "see above" or "as mentioned earlier". An answer may point at another answer instead of repeating it, and should.
+- Joint names take an en-dash: `Euler--Lagrange`, `Amp\`ere--Maxwell`, `Hamilton--Jacobi`, `Einstein--Hilbert`.
+- `Schrödinger` is written with a literal `ö` (UTF-8 input is on), never `Schr\"odinger`.
 
 ## Prose
 
 - British spelling: normalised, quantisation, behaviour.
 - **No semicolons.** Split the sentence or use a dash.
-- Em-dash as `---`, no surrounding spaces (unless it is next to math like: `$\Psi$ --- total wave function`).
+- Em-dash as `---`, no surrounding spaces. Two exceptions: the symbol-gloss pattern after a display, `where $\chi$ --- electric susceptibility of a material`, and section titles, which reproduce the exam question as written.
 - `\enquote{}` for quotation marks, never `` `` '' ``.
 - No verbose or literary sentences. This is a note, not a book.
 - Never introduce a technical term without defining it at first use or cross-referencing where it is defined.

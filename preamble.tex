@@ -17,7 +17,12 @@
 \usepackage{nicefrac}             % compact slanted in-line fractions (\nicefrac)
 \usepackage{empheq}               % \empheq environment for boxing equations
 \usepackage{mathrsfs}             % \mathscr --- used for the Hilbert space
+\usepackage{siunitx}
 
+% --- siunitx units setup ------------------------------------------------
+\sisetup{per-mode=symbol-or-fraction} % 'slash' in ines; normal fraction in math-block
+\sisetup{range-units = single} % setup of range units
+\sisetup{range-phrase = {\text{~to~}}}   % system-wide rangephrase; \qtyrange[range-phrase=---]{0.7}{2.1}{\joule\per\cm^2} for per-instance changes
 
 % --- floats, tables, graphics ----------------------------------------
 \usepackage{graphicx}             % include images (\includegraphics)
