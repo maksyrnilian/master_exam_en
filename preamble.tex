@@ -100,6 +100,13 @@
     {\underline}             % Underlines the heading text
 \titlespacing*{\section}{0pt}{3cm}{0.75cm}
 
+% --- postulate environment -------------------------------------------
+\newenvironment{postulate}[1]
+    {\par\needspace{3\baselineskip}\medskip
+     \begingroup\leftskip=1.5em \rightskip=1.5em
+     \noindent\textbf{Postulate ---\ #1.}\ \itshape\ignorespaces}
+    {\par\endgroup\medskip}
+
 % --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
 \newcommand{\Ham}{\mathcal{H}}				        % Hamiltonian	
