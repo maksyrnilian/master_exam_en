@@ -268,59 +268,148 @@
         Moreover, Newton assumed that time is absolute, which was only countered 300 years later by Einstein and his theory of relativity, where Galilean transformations are replaced by the Lorentz transformations and they agree only in the limits of small $v \ll c$ to the factor of $\gamma$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena. Again, certain phenomena are inherently relativistic and cannot be explained with classical mechanics, even ones that are directly observable.
         \todo{like?}
 
+
+
 \section{The postulates of quantum mechanics; measurement, state of a physical system}
 \label{sec:postulates}
 
-    \subsection{Language of quantum mechanics}\label{sec:qm-language}
+    \subsection{Vocabulary and notation}
+    \label{sec:qm-language}
 
-    The \emph{state} of a quantum system is described by a \emph{state vector}, written $\ket{\psi}$ (equivalently by a \emph{wave function} $\psi(x)$, which is just the list of that vector's components in the position basis). Measurable quantities such as position, momentum or energy are represented by \emph{operators}: objects that act on a state vector and return another one, and which, once a basis is chosen, are simply matrices. The values a measurement can return are the \emph{eigenvalues} of the corresponding operator, and the squared amplitude of the state fixes the probability of each outcome. The postulates below make these ideas precise.
-    \todo{Add a matric multiplication rule}
-
-    \subsection{Postulates of quantum mechanics}
+        The \emph{state} of a quantum system is described by a \emph{state vector}, written $\ket{\psi}$. It contains everything there is to know about the system. Measurable quantities such as position, momentum or energy are represented by \emph{operators}: objects that act on a state vector and return another one, and which, once a basis is chosen, are simply matrices.\footnote{A matrix acts on a column vector row by row, $(\hat{A}\psi)_i = \sum_j A_{ij}\psi_j$, and two matrices multiply by the same rule, $(AB)_{ij} = \sum_k A_{ik}B_{kj}$, taking the $i$-th row of the left factor against the $j$-th column of the right one. The order matters: in general $AB \neq BA$, which is exactly what the commutator of \cref{sec:uncertainty} measures.} 
         
-        Historically the quantisiation of energy, $E = \hbar\omega$, would be considered a defining feature of quantum mechanics or a postulate, but the reality is more nuanced. An unbound system has continuous energy spectrum, and the quantisation of energy is a consequence of the boundary conditions or confinement of the system. It is a mathematical feature similar to a guitar string having qunatised frequencies. The postulates of quantum mechanics (QM) are fundamental.
+        The values a measurement can return are the \emph{eigenvalues} of the corresponding operator, that is, the numbers $a$ for which $\hat{A}\ket{\phi} = a\ket{\phi}$ for some state $\ket{\phi}$, called an \emph{eigenvector}.
 
-        \paragraph{Quantum State}
+        The state vectors live in a \emph{Hilbert space} $H$: a complex vector space equipped with a scalar product. Written in a basis, $\ket{\psi}$ is a column of complex numbers, and the \emph{bra} $\bra{\psi} = \ket{\psi}^{\dag}$ is the corresponding row with every entry complex-conjugated ($\dag$ denotes this operation, the \emph{Hermitian conjugate}). Pairing a bra with a ket gives the \emph{Hermitian scalar product} \todo{and transpose} \todo{add matric multiplication graphic}
 
-            The state of a quantum system is described by a state vector $\ket{\psi}$, which is an element of a complex Hilbert space $H$. The state vector contains all the information about the system, and its evolution is governed by the Schrödinger equation. The state vector can be expressed in different bases, such as position or momentum, and can be represented as a wave function $\psi(x)$ in the position basis.
+        \begin{equation*}
+            \braket{\phi|\psi} = \sum_{k}\phi_{k}^{*}\psi_{k} \in \mathbb{C},
+        \end{equation*}
 
-        \paragraph{Operators}
+        which satisfies $\braket{\phi|\psi} = \braket{\psi|\phi}^{*}$, so that $\braket{\psi|\psi} \geq 0$ is real and its square root is the length of the vector. A basis is \emph{orthonormal} when $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\delta_{kl}$ is the Kronecker delta, equal to $1$ when $k=l$ and to $0$ otherwise, so that distinct basis states are orthogonal and each has unit length. (It is not the Dirac delta, which takes over this role only for a basis with a continuous label, such as position.)
 
-            All measurable quantities (observables) are represented by Hermitian lienar operators $\hat{A}$ acting on the Hilbert space of states. The eigenvalues of the operator are the possible results of a measurement of the observable, and the corresponding eigenvectors are the states in which the system is found after the measurement.
+        The number $\braket{\phi|\psi}$ is called a \emph{probability amplitude}. It is complex, so it carries a magnitude \emph{and} a phase, and the probability of the corresponding outcome is its squared modulus. Probabilities themselves cannot cancel, whereas amplitudes can, and that is the origin of every interference effect in quantum mechanics.
 
-        \paragraph{Observables and the collapse}
-
-            The only values that are obtained in a measurement of an 
-            observable “A” are the eigenvalues “an” of the corresponding operator “ A ˆ”. The 
-            measurement changes the state of the system to the eigenfunction of A ˆ with 
-            eigenvalue an. 
-
-        \paragraph{Born rule of probability}
-
-            the average value of an observable corresponding to A ˆ is...
-
-        \paragraph{Evolution}
-
-            The time evolution of the state vector is governed by the Schrödinger equation, which describes how the state changes over time. The Schrödinger equation is a linear partial differential equation that relates the time derivative of the state vector to the Hamiltonian operator, which represents the total energy of the system.
+        Throughout the note the following convention is used:
 
         \begin{itemize}
-            \item \emph{Light and matter transfer energy to one another in finite portions}
-            \begin{equation*}
-                E = \hbar\omega
-            \end{equation*}
-            \item \emph{The superposition principle.} If it is possible to prepare a physical system (e.g.\ a particle) both in state A and in state B, then it is also possible to prepare the system under consideration in the superposed state ``A + B'', realising both alternatives at once. The further evolution of the system is linear, and at any later instant the system is in a superposition of the evolved states A and B. In other words: the individual terms of the superposition ``do not know'' about one another.
-            \item \emph{Hilbert space and the representation of the quantum state.} The set of all possible quantum states of any physical system has the structure of a linear vector (Hilbert) space $H$. To all distinguishable quantum states there correspond basis vectors $\ket{\psi_{k}} \in H$ of this space. The orthonormality of the basis is given by the scalar product $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$, where $\delta_{kl}$ is the Kronecker delta, equal to $1$ when $k=l$ and to $0$ otherwise, so that distinct basis states are orthogonal and each is normalised to unit length. (It is not the Dirac delta, which takes over this role only for a basis with a continuous label, such as position.) Here $\bra{\psi_{k}} = \ket{\psi_{k}}^{\dag}$ is the Hermitian conjugate of the basis vector. The vector $\bra{\psi_{k}}$ is referred to as a bra, while the vector $\ket{\psi_{k}}$ is called a ket. The dimension of the Hilbert space $H$ may be finite or infinite. Superpositions of states correspond to linear combinations of the basis vectors, $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$, where $c_{k} \in \mathbb{C}$.
-            \item \emph{Results of physical measurements on quantum states.} Every degree of freedom can be measured. For a system in the state $\ket{\psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ we may, for example, perform a measurement by which we check which of the possibilities $\ket{\psi_{k}}$ is realised. In this situation it is not possible to predict the outcome of the measurement before it is carried out. It is, however, possible to determine the probability of obtaining a given outcome. In the case under consideration, the probability $P_{k}$ of finding the system in the state $\ket{\psi_{k}}$ is $P_{k} = |c_{k}|^{2}$. The complex quantity $c_{k}$ is called the probability amplitude.
+            \item $\ket{\psi}$, $\ket{\phi}$ --- abstract state vectors, written without an argument.
+            \item $\Psi(x,t)$, $\Phi(x,t)$ --- capitals denote the full, time-dependent wave function, that is, the components of the state vector in the position basis.
+            \item $\psi(x)$, $\phi(x)$ --- lower case denotes the time-independent part alone, such as a solution of the time-independent Schrödinger equation. For a state of definite energy the two are related by $\Psi(x,t) = \psi(x)\,e^{-iEt/\hbar}$.
+            \item $\ket{\psi_{k}}$ --- the basis states in which a state is expanded.
+            \item $\ket{\phi_{k}}$ --- the eigenstates of the observable actually being measured, that is, the outcome states of a particular apparatus.
+            \item $\hat{A}$ --- a hat marks an operator, to distinguish it from the number $a$ that a measurement of it returns.
         \end{itemize}
+
+    \paragraph{A concrete example}
+
+        The smallest useful Hilbert space is the two-dimensional one describing the spin of an electron. Take as basis the states $\ket{\uparrow}$ and $\ket{\downarrow}$, spin up and down along the $z$ axis, and write them as columns. The observable ``$z$-component of spin'' is then the matrix
+
+        \begin{equation*}
+            \ket{\uparrow} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}, \qquad
+            \ket{\downarrow} = \begin{pmatrix} 0 \\ 1 \end{pmatrix}, \qquad
+            \hat{S}_{z} = \frac{\hbar}{2}\begin{pmatrix} 1 & 0 \\ 0 & -1 \end{pmatrix}.
+        \end{equation*}
+
+        Multiplying out, $\hat{S}_{z}\ket{\uparrow} = +\tfrac{\hbar}{2}\ket{\uparrow}$ and $\hat{S}_{z}\ket{\downarrow} = -\tfrac{\hbar}{2}\ket{\downarrow}$, so the two basis states are eigenvectors and the only possible results of the measurement are the eigenvalues $\pm\hbar/2$. Now consider the superposition
+
+        \begin{equation*}
+            \ket{\Psi} = \frac{1}{\sqrt{2}}\left(\ket{\uparrow} + \ket{\downarrow}\right)
+            = \frac{1}{\sqrt{2}}\begin{pmatrix} 1 \\ 1 \end{pmatrix}.
+        \end{equation*}
+
+        The amplitude for finding spin up is $\braket{\uparrow|\Psi} = 1/\sqrt{2}$, so the probability is $|1/\sqrt{2}|^{2} = \tfrac12$, and likewise for spin down. The mean value is $\ev{\hat{S}_{z}} = \bra{\Psi}\hat{S}_{z}\ket{\Psi} = \tfrac12\left(\tfrac{\hbar}{2}\right) + \tfrac12\left(-\tfrac{\hbar}{2}\right) = 0$, a number that is never itself observed in a single run. This state is not undetermined in every respect: it is an exact eigenvector of the $x$-component
+        $\hat{S}_{x} = \tfrac{\hbar}{2}\left(\begin{smallmatrix} 0 & 1 \\ 1 & 0 \end{smallmatrix}\right)$
+        with eigenvalue $+\hbar/2$. Having a sharp $x$-component costs it all knowledge of the $z$-component, which is the uncertainty principle (\cref{sec:uncertainty}) in its simplest form.
+
+    \subsection{The postulates}
+    \label{sec:qm-postulates}
+
+        Historically the quantisation of energy, $E = \hbar\omega$, would have been taken as the defining feature of quantum mechanics, but the reality is more nuanced. An unbound system has a continuous energy spectrum, and quantisation is a consequence of confinement or of boundary conditions, in the same way that a guitar string fixed at both ends has a discrete set of frequencies. Quantisation therefore \emph{follows from} the postulates rather than being one of them.
+
+        \paragraph{I.\ The state}
+
+            The state of a system is a vector $\ket{\Psi}$ of unit length in a complex Hilbert space $H$. Any linear combination of possible states is again a possible state (the superposition principle).
+
+        \paragraph{II.\ Observables}
+
+            Every measurable quantity is represented by a Hermitian operator $\hat{A} = \hat{A}^{\dag}$ acting on $H$.
+
+        \paragraph{III.\ Outcomes and collapse}
+
+            The only possible result of measuring $\hat{A}$ is one of its eigenvalues $a_{k}$. Immediately after the measurement the system is in the corresponding eigenstate $\ket{\phi_{k}}$.
+
+        \paragraph{IV.\ The Born rule}
+
+            The probability of obtaining the outcome $a_{k}$ is the squared modulus of the amplitude,
+
+            \begin{equation}\label{eq:born}
+                P_{k} = \left|\braket{\phi_{k}|\Psi}\right|^{2},
+            \end{equation}
+
+            so that the mean of many repeated measurements is $\ev{\hat{A}} = \braket{\Psi|\hat{A}|\Psi}$.
+
+        \paragraph{V.\ Time evolution}
+
+            Between measurements the state evolves smoothly and reversibly according to the Schrödinger equation,
+
+            \begin{equation}\label{eq:tdse}
+                i\hbar\frac{d}{dt}\ket{\Psi\left(t\right)} = \hat{H}\ket{\Psi\left(t\right)},
+            \end{equation}
+
+            where $\hat{H}$ is the Hamiltonian, the operator of the total energy.
+
+        \paragraph{VI.\ Composite systems}
+
+            The Hilbert space of a system made of several parts, or having several degrees of freedom, is the tensor product of the spaces of the parts, $H = \bigotimes_{i} H_{i}$.
+
+        Postulates I--II say what a state is and what an observable is, III--IV say what happens when we look, V says what happens when we do not, and VI says how systems are combined. The remaining subsections expand each of these in turn.
+
+    \subsection{Superposition and the Hilbert space}
+
+        To all distinguishable states of a system there correspond basis vectors $\ket{\psi_{k}} \in H$, and a general state is a linear combination of them,
+
+        \begin{equation*}
+            \ket{\Psi} = \sum_{k}c_{k}\ket{\psi_{k}}, \qquad c_{k} \in \mathbb{C},
+        \end{equation*}
+
+        with $\sum_{k}|c_{k}|^{2} = 1$ for a normalised state. The dimension of $H$ may be finite (two, for the spin above) or infinite (for a particle on a line).
+
+        The physical content of this is the \emph{superposition principle}. If a system can be prepared in state A and can be prepared in state B, then it can also be prepared in the combination ``A + B'', realising both alternatives at once. The evolution is linear, so at any later instant the system is in a superposition of the separately evolved states A and B. In other words, the individual terms of the superposition ``do not know'' about one another.
+
+        Two technical remarks are worth carrying. First, only relative phases between the terms of a superposition matter, since multiplying the whole state by a constant phase $e^{i\alpha}$ changes no probability. Second, a Hermitian operator is used for observables because its eigenvalues are guaranteed real, as measured numbers must be, and its eigenvectors form an orthonormal basis, so the possible outcomes are mutually exclusive and exhaust the possibilities.
+
+    \subsection{Systems with several degrees of freedom}
+
+        If a system has more than one degree of freedom (a photon, for instance, carries both a position and a polarisation), each degree of freedom has its own Hilbert space $H_{i}$, and the space of the whole system is their \emph{tensor product}, $H = \bigotimes_{i}H_{i}$. In practice this means taking as a basis every combination of a basis state of the first factor with a basis state of the second, so that the dimensions multiply rather than add: a two-state spin combined with a three-state degree of freedom gives a six-dimensional space. A state that cannot be written as a single such combination is called \emph{entangled}, and the parts then have no separate states of their own.
+        \todo{Possibly cut: is the tensor product needed for an oral answer?}
+
+    \subsection{Measurement and mean values}
+
+        A measurement yields one of several outcomes, each corresponding to finding the system in a state $\ket{\phi_{k}}$ with probability $P_{k} = |\braket{\phi_{k}|\Psi}|^{2}$ (\cref{eq:born}). Here $\ket{\Psi}$ is the state the system is actually in, while the $\ket{\phi_{k}}$ are the states the particular apparatus can return as its outcomes, a basis singled out by the measurement, which need not be the basis $\ket{\psi_{k}}$ used to write the state down. Assigning a real value $a_{k} \in \mathbb{R}$ to each outcome, the mean outcome is the classical probability average
+
+        \begin{equation*}
+            \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\Psi}|^{2} = \bra{\Psi}\hat{A}\ket{\Psi},
+        \end{equation*}
+
+        where $\ket{\phi_{k}}\bra{\phi_{k}}$ is the projection operator onto $\ket{\phi_{k}}$ (it picks out the $\ket{\phi_{k}}$ component of a state) and
+
+        \begin{equation*}
+            \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}.
+        \end{equation*}
+
+        To every observable there corresponds such a Hermitian operator, whose mean value in the state $\ket{\Psi}$ is $\ev{\hat{A}} = \braket{\Psi|\hat{A}|\Psi}$.
+
+        Two caveats. If several states share one eigenvalue (a \emph{degenerate} outcome), the measurement leaves the system in its projection onto that whole set of states, renormalised, rather than in one definite state. And the collapse of III is the one step in the theory that is neither smooth nor reversible, in contrast to the evolution of V, which is the root of the measurement problem.
 
     \subsection{The law of composition of probability amplitudes}
 
         Two rules govern how amplitudes combine. If a process consists of several steps in succession, its amplitude is the \emph{product} of the amplitudes of the individual steps. If instead a process can come about in several alternative ways, and nothing in the experiment records which way was taken, its amplitude is the \emph{sum} of the amplitudes of the alternatives. Probabilities are formed only at the very end, by taking the squared modulus of the total amplitude.
 
-        The double slit shows why the second rule matters. Let $A_1$ be the amplitude for a photon to reach a chosen point of the screen by way of slit 1, and $A_2$ the amplitude for it to reach the same point by way of slit 2. With both slits open and nothing recording which one was used, the two alternatives are indistinguishable, so the amplitudes are added and the probability of arrival is
+        The double slit shows why the second rule matters. Let $A_{1}$ be the amplitude for a photon to reach a chosen point of the screen by way of slit 1, and $A_{2}$ the amplitude for it to reach the same point by way of slit 2. With both slits open and nothing recording which one was used, the two alternatives are indistinguishable, so the amplitudes are added and the probability of arrival is
 
         \begin{equation*}
-            P = |A_1 + A_2|^{2} = |A_1|^{2} + |A_2|^{2} + 2\,\mathrm{Re}\!\left(A_1^{*}A_2\right).
+            P = |A_{1} + A_{2}|^{2} = |A_{1}|^{2} + |A_{2}|^{2} + 2\,\mathrm{Re}\!\left(A_{1}^{*}A_{2}\right).
         \end{equation*}
 
         The final term is the interference term. It depends on the relative phase of the two amplitudes, which changes across the screen as the difference between the two path lengths changes, and it is what produces the fringes.
@@ -328,67 +417,52 @@
         If a detector is now added that records which slit the photon went through, the alternatives become distinguishable. They are then two separate processes, each with its own probability, and it is the probabilities that add:
 
         \begin{equation*}
-            P = |A_1|^{2} + |A_2|^{2},
+            P = |A_{1}|^{2} + |A_{2}|^{2},
         \end{equation*}
 
         with no interference term and no fringes. Amplitudes add when the alternatives are not distinguished, probabilities add when they are.
 
-    \subsection{Measurement of a quantum system}
+    \subsection{Time evolution of the state}
 
-        \begin{itemize}
-            \item \emph{Observables.} A measurement yields one of several outcomes, each corresponding to finding the system in a state $\ket{\phi_{k}}$ with probability $P_{k} = |\braket{\phi_{k}|\psi}|^{2}$. Here $\ket{\psi}$ is the state the system is actually in, while the $\ket{\phi_{k}}$ are the states the particular apparatus can return as its outcomes---a basis singled out by the measurement, which need not be the basis $\ket{\psi_{k}}$ used above to write the state down. Assigning a real value $a_{k} \in \mathbb{R}$ to each outcome, the mean outcome is the classical probability average
-            \begin{equation*}
-                \sum_{k}a_{k}P_{k} = \sum_{k}a_{k}|\braket{\phi_{k}|\psi}|^{2} = \bra{\psi}\hat{A}\ket{\psi},
-            \end{equation*}
-            where $\ket{\phi_{k}}\bra{\phi_{k}}$ is the projection operator onto $\ket{\phi_{k}}$ (it picks out the $\ket{\phi_{k}}$ component of a state) and
-            \begin{equation*}
-                \hat{A} = \sum_{k}a_{k}\ket{\phi_{k}}\bra{\phi_{k}}.
-            \end{equation*}
-            To every observable there corresponds such a Hermitian operator $\hat{A} = \hat{A}^{\dag}$, whose mean value in the state $\ket{\psi}$ is
-            \begin{equation*}
-                \ev{\hat{A}} = \braket{\psi|\hat{A}|\psi}.
-            \end{equation*}
-        \end{itemize}
+        Two states that are distinguishable at the start stay distinguishable as they evolve. Distinguishability is measured by the overlap $\braket{\Phi|\Psi}$, so we postulate that time evolution leaves all such scalar products unchanged. Evolution of this kind is called \emph{unitary}, and it is the content of \cref{eq:tdse} (the same equation is met again in \cref{eq:schrodinger}).
 
-    \subsection{Time evolution of the quantum state}
+        If the Hamiltonian does not itself depend on time, the equation separates. The spatial part satisfies the time-independent Schrödinger equation,
 
-        \begin{itemize}
-            \item \emph{Unitarity of the evolution.} Two states that are distinguishable at the start stay distinguishable as they evolve. Distinguishability is measured by the overlap $\braket{\phi|\psi}$, so we postulate that time evolution leaves all such overlaps (scalar products) unchanged. Evolution that preserves scalar products in this way is called unitary.
-            \item \emph{Evolution equation of the quantum state vector}
-            \begin{equation*}
-                i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
-            \end{equation*}
-            In the case of a time-independent Hamiltonian:
-            \begin{equation}\label{eq:tise}
-                \hat{H}\ket{\psi\left(r\right)} = E\ket{\psi\left(r\right)}
-            \end{equation}
-            \begin{equation*}
-                \ket{\psi\left(r,t\right)} = e^{-\frac{i}{\hbar}Et}\ket{\psi\left(r\right)}
-            \end{equation*}
-        \end{itemize}
+        \begin{equation}\label{eq:tise}
+            \hat{H}\ket{\psi} = E\ket{\psi},
+        \end{equation}
+
+        which is just the eigenvalue problem for the energy, and the full state then differs from it only by a rotating phase,
+
+        \begin{equation*}
+            \ket{\Psi\left(t\right)} = e^{-\frac{i}{\hbar}Et}\ket{\psi}.
+        \end{equation*}
+
+        Such a state is called \emph{stationary}, because the phase cancels in every squared modulus and so no probability changes with time. This is also where $E = \hbar\omega$ comes from: the phase turns at the angular frequency $\omega = E/\hbar$.
 
     \subsection{The wave function}
 
-        The wave function is a mathematical description of the quantum state. It takes complex values, and its squared modulus has the interpretation of a probability density over the space on which it is defined.
-
-        % NOTE: the source has \int_{b}^{b}; the lower limit should be a.
-        \begin{equation*}
-            P_{a \le x \le b}\left(t\right) = \int^{b}_{a}|\Psi(x,t)|^{2}dx
-        \end{equation*}
-
-        The wave function satisfies a normalisation condition:
+        The wave function is the state vector written out in the position basis. It takes complex values, and its squared modulus is a probability density, so that
 
         \begin{equation*}
-            \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1
+            P_{a \le x \le b}\left(t\right) = \int^{b}_{a}|\Psi(x,t)|^{2}dx,
         \end{equation*}
 
-        Knowing the form of the wave function, the quantum state vector may be determined:
+        subject to the normalisation condition
 
         \begin{equation*}
-            \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}dx
+            \int^{\infty}_{-\infty}|\Psi(x,t)|^{2}dx = 1.
         \end{equation*}
 
-        Here $\ket{x}$ is the state of a particle located definitely at the point $x$. These states form a basis in exactly the sense used above, except that their label is continuous rather than discrete, so the sum over basis states $\ket{\Psi} = \sum_{k}c_{k}\ket{\psi_{k}}$ becomes an integral. The wave function $\Psi(x,t)$ is then simply the set of components of $\ket{\Psi}$ in that basis, that is, the amplitude for finding the particle at $x$.
+        Knowing the wave function, the state vector may be recovered as
+
+        \begin{equation*}
+            \ket{\Psi\left(t\right)} = \int \Psi\left(x,t\right)\ket{x}\,dx .
+        \end{equation*}
+
+        Here $\ket{x}$ is the state of a particle located definitely at the point $x$. These states form a basis in exactly the sense used above, except that their label is continuous rather than discrete, so the sum over basis states becomes an integral and the orthonormality condition $\braket{\psi_{k}|\psi_{l}} = \delta_{kl}$ is replaced by $\braket{x|x'} = \delta(x-x')$ with the Dirac delta. The wave function is then simply the set of components of $\ket{\Psi}$ in that basis, $\Psi(x,t) = \braket{x|\Psi(t)}$, that is, the amplitude for finding the particle at $x$.
+
+
 
 \section{Angular momentum and the phenomenon of precession --- classical and quantum description}
 
