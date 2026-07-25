@@ -1,6 +1,10 @@
 # STYLE.md
 
-House style for the revision note. Settled while rewriting `pos_qm.tex`. Apply to every section so the finished document is uniform.
+House style for the revision note. Apply to every section so the finished document is uniform.
+
+## General
+
+Notes should avoid repetition. If something is explained and defined somehwere and is relevant somewhere else it should be assigned a label by `\label{}` referenced by `\cref{}` (sections, equations, etc.). Generally, if two places warrant a certain definition in a comparable way, it should be given in the section that appears earlier but referenceing stuff that appears later is also acceptable if this stuff is more needed there. 
 
 ## Emphasis
 
@@ -44,6 +48,7 @@ Bold never appears inside a sentence. If a term is important enough to stand out
 | `\varepsilon_{0}` | vacuum permittivity. Never `\epsilon_{0}` |
 | `\varphi` | electric scalar potential --- `\Phi` is reserved for a wave function |
 | `\rho_{\text{f}}`, `\rho_{\text{b}}` | free and bound charge, likewise `\vec{J}_{\text{f}}`, `\vec{J}_{\text{b}}`. Subscripts in `\text{}`, never italic |
+| `f` | denotes frequency, not nu |
 
 ## Quantum-mechanics notation
 

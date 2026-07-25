@@ -1,10 +1,11 @@
 % !TeX root = main.tex
 \section{Physical foundations of optical spectroscopy; electronic, vibrational and rotational excitations of molecules and the corresponding ranges of the electromagnetic spectrum}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 3 starts here}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: added the energy ordering of the three excitation types with rough scales, tying each to its spectral range.}
 
     Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.
 
     A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. The larger the energy of a transition, the higher the frequency (and the shorter the wavelength) of the photon absorbed or emitted, since $E = h\nu$. In decreasing order of energy these are electronic, vibrational and rotational excitations. In molecules all three can be present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it.
+    
+    \todo{expand a little the subsectins below, and give the corresponding ranges of the electromagnetic spectrum. check correctness. give wavelegnths}
 
     \subsection{Electronic excitations}
 
@@ -19,9 +20,9 @@
         Rotational excitations are changes in the rotation of a molecule about its centre of mass, and so change its angular momentum. They are the smallest energy steps of the three (of order a few $\mathrm{meV}$) and lie in the far-infrared and microwave range. Together with the vibrational spectra they are a rich source of information about molecular structure, though the resulting spectra can be dense and hard to disentangle.
 
 \section{Phenomena accompanying the interaction of electromagnetic radiation with atoms and molecules; stimulated and spontaneous emission, absorption}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: tightened the three processes and made explicit why stimulated emission gives identical (coherent) photons, hence lasers.}
 
-    An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon (stimulated emission). The condition in every case is that the photon energy $h\nu$ match the gap between two levels.
+    An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon (stimulated emission). The condition in every case is that the photon energy $h\nu$ match the gap between two levels.\todo{maybe a little richer introduction.}
+    \todo{mention einstein coeffcients formalism somehow}
 
     \subsection{Absorption}
 
@@ -46,7 +47,7 @@
         \textbf{Stimulated emission} is the emission of a photon triggered by an incoming photon whose energy equals the level gap. The triggering photon is \emph{not} absorbed, it only sets the process off. The emitted photon is a copy of it: same frequency, phase, polarisation and direction of travel. A beam built from such identical photons is \emph{coherent}, and this multiplication of identical photons is the physical basis of the laser.
 
 \section{Atoms in strong electric and magnetic fields (the Stark effect, the Zeeman effect); experimental methods of studying spin}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: the source's ``second-order'' Stark calculation is actually degenerate first-order perturbation theory in the $n=2$ manifold (fixed) --- split the Stark effect into the quadratic ground-state case and the linear $n=2$ case, corrected the Zeeman energy shifts (the $\hbar$ cancels, giving $\muB B m_l$) and distinguished the weak-field anomalous shift (Land\'e $g_J$) from the strong-field $(m_l+2m_s)$ form.}
+\todo{another todo flag require zeeman effect but here is a better place for it}
 
     \paragraph{The Stark effect}
 
@@ -126,10 +127,10 @@
 
     \paragraph{Experimental methods of studying spin}
 
-    The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\tfrac12$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds).
+    The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\tfrac12$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}
+    \todo{are there other imporant methods?}
 
 \section{Thermal radiation; the emissive and absorptive power of bodies, Kirchhoff's law, black-body radiation}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the Planck expression given is the spectral emissive power $2\pi h\nu^{3}/c^{2}\cdot(e^{h\nu/\kB T}-1)^{-1}$. Wien ($\lambda_{\max}=b/T$) and Stefan--Boltzmann ($\Phi=\sigma T^{4}$) confirmed.}
 
     Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the thermal motion of its charged particles. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises. The key idealisation is the \textbf{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature.
 
@@ -152,9 +153,9 @@
         \end{equation}
 
         Two limiting laws follow from it: \textbf{Wien's displacement law}, giving the wavelength of peak emission, $\lambda_{\max} = b/T$ (so hotter bodies peak at shorter wavelengths), and the \textbf{Stefan--Boltzmann law}, giving the total power radiated per unit area, $\Phi = \sigma T^4$.
+        \todo{planck's law and uv catastrophe account}
 
-\section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the mislabelled $\psi_2$, trimmed the Young's-fringe algebra to the result needed orally, kept the bright/dark path-difference conditions and Bragg's law.}
+\section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}\todo{define what is a crystal---is it defined by ionic bonds? is metal a crystal? do not answer the last question in text unless needed}
 
     \subsection{Interference and coherence}
 
@@ -197,10 +198,9 @@
 
         Although the reinforced beam emerges at an angle equal to the angle of incidence, so the effect is often loosely called ``reflection'', it differs from ordinary reflection: it uses the whole three-dimensional stack of atomic planes rather than just the surface, occurs only at the special Bragg angles rather than at every angle, and yields a much weaker beam than a good mirror.
 
-\section{Indistinguishability of elementary particles; the connection between spin and statistics, Bose--Einstein condensation}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: kept the exchange-phase argument but tightened it, added the quantum-field-excitation picture of indistinguishability, clarified the $k$ notation clash flagged in the source, and verified the condensation temperature constant ($\approx 3.31$, i.e.\ $2\pi/\zeta(3/2)^{2/3}$).}
+\section{Indistinguishability of elementary particles; the connection between spin and statistics, Bose--Einstein condensation}\todoper{good video on yt about it}
 
-    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments. In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field, much as two middle-C notes sounded on identical strings are the same excitation of the same kind of system rather than two notes that merely happen to match. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:
+    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments. In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field, much as two middle-C notes sounded on identical strings are the same excitation of the same kind of system rather than two notes that merely happen to match. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:\todo{verify that the analogy with guitar is good}
 
     \begin{equation}\label{eq:identical}
         \psi(1,2,\dots,N,t) = e^{i\varphi}\,\psi(2,1,\dots,N,t).
@@ -229,9 +229,8 @@
     with $n$ the number density of atoms and $m$ the mass of one atom.
 
 \section{Statistical ensembles; classical and quantum statistics, thermodynamic potentials and their connection with the partition functions of the corresponding ensembles}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the canonical sum (over microstates $r$, not over the $N$ particles), and made explicit which macroscopic variable is fixed in each ensemble and which potential it yields.}
 
-    A statistical ensemble is a large imaginary collection of copies of a system, each in some microscopic state (microstate) consistent with the same fixed macroscopic conditions. Averaging over the ensemble reproduces the macroscopic (thermodynamic) properties. The three standard ensembles differ in which macroscopic quantities are held fixed, and each is tied to a particular thermodynamic potential through its partition function (the weighted count of microstates).
+    A statistical ensemble is a large imaginary collection of copies of a system, each in some microscopic state (microstate) consistent with the same fixed macroscopic conditions. Averaging over the ensemble reproduces the macroscopic (thermodynamic) properties. The three standard ensembles differ in which macroscopic quantities are held fixed, and each is tied to a particular thermodynamic potential through its partition function (the weighted count of microstates).\todo{what is a partition fucnion?}
 
     \subsection{The microcanonical ensemble}
 
@@ -249,7 +248,7 @@
             Q_N(V,T) = \sum_{r}\exp\left(-E_r / \kB T\right).
         \end{equation}
 
-        It yields directly the Helmholtz free energy,
+        It yields directly the Helmholtz free energy,\todo{in the paragraph, explain terms that are not obvious: free enrgy, enthalpy, chemical potentital etc. why are these used what is their significance etc. do not just say `...bla h blah it measures avaialbe work...` i want a full explanataion that shows that.}
 
         \begin{equation}\label{eq:helmholtz}
             A = -\kB T\log Q_N .
@@ -283,14 +282,14 @@
             \begin{equation}\label{eq:bose-einstein}
                 \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} - 1}.
             \end{equation}
-        \end{enumerate}
+        \end{enumerate}\todo{something more about distributions. here they are stated with no context and it is not good for an oral answer. equations are least important}
 
         In the classical limit both quantum distributions reduce to the Maxwell--Boltzmann one.
 
 \section{Statistical explanation of the macroscopic properties of systems of very many particles: extensive and intensive parameters of the state of a system, the equation of state, specific heats (of gases and solids), magnetic susceptibilities, etc.}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the van der Waals equation to a consistent $n$-mole form $(p+an^{2}/V^{2})(V-nb)=nRT$, and labelled $c_V,c_p$ as molar heat capacities of a monatomic ideal gas.}
+\todo{in these sections, the connection to `statistical explanation` should be a little more explicit. Do not go into details of statistal mechanics but just make comments about that. is thermodynamics statiscal?}
 
-    \subsection{Extensive and intensive parameters}
+    \subsection{Extensive and intensive parameters}\todo{VdW is explained ehre so make references to here where needed and remove flags about VdW}
 
         State parameters come in two kinds:
 
@@ -341,9 +340,10 @@
         \end{align*}
 
 \section{The Dirac and Klein--Gordon equations; the form of the equations and examples of objects governed by each of them}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: removed the source's ``electron mass increase in a field'' formula $M^{2}=m_0^{2}+\hbar^{3}e^{2}\rho/(\omega c^{2})$, which could not be verified against any standard source and is dimensionally suspect --- replaced the examples with standard ones (spin-0 mesons/Higgs for Klein--Gordon, spin-$\tfrac12$ fermions for Dirac).}
+\todoper{KG eqn is mentioned in QM1.  Look it up}
 
     Both equations are relativistic wave equations, built by combining quantum mechanics with special relativity. They start from the relativistic energy--momentum relation
+    \todo{a more poedagogical approach. entry level infromation about the euations instead of more formal mathematics.}
 
     \begin{equation}\label{eq:rel-energy}
         E^2 = p^2c^2 + m^2c^4,
@@ -351,7 +351,7 @@
 
     and differ in the spin of the particles they describe.
 
-    \paragraph{The Klein--Gordon equation}
+    \paragraph{The Klein--Gordon equation}\todo{the question asks about *form* so add comments about form. maybe their exact spelling wont be necessary but keep it.}
 
     Replacing energy and momentum by the operators $E \to i\hbar\,\partial/\partial t$ and $\vec{p} \to -i\hbar\nabla$ in \cref{eq:rel-energy} gives
 
@@ -359,9 +359,9 @@
         \left( \Box + \frac{m^2c^2}{\hbar^2} \right)\psi(\vec{r},t) = 0,
     \end{equation}
 
-    where $\Box = \tfrac{1}{c^2}\partial_t^2 - \nabla^2$ is the d'Alembertian (the relativistic four-dimensional analogue of the Laplacian). This describes \emph{spin-0} particles (scalar or pseudoscalar), for example pions and other spin-0 mesons, and the Higgs boson. A plane wave $\psi \propto e^{i(\vec k\cdot\vec r - \omega t)}$ solves it, with energy $\varepsilon = \pm c\sqrt{p^2 + m_0^2c^2}$. The appearance of \emph{negative}-energy solutions was the historical difficulty of the equation, and is properly resolved only in quantum field theory, where they are reinterpreted as antiparticles.
+    where $\Box = \tfrac{1}{c^2}\partial_t^2 - \nabla^2$ is the d'Alembertian\todo{are these 4-dim nabla etc?} (the relativistic four-dimensional analogue of the Laplacian). This describes \emph{spin-0} particles (scalar or pseudoscalar), for example pions and other spin-0 mesons, and the Higgs boson. A plane wave $\psi \propto e^{i(\vec k\cdot\vec r - \omega t)}$ solves it, with energy $\varepsilon = \pm c\sqrt{p^2 + m_0^2c^2}$. The appearance of \emph{negative}-energy solutions was the historical difficulty of the equation, and is properly resolved only in quantum field theory, where they are reinterpreted as antiparticles.
 
-    \paragraph{The Dirac equation}
+    \paragraph{The Dirac equation}\todo{explain in a klittle more detailss and rexplain the terms. what are four graduiant, gamma matrices, pauli matrices etc. I see it for the first time.}
 
     Dirac sought an equation \emph{first} order in time (and space), which forces the wave function to have several components. For a free particle,
 
@@ -387,7 +387,8 @@
     with $\sigma_i$ the Pauli matrices. The Dirac equation describes \emph{spin-$\tfrac12$} particles (fermions such as electrons and quarks), both free and coupled to the electromagnetic field. Its successes are striking: spin emerges automatically from the mere requirement of relativistic invariance, it reproduces the fine structure of the hydrogen spectrum, and it predicts the existence of antiparticles.
 
 \section{The structure of atomic nuclei and nuclear reactions; nuclear binding energy, fission and fusion reactions, alpha and beta decay, radioactive decay series, the limits of the world of nuclides}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected ``four natural'' decay series to three (the neptunium series is extinct), and fixed the self-contradictory drip-line paragraph using current experimental limits (proton drip line crossed to $Z=83$ but firmly established only to $\sim Z=13$, and the neutron drip line confirmed only to neon, $Z=10$).}
+\todo{Improve the section. Mention more about the binding energy and mass. How heavy nucleous emit energy when they break but light emit energy when they fuse. what is the name of the function that shows the jumps between values of Z. etc. What is a nuclide?}
+\todo{roughly all values of Z should have mentioned the mechanism in which they get created.}
 
     The atomic nucleus is made of protons and neutrons, collectively \textbf{nucleons}. The number of protons ($Z$) fixes the chemical element, and the number of neutrons distinguishes its isotopes. The nucleons are held together by the strong nuclear force, far stronger than the electromagnetic force but of very short range (about $1$--$2$~femtometres).
 
@@ -416,11 +417,10 @@
     \end{itemize}
 
 \section{Nucleosynthesis and the energy sources of stars}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Verified: the ${}^{56}$Fe (lowest mass per nucleon) versus ${}^{62}$Ni (highest binding energy per nucleon) distinction is correct, as is the ${}^{56}$Ni $\to$ ${}^{56}$Fe route --- tightened the prose.}
 
     The elements are produced in three natural ways (setting decays aside): primordial nucleosynthesis just after the Big Bang, nucleosynthesis by fusion inside stars, and nucleosynthesis in supernova explosions.
 
-    The first protons formed once the Universe had cooled enough for quarks to bind into hadrons (roughly $10^{-6}$~s to $1$~s after the Big Bang). \textbf{Primordial nucleosynthesis} then followed (about $10$~s to $10^{3}$~s), producing the light nuclei: deuterium ($^{2}$H), tritium ($^{3}$H), helium ($^{3}$He and $^{4}$He), lithium ($^{7}$Li) and beryllium ($^{7}$Be). The $^{7}$Be seen today is not primordial, as its half-life is only about $53$~days, it long ago captured an electron and turned into $^{7}$Li.
+    The first protons formed once the Universe had cooled enough for quarks to bind into hadrons (roughly $10^{-6}$~s to $1$~s after the Big Bang). \textbf{Primordial nucleosynthesis} then followed (about $10$~s to $10^{3}$~s), producing the light nuclei: deuterium ($^{2}$H), tritium ($^{3}$H), helium ($^{3}$He and $^{4}$He), lithium ($^{7}$Li) and beryllium ($^{7}$Be). The $^{7}$Be seen today is not primordial, as its half-life is only about $53$~days, it long ago captured an electron and turned into $^{7}$Li.\todo{captured an electron?}
 
     \textbf{Stars} formed much later and drove the next round. Fusing hydrogen into helium and then building up heavier nuclei, they produce elements up to iron. It is often said that fusion ``stops at iron'' because $^{56}$Fe is the most stable nucleus, but this needs care: $^{56}$Fe has the smallest \emph{mass per nucleon}, whereas the largest \emph{binding energy per nucleon} belongs to nickel, $^{62}$Ni (the two differ because the proton and neutron masses are not equal). In practice stellar fusion favours $^{56}$Ni, which is less stable and decays to $^{56}$Fe.
 
@@ -434,10 +434,9 @@
 
     \subsection{The proton--proton chain}
 
-        The \textbf{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It is the main energy source of the Sun and similar stars, and operates in stellar cores at temperatures of a few to a few tens of millions of kelvin.
+        The \textbf{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It is the main energy source of the Sun and similar stars, and operates in stellar cores at temperatures of a few to a few tens of millions of kelvin. \todo{elaborate a little}
 
 \section{Classification of elementary particles; quarks and leptons and the particles transmitting the interactions, the structure of hadrons}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: corrected ``quarks form hadrons in threes'' (baryons are three quarks, mesons a quark--antiquark pair), fixed the ``neutrons'' $\to$ ``neutrinos'' slip, and corrected the lepton charges (charged leptons $-1$, their antiparticles $+1$, neutrinos neutral).}
 
     The building blocks of matter are the \textbf{leptons} and the \textbf{quarks}, both spin-$\tfrac12$ fermions. Leptons can exist on their own, whereas quarks are always found bound inside composite particles (hadrons).
 
@@ -467,9 +466,9 @@
     A hadron must be colour-neutral overall. This is achieved either by combining three quarks of three different colours (a \textbf{baryon}, such as the proton or neutron) or a quark with an antiquark of the matching anticolour (a \textbf{meson}). A useful bookkeeping quantum number is the \emph{baryon number} ($+1$ for baryons, $0$ for mesons). The proton is the lightest baryon, which is why the search for possible proton decay is of such interest.
 
 \section{Band structure of electronic states in crystals; metals, semiconductors, insulators}
-\todo[backgroundcolor=green!25,linecolor=green!55!black]{Rewritten: fixed the ``GaAS'' typo, and noted that the $6$~eV semiconductor/insulator threshold is only a rough convention (other texts place it nearer $3$--$4$~eV) --- band gaps of Ge/Si/GaAs retained.}
+\todo{elaborate a little bit more in this section}
 
-    Band theory is the quantum-mechanical account of electrical conduction. Unlike the classical picture, it starts from the wave nature of electrons and from Fermi--Dirac statistics. Its central idea is the \textbf{energy band}: a continuous range of energies that electrons in a solid may occupy. When many atoms are brought together in a crystal, each sharp atomic level broadens into a band of very closely spaced levels, and between the bands there are \emph{forbidden gaps} where no electron states exist, a consequence of the periodicity of the lattice.
+    Band theory is the quantum-mechanical account of electrical conduction. Unlike the classical picture, it starts from the wave nature of electrons and from Fermi--Dirac statistics. Its central idea is the \textbf{energy band}: a continuous range of energies that electrons in a solid may occupy. When many atoms are brought together in a crystal, each sharp atomic level broadens into a band of very closely spaced levels, and between the bands there are \emph{forbidden gaps} where no electron states exist, a consequence of the periodicity of the lattice. 
 
     For the outer (valence) electrons two bands matter:
 

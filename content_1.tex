@@ -134,9 +134,6 @@
 
     \FloatBarrier
 
-
-
-
 \section{Conservation laws in physics and their connection with symmetry laws}
 \label{sec:conservation}
 
@@ -168,12 +165,12 @@
 
         where $q$ is any coordinate used to specify the configuration of the system and $\dot{q} = \nicefrac{dq}{dt}$. This is the principle of least action (\cref{sec:variational}) in one line, and for a single particle in a potential it returns Newton's second law (\cref{eq:newton2}).
 
-        The two derivatives\todo{a little more concise footnote}\footnote{
+        The two derivatives\footnote{
         A \emph{partial derivative} $\partial f/\partial x$ is the rate of change of $f$ with respect to $x$ when every other argument of $f$ is held fixed, so its value depends entirely on which variables those are --- thermodynamics makes this explicit by writing the held quantities as subscripts, as in $(\partial U/\partial V)_{T}$. A \emph{total derivative} $\mathrm{d}f/\mathrm{d}t$ asks a different question: how $f$ changes along an actual path, counting every route by which $t$ influences it. The \emph{chain rule} connects the two,
         \begin{empheq}[box=\fbox]{equation}
             \frac{\mathrm{d}f}{\mathrm{d}t} = \frac{\partial f}{\partial t} + \sum_{i}\frac{\partial f}{\partial q_{i}}\frac{\mathrm{d}q_{i}}{\mathrm{d}t},
         \end{empheq}
-        for a function $f(q_{1},\dots,q_{n},t)$ whose argu ments $q_{i}$ themselves vary with $t$. The first term is the \emph{explicit} dependence on $t$ --- what changes because the rule defining $f$ was written with a $t$ in it --- and the sum is the \emph{implicit} dependence, what changes because the system has moved. This distinction is the whole content of several standard results. A Lagrangian $\Lagr(q,\dot{q},t)$ with $\partial\Lagr/\partial t = 0$ has no explicit time dependence even though $\mathrm{d}\Lagr/\mathrm{d}t$ is generally nonzero along a trajectory, and it is the vanishing of the \emph{partial} derivative that yields conservation of energy. The same split appears in fluid mechanics as the material derivative $\mathrm{D}/\mathrm{D}t = \partial/\partial t + \vec{v}\cdot\nabla$, separating change at a fixed point in space from change felt by a parcel drifting through the flow.
+        for a function $f(q_{1},\dots,q_{n},t)$ whose arguments $q_{i}$ themselves vary with $t$. The first term is the \emph{explicit} dependence on $t$ --- what changes because the rule defining $f$ was written with a $t$ in it --- and the sum is the \emph{implicit} dependence, what changes because the system has moved. This distinction is the whole content of several standard results.
         } in \cref{eq:euler-lagr} do different jobs. The Lagrangian is treated as a function of three independent slots, $\Lagr(q,\dot{q},t)$, so the partial derivative $\nicefrac{\partial}{\partial q}$ varies $q$ alone and holds $\dot{q}$ and $t$ fixed. The total derivative $\nicefrac{d}{dt}$ is taken after an actual trajectory has been substituted, where $q$ and $\dot{q}$ are themselves functions of time, so by the chain rule it collects every dependence on $t$, the implicit ones as well as the explicit one. 
 
     \subsection{Noether's theorem}
@@ -257,7 +254,6 @@
             \end{equation*}
 
             In words: if turning the apparatus to face a different direction makes no difference to how it behaves, the combination $\vec{r} \times \vec{p}$ cannot change with time.\todoper{Watch Allan Adams on it.}
-
 
 \section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
 \label{sec:newton}
@@ -599,7 +595,7 @@
 
         with $l = 0,1,2,\dots$ and $m = -l,-l+1,\dots,+l$, so an angular momentum of a given magnitude has $2l+1$ allowed orientations. The same pattern holds for $\hat{S}$ with the pair $(s,m_s)$ and for $\hat{J}$ with $(j,m_j)$, except that $s$ and $j$ are allowed to be half-integer. An electron always has $s = \nicefrac{1}{2}$ and therefore $m_s = \pm\nicefrac{1}{2}$, which is where its two states come from.
 
-        For one electron in a hydrogen atom the numbers divide the work between them.\todoper{Not sure if Hydrogen here fits bets but some section should discuss quantum numbers and fine/hyperfine structure.}
+        For one electron in a hydrogen atom the numbers divide the work between them.\todo{Not sure if Hydrogen here fits bets but some section should discuss quantum numbers and fine/hyperfine structure. Avoid repetition. Keep it in one place and refer to it from elsewhere.}
 
         \begin{itemize}
             \item \textbf{Principal, $n = 1,2,3,\dots$} Fixes the energy, $E_{n} = -\nicefrac{13.6\,\mathrm{eV}}{n^{2}}$ (\cref{sec:quantisation}), and roughly the size of the orbital.
@@ -647,7 +643,7 @@
 
         That number is the \emph{action} $S$ (\cref{eq:action}), which can be evaluated for any candidate path and not only for the true one. A quantity that takes in a whole function and returns a single number is called a \emph{functional}, as opposed to an ordinary function, which takes in a number and returns a number.
 
-        The \emph{principle of least action} says that the path followed is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change, written $\delta S = 0$. This is the same condition as $f'(x) = 0$ at the minimum of an ordinary function, with the single variable $x$ replaced by an entire path. Only in the simplest cases is the stationary path a true minimum, so \enquote{least} is something of a historical misnomer---a maximum or a saddle satisfies the condition equally well. \todo{repetition}
+        The \emph{principle of least action} says that the path followed is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change, written $\delta S = 0$. This is the same condition as $f'(x) = 0$ at the minimum of an ordinary function, with the single variable $x$ replaced by an entire path. Only in the simplest cases is the stationary path a true minimum, so \enquote{least} is something of a historical misnomer---a maximum or a saddle satisfies the condition equally well. 
 
         The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route taking the least time, from which the laws of reflection and refraction follow (\cref{eq:snell}). The machinery came from a different kind of problem, the \emph{brachistochrone} (Johann Bernoulli, 1696): of all ramps joining a point to a lower one, find the shape down which a bead released from rest slides in the shortest time. The answer is a cycloid, the curve traced by a point on the rim of a rolling wheel. That is an optimisation posed by the experimenter rather than a law of nature---the bead does not choose its own ramp---so it is not itself an instance of the principle of least action. What the two share is the mathematics: in each, a whole curve is singled out by requiring an accumulated integral to be stationary. Problems of that shape are what the \emph{calculus of variations} of Euler and Lagrange was built for, and it is in that language that the principle of least action is written.\todoper{Check the example online. Maybe skip this historical nuance here.}
 
