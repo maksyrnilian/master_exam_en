@@ -1,49 +1,73 @@
 % !TeX root = main.tex
 \section{The electric field in material media; dielectric polarisation, conductivity, mobility of charge carriers}
-\label{sec:electric-field}\todo[backgroundcolor=blue, textcolor=white, linecolor = blue]{content 2 starts here}
+\label{sec:electric-field}
 
     \subsection{Polarisation}
 
-        Dielectric polarisation is the phenomenon consisting in the formation of electric dipoles, or in the orientation of existing ones, under the influence of an external electric field. As a result of polarisation an internal electric field arises which partially balances the external field. In the linear approximation the polarisation is proportional to the field, $\vec{P} = \varepsilon_0\chi\vec{E}$ (\cref{eq:polarisation-vector}), with $\chi$ the electric susceptibility.\todo{cross refernece is okay but also a full nonlinear expansion should be given}\todo{here and in the magnetic section also uintroduce mu r epsilon r and how it relates to xhi.}
+        Dielectric polarisation is the formation of electric dipoles, or the alignment of ones already present, under an applied electric field. The dipoles set up a field of their own inside the material which partly cancels the applied field, so the field inside a dielectric is always weaker than the field applied to it. Averaged per unit volume the dipole moments give the polarisation vector $\vec{P}$, whose linear form and role in Maxwell's equations are set out in \cref{sec:maxwell-matter}.
 
+        The response is only approximately linear. In general $\vec{P}$ is expanded in powers of the field, written here for one direction,
+
+        \begin{equation}\label{eq:nonlinear-polarisation}
+            P = \varepsilon_{0}\left(\chi^{(1)}E + \chi^{(2)}E^{2} + \chi^{(3)}E^{3} + \cdots\right),
+        \end{equation}
+
+        where $\chi^{(1)} \equiv \chi$ --- the linear electric susceptibility of \cref{eq:polarisation-vector}. The higher coefficients are so small that the extra terms matter only in intense laser fields, where they are the whole of \emph{nonlinear optics}: $\chi^{(2)}$ lets a crystal double the frequency of the light passing through it (second-harmonic generation), and $\chi^{(3)}$ makes the refractive index depend on the intensity. Strictly each $\chi^{(k)}$ is a tensor, since $\vec{P}$ need not point along $\vec{E}$ in an anisotropic crystal, which is the origin of birefringence.
+
+        Keeping the linear term alone and substituting it into the definition of the displacement field (\cref{eq:D-def}) gives
+
+        \begin{equation}\label{eq:permittivity}
+            \vec{D} = \varepsilon_{0}\vec{E} + \vec{P} = \varepsilon_{0}\left(1+\chi\right)\vec{E} \equiv \varepsilon_{0}\varepsilon_{\text{r}}\vec{E},
+        \end{equation}
+
+        where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material, the quantity actually tabulated. It is $1$ in vacuum, a few for ordinary plastics and glasses, and about $80$ for water at low frequencies. The three mechanisms below add up to it, and each stops contributing above its own characteristic frequency, which is why $\varepsilon_{\text{r}}$ falls in steps as the frequency rises.
 
         \paragraph{Electronic polarisation}
 
-        Electronic polarisation is the result of the displacement, under the influence of an electric field, of the negatively charged electron clouds with respect to the positive nuclei. It occurs in all materials. It is a very fast process, and therefore, when investigated with an alternating electric field, the effects associated with it are observed up to frequencies corresponding to the ultraviolet. The dipole moment $p_e$ is determined by the electronic polarisability $\alpha_e$:
+        Electronic polarisation is the displacement of the negatively charged electron cloud of an atom with respect to its positive nucleus. It occurs in all materials. Because only the light electrons have to move it is the fastest mechanism, and it still responds at optical and ultraviolet frequencies. The induced dipole moment is fixed by the electronic polarisability $\alpha_{e}$,
 
         \begin{equation*}
-            p_e = \alpha_e \cdot E
+            p_{e} = \alpha_{e}E .
         \end{equation*}
 
         \paragraph{Ionic polarisation}
 
-        Ionic polarisation occurs only in materials with ionic bonds. It is the result of the displacement of ions in the crystal lattice of the material---those of one sign in one direction, those of the other sign in the other. It is the slowest of all the polarisation processes, since it requires the movement of many atoms bound in the crystal lattice.
+        Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared.
 
         \paragraph{Orientational polarisation}
 
-        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, those whose molecules form permanent dipoles (they possess their own dipole moment). In an electric field an ordering torque acts on them. At the same time the ordering is destroyed by thermal vibrations, which causes orientational polarisation to be temperature dependent.
+        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment of their own. The field exerts an ordering torque on them, while thermal motion destroys the ordering, so this contribution alone depends on temperature and falls as the temperature rises. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range --- which is exactly what a microwave oven exploits in water.
 
     \subsection{Conductivity and mobility}
 
-        Conduction is the phenomenon of the flow of electric charges occurring in a material under the influence of an electric field. The quantity characterising electrical conduction is the conductivity $\sigma$:
+        Conduction is the flow of electric charge through a material under an applied field. The carriers do not accelerate freely, because they are scattered by lattice vibrations and by defects, so in a steady field they settle at an average \emph{drift velocity} $v_{\text{d}}$ proportional to the field. The constant of proportionality is the \emph{mobility},
 
-        \begin{equation*}
-            \sigma = q n \mu
-        \end{equation*}
+        \begin{equation}\label{eq:mobility}
+            \mu \equiv \frac{v_{\text{d}}}{E},
+        \end{equation}
 
-        where $q$ is the charge of the carriers, $n$ their concentration and $\mu$ the carrier mobility. The mobility of the carriers depends on the applied field and on the drift velocity. Temperature is one of the factors affecting conductivity. A change in temperature may affect a change both in the concentration and in the mobility of the carriers. The most common types of conduction are: electronic, where the charge carriers are electrons, hole conduction, where the charge carriers are electrons moving in the valence band, and ionic, where the charge carriers are ions.
+        which measures how easily a carrier is pushed through a particular material. The current density is then $J = qnv_{\text{d}} = \sigma E$, the local form of Ohm's law, with the \emph{conductivity}
+
+        \begin{equation}\label{eq:conductivity}
+            \sigma = qn\mu,
+        \end{equation}
+
+        where $q$ is the charge of one carrier and $n$ their concentration. Only two things can therefore change a conductivity: how many carriers there are, and how freely each moves. The most common kinds of conduction are electronic, in which the carriers are electrons in the conduction band, hole conduction, in which the carriers are the vacancies left in an otherwise full valence band and behave as positive charges, and ionic, in which whole ions move.
+
+        Temperature acts on both factors, and which one wins distinguishes the two standard cases. In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
 
 \section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
 \label{sec:magentic-field}
 
-    On the microscopic scale every medium exhibits magnetic properties, on account of the spin of its constituent particles and of the motion of electrons about the atomic nuclei. On the macroscopic scale, however, magnetic phenomena are by no means so common, which follows from the absence of long-range order and from destructive interference between the constituent magnetic moments. Long-range order may nevertheless be introduced as a result of an external magnetic field $B$, similarly to the case of inducing polarisation of a medium with an electric field. In general, when describing magnetic fields in material media we use constitutive relations analogous to those for the electric field. Recalling the definition of the magnetic field strength $\vec{H} = \vec{B}/\mu_0 - \vec{M}$ (\cref{eq:H-def}), and writing the magnetisation as linear in $\vec{H}$: \todo{references to the maxwell equations secion. unify narrative.}
+    On the microscopic scale every medium has magnetic properties, on account of the spin of its constituent particles and of the motion of the electrons about the nuclei. On the macroscopic scale magnetic behaviour is far less common, because these moments are not ordered over long distances and largely cancel one another. Long-range order can be imposed by an external magnetic field, just as polarisation is imposed by an electric one (\cref{sec:electric-field}).
 
-    \begin{align*}
-        \vec{M} &= \chi_m\vec{H} \\
-        \vec{H} &= \frac{1}{\mu_0(1+\chi_m)}\vec{B}
-    \end{align*}
+    The bookkeeping is also the same. The average magnetic dipole moment per unit volume is the magnetisation $\vec{M}$, and it is hidden inside the redefined field $\vec{H} \equiv \nicefrac{\vec{B}}{\mu_{0}} - \vec{M}$ (\cref{eq:H-def}), which is sourced by the free currents we control and by nothing else (\cref{sec:maxwell-matter}). Taking the response to be linear in $\vec{H}$,
 
-    where $\vec{H}$ is the magnetic field strength, $\vec{M}$ is the magnetisation of the medium and $\chi_m$ the magnetic susceptibility. Interactions with a magnetic field are, however, more nuanced than in the case of the electric field. According to the Bohr--van Leeuwen theorem, a classical system will always have zero mean magnetisation, and therefore any magnetisation must be the result of quantum effects. Three kinds of medium are usually distinguished.
+    \begin{equation}\label{eq:magnetic-susceptibility}
+        \vec{M} = \chi_{m}\vec{H} \quad \Longrightarrow \quad \vec{B} = \mu_{0}\left(1+\chi_{m}\right)\vec{H} \equiv \mu_{0}\mu_{\text{r}}\vec{H},
+    \end{equation}
+
+    where $\chi_{m}$ --- magnetic susceptibility, and $\mu_{\text{r}} \equiv 1+\chi_{m}$ --- relative permeability, the exact counterpart of $\varepsilon_{\text{r}} = 1+\chi$ (\cref{eq:permittivity}). One difference is worth noting: $\chi$ is positive for every ordinary dielectric, whereas $\chi_{m}$ may have either sign, and its sign is what classifies the material. For most media $|\chi_{m}| \sim 10^{-5}$, so magnetically they are almost vacuum, while in a ferromagnet $\mu_{\text{r}}$ reaches $10^{3}$ or more and the linear relation fails altogether. Interactions with a magnetic field are also more subtle than with an electric one: by the Bohr--van Leeuwen theorem a purely classical system in equilibrium has zero mean magnetisation, so every magnetic effect below is a quantum one. Three kinds of medium are usually distinguished.
 
     \subsection{Paramagnets}
 
@@ -78,10 +102,11 @@
         Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
 
 \section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
+\label{sec:em-waves}
 
     \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
 
-        An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\partial\vec{B}/\partial t$:
+        An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\nicefrac{\partial\vec{B}}{\partial t}$:
 
         \begin{equation*}
             \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
@@ -98,7 +123,7 @@
         \begin{equation*}
             \begin{aligned}
                 \mathrm{LHS} = \nabla\times\left(\nabla\times\vec{E}\right)                 &= \nabla\left(\nabla\cdot\vec{E}\right) - \nabla^{2}\vec{E} =  \nabla\left( 0 \right) - \nabla^{2}\vec{E} = - \Delta \vec{E}\\
-                \mathrm{RHS} = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right) &= - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = - \frac{\partial}{\partial t} \left( \mu_{0}\epsilon_{0}\frac{\partial\vec{E}}{\partial t} \right) = - \mu_{0}\epsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}},
+                \mathrm{RHS} = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right) &= - \frac{\partial}{\partial t}\left(\nabla\times\vec{B}\right) = - \frac{\partial}{\partial t} \left( \mu_{0}\varepsilon_{0}\frac{\partial\vec{E}}{\partial t} \right) = - \mu_{0}\varepsilon_{0}\frac{\partial^{2}\vec{E}}{\partial t^{2}},
             \end{aligned}
         \end{equation*}
 
@@ -113,13 +138,13 @@
         Equating both sides we obtain:
 
         \begin{equation}\label{eq:em-wave}
-            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = 0
+            \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = 0
         \end{equation}
 
         We proceed analogously with the fourth Maxwell equation and find the equation for $\vec{B}$.
 
         \begin{equation*}
-            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
+            \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{B} = 0
         \end{equation*}
 
         Both of these equations are standard forms of the wave equation, generally written as:
@@ -131,66 +156,92 @@
         where $v$ is the propagation speed. From this it follows that the speed of propagation of an electromagnetic wave in vacuum is
 
         \begin{equation*}
-            v = c = \frac{1}{\sqrt{\mu_{0}\epsilon_{0}}}.
+            v = c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
         \end{equation*}
 
-        Performing an analogous derivation for the Maxwell equations in a medium, we find:
+        Performing the same derivation inside a homogeneous, non-magnetic medium carrying no free charge, the sources do not all cancel and we are left with \todo{check that this is general and correct physically}
 
         \begin{equation*}
-            \left(\Delta - \mu_{0}\epsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \overbrace{\nabla\left( \frac{\rho}{\epsilon_{0}} \right) + \underbrace{\mu_{0}\frac{\partial\vec{J_{\text{f}}}}{\partial t}}_{\substack{\text{Important in} \\ \text{conductors}}} + \underbrace{\mu_0\frac{\partial^2 \vec{P}}{\partial t^2}}_{\substack{\text{Important in} \\ \text{insulators}}}}^{\text{0 in vacuum}}
+            \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \underbrace{\mu_{0}\frac{\partial\vec{J}_{\text{f}}}{\partial t}}_{\substack{\text{important in} \\ \text{conductors}}} + \underbrace{\mu_{0}\frac{\partial^{2}\vec{P}}{\partial t^{2}}}_{\substack{\text{important in} \\ \text{insulators}}},
         \end{equation*}
+
+        both terms being zero in vacuum. In a transparent insulator the first term is absent, and substituting the linear response $\vec{P} = \varepsilon_{0}\chi\vec{E}$ (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side, replacing $\varepsilon_{0}$ by $\varepsilon_{0}\varepsilon_{\text{r}}$. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
+
+        \begin{equation}\label{eq:refractive-index}
+            n \equiv \frac{c}{v} = \sqrt{\varepsilon_{\text{r}}\mu_{\text{r}}} \simeq \sqrt{\varepsilon_{\text{r}}}
+        \end{equation}
+
+        is the \emph{refractive index}, the quantity that appears in Snell's law (\cref{eq:snell}), and the approximation holds because $\mu_{\text{r}} \simeq 1$ for anything transparent. Since each polarisation mechanism stops following the field above its own frequency (\cref{sec:electric-field}), $\varepsilon_{\text{r}}$ and hence $n$ depend on frequency, which is \emph{dispersion} and is why a prism separates colours.
 
         \paragraph{Solution to the wave equation}
 
         The wave equation is solved by a plane wave of the form
 
         \begin{equation*}
-            \vec{E}(\vec{r},t) = \vec{E_0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
+            \vec{E}(\vec{r},t) = \vec{E}_{0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
         \end{equation*}
 
-        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E_0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = |\vec{E}|/c$.\todoper{Check with plazmonika notes} The direction in which $\vec{E_0}$ points is called the \emph{polarisation} of the wave, discussed next.
+        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E}_{0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = \nicefrac{|\vec{E}|}{c}$.\todoper{Check with plazmonika notes} The direction in which $\vec{E}_{0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
     \subsection{Polarisation of a wave}
 
-        Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Taking propagation along $z$, the field lies in the $x$--$y$ plane and the main cases are:
+        Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Take propagation along $z$, so that the field lies in the $x$--$y$ plane and the plane wave above reads
+
+        \begin{equation*}
+            \vec{E}(z,t) = \mathrm{Re}\left\{
+            \begin{bmatrix}
+                E_{x} \\ E_{y}
+            \end{bmatrix}
+            e^{i(kz-\omega t)}\right\},
+        \end{equation*}
+
+        where $E_{x}$ and $E_{y}$ are complex. That pair of complex amplitudes is the \emph{Jones vector}, and it fixes the polarisation completely through their relative size and relative phase. Three cases matter:
 
         \begin{itemize}
-            \item linear --- the two perpendicular components oscillate in phase, so $\vec{E}$ stays along a fixed line.
-            \item circular --- the components have equal amplitude but are a quarter-period ($90^\circ/\frac{\pi}{2}$) out of phase, so the tip of $\vec{E}$ traces a circle.
-            \item elliptical --- the general case, tracing an ellipse.
+            \item \textbf{Linear} --- the two components are in phase, so $\vec{E}$ stays along a fixed line. Along $x$ the Jones vector is $\left[\begin{smallmatrix}1\\0\end{smallmatrix}\right]$, and at $45^{\circ}$ to the axes it is $\nicefrac{1}{\sqrt{2}}\left[\begin{smallmatrix}1\\1\end{smallmatrix}\right]$. Both entries are real, and a real Jones vector always means linear polarisation.
+            \item \textbf{Circular} --- the components have equal size but are a quarter of a period out of phase, so the tip of $\vec{E}$ traces a circle. The Jones vector is $\nicefrac{1}{\sqrt{2}}\left[\begin{smallmatrix}1\\ \pm i\end{smallmatrix}\right]$, and the factor $\pm i$ \emph{is} that quarter-period shift. Taking the upper sign at $z=0$, the real parts are $E_{x} \propto \cos{\omega t}$ and $E_{y} \propto \mathrm{Re}\{ie^{-i\omega t}\} = \sin{\omega t}$: the length of $\vec{E}$ never changes and the vector simply rotates. The sign of $i$ fixes the sense of rotation, and the two are called left- and right-handed, though which is which depends on the convention being used.
+            \item \textbf{Elliptical} --- the general case, with unequal amplitudes or any other phase difference, tracing an ellipse. Linear and circular are its two limits.
         \end{itemize}
 
-        The two complex components $(E_x, E_y)$ of the plane wave above therefore fix the polarisation through their relative amplitude and phase. This pair is known as the Jones vector.
-        \todo{mathematical example of a jones vector for circular polarisation and lienar polarisation with full showcasing how the imaginary parts of th jones vector affect the field vector.}
+        The imaginary part is therefore not decoration: it is the only thing that distinguishes a rotating field from an oscillating one.
 
     \subsection{The laws of reflection and refraction of electromagnetic waves}
+
         A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
 
-        \textbf{The law of reflection.} The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
+        \paragraph{The law of reflection}
 
-        \textbf{The law of refraction (Snell's law).} The incident and refracted rays and the normal lie in one plane, and the angles satisfy
+        The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
+
+        \paragraph{The law of refraction (Snell's law)}
+
+        The incident and refracted rays and the normal lie in one plane, and the angles satisfy
 
         \begin{equation}\label{eq:snell}
             n_1 \sin \theta_1 = n_2 \sin \theta_2,
         \end{equation}
 
-        where $n_1$, $n_2$ are the refractive indices of the two media, $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
+        where $n_1$, $n_2$ are the refractive indices of the two media (\cref{eq:refractive-index}), $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
 
-        To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular/senkrecht) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
+        To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular, from the German \emph{senkrecht}) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
 
-        \textbf{The Brewster angle} $\alpha_B$ is the angle of incidence at which the reflected and refracted rays are perpendicular to one another. At this angle the reflected $p$-component vanishes, so the reflected light is completely $s$-polarised (perpendicular to the plane of incidence). It is given by
+        \paragraph{The Brewster angle}
+
+        The Brewster angle $\alpha_{B}$ is the angle of incidence at which the reflected and refracted rays are perpendicular to one another. At this angle the reflected $p$-component vanishes, so the reflected light is completely $s$-polarised. It is given by
 
         \begin{equation}\label{eq:brewster}
             \tan{\alpha_{B}} = \frac{n_{2}}{n_{1}},
         \end{equation}
 
-        with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$).
+        with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$). This is how polarising sunglasses work, since light reflected from a road or a water surface arrives close to this angle and is largely polarised in one direction.
 
     \subsection{The Doppler effect}
 
-        \textbf{The Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
+        The \emph{Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
 
-        \paragraph{Acoustic (mechanical) waves} With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
+        \paragraph{Acoustic (mechanical) waves}
+
+        With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
 
         \begin{equation}\label{eq:doppler-acoustic}
             f' = f\,\frac{v \pm v_o}{v \mp v_s},
@@ -198,37 +249,41 @@
 
         where the upper signs apply when that party moves \emph{towards} the other (raising the pitch) and the lower signs when it moves away. Observer and source enter differently: the observer changes the wave speed it meets, while the source changes the wavelength it emits.
 
-        \paragraph{Electromagnetic waves} Here the effect is relativistic and depends only on the relative speed through $\beta = v/c$ (\cref{eq:gamma}). For source and observer separating along the line of sight,
+        \paragraph{Electromagnetic waves}
 
-        \begin{equation*}
-            f' = f\,\sqrt{\frac{1-\beta}{1+\beta}} \qquad (\text{redshift}),
-        \end{equation*}
-
-        and swapping the sign of $\beta$ gives the approaching (blueshift) case. If the relative velocity makes an angle $\phi$ with the line of sight,
+        Here the effect is relativistic and depends only on the relative speed through $\beta = \nicefrac{v}{c}$ (\cref{eq:gamma}). Writing $\phi$ for the angle between the relative velocity and the line of sight,
 
         \begin{equation}\label{eq:doppler-em}
-            f' = f\,\frac{\sqrt{1-\beta^{2}}}{1+\beta\cos{\phi}}.
-        \end{equation}\todo{can this also be restated to fit the style above with $\pm$?}
+            f' = f\,\frac{\sqrt{1-\beta^{2}}}{1 \pm \beta\cos{\phi}},
+        \end{equation}
 
-        At $\phi = \tfrac{\pi}{2}$ this leaves the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = f/\gamma$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
+        with the upper sign when the two are separating and the lower when they are approaching, exactly as in \cref{eq:doppler-acoustic}. Moving straight along the line of sight ($\phi = 0$) gives the longitudinal case,
+
+        \begin{equation*}
+            f' = f\,\sqrt{\frac{1\mp\beta}{1\pm\beta}},
+        \end{equation*}
+
+        a redshift when separating and a blueshift when approaching. At $\phi = \tfrac{\pi}{2}$ the sign stops mattering and what remains is the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = \nicefrac{f}{\gamma}$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
 
 \section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
+\label{sec:wave-types}
 
-    \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k$ the wave number.
+    \begin{itemize}
+        \item \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k = \nicefrac{2\pi}{\lambda}$ the wave number.
+        \item \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
+        \item \textbf{Matter waves} express the fact that every particle also behaves as a wave, with the (de Broglie) wavelength
+        \begin{equation}\label{eq:de-broglie}
+            \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
+        \end{equation}
+        so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
+    \end{itemize}
 
-    \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
+    \paragraph{Common features and differences}
 
-    \textbf{Matter waves} express the fact that every particle also behaves as a wave. The associated (de Broglie) wavelength is
-
-    \begin{equation}\label{eq:de-broglie}
-        \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
-    \end{equation}
-
-    so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
-
-    \textbf{Common features and differences.} All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle, while for light it corresponds to the number of photons.
+    All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle (\cref{post:born}), while for light it corresponds to the number of photons.
 
 \section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
+\label{sec:phase-transitions}
 
     A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
 
@@ -238,8 +293,8 @@
 
     \begin{itemize}
         \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
-        \item Second order (continuous) --- the first derivatives are continuous but a second derivative jumps or diverges, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
-        \item Third and higher orders essentially do not occur in practice. Continuous transitions such as the onset of superfluidity also belong here.
+        \item Second order --- the first derivatives are continuous but a second derivative jumps, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
+        \item Higher orders are not used in practice, and the scheme itself breaks down whenever a derivative \emph{diverges} instead of jumping, as the heat capacity does at the superfluid transition of helium. Modern usage therefore keeps only two classes: first-order transitions, which have latent heat, and \emph{continuous} transitions, which do not.
     \end{itemize}
 
     The conditions for phases to coexist are given by the \emph{Gibbs phase rule},
@@ -256,71 +311,81 @@
         \item $r = 3$: three phases, $f = 0$ --- the triple point.
     \end{itemize}
 
-\section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory} \todo{dooes not need to be as detailed but it should be somewhat reconciled with secion on postulates such it doesnt contradict it, deviate from the language etc. also if something is mentioned there it should also be reflected here. especcially the quantisation of energy here is off. it is given in a better way before. the UV catastrophe is not a phenomenon}
-\todo{change subsections into \\paragraph - s}
+\section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
+\label{sec:qm-experimental}
 
-    \subsection{The photoelectric effect}
+    Quantum mechanics was forced on physics by a handful of experiments that classical theory gets not merely inaccurately but qualitatively wrong. The postulates themselves are set out in \cref{sec:postulates}, and the origin of discrete energies in \cref{sec:quantisation}. What follows is the evidence for them.
 
-        The photoelectric effect is the emission of electrons from a material illuminated by electromagnetic radiation. Classically the energy of the emitted electrons should grow with the intensity of the light. Experimentally, however, the kinetic energy of each electron depends only on the \emph{frequency} of the light, while the intensity sets only the \emph{number} of electrons. This is explained if light arrives in quanta (photons) of energy $E = h\nu$: one photon frees one electron, giving it an energy $h\nu$ less the work function $W$ (the energy binding the electron to the material),
+    \paragraph{Black-body radiation}
 
-        \begin{equation*}
-            E_\text{kin} = h\nu - W.
-        \end{equation*}
+    A hot body radiates with a spectrum fixed by its temperature alone. Classically every mode of the field should carry the same average energy, and since the number of modes grows without limit towards short wavelengths, the predicted power diverges---the \emph{ultraviolet catastrophe}, which is a failure of the classical prediction and not something anyone observed. The measured spectrum instead peaks and falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $\nu$ exchanges energy only in whole quanta $E = h\nu$, which makes the short-wavelength modes too expensive to excite (\cref{eq:planck}).
 
-        Below a threshold frequency no electrons are emitted at all, because a single photon then lacks the energy to free one.
+    \paragraph{The photoelectric effect}
 
-    \subsection{The Compton effect}
+    Light falling on a metal ejects electrons. Classically their energy should grow with the intensity of the light. What is measured is that the kinetic energy of each electron depends only on the \emph{frequency}, while the intensity fixes only the \emph{number} of electrons, and that below a threshold frequency nothing is emitted however bright the light. This follows if the light arrives as quanta of energy $h\nu$, one photon freeing one electron against the work function $W$ that binds it to the metal,
 
-        The Compton effect is the scattering of X-ray or gamma radiation on free or weakly bound electrons, in which the scattered radiation emerges with a longer wavelength. It is explained by treating the photon as a particle carrying both energy and momentum: in the collision it hands some of each to the electron, so the scattered photon has less energy and hence a longer wavelength. The shift grows with the scattering angle $\theta$,
+    \begin{equation*}
+        E_\text{kin} = h\nu - W .
+    \end{equation*}
 
-        \begin{equation*}
-            \Delta\lambda = \frac{h}{m_e c}\left(1 - \cos\theta\right),
-        \end{equation*}
+    \paragraph{The Compton effect}
 
-        and has no classical explanation, since a classical wave would scatter without changing its wavelength.
+    X-rays scattered from weakly bound electrons come off with a longer wavelength, the shift growing with the scattering angle $\theta$,
 
-    \subsection{Young's experiment}
+    \begin{equation*}
+        \Delta\lambda = \frac{h}{m_e c}\left(1 - \cos\theta\right).
+    \end{equation*}
 
-        Coherent light passed through two closely spaced slits produces bright and dark interference fringes on a screen, exactly as expected for waves. The quantum surprise is that particles such as electrons, fired one at a time at a double slit, gradually build up the same interference pattern---yet each arrives as a single discrete impact at an unpredictable point. The wave nature governs where each particle is \emph{likely} to land, but the individual outcome is inherently probabilistic, which classical mechanics cannot account for.
+    A classical wave would scatter without changing its wavelength. The result follows at once if the photon is treated as a particle carrying both energy and momentum, so that the collision is an ordinary elastic one and the photon gives up a share of each.
 
-    \subsection{Quantisation of the energy levels in the hydrogen atom}
+    \paragraph{Atomic spectra and the stability of the atom}
 
-        Atomic spectra show that the hydrogen atom can occupy only a discrete set of energy levels, whereas classical physics allows a continuous range of orbits. Classical physics fails here in two ways: it cannot explain the sharp spectral lines, and it cannot even keep the atom stable---a classically orbiting electron is an accelerating charge, so it would radiate its energy away and spiral into the nucleus almost at once. Quantisation of the allowed energies removes both problems.
+    Atoms absorb and emit only at sharp, characteristic frequencies, and the Franck--Hertz experiment shows the same discreteness directly, electrons passing through a vapour losing energy only in fixed amounts. Classical physics allows a continuous range of orbits and so no sharp lines at all, and worse, it cannot keep the atom together: an orbiting electron is an accelerating charge, so it would radiate and spiral into the nucleus almost at once. Both problems disappear once the allowed energies are discrete, which is not an extra assumption but a consequence of the boundary conditions on a bound wave function (\cref{sec:quantisation}).
 
-    \subsection{The ultraviolet catastrophe}
+    \paragraph{Interference of single particles}
 
-        Classical physics (the Rayleigh--Jeans law) predicted that a black body in thermal equilibrium would radiate ever more strongly at shorter wavelengths, so that the total emitted power would diverge to infinity in the ultraviolet---plainly at odds with experiment. In 1900 Planck removed the divergence by assuming that radiation is emitted and absorbed only in discrete packets of energy $E = h\nu$. This suppresses the high-frequency modes and yields the correct spectrum, the Planck distribution (\cref{eq:planck}).
+    Coherent light through two slits gives interference fringes, as any wave would. The quantum result is that electrons fired one at a time build up the same pattern, each arriving as a single localised impact at a point that cannot be predicted. The wave function fixes only the probability, and the fringes come from amplitudes rather than probabilities being added, which is worked through in \cref{sec:postulates}. Merely making it possible to tell which slit was used destroys the pattern, and nothing classical behaves in that way.
+
+    \paragraph{Other purely quantum phenomena}
+
+    Several more appear elsewhere in this note and are worth naming in the same breath: tunnelling through a barrier the particle has not the energy to cross (\cref{sec:tunnelling}), the two-valued spin of the electron and its splitting of a beam in the Stern--Gerlach experiment (\cref{sec:angular-momentum}), the exclusion of identical fermions from a common state, which is what gives matter its volume and the periodic table its structure (\cref{eq:identical}), and entanglement, in which a pair of particles has a state but neither member has one of its own (\cref{post:composite}).
 
 \section{The uncertainty principle and the limits of measurement accuracy}
 \label{sec:uncertainty}
 
-    The Heisenberg uncertainty principle states that certain pairs of observables cannot both have a sharp\todo{sharp is a werid word here} value in the same state: the more precisely one is fixed, the less precisely the other can be. This is a fundamental feature of quantum states, not a shortcoming of our instruments.
+    The Heisenberg uncertainty principle states that certain pairs of observables cannot both have a definite value in the same state: the more precisely one is fixed, the less precisely the other can be. This is a property of the quantum state itself, not a shortcoming of our instruments.
 
-    Whether two observables $\hat{A}$ and $\hat{B}$ can be sharp together is decided by their \emph{commutator}
+    Whether two observables $\hat{A}$ and $\hat{B}$ can be definite together is decided by their \emph{commutator}
 
     \begin{equation*}
         \comm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A},
     \end{equation*}
 
-    which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the Robertson relation\todo{in the pdfs it is given without squares adn with 1/2. i want that. add the momentum case for the heisenberg relation (notes)}
+    which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the Robertson relation
 
-    \begin{equation}\label{eq:uncertainty}
-        \Delta^2 \hat{A}\,\Delta^2 \hat{B} \geq \frac{1}{4}\left| \ev{\comm{\hat{A}}{\hat{B}}} \right|^2,
-    \end{equation}
+    \begin{empheq}[box=\fbox]{equation}\label{eq:uncertainty}
+        \Delta A\,\Delta B \geq \frac{1}{2}\left| \ev{\comm{\hat{A}}{\hat{B}}} \right| .
+    \end{empheq}
 
-    where the variance $\Delta^2 \hat{A} = \bra{\psi}\hat{A}^2\ket{\psi} - \left|\bra{\psi}\hat{A}\ket{\psi}\right|^2$ measures the spread of $\hat{A}$ about its mean\todo{the measure of spread should be explained in terms of what was given in the PDF notes}.
+    Here $\Delta A$ is the ordinary standard deviation of the measured values, built from the expectation values of \cref{sec:postulates},
+
+    \begin{equation*}
+        \Delta A = \sqrt{\ev{\hat{A}^{2}} - \ev{\hat{A}}^{2}}, \qquad \ev{\hat{A}} = \bra{\Psi}\hat{A}\ket{\Psi},
+    \end{equation*}
+
+    that is, the typical distance of a single result from the mean of many. It is zero exactly when the state is an eigenstate of $\hat{A}$, where every run returns the same eigenvalue.
 
     The most important case is position and momentum. Since $\comm{\hat{x}}{\hat{p}_x} = i\hbar$, the relation gives
 
-    \begin{equation*}
-        \Delta^2 x\,\Delta^2 p_x \geq \frac{\hbar^2}{4},
-    \end{equation*}
+    \begin{empheq}[box=\fbox]{equation}\label{eq:heisenberg-xp}
+        \Delta x\,\Delta p_x \geq \frac{\hbar}{2},
+    \end{empheq}
 
-    saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once.
+    saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once. The energy--time relation $\Delta E\,\Delta t \geq \nicefrac{\hbar}{2}$ used in \cref{sec:interactions} has the same form but a different reading, since time is a parameter and not an observable with an operator: there $\Delta t$ is how long the state persists, not the spread of a measured quantity.
 
-    The trade-off is easiest to see for a wave. A pure sine wave has a single wavelength, so by the de Broglie relation ($p = \hbar k$, \cref{eq:de-broglie}\todo{where k=2pi/lambda}) its momentum is perfectly defined---but it extends over all space, so its position is completely undefined. A sharply localised spike has a definite position, but building it requires adding together waves of every wavelength, so its momentum is completely undefined. Any real state is a compromise between these extremes.
+    The trade-off is easiest to see for a wave. A pure sine wave has a single wavelength, so by the de Broglie relation ($p = \hbar k$ with $k = \nicefrac{2\pi}{\lambda}$, \cref{eq:de-broglie}) its momentum is perfectly defined---but it extends over all space, so its position is completely undefined. A sharply localised spike has a definite position, but building it requires adding together waves of every wavelength, so its momentum is completely undefined. Any real state is a compromise between these extremes.
 
-    This should not be confused with ``Heisenberg's microscope'', the argument that pinning down a particle's position needs light of ever shorter wavelength, whose photons then carry ever larger momentum and so disturb the particle more. That picture is misleading, because it still assumes the particle has a definite position waiting to be measured, which is exactly what the principle denies.
+    This should not be confused with \enquote{Heisenberg's microscope}, the argument that pinning down a particle's position needs light of ever shorter wavelength, whose photons then carry ever larger momentum and so disturb the particle more. That picture is misleading, because it still assumes the particle has a definite position waiting to be measured, which is exactly what the principle denies.
 
 \section{Approximate methods of quantum mechanics; perturbation theory for eigenvalues, Fermi's golden rule, the Born approximation for scattering amplitudes}
 \label{sec:approximate-methods}
@@ -342,8 +407,10 @@
         The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule\todoper{look-up online}, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
 
         \begin{equation}\label{eq:fermi-golden-rule}
-            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_n^{(0)} - E_m^{(0)} - \hbar\omega\right)
+            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
         \end{equation}
+
+        The delta function enforces energy conservation: the transition happens only if the quantum $\hbar\omega$ supplied by the perturbation matches the gap between the two levels.
 
     \subsection{The Born approximation}
 
@@ -355,65 +422,96 @@
             f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
         \end{equation}
 
-        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.\todo{the unrelated to born oppenheimer should be in parentheses}\todoper{look-up online}
+        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. (This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.)\todoper{look-up online}
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
+\label{sec:atom-molecule}
 
-    \subsection{The Schrödinger equation}
-        \todo{The full picture of an atom with quantum numbers defined and brief account of splitting fine/hyperfine zeeman etc should be incorporated here and removed from the other lenghty sections. the changes should not harm any narrative. }
-        \todo{here also orbital, shell, subshell should be defined, brief account of rules for filling them}
+    \subsection{The atom from the Schrödinger equation}
 
-        The Schrödinger equation governs how a quantum state evolves in time:
+        A state evolves in time by the Schrödinger equation (\cref{eq:tdse}), and the states of definite energy are the solutions of its time-independent form (\cref{eq:tise}). For one electron bound to a nucleus of charge $Ze$ the potential is the Coulomb attraction
 
-        \begin{equation}\label{eq:schrodinger}
-            i\hbar\frac{d}{dt}\ket{\psi\left(t\right)} = \hat{H}\ket{\psi\left(t\right)}
-        \end{equation}
+        \begin{equation*}
+            V(r) = -\frac{Ze^{2}}{4\pi\varepsilon_{0}r},
+        \end{equation*}
 
-        Solving it for an atom, physically acceptable solutions exist only for particular integer \emph{quantum numbers}: the principal $n$ (which sets the energy and the shell), the azimuthal $l$ (the magnitude of the orbital angular momentum) and the magnetic $m$ (its projection on the $z$ axis). Equivalently, the energy, the squared angular momentum and its $z$-component are quantised. Each solution $\Psi_{nlm}\left(r,\theta,\phi\right)$ is an \emph{orbital}---a spatial probability distribution for the electron. In chemistry the \textbf{electron shell} is the set of orbitals sharing the same principal quantum number $n$. Solving the equation also gives the \emph{binding energy}, the energy needed to remove the electron from the atom (for the hydrogen ground state, $13.6$~eV).
+        and because it depends on the distance alone the solutions split into a radial and an angular factor, $\psi_{nlm}(r,\theta,\varphi)$. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):
+
+        \begin{itemize}
+            \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\nicefrac{13.6\,Z^{2}\,\mathrm{eV}}{n^{2}}$ for a one-electron atom, so $13.6$~eV is the energy needed to remove the electron from hydrogen in its ground state.
+            \item \textbf{Orbital, $l = 0,\dots,n-1$} --- fixes the magnitude of the orbital angular momentum, $|\vec{L}| = \hbar\sqrt{l(l+1)}$, and hence the shape. Written as the letters s, p, d, f.
+            \item \textbf{Magnetic, $m = -l,\dots,+l$} --- fixes its projection on a chosen axis, $L_{z} = m\hbar$, that is, the orientation.
+            \item \textbf{Spin, $m_{s} = \pm\nicefrac{1}{2}$} --- the projection of the electron's own spin, doubling every count above.
+        \end{itemize}
+
+        One such solution is an \emph{orbital}: a spatial probability distribution for one electron. Orbitals sharing the same $n$ form a \emph{shell}, and those sharing both $n$ and $l$ a \emph{subshell}. Since the exclusion principle (\cref{eq:identical}) forbids two electrons the same four labels, one orbital holds two electrons of opposite spin, a subshell holds $2(2l+1)$---two in s, six in p, ten in d, fourteen in f---and a shell holds $2n^{2}$.
+
+        No exact solution exists once there is more than one electron, because each also repels the others, but the labels survive and the ground state is built by filling the levels according to three rules:
+
+        \begin{itemize}
+            \item \textbf{Aufbau principle} --- fill from the lowest energy upwards, in order of increasing $n+l$, and for equal $n+l$ in order of increasing $n$. This is why $4$s fills before $3$d.
+            \item \textbf{Pauli exclusion principle} --- no two electrons in one atom share all four quantum numbers.
+            \item \textbf{Hund's rule} --- within a subshell, electrons occupy separate orbitals with parallel spins before any orbital takes a second electron.
+        \end{itemize}
+
+        The result is the \emph{electron configuration}, written for carbon as $1\text{s}^{2}2\text{s}^{2}2\text{p}^{2}$. Only the outermost, \emph{valence} electrons are available for bonding, and they are what the chemistry of the element is made of.
+
+        \paragraph{Corrections to this picture}
+
+        The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion (spin--orbit coupling), and it is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker magnetic moment of the nucleus and is smaller again by roughly the electron-to-proton mass ratio---in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies. An external field splits levels in its turn, into the Zeeman effect for a magnetic field and the Stark effect for an electric one, both of which are worked out later in the note.
 
     \subsection{The periodic table of the elements}
 
-        The \textbf{periodic table} arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom. (The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table.) The modern \textbf{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
+        The \emph{periodic table} arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom. (The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table.) The modern \emph{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
 
-        The layout of the table reflects the electron configuration:
+        The layout of the table is the filling order written out, so the shape of the table is a direct consequence of the rules above:
 
         \begin{itemize}
-            \item a \textbf{group} (vertical column) collects elements with a similar valence-shell configuration, and hence similar chemical behaviour.
-            \item a \textbf{period} (horizontal row) corresponds to the principal quantum number $n$ of the outermost occupied shell.
+            \item a \textbf{group} (vertical column) collects elements with a similar valence-shell configuration, and hence similar chemical behaviour. The noble gases close a subshell and react with almost nothing.
+            \item a \textbf{period} (horizontal row) corresponds to the principal quantum number $n$ of the outermost occupied shell, and its length---$2$, $8$, $8$, $18$---is the capacity of the subshells being filled along it.
         \end{itemize}
 
-    \subsection{Different types of chemical bonds}
+    \subsection{Molecules and the different types of chemical bond}\todo{some later secrtion mentioned molecular boning which is not here. fix somewhere}
 
-        A chemical bond is an attraction that holds atoms together, arising in each case from the valence electrons rearranging to lower the energy. The main types are:
+        The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it screens their repulsion and lowers the energy, and an \emph{antibonding} one, in which they cancel between the nuclei and the energy is raised. A bond exists when more electrons sit in bonding orbitals than in antibonding ones. Everything below is a special case of valence electrons rearranging in this way to lower the total energy.
 
         \begin{itemize}
-            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and forms crystalline solids (e.g.\ NaCl).
-            \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons so that each attains a filled valence shell. It is strong and directional (e.g.\ H$_2$, diamond).
-            \item \textbf{Metallic} --- positive ion cores sit in a shared ``sea'' of delocalised valence electrons, which accounts for the conductivity and malleability of metals (e.g.\ copper).\todo{expand a little}
-            \item \textbf{Hydrogen bonds and van der Waals forces} --- much weaker attractions. A hydrogen bond links a hydrogen atom to a nearby electronegative atom (it holds water together and binds the two strands of DNA), while van der Waals forces arise from weak, fluctuating dipoles.\todo{what are VdW forces. expand a little}\todo{Something from this would be nice to add: A metallic bond is a force that holds atoms together in a metallic substance. Such a solid consists of tightly packed atoms, where the outermost electron shell of each metal atom overlaps with many neighboring atoms. Consequently, the valence electrons move freely from one atom to another. They are not associated with any specific pair of atoms. }
+            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and non-directional, and it forms crystalline solids (e.g.\ NaCl).
+            \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons in a common bonding orbital so that each attains a filled valence shell. It is strong and directional, since the orbitals point in particular directions, which is what fixes the shapes of molecules (e.g.\ H$_2$, diamond).
+            \item \textbf{Metallic} --- in a metal the atoms are packed so closely that the outermost shell of each overlaps the shells of many neighbours at once. The valence electrons are then not tied to any particular pair of atoms and move freely through the whole solid, leaving positive ion cores in a shared sea of delocalised electrons. Because no bond points anywhere in particular, the ions can slide past one another without the bonding being broken, which is why metals are malleable, and because the electrons are free to move they conduct heat and electricity (e.g.\ copper).
+            \item \textbf{Hydrogen bond} --- a much weaker attraction, in which a hydrogen atom already covalently bound to a strongly electronegative atom (O, N, F) is drawn towards a second such atom nearby, the hydrogen being left with little electron density of its own. It holds liquid water together and binds the two strands of DNA.
+            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied.
         \end{itemize}
 
 \section{Quantum tunnelling; examples}
 \label{sec:tunnelling}
 
-    Quantum tunnelling is the passage of a particle through a potential barrier higher than the particle's own energy---something forbidden in classical mechanics, where the particle simply lacks the energy to get over.\todo{Not infinite well!} 
+    \subsection{The barrier problem}
 
-    Consider a particle of energy $E$ meeting a barrier of height $V_0 > E$. Solving the Schrödinger equation in the three regions gives:
+        Quantum tunnelling is the passage of a particle through a potential barrier higher than the particle's own energy---something forbidden in classical mechanics, where the particle simply lacks the energy to get over. The barrier must be finite in both height and width. Against an infinitely high wall the wave function is forced to zero at the boundary and nothing passes, which is why the infinite square well of \cref{sec:quantisation} confines a particle perfectly and the finite well does not.
 
-    \begin{itemize}
-        \item \textbf{before the barrier} --- an incident plus a reflected wave, $\psi(x) = Ae^{i k x} + Be^{-i k x}$.
-        \item \textbf{inside the barrier} --- since $E < V_0$ the wave does not oscillate but decays exponentially, $\psi(x) = Ce^{-\kappa x} + De^{\kappa x}$, with $\kappa = \sqrt{2m(V_0 - E)}/\hbar$.
-        \item \textbf{beyond the barrier} --- a transmitted wave travelling outwards, $\psi(x) = Fe^{i k x}$, with a smaller amplitude, $|F| < |A|$.
-    \end{itemize}
+        Consider a particle of energy $E$ meeting a barrier of height $V_0 > E$ and width $b$. Solving the Schrödinger equation in the three regions gives:
 
-    Because the exponential tail inside the barrier is still nonzero at the far edge, the transmitted amplitude does not vanish: there is a finite probability of the particle emerging. This is measured by the transmission coefficient
+        \begin{itemize}
+            \item \textbf{before the barrier} --- an incident plus a reflected wave, $\psi(x) = Ae^{i k x} + Be^{-i k x}$.
+            \item \textbf{inside the barrier} --- since $E < V_0$ the wave does not oscillate but decays exponentially, $\psi(x) = Ce^{-\kappa x} + De^{\kappa x}$, with $\kappa = \nicefrac{\sqrt{2m(V_0 - E)}}{\hbar}$.
+            \item \textbf{beyond the barrier} --- a transmitted wave travelling outwards, $\psi(x) = Fe^{i k x}$, with a smaller amplitude, $|F| < |A|$.
+        \end{itemize}
 
-    \begin{equation*}
-        T = \frac{|F|^2}{|A|^2},
-    \end{equation*}
+        Because the exponential tail inside the barrier is still nonzero at the far edge, the transmitted amplitude does not vanish: there is a finite probability of the particle emerging. This is measured by the transmission coefficient
 
-    which falls off exponentially with the width of the barrier and with $\sqrt{m(V_0 - E)}$.
+        \begin{equation*}
+            T = \frac{|F|^2}{|A|^2} \propto e^{-2\kappa b},
+        \end{equation*}
 
-    Nuclear fusion, the source of the Sun's energy, occurs to a large extent thanks to the tunnelling phenomenon. This phenomenon makes it possible to overcome the barrier of Coulomb repulsion of atomic nuclei at a temperature lower than would follow from the laws of thermodynamics. The tunnel effect also raises hopes of lowering the temperature of fusion carried out in a controlled manner. Thanks to the tunnelling phenomenon, the emission of $\alpha$ particles occurs in the radioactive decay of massive atomic nuclei.
+        the proportionality holding for any barrier thick enough to be worth calling one. Everything about tunnelling follows from that exponential. The probability falls off extremely fast with the width $b$ of the barrier and with $\sqrt{m(V_{0}-E)}$, so tunnelling is a serious effect only for light particles and thin, low barriers, and small changes in any of these quantities change the rate by orders of magnitude.
 
-    In modern technology, the operation of many semiconductor electronic components (e.g.\ the tunnel diode) and of devices such as the scanning tunnelling microscope is based on the tunnelling phenomenon.\todo{tunneling examples should be a separate subsection and a little more expanded account should be given}\todo{was tunneling given somewere before as the example of a purely quantum phenomenon with consequences?}
+    \subsection{Examples}
+
+        \begin{itemize}
+            \item \textbf{Alpha decay.} An $\alpha$ particle inside a heavy nucleus is held by the strong interaction but faces the Coulomb repulsion of the daughter nucleus as a barrier several MeV higher than its own energy. It escapes by tunnelling. Because $T$ depends exponentially on the energy, a spread of only a few MeV in $\alpha$ energies produces half-lives ranging from microseconds to billions of years, which no other mechanism would explain.
+            \item \textbf{Fusion in stars.} Two nuclei must come within about $10^{-15}$~m against their mutual Coulomb repulsion. At the temperature of the Sun's core the typical thermal energy is a thousand times smaller than that barrier, so on classical grounds the Sun should not shine. Fusion proceeds because the rare fast protons tunnel through, and this is also why controlled fusion may be possible at a lower temperature than a classical estimate demands.
+            \item \textbf{Scanning tunnelling microscope.} A sharp conducting tip is held a fraction of a nanometre above a surface and a small voltage applied. Electrons tunnel across the gap, and because the current depends exponentially on the width of that gap, moving the tip by the diameter of a single atom changes it by orders of magnitude. Scanning the tip at constant current maps the surface atom by atom.
+            \item \textbf{Semiconductor devices.} In a tunnel diode the junction is made so narrow that carriers tunnel straight across it, which gives the device a range of voltages over which the current \emph{falls} as the voltage rises. In flash memory, writing and erasing consist of driving electrons through a thin insulating layer onto an isolated gate, where they stay until driven back.
+            \item \textbf{The ammonia molecule.} The nitrogen atom of NH$_3$ sits to one side of the plane of the three hydrogens and tunnels back and forth through it. The two arrangements have the same energy, and the tunnelling splits the ground level into two, the transition between them being the microwave line on which the first maser was built.
+        \end{itemize}
