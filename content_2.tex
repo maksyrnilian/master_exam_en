@@ -1,4 +1,184 @@
 % !TeX root = main.tex
+\cleardoublepage
+\fancyfoot[L]{\small \RomanNumeralCaps{2}}
+
+\section{Flow of an incompressible fluid; Bernoulli's law}
+\label{sec:bernoulli}
+
+    This is a problem of ideal-fluid hydrodynamics, and it rests on three simplifications:
+
+    \begin{itemize}
+        \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
+        \item friction arising from the viscosity of the liquid is negligible
+        \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves
+    \end{itemize}
+
+    Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's law, which is usually written as:
+
+    \begin{equation}\label{eq:bernoulli}
+        \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
+    \end{equation}
+
+    where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure, each per unit mass of fluid. The constant keeps the same value all along a \emph{streamline}, meaning the path traced out by a small parcel of fluid as it is carried by the flow, and because the flow was assumed irrotational the same constant in fact serves the whole flow. The relation permits the description of flow through a pipe that changes its cross-section or its height, and it explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $\nicefrac{v^2}{2}$ must be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
+
+\section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in media}
+\label{sec:maxwell}
+
+    \subsection{Maxwell's equations --- general form}
+
+        \begin{equation}\label{eq:maxwell-general}
+            \begin{alignedat}{2}
+                \text{Gauss's law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\varepsilon_{0}}\\
+                \text{Gauss's law for } \vec{B}                                 & : \quad & \nabla \cdot \vec{B}  & = 0\\
+                \text{Faraday's law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+                \text{Ampère--Maxwell law}                                      & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \varepsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
+            \end{alignedat}
+        \end{equation}
+
+        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).\todoper{Check Griffiths on bound currents}
+
+        The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
+
+        \begin{equation*}
+            \begin{aligned}
+                \nabla \cdot \vec{A} &\text{ --- divergence of a vector field}\\
+                \nabla \times \vec{A} &\text{ --- curl of a vector field}\\
+                \nabla f &\text{ --- gradient of a scalar field}
+            \end{aligned}
+        \end{equation*}
+
+        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,
+
+        \begin{equation}\label{eq:divergence-theorem}
+            \int_{V}\nabla\cdot\vec{A}\,dV = \oint_{\partial V}\vec{A}\cdot d\vec{S},
+        \end{equation}
+
+        and \emph{Stokes' theorem} says that the curl added up over a surface equals the circulation of the field around the loop bounding it,
+
+        \begin{equation}\label{eq:stokes-theorem}
+            \int_{S}\left(\nabla\times\vec{A}\right)\cdot d\vec{S} = \oint_{\partial S}\vec{A}\cdot d\vec{l} .
+        \end{equation}
+
+        Applied to \cref{eq:maxwell-general} they give each equation its plain reading:
+
+        \begin{itemize}
+            \item \textbf{Gauss's law for $\vec{E}$.} The electric flux out through any closed surface is fixed by the charge enclosed and by nothing else. Field lines start on positive charge and end on negative charge.
+            \item \textbf{Gauss's law for $\vec{B}$.} The magnetic flux out through any closed surface is always zero, so magnetic field lines have no ends and close on themselves. There is no magnetic charge for them to start from---no magnetic monopole has ever been observed.
+            \item \textbf{Faraday's law.} The circulation of $\vec{E}$ around a loop equals minus the rate of change of the magnetic flux threading it, so a changing magnetic field drives a current in a wire. This is the generator and the transformer. The minus sign is Lenz's law: the induced current opposes the change that produced it, as it must if energy is to be conserved.
+            \item \textbf{Ampère--Maxwell law.} The circulation of $\vec{B}$ around a loop is fixed by the current passing through it together with the rate of change of the electric flux through it. The first term is the electromagnet. The second is Maxwell's own addition, and it says that a changing electric field gives rise to a magnetic field, just as Faraday's law says that a changing magnetic field gives rise to an electric one. Each field keeps regenerating the other, which is how the pair travels as light through empty space (\cref{eq:maxwell-vacuum}).
+        \end{itemize}
+
+        Fields act on charges through the Lorentz force:
+
+        \begin{equation}\label{eq:lorentz-force}
+            \vec{F}=q\,(\vec{E}+\vec{v}\times\vec{B})
+        \end{equation}
+
+    \subsection{Maxwell's equations in vacuum}
+
+        In vacuum there are no charges or currents at all, free or bound, so $\rho = 0$ and $\vec{J} = 0$, and Maxwell's equations reduce to their source-free form:
+
+        \begin{equation}\label{eq:maxwell-vacuum}
+            \begin{aligned}
+                \nabla \cdot \vec{E}  & = 0\\
+                \nabla \cdot \vec{B}  & = 0\\
+                \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
+                \nabla \times \vec{B} & = \mu_{0}\varepsilon_{0}\frac{\partial\vec{E}}{\partial t}
+            \end{aligned}
+        \end{equation}
+
+    \subsection{Maxwell's equations in matter}
+    \label{sec:maxwell-matter}
+
+        An electric field pulls the positive and negative charge of each atom or molecule slightly apart, giving it an electric dipole moment $\vec{p} = q\vec{d}$, where $\vec{d}$ points from the negative charge to the positive one. Averaged per unit volume this is the polarisation vector
+
+        \begin{equation}\label{eq:polarisation-vector}
+            \vec{P}=\chi \varepsilon_0\vec{E},
+        \end{equation}
+
+        where $\chi$ --- electric susceptibility of a material. Polarisation moves bound charge only, and
+
+        \begin{equation*}
+            \nabla\cdot\vec{P}=-\rho_{\text{b}}.
+        \end{equation*}
+
+        The minus sign records which charge is left behind. Since $\vec{P}$ points from the negative end of each dipole to the positive end, a region out of which $\vec{P}$ spreads (positive divergence) is one from which positive bound charge has been carried away, so what remains there is negative.
+
+        From Gauss's law for the electric field, we then have
+
+        \begin{equation*}
+            \begin{aligned}
+                \nabla\cdot(\varepsilon_0\vec{E})          &= \rho_{\text{f}} + \rho_{\text{b}} \\
+                \nabla\cdot(\varepsilon_0\vec{E}+\vec{P})  &= \rho_{\text{f}}, \\
+                \nabla\cdot\vec{D} &= \rho_{\text{f}},
+            \end{aligned}
+        \end{equation*}
+
+        where $\vec{D}$ --- the electric displacement field,
+
+        \begin{equation}\label{eq:D-def}
+            \vec{D} \equiv \varepsilon_{0}\vec{E} + \vec{P} .
+        \end{equation}
+
+        Adding $\vec{P}$ cancels the bound charge contributions, so $\vec{D}$ is the field whose sources are the free charges alone---the ones we control. $\vec{P}$ points in the opposite direction to the field it is producing, so it subtracts from $\vec{E}$.
+
+        Matter responds magnetically as well. Every atom carries a small circulating current and so a magnetic dipole moment, and the average moment per unit volume is the \emph{magnetisation} $\vec{M}$. Inside a uniformly magnetised body, neighbouring loops run in opposite directions where they meet and cancel, so a net current survives only at the surface, or anywhere $\vec{M}$ varies from place to place. Added up, what is left is $\nabla\times\vec{M}$. A polarisation that changes in time is on top of that a genuine motion of bound charge, hence a current $\nicefrac{\partial\vec{P}}{\partial t}$. The two together make the bound current
+
+        \begin{equation*}
+            \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
+        \end{equation*}
+
+        From the Ampère--Maxwell law, we then have
+
+        \begin{equation*}
+            \begin{aligned}
+                \nabla\times\vec{B}                                     & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \varepsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
+                                                                        & = \mu_{0}\left(\vec{J_{\text{f}}} + \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t} + \varepsilon_{0}\frac{\partial\vec{E}}{\partial t}\right) \\
+                \nabla\times\vec{H}  & = \vec{J_{\text{f}}} + \frac{\partial \vec{D}}{\partial t},
+            \end{aligned}
+        \end{equation*}
+
+        where $\vec{H}$ --- the magnetic field intensity,
+
+        \begin{equation}\label{eq:H-def}
+            \vec{H} \equiv \frac{\vec{B}}{\mu_{0}} - \vec{M} .
+        \end{equation}
+
+        The minus here does the same job as the plus in \cref{eq:D-def}. Moving $\nabla\times\vec{M}$ to the left-hand side of the equation above is what subtracts $\vec{M}$, and it removes the bound magnetisation current from the curl, leaving $\vec{H}$ sourced by free currents alone. Both $\vec{D}$ and $\vec{H}$ are therefore devices for hiding the material's own response inside a redefined field, so that only the sources we control appear explicitly.
+
+        \needspace{4\baselineskip}
+        Maxwell's equation in matter may then finally be rewritten as:
+
+        \begin{equation}\label{eq:maxwell-media}
+            \begin{aligned}
+                \nabla \cdot \vec{D} &= \rho_{\text{f}}\\
+                \nabla \cdot \vec{B} &= 0\\
+                \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
+                \nabla\times\vec{H} &= \vec{J}_{\text{f}} + \frac{\partial\vec{D}}{\partial t}
+            \end{aligned}
+        \end{equation}
+
+    \subsection{The scalar and vector potentials}\label{sec:em-potentitals}
+
+        Two of Maxwell's equations carry no sources at all, and they can be satisfied identically---made true by construction---once the fields are written in terms of potentials.
+
+        Since $\nabla\cdot\vec{B} = 0$ everywhere, and since the divergence of any curl vanishes automatically, $\vec{B}$ may always be written as the curl of some vector field,
+
+        \begin{equation}\label{eq:vector-potential}
+            \vec{B} = \nabla\times\vec{A},
+        \end{equation}
+
+        called the \emph{magnetic vector potential}. Substituting this into Faraday's law gives $\nabla\times\left(\vec{E} + \nicefrac{\partial\vec{A}}{\partial t}\right) = 0$, and a field whose curl vanishes is the gradient of something, so
+
+        \begin{equation}\label{eq:scalar-potential}
+            \vec{E} = -\nabla\varphi - \frac{\partial\vec{A}}{\partial t},
+        \end{equation}
+
+        where $\varphi$ is the \emph{electric scalar potential}. In electrostatics the second term is absent and $\varphi$ is the familiar potential whose difference between two points is a voltage.
+
+        The gain is economy. The two source-free equations are now satisfied automatically and only the two with sources remain to be solved, and the six components of $\vec{E}$ and $\vec{B}$ are traded for four, $\varphi$ and $\vec{A}$. The potentials are not unique: adding $\nabla f$ to $\vec{A}$ while subtracting $\nicefrac{\partial f}{\partial t}$ from $\varphi$ leaves both fields exactly as they were, for any $f$. That freedom is called \emph{gauge invariance}, and it is used to impose whichever extra condition makes a given problem easiest. The potentials are also what enter the Lagrangian of a charged particle, and hence its quantum mechanics, so they are more than a calculational convenience.
+        
+
 \section{The electric field in media; dielectric polarisation, conduction, mobility of the charge carriers}
 \label{sec:electric-field}
 
@@ -515,3 +695,4 @@
             \item \textbf{Semiconductor devices.} In a tunnel diode the junction is made so narrow that carriers tunnel straight across it, which gives the device a range of voltages over which the current \emph{falls} as the voltage rises. In flash memory, writing and erasing consist of driving electrons through a thin insulating layer onto an isolated gate, where they stay until driven back.
             \item \textbf{The ammonia molecule.} The nitrogen atom of NH$_3$ sits to one side of the plane of the three hydrogens and tunnels back and forth through it. The two arrangements have the same energy, and the tunnelling splits the ground level into two, the transition between them being the microwave line on which the first maser was built.
         \end{itemize}
+

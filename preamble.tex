@@ -18,6 +18,7 @@
 \usepackage{empheq}               % \empheq environment for boxing equations
 \usepackage{mathrsfs}             % \mathscr --- used for the Hilbert space
 \usepackage{siunitx}
+%\usepackage{romannum}
 
 % --- siunitx units setup ------------------------------------------------
 \sisetup{per-mode=symbol-or-fraction} % 'slash' inline; normal fraction in a display
@@ -64,7 +65,7 @@
 }
 
 % --- comments --------------------------------------------------------
-\usepackage[disable]{todonotes}                            % margin \todo notes used as revision flags; optional argument [disable] suppresses them for a clean, printable version (also change the margins then)
+\usepackage[]{todonotes}                            % margin \todo notes used as revision flags; optional argument [disable] suppresses them for a clean, printable version (also change the margins then)
 
 \newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}       % red   --- persistent note, to be checked again later
 \newcommand{\todoai}[1]{\todo[backgroundcolor=green!25,linecolor=green!55]{#1}}    % green --- rewritten and checked, comment from AI
@@ -124,6 +125,10 @@
     {\par\endgroup\medskip}
 \crefname{postulate}{postulate}{postulates}
 \Crefname{postulate}{Postulate}{Postulates}
+
+
+\newcommand{\RomanNumeralCaps}[1]
+    {\MakeUppercase{\romannumeral #1}}
 
 % --- macro constants -------------------------------------------------
 \newcommand{\Lagr}{\mathcal{L}}               % Lagrangian
