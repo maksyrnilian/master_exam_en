@@ -20,7 +20,7 @@
 \usepackage{siunitx}
 
 % --- siunitx units setup ------------------------------------------------
-\sisetup{per-mode=symbol-or-fraction} % 'slash' in ines; normal fraction in math-block
+\sisetup{per-mode=symbol-or-fraction} % 'slash' inline; normal fraction in a display
 \sisetup{range-units = single} % setup of range units
 \sisetup{range-phrase = {\text{~to~}}}   % system-wide rangephrase; \qtyrange[range-phrase=---]{0.7}{2.1}{\joule\per\cm^2} for per-instance changes
 
@@ -66,7 +66,8 @@
 % --- comments --------------------------------------------------------
 \usepackage{todonotes}                            % margin \todo notes used as revision flags
 
-\newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}                           % red todo note for persisten comments
+\newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}       % red   --- persistent note, to be checked again later
+\newcommand{\todoai}[1]{\todo[backgroundcolor=green!25,linecolor=green!55]{#1}}    % green --- rewritten and checked, comment from AI
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanations in `%-comments`)
 
 % --- toc-link --------------------------------------------------------
@@ -141,10 +142,17 @@
 % =====================================================================
 % \emph{} for defined terms and for emphasis in prose.
 % \textbf{} ONLY as a label at the head of a list item. Never mid-sentence.
-% \nicefrac{}{} for inline fraction (including diff. operators). \frac and \tfrac in display maths only.
+% \textit{} ONLY for a law or theorem quoted as a self-contained statement.
+% \nicefrac{}{} for every inline fraction, differential operators included.
+%   \frac and \tfrac in display maths only.
 % bmatrix (square brackets) for every vector and matrix, never pmatrix.
 % Inline matrices: \left[\begin{smallmatrix}...\end{smallmatrix}\right].
+% Vector-valued operators carry hat and arrow: \hat{\vec{L}}. Components: \hat{L}_{z}.
+% Differentials are a plain italic d, not \mathrm{d}. Inexact ones are \delta Q.
+% f is frequency, never \nu. \varepsilon_{0}, never \epsilon_{0}.
 % Equations that must be memorised: \begin{empheq}[box=\fbox]{equation}.
 % No semicolons in prose. British spelling. \enquote{} for quotation marks.
-% Em-dash as --- with no surrounding spaces.
-% \todo with green background = rewritten and checked.
+% Em-dash as --- with no surrounding spaces. Three exceptions, all spaced:
+%   a symbol gloss after a display, a label gloss at the head of a list item,
+%   and section titles, which reproduce the exam question as written.
+% One paragraph per source line, blank line between paragraphs.

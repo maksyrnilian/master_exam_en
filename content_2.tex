@@ -1,5 +1,5 @@
 % !TeX root = main.tex
-\section{The electric field in material media; dielectric polarisation, conductivity, mobility of charge carriers}
+\section{The electric field in media; dielectric polarisation, conduction, mobility of the charge carriers}
 \label{sec:electric-field}
 
     \subsection{Polarisation}
@@ -36,7 +36,7 @@
 
         \paragraph{Orientational polarisation}
 
-        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment of their own. The field exerts an ordering torque on them, while thermal motion destroys the ordering, so this contribution alone depends on temperature and falls as the temperature rises. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range --- which is exactly what a microwave oven exploits in water.
+        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment of their own. The field exerts an ordering torque on them, while thermal motion destroys the ordering, so this contribution alone depends on temperature and falls as the temperature rises. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range---which is exactly what a microwave oven exploits in water.
 
     \subsection{Conductivity and mobility}
 
@@ -56,8 +56,8 @@
 
         Temperature acts on both factors, and which one wins distinguishes the two standard cases. In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
 
-\section{The magnetic field in material media; classification of magnetic media, microscopic explanations of the exchange interaction between the magnetic moments of the constituents (atoms, ions, molecules)}
-\label{sec:magentic-field}
+\section{The magnetic field in media; classification of magnetic media, microscopic description of interactions between the magnetic moments of components of the medium (atoms, ions, molecules)}
+\label{sec:magnetic-field}
 
     On the microscopic scale every medium has magnetic properties, on account of the spin of its constituent particles and of the motion of the electrons about the nuclei. On the macroscopic scale magnetic behaviour is far less common, because these moments are not ordered over long distances and largely cancel one another. Long-range order can be imposed by an external magnetic field, just as polarisation is imposed by an electric one (\cref{sec:electric-field}).
 
@@ -101,10 +101,10 @@
 
         Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
 
-\section{Electromagnetic waves as examples of solutions of Maxwell's equations; polarisation, reflection and refraction of waves, the Doppler effect}
+\section{Electromagnetic waves as solutions of Maxwell's equations; polarisation, reflection and refraction of electromagnetic waves, the Doppler effect}
 \label{sec:em-waves}
 
-    \subsection{Electromagnetic waves as examples of solutions of Maxwell's equations}
+    \subsection{Electromagnetic waves as solutions of Maxwell's equations}
 
         An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\nicefrac{\partial\vec{B}}{\partial t}$:
 
@@ -159,7 +159,7 @@
             v = c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
         \end{equation*}
 
-        Performing the same derivation inside a homogeneous, non-magnetic medium carrying no free charge, the sources do not all cancel and we are left with \todo{check that this is general and correct physically}
+        Performing the same derivation inside a homogeneous, non-magnetic medium that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with\todoai{Assumptions tightened. The equation below needs the medium to be homogeneous, non-magnetic and free of free charge, which is what removes the $\nabla(\nabla\cdot\vec{E})$ and $\nabla\times\vec{M}$ terms. It is not the fully general result.}
 
         \begin{equation*}
             \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \underbrace{\mu_{0}\frac{\partial\vec{J}_{\text{f}}}{\partial t}}_{\substack{\text{important in} \\ \text{conductors}}} + \underbrace{\mu_{0}\frac{\partial^{2}\vec{P}}{\partial t^{2}}}_{\substack{\text{important in} \\ \text{insulators}}},
@@ -263,15 +263,15 @@
             f' = f\,\sqrt{\frac{1\mp\beta}{1\pm\beta}},
         \end{equation*}
 
-        a redshift when separating and a blueshift when approaching. At $\phi = \tfrac{\pi}{2}$ the sign stops mattering and what remains is the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = \nicefrac{f}{\gamma}$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
+        a redshift when separating and a blueshift when approaching. At $\phi = \nicefrac{\pi}{2}$ the sign stops mattering and what remains is the \emph{transverse} Doppler effect, $f' = f\sqrt{1-\beta^{2}} = \nicefrac{f}{\gamma}$, a pure redshift caused by time dilation that has no counterpart for mechanical waves.
 
-\section{Mechanical waves, electromagnetic waves, matter waves; similarities and differences}
+\section{Mechanical waves, electromagnetic waves and de Broglie waves; similarities and differences}
 \label{sec:wave-types}
 
     \begin{itemize}
         \item \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k = \nicefrac{2\pi}{\lambda}$ the wave number.
         \item \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
-        \item \textbf{Matter waves} express the fact that every particle also behaves as a wave, with the (de Broglie) wavelength
+        \item \textbf{Matter waves}, or de Broglie waves, express the fact that every particle also behaves as a wave, with the (de Broglie) wavelength
         \begin{equation}\label{eq:de-broglie}
             \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
         \end{equation}
@@ -282,14 +282,14 @@
 
     All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle (\cref{post:born}), while for light it corresponds to the number of photons.
 
-\section{Phase transitions; kinds of phase transition, the order parameter of the transition, conditions for the coexistence of phases (examples of phenomena)}
+\section{Phase transitions; types of phase transitions, order parameter of phase transition, coexistence of phases (examples of phenomena)}
 \label{sec:phase-transitions}
 
     A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
 
-    To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (it is not the enthalpy). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
+    To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (\cref{sec:ensembles}). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
 
-    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\partial^{n}\mu/\partial T^{n}$ is the first that is discontinuous.
+    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\nicefrac{\partial^{n}\mu}{\partial T^{n}}$ is the first that is discontinuous.
 
     \begin{itemize}
         \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
@@ -318,14 +318,14 @@
 
     \paragraph{Black-body radiation}
 
-    A hot body radiates with a spectrum fixed by its temperature alone. Classically every mode of the field should carry the same average energy, and since the number of modes grows without limit towards short wavelengths, the predicted power diverges---the \emph{ultraviolet catastrophe}, which is a failure of the classical prediction and not something anyone observed. The measured spectrum instead peaks and falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $\nu$ exchanges energy only in whole quanta $E = h\nu$, which makes the short-wavelength modes too expensive to excite (\cref{eq:planck}).
+    A hot body radiates with a spectrum fixed by its temperature alone. Classically the predicted power diverges towards short wavelengths---the \emph{ultraviolet catastrophe}---whereas the measured spectrum peaks and then falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $f$ exchanges energy only in whole quanta $E = hf$, which makes the short-wavelength modes too expensive to excite. The argument is given in full in \cref{sec:thermal-radiation}.\todoai{Trimmed. The mode count, and the point that the catastrophe is a failed prediction rather than an observation, are now made once, in \cref{sec:thermal-radiation}.}
 
     \paragraph{The photoelectric effect}
 
-    Light falling on a metal ejects electrons. Classically their energy should grow with the intensity of the light. What is measured is that the kinetic energy of each electron depends only on the \emph{frequency}, while the intensity fixes only the \emph{number} of electrons, and that below a threshold frequency nothing is emitted however bright the light. This follows if the light arrives as quanta of energy $h\nu$, one photon freeing one electron against the work function $W$ that binds it to the metal,
+    Light falling on a metal ejects electrons. Classically their energy should grow with the intensity of the light. What is measured is that the kinetic energy of each electron depends only on the \emph{frequency}, while the intensity fixes only the \emph{number} of electrons, and that below a threshold frequency nothing is emitted however bright the light. This follows if the light arrives as quanta of energy $hf$, one photon freeing one electron against the work function $W$ that binds it to the metal,
 
     \begin{equation*}
-        E_\text{kin} = h\nu - W .
+        E_\text{kin} = hf - W .
     \end{equation*}
 
     \paragraph{The Compton effect}
@@ -350,7 +350,7 @@
 
     Several more appear elsewhere in this note and are worth naming in the same breath: tunnelling through a barrier the particle has not the energy to cross (\cref{sec:tunnelling}), the two-valued spin of the electron and its splitting of a beam in the Stern--Gerlach experiment (\cref{sec:angular-momentum}), the exclusion of identical fermions from a common state, which is what gives matter its volume and the periodic table its structure (\cref{eq:identical}), and entanglement, in which a pair of particles has a state but neither member has one of its own (\cref{post:composite}).
 
-\section{The uncertainty principle and the limits of measurement accuracy}
+\section{The uncertainty principle; limits of accuracy of measurements}
 \label{sec:uncertainty}
 
     The Heisenberg uncertainty principle states that certain pairs of observables cannot both have a definite value in the same state: the more precisely one is fixed, the less precisely the other can be. This is a property of the quantum state itself, not a shortcoming of our instruments.
@@ -387,27 +387,27 @@
 
     This should not be confused with \enquote{Heisenberg's microscope}, the argument that pinning down a particle's position needs light of ever shorter wavelength, whose photons then carry ever larger momentum and so disturb the particle more. That picture is misleading, because it still assumes the particle has a definite position waiting to be measured, which is exactly what the principle denies.
 
-\section{Approximate methods of quantum mechanics; perturbation theory for eigenvalues, Fermi's golden rule, the Born approximation for scattering amplitudes}
+\section{Approximate methods of quantum mechanics; theory of perturbations for eigenvalues of observables, Fermi's golden rule, the Born approximation for scattering amplitudes}
 \label{sec:approximate-methods}
 
-    Quantum mechanics describes the behaviour of systems at the atomic and subatomic level. However, it rests to a large extent on solving differential equations which we are able to solve analytically only in relatively simple cases. Sometimes even determining the Hamiltonian itself is difficult, and therefore for more complex systems approximate methods are used, which make it possible to obtain useful results.
+    Quantum mechanics rests on differential equations that can be solved analytically only in a few simple cases, and sometimes even writing down the Hamiltonian is hard. For anything more complicated, approximate methods are used.
 
     \subsection{Stationary perturbation theory}
 
-        Given a known Hamiltonian $H_0$, for example that of the hydrogen atom, we may wish to introduce a slight modification into the system, for example a weak external electric field. Solving it analytically again would be just as highly non-trivial as the hydrogen atom itself. We may instead treat our correction as a perturbation in the form of an additional term $\lambda H'$. The method itself is the quantum counterpart of an expansion in a Taylor series with respect to the parameter $\lambda$ and of calculating successive corrections. The smaller the perturbation, the fewer corrections need to be calculated, and often one or two suffice. They are given by the following formulae:\todoper{look at my qm2 notes}
+        Take a Hamiltonian $\hat{H}_{0}$ we can already solve, that of the hydrogen atom say, and make a small change to the system, such as switching on a weak external electric field. Solving the new problem exactly would be as hard as the original one, so the change is treated instead as a \emph{perturbation}, an extra term $\lambda\hat{H}'$. The method is the quantum counterpart of a Taylor expansion in $\lambda$: successive corrections are added, and the smaller the perturbation the fewer are needed, one or two usually being enough.\todoper{look at my qm2 notes}
 
         \begin{align}
-            E_n^{(1)} &= \bra{\psi_n^{(0)}} H' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
-            \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
-            E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} H' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
+            E_n^{(1)} &= \bra{\psi_n^{(0)}} \hat{H}' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
+            \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
+            E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
         \end{align}
 
     \subsection{Fermi's golden rule}
 
-        The method of stationary perturbation theory described above assumes that the perturbing potential is invariant in time. There also exists a dynamical method, but it is far more complicated. In the special case, however, in which the perturbing potential varies periodically in time, one may apply Fermi's golden rule\todoper{look-up online}, an important result of that calculation. This solution gives the probability per unit time of transitions between two quantum states $\psi_n^{(0)}$ and $\psi_m^{(0)}$, for a perturbation $H'e^{-i\omega t}$:
+        Stationary perturbation theory assumes a perturbation that does not change with time. When it does change, the treatment is harder, but for a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, the result is \emph{Fermi's golden rule}\todoper{look-up online}, which gives the probability per unit time of a transition between two states $\psi_n^{(0)}$ and $\psi_m^{(0)}$:
 
         \begin{equation}\label{eq:fermi-golden-rule}
-            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}H'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
+            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}\hat{H}'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
         \end{equation}
 
         The delta function enforces energy conservation: the transition happens only if the quantum $\hbar\omega$ supplied by the perturbation matches the gap between the two levels.
@@ -471,7 +471,7 @@
             \item a \textbf{period} (horizontal row) corresponds to the principal quantum number $n$ of the outermost occupied shell, and its length---$2$, $8$, $8$, $18$---is the capacity of the subshells being filled along it.
         \end{itemize}
 
-    \subsection{Molecules and the different types of chemical bond}\todo{some later secrtion mentioned molecular boning which is not here. fix somewhere}
+    \subsection{Molecules and the different types of chemical bond}
 
         The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it screens their repulsion and lowers the energy, and an \emph{antibonding} one, in which they cancel between the nuclei and the energy is raised. A bond exists when more electrons sit in bonding orbitals than in antibonding ones. Everything below is a special case of valence electrons rearranging in this way to lower the total energy.
 
@@ -480,7 +480,7 @@
             \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons in a common bonding orbital so that each attains a filled valence shell. It is strong and directional, since the orbitals point in particular directions, which is what fixes the shapes of molecules (e.g.\ H$_2$, diamond).
             \item \textbf{Metallic} --- in a metal the atoms are packed so closely that the outermost shell of each overlaps the shells of many neighbours at once. The valence electrons are then not tied to any particular pair of atoms and move freely through the whole solid, leaving positive ion cores in a shared sea of delocalised electrons. Because no bond points anywhere in particular, the ions can slide past one another without the bonding being broken, which is why metals are malleable, and because the electrons are free to move they conduct heat and electricity (e.g.\ copper).
             \item \textbf{Hydrogen bond} --- a much weaker attraction, in which a hydrogen atom already covalently bound to a strongly electronegative atom (O, N, F) is drawn towards a second such atom nearby, the hydrogen being left with little electron density of its own. It holds liquid water together and binds the two strands of DNA.
-            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied.
+            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied. A solid whose lattice points are whole molecules held in place by hydrogen bonds or van der Waals forces alone is called a \emph{molecular} solid---ice and solid carbon dioxide are the standard cases---and such solids are soft and melt at low temperatures.
         \end{itemize}
 
 \section{Quantum tunnelling; examples}

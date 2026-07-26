@@ -59,15 +59,15 @@
 
     \paragraph{Mass--energy.}
         Writing out the invariant of the four-momentum gives the \emph{energy--momentum relation}
-        \begin{empheq}[box=\fbox]{equation}
-        E^{2} = p^{2}c^{2} + m^{2}c^{4},
+        \begin{empheq}[box=\fbox]{equation}\label{eq:energy-momentum}
+            E^{2} = p^{2}c^{2} + m^{2}c^{4},
         \end{empheq}
         where $E$ is the total energy of a free body, $p$ the magnitude of its momentum, and $m$ its \emph{invariant mass}, meaning the mass measured in the frame in which the body is at rest. Two limits carry most of the physics. For a body at rest we have $p=0$ and the relation collapses to Einstein's $E=mc^{2}$, so that mass is itself a store of energy at the conversion rate $c^{2}\simeq\qty{9e16}{\joule\per\kilogram}$---the reason a milligram of mass defect suffices to power a nuclear reaction. For a massless particle such as the photon we have $m=0$ and the relation gives $E=pc$, a case $E=mc^{2}$ cannot describe at all. The invariant mass of a composite system also counts the internal energy of its parts, so a hot or compressed body is very slightly more massive than a cold relaxed one, and roughly \qty{99}{\percent} of a proton's mass is the kinetic energy of its quarks and the energy of the gluon field rather than the quark masses themselves.
 
 % Fundamental interactions --- follows the particle-physics lecture; carrier
 % masses from PDG 2024 (rounded for oral delivery).
 
-\section{Fundamental interactions; carriers and range of interactions, charges and characteristic energy scales}
+\section{Fundamental interactions; carriers and ranges of interactions, charges and characteristic energy scales}
 \label{sec:interactions}
 
     Every process in physics comes down to particles interacting, and every known interaction belongs to one of four families. In a quantum theory an interaction is not a force reaching across empty space but an \emph{exchange}: two particles interact by passing a third particle between them, called the \emph{interaction carrier}. The properties of the carrier---its mass, its spin, and the kind of charge it responds to---fix everything else, in particular how far the interaction reaches and how strong it is.
@@ -134,7 +134,7 @@
 
     \FloatBarrier
 
-\section{Conservation laws in physics and their connection with symmetry laws}
+\section{Conservation laws in physics and their relations to symmetries}
 \label{sec:conservation}
 
     The \emph{symmetries} of a physical system are closely connected with its \emph{conservation laws}. A symmetry here means that the system goes on behaving in exactly the same way after some transformation has been applied to it---shifting the whole experiment in time, moving it to another place, turning it to face another direction.
@@ -166,11 +166,11 @@
         where $q$ is any coordinate used to specify the configuration of the system and $\dot{q} = \nicefrac{dq}{dt}$. This is the principle of least action (\cref{sec:variational}) in one line, and for a single particle in a potential it returns Newton's second law (\cref{eq:newton2}).
 
         The two derivatives\footnote{
-        A \emph{partial derivative} $\partial f/\partial x$ is the rate of change of $f$ with respect to $x$ when every other argument of $f$ is held fixed, so its value depends entirely on which variables those are --- thermodynamics makes this explicit by writing the held quantities as subscripts, as in $(\partial U/\partial V)_{T}$. A \emph{total derivative} $\mathrm{d}f/\mathrm{d}t$ asks a different question: how $f$ changes along an actual path, counting every route by which $t$ influences it. The \emph{chain rule} connects the two,
+        A \emph{partial derivative} $\nicefrac{\partial f}{\partial x}$ is the rate of change of $f$ with respect to $x$ when every other argument of $f$ is held fixed, so its value depends entirely on which variables those are---thermodynamics makes this explicit by writing the held quantities as subscripts, as in $\left(\nicefrac{\partial U}{\partial V}\right)_{T}$. A \emph{total derivative} $\nicefrac{df}{dt}$ asks a different question: how $f$ changes along an actual path, counting every route by which $t$ influences it. The \emph{chain rule} connects the two,
         \begin{empheq}[box=\fbox]{equation}
-            \frac{\mathrm{d}f}{\mathrm{d}t} = \frac{\partial f}{\partial t} + \sum_{i}\frac{\partial f}{\partial q_{i}}\frac{\mathrm{d}q_{i}}{\mathrm{d}t},
+            \frac{df}{dt} = \frac{\partial f}{\partial t} + \sum_{i}\frac{\partial f}{\partial q_{i}}\frac{dq_{i}}{dt},
         \end{empheq}
-        for a function $f(q_{1},\dots,q_{n},t)$ whose arguments $q_{i}$ themselves vary with $t$. The first term is the \emph{explicit} dependence on $t$ --- what changes because the rule defining $f$ was written with a $t$ in it --- and the sum is the \emph{implicit} dependence, what changes because the system has moved. This distinction is the whole content of several standard results.
+        for a function $f(q_{1},\dots,q_{n},t)$ whose arguments $q_{i}$ themselves vary with $t$. The first term is the \emph{explicit} dependence on $t$---what changes because the rule defining $f$ was written with a $t$ in it---and the sum is the \emph{implicit} dependence, what changes because the system has moved. This distinction is the whole content of several standard results.
         } in \cref{eq:euler-lagr} do different jobs. The Lagrangian is treated as a function of three independent slots, $\Lagr(q,\dot{q},t)$, so the partial derivative $\nicefrac{\partial}{\partial q}$ varies $q$ alone and holds $\dot{q}$ and $t$ fixed. The total derivative $\nicefrac{d}{dt}$ is taken after an actual trajectory has been substituted, where $q$ and $\dot{q}$ are themselves functions of time, so by the chain rule it collects every dependence on $t$, the implicit ones as well as the explicit one. 
 
     \subsection{Noether's theorem}
@@ -178,7 +178,6 @@
         \textit{If the action of a system is invariant under a continuous transformation, then there is a quantity built from the state of the system that does not change in time.}
 
         The theorem is stated for the action rather than for the equations of motion because the action is what those equations follow from, so a symmetry of $S$ is automatically a symmetry of the dynamics. In practice the symmetry is tested on $\Lagr$ instead, which is easier: $S$ is only $\Lagr$ integrated over time, so a transformation leaving $\Lagr$ unchanged leaves $S$ unchanged too.\footnote{The converse fails. $\Lagr$ may change by the total time derivative of some function and still leave $S$ stationary on the same paths, so invariance of $\Lagr$ is sufficient but not necessary.} Each example below therefore begins by asking which variable is missing from the Lagrangian.
-
 
     \subsection{Examples of the application of Noether's theorem}
 
@@ -203,7 +202,6 @@
             \end{equation}
 
             the total energy of the system.
-
 
         \subsubsection{Conservation of momentum}
 
@@ -255,12 +253,12 @@
 
             In words: if turning the apparatus to face a different direction makes no difference to how it behaves, the combination $\vec{r} \times \vec{p}$ cannot change with time.\todoper{Watch Allan Adams on it.}
 
-\section{Newton's laws of motion and the limits of their applicability; classical mechanics as a limiting form of quantum mechanics; non-relativistic classical mechanics as the limit of relativistic classical mechanics}
+\section{Newton's laws of dynamics and the range of their applicability; classical mechanics as a limiting case of quantum mechanics; non-relativistic classical mechanics as a limiting case of relativistic classical mechanics}
 \label{sec:newton}
 
     \subsection{Newton's laws of motion}
 
-    Newton's laws of motion are three laws lying at the foundation of classical mechanics, specifying the relations between the motion of a body and the forces acting on it, which is why they are also called the laws of motion. In quantum mechanics they are for the most part inapplicable, and in relativistic mechanics they hold only within a limited range.
+    Newton's laws of dynamics are three laws lying at the foundation of classical mechanics, specifying the relation between the motion of a body and the forces acting on it, which is why they are also called the laws of motion. In quantum mechanics they are for the most part inapplicable, and in relativistic mechanics they hold only within a limited range.
 
     \paragraph{Newton's first law}
 
@@ -290,7 +288,7 @@
 
         Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes more complicated in more intricate coordinate systems. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{sec:variational}), work better.
 
-        Quantum mechanics describes the behaviour of particles on small scale, where  Newtonian mechanics fails. For example, the uncertainty principle (\cref{sec:uncertainty}) tells us that we cannot simultaneously arbitrarily well know the position and the momentum of a particle, whereas classical mechanics rests \emph{on their exact trajectories}.
+        Quantum mechanics describes the behaviour of particles on a small scale, where Newtonian mechanics fails. The uncertainty principle (\cref{sec:uncertainty}), for example, forbids a particle a sharp position and a sharp momentum at the same time, whereas classical mechanics rests on \emph{exact trajectories}.
 
         The results of quantum mechanics in the limit of large quantum numbers should generally agree with the results of classical mechanics (Bohr's correspondence principle). In particular, assuming $\hbar \to 0$ may be regarded as a transition from a discrete to a continuous system. Some phenomena, however, have no classical limit at all: the stability of the atom and the discreteness of its spectrum (\cref{sec:quantisation}), tunnelling through a barrier (\cref{sec:tunnelling}), and the exclusion of identical fermions from a common state (\cref{eq:identical}), which is what gives matter its volume and the periodic table its structure.
 
@@ -550,7 +548,7 @@
 
         It follows from what is already above rather than from anything new. By the superposition postulate the pair may sit in a combination of the two joint alternatives, and by the measurement postulate the collapse applies to the pair as a whole. Measuring the first spin gives up or down with probability $\nicefrac{1}{2}$ each, and whichever comes out, the state collapses to a single term and the second spin is then certain to match, however far apart the two have been carried. This is why the tensor product is more than bookkeeping: most states in the product space are not products at all.
 
-\section{Angular momentum and the phenomenon of precession --- classical and quantum description}
+\section{Angular momentum and precession --- classical and quantum description}
 \label{sec:angular-momentum}
 
     The classical angular momentum of a system is defined as
@@ -564,13 +562,13 @@
     In quantum mechanics the same expression is promoted to an operator (\cref{post:observables}), the \emph{orbital} angular momentum
 
     \begin{equation}\label{eq:orbital-angular-momentum}
-        \hat{L} = -i\hbar\left(\vec{r}\times \nabla\right).
+        \hat{\vec{L}} = -i\hbar\left(\vec{r}\times \nabla\right).
     \end{equation}
 
-    A particle also carries \emph{spin}, an angular momentum that is not associated with any motion through space. It transforms under rotations exactly as $\hat{L}$ does, but it has no classical counterpart and is not a picture of the particle turning about itself. Like $\hat{L}$ it is a vector of three operators, one observable per axis,
+    A particle also carries \emph{spin}, an angular momentum that is not associated with any motion through space. It transforms under rotations exactly as $\hat{\vec{L}}$ does, but it has no classical counterpart and is not a picture of the particle turning about itself. Like $\hat{\vec{L}}$ it is a vector of three operators, one observable per axis,
 
     \begin{equation}\label{eq:spin-angular-momentum}
-        \hat{S} \equiv
+        \hat{\vec{S}} \equiv
             \begin{bmatrix}
                 \hat{S}_{x} \\ \hat{S}_{y} \\ \hat{S}_{z}
             \end{bmatrix},
@@ -581,7 +579,7 @@
     The total angular momentum is the sum of the two,
 
     \begin{equation*}
-        \hat{J} = \hat{L} + \hat{S} .
+        \hat{\vec{J}} = \hat{\vec{L}} + \hat{\vec{S}} .
     \end{equation*}
 
     \subsection{Quantisation and quantum numbers}
@@ -593,25 +591,15 @@
             \hat{L}_{z}\ket{l,m} = \hbar m\ket{l,m},
         \end{equation*}
 
-        with $l = 0,1,2,\dots$ and $m = -l,-l+1,\dots,+l$, so an angular momentum of a given magnitude has $2l+1$ allowed orientations. The same pattern holds for $\hat{S}$ with the pair $(s,m_s)$ and for $\hat{J}$ with $(j,m_j)$, except that $s$ and $j$ are allowed to be half-integer. An electron always has $s = \nicefrac{1}{2}$ and therefore $m_s = \pm\nicefrac{1}{2}$, which is where its two states come from.
+        with $l = 0,1,2,\dots$ and $m = -l,-l+1,\dots,+l$, so an angular momentum of a given magnitude has $2l+1$ allowed orientations. The same pattern holds for $\hat{\vec{S}}$ with the pair $(s,m_s)$ and for $\hat{\vec{J}}$ with $(j,m_j)$, except that $s$ and $j$ are allowed to be half-integer. An electron always has $s = \nicefrac{1}{2}$ and therefore $m_s = \pm\nicefrac{1}{2}$, which is where its two states come from.
 
-        For one electron in a hydrogen atom the numbers divide the work between them.\todo{Not sure if Hydrogen here fits bets but some section should discuss quantum numbers and fine/hyperfine structure. Avoid repetition. Keep it in one place and refer to it from elsewhere.}\todo{yes, this is likely repeated}
-
-        \begin{itemize}
-            \item \textbf{Principal, $n = 1,2,3,\dots$} Fixes the energy, $E_{n} = -\nicefrac{13.6\,\mathrm{eV}}{n^{2}}$ (\cref{sec:quantisation}), and roughly the size of the orbital.
-            \item \textbf{Orbital, $l = 0,\dots,n-1$} Fixes how much orbital angular momentum the electron has, $|\vec{L}| = \hbar\sqrt{l(l+1)}$, and hence the shape of the orbital. These are the labels s, p, d, f.
-            \item \textbf{Magnetic, $m = -l,\dots,+l$} Fixes the tilt of that angular momentum, its projection on a chosen axis. Nothing distinguishes the $2l+1$ values until a magnetic field selects a direction, at which point the level splits into $2l+1$ (the Zeeman effect).
-            \item \textbf{Spin, $m_{s} = \pm\nicefrac{1}{2}$} The projection of the spin, doubling every count above.
-        \end{itemize}
-
-        Since $\vec{L}$ and $\vec{S}$ belong to the same electron, they combine into $\vec{J}$, and $j$ then runs from $|l-s|$ to $l+s$ in integer steps---for $l=1$ and $s=\nicefrac{1}{2}$, either $j=\nicefrac{1}{2}$ or $j=\nicefrac{3}{2}$. The two combinations differ slightly in energy because the electron's magnetic moment sits in the magnetic field produced by its own orbital motion, and that splitting is the \emph{fine structure} of the spectrum.
-
+        Since $\hat{\vec{L}}$ and $\hat{\vec{S}}$ belong to the same electron, they combine into $\hat{\vec{J}}$, and $j$ then runs from $|l-s|$ to $l+s$ in integer steps---for $l=1$ and $s=\nicefrac{1}{2}$, either $j=\nicefrac{1}{2}$ or $j=\nicefrac{3}{2}$. The two combinations differ slightly in energy because the electron's magnetic moment sits in the magnetic field produced by its own orbital motion, and that splitting is the \emph{fine structure} of the spectrum. How the quantum numbers $n$, $l$, $m$ and $m_{s}$ label the states of an atom, and how large the fine and hyperfine splittings are beside the gross structure, is set out in \cref{sec:atom-molecule}.\todoai{The hydrogen quantum-number list that stood here repeated \cref{sec:atom-molecule} almost word for word and has been replaced by the cross-reference.}
 
     \subsection{Classical precession}
 
         Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. It seems counterintuitive that the spin axis does not tilt in the direction of the force but it \emph{should not}---it will tilt exactly in the direction of the supplied torque of the force.
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.
 
         The precession frequency is given by
 
@@ -634,7 +622,7 @@
 
         The rate of this precession, the \emph{Larmor frequency} $\omega_{L} = \gamma B$, depends only on the field strength and not at all on how far $\vec{S}$ is tilted away from $\vec{B}$, because the two factors of $\sin\theta$ that enter the torque and the cone radius cancel. Every spin in a sample therefore turns at the same rate whatever its orientation, which is what makes the effect usable for magnetic resonance.\todoper{watch youtube about it}
 
-\section{Variational principles of physics; examples of equations that can be derived from them}
+\section{Variational principles in physics; examples of equations that can be derived from variational principles}
 \label{sec:variational}
 
     \subsection{What a variational principle is}
@@ -645,7 +633,7 @@
 
         The \emph{principle of least action} says that the path followed is the one for which the action is \emph{stationary}: deform the path slightly in any way, holding the endpoints fixed, and to first order the action does not change, written $\delta S = 0$. This is the same condition as $f'(x) = 0$ at the minimum of an ordinary function, with the single variable $x$ replaced by an entire path. Only in the simplest cases is the stationary path a true minimum, so \enquote{least} is something of a historical misnomer---a maximum or a saddle satisfies the condition equally well. 
 
-        The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route taking the least time, from which the laws of reflection and refraction follow (\cref{eq:snell}). The machinery came from a different kind of problem, the \emph{brachistochrone} (Johann Bernoulli, 1696): of all ramps joining a point to a lower one, find the shape down which a bead released from rest slides in the shortest time. The answer is a cycloid, the curve traced by a point on the rim of a rolling wheel. That is an optimisation posed by the experimenter rather than a law of nature---the bead does not choose its own ramp---so it is not itself an instance of the principle of least action. What the two share is the mathematics: in each, a whole curve is singled out by requiring an accumulated integral to be stationary. Problems of that shape are what the \emph{calculus of variations} of Euler and Lagrange was built for, and it is in that language that the principle of least action is written.\todoper{Check the example online. Maybe skip this historical nuance here.}
+        The idea began in optics as \emph{Fermat's principle}: light travels between two points along the route taking the least time, from which the laws of reflection and refraction follow (\cref{eq:snell}). The mathematics came from the \emph{calculus of variations} of Euler and Lagrange, built for problems in which a whole curve is singled out by requiring an accumulated integral to be stationary. The standard such problem is the \emph{brachistochrone} of Johann Bernoulli (1696): of all ramps joining a point to a lower one, find the shape down which a bead released from rest slides in the shortest time. The answer is a cycloid, the curve traced by a point on the rim of a rolling wheel.
 
     \subsection{Equations that follow from it}
 
@@ -657,7 +645,6 @@
             \item \textbf{Maxwell's equations.} The recipe is not restricted to mechanics: write down an action for the system and demand that it be stationary. The action of the electromagnetic field, together with its coupling to charges, yields Maxwell's equations (\cref{eq:maxwell-general}).
             \item \textbf{Einstein's field equations.} The same demand applied to the Einstein--Hilbert action, whose integrand measures the curvature of spacetime, yields the field equations of general relativity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
         \end{itemize}
-
 
 \section{The laws of thermodynamics}
 \label{sec:thermodynamics}
@@ -679,7 +666,7 @@
         or in a differential form:
 
         \begin{equation}\label{eq:first-law-differential}
-            dU = dQ - p\, dV,
+            dU = \delta Q - p\, dV,
         \end{equation}
 
         where $dV$ is the change in volume of the system (positive when the system expands---it does work and loses internal energy, $W<0$).
@@ -710,7 +697,7 @@
 
     \subsection{The third law of thermodynamics}
 
-        The Nernst heat theorem: \textit{It is not possible, by means of a finite number of steps, to attain the temperature of absolute zero (zero kelvin) if we take a non-zero absolute temperature as our starting point.}
+        \textit{As the temperature of a system approaches absolute zero, its entropy approaches a constant value independent of every other parameter of the state.} This is the Nernst heat theorem, and for a perfect crystal the constant is zero. An equivalent form is the \emph{unattainability principle}: absolute zero cannot be reached by any finite number of steps, starting from a non-zero absolute temperature.\todoai{Only the unattainability statement was given, under the name of the Nernst heat theorem. The entropy statement is now first, with unattainability as its equivalent form.}
 
 \section{Mechanical properties of material media: liquids, elastic media, mechanical waves}
 \label{sec:mechanical-media}
@@ -721,7 +708,7 @@
 
     \begin{itemize}
         \item they have complete freedom of movement within the volume occupied by the liquid
-        \item \emph{intermolecular interactions} act between them---the residual electrostatic attractions between whole neutral molecules--and within the bulk of the liquid these pull in every direction equally and cancel
+        \item \emph{intermolecular interactions} act between them---the residual electrostatic attractions between whole neutral molecules---and within the bulk of the liquid these pull in every direction equally and cancel
         \item the intermolecular interactions do not cancel at the interface between the liquid and another phase, as a result of which the phenomenon of surface tension occurs.
     \end{itemize}
 
@@ -739,10 +726,10 @@
 
     A wave is \emph{transverse} when the medium oscillates perpendicular to the direction of propagation. Examples are a plucked string and a vibrating ruler. Transverse mechanical waves need shear elasticity and so travel through solids only, which is how seismology distinguishes the Earth's liquid outer core from the solid mantle.
 
-\section{Flow of an incompressible liquid; Bernoulli's principle}
+\section{Flow of an incompressible fluid; Bernoulli's law}
 \label{sec:bernoulli}
 
-    Let us begin by defining the assumptions of the problem. It is an example from the field of ideal-fluid hydrodynamics, and therefore adopts certain simplifications:
+    This is a problem of ideal-fluid hydrodynamics, and it rests on three simplifications:
 
     \begin{itemize}
         \item the fluid is incompressible, that is, it does not change its volume under pressure, which for liquids is usually a very good approximation
@@ -750,7 +737,7 @@
         \item the flow of the liquid is steady and irrotational: at any fixed point in the pipe the velocity, density and so on do not change with time, and the fluid elements are carried along without spinning about themselves
     \end{itemize}
 
-    Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's principle, which is usually written as:
+    Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's law, which is usually written as:
 
     \begin{equation}\label{eq:bernoulli}
         \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
@@ -758,7 +745,7 @@
 
     where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure, each per unit mass of fluid. The constant keeps the same value all along a \emph{streamline}, meaning the path traced out by a small parcel of fluid as it is carried by the flow, and because the flow was assumed irrotational the same constant in fact serves the whole flow. The relation permits the description of flow through a pipe that changes its cross-section or its height, and it explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $\nicefrac{v^2}{2}$ must be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
 
-\section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in material media}
+\section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in media}
 \label{sec:maxwell}
 
     \subsection{Maxwell's equations --- general form}
@@ -772,7 +759,7 @@
             \end{alignedat}
         \end{equation}
 
-        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).\todoper{Check Gritthits on bound currents}
+        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).\todoper{Check Griffiths on bound currents}
 
         The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
 
@@ -784,13 +771,25 @@
             \end{aligned}
         \end{equation*}
 
-        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem}, $\int_{V}\nabla\cdot\vec{A}\,dV = \oint_{\partial V}\vec{A}\cdot d\vec{S}$, says that the divergence added up over a volume equals the flux out through the surface enclosing it. \emph{Stokes' theorem}, $\int_{S}(\nabla\times\vec{A})\cdot d\vec{S} = \oint_{\partial S}\vec{A}\cdot d\vec{l}$, says that the curl added up over a surface equals the circulation of the field around the loop bounding it. Applied to \cref{eq:maxwell-general} they give each equation its plain reading:\todoper{Theorems in their own lines + look up onenote notes about them and possibly restate.}
+        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,
+
+        \begin{equation}\label{eq:divergence-theorem}
+            \int_{V}\nabla\cdot\vec{A}\,dV = \oint_{\partial V}\vec{A}\cdot d\vec{S},
+        \end{equation}
+
+        and \emph{Stokes' theorem} says that the curl added up over a surface equals the circulation of the field around the loop bounding it,
+
+        \begin{equation}\label{eq:stokes-theorem}
+            \int_{S}\left(\nabla\times\vec{A}\right)\cdot d\vec{S} = \oint_{\partial S}\vec{A}\cdot d\vec{l} .
+        \end{equation}
+
+        Applied to \cref{eq:maxwell-general} they give each equation its plain reading:
 
         \begin{itemize}
             \item \textbf{Gauss's law for $\vec{E}$.} The electric flux out through any closed surface is fixed by the charge enclosed and by nothing else. Field lines start on positive charge and end on negative charge.
             \item \textbf{Gauss's law for $\vec{B}$.} The magnetic flux out through any closed surface is always zero, so magnetic field lines have no ends and close on themselves. There is no magnetic charge for them to start from---no magnetic monopole has ever been observed.
             \item \textbf{Faraday's law.} The circulation of $\vec{E}$ around a loop equals minus the rate of change of the magnetic flux threading it, so a changing magnetic field drives a current in a wire. This is the generator and the transformer. The minus sign is Lenz's law: the induced current opposes the change that produced it, as it must if energy is to be conserved.
-            \item \textbf{Ampère--Maxwell law.} The circulation of $\vec{B}$ around a loop is fixed by the current passing through it together with the rate of change of the electric flux through it. The first term is the electromagnet. The second is Maxwell's own addition, and it is what allows the two fields to sustain each other and travel as light through empty space (\cref{eq:maxwell-vacuum}).\todoper{restate in more familiar way for me (give rise to...)}
+            \item \textbf{Ampère--Maxwell law.} The circulation of $\vec{B}$ around a loop is fixed by the current passing through it together with the rate of change of the electric flux through it. The first term is the electromagnet. The second is Maxwell's own addition, and it says that a changing electric field gives rise to a magnetic field, just as Faraday's law says that a changing magnetic field gives rise to an electric one. Each field keeps regenerating the other, which is how the pair travels as light through empty space (\cref{eq:maxwell-vacuum}).
         \end{itemize}
 
         Fields act on charges through the Lorentz force:
