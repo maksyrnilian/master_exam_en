@@ -36,8 +36,8 @@
 \usepackage{needspace}            % reserve N lines so a block is not split across a page
 \usepackage[nottoc]{tocbibind}    % list bibliography/index in the ToC (not the ToC itself)
 \usepackage{parskip}   	          % blank line between paragraphs, no first-line indent
-\usepackage[margin=3.5cm, marginparwidth=2.9cm]{geometry}  % page margins; width of \todo notes
-%\usepackage{marginfix}
+\usepackage[margin=2cm, marginparwidth=1.5cm]{geometry}  % page margins; width of \todo notes
+\usepackage{marginfix}
 
 % --- colours  --------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}   % named colours (dvipsnames palette, e.g. Maroon)
@@ -64,7 +64,7 @@
 }
 
 % --- comments --------------------------------------------------------
-\usepackage{todonotes}                            % margin \todo notes used as revision flags
+\usepackage[disable]{todonotes}                            % margin \todo notes used as revision flags; optional argument [disable] suppresses them for a clean, printable version (also change the margins then)
 
 \newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}       % red   --- persistent note, to be checked again later
 \newcommand{\todoai}[1]{\todo[backgroundcolor=green!25,linecolor=green!55]{#1}}    % green --- rewritten and checked, comment from AI
