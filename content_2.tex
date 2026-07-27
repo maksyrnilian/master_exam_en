@@ -35,7 +35,7 @@
             \end{alignedat}
         \end{equation}
 
-        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).\todoper{Check Griffiths on bound currents}
+        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).
 
         The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
 
@@ -339,7 +339,7 @@
             v = c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
         \end{equation*}
 
-        Performing the same derivation inside a homogeneous, non-magnetic medium that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with\todoai{Assumptions tightened. The equation below needs the medium to be homogeneous, non-magnetic and free of free charge, which is what removes the $\nabla(\nabla\cdot\vec{E})$ and $\nabla\times\vec{M}$ terms. It is not the fully general result.}
+        Performing the same derivation inside a homogeneous, non-magnetic medium that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with
 
         \begin{equation*}
             \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \underbrace{\mu_{0}\frac{\partial\vec{J}_{\text{f}}}{\partial t}}_{\substack{\text{important in} \\ \text{conductors}}} + \underbrace{\mu_{0}\frac{\partial^{2}\vec{P}}{\partial t^{2}}}_{\substack{\text{important in} \\ \text{insulators}}},
@@ -361,7 +361,7 @@
             \vec{E}(\vec{r},t) = \vec{E}_{0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
         \end{equation*}
 
-        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E}_{0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = \nicefrac{|\vec{E}|}{c}$.\todoper{Check with plazmonika notes} The direction in which $\vec{E}_{0}$ points is called the \emph{polarisation} of the wave, discussed next.
+        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E}_{0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = \nicefrac{|\vec{E}|}{c}$. The direction in which $\vec{E}_{0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
     \subsection{Polarisation of a wave}
 
@@ -498,7 +498,7 @@
 
     \paragraph{Black-body radiation}
 
-    A hot body radiates with a spectrum fixed by its temperature alone. Classically the predicted power diverges towards short wavelengths---the \emph{ultraviolet catastrophe}---whereas the measured spectrum peaks and then falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $f$ exchanges energy only in whole quanta $E = hf$, which makes the short-wavelength modes too expensive to excite. The argument is given in full in \cref{sec:thermal-radiation}.\todoai{Trimmed. The mode count, and the point that the catastrophe is a failed prediction rather than an observation, are now made once, in \cref{sec:thermal-radiation}.}
+    A hot body radiates with a spectrum fixed by its temperature alone. Classically the predicted power diverges towards short wavelengths---the \emph{ultraviolet catastrophe}---whereas the measured spectrum peaks and then falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $f$ exchanges energy only in whole quanta $E = hf$, which makes the short-wavelength modes too expensive to excite. The argument is given in full in \cref{sec:thermal-radiation}.
 
     \paragraph{The photoelectric effect}
 
@@ -574,7 +574,7 @@
 
     \subsection{Stationary perturbation theory}
 
-        Take a Hamiltonian $\hat{H}_{0}$ we can already solve, that of the hydrogen atom say, and make a small change to the system, such as switching on a weak external electric field. Solving the new problem exactly would be as hard as the original one, so the change is treated instead as a \emph{perturbation}, an extra term $\lambda\hat{H}'$. The method is the quantum counterpart of a Taylor expansion in $\lambda$: successive corrections are added, and the smaller the perturbation the fewer are needed, one or two usually being enough.\todoper{look at my qm2 notes}
+        Take a Hamiltonian $\hat{H}_{0}$ we can already solve, that of the hydrogen atom say, and make a small change to the system, such as switching on a weak external electric field. Solving the new problem exactly would be as hard as the original one, so the change is treated instead as a \emph{perturbation}, an extra term $\lambda\hat{H}'$. The method is the quantum counterpart of a Taylor expansion in $\lambda$: successive corrections are added, and the smaller the perturbation the fewer are needed, one or two usually being enough.
 
         \begin{align}
             E_n^{(1)} &= \bra{\psi_n^{(0)}} \hat{H}' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
@@ -584,7 +584,7 @@
 
     \subsection{Fermi's golden rule}
 
-        Stationary perturbation theory assumes a perturbation that does not change with time. When it does change, the treatment is harder, but for a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, the result is \emph{Fermi's golden rule}\todoper{look-up online}, which gives the probability per unit time of a transition between two states $\psi_n^{(0)}$ and $\psi_m^{(0)}$:
+        Stationary perturbation theory assumes a perturbation that does not change with time. When it does change, the treatment is harder, but for a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, the result is \emph{Fermi's golden rule}
 
         \begin{equation}\label{eq:fermi-golden-rule}
             \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}\hat{H}'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
@@ -602,7 +602,7 @@
             f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
         \end{equation}
 
-        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. (This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.)\todoper{look-up online}
+        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. (This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.)
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
 \label{sec:atom-molecule}

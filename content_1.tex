@@ -29,6 +29,7 @@
             z' &= z
         \end{aligned}
     \end{empheq}
+    \keyeqentry{Lorentz transformation}
 
     where the parameter $\gamma$ is known as the Lorentz factor:
 
@@ -49,21 +50,31 @@
             x^{\mu} =
             \begin{bmatrix}
                 ct \\ x \\ y \\ z
+            \end{bmatrix} =
+            \begin{bmatrix}
+                ct \\ \vec{r}
             \end{bmatrix},
             \qquad
             p^{\mu} =
             \begin{bmatrix}
-                E/c \\ p_x \\ p_y \\ p_z
+                \nicefrac{E}{c} \\ p_x \\ p_y \\ p_z
+            \end{bmatrix} =
+            \begin{bmatrix}
+                \nicefrac{E}{c} \\ \vec{p}
             \end{bmatrix}.
         \end{equation*}
-        Position is the prototype, and there the zeroth slot is literally time. What makes any other set of four quantities a four-vector is not an analogy with position but a transformation law. An equation written as an equality of four-vectors automatically holds in every inertial frame, because both sides transform in the same way. And each four-vector has one combination of its components that every observer agrees on: for position it is the spacetime interval $(c^{2}t^{2}-X^{2})$, and for momentum it is $(E^{2}-p^{2}c^{2})$.
+        Position is the prototype, and there the zeroth slot is literally time. What makes any other set of four quantities a four-vector is not an analogy with position but a transformation law. An equation written as an equality of four-vectors automatically holds in every inertial frame, because both sides transform in the same way. And each four-vector has one combination of its components that every observer agrees on. For position it is the \emph{spacetime interval} between two events, $\Delta s^{2} = c^{2}\Delta t^{2} - |\Delta\vec{r}|^{2}$, which measures whether the two are far enough apart in space that nothing could travel between them in the time available. If $\Delta s^{2} > 0$ the separation is \emph{timelike}, a body moving slower than light can be present at both events, one may therefore cause the other, and $\Delta s^{2} = c^{2}\Delta\tau^{2}$ gives the proper time a clock carried between them would record. If $\Delta s^{2} = 0$ the separation is \emph{lightlike} and only a light signal connects them. If $\Delta s^{2} < 0$ it is \emph{spacelike}, no signal can pass from one to the other, neither can influence the other, and there is an inertial frame in which the two are simultaneous---which is exactly the relativity of simultaneity above.
     \end{enumerate}
 
-    \paragraph{Mass--energy.}
+    \paragraph{Mass--energy}
+
         Writing out the invariant of the four-momentum gives the \emph{energy--momentum relation}
+
         \begin{empheq}[box=\fbox]{equation}\label{eq:energy-momentum}
             E^{2} = p^{2}c^{2} + m^{2}c^{4},
         \end{empheq}
+        \keyeqentry{Energy--momentum--mass relation}
+
         where $E$ is the total energy of a free body, $p$ the magnitude of its momentum, and $m$ its \emph{invariant mass}, meaning the mass measured in the frame in which the body is at rest. Two limits carry most of the physics. For a body at rest we have $p=0$ and the relation collapses to Einstein's $E=mc^{2}$, so that mass is itself a store of energy at the conversion rate $c^{2}\simeq\qty{9e16}{\joule\per\kilogram}$---the reason a milligram of mass defect suffices to power a nuclear reaction. For a massless particle such as the photon we have $m=0$ and the relation gives $E=pc$, a case $E=mc^{2}$ cannot describe at all. The invariant mass of a composite system also counts the internal energy of its parts, so a hot or compressed body is very slightly more massive than a cold relaxed one, and roughly \qty{99}{\percent} of a proton's mass is the kinetic energy of its quarks and the energy of the gluon field rather than the quark masses themselves.
 
 % Fundamental interactions --- follows the particle-physics lecture; carrier
@@ -595,7 +606,7 @@
 
         with $l = 0,1,2,\dots$ and $m = -l,-l+1,\dots,+l$, so an angular momentum of a given magnitude has $2l+1$ allowed orientations. The same pattern holds for $\hat{\vec{S}}$ with the pair $(s,m_s)$ and for $\hat{\vec{J}}$ with $(j,m_j)$, except that $s$ and $j$ are allowed to be half-integer. An electron always has $s = \nicefrac{1}{2}$ and therefore $m_s = \pm\nicefrac{1}{2}$, which is where its two states come from.
 
-        Since $\hat{\vec{L}}$ and $\hat{\vec{S}}$ belong to the same electron, they combine into $\hat{\vec{J}}$, and $j$ then runs from $|l-s|$ to $l+s$ in integer steps---for $l=1$ and $s=\nicefrac{1}{2}$, either $j=\nicefrac{1}{2}$ or $j=\nicefrac{3}{2}$. The two combinations differ slightly in energy because the electron's magnetic moment sits in the magnetic field produced by its own orbital motion, and that splitting is the \emph{fine structure} of the spectrum. How the quantum numbers $n$, $l$, $m$ and $m_{s}$ label the states of an atom, and how large the fine and hyperfine splittings are beside the gross structure, is set out in \cref{sec:atom-molecule}.\todoai{The hydrogen quantum-number list that stood here repeated \cref{sec:atom-molecule} almost word for word and has been replaced by the cross-reference.}
+        Since $\hat{\vec{L}}$ and $\hat{\vec{S}}$ belong to the same electron, they combine into $\hat{\vec{J}}$, and $j$ then runs from $|l-s|$ to $l+s$ in integer steps---for $l=1$ and $s=\nicefrac{1}{2}$, either $j=\nicefrac{1}{2}$ or $j=\nicefrac{3}{2}$. The two combinations differ slightly in energy because the electron's magnetic moment sits in the magnetic field produced by its own orbital motion, and that splitting is the \emph{fine structure} of the spectrum. How the quantum numbers $n$, $l$, $m$ and $m_{s}$ label the states of an atom, and how large the fine and hyperfine splittings are beside the gross structure, is set out in \cref{sec:atom-molecule}.
 
     \subsection{Classical precession}
 
@@ -699,7 +710,7 @@
 
     \subsection{The third law of thermodynamics}
 
-        \textit{As the temperature of a system approaches absolute zero, its entropy approaches a constant value independent of every other parameter of the state.} This is the Nernst heat theorem, and for a perfect crystal the constant is zero. An equivalent form is the \emph{unattainability principle}: absolute zero cannot be reached by any finite number of steps, starting from a non-zero absolute temperature.\todoai{Only the unattainability statement was given, under the name of the Nernst heat theorem. The entropy statement is now first, with unattainability as its equivalent form.}
+        \textit{As the temperature of a system approaches absolute zero, its entropy approaches a constant value independent of every other parameter of the state.} This is the Nernst heat theorem, and for a perfect crystal the constant is zero. An equivalent form is the \emph{unattainability principle}: absolute zero cannot be reached by any finite number of steps, starting from a non-zero absolute temperature.
 
 \section{Mechanical properties of material media: liquids, elastic media, mechanical waves}
 \label{sec:mechanical-media}
