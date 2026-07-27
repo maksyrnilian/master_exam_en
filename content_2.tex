@@ -94,7 +94,7 @@
     \subsection{Maxwell's equations in matter}
     \label{sec:maxwell-matter}
 
-        An electric field pulls the positive and negative charge of each atom or molecule slightly apart, giving it an electric dipole moment $\vec{p} = q\vec{d}$, where $\vec{d}$ points from the negative charge to the positive one. Averaged per unit volume these moments give the polarisation vector $\vec{P}$ (\cref{eq:polarisability}), which in a linear dielectric is proportional to the field,
+        An electric field pulls the positive and negative charge of each atom or molecule slightly apart, giving it an electric dipole moment $\vec{p} = q\vec{d}$, where $\vec{d}$ points from the negative charge to the positive one. Averaged per unit volume these moments give the polarisation vector $\vec{P}$ (\cref{sec:electric-field}), which in a linear dielectric is proportional to the field,
 
         \begin{equation}\label{eq:polarisation-vector}
             \vec{P}=\chi \varepsilon_0\vec{E},
@@ -215,16 +215,18 @@
             \vec{D} = \varepsilon_{0}\vec{E} + \vec{P} = \varepsilon_{0}\left(1+\chi\right)\vec{E} \equiv \varepsilon_{0}\varepsilon_{\text{r}}\vec{E},
         \end{equation}
 
-        where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material (related to the refractive index (\cref{eq:refractive-index:})). It is $1$ in vacuum but in genral it has a real and imaginary components, may be negative, and changes dramatically in different types of media, which is crucial for EM waves (\cref{sec:em-waves}). The three mechanisms below add up to it (\cref{eq:polarisability-sum}), and each stops contributing at a different frequency, so $\varepsilon_{\text{r}}$ is a function of frequency as well.
+        where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material, which fixes the refractive index (\cref{eq:refractive-index}). It is $1$ in vacuum and a few for ordinary glasses and plastics, but in general it is complex and frequency-dependent, its imaginary part recording absorption, and in a metal below the plasma frequency it is negative---which is what governs the behaviour of EM waves in media (\cref{sec:em-waves}). The three mechanisms below add up to it (\cref{eq:polarisability-sum}), and each stops contributing at a different frequency.
 
-        Underneath $\chi$ there is a microscopic picture. Each atom or molecule acquires the dipole moment $\vec{p} = q\vec{d}$, and in a weak field it is proportional to the field acting on it,
+        Underneath $\chi$ there is a microscopic picture. Each atom or molecule acquires the dipole moment $\vec{p} = q\vec{d}$ (\cref{sec:maxwell-matter}), and in a weak field it is proportional to the field acting on it,
 
         \begin{empheq}[box=\fbox]{equation}\label{eq:polarisability}
             \vec{p} = \alpha\vec{E},
         \end{empheq}
         \keyeqentry{Polarisability}
 
-        where $\alpha$ --- the \emph{polarisability}, a measure of how easily that particular atom or molecule is deformed or turned. With $N$ such units per unit volume the polarisation is their sum, $\vec{P} = N\vec{p}$, and comparing it with \cref{eq:polarisation-vector} gives $\chi = \nicefrac{N\alpha}{\varepsilon_{0}}$. The three mechanisms below are not alternatives. Every material has electrons, so the electronic contribution is always present, and a material whose structure permits the others shows them at the same time. Their polarisabilities simply add,
+        where $\alpha$ --- the \emph{polarisability}, a measure of how easily that particular atom or molecule is deformed or turned. With $N$ such units per unit volume the polarisation is their sum, $\vec{P} = N\vec{p}$, and comparing it with \cref{eq:polarisation-vector} gives $\chi = \nicefrac{N\alpha}{\varepsilon_{0}}$. Strictly the $\vec{E}$ of \cref{eq:polarisability} is the field at the site of the atom rather than the macroscopic average field, and correcting for the difference turns it into the Clausius--Mossotti formula.
+        
+        The three mechanisms below are not alternatives. Every material has electrons, so the electronic contribution is always present, and a material whose structure permits the others shows them at the same time. Their polarisabilities simply add,
 
         \begin{equation}\label{eq:polarisability-sum}
             \alpha = \alpha_{\text{e}} + \alpha_{\text{i}} + \alpha_{\text{or}},
@@ -234,21 +236,29 @@
 
         \paragraph{Electronic polarisation}
 
-            Electronic polarisation is the displacement of an atom's negatively charged electron cloud with respect to its positive nucleus, inducing a moment governed by $\alpha_{\text{e}}$. Every material has electrons, so this mechanism is present in all of them, polar or not. Its polarisability grows roughly with the volume of the atom, since a larger and more loosely bound cloud is easier to pull aside. Only the light electrons have to move, so it is much the fastest of the three and still follows the field at optical and ultraviolet frequencies---it is what supplies the refractive index of ordinary glass.
+            Electronic polarisation is the displacement of an atom's negatively charged electron cloud with respect to its positive nucleus, inducing a moment governed by $\alpha_{\text{e}}$. Its polarisability grows roughly with the volume of the atom, since a larger and more loosely bound cloud is easier to pull aside. Only the light electrons have to move, so it is much the fastest of the three and still follows the field at optical and ultraviolet frequencies---it is what supplies the refractive index of ordinary glass.
 
         \paragraph{Ionic polarisation}
 
-            Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared. Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way, with a polarisability $\alpha_{\text{i}}$ of the same induced kind as the electronic one. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared.
+            Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way, with a polarisability $\alpha_{\text{i}}$ of the same induced kind as the electronic one. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared.
 
-        \paragraph{Orientational polarisation}
+        \begin{minipage}{1\textwidth}
+            \paragraph{Orientational polarisation}
+            \begin{wrapfigure}{L}{0.2\textwidth}
+                    \centering
+                    \includegraphics[width=0.18\textwidth]{graphics/water_molecule.pdf}
+                    \caption{Water molecule.}
+                    \label{fig:water-molecule}
+                \end{wrapfigure}
 
-            Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment $p_{0}$ of their own. The field exerts an ordering torque on them while thermal motion destroys the ordering, so what survives is a slight statistical bias in their directions. Nothing is deformed here and no single moment changes size, so the polarisability is an effective one produced by that averaging,
+                Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment $p_{0}$ of their own. The field exerts an ordering torque on them while thermal motion destroys the ordering, so what survives is a slight statistical bias in their directions. Nothing is deformed here and no single moment changes size, so the polarisability is an effective one produced by that averaging,
 
-            \begin{equation}\label{eq:orientational-polarisability}
-                \alpha_{\text{or}} = \frac{p_{0}^{2}}{3\kB T},
-            \end{equation}
+                \begin{equation}\label{eq:orientational-polarisability}
+                    \alpha_{\text{or}} = \frac{p_{0}^{2}}{3\kB T},
+                \end{equation}
 
-            valid while the ordering energy $p_{0}E$ stays small against $\kB T$. This is the only contribution that depends on temperature, and it falls as the material is heated. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range---which is exactly what a \emph{microwave oven exploits in water}.
+                valid while the ordering energy $p_{0}E$ stays small against $\kB T$. This is the only contribution that depends on temperature, and it falls as the material is heated. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range---which is exactly what a \emph{microwave oven} exploits in water (\cref{fig:water-molecule}).
+        \end{minipage}
 
     \subsection{Conductivity and mobility}
 
