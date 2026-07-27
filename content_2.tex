@@ -313,7 +313,7 @@
                 \captionof{table}{Temperature dependence of conductivity in a metal versus a semiconductor.}
                 \label{tab:conduction-temperature}
             \end{minipage}
-        \end{table}\todo{words are awkardly separatated. left align}
+        \end{table}
 
         In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu_{\text{c}}$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
 
@@ -502,7 +502,7 @@
 
         where $n_1$, $n_2$ are the refractive indices of the two media (\cref{eq:refractive-index}), $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
 
-        A wave is called $p$-polarised (parallel) when its electric field lies in the plane of incidence, and $s$-polarised (perpendicular, from the German \emph{senkrecht}) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients.\todo{write fresnel maybe}
+        A wave is called $p$-polarised (parallel) when its electric field lies in the plane of incidence, and $s$-polarised (perpendicular, from the German \emph{senkrecht}) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients.
 
         \paragraph{The Brewster angle}
 
@@ -812,37 +812,41 @@
 
     \subsection{The atom from the Schrödinger equation}
 
-        A state evolves in time by the Schrödinger equation (\cref{eq:tdse}), and the \emph{states of definite energy are the solutions of its time-independent form} (\cref{eq:tise}). For one electron bound to a nucleus of charge $Ze$ the potential is the Coulomb attraction\todo{since the question is about the schordinger equation , make the introduction a little stronger}
+        The whole of this section comes out of one equation. A state evolves in time by the Schrödinger equation (\cref{eq:tdse}), and the \emph{states of definite energy are the solutions of its time-independent form} (\cref{eq:tise}). What makes it the basis of atomic and molecular structure is that nothing has to be put in by hand: write down the potential, demand that the solution be physically acceptable, and the allowed energies, the quantum numbers and the shapes of the orbitals all come out as the only solutions those conditions permit. The chemistry then follows from how the solutions are filled.
+
+        For one electron bound to a nucleus of charge $Ze$ the potential is the Coulomb attraction
 
         \begin{equation*}
-            V(r) = -\frac{Ze^{2}}{4\pi\varepsilon_{0}r}.
+            V(r) = -\frac{Ze^{2}}{4\pi\varepsilon_{0}r},
         \end{equation*}
 
-        The solutions of the asocciated equations split into radial and angular factors, $\psi_{nlm}(r,\theta,\varphi)$. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):\todo{rephrase}\todo{somewhere mention what letters spdf etc correspond to}
+        which depends on the distance alone, so the equation separates in spherical coordinates and every solution factorises into a radial and an angular part, $\psi_{nlm}(r,\theta,\varphi) = R_{nl}(r)\,Y_{lm}(\theta,\varphi)$, the $Y_{lm}$ being the \emph{spherical harmonics}, the standard set of wave shapes on the surface of a sphere. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):
 
         \begin{itemize}
-            \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\nicefrac{13.6\,Z^{2}\,\mathrm{eV}}{n^{2}}$ for a one-electron atom, so $13.6$~eV is the energy needed to remove the electron from hydrogen in its ground state.
-            \item \textbf{Orbital, $l = 0,\dots,n-1$} --- fixes the magnitude of the orbital angular momentum, $|\vec{L}| = \hbar\sqrt{l(l+1)}$, and hence the shape. Written as the letters s, p, d, f.
+            \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\nicefrac{13.6\,Z^{2}}{n^{2}}$~eV for a one-electron atom, so $13.6$~eV is the energy needed to remove the electron from hydrogen in its ground state.
+            \item \textbf{Orbital, $l = 0,\dots,n-1$} --- fixes the magnitude of the orbital angular momentum, $|\vec{L}| = \hbar\sqrt{l(l+1)}$, and hence the shape. Written as a letter rather than a number: s, p, d, f for $l = 0,1,2,3$, and alphabetically g, h and onwards beyond that.
             \item \textbf{Magnetic, $m = -l,\dots,+l$} --- fixes its projection on a chosen axis, $L_{z} = m\hbar$, that is, the orientation.
             \item \textbf{Spin, $m_{s} = \pm\nicefrac{1}{2}$} --- the projection of the electron's own spin, doubling every count above.
         \end{itemize}
 
-        One such solution is an \emph{orbital}: a spatial probability distribution for one electron. Orbitals sharing the same $n$ form a \emph{shell}, and those sharing both $n$ and $l$ a \emph{subshell}. Since the exclusion principle (\cref{eq:identical}) forbids two electrons the same four labels, one orbital holds two electrons of opposite spin, a subshell holds $2(2l+1)$---two in s, six in p, ten in d, fourteen in f---and a shell holds $2n^{2}$.
+        One such solution is an \emph{orbital}: a spatial probability distribution for one electron, usually drawn as the surface enclosing most of that probability. In hydrogen the three spatial labels do one job each. $n$ sets the size, which grows roughly as $n^{2}$ from the Bohr radius $a_{0} \simeq 0.053$~nm in the ground state. $l$ sets the shape---an s orbital ($l=0$) is a sphere, a p orbital ($l=1$) is two lobes either side of a nodal plane, and the d orbitals ($l=2$) are mostly four-lobed. $m$ sets the orientation of that shape, so the three p orbitals are the same pair of lobes pointing along $x$, $y$ and $z$.\footnote{The directed orbitals drawn in chemistry are real combinations of the complex $\pm m$ solutions, which is why they point along axes rather than carrying a definite $L_{z}$.}
+
+        The three spatial labels nest, each one naming a finer division than the last: $n$ alone names a \emph{shell}, $n$ and $l$ together a \emph{subshell}, and all three an individual \emph{orbital}. Since the exclusion principle (\cref{eq:identical}) forbids two electrons the same four labels, one orbital holds two electrons of opposite spin, a subshell holds $2(2l+1)$---two in s, six in p, ten in d, fourteen in f---and a shell holds $2n^{2}$.
 
         No exact solution exists once there is more than one electron, because each also repels the others, but the labels survive and the ground state is built by filling the levels according to three rules:
 
         \begin{itemize}
-            \item \textbf{Aufbau principle}---fill from the lowest energy upwards, in order of increasing $n+l$, and for equal $n+l$ in order of increasing $n$. This is why $4$s fills before $3$d.
-            \item \textbf{Pauli exclusion principle}---no two electrons in one atom share all four quantum numbers.
-            \item \textbf{Hund's rule}---within a subshell, electrons occupy separate orbitals with parallel spins before any orbital takes a second electron.
+            \item \textbf{Aufbau principle} --- fill from the lowest energy upwards, in order of increasing $n+l$, and for equal $n+l$ in order of increasing $n$. This is why $4$s fills before $3$d.
+            \item \textbf{Pauli exclusion principle} --- no two electrons in one atom share all four quantum numbers.
+            \item \textbf{Hund's rule} --- within a subshell, electrons occupy separate orbitals with parallel spins before any orbital takes a second electron.
         \end{itemize}
 
-        The result is the \emph{electron configuration}, written for carbon as $1\text{s}^{2}2\text{s}^{2}2\text{p}^{2}$. Only the outermost, \emph{valence} electrons are available for bonding, and they are what the chemistry of the element is made of. \todo{somewhere also mention what orbitals look like in hydrogen atom and what labels nlm do to them.}
+        The result is the \emph{electron configuration}, written for carbon as $1\text{s}^{2}2\text{s}^{2}2\text{p}^{2}$. Only the outermost, \emph{valence} electrons are available for bonding, and they are what the chemistry of the element is made of.
 
         \paragraph{Corrections to this picture}
 
-            The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion---\emph{spin--orbit coupling}, and it is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker \emph{magnetic moment of the nucleus\todo{because of spin of quarks?}} and is smaller again by roughly the electron-to-proton mass ratio---in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies.
-            
+            The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion, the \emph{spin--orbit coupling}. It is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker \emph{magnetic moment of the nucleus}, which is built out of the spins and the orbital motion of the protons and neutrons and whose scale is therefore the \emph{nuclear magneton} $\nicefrac{e\hbar}{2m_{p}}$, smaller than the Bohr magneton $\muB$\todo{reference} by the electron-to-proton mass ratio of about $\nicefrac{1}{1836}$.\footnote{Why a single nucleon has the moment it does---about $2.79$ nuclear magnetons for the proton, and $-1.91$ for the electrically neutral neutron---is a question about the quarks inside it, one level further down and not needed here.} The hyperfine splitting is smaller than the fine structure by roughly that same ratio, and in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies.
+
             An external field splits levels in its turn, into the Zeeman effect (\cref{sec:zeeman-effect}) for a magnetic field and the Stark effect for an electric one, both of which are worked out later in the note.
 
     \subsection{The periodic table of the elements}
@@ -865,16 +869,18 @@
 
     \subsection{Molecules and the different types of chemical bond}
 
-        The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it screens their repulsion and lowers the energy, and an \emph{antibonding} one, in which they cancel between the nuclei and the energy is raised. \todo{is that correct}\todo{so if atoms get close and form *molecular orbitals* but with more electrons in the antibonding ones that there is no bonding despite there being a molecular orbital?}
-        
-        A bond exists when more electrons sit in bonding orbitals than in antibonding ones.\todo{and that?} Everything below is a special case of valence electrons rearranging in this way to \emph{lower the total energy}.
+        The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it is attracted by both at once and the energy is lowered, and an \emph{antibonding} one, in which they cancel between the nuclei, leaving a node there, and the energy is raised.
+
+        Whether there is a bond is then a matter of counting, since the molecular orbitals form whichever way the electrons are distributed among them. The \emph{bond order} is half the number of electrons in bonding orbitals minus the number in antibonding ones, and it must be positive for the molecule to hold together. Two helium atoms fill the bonding and the antibonding orbital alike, giving bond order zero and no oridinary He$_{2}$ molecule exists.\footnote{
+            Helium can only form bonds if it is excited or ionosied or at cryogenic temperatures where the Van der Waals attraction is enough.)
+        } Everything below is a special case of valence electrons rearranging in this way to \emph{lower the total energy}.
 
         \begin{itemize}
-            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and non-directional\todo{what is meant by it? is it fully isotropic? orbitals arent cnetrally syumetraical so why}, and it forms crystalline solids (e.g.\ NaCl).
-            \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons in a common bonding orbital so that each attains a filled valence shell. It is strong and directional, since the orbitals point in particular directions, which is what fixes the shapes of molecules (e.g.\ H$_2$, diamond).
+            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. Both ions are left with closed shells, and a closed shell has a spherically symmetric charge distribution however lopsided its individual orbitals are, so the attraction depends on the separation alone and not on the direction. That is what \emph{non-directional} means here: the structure is fixed by how many ions of one size will pack around another and by overall neutrality, not by any bond angle. The bond is strong, and it forms crystalline solids (e.g.\ NaCl).
+            \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons in a common bonding orbital so that each attains a filled valence shell. It is strong and directional, since the orbitals involved are only partly filled and therefore point in particular directions, which is what fixes the shapes of molecules (e.g.\ H$_2$, diamond).
             \item \textbf{Metallic} --- in a metal the atoms are packed so closely that the outermost shell of each overlaps the shells of many neighbours at once. The valence electrons are then not tied to any particular pair of atoms and move freely through the whole solid, leaving positive ion cores in a shared sea of delocalised electrons. Because no bond points anywhere in particular, the ions can slide past one another without the bonding being broken, which is why metals are malleable, and because the electrons are free to move they conduct heat and electricity (e.g.\ copper).
             \item \textbf{Hydrogen bond} --- a much weaker attraction, in which a hydrogen atom already covalently bound to a strongly electronegative atom (O, N, F) is drawn towards a second such atom nearby, the hydrogen being left with little electron density of its own. It holds liquid water together (\cref{fig:water-molecule}) and binds the two strands of DNA.
-            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied. A solid whose lattice points are whole molecules held in place by hydrogen bonds or van der Waals forces alone is called a \emph{molecular} solid---ice and solid carbon dioxide are the standard cases---and such solids are soft and melt at low temperatures. Adjecent layers of graphene are held by Van der Waals forces as well.
+            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied. A solid whose lattice points are whole molecules held in place by hydrogen bonds or van der Waals forces alone is called a \emph{molecular} solid---ice and solid carbon dioxide are the standard cases---and such solids are soft and melt at low temperatures. The graphene sheets making up graphite are held to one another in the same way, which is why it flakes so easily.
         \end{itemize}
 
 \section{Quantum tunnelling; examples}
@@ -888,22 +894,23 @@
 
         \begin{itemize}
             \item \textbf{before the barrier} --- an incident plus a reflected wave, $\psi(x) = Ae^{i k x} + Be^{-i k x}$.
-            \item \textbf{inside the barrier} --- since $E < V_0$ the wave does not oscillate but decays exponentially, $\psi(x) = Ce^{-\kappa x} + De^{\kappa x}$, with $\kappa = \nicefrac{\sqrt{2m(V_0 - E)}}{\hbar}$.
+            \item \textbf{inside the barrier} --- since $E < V_0$ the wave does not oscillate but decays exponentially, $\psi(x) = Ce^{-\kappa x}$, with $\kappa = \nicefrac{\sqrt{2m(V_0 - E)}}{\hbar}$.
             \item \textbf{beyond the barrier} --- a transmitted wave travelling outwards, $\psi(x) = Fe^{i k x}$, with a smaller amplitude, $|F| < |A|$.
         \end{itemize}
 
         Because the exponential tail inside the barrier is still nonzero at the far edge, the transmitted amplitude does not vanish: there is a finite probability of the particle emerging. This is measured by the transmission coefficient
 
-        \begin{equation*}
+        \begin{empheq}[box=\fbox]{equation}
             T = \frac{|F|^2}{|A|^2} \propto e^{-2\kappa b},
-        \end{equation*}
+        \end{empheq}
+        \keyeqentry{Tunneling transmission coefficient}
 
         the proportionality holding for any barrier thick enough to be worth calling one. Everything about tunnelling follows from that exponential. The probability falls off extremely fast with the width $b$ of the barrier and with $\sqrt{m(V_{0}-E)}$, so tunnelling is a serious effect only for light particles and thin, low barriers, and small changes in any of these quantities change the rate by orders of magnitude.
 
     \subsection{Examples}
 
         \begin{itemize}
-            \item \textbf{Alpha decay.} An $\alpha$ particle inside a heavy nucleus is held by the strong interaction but faces the Coulomb repulsion of the daughter nucleus as a barrier several MeV higher than its own energy. It escapes by tunnelling. Because $T$ depends exponentially on the energy, a spread of only a few MeV in $\alpha$ energies produces half-lives ranging from microseconds to billions of years, which no other mechanism would explain.
+            \item \textbf{Alpha decay.} An $\alpha$ particle (${}^{4}_2\text{He}^{2+}$) inside a heavy nucleus is held by the strong interaction but faces the Coulomb repulsion of the daughter nucleus as a barrier several MeV higher than its own energy. It escapes by tunnelling. Because $T$ depends exponentially on the energy, a spread of only a few MeV in $\alpha$ energies produces half-lives ranging from microseconds to billions of years, which no other mechanism would explain.
             \item \textbf{Fusion in stars.} Two nuclei must come within about $10^{-15}$~m against their mutual Coulomb repulsion. At the temperature of the Sun's core the typical thermal energy is a thousand times smaller than that barrier, so on classical grounds the Sun should not shine. Fusion proceeds because the rare fast protons tunnel through, and this is also why controlled fusion may be possible at a lower temperature than a classical estimate demands.
             \item \textbf{Scanning tunnelling microscope.} A sharp conducting tip is held a fraction of a nanometre above a surface and a small voltage applied. Electrons tunnel across the gap, and because the current depends exponentially on the width of that gap, moving the tip by the diameter of a single atom changes it by orders of magnitude. Scanning the tip at constant current maps the surface atom by atom.
             \item \textbf{Semiconductor devices.} In a tunnel diode the junction is made so narrow that carriers tunnel straight across it, which gives the device a range of voltages over which the current \emph{falls} as the voltage rises. In flash memory, writing and erasing consist of driving electrons through a thin insulating layer onto an isolated gate, where they stay until driven back.
