@@ -117,7 +117,7 @@
 
     This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate.
 
-    \paragraph{The Zeeman effect}
+    \paragraph{The Zeeman effect}\label{sec:zeeman-effect}
 
     The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, splitting one spectral line into several closely spaced ones.
 
@@ -312,7 +312,7 @@
             \item \textbf{Enthalpy} $H = U + pV$, natural in $S$, $p$, $N$. At constant pressure and with no work other than expansion, $dH = dU + p\,dV = \delta Q$: the heat taken up in a constant-pressure process \emph{is} the change in enthalpy. Since almost all chemistry happens in an open vessel at atmospheric pressure, this is why reaction heats are tabulated as enthalpies.
             \item \textbf{Helmholtz free energy} $A = U - TS$, natural in $T$, $V$, $N$---exactly the variables of the canonical ensemble, which is why \cref{eq:helmholtz} takes the form it does.
             \item \textbf{Gibbs free energy} $G = U - TS + pV$, natural in $T$, $p$, $N$. These are the two variables an experimenter actually controls, which is why $G$ governs phase equilibria and chemical reactions (\cref{sec:phase-transitions}).
-            \item \textbf{Chemical potential} $\mu = \left(\nicefrac{\partial G}{\partial N}\right)_{T,p}$, the free-energy cost of adding one more particle while $T$ and $p$ are held fixed. The cost is not the kinetic energy of throwing the particle in. Holding $T$ and $p$ fixed means the newcomer must be given its thermal share of the energy, and the system must expand to make room for it, doing work against the surroundings. Against that stands the entropy gained by having one more particle to arrange, and in a dilute gas that gain wins, so $\mu$ is in fact negative.
+            \item \textbf{Chemical potential} $\mu = \left(\nicefrac{\partial G}{\partial N}\right)_{T,p}$, the free-energy cost of adding one more particle while $T$ and $p$ are held fixed. The cost is not the kinetic energy of throwing the particle in. Holding $T$ and $p$ fixed means the newcomer must be given its thermal share of the energy, and the system must expand to make room for it, doing work against the surroundings. Against that stands the entropy gained by having one more particle to arrange, and in a dilute gas that gain wins, so $\mu$ is in fact negative. Since $G$ is proportional to the amount of substance, for a single component the derivative is simply $\mu = \nicefrac{G}{N}$, the Gibbs free energy per particle, and being intensive it can be quoted for a phase without saying how much of that phase is present---which is what makes it, rather than $G$ itself, the quantity that decides phase equilibria (\cref{sec:phase-transitions}).
         \end{itemize}
 
         What makes the free energies the quantities to minimise is the second law applied to the system \emph{and} its surroundings. Let a system be held at temperature $T$ by a reservoir. The reservoir loses the heat the system gains, so its entropy changes by $-\nicefrac{\delta Q}{T}$, and the total entropy cannot decrease:

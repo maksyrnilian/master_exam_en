@@ -584,47 +584,89 @@
 \section{Phase transitions; types of phase transitions, order parameter of phase transition, coexistence of phases (examples of phenomena)}
 \label{sec:phase-transitions}
 
-    A \emph{phase} is a region of matterthat is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is a change in these properties when a control \emph{variable} such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering.
+    A \emph{phase} is a region of matter that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is a change from one phase to another when a control variable such as temperature or pressure is varied. It may involve the state of matter, the crystal structure or the magnetic ordering.
 
-    To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (\cref{sec:ensembles}). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
+    \subsection{Which phase is stable}
 
-    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (\cref{sec:thermo-potentials}), which measures the free energy per particle, behaves. A transition is of the $n$-th kind when the $n$-th derivative $\nicefrac{\partial^{n}\mu}{\partial T^{n}}$ is the first that is discontinuous.
+        At fixed temperature and pressure a system settles at the minimum of its Gibbs free energy $G$ (\cref{sec:thermo-potentials}), so of two candidate phases the stable one is whichever has the lower $G$. For a single substance $G$ is proportional to the amount of material, $G = \mu N$, so the \emph{chemical potential} $\mu = \nicefrac{G}{N}$ is the Gibbs free energy per particle. Using $\mu$ rather than $G$ is what makes the comparison possible at all: $\mu$ is intensive, a function of $T$ and $p$ alone, so it characterises a phase without reference to how much of that phase there is.
 
-    \begin{itemize}
-        \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
-        \item Second order --- the first derivatives are continuous but a second derivative jumps, with no latent heat. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
-        \item Higher orders are not used in practice, and the scheme itself breaks down whenever a derivative \emph{diverges} instead of jumping, as the heat capacity does at the superfluid transition of helium. Modern usage therefore keeps only two classes: first-order transitions, which have latent heat, and \emph{continuous} transitions, which do not.
-    \end{itemize}
+        The stable phase is therefore the one of lower $\mu$, and this also fixes what happens at the boundary between two of them. Particles move from high $\mu$ to low $\mu$ in the same way that heat flows from high to low temperature (\cref{sec:thermo-potentials}), so a liquid evaporates for as long as the vapour offers a lower $\mu$ and stops when the two are equal. Two phases coexist in equilibrium exactly when
 
-    The conditions for phases to coexist are given by the \emph{Gibbs phase rule},
+        \begin{equation}\label{eq:coexistence}
+            \mu_1(T,p) = \mu_2(T,p).
+        \end{equation}
 
-    \begin{equation}\label{eq:gibbs-phase}
-        f = s - r + 2,
-    \end{equation}
+    \subsection{Types of phase transition}
 
-    where $s$ is the number of chemical components, $r$ the number of coexisting phases and $f$ the number of intensive variables (such as temperature and pressure) that may be changed while keeping those phases in equilibrium. It requires the system to be in thermal, mechanical and chemical equilibrium. For a single substance ($s = 1$):
+        Because \cref{eq:coexistence} holds at the transition, $\mu$ itself is continuous there---the phases are equally stable, which is why either can be converted into the other at no cost in free energy. The transition can therefore only announce itself in the \emph{derivatives} of $\mu$, and the \emph{Ehrenfest classification} calls a transition $n$-th order when the $n$-th derivative with respect to $T$ or to $p$ is the first that is discontinuous.
 
-    \begin{itemize}
-        \item $r = 1$: one phase, $f = 2$ --- an area on the pressure--temperature diagram.
-        \item $r = 2$: two phases coexisting, $f = 1$ --- a coexistence curve.
-        \item $r = 3$: three phases, $f = 0$ --- the triple point.
-    \end{itemize}
+        Those derivatives are not abstract. Writing $G = U - TS + pV$ per particle gives $d\mu = -s\,dT + v\,dp$, so $\left(\nicefrac{\partial\mu}{\partial T}\right)_p = -s$ and $\left(\nicefrac{\partial\mu}{\partial p}\right)_T = v$, the entropy and the volume per particle. The classification is then a statement about measurable quantities.
+
+        \begin{itemize}
+            \item \textbf{First order} --- $s$ and $v$ jump. The jump in entropy is heat absorbed at constant temperature, the \emph{latent heat} $L = T\,\Delta s$, and the jump in $v$ is the sudden change of density. Melting and boiling are the examples: water at \qty{100}{\celsius} takes up its latent heat of vaporisation without getting any hotter, and expands by a factor of about $1600$.
+            \item \textbf{Second order} --- $s$ and $v$ are continuous, so there is neither latent heat nor a density jump, but a second derivative is discontinuous. The second derivatives are the response functions, among them the heat capacity $c_p = -T\left(\nicefrac{\partial^{2}\mu}{\partial T^{2}}\right)_p$, the compressibility and the thermal expansion. A ferromagnet losing its magnetisation at the Curie temperature is the standard example.
+            \item Higher orders are not used in practice, and the scheme itself breaks down whenever a derivative \emph{diverges} instead of jumping, as the heat capacity does at the superfluid transition of helium at \qty{2.17}{\kelvin}. Modern usage therefore keeps only two classes: first-order transitions, which have latent heat, and \emph{continuous} transitions, which do not.
+        \end{itemize}
+
+    \subsection{The order parameter}
+        \todo{is this the best most concise pricutre?}
+        Knowing that a transition occurs says nothing about what changes at it. The \emph{order parameter} $\eta$ is the single number that does: it is chosen to vanish in the disordered, more symmetric phase and to be nonzero in the ordered one, so it measures how much of the ordering has set in.
+
+        Its real use is that it allows a theory of the transition with no microscopic model at all. Near a continuous transition $\eta$ is small, so the free energy may be expanded in powers of it, and symmetry decides which powers may appear. When the two signs of $\eta$ describe physically equivalent states only even powers survive, which gives \emph{Landau theory},
+
+        \begin{equation}\label{eq:landau}
+            G(T,\eta) = G_0(T) + a_0\,(T - T_c)\,\eta^{2} + b\,\eta^{4}, \qquad a_0,\,b > 0 .
+        \end{equation}
+
+        Above $T_c$ the quadratic coefficient is positive and the only minimum sits at $\eta = 0$. Below $T_c$ it turns negative and the minima move out to $\eta = \pm\sqrt{\nicefrac{a_0(T_c - T)}{2b}}$, growing continuously from zero. The system has to choose one of two equally good minima, which is \emph{spontaneous symmetry breaking}: the free energy retains a symmetry that the state does not. The order parameter also labels the transition, since it grows continuously from zero at a continuous transition and jumps straight to a finite value at a first-order one.
+
+        \begin{itemize}
+            \item \textbf{Ferromagnet} --- $\eta$ is the magnetisation $M$. Above the Curie temperature ($T_C = \qty{1043}{\kelvin}$ for iron) the moments point every way and average to $M = 0$, which is the paramagnetic phase. Below it they align along a direction the sample selects for itself, and $M$ rises continuously from zero as the temperature falls.
+            \item \textbf{Liquid and gas} --- $\eta$ is the density difference $\rho_{\mathrm{l}} - \rho_{\mathrm{g}}$ between the coexisting phases. It is nonzero everywhere along the coexistence curve and closes to zero at the critical point, beyond which there is one fluid and nothing left to tell apart. Crossing the curve at a temperature below the critical one, the density jumps, which is first order, whereas at the critical point the difference vanishes continuously.
+            \item \textbf{Superfluid and superconductor} --- $\eta$ is the wave function shared by the particles of the condensate, its squared modulus giving the density of the condensed fraction: zero above the transition temperature, growing below it.
+        \end{itemize}
+
+        The picture is not universal. The liquid--gas transition breaks no symmetry---one may pass from liquid to gas by going round the critical point without crossing any boundary---so there the order parameter is a useful choice rather than something symmetry dictates.
+
+    \subsection{Coexistence of phases}
+
+        How many phases can coexist, and how much freedom remains when they do, follows from \cref{eq:coexistence} by counting. With $s$ components distributed over $r$ phases the unknowns are $T$, $p$ and the composition of each phase, which is $s-1$ independent fractions per phase, so $2 + r(s-1)$ in all. Equilibrium demands that every component have the same chemical potential in every phase, which is $s(r-1)$ equations. What is left over is the number of variables still free, the \emph{Gibbs phase rule},
+
+        \begin{equation}\label{eq:gibbs-phase}
+            f = s - r + 2 .
+        \end{equation}
+
+        It presumes full equilibrium: a common temperature, a common pressure and \cref{eq:coexistence}. For a single substance ($s = 1$):
+
+        \begin{itemize}
+            \item $r = 1$, so $f = 2$ --- $T$ and $p$ may be varied independently and a single phase occupies an area of the pressure--temperature diagram.
+            \item $r = 2$, so $f = 1$ --- choosing $T$ already fixes $p$, and coexistence is confined to a curve.
+            \item $r = 3$, so $f = 0$ --- a single point, the triple point. For water it lies at \qty{273.16}{\kelvin} and \qty{611.657}{\pascal}, and its sharpness is why it served as the fixed point of the Kelvin scale.
+        \end{itemize}
+
+    \subsection{Coexistence in practice}
+
+        Take a sealed rigid vessel part-filled with water and heat it slowly. Liquid and vapour coexist, so $f = 1$ and the pressure is not ours to choose: it climbs along the vapour-pressure curve as the temperature climbs. Heat supplied while both phases are present raises no temperature but converts liquid into vapour, which is the latent heat of a first-order transition. 
+
+        The order parameter is on display throughout. Heating the vessel makes the liquid expand and thin while the vapour is compressed denser, so $\rho_{\mathrm{l}} - \rho_{\mathrm{g}}$ shrinks. If the mean density in the vessel happens to be the critical one, the two densities meet at the critical point (\qty{647}{\kelvin} and \qty{22.1}{\mega\pascal} for water), the meniscus between them fades and a single fluid fills the vessel---the order parameter has gone continuously to zero. Just before it disappears the fluid turns milky and scatters light strongly, an effect called \emph{critical opalescence}, because the density fluctuations have grown to the size of the wavelength of light.
+
+        Melting shows the same pattern with the phases exchanged, so a stirred glass of iced water holds \qty{0}{\celsius} until the last of the ice has gone. The magnetic counterpart is a ferromagnet below its Curie temperature at zero field, where the up- and down-magnetised states have equal free energy and coexist as \emph{domains}. Its field--temperature diagram has the same shape as the pressure--temperature diagram of the fluid, with the Curie point in the role of the critical point.
 
 \section{Experimental foundations of quantum mechanics; examples of phenomena that can be explained in quantum mechanics, but not in classical theory}
 \label{sec:qm-experimental}
 
-    Quantum mechanics was forced on physics by a handful of experiments that classical theory gets not merely inaccurately but qualitatively wrong. The postulates themselves are set out in \cref{sec:postulates}, and the origin of discrete energies in \cref{sec:quantisation}. What follows is the evidence for them.
+    Quantum mechanics was forced on physics by a handful of experiments that classical theory gets wrong not merely in detail but in kind. The postulates themselves are set out in \cref{sec:postulates}, and the origin of discrete energies in \cref{sec:quantisation}. What follows is the evidence for them.
 
     \paragraph{Black-body radiation}
 
-    A hot body radiates with a spectrum fixed by its temperature alone. Classically the predicted power diverges towards short wavelengths---the \emph{ultraviolet catastrophe}---whereas the measured spectrum peaks and then falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $f$ exchanges energy only in whole quanta $E = hf$, which makes the short-wavelength modes too expensive to excite. The argument is given in full in \cref{sec:thermal-radiation}.
+    A \emph{black body}---one that absorbs all radiation falling on it---radiates with a spectrum fixed by its temperature alone. Classically the predicted power diverges towards short wavelengths---the \emph{ultraviolet catastrophe}---whereas the measured spectrum peaks and then falls away. In 1900 Planck reproduced it by assuming that a mode of frequency $f$ exchanges energy only in whole quanta $E = hf$, which makes the short-wavelength modes too expensive to excite. The argument is given in full in \cref{sec:thermal-radiation}.
 
     \paragraph{The photoelectric effect}
 
-    Light falling on a metal ejects electrons. Classically their energy should grow with the intensity of the light. What is measured is that the kinetic energy of each electron depends only on the \emph{frequency}, while the intensity fixes only the \emph{number} of electrons, and that below a threshold frequency nothing is emitted however bright the light. This follows if the light arrives as quanta of energy $hf$, one photon freeing one electron against the work function $W$ that binds it to the metal,
+    Light falling on a metal ejects electrons. Classically their energy should grow with the intensity of the light. What is measured is that the maximum kinetic energy of the ejected electrons depends only on the \emph{frequency}, while the intensity fixes only the \emph{number} of electrons, and that below a threshold frequency nothing is emitted however bright the light. This follows if the light arrives as quanta of energy $hf$, one photon freeing one electron against the work function $W$, the least energy needed to pull an electron out of the metal,
 
     \begin{equation*}
-        E_\text{kin} = hf - W .
+        E_\text{kin}^\text{max} = hf - W .
     \end{equation*}
 
     \paragraph{The Compton effect}
@@ -635,11 +677,21 @@
         \Delta\lambda = \frac{h}{m_e c}\left(1 - \cos\theta\right).
     \end{equation*}
 
-    A classical wave would scatter without changing its wavelength. The result follows at once if the photon is treated as a particle carrying both energy and momentum, so that the collision is an ordinary elastic one and the photon gives up a share of each.
+    A classical wave would scatter without changing its wavelength, but this result follows at once if the photon is treated as a particle carrying both energy and momentum, so that the collision is an ordinary elastic one and the photon gives up a share of each.
 
-    \paragraph{Atomic spectra and the stability of the atom}
+    \paragraph{Atomic spectra}
 
-    Atoms absorb and emit only at sharp, characteristic frequencies, and the Franck--Hertz experiment shows the same discreteness directly, electrons passing through a vapour losing energy only in fixed amounts. Classical physics allows a continuous range of orbits and so no sharp lines at all, and worse, it cannot keep the atom together: an orbiting electron is an accelerating charge, so it would radiate and spiral into the nucleus almost at once. Both problems disappear once the allowed energies are discrete, which is not an extra assumption but a consequence of the boundary conditions on a bound wave function (\cref{sec:quantisation}).
+    Atoms absorb and emit light only at sharp, characteristic frequencies, and the set of frequencies identifies the element. Classical physics allows a continuous range of orbits and so predicts a continuous spectrum, with no sharp lines at all. The lines follow if the atom has only a discrete set of allowed energies and each photon carries exactly the difference between two of them,
+
+    \begin{equation*}
+        hf = E_m - E_n .
+    \end{equation*}
+
+    That these levels are a property of the atom and not merely of the light is confirmed by the Franck--Hertz experiment, in which electrons driven through a vapour lose energy only in fixed amounts, so the same discreteness appears with no photon involved.
+
+    \paragraph{The stability of the atom}
+
+    Classical physics also cannot hold the atom together: an orbiting electron is an accelerating charge, so it would radiate continuously and spiral into the nucleus in about \qty{e-11}{\second}. Discreteness of the energies does not by itself cure this, since a Bohr orbit is still an accelerating charge, and Bohr had to impose the stability of his orbits as a separate postulate. Quantum mechanics supplies both facts at once. The allowed energies are discrete because the wave function of a bound particle must meet boundary conditions (\cref{sec:quantisation}), and the atom is stable because that set of energies has a lowest member, so the ground state has nothing to decay into. In any stationary state the probability density does not change with time, so there is no oscillating charge to radiate.
 
     \paragraph{Interference of single particles}
 
@@ -647,7 +699,7 @@
 
     \paragraph{Other purely quantum phenomena}
 
-    Several more appear elsewhere in this note and are worth naming in the same breath: tunnelling through a barrier the particle has not the energy to cross (\cref{sec:tunnelling}), the two-valued spin of the electron and its splitting of a beam in the Stern--Gerlach experiment (\cref{sec:angular-momentum}), the exclusion of identical fermions from a common state, which is what gives matter its volume and the periodic table its structure (\cref{eq:identical}), and entanglement, in which a pair of particles has a state but neither member has one of its own (\cref{post:composite}).
+    There are more purely quantum phenomena: \emph{tunnelling} through a barrier the particle has not the energy to cross (\cref{sec:tunnelling}), the \emph{spin} of the electron, whose projection on any axis takes only two values and which splits a beam of silver atoms into two in the Stern--Gerlach experiment (\cref{sec:angular-momentum}), the \emph{exclusion of identical spin-\nicefrac{1}{2} partcles (fermions)} from a common state (Pauli exclusion principle), which is what gives matter its volume and the periodic table its structure (\cref{eq:identical}), and \emph{entanglement}, in which a pair of particles has a state but neither member has one of its own (\cref{post:composite}).
 
 \section{The uncertainty principle; limits of accuracy of measurements}
 \label{sec:uncertainty}
@@ -660,10 +712,10 @@
         \comm{\hat{A}}{\hat{B}} = \hat{A}\hat{B} - \hat{B}\hat{A},
     \end{equation*}
 
-    which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the Robertson relation
+    which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the relation
 
     \begin{empheq}[box=\fbox]{equation}\label{eq:uncertainty}
-        \Delta A\,\Delta B \geq \frac{1}{2}\left| \ev{\comm{\hat{A}}{\hat{B}}} \right| .
+        \Delta A\,\Delta B \geq \frac{1}{2}\left| \comm{\hat{A}}{\hat{B}} \right| .
     \end{empheq}
 
     Here $\Delta A$ is the ordinary standard deviation of the measured values, built from the expectation values of \cref{sec:postulates},
@@ -680,13 +732,13 @@
         \Delta x\,\Delta p_x \geq \frac{\hbar}{2},
     \end{empheq}
 
-    saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once. The energy--time relation $\Delta E\,\Delta t \geq \nicefrac{\hbar}{2}$ used in \cref{sec:interactions} has the same form but a different reading, since time is a parameter and not an observable with an operator: there $\Delta t$ is how long the state persists, not the spread of a measured quantity.
+    saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once. The energy--time relation $\Delta E\,\Delta t \geq \nicefrac{\hbar}{2}$ used in \cref{sec:interactions} looks the same but does not follow from \cref{eq:uncertainty}, because time is a parameter labelling the evolution and not an observable with an operator. There $\Delta E$ is still an ordinary spread, of the energy, whereas $\Delta t$ is a characteristic time---the interval over which the state changes appreciably, which for an unstable state is its lifetime $\tau$ (\cref{sec:light-matter}). This is directly observable: a level that survives only for a time $\tau$ has no sharp energy, so the line it emits is not infinitely thin but spread over an energy $\Gamma \simeq \nicefrac{\hbar}{\tau}$, the \emph{natural linewidth}, the irreducible width of a spectral line.
 
-    The trade-off is easiest to see for a wave. A pure sine wave has a single wavelength, so by the de Broglie relation ($p = \hbar k$ with $k = \nicefrac{2\pi}{\lambda}$, \cref{eq:de-broglie}) its momentum is perfectly defined---but it extends over all space, so its position is completely undefined. A sharply localised spike has a definite position, but building it requires adding together waves of every wavelength, so its momentum is completely undefined. Any real state is a compromise between these extremes.
+    The trade-off is easiest to see for a wave. A pure sine wave has a single wavelength, so by the de Broglie relation ($p = \hbar k$ with $k = \nicefrac{2\pi}{\lambda}$, \cref{eq:de-broglie}) its momentum is perfectly defined---but it extends over all space, so its position is completely undefined. A sharply localised spike has a definite position, but building it requires adding together waves of every wavelength (thorugh Fourier series), so its momentum is completely undefined. Any real state is a compromise between these extremes.
 
     This should not be confused with \enquote{Heisenberg's microscope}, the argument that pinning down a particle's position needs light of ever shorter wavelength, whose photons then carry ever larger momentum and so disturb the particle more. That picture is misleading, because it still assumes the particle has a definite position waiting to be measured, which is exactly what the principle denies.
 
-\section{Approximate methods of quantum mechanics; theory of perturbations for eigenvalues of observables, Fermi's golden rule, the Born approximation for scattering amplitudes}
+\section{Approximate methods of quantum mechanics; theory of perturbations for eigenvalues of observables, Fermi Golden Rule, Born approximation for scattering amplitudes}
 \label{sec:approximate-methods}
 
     Quantum mechanics rests on differential equations that can be solved analytically only in a few simple cases, and sometimes even writing down the Hamiltonian is hard. For anything more complicated, approximate methods are used.
@@ -695,46 +747,78 @@
 
         Take a Hamiltonian $\hat{H}_{0}$ we can already solve, that of the hydrogen atom say, and make a small change to the system, such as switching on a weak external electric field. Solving the new problem exactly would be as hard as the original one, so the change is treated instead as a \emph{perturbation}, an extra term $\lambda\hat{H}'$. The method is the quantum counterpart of a Taylor expansion in $\lambda$: successive corrections are added, and the smaller the perturbation the fewer are needed, one or two usually being enough.
 
-        \begin{align}
+        The method is \emph{stationary} in the sense that neither $\hat{H}_{0}$ nor $\hat{H}'$ may depend on time. The perturbed system then still has stationary states of definite energy, and the only question is how those energies and states are shifted. A perturbation that switches on or oscillates is a different problem, treated in \cref{subsec:fermi-golden-rule}.
+
+        With $\lambda$ absorbed into $\hat{H}'$, the corrections to the $n$-th unperturbed level $\left(E_n^{(0)}, \psi_n^{(0)}\right)$ are
+
+        \begin{empheq}[box=\fbox]{align}
             E_n^{(1)} &= \bra{\psi_n^{(0)}} \hat{H}' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
             \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
             E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
-        \end{align}
+        \end{empheq}
+        \keyeqentry{Stationary perturbation corrections}
 
-    \subsection{Fermi's golden rule}
+        In words, the first-order shift is the average of the perturbation in the unperturbed state, and the state itself mixes in the other unperturbed states, most strongly those nearest in energy. These formulas hold only for a \emph{non-degenerate} level. If two unperturbed levels share an energy the denominators diverge and the expansion fails, and one must instead diagonalise $\hat{H}'$ within the degenerate set of states---\emph{degenerate perturbation theory}, worked through for the Stark effect in \cref{sec:atoms-fields}.
 
-        Stationary perturbation theory assumes a perturbation that does not change with time. When it does change, the treatment is harder, but for a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, the result is \emph{Fermi's golden rule}
+        Nothing in this is special to energy---the same expansion gives the corrections to the eigenvalues of any observable whose operator is slightly changed---but the Hamiltonian is the case that matters in practice.
+        \todoper{Look at QMII}
 
-        \begin{equation}\label{eq:fermi-golden-rule}
+    \subsection{Fermi Golden Rule}\todoper{A little clearer?}
+    \label{subsec:fermi-golden-rule}
+
+        When the perturbation does depend on time, the shifts of the levels are no longer the point. A time-dependent perturbation drives \emph{transitions} between the unperturbed states, and the quantity to compute is the rate at which the system hops from one to another. For a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, first-order time-dependent perturbation theory gives \emph{Fermi's golden rule}
+
+        \begin{empheq}[box=\fbox]{equation}\label{eq:fermi-golden-rule}
             \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}\hat{H}'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Fermi Golden Rule}
 
         The delta function enforces energy conservation: the transition happens only if the quantum $\hbar\omega$ supplied by the perturbation matches the gap between the two levels.
 
+        A delta function only means something once it is integrated over, so the rule applies when the final states form a \emph{continuum}, a dense band of levels rather than isolated ones. Summing over them replaces the delta function by the \emph{density of final states} $\rho$, the number of states available per unit energy,
+
+        \begin{equation}\label{eq:fermi-golden-rule-dos}
+            \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}\hat{H}'\ket{\psi_n^{(0)}}|^2 \rho\left(E_n^{(0)} + \hbar\omega\right),
+        \end{equation}
+
+        which is the form usually quoted and is the easier one to read: the rate is the strength of the coupling squared, multiplied by how many states there are to go to.
+
+        The standard picture is an excited atom sitting in the electromagnetic vacuum. The field supplies the perturbation, the photon modes the atom can emit into supply the continuum, and the rule returns the spontaneous emission rate and hence the lifetime of the level (\cref{sec:interactions}). A genuinely two-level atom driven by a single wave is \emph{not} an example, because with one final state and no continuum the population swings back and forth between the two levels (Rabi oscillations) instead of leaking away at a steady rate. Being a first-order result, the rule also holds only while the initial state is barely depleted.
+
     \subsection{The Born approximation}
 
-        A further application of perturbation theory is the Born approximation for scattering. A particle is scattered off a fixed, spherically symmetric potential $V(r)$. The incident particle is described by a plane wave, and far from the potential the state is this incident wave plus an outgoing spherical wave whose angular amplitude $f(\theta, \phi)$ is the \emph{scattering amplitude}. Its squared modulus $|f|^2$ is the differential cross-section, that is, how much is scattered into each direction.
+        The last application is the \emph{Born approximation}\footnote{
+            Not to be confused with the Born--Oppenheimer approximation, a different approximation by the same Max Born, which separates the slow nuclear motion from the fast electronic motion in a molecule.
+        } for scattering. The experiment it describes is the standard one: a steady beam of particles is fired at a fixed target potential $V(r)$, and detectors placed all round count how many come out per second at each angle. The theory has to predict those counts.
 
-        Writing the Schrödinger equation in an equivalent integral form (the Lippmann--Schwinger equation) and keeping only its first iteration gives the (first) Born approximation. For a spherically symmetric potential,
+        The beam is described by a \emph{plane wave}, a wave of one wavelength travelling in one direction with the same amplitude everywhere. This is the idealisation of a beam whose particles all share one momentum, which by the de Broglie relation (\cref{eq:de-broglie}) means one wavelength. No real beam fills all space, but one that is broad compared with the target behaves like this, and the plane wave has the advantage of being a steady state, so the problem stays time-independent.
+
+        Far from the target the picture is a ripple tank. Straight crests come in, meet the obstacle, and beyond it there are two things: the original straight wave carrying on, since most of the beam misses the target, and circular ripples spreading outwards from the obstacle. In three dimensions those ripples are an outgoing \emph{spherical wave}, and they are what a detector off to one side registers. They are not equally strong in every direction, and the function giving their strength in the direction $(\theta,\varphi)$ is the \emph{scattering amplitude} $f(\theta,\varphi)$. Its squared modulus $|f|^{2}$ is the \emph{differential cross-section}, an effective target area per unit solid angle, and it is the quantity actually measured.
+
+        The approximation itself is one idea. Think of the potential as a cloud of tiny scattering centres. Each is shaken by the wave passing over it and re-radiates a faint wavelet of its own, and what arrives at the detector is the sum of all those wavelets added together with their phases, so the directions of strong scattering are the directions in which they interfere constructively. What makes the exact problem hard is that each centre is shaken not by the original beam but by the beam already disturbed by all the others. The Born approximation cuts this knot by assuming every centre is shaken by the \emph{undisturbed incoming wave}, which amounts to saying the particle scatters once and then leaves. It is therefore good when the potential is weak or the particle fast, so that the target barely disturbs the beam, and it fails for slow particles or strong potentials that hold the particle long enough for it to scatter repeatedly.
+
+        Adding up wavelets with their phases is exactly what a Fourier transform does, and that is the result worth carrying away: to first order the scattering amplitude is the Fourier transform of the potential. The variable it is transformed against is the \emph{momentum transfer} $\hbar(\vec{k} - \vec{k}')$, the change in the particle's wave vector on scattering, which is small for forward scattering and large for backward scattering. This gives the one qualitative rule to remember---small angles are sensitive to the broad shape of the potential and large angles to its fine detail, in the same way that resolving small features needs short wavelengths. It is why scattering experiments are read backwards: measure the angular pattern, transform it, and recover the potential. That is how the charge distribution inside the nucleus was first mapped, by electron scattering.
+
+        For a spherically symmetric potential the angular part of the transform can be carried out, leaving
 
         \begin{equation}\label{eq:born}
             f(\theta) = -\frac{2m}{\hbar^2 K}\int_0^\infty r'V(r')\sin(Kr')\,dr',
         \end{equation}
 
-        where $K = |\vec{k} - \vec{k}'| = 2k\sin(\theta/2)$ is the momentum transfer (the change in wave vector on scattering) and $k$ is the wave number. It works best for weak potentials or fast particles, where the scattering is a small perturbation. (This is unrelated to the Born--Oppenheimer approximation of molecular physics, which separates the slow nuclear motion from the fast electronic motion.)
+        where $K = 2k\sin(\nicefrac{\theta}{2})$ is the size of the momentum transfer and $k$ the wave number. As a check, putting the Coulomb potential into this returns exactly the Rutherford scattering formula.
 
 \section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
 \label{sec:atom-molecule}
 
     \subsection{The atom from the Schrödinger equation}
 
-        A state evolves in time by the Schrödinger equation (\cref{eq:tdse}), and the states of definite energy are the solutions of its time-independent form (\cref{eq:tise}). For one electron bound to a nucleus of charge $Ze$ the potential is the Coulomb attraction
+        A state evolves in time by the Schrödinger equation (\cref{eq:tdse}), and the \emph{states of definite energy are the solutions of its time-independent form} (\cref{eq:tise}). For one electron bound to a nucleus of charge $Ze$ the potential is the Coulomb attraction\todo{since the question is about the schordinger equation , make the introduction a little stronger}
 
         \begin{equation*}
-            V(r) = -\frac{Ze^{2}}{4\pi\varepsilon_{0}r},
+            V(r) = -\frac{Ze^{2}}{4\pi\varepsilon_{0}r}.
         \end{equation*}
 
-        and because it depends on the distance alone the solutions split into a radial and an angular factor, $\psi_{nlm}(r,\theta,\varphi)$. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):
+        The solutions of the asocciated equations split into radial and angular factors, $\psi_{nlm}(r,\theta,\varphi)$. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):\todo{rephrase}\todo{somewhere mention what letters spdf etc correspond to}
 
         \begin{itemize}
             \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\nicefrac{13.6\,Z^{2}\,\mathrm{eV}}{n^{2}}$ for a one-electron atom, so $13.6$~eV is the energy needed to remove the electron from hydrogen in its ground state.
@@ -748,22 +832,31 @@
         No exact solution exists once there is more than one electron, because each also repels the others, but the labels survive and the ground state is built by filling the levels according to three rules:
 
         \begin{itemize}
-            \item \textbf{Aufbau principle} --- fill from the lowest energy upwards, in order of increasing $n+l$, and for equal $n+l$ in order of increasing $n$. This is why $4$s fills before $3$d.
-            \item \textbf{Pauli exclusion principle} --- no two electrons in one atom share all four quantum numbers.
-            \item \textbf{Hund's rule} --- within a subshell, electrons occupy separate orbitals with parallel spins before any orbital takes a second electron.
+            \item \textbf{Aufbau principle}---fill from the lowest energy upwards, in order of increasing $n+l$, and for equal $n+l$ in order of increasing $n$. This is why $4$s fills before $3$d.
+            \item \textbf{Pauli exclusion principle}---no two electrons in one atom share all four quantum numbers.
+            \item \textbf{Hund's rule}---within a subshell, electrons occupy separate orbitals with parallel spins before any orbital takes a second electron.
         \end{itemize}
 
-        The result is the \emph{electron configuration}, written for carbon as $1\text{s}^{2}2\text{s}^{2}2\text{p}^{2}$. Only the outermost, \emph{valence} electrons are available for bonding, and they are what the chemistry of the element is made of.
+        The result is the \emph{electron configuration}, written for carbon as $1\text{s}^{2}2\text{s}^{2}2\text{p}^{2}$. Only the outermost, \emph{valence} electrons are available for bonding, and they are what the chemistry of the element is made of. \todo{somewhere also mention what orbitals look like in hydrogen atom and what labels nlm do to them.}
 
         \paragraph{Corrections to this picture}
 
-        The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion (spin--orbit coupling), and it is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker magnetic moment of the nucleus and is smaller again by roughly the electron-to-proton mass ratio---in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies. An external field splits levels in its turn, into the Zeeman effect for a magnetic field and the Stark effect for an electric one, both of which are worked out later in the note.
+            The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion---\emph{spin--orbit coupling}, and it is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker \emph{magnetic moment of the nucleus\todo{because of spin of quarks?}} and is smaller again by roughly the electron-to-proton mass ratio---in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies.
+            
+            An external field splits levels in its turn, into the Zeeman effect (\cref{sec:zeeman-effect}) for a magnetic field and the Stark effect for an electric one, both of which are worked out later in the note.
 
     \subsection{The periodic table of the elements}
 
-        The \emph{periodic table} arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom. (The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table.) The modern \emph{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
+        The \emph{periodic table} (\cref{fig:periodic-table}) arranges all the chemical elements in order of increasing \emph{atomic number} $Z$---the number of protons in the nucleus, which fixes the identity of the element and equals the number of electrons in the neutral atom.
+        \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.9\linewidth]{graphics/periodic-table.pdf}
+            \caption{The periodic table of the elements.}
+            \label{fig:periodic-table}
+        \end{figure}
+        The \emph{mass number} $A$, the total number of protons and neutrons, is a separate quantity and is not what orders the table. The modern \emph{periodic law} states that the properties of the elements vary periodically with atomic number. Mendeleev originally ordered the elements by atomic mass, which gives almost the same sequence, but the correct ordering is by atomic number.
 
-        The layout of the table is the filling order written out, so the shape of the table is a direct consequence of the rules above:
+        The shape of the table is a direct consequence of the rules above:
 
         \begin{itemize}
             \item a \textbf{group} (vertical column) collects elements with a similar valence-shell configuration, and hence similar chemical behaviour. The noble gases close a subshell and react with almost nothing.
@@ -772,14 +865,16 @@
 
     \subsection{Molecules and the different types of chemical bond}
 
-        The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it screens their repulsion and lowers the energy, and an \emph{antibonding} one, in which they cancel between the nuclei and the energy is raised. A bond exists when more electrons sit in bonding orbitals than in antibonding ones. Everything below is a special case of valence electrons rearranging in this way to lower the total energy.
+        The same equation applied to two nuclei rather than one explains why atoms stick together. As two atoms approach, each pair of atomic orbitals combines into two \emph{molecular orbitals}: a \emph{bonding} one, in which the two wave functions add and pile electron density up between the nuclei, where it screens their repulsion and lowers the energy, and an \emph{antibonding} one, in which they cancel between the nuclei and the energy is raised. \todo{is that correct}\todo{so if atoms get close and form *molecular orbitals* but with more electrons in the antibonding ones that there is no bonding despite there being a molecular orbital?}
+        
+        A bond exists when more electrons sit in bonding orbitals than in antibonding ones.\todo{and that?} Everything below is a special case of valence electrons rearranging in this way to \emph{lower the total energy}.
 
         \begin{itemize}
-            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and non-directional, and it forms crystalline solids (e.g.\ NaCl).
+            \item \textbf{Ionic} --- one atom transfers electrons to another, and the resulting positive and negative ions attract electrostatically. It is strong and non-directional\todo{what is meant by it? is it fully isotropic? orbitals arent cnetrally syumetraical so why}, and it forms crystalline solids (e.g.\ NaCl).
             \item \textbf{Covalent} --- neighbouring atoms share pairs of electrons in a common bonding orbital so that each attains a filled valence shell. It is strong and directional, since the orbitals point in particular directions, which is what fixes the shapes of molecules (e.g.\ H$_2$, diamond).
             \item \textbf{Metallic} --- in a metal the atoms are packed so closely that the outermost shell of each overlaps the shells of many neighbours at once. The valence electrons are then not tied to any particular pair of atoms and move freely through the whole solid, leaving positive ion cores in a shared sea of delocalised electrons. Because no bond points anywhere in particular, the ions can slide past one another without the bonding being broken, which is why metals are malleable, and because the electrons are free to move they conduct heat and electricity (e.g.\ copper).
-            \item \textbf{Hydrogen bond} --- a much weaker attraction, in which a hydrogen atom already covalently bound to a strongly electronegative atom (O, N, F) is drawn towards a second such atom nearby, the hydrogen being left with little electron density of its own. It holds liquid water together and binds the two strands of DNA.
-            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied. A solid whose lattice points are whole molecules held in place by hydrogen bonds or van der Waals forces alone is called a \emph{molecular} solid---ice and solid carbon dioxide are the standard cases---and such solids are soft and melt at low temperatures.
+            \item \textbf{Hydrogen bond} --- a much weaker attraction, in which a hydrogen atom already covalently bound to a strongly electronegative atom (O, N, F) is drawn towards a second such atom nearby, the hydrogen being left with little electron density of its own. It holds liquid water together (\cref{fig:water-molecule}) and binds the two strands of DNA.
+            \item \textbf{Van der Waals forces} --- the weakest of all, acting between whole neutral molecules with no electron sharing and no charge transfer, and falling off quickly with distance (as $r^{-6}$). They come in three kinds, all dipole--dipole: between two permanent dipoles, between a permanent dipole and the dipole it induces in a neighbour, and between the fluctuating instantaneous dipoles of two atoms whose electron clouds happen to be lopsided at the same moment (the London dispersion force). Only the last is available to a noble gas, and it is what allows even helium to be liquefied. A solid whose lattice points are whole molecules held in place by hydrogen bonds or van der Waals forces alone is called a \emph{molecular} solid---ice and solid carbon dioxide are the standard cases---and such solids are soft and melt at low temperatures. Adjecent layers of graphene are held by Van der Waals forces as well.
         \end{itemize}
 
 \section{Quantum tunnelling; examples}
