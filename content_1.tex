@@ -31,7 +31,7 @@
     \end{empheq}
     \keyeqentry{Lorentz transformation}
 
-    where the parameter $\gamma$ is known as the Lorentz factor:
+    where the parameter $\gamma$ is known as the Lorentz factor\footnote{TIn general, time dilation depends solely on the magnitude of the relative velocity between two frames, whereas length contraction is a directional phenomenon that occurs strictly parallel to the axis of motion---the $x$-axis in this standard configuration.}:
 
     \begin{equation}\label{eq:gamma}
         \gamma = \frac{1}{\sqrt{1 - \beta^2}} \geq 1, \qquad \beta \equiv \frac{v}{c} .
@@ -649,7 +649,7 @@
 
         Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.\todo{throughout the note classical angular momentum and quantum should use separate labels. also operators should have hats.}
 
         The precession frequency is given by
 
@@ -663,7 +663,7 @@
     \label{subsec:quantum-precession}
 
         A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum\footnote{
-        Also from the orbital angular momentum, but this contribution is generally much weaker.
+        An orbital moment behaves the same way, $\vec{\mu} = \gamma\vec{L}$, but with a gyromagnetic ratio half as large. In an atom with unpaired electrons the spin contribution is usually the dominant one, whereas in a diamagnet the spins are paired and only the orbital part survives (\cref{sec:diamagnets}).
         }$\vec{S}$---the two are proportional, $\vec{\mu} = \gamma\vec{S}$ with $\gamma$ the \emph{gyromagnetic ratio}, and so lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
         \begin{equation*}
@@ -672,7 +672,11 @@
 
         which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is \emph{Larmor precession}, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
 
-        The rate of this precession, the \emph{Larmor frequency} $\omega_{L} = \gamma B$, depends only on the field strength and not at all on how far $\vec{S}$ is tilted away from $\vec{B}$, because the two factors of $\sin\theta$ that enter the torque and the cone radius cancel. Every spin in a sample therefore turns at the same rate whatever its orientation, which is what makes the effect usable for magnetic resonance.\todoper{watch youtube about it}
+        The rate of this precession, the \emph{Larmor frequency} $\omega_{L} = \gamma B$, depends only on the field strength and not at all on how far $\vec{S}$ is tilted away from $\vec{B}$, because the two factors of $\sin\theta$ that enter the torque and the cone radius cancel. Every spin in a sample therefore turns at the same rate whatever its orientation, which is what makes the effect usable for magnetic resonance.
+        
+        The same torque acts on an orbital moment, so an electron's orbit precesses too---the electron circulates as before, while the plane of its orbit is carried slowly around the field axis. The difference is that swinging an orbit round in this way carries charge with it, which a swinging spin does not, so the precession is itself a small current whose moment opposes the applied field. That is the origin of \emph{Langevin diamagnetism} (\cref{sec:diamagnets}), and since every orbit precesses at the same rate their moments simply add.
+
+        This is \emph{Larmor precession}: the precession of any magnetic moment about an applied field, whether that moment comes from spin or from orbital motion. It is the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's own angular momentum.
 
 \section{Variational principles in physics; examples of equations that can be derived from variational principles}
 \label{sec:variational}\todoper{google other principles}

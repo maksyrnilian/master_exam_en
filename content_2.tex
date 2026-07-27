@@ -145,9 +145,10 @@
 
         where $\vec{H}$ --- the \emph{magnetic field} (or \emph{magnetic field strength/intensity}),
 
-        \begin{equation}\label{eq:H-def}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:H-def}
             \vec{H} \equiv \frac{\vec{B}}{\mu_{0}} - \vec{M} .
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Magetic field strength}
 
         The minus here does the same job as the plus in \cref{eq:D-def}. Moving $\nabla\times\vec{M}$ to the left-hand side of the equation above is what subtracts $\vec{M}$, and it removes the bound magnetisation current from the curl, leaving $\vec{H}$ sourced by free currents alone. Both $\vec{D}$ and $\vec{H}$ are therefore devices for hiding the material's own response inside a redefined field, so that only the sources we control appear explicitly.
 
@@ -265,20 +266,56 @@
         Conduction is the flow of electric charge through a material under an applied field. The carriers do not accelerate freely, because they are scattered by lattice vibrations and by defects, so in a steady field they settle at an average \emph{drift velocity} $v_{\text{d}}$ proportional to the field. The constant of proportionality is the \emph{mobility},
 
         \begin{empheq}[box=\fbox]{equation}\label{eq:mobility}
-            \mu_{\text{e}} \equiv \frac{v_{\text{d}}}{E},
+            \mu_{\text{c}} \equiv \frac{v_{\text{d}}}{E},
         \end{empheq}
         \keyeqentry{Mobility}
 
         which measures how easily a carrier is pushed through a particular material. The current density is then $J = qnv_{\text{d}} = \sigma E$, the local form of Ohm's law, with the \emph{conductivity}
 
         \begin{empheq}[box=\fbox]{equation}\label{eq:conductivity}
-            \sigma = qn\mu_{\text{e}},
+            \sigma = qn\mu_{\text{c}},
         \end{empheq}
         \keyeqentry{Conductivity}
 
-        where $q$ is the charge of one carrier and $n$ their concentration. Only two things can therefore change a conductivity: how many carriers there are, and how freely each moves. The most common kinds of conduction are electronic, in which the carriers are electrons in the conduction band, hole conduction, in which the carriers are the vacancies left in an otherwise full valence band and behave as positive charges, and ionic, in which whole ions move.
+        where $q$ is the charge of one carrier and $n$ their concentration. Only two things can therefore change a conductivity: \emph{how many carriers there are, and how freely each moves}. Temperature acts on both factors in \cref{eq:conductivity}, $n$ and $\mu_{\text{c}}$, and which one wins distinguishes the two standard cases.
 
-        Temperature acts on both factors, and which one wins distinguishes the two standard cases. In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu_{\text{e}}$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
+        \begin{table}[H]
+            \centering
+            \begin{minipage}[t]{0.41\textwidth}\vspace{0pt}
+                \centering
+                \small
+                \renewcommand{\arraystretch}{1.25}
+                \begin{tabularx}{\linewidth}{@{}lLL@{}}
+                    \hline
+                    \textbf{kind} & \textbf{carrier} & \textbf{sign} \\
+                    \hline
+                    electronic & electrons in the conduction band & negative \\
+                    hole & vacancies in an otherwise full valence band & positive \\
+                    ionic & whole ions & either \\
+                    \hline
+                \end{tabularx}
+                \captionof{table}{The three most common kinds of conduction, classified by carrier.}
+                \label{tab:conduction-kinds}
+            \end{minipage}%
+            \hfill
+            \begin{minipage}[t]{0.53\textwidth}\vspace{0pt}
+                \centering
+                \small
+                \renewcommand{\arraystretch}{1.25}
+                \begin{tabularx}{\linewidth}{@{}lLLL@{}}
+                    \hline
+                    \textbf{material} & \textbf{$n(T)$} & \textbf{$\mu_{\text{c}}(T)$} & \textbf{net $\sigma(T)$} \\
+                    \hline
+                    metal & fixed & falls (more scattering) & falls \\
+                    semiconductor & rises steeply (thermal excitation across the gap) & falls, but this loses out & rises \\
+                    \hline
+                \end{tabularx}
+                \captionof{table}{Temperature dependence of conductivity in a metal versus a semiconductor.}
+                \label{tab:conduction-temperature}
+            \end{minipage}
+        \end{table}\todo{words are awkardly separatated. left align}
+
+        In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu_{\text{c}}$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
 
 \section{The magnetic field in media; classification of magnetic media, microscopic description of interactions between the magnetic moments of components of the medium (atoms, ions, molecules)}
 \label{sec:magnetic-field}
@@ -291,58 +328,64 @@
         \vec{M} = \chi_{m}\vec{H} \quad \Longrightarrow \quad \vec{B} = \mu_{0}\left(1+\chi_{m}\right)\vec{H} \equiv \mu_{0}\mu_{\text{r}}\vec{H},
     \end{equation}
 
-    where $\chi_{m}$ --- magnetic susceptibility, and $\mu_{\text{r}} \equiv 1+\chi_{m}$ --- relative permeability, the exact counterpart of $\varepsilon_{\text{r}} = 1+\chi$ (\cref{eq:permittivity}). One difference is worth noting: $\chi$ is positive for every ordinary dielectric, whereas $\chi_{m}$ may have either sign, and its sign is what classifies the material. For most media $|\chi_{m}| \sim 10^{-5}$, so magnetically they are almost vacuum, while in a ferromagnet $\mu_{\text{r}}$ reaches $10^{3}$ or more and the linear relation fails altogether. Interactions with a magnetic field are also more subtle than with an electric one: by the Bohr--van Leeuwen theorem a purely classical system in equilibrium has zero mean magnetisation, so every magnetic effect below is a quantum one. Three kinds of medium are usually distinguished.
+    where $\chi_{m}$ --- magnetic susceptibility, and $\mu_{\text{r}} \equiv 1+\chi_{m}$ --- relative permeability, the exact counterpart of $\varepsilon_{\text{r}} = 1+\chi$ (\cref{eq:permittivity}). A difference is worth noting: $\chi$ is positive for ordinary dielectrics, whereas $\chi_{m}$ may have either sign, and its sign is what classifies the material. For most media $|\chi_{m}| \sim 10^{-5}$, so magnetically they are almost vacuum ($\mu_{\text{r}} \simeq 1$), while in a ferromagnet $\chi_{m}$ reaches $10^{3}$ or more and the linear relation fails altogether.
+    
+    Interactions with a magnetic field are also more subtle than with an electric one: by the Bohr--van Leeuwen theorem a purely classical system in equilibrium has zero mean magnetisation, so every magnetic effect below is a quantum one. Three kinds of medium are usually distinguished.
+
+    Three kinds of medium are usually distinguished, and the first division between them is whether the material has any magnetism of its own. Paramagnets and diamagnets do not: each merely responds while an external field is applied, with a magnetisation proportional to it and vanishing the moment it is removed, and the two differ only in the sign of that response. Ferromagnets, antiferromagnets and ferrimagnets do, because their moments order one another rather than waiting to be ordered by the field, so they keep a magnetisation after the field is switched off.\todo{check}
 
     \subsection{Paramagnets}
 
-        The most common group. They have positive susceptibility, so the induced magnetisation points along the applied field. It comes from unpaired electrons, whose magnetic moments turn to line up with an external field. Common paramagnets are aluminium, platinum and oxygen. Two standard models:
+        The most common group. They have \emph{positive susceptibility}, so the induced \emph{magnetisation points along the applied field}. It comes from \emph{unpaired electrons}, whose magnetic moments turn to line up with an external field. Common paramagnets are aluminium, platinum and oxygen. Two standard models:
 
         \begin{itemize}
-            \item Curie paramagnetism --- a set of independent atomic moments that do not interact with one another, as in the paramagnetic salts of transition-metal or rare-earth ions. Balancing their alignment against the randomising effect of heat gives Curie's law for the susceptibility,
+            \item Curie paramagnetism --- a set of independent atomic moments that do not interact with one another. Balancing their alignment against the randomising effect of heat gives Curie's law for the susceptibility,
             \begin{equation*}
                 \chi_m = \frac{C}{T},
             \end{equation*}
             where $T$ is the absolute temperature and $C$ (the Curie constant) is fixed by the size and number of the atomic moments. The susceptibility falls as the temperature rises because thermal agitation fights the alignment.
-            \item Pauli paramagnetism --- in a metal the conduction electrons (as in an ordinary metal such as sodium) are treated as a \emph{Fermi gas}: a gas of electrons that barely interact, but which (because no two electrons may share the same quantum state) fill the available energy levels from the bottom up to a top level called the Fermi level. Only the few electrons near that top level are free to reorient in a field, so the resulting paramagnetism is weak and almost independent of temperature.
+            \item Pauli paramagnetism---in a metal the conduction electrons (as in an ordinary metal such as sodium) are treated as a \emph{Fermi gas}: a gas of electrons that barely interact, but which (because no two electrons may share the same quantum state, \cref{eq:identical}) fill the available energy levels from the bottom up to a top level called the \emph{Fermi level}. Confining the electrons to the metal leaves them only a discrete ladder of allowed energies, so tightly spaced as to look continuous, and each rung holds one electron. Stacking them from the bottom up is forced: an electron deep in the pile cannot change its state at all, because every neighbouring rung it might move to is already taken. Only near the top of the pile are there empty rungs within reach, and the energy of that topmost occupied rung is the Fermi level---a few electronvolts in a typical metal, which is some hundred times $\kB T$ at room temperature (\cref{sec:ensembles}). Only the few electrons near that top level are free to reorient in a field, so the resulting paramagnetism is weak and almost independent of temperature.
         \end{itemize}
 
-    \subsection{Diamagnets}
+    \subsection{Diamagnets}\label{sec:diamagnets}
 
         Diamagnetism is the appearance of a magnetisation \emph{opposite} to the applied field, i.e.\ a negative susceptibility. Every material has this response, but it is very weak, so we call a material a diamagnet only when it is the dominant effect. That happens when the atoms carry no permanent magnetic moment---all electron spins paired---so there is no paramagnetic contribution to mask it. Typical diamagnets are bismuth (the strongest ordinary one), copper, gold and water.
 
-        A special case is that of superconductors, which expel the magnetic field from their interior completely through the Meissner effect. The remaining diamagnets are described by:
+        A special case is that of \emph{superconductors}, which expel the magnetic field from their interior completely. The remaining diamagnets are described by:
 
         \begin{itemize}
-            \item Langevin diamagnetism --- describes insulators (such as water and the inert gases), where the electrons are bound in atoms rather than free to conduct. An applied field makes each bound electron orbit precess (Larmor precession, \cref{subsec:quantum-precession}). A precessing orbit is effectively a small current loop, and the magnetic moment it produces points against the applied field, which is the origin of the diamagnetic response.
+            \item Langevin diamagnetism --- describes insulators (such as water and the inert gases), where the electrons are bound in atoms rather than free to conduct and all their spins are paired, so only the orbital moments are left. An applied field sets each orbit precessing, and that precession is a small current loop whose moment opposes the field (\cref{subsec:quantum-precession}).
             \item Landau diamagnetism --- treats the same Fermi gas of conduction electrons in a metal as Pauli paramagnetism, but now accounts for the field bending the electrons' orbital motion rather than flipping their spin. This orbital effect is diamagnetic.
         \end{itemize}
 
-    \subsection{Ferromagnets}
+    \subsection{Ferromagnets, antiferromagnets and ferrimagnets}
 
-        A third category appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to point the same way as each other, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
+        Another category, \emph{ferromagnets}, appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to \emph{point the same way as each other}\todo{why?}, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
 
         Such materials are analysed with statistical-physics lattice models that differ in how freely each moment may point: the Ising model allows only up or down, the XY model allows any direction in a plane, and the Heisenberg model allows any direction in space (the most general).
 
-        Closely related are antiferromagnets and ferrimagnets, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
+        Closely related are \emph{antiferromagnets} and \emph{ferrimagnets}, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
 
 \section{Electromagnetic waves as solutions of Maxwell's equations; polarisation, reflection and refraction of electromagnetic waves, the Doppler effect}
 \label{sec:em-waves}
 
     \subsection{Electromagnetic waves as solutions of Maxwell's equations}
 
-        An electromagnetic wave is a solution of the source-free Maxwell equations in vacuum (\cref{eq:maxwell-vacuum}). To show it, take the curl of Faraday's law, $\nabla\times\vec{E} = -\nicefrac{\partial\vec{B}}{\partial t}$:
+        An electromagnetic wave is a solution of the Maxwell equations. For the simplest case in vacuum (\cref{eq:maxwell-vacuum}), we do the following steps:
+        \begin{enumerate}
+            \item take the curl of Faraday's law;
+            \item apply the vector identity: $\nabla\times(\nabla\times\vec{F}) = \nabla(\nabla\cdot\vec{F}) - \nabla^{2}\vec{F}$;
+            \item substitute the first Maxwell equation;
+            \item substitute the fourth Maxwell equation.
+        \end{enumerate}
+
+        So, the curl of Faraday's law $\nabla\times\vec{E} = -\nicefrac{\partial\vec{B}}{\partial t}$ is:
 
         \begin{equation*}
             \nabla\times\left(\nabla\times\vec{E}\right) = \nabla\times\left(- \frac{\partial\vec{B}}{\partial t}\right).
         \end{equation*}
 
-        We make use of the following identity:
-
-        \begin{equation*}
-            \nabla\times(\nabla\times\vec{F}) = \nabla(\nabla\cdot\vec{F}) - \nabla^{2}\vec{F}.
-        \end{equation*}
-
-        Then, we have:
+        Then apply the identity:
 
         \begin{equation*}
             \begin{aligned}
@@ -351,7 +394,7 @@
             \end{aligned}
         \end{equation*}
 
-        where, for the LHS, we have used the identity and the first Maxwell equation, and for the RHS, we have used the fourth Maxwell equation and
+        and, for the LHS, we use the identity and the first Maxwell equation, and for the RHS, use the fourth Maxwell equation where
 
         \begin{equation*}
             \Delta \vec{F} = \nabla^{2} \vec{F} = \left( \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} \right) \vec{F}
@@ -383,33 +426,43 @@
             v = c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
         \end{equation*}
 
-        Performing the same derivation inside a homogeneous, non-magnetic medium that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with
+        Performing the same derivation inside a homogeneous, non-magnetic medium \todo{where is the non-magnetic assumption made?} that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with
 
         \begin{equation*}
             \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \underbrace{\mu_{0}\frac{\partial\vec{J}_{\text{f}}}{\partial t}}_{\substack{\text{important in} \\ \text{conductors}}} + \underbrace{\mu_{0}\frac{\partial^{2}\vec{P}}{\partial t^{2}}}_{\substack{\text{important in} \\ \text{insulators}}},
         \end{equation*}
 
-        both terms being zero in vacuum. In a transparent insulator the first term is absent, and substituting the linear response $\vec{P} = \varepsilon_{0}\chi\vec{E}$ (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side, replacing $\varepsilon_{0}$ by $\varepsilon_{0}\varepsilon_{\text{r}}$. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
+        both terms being zero in vacuum. In a transparent insulator the first term is absent and linear polarisation response (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side, replacing $\varepsilon_{0}$ by $\varepsilon_{0}(\chi + 1)=\varepsilon_{0}\varepsilon_{\text{r}}$\todo{correct?}. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
 
-        \begin{equation}\label{eq:refractive-index}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:refractive-index}
             n \equiv \frac{c}{v} = \sqrt{\varepsilon_{\text{r}}\mu_{\text{r}}} \simeq \sqrt{\varepsilon_{\text{r}}}
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Refractive index}
 
         is the \emph{refractive index}, the quantity that appears in Snell's law (\cref{eq:snell}), and the approximation holds because $\mu_{\text{r}} \simeq 1$ for anything transparent. Since each polarisation mechanism stops following the field above its own frequency (\cref{sec:electric-field}), $\varepsilon_{\text{r}}$ and hence $n$ depend on frequency, which is \emph{dispersion} and is why a prism separates colours.
+
+        More generally, the values of magnetic permeability and dielectric permittivity classify materials into four groups, as shown in \cref{fig:materials-classification}. Their values are in general complex and frequency-dependent. The imaginary parts record absorption, the real values together determine wheter propagation is possible (they can also contribute to absorption)\footnote{Note that a square root of a complex number is also complex and imaginary parts never disappears that way: $\sqrt{z}=\sqrt{r\,e^{i\theta}}=\sqrt{r}\,e^{i\theta/2}$.}  
+
+    \begin{figure}[htbp]
+        \centering
+        \includegraphics[width=0.68\linewidth]{graphics/materials_classification_epsilon_mu.pdf}
+        \caption{Classification of Materials Based on Their Dielectric and Magnetic Properties.}
+        \label{fig:materials-classification}
+    \end{figure}
 
         \paragraph{Solution to the wave equation}
 
         The wave equation is solved by a plane wave of the form
 
         \begin{equation*}
-            \vec{E}(\vec{r},t) = \vec{E}_{0}\,e^{i\left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)},
+            \vec{E}(\vec{r},t) = \vec{E}_{0}\,e^{i \, \overbrace{ \left(\vec{k}\cdot\vec{r} - \omega t + \phi\right)}^{\psi} }=\vec{E}_{0}\,\left( \cos(\psi) + i\,\sin(\psi) \right),
         \end{equation*}
 
-        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E}_{0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = \nicefrac{|\vec{E}|}{c}$. The direction in which $\vec{E}_{0}$ points is called the \emph{polarisation} of the wave, discussed next.
+        with the physical field understood as the real part, using $e^{i\alpha} = \cos{\alpha} + i\sin{\alpha}$. Here $\vec{k}$ points along the direction of travel, and for this transverse wave the constant vector $\vec{E}_{0}$ is perpendicular to $\vec{k}$. The magnetic field $\vec{B}$ is perpendicular to both, with $|\vec{B}| = \nicefrac{n\,|\vec{E}|}{c}$. The direction in which $\vec{E}_{0}$ points is called the \emph{polarisation} of the wave, discussed next.
 
     \subsection{Polarisation of a wave}
 
-        Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised, since the oscillation must have a choice of directions perpendicular to the travel direction (a longitudinal wave such as sound has none). Take propagation along $z$, so that the field lies in the $x$--$y$ plane and the plane wave above reads
+        Polarisation describes the pattern that the electric-field vector traces out, in the plane perpendicular to the direction of propagation, as the wave passes. Only transverse waves can be polarised. Take propagation along $z$, so that the field lies in the $x$--$y$:
 
         \begin{equation*}
             \vec{E}(z,t) = \mathrm{Re}\left\{
@@ -427,15 +480,17 @@
             \item \textbf{Elliptical} --- the general case, with unequal amplitudes or any other phase difference, tracing an ellipse. Linear and circular are its two limits.
         \end{itemize}
 
-        The imaginary part is therefore not decoration: it is the only thing that distinguishes a rotating field from an oscillating one.
+        The imaginary part is therefore distinguishes a rotating field from an oscillating one.
 
     \subsection{The laws of reflection and refraction of electromagnetic waves}
 
-        A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels, at right angles to the wavefronts. The laws below are stated in terms of rays.
+        A \emph{ray} is a line drawn along the direction in which the wave (and its energy) travels\footnote{
+            True in isotropic media. In birefringent media, energy flow is determined by the Poynting vector and $\vec{k}$ is not points in another direction. Rays naturally are determined by energy flow rather than wavefront orientation.
+        }, at right angles to the wavefronts. The laws below are stated in terms of rays.
 
         \paragraph{The law of reflection}
 
-        The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane. Reflection changes only the direction of propagation, not the wavelength.
+        The angle of reflection equals the angle of incidence, and the incident ray, the reflected ray and the normal to the surface lie in one plane---\emph{plane of incidence}, which contains the incident ray and the normal. Reflection changes only the direction of propagation, not the wavelength.
 
         \paragraph{The law of refraction (Snell's law)}
 
@@ -447,7 +502,7 @@
 
         where $n_1$, $n_2$ are the refractive indices of the two media (\cref{eq:refractive-index}), $\theta_1$ the angle of incidence and $\theta_2$ the angle of refraction, both measured from the normal.
 
-        To describe what happens to the polarisation on reflection, we fix the \emph{plane of incidence}: the plane containing the incident ray and the normal. A wave is called $p$-polarised (parallel) when its electric field lies in this plane, and $s$-polarised (perpendicular, from the German \emph{senkrecht}) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients (forms omitted here).
+        A wave is called $p$-polarised (parallel) when its electric field lies in the plane of incidence, and $s$-polarised (perpendicular, from the German \emph{senkrecht}) when its field is perpendicular to it. The fractions of amplitude reflected and transmitted differ for the two, and are given by the Fresnel coefficients.\todo{write fresnel maybe}
 
         \paragraph{The Brewster angle}
 
@@ -459,19 +514,34 @@
 
         with the light incident from the side of medium $n_1$ (taking $n_1 < n_2$). This is how polarising sunglasses work, since light reflected from a road or a water surface arrives close to this angle and is largely polarised in one direction.
 
+        The impossibility of reflectin in-plane $p$-polarisation at the Brewster angle is a consequence of the fact that an oscillating dipole does not radiate along its axis.
+
     \subsection{The Doppler effect}
 
-        The \emph{Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are not symmetric. For light in vacuum, which needs no medium, only the relative velocity matters.
+        The \emph{Doppler effect} is the difference between the frequency a source emits and the frequency an observer records when the two move relative to one another. For waves that travel in a medium (such as sound) the speeds of source and observer are measured relative to that medium, and the two cases are \emph{not symmetric}. For light in vacuum, which needs no medium, only the relative velocity matters.
 
         \paragraph{Acoustic (mechanical) waves}
 
-        With $v$ the wave speed in the medium, $v_o$ the observer's speed and $v_s$ the source's speed (both relative to the medium),
+        With $v$ the wave speed in the medium and $v_o$ the observer's speed, $v_s$ the source's speed (both relative to the medium projected onto the path that joins them),
 
         \begin{equation}\label{eq:doppler-acoustic}
             f' = f\,\frac{v \pm v_o}{v \mp v_s},
         \end{equation}
 
         where the upper signs apply when that party moves \emph{towards} the other (raising the pitch) and the lower signs when it moves away. Observer and source enter differently: the observer changes the wave speed it meets, while the source changes the wavelength it emits.
+
+        Note the asymmetry between the two limits,
+        \begin{equation}
+            \left.
+            \begin{aligned}
+                v_s &\to v      \\
+                v_o &\to \infty
+            \end{aligned}
+            \right\}
+            \quad\Longrightarrow\quad
+            f' \to \infty,
+        \end{equation}
+        the source's limit is reached at a finite, physical speed---the wave speed itself--- while the observer's is not, since $v_o$ can grow without bound. Source's speed affect the \emph{weffective avelength}, while the observer's speed affect the \emph{perceived frequency}.
 
         \paragraph{Electromagnetic waves}
 
@@ -496,24 +566,29 @@
         \item \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k = \nicefrac{2\pi}{\lambda}$ the wave number.
         \item \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
         \item \textbf{Matter waves}, or de Broglie waves, express the fact that every particle also behaves as a wave, with the (de Broglie) wavelength
-        \begin{equation}\label{eq:de-broglie}
-            \lambda = \frac{h}{p} = \frac{h}{mv} \quad(\text{non-relativistically}),
-        \end{equation}
-        so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. The same relations $E = \hbar\omega$ and $p = \hbar k$ apply.
+        \begin{empheq}[box=\fbox]{equation}\label{eq:de-broglie}
+            \lambda_{\text{dB}} = \frac{h}{p} = \frac{h}{mv},
+        \end{empheq}
+        \keyeqentry{de Broglie wavelength}
+        so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. 
+        
+        The same relations $E = \hbar\omega$ and $p = \hbar k$ apply, the second being \cref{eq:de-broglie} written in terms of the wavenumber $k = \nicefrac{2\pi}{\lambda}$. Combining them with the classical $E = \nicefrac{p^{2}}{2m}$ gives the free-particle dispersion relation $\omega = \nicefrac{\hbar k^{2}}{2m}$, so matter waves are \emph{dispersive}---unlike light in vacuum, their speed depends on the wavelength. The packet as a whole travels at the group velocity $\nicefrac{d\omega}{dk} = \nicefrac{p}{m} = v$, recovering the classical particle speed. The phase velocity $\nicefrac{\omega}{k} = \nicefrac{v}{2}$ carries no such meaning, as it describes the motion of the individual crests rather than of the particle.\todoper{Look at QMI}
     \end{itemize}
 
     \paragraph{Common features and differences}
 
-    All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature---for a matter wave the squared amplitude gives the probability of finding the particle (\cref{post:born}), while for light it corresponds to the number of photons.
+    All three show interference and diffraction, obey the laws of reflection and refraction, and can form standing waves by superposition. 
+    
+    They differ in what they need and what they are: mechanical waves need a medium, whereas electromagnetic and matter waves do not. Electromagnetic and matter waves are quantum in nature (although EM waves have a potent classical description)---for a matter wave the squared amplitude gives the probability of finding the particle (\cref{post:born}), while for light it corresponds to the number of photons.
 
 \section{Phase transitions; types of phase transitions, order parameter of phase transition, coexistence of phases (examples of phenomena)}
 \label{sec:phase-transitions}
 
-    A \emph{phase} is a region that is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is an abrupt change in these properties when a control variable such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering or superconductivity.
+    A \emph{phase} is a region of matterthat is uniform in its physical and chemical properties---ice, liquid water and steam are three phases of the same substance. A \emph{phase transition} is a change in these properties when a control \emph{variable} such as temperature or pressure is varied. Transitions may involve the state of matter, the crystal structure, magnetic ordering.
 
     To describe them we use a thermodynamic potential---for changes at fixed temperature and pressure this is the \emph{Gibbs free energy}, the quantity a system minimises at equilibrium (\cref{sec:ensembles}). It is written as a function of an \emph{order parameter}: a quantity that is zero in the more symmetric, higher-entropy (disordered) phase and becomes nonzero in the ordered phase. Two examples are the magnetisation of a ferromagnet (zero above the Curie temperature, nonzero below) and the density difference between coexisting liquid and gas.
 
-    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (the free energy per particle) behaves. A transition is of the $n$-th kind when the $n$-th derivative $\nicefrac{\partial^{n}\mu}{\partial T^{n}}$ is the first that is discontinuous.
+    The \emph{Ehrenfest classification} sorts transitions by how the chemical potential $\mu$ (\cref{sec:thermo-potentials}), which measures the free energy per particle, behaves. A transition is of the $n$-th kind when the $n$-th derivative $\nicefrac{\partial^{n}\mu}{\partial T^{n}}$ is the first that is discontinuous.
 
     \begin{itemize}
         \item First order --- a first derivative jumps, producing latent heat and a sudden change of density. Melting and boiling are examples.
