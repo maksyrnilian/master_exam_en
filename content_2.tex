@@ -27,16 +27,19 @@
 
     \subsection{Maxwell's equations --- general form}
 
-        \begin{equation}\label{eq:maxwell-general}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-general}
             \begin{alignedat}{2}
                 \text{Gauss's law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\varepsilon_{0}}\\
                 \text{Gauss's law for } \vec{B}                                 & : \quad & \nabla \cdot \vec{B}  & = 0\\
                 \text{Faraday's law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
                 \text{Ampère--Maxwell law}                                      & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \varepsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
             \end{alignedat}
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Maxwell's equations---general form}
 
-        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the magnetic induction field. Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).
+        where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the \emph{magnetic flux density} (or sometimes \emph{magnetic induction}). Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. 
+        
+        The fields make no such distinction---only the total charge and current act as sources---but it is worth making, because the bound part is a response of the material and can be absorbed into redefined fields (\cref{sec:maxwell-matter}).
 
         The nabla operator $\nabla$ (\cref{eq:nabla}) can be used to mean different operations, giving:
 
@@ -48,7 +51,7 @@
             \end{aligned}
         \end{equation*}
 
-        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,
+        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,\todoper{check kcl math notes}
 
         \begin{equation}\label{eq:divergence-theorem}
             \int_{V}\nabla\cdot\vec{A}\,dV = \oint_{\partial V}\vec{A}\cdot d\vec{S},
@@ -65,11 +68,11 @@
         \begin{itemize}
             \item \textbf{Gauss's law for $\vec{E}$.} The electric flux out through any closed surface is fixed by the charge enclosed and by nothing else. Field lines start on positive charge and end on negative charge.
             \item \textbf{Gauss's law for $\vec{B}$.} The magnetic flux out through any closed surface is always zero, so magnetic field lines have no ends and close on themselves. There is no magnetic charge for them to start from---no magnetic monopole has ever been observed.
-            \item \textbf{Faraday's law.} The circulation of $\vec{E}$ around a loop equals minus the rate of change of the magnetic flux threading it, so a changing magnetic field drives a current in a wire. This is the generator and the transformer. The minus sign is Lenz's law: the induced current opposes the change that produced it, as it must if energy is to be conserved.
-            \item \textbf{Ampère--Maxwell law.} The circulation of $\vec{B}$ around a loop is fixed by the current passing through it together with the rate of change of the electric flux through it. The first term is the electromagnet. The second is Maxwell's own addition, and it says that a changing electric field gives rise to a magnetic field, just as Faraday's law says that a changing magnetic field gives rise to an electric one. Each field keeps regenerating the other, which is how the pair travels as light through empty space (\cref{eq:maxwell-vacuum}).
+            \item \textbf{Faraday's law.} Time-varying magnetic field gives rise to the rotational electric field. The minus sign is Lenz's law, which says that the induced current flows in such a direction as to oppose the change that produced it.
+            \item \textbf{Ampère--Maxwell law.} A current due to bound/free charges \emph{or} a time-varying electric field give rise to rotational magnetic field.
         \end{itemize}
 
-        Fields act on charges through the Lorentz force:
+        Fields act on charges through the Lorentz force. Essentailly all electromagnetism can be derived from it:
 
         \begin{equation}\label{eq:lorentz-force}
             \vec{F}=q\,(\vec{E}+\vec{v}\times\vec{B})
@@ -77,7 +80,7 @@
 
     \subsection{Maxwell's equations in vacuum}
 
-        In vacuum there are no charges or currents at all, free or bound, so $\rho = 0$ and $\vec{J} = 0$, and Maxwell's equations reduce to their source-free form:
+        In vacuum there are no charges or currents at all, free or bound, so $\rho = 0$ and $\vec{J} = 0$, and Maxwell's equations reduce to their source-free form that only describe the action of the fields:
 
         \begin{equation}\label{eq:maxwell-vacuum}
             \begin{aligned}
@@ -91,7 +94,7 @@
     \subsection{Maxwell's equations in matter}
     \label{sec:maxwell-matter}
 
-        An electric field pulls the positive and negative charge of each atom or molecule slightly apart, giving it an electric dipole moment $\vec{p} = q\vec{d}$, where $\vec{d}$ points from the negative charge to the positive one. Averaged per unit volume this is the polarisation vector
+        An electric field pulls the positive and negative charge of each atom or molecule slightly apart, giving it an electric dipole moment $\vec{p} = q\vec{d}$, where $\vec{d}$ points from the negative charge to the positive one. Averaged per unit volume these moments give the polarisation vector $\vec{P}$ (\cref{eq:polarisability}), which in a linear dielectric is proportional to the field,
 
         \begin{equation}\label{eq:polarisation-vector}
             \vec{P}=\chi \varepsilon_0\vec{E},
@@ -99,11 +102,11 @@
 
         where $\chi$ --- electric susceptibility of a material. Polarisation moves bound charge only, and
 
-        \begin{equation*}
+        \begin{equation}\label{eq:bound-charge}
             \nabla\cdot\vec{P}=-\rho_{\text{b}}.
-        \end{equation*}
+        \end{equation}
 
-        The minus sign records which charge is left behind. Since $\vec{P}$ points from the negative end of each dipole to the positive end, a region out of which $\vec{P}$ spreads (positive divergence) is one from which positive bound charge has been carried away, so what remains there is negative.
+        Since $\vec{P}$ points from the negative end of each dipole to the positive end, a region out of which $\vec{P}$ spreads (positive divergence) is one from which positive bound charge has been carried away, so what remains there is negative. In other words, the electric field that is caused by $\vec{P}$ points roughly in the opposite direction to $\vec{P}$.
 
         From Gauss's law for the electric field, we then have
 
@@ -117,13 +120,14 @@
 
         where $\vec{D}$ --- the electric displacement field,
 
-        \begin{equation}\label{eq:D-def}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:D-def}
             \vec{D} \equiv \varepsilon_{0}\vec{E} + \vec{P} .
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Electric displacement field}
 
-        Adding $\vec{P}$ cancels the bound charge contributions, so $\vec{D}$ is the field whose sources are the free charges alone---the ones we control. $\vec{P}$ points in the opposite direction to the field it is producing, so it subtracts from $\vec{E}$.
+        Adding $\vec{P}$ cancels the bound charge contributions (\cref{eq:bound-charge}), so $\vec{D}$ is the field whose sources are the free charges alone---the ones we control. $\vec{P}$ points in the opposite direction to the field it is producing, so it subtracts from $\vec{E}$.
 
-        Matter responds magnetically as well. Every atom carries a small circulating current and so a magnetic dipole moment, and the average moment per unit volume is the \emph{magnetisation} $\vec{M}$. Inside a uniformly magnetised body, neighbouring loops run in opposite directions where they meet and cancel, so a net current survives only at the surface, or anywhere $\vec{M}$ varies from place to place. Added up, what is left is $\nabla\times\vec{M}$. A polarisation that changes in time is on top of that a genuine motion of bound charge, hence a current $\nicefrac{\partial\vec{P}}{\partial t}$. The two together make the bound current
+        Matter responds magnetically as well. Every atom carries a small circulating current\todo{reference- orbital angular momentum? larmor precession?} and so a magnetic dipole moment, which for a simplest model of a wire-carrying loop is defined as $\vec{\mu} = I\vec{A}$, where $I$ is the current and $\vec{A}$ is the area vector of the loop. The average moment per unit volume is the \emph{magnetisation} $\vec{M}$. Inside a uniformly magnetised body, neighbouring loops run in opposite directions where they meet and cancel, so a net current survives only at the surface, or anywhere $\vec{M}$ varies from place to place. Added up, what is left is $\nabla\times\vec{M}$. A polarisation that changes in time is on top of that a genuine motion of bound charge, hence a current $\nicefrac{\partial\vec{P}}{\partial t}$. The two together make the bound current
 
         \begin{equation*}
             \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
@@ -139,7 +143,7 @@
             \end{aligned}
         \end{equation*}
 
-        where $\vec{H}$ --- the magnetic field intensity,
+        where $\vec{H}$ --- the \emph{magnetic field} (or \emph{magnetic field strength/intensity}),
 
         \begin{equation}\label{eq:H-def}
             \vec{H} \equiv \frac{\vec{B}}{\mu_{0}} - \vec{M} .
@@ -150,36 +154,46 @@
         \needspace{4\baselineskip}
         Maxwell's equation in matter may then finally be rewritten as:
 
-        \begin{equation}\label{eq:maxwell-media}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-media}
             \begin{aligned}
                 \nabla \cdot \vec{D} &= \rho_{\text{f}}\\
                 \nabla \cdot \vec{B} &= 0\\
                 \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
                 \nabla\times\vec{H} &= \vec{J}_{\text{f}} + \frac{\partial\vec{D}}{\partial t}
             \end{aligned}
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Maxwell's equations---in matter}
 
     \subsection{The scalar and vector potentials}\label{sec:em-potentitals}
 
         Two of Maxwell's equations carry no sources at all, and they can be satisfied identically---made true by construction---once the fields are written in terms of potentials.
 
-        Since $\nabla\cdot\vec{B} = 0$ everywhere, and since the divergence of any curl vanishes automatically, $\vec{B}$ may always be written as the curl of some vector field,
+        Since $\nabla\cdot\vec{B} = 0$ everywhere, and since \emph{the divergence of any curl vanishes automatically}, $\vec{B}$ may always be written as the curl of some vector field,
 
-        \begin{equation}\label{eq:vector-potential}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:vector-potential}
             \vec{B} = \nabla\times\vec{A},
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Magnetic vector potential}
 
-        called the \emph{magnetic vector potential}. Substituting this into Faraday's law gives $\nabla\times\left(\vec{E} + \nicefrac{\partial\vec{A}}{\partial t}\right) = 0$, and a field whose curl vanishes is the gradient of something, so
+        called the \emph{magnetic vector potential}. Substituting this into Faraday's law gives $\nabla\times\left(\vec{E} + \nicefrac{\partial\vec{A}}{\partial t}\right) = 0$, and \emph{a field whose curl vanishes is the gradient of something}, so
 
-        \begin{equation}\label{eq:scalar-potential}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:scalar-potential}
             \vec{E} = -\nabla\varphi - \frac{\partial\vec{A}}{\partial t},
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Electric scalar potential and electric field}
 
-        where $\varphi$ is the \emph{electric scalar potential}. In electrostatics the second term is absent and $\varphi$ is the familiar potential whose difference between two points is a voltage.
+        where $\varphi$ is the \emph{electric scalar potential}. In electrostatics the second term is absent and $\varphi$ is the familiar potential whose difference between two points is a voltage and can express avarage electric field as ($E=\nicefrac{\Delta V}{\Delta x}$).
 
-        The gain is economy. The two source-free equations are now satisfied automatically and only the two with sources remain to be solved, and the six components of $\vec{E}$ and $\vec{B}$ are traded for four, $\varphi$ and $\vec{A}$. The potentials are not unique: adding $\nabla f$ to $\vec{A}$ while subtracting $\nicefrac{\partial f}{\partial t}$ from $\varphi$ leaves both fields exactly as they were, for any $f$. That freedom is called \emph{gauge invariance}, and it is used to impose whichever extra condition makes a given problem easiest. The potentials are also what enter the Lagrangian of a charged particle, and hence its quantum mechanics, so they are more than a calculational convenience.
+       The gain is economy. The two source-free equations are now satisfied automatically and only the two with sources remain to be solved, and the six components of $\vec{E}$ and $\vec{B}$ are traded for four, $\varphi$ and $\vec{A}$. The potentials are not unique: adding $\nabla f$ to $\vec{A}$ while subtracting $\nicefrac{\partial f}{\partial t}$ from $\varphi$ leaves both fields exactly as they were, for any scalar function $f(\vec{r},t)$. Such a substitution is a \emph{gauge transformation}, and the insensitivity of the fields to it is \emph{gauge invariance}. The freedom is used to impose whichever extra condition makes a given problem easiest. The potentials are also what enter the Lagrangian of a charged particle, and hence its quantum mechanics, so they are more than a calculational convenience. In relativistic electrodynamics they combine into a single four-vector (\cref{sec:inertial-frames}),
+        \begin{equation*}
+            A^{\mu} =
+            \begin{bmatrix}
+                \nicefrac{\varphi}{c} \\ \vec{A}
+            \end{bmatrix},
+        \end{equation*}
+
+        whereas $\vec{E}$ and $\vec{B}$ need a rank-2 tensor to hold their six components. The potentials are the more natural relativistic objects as well as the more economical ones.
         
-
 \section{The electric field in media; dielectric polarisation, conduction, mobility of the charge carriers}
 \label{sec:electric-field}
 
@@ -193,7 +207,7 @@
             P = \varepsilon_{0}\left(\chi^{(1)}E + \chi^{(2)}E^{2} + \chi^{(3)}E^{3} + \cdots\right),
         \end{equation}
 
-        where $\chi^{(1)} \equiv \chi$ --- the linear electric susceptibility of \cref{eq:polarisation-vector}. The higher coefficients are so small that the extra terms matter only in intense laser fields, where they are the whole of \emph{nonlinear optics}: $\chi^{(2)}$ lets a crystal double the frequency of the light passing through it (second-harmonic generation), and $\chi^{(3)}$ makes the refractive index depend on the intensity. Strictly each $\chi^{(k)}$ is a tensor, since $\vec{P}$ need not point along $\vec{E}$ in an anisotropic crystal, which is the origin of birefringence.
+        where $\chi^{(1)} \equiv \chi$ --- the linear electric susceptibility of \cref{eq:polarisation-vector}. The higher coefficients are so small that the extra terms matter only in intense laser fields, where they are the whole of \emph{nonlinear optics}: $\chi^{(2)}$ lets a crystal double the frequency of the light passing through it (second-harmonic generation), and $\chi^{(3)}$ makes the refractive index depend on the intensity in the optical range. Strictly each $\chi^{(k)}$ is a tensor, since $\vec{P}$ need not point along $\vec{E}$ in an anisotropic crystal, which is the origin of birefringence.
 
         Keeping the linear term alone and substituting it into the definition of the displacement field (\cref{eq:D-def}) gives
 
@@ -201,41 +215,60 @@
             \vec{D} = \varepsilon_{0}\vec{E} + \vec{P} = \varepsilon_{0}\left(1+\chi\right)\vec{E} \equiv \varepsilon_{0}\varepsilon_{\text{r}}\vec{E},
         \end{equation}
 
-        where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material, the quantity actually tabulated. It is $1$ in vacuum, a few for ordinary plastics and glasses, and about $80$ for water at low frequencies. The three mechanisms below add up to it, and each stops contributing above its own characteristic frequency, which is why $\varepsilon_{\text{r}}$ falls in steps as the frequency rises.
+        where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material (related to the refractive index (\cref{eq:refractive-index:})). It is $1$ in vacuum but in genral it has a real and imaginary components, may be negative, and changes dramatically in different types of media, which is crucial for EM waves (\cref{sec:em-waves}). The three mechanisms below add up to it (\cref{eq:polarisability-sum}), and each stops contributing at a different frequency, so $\varepsilon_{\text{r}}$ is a function of frequency as well.
+
+        Underneath $\chi$ there is a microscopic picture. Each atom or molecule acquires the dipole moment $\vec{p} = q\vec{d}$, and in a weak field it is proportional to the field acting on it,
+
+        \begin{empheq}[box=\fbox]{equation}\label{eq:polarisability}
+            \vec{p} = \alpha\vec{E},
+        \end{empheq}
+        \keyeqentry{Polarisability}
+
+        where $\alpha$ --- the \emph{polarisability}, a measure of how easily that particular atom or molecule is deformed or turned. With $N$ such units per unit volume the polarisation is their sum, $\vec{P} = N\vec{p}$, and comparing it with \cref{eq:polarisation-vector} gives $\chi = \nicefrac{N\alpha}{\varepsilon_{0}}$. The three mechanisms below are not alternatives. Every material has electrons, so the electronic contribution is always present, and a material whose structure permits the others shows them at the same time. Their polarisabilities simply add,
+
+        \begin{equation}\label{eq:polarisability-sum}
+            \alpha = \alpha_{\text{e}} + \alpha_{\text{i}} + \alpha_{\text{or}},
+        \end{equation}
+
+        so that $\chi$, $\varepsilon_{\text{r}}$ and the weakened field inside the dielectric are always the net effect of whichever mechanisms are present. An ionic crystal such as NaCl has the first two, liquid water the first and the third.
 
         \paragraph{Electronic polarisation}
 
-        Electronic polarisation is the displacement of the negatively charged electron cloud of an atom with respect to its positive nucleus. It occurs in all materials. Because only the light electrons have to move it is the fastest mechanism, and it still responds at optical and ultraviolet frequencies. The induced dipole moment is fixed by the electronic polarisability $\alpha_{e}$,
-
-        \begin{equation*}
-            p_{e} = \alpha_{e}E .
-        \end{equation*}
+            Electronic polarisation is the displacement of an atom's negatively charged electron cloud with respect to its positive nucleus, inducing a moment governed by $\alpha_{\text{e}}$. Every material has electrons, so this mechanism is present in all of them, polar or not. Its polarisability grows roughly with the volume of the atom, since a larger and more loosely bound cloud is easier to pull aside. Only the light electrons have to move, so it is much the fastest of the three and still follows the field at optical and ultraviolet frequencies---it is what supplies the refractive index of ordinary glass.
 
         \paragraph{Ionic polarisation}
 
-        Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared.
+            Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared. Ionic polarisation occurs only in materials with ionic bonds. It is the displacement of the ions of the crystal lattice, those of one sign one way and those of the other sign the other way, with a polarisability $\alpha_{\text{i}}$ of the same induced kind as the electronic one. Whole atoms bound in a lattice must move, so it is far slower than the electronic mechanism and dies out above the infrared.
 
         \paragraph{Orientational polarisation}
 
-        Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment of their own. The field exerts an ordering torque on them, while thermal motion destroys the ordering, so this contribution alone depends on temperature and falls as the temperature rises. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range---which is exactly what a microwave oven exploits in water.
+            Orientational polarisation, also called dipolar polarisation, occurs only in polar dielectrics, that is, in materials whose molecules carry a permanent dipole moment $p_{0}$ of their own. The field exerts an ordering torque on them while thermal motion destroys the ordering, so what survives is a slight statistical bias in their directions. Nothing is deformed here and no single moment changes size, so the polarisability is an effective one produced by that averaging,
+
+            \begin{equation}\label{eq:orientational-polarisability}
+                \alpha_{\text{or}} = \frac{p_{0}^{2}}{3\kB T},
+            \end{equation}
+
+            valid while the ordering energy $p_{0}E$ stays small against $\kB T$. This is the only contribution that depends on temperature, and it falls as the material is heated. Whole molecules must reorient, so it is the slowest mechanism of all and stops following the field somewhere in the microwave range---which is exactly what a \emph{microwave oven exploits in water}.
 
     \subsection{Conductivity and mobility}
 
         Conduction is the flow of electric charge through a material under an applied field. The carriers do not accelerate freely, because they are scattered by lattice vibrations and by defects, so in a steady field they settle at an average \emph{drift velocity} $v_{\text{d}}$ proportional to the field. The constant of proportionality is the \emph{mobility},
 
-        \begin{equation}\label{eq:mobility}
-            \mu \equiv \frac{v_{\text{d}}}{E},
-        \end{equation}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:mobility}
+            \mu_{\text{e}} \equiv \frac{v_{\text{d}}}{E},
+        \end{empheq}
+        \keyeqentry{Mobility}
 
         which measures how easily a carrier is pushed through a particular material. The current density is then $J = qnv_{\text{d}} = \sigma E$, the local form of Ohm's law, with the \emph{conductivity}
 
-        \begin{equation}\label{eq:conductivity}
-            \sigma = qn\mu,
-        \end{equation}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:conductivity}
+            \sigma = qn\mu_{\text{e}},
+        \end{empheq}
+        \keyeqentry{Conductivity}
 
         where $q$ is the charge of one carrier and $n$ their concentration. Only two things can therefore change a conductivity: how many carriers there are, and how freely each moves. The most common kinds of conduction are electronic, in which the carriers are electrons in the conduction band, hole conduction, in which the carriers are the vacancies left in an otherwise full valence band and behave as positive charges, and ionic, in which whole ions move.
 
-        Temperature acts on both factors, and which one wins distinguishes the two standard cases. In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
+        Temperature acts on both factors, and which one wins distinguishes the two standard cases. In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu_{\text{e}}$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead.
 
 \section{The magnetic field in media; classification of magnetic media, microscopic description of interactions between the magnetic moments of components of the medium (atoms, ions, molecules)}
 \label{sec:magnetic-field}
