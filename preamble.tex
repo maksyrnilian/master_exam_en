@@ -40,8 +40,9 @@
 \usepackage{needspace}            % reserve N lines so a block is not split across a page
 \usepackage[nottoc]{tocbibind}    % list bibliography/index in the ToC (not the ToC itself)
 \usepackage{parskip}   	          % blank line between paragraphs, no first-line indent
-\usepackage[margin=3.6cm, marginparwidth=3.1cm]{geometry}  % page margins; width of \todo notes
-\usepackage{marginfix}
+\usepackage[left=1cm, top=1.5cm, bottom=2.5cm, right=5cm, marginparwidth=4.4cm, marginparsep=0.3cm, footskip=1cm, asymmetric]{geometry}
+%\usepackage[margin=3.6cm, marginparwidth=3.1cm]{geometry}  % page margins; width of \todo notes
+%\usepackage{marginfix}
 
 % --- colours  --------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}   % named colours (dvipsnames palette, e.g. Maroon)
@@ -73,6 +74,7 @@
 \newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}       % red   --- persistent note, to be checked again later
 \newcommand{\todoai}[1]{\todo[backgroundcolor=green!25,linecolor=green!55]{#1}}    % green --- rewritten and checked, comment from AI
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanations in `%-comments`)
+\newcommand{\todoans}[1]{\todo[backgroundcolor=blue!25,linecolor=blue!55]{#1}}  % blue  --- answer to a question I raised; for information only, not (yet) part of the text
 
 % --- toc-link --------------------------------------------------------
 \usepackage{fancyhdr}   % custom headers/footers (centred page number, ToC link at right)

@@ -4,32 +4,34 @@
 
 \section{Physical foundations of optical spectroscopy; electron, oscillatory and rotational excitations of particles and the corresponding ranges of the spectrum of electromagnetic radiation}
 \label{sec:spectroscopy}
-
-    Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.\todo{SIGNIFICANT EDIT: add a short glossary of the coupling names---rotational--vibrational, rotational--rotational and so on. \emph{Spin--orbit coupling} is already defined in \cref{sec:atom-molecule} and needs only a cross-reference.}
-
-    A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. In decreasing order of energy these are \emph{electronic, vibrational} and \emph{rotational} excitations\todo{I understand that these are completely separate from quantum atom description with n,l,m and it treats the whole molecule as an object that responds to external stuff}, each about one to two orders of magnitude below the one above it. In molecules all three are present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it, and this is what turns what would be one atomic line into a broad structured band.
-
-    A transition is only seen if the light can couple to it, which for absorption and emission means that the motion\todo{Clarify which motion: for infrared absorption it is the vibration or the rotation that must change the molecule's permanent electric dipole moment. Say so explicitly.} must change the electric dipole moment of the molecule. This is why a symmetric molecule such as N$_{2}$ has no infrared spectrum at all, while CO$_{2}$ and H$_{2}$O do, and it is the whole basis of the greenhouse effect.\todo{So symmetric molecules are unaffected by EM field around them untill it can couple to electron transistions?}
-
+ 
+    Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.
+ 
+    A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. In decreasing order of energy these are \emph{electronic}, \emph{vibrational} and \emph{rotational} excitations, each about one to two orders of magnitude below the one above it. The three can be counted separately because the electrons are thousands of times lighter than the nuclei and so follow any nuclear motion instantly---the \emph{Born--Oppenheimer approximation}---which lets the state of a molecule be labelled by one quantum number from each of the three, with the total energy their sum.\todoans{These do not compete with the atomic $n$, $l$, $m$ scheme. Born--Oppenheimer factorises the wave function, $\psi \simeq \psi_{\text{el}}\psi_{\text{vib}}\psi_{\text{rot}}$. The electronic factor is the molecular counterpart of the atomic orbitals of \cref{sec:atom-molecule}, whereas $v$ and $J$ describe the \emph{nuclei}---how the bonds stretch and how the whole frame turns---and have no atomic analogue.}
+ 
+    In molecules all three are present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it, and this is what turns what would be one atomic line into a broad structured band. A transition changing the vibrational and the rotational state together gives a \emph{vibrational--rotational} band, and that is what the infrared spectrum of a gas consists of.\todoans{Standard names if you want them: \emph{rovibrational} for a vibrational--rotational band, \emph{rovibronic} when the electronic state changes as well. \enquote{Rotational--rotational coupling} is not standard usage. \emph{Spin--orbit coupling} is a different matter entirely---atomic fine structure, defined in \cref{sec:atom-molecule}---and has no place in this section.}
+ 
+    A transition is only seen if the light can couple to it, which for infrared absorption and emission means that the vibration or the rotation must change the electric dipole moment of the molecule. A molecule of two identical atoms such as N$_{2}$ therefore has no infrared spectrum at all. CO$_{2}$ has no permanent dipole moment either, but its bending and asymmetric-stretch vibrations create one while they last, which is enough, and H$_{2}$O is polar to begin with---this is the whole basis of the greenhouse effect. Even N$_{2}$ is not blind to light in general, since it still has electronic transitions in the ultraviolet and it appears in Raman scattering (\cref{sec:light-matter}), which asks only that the polarisability (\cref{eq:polarisability}) change rather than the dipole moment.
+ 
     \subsection{Electronic excitations}
-
-        Electronic excitations are jumps of an electron between the bound energy levels of an atom or molecule (\cref{sec:atom-molecule}). When a photon of the right energy is absorbed, an electron moves from a lower to a higher level, which shows as a line or band in the absorption spectrum. These are the largest steps, a few electronvolts, which puts them in the visible and near-ultraviolet, roughly $200$--$800$~nm. Visible light itself runs from about $380$~nm to $750$~nm, that is from about $790$~THz down to $400$~THz.
-
+ 
+        Electronic excitations are jumps of an electron between the bound energy levels of an atom or molecule (\cref{sec:atom-molecule}). When a photon of the right energy is absorbed, an electron moves from a lower to a higher level, which shows as a line or band in the absorption spectrum. These are the largest steps, a few electronvolts, which puts them in the visible and near-ultraviolet, roughly \qtyrange{200}{800}{\nano\metre}. Visible light itself runs from about \qtyrange{380}{750}{\nano\metre}, that is from about \qty{790}{\tera\hertz} down to \qty{400}{\tera\hertz}.
+ 
     \subsection{Vibrational excitations}
-
-        Vibrational excitations are oscillations of the atoms within a molecule about their equilibrium positions, for example the stretching or bending of a bond. Any potential minimum is harmonic for small displacements, so the levels are those of a harmonic oscillator, $E_{v} = \left(v+\nicefrac{1}{2}\right)\hbar\omega$ with $v = 0,1,2,\dots$ (\cref{sec:quantisation}), and are therefore evenly spaced. The spacing is of order $0.1$~eV, which places them in the infrared, roughly $2.5$--$25$~\si{\micro\metre}.
-
-    \subsection{Rotational excitations}\todo{same as above - these are not related to quantum orbital angular moment etc? are whole molecules in that sense quantum mechanically described by a completely different wavefucntion than electrons inside them?}
-
-        Rotational excitations are changes in the rotation of the whole molecule about its centre of mass, so they change its angular momentum, which is quantised as in \cref{sec:angular-momentum}. The levels are $E_{J} = BJ(J+1)$ with $J = 0,1,2,\dots$, so unlike the vibrational ladder they are not evenly spaced but spread out as $J$ grows, and the constant $B$ is inversely proportional to the moment of inertia---heavier molecules have more closely spaced levels. These are the smallest steps of the three, of order a few $\mathrm{meV}$ down to much less, giving wavelengths from a fraction of a millimetre to a few centimetres: the far infrared and the microwave region. Rotational spectra are the sharpest of the three.
+ 
+        Vibrational excitations are oscillations of the atoms within a molecule about their equilibrium positions, for example the stretching or bending of a bond. Any potential minimum is harmonic for small displacements, so the levels are those of a harmonic oscillator, $E_{v} = \left(v+\nicefrac{1}{2}\right)\hbar\omega$ with $v = 0,1,2,\dots$ (\cref{sec:quantisation}), and are therefore evenly spaced. The spacing is of order \qty{0.1}{\electronvolt}, which places them in the infrared, roughly \qtyrange{2.5}{25}{\micro\metre}.
+ 
+    \subsection{Rotational excitations}
+ 
+        Rotational excitations are changes in the rotation of the whole molecule about its centre of mass, so they change its angular momentum, which is quantised as in \cref{sec:angular-momentum}. The levels are $E_{J} = BJ(J+1)$ with $J = 0,1,2,\dots$, so unlike the vibrational ladder they are not evenly spaced but spread out as $J$ grows, and the constant $B$ is inversely proportional to the moment of inertia---heavier molecules have more closely spaced levels. These are the smallest steps of the three, of order a few \unit{\milli\electronvolt} down to much less, giving wavelengths from a fraction of a millimetre to a few centimetres: the far infrared and the microwave region. Rotational spectra are the sharpest of the three.\todoans{$J$ obeys the same algebra as the electronic $l$ of \cref{sec:angular-momentum}---the same $J(J+1)$ pattern, the same $2J+1$ orientations---but it belongs to the \emph{nuclear frame} rather than to the electrons. It is a separate factor in the wave function, which is why the two sets of quantum numbers coexist without clashing.}
 
 \section{Phenomena accompanying the interaction of electromagnetic radiation with atoms and molecules; stimulated and spontaneous emission, absorption}
 \label{sec:light-matter}
 
     An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon. All three are \emph{resonant}, meaning they occur only when the photon energy $hf$ matches the gap between two levels.
-    
-    Light also interacts off resonance,\todo{off resonance is a weird phrasing} by \emph{scattering}: elastically, with the photon merely redirected and its energy unchanged (Rayleigh scattering, which is stronger for short wavelengths and is why the sky is blue), or inelastically, with the molecule left in a different vibrational state so that the scattered photon has shifted in frequency (the \emph{Raman effect}, which reaches vibrations that infrared absorption cannot).
-    
+
+    Light whose energy matches no level gap can still interact, by \emph{scattering}: elastically, with the photon merely redirected and its energy unchanged (Rayleigh scattering, which is stronger for short wavelengths and is why the sky is blue), or inelastically, with the molecule left in a different vibrational state so that the scattered photon has shifted in frequency (the \emph{Raman effect}, which reaches vibrations that infrared absorption cannot).
+
     A further everyday case is fluorescence, in which a molecule absorbs a high-energy photon, loses a little energy without radiating, and emits a photon of lower energy.
 
     \subsection{Absorption}
@@ -38,7 +40,7 @@
 
         In cold, rarefied atomic gases the excited levels are well separated, so only photons of a few sharply defined energies can be absorbed. If white (continuous-spectrum) light passes through such a gas, dark lines appear in the transmitted spectrum at exactly those energies. This is how the composition of a stellar atmosphere is read off.
 
-        In molecules the level scheme is richer, because on top of the electronic levels there are the vibrational and rotational levels of \cref{sec:spectroscopy}. These lie so close together that they merge into broad absorption \emph{bands} rather than sharp lines. Moreover, molecular systems with many electrons are also intrinsically more complicated and require approximate methods (\cref{sec:approximate-methods}) which affect the results.\todo{Phrasing check: does this sentence belong in the absorption subsection at all?}
+        In molecules the level scheme is richer, because on top of the electronic levels there are the vibrational and rotational levels of \cref{sec:spectroscopy}. These lie so close together that they merge into broad absorption \emph{bands} rather than sharp lines. Predicting where those bands fall is harder still, since a molecule with many electrons has no exact solution and one must fall back on the approximate methods of \cref{sec:approximate-methods}.
 
     \subsection{Spontaneous emission}
 
@@ -48,7 +50,7 @@
             N\left(t\right) = N\left(0\right)e^{-t/\tau},
         \end{equation*}
 
-        where $\tau$ is the mean lifetime of the excited state.
+        where $\tau$ is the mean lifetime of the excited state, the reciprocal of the rate $A_{21}$ below and calculable from Fermi's golden rule (\cref{subsec:fermi-golden-rule}). Because the level survives only for a time $\tau$ its energy is not perfectly sharp, which is the natural linewidth of \cref{sec:uncertainty}.
 
     \subsection{Stimulated emission}
 
@@ -56,7 +58,7 @@
 
     \subsection{The Einstein coefficients}
 
-        The three processes are put on one footing by writing down their rates per atom. Let $\rho(f)$ be the energy density of the radiation per unit frequency at the transition frequency, and let levels $1$ and $2$ be the lower and the upper one.\todo{add one more sentence that clarifyins what is rho} Then absorption goes at $B_{12}\rho(f)$, stimulated emission at $B_{21}\rho(f)$, and spontaneous emission at $A_{21}$ alone, with no $\rho$ in it, because it needs no incident light. The three constants are the \emph{Einstein coefficients}.
+        The three processes are put on one footing by writing down their rates per atom. Let $\rho(f)$ be the energy density of the radiation per unit frequency at the transition frequency, and let levels $1$ and $2$ be the lower and the upper one. In plain terms $\rho(f)$ is how much light of the right colour is sitting in unit volume, so it measures the supply of photons available, and any process whose rate contains it has to wait for one to arrive. Then absorption goes at $B_{12}\rho(f)$, stimulated emission at $B_{21}\rho(f)$, and spontaneous emission at $A_{21}$ alone, with no $\rho$ in it, because it needs no incident light. The three constants are the \emph{Einstein coefficients}.
 
         Requiring these rates to balance for atoms in equilibrium with black-body radiation (\cref{eq:planck}) fixes two relations between them,
 
@@ -64,7 +66,7 @@
             g_{1}B_{12} = g_{2}B_{21}, \qquad \frac{A_{21}}{B_{21}} = \frac{8\pi hf^{3}}{c^{3}},
         \end{equation*}
 
-        where $g_{1}$ and $g_{2}$ count the states at each level\todo{Clarify: these are the \emph{degeneracies}---the number of distinct states sharing one energy, as in the Zeeman discussion of \cref{sec:atoms-fields}. Decide whether to say this in the text.}. Two conclusions follow, and they are the reason the formalism is worth quoting. First, absorption and stimulated emission are equally likely per photon, so which one wins depends only on which level holds more atoms. In thermal equilibrium the lower one always does, so a beam is always attenuated. Amplification requires a \emph{population inversion}, $N_{2} > N_{1}$, which cannot occur in equilibrium and has to be created by pumping the medium, and which needs at least three levels to sustain. Second, the ratio $\nicefrac{A_{21}}{B_{21}}$ grows as $f^{3}$, so spontaneous emission swamps stimulated emission at high frequency. That is why the maser came before the laser and why an X-ray laser is hard to build.
+        where $g_{1}$ and $g_{2}$ are the \emph{degeneracies} of the two levels---the number of distinct states sharing one energy, which is what an external field pulls apart in the Zeeman and Stark effects (\cref{sec:atoms-fields}). Two conclusions follow, and they are the reason the formalism is worth quoting. First, the relation between the two $B$ coefficients says that absorption and stimulated emission are equally likely per photon and per state, so which of them wins depends only on which level holds more atoms. In thermal equilibrium the lower one always does, so a beam is always attenuated. Amplification requires a \emph{population inversion}, $N_{2} > N_{1}$, which cannot occur in equilibrium and has to be created by pumping the medium, and which needs at least three levels to sustain.\todoans{Two levels cannot sustain an inversion. Pumping on the very transition meant to lase drives absorption and stimulated emission at equal per-state rates, so the best it can achieve is to equalise the two populations, never to invert them. A third level lets the pump and the lasing transition be different ones, so atoms are lifted high, drop quickly into the upper laser level and pile up there.} Second, the ratio $\nicefrac{A_{21}}{B_{21}}$ grows as $f^{3}$, so spontaneous emission swamps stimulated emission at high frequency. That is why the maser came before the laser and why an X-ray laser is hard to build.
 
 \section{Atoms in strong electric and magnetic fields (the Stark effect, the Zeeman effect); experimental studies of spin}
 \label{sec:atoms-fields}\todoper{look online for simpler explanation}
@@ -89,41 +91,17 @@
 
     because the ground state is spherically symmetric, so the positive and negative $z$ contributions cancel. The ground state therefore shifts only at \emph{second} order, proportionally to $E^2$ (the quadratic Stark effect).
 
-    Excited\todo{TRIM (deferred, significant): keep only the qualitative conclusion---the degenerate $n=2$ levels are mixed by the field and split linearly in $E$. Drop the matrix, its eigenvalues and the mixed states, which use diagonalisation and \enquote{manifold} without introducing either.} levels behave differently when they are degenerate. The $n=2$ states $\ket{200}$ and $\ket{210}$ have the same energy and are mixed by the field, so here we must use \emph{degenerate} perturbation theory: diagonalise $\hat H'$ within the $n=2$ manifold. The only non-zero matrix elements are
+    Excited levels behave differently when they are degenerate. The $n=2$ states $\ket{200}$ and $\ket{210}$ have the same energy but opposite symmetry under reflection, one being spherical and the other two-lobed, so the field mixes them, and the two combinations it produces are pushed apart in energy by equal amounts,
 
     \begin{equation*}
-        \bra{200}\hat{H}'\ket{210} = \bra{210}\hat{H}'\ket{200} = -3eEa_0,
+        E = E^{(0)}_{200} \pm 3eEa_{0},
     \end{equation*}
 
-    so that in the basis $\{\ket{200},\ket{210},\ket{211},\ket{21\text{-}1}\}$
-
-    \begin{equation*}
-        \hat{H}' =
-        \begin{bmatrix}
-            0 & -3eEa_0 & 0 & 0 \\
-            -3eEa_0 & 0 & 0 & 0\\
-            0 & 0& 0 & 0\\
-            0 & 0& 0 & 0\\
-        \end{bmatrix}.
-    \end{equation*}
-
-    Its eigenvalues are $\lambda_{1}=\lambda_{2}=0$ and $\lambda_{3}=-\lambda_{4}=3eEa_0$, and the two states that split off are
-
-    \begin{equation*}
-        \frac{1}{\sqrt{2}}\left(\ket{200}\pm\ket{210}\right),
-    \end{equation*}
-
-    with energies
-
-    \begin{equation*}
-        E = E^{(0)}_{200} \pm 3eEa_0.
-    \end{equation*}
-
-    This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate.
+    with $a_{0}$ the Bohr radius (\cref{sec:atom-molecule}). This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate---the ground state has nothing to mix with, which is why it must wait until second order.
 
     \paragraph{The Zeeman effect---magnetic perturbation}\label{sec:zeeman-effect}
 
-        The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, \emph{splitting}\todo{that is correct?} one spectral line into several closely spaced ones.
+        The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, splitting one spectral line into several closely spaced ones.
 
         Taking the field along $z$, the perturbation is $\hat{H}' = -\mu_z B$, where the magnetic moment of the electron is
 
@@ -133,30 +111,26 @@
 
         with $\muB = \nicefrac{e\hbar}{2m_{e}}$ the \emph{Bohr magneton}, the natural unit of atomic magnetic moment, and $g_S \simeq 2$ the electron spin $g$-factor.
 
-        If\todo{TRIM (deferred): for an oral answer keep the normal Zeeman result $\muB B\,m_l$, name the anomalous case, and cut the Land\'e-factor formula and the Paschen--Back paragraph to one sentence each.} the spin plays no role ($S=0$), we have the \emph{normal} Zeeman effect. Since $L_z$ has eigenvalue $\hbar m_l$, the $\hbar$ cancels and the shift is evenly spaced:
+        If the spin plays no role ($S=0$) we have the \emph{normal} Zeeman effect. Since $\hat{L}_z$ has eigenvalue $\hbar m_l$ the $\hbar$ cancels, and the shift is evenly spaced,
 
         \begin{equation*}
-            E^{(1)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = \muB B\,m_l .
+            E^{(1)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = \muB B\,m_l ,
         \end{equation*}
 
-        If the spin does contribute ($S\neq0$) we have the \emph{anomalous} Zeeman effect, with a more complicated pattern of lines. In a weak field the level splits according to the total angular momentum $\hat{\vec{J}} = \hat{\vec{L}} + \hat{\vec{S}}$ with the Land\'e factor $g_J$:
+        so a level of given $l$ opens into $2l+1$ equally spaced ones.
 
-        \begin{equation*}
-            E^{(1)} = \muB g_J B\,m_j,\qquad g_J = 1 + \frac{j(j+1)+s(s+1)-l(l+1)}{2j(j+1)} .
-        \end{equation*}
-
-        Only in a \emph{strong} field, where $\hat{\vec{L}}$ and $\hat{\vec{S}}$ effectively decouple (the Paschen--Back regime), does the shift simplify to the naive form $\muB B\,(m_l + 2m_s)$.
+        If the spin does contribute ($S\neq0$) we have the \emph{anomalous} Zeeman effect. In a weak field the same expression survives with $m_l$ replaced by $m_j$, the projection of the total angular momentum $\hat{\vec{J}} = \hat{\vec{L}} + \hat{\vec{S}}$, and with an extra factor---the \emph{Land\'e factor} $g_J$, which is built from $j$, $l$ and $s$ and is in general not a whole number. That is exactly why the pattern of lines is irregular and why the effect was called anomalous before spin was known.\todoans{The formula, if you are asked: $E^{(1)} = \muB g_J B\,m_j$ with $g_J = 1 + \nicefrac{\left[j(j+1)+s(s+1)-l(l+1)\right]}{2j(j+1)}$. It returns $g_J=1$ for pure orbital ($s=0$) and $g_J=2$ for pure spin ($l=0$), which is the quickest way to check you have remembered it correctly.} In a \emph{strong} field $\hat{\vec{L}}$ and $\hat{\vec{S}}$ stop being locked to one another (the Paschen--Back regime) and the shift returns to the simple $\muB B\,(m_l + 2m_s)$.
 
     \paragraph{Experimental studies of spin}
 
-        The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous}\todo{meaning? more precise} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\nicefrac{1}{2}$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}\todo{why silver atoms are associated with only single electron spin. is it valence electron, the only unpaired one or something?}
+        The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a magnetic field that is strongly \emph{inhomogeneous}, meaning its strength changes steeply from one point to the next across the beam. That is the essential requirement: a uniform field would merely twist a magnetic moment, since the pull on one end of the little magnet is cancelled by the push on the other, and only when the two ends sit in fields of different strength does a net force survive. That force is proportional to the projection of the moment on the field axis, and since the projection is quantised the beam splits into a discrete number of sub-beams rather than smearing into a band. Silver is a good choice because a silver atom has a single unpaired outer electron in an s state, so it carries no orbital moment and behaves as one spin-$\nicefrac{1}{2}$: quantum mechanics predicts exactly two spots on the screen, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}\todoans{Silver is $\left[\text{Kr}\right]4\text{d}^{10}5\text{s}^{1}$. The filled inner shells pair every spin off and contribute nothing, and the one leftover $5$s electron has $l=0$, so there is no orbital moment either. The whole atom therefore behaves as a single spin-$\nicefrac{1}{2}$---which is why the experiment gives a clean two-way split instead of a more complicated pattern. Hydrogen would do as well in principle but is far harder to make into a beam.}
 
         Three further methods are worth naming:
 
         \begin{itemize}
-            \item \textbf{Magnetic resonance.} A static field splits the spin states by $\Delta E = g\muB B$, and a transverse radio-frequency field drives transitions between them when $hf = \Delta E$, which shows up as a sharp absorption peak. The condition is the same as saying that the driving frequency matches the Larmor precession of the spin (\cref{subsec:quantum-precession}). Applied to electrons this is electron spin resonance, applied to nuclei it is nuclear magnetic resonance, and the latter is the basis of magnetic resonance imaging.\todo{SIGNIFICANT EDIT: describe the apparatus---sample in a static field, transverse radio-frequency coil, sweep the field or the frequency, watch for the absorption dip. No extra formalism.}
-            \item \textbf{Zeeman spectroscopy.} Counting the lines a spectral line splits into, and measuring their spacing, gives $g_J$ and hence $j$, $l$ and $s$ for the level. Historically it was the anomalous pattern, unexplained by orbital motion alone, that pointed to the existence of spin in the first place.\todo{MODERATE EDIT: two sentences on the experiment only---spectrograph, sample between the pole pieces, count the lines and measure their spacing as the field is raised. No formalism.}
-            \item \textbf{Precision measurement of $g$.} A single electron held in a Penning trap gives $g_{S}$ to a dozen digits. Its small departure from $2$ is the sharpest test of quantum electrodynamics there is.\todo{SIGNIFICANT EDIT: define the Penning trap in one sentence (a single electron held by a static magnetic field together with an electrostatic well) and say plainly what is measured and why the departure of $g_{S}$ from $2$ tests quantum electrodynamics.}
+            \item \textbf{Magnetic resonance.} A static field splits the spin states by $\Delta E = g\muB B$, and a transverse radio-frequency field drives transitions between them when $hf = \Delta E$. In practice the sample sits in the gap of a large magnet with a small coil wound round it carrying the radio-frequency current, and either the field or the frequency is swept until that condition is met, at which point the sample begins absorbing power from the coil and a sharp dip appears in the transmitted signal. The condition is the same as saying that the driving frequency matches the Larmor precession of the spin (\cref{subsec:quantum-precession}). Applied to electrons this is electron spin resonance, applied to nuclei it is nuclear magnetic resonance, and the latter is the basis of magnetic resonance imaging, where a deliberate gradient in the static field makes the resonant frequency depend on position so that the signal can be turned into a picture.
+            \item \textbf{Zeeman spectroscopy.} The source is placed between the poles of an electromagnet and its light sent into a spectrograph of high resolving power. With the field off a single line is seen, and as the field is raised that line opens into several components whose separation grows in proportion to it. Counting the components and measuring their spacing gives $g_J$ and hence $j$, $l$ and $s$ for the level. Historically it was the anomalous pattern, unexplained by orbital motion alone, that pointed to the existence of spin in the first place.
+            \item \textbf{Precision measurement of $g$.} A \emph{Penning trap} holds one electron in the same place indefinitely: a strong magnetic field keeps it circling in a plane, and charged electrodes above and below stop it escaping along the field axis. The trapped electron does two things at once, circling at one frequency while its spin precesses at another, and it is the small difference between the two that is measured, which yields $g_{S}$ to about a dozen digits. Its departure from the value $2$ that the Dirac equation predicts (\cref{sec:relativistic-eqns}) comes from the electron continually emitting and reabsorbing virtual photons, and comparing the measured departure with the calculated one is the sharpest test of quantum electrodynamics there is.
         \end{itemize}
 
 \section{Thermal radiation; emissivity and absorption of bodies, Kirchhoff's law, black-body radiation}
