@@ -133,35 +133,51 @@
             \item \textbf{Precision measurement of $g$.} A \emph{Penning trap} holds one electron in the same place indefinitely: a strong magnetic field keeps it circling in a plane, and charged electrodes above and below stop it escaping along the field axis. The trapped electron does two things at once, circling at one frequency while its spin precesses at another, and it is the small difference between the two that is measured, which yields $g_{S}$ to about a dozen digits. Its departure from the value $2$ that the Dirac equation predicts (\cref{sec:relativistic-eqns}) comes from the electron continually emitting and reabsorbing virtual photons, and comparing the measured departure with the calculated one is the sharpest test of quantum electrodynamics there is.
         \end{itemize}
 
-\section{Thermal radiation; emissivity and absorption of bodies, Kirchhoff's law, black-body radiation}
+\section{Thermal radiation; emissivity and absorption bodies, Kirchhoff law, blackbody radiation}
 \label{sec:thermal-radiation}
 
-    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the \emph{thermal motion of its charged particles}. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet\todo{does it go that far?} as the temperature rises. The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
+    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the \emph{thermal motion of its charged particles}. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises.\todoans{Yes, it reaches that far. Wien's law puts the peak at about \qty{10}{\micro\meter} (infrared) for a body at \qty{300}{\kelvin}, at about \qty{500}{\nano\meter} (visible) for the Sun's surface at \qty{5800}{\kelvin}, and at about \qty{100}{\nano\meter} (ultraviolet) for a hot blue star at \qty{30000}{\kelvin}.} The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
 
-    \subsection{Emissive and absorptive power}\todo{Terminology: the question title says \enquote{emissivity}, but $\varepsilon$ is used below for the universal Kirchhoff function. Resolve the clash---rename one of them or state the relation between them explicitly.}
+    \subsection{Emissive power, absorptive power and emissivity}
 
-        \emph{Emissive power} $E(f,T)$ measures how strongly a body emits: the energy radiated per unit area, per unit time, per unit frequency, at frequency $f$ and temperature $T$.
+        \emph{Emissive power} $E(f,T)$ measures how strongly a body emits: the energy radiated per unit area, per unit time, per unit frequency, at frequency $f$ and temperature $T$. Write $E_{\text{bb}}(f,T)$ for the emissive power of a black body at the same temperature.
 
-        \emph{Absorptive power} $A(f,T)$ is the fraction of incident power that the body absorbs (the rest being reflected or transmitted), so it lies between $0$ and $1$.
+        \emph{Absorptive power} $A(f,T)$ is the fraction of incident power that the body absorbs (the rest being reflected or transmitted), so it lies between $0$ and $1$. A black body has $A=1$ at every frequency.
+
+        \emph{Emissivity} $\varepsilon(f,T)=\nicefrac{E(f,T)}{E_{\text{bb}}(f,T)}$ is the emissive power written as a fraction of the black-body value, so it also lies between $0$ and $1$. It is a ratio and carries no units, unlike $E$ itself.
 
     \subsection{Kirchhoff's law}
 
-        Kirchhoff's law of thermal radiation states that at a fixed temperature the ratio $\varepsilon(f,T)=\nicefrac{E(f,T)}{A(f,T)}$ is the same universal function for \emph{all} bodies\todo{Rephrase plainly: at a given temperature \emph{and} frequency every body has the same ratio $\nicefrac{E}{A}$, whatever it is made of.}. Since a black body has $A=1$, this universal function is simply the emissive power of the black body. In words: a good absorber at some frequency is necessarily an equally good emitter at that frequency, since otherwise a body placed in a cavity at its own temperature would spontaneously heat up or cool down, in breach of the second law (\cref{sec:thermodynamics}).
+        Kirchhoff's law of thermal radiation states that at a given temperature \emph{and} a given frequency the ratio $\nicefrac{E}{A}$ is the same for every body, whatever it is made of. Since a black body has $A=1$, that common value is the black-body emissive power, $\nicefrac{E(f,T)}{A(f,T)}=E_{\text{bb}}(f,T)$, or equivalently $\varepsilon(f,T)=A(f,T)$. In words: a good absorber at some frequency is necessarily an equally good emitter at that frequency, since otherwise a body placed in a cavity at its own temperature would spontaneously heat up or cool down, in breach of the second law (\cref{sec:thermodynamics}).
 
     \subsection{The black body and Planck's law}
 
-        The calculation has two factors. First, count the standing-wave modes of the field in a cavity: their number per unit volume and per unit frequency grows as $f^{2}$, since ever more ways of fitting a wave into the box appear as the wavelength shortens. Second, give each mode its average energy. Classical equipartition (\cref{sec:macroscopic}) gives every mode the same $\kB T$\todo{Conceptual: high-energy states \emph{are} less likely classically---that is the Boltzmann factor of \cref{eq:maxwell-boltzmann}---but because the classical energy ladder is continuous the mean per mode still comes out as $\kB T$ at every frequency. Decide whether to say this here.} regardless of frequency, and the two factors together give the Rayleigh--Jeans law, $\varepsilon \propto f^{2}\kB T$. Since the mode count never stops growing, the predicted power diverges towards short wavelengths and the total radiated power is infinite. This is the \emph{ultraviolet catastrophe}, and it is a failure of the classical prediction rather than an observed effect---the measured spectrum peaks and then falls away.
+        The calculation has two factors. First, count the standing-wave modes of the field in a cavity: their number per unit volume and per unit frequency grows as $f^{2}$, since ever more ways of fitting a wave into the box appear as the wavelength shortens. Second, give each mode its average energy. Classical equipartition (\cref{sec:macroscopic}) gives every mode the same $\kB T$ regardless of frequency,\footnote{High-energy states \emph{are} less likely classically---that is the Boltzmann factor of \cref{eq:maxwell-boltzmann}---but the classical energy ladder is continuous, so the mean per mode still comes out as $\kB T$ at every frequency.} and the two factors together give the Rayleigh--Jeans law, $E_{\text{bb}} \propto f^{2}\kB T$. Since the mode count never stops growing, the predicted power diverges towards short wavelengths and the total radiated power is infinite. This is the \emph{ultraviolet catastrophe}, and it is a failure of the classical prediction rather than an observed effect---the measured spectrum peaks and then falls away.
 
-        Planck kept the mode count and replaced the average energy. If a mode of frequency $f$ can only take energy in whole quanta $hf$, then a mode with $hf \gg \kB T$ cannot be excited at all, because there is not enough thermal energy to buy even one quantum. Boltzmann-weighting the ladder of allowed energies gives an average of $\nicefrac{hf}{(e^{hf/\kB T}-1)}$ in place of $\kB T$, and hence \todo{rephrase the last sentence a little}
+        Planck kept the mode count and replaced the average energy. If a mode of frequency $f$ can only take energy in whole quanta $hf$, then a mode with $hf \gg \kB T$ cannot be excited at all, because there is not enough thermal energy to buy even one quantum. Weighting that ladder of allowed energies with the Boltzmann factor gives a mean energy per mode of $\nicefrac{hf}{(e^{hf/\kB T}-1)}$ in place of $\kB T$, and with it
 
         \begin{empheq}[box=\fbox]{equation}\label{eq:planck}
-            \varepsilon(f,T) = \frac{2\pi f^2}{c^2}\,\frac{hf}{e^{hf/\kB T} - 1}.
+            E_{\text{bb}}(f,T) = \frac{2\pi f^2}{c^2}\,\frac{hf}{e^{hf/\kB T} - 1}.
         \end{empheq}
-        \keyeqentry{Planck density of states formula}
+        \keyeqentry{Planck's law of black-body radiation}
+
+        The same law is often quoted as the energy density inside the cavity per unit frequency, $u(f,T)$, which differs only by the geometric factor relating what sits in the cavity to what escapes through unit area of the hole, $E_{\text{bb}} = \nicefrac{c}{4}\,u$. It is $u$ that the Einstein coefficients are written against (\cref{sec:light-matter}).
 
         The two limits show what has happened. When $hf \ll \kB T$ the exponential may be expanded and the bracket returns $\kB T$, recovering Rayleigh--Jeans, so the classical result survives at low frequency. When $hf \gg \kB T$ the exponential dominates and the emission is cut off exponentially, which removes the divergence. This was the first appearance of a quantum anywhere in physics (\cref{sec:qm-experimental}).
 
-        Two limiting laws follow from \cref{eq:planck}: \emph{Wien's displacement law}, giving the wavelength of peak emission, $\lambda_{\max} = \nicefrac{b}{T}$ with $b \simeq 2.9\times10^{-3}$~m\,K, so that hotter bodies peak at shorter wavelengths, and the \emph{Stefan--Boltzmann law}, giving the total power radiated per unit area, $\Phi = \sigma T^4$ with $\sigma \simeq 5.7\times10^{-8}$~W\,m$^{-2}$\,K$^{-4}$.\todo{Display Wien's law and the Stefan--Boltzmann law as two boxed \texttt{empheq} equations with \texttt{\textbackslash keyeqentry}, using \texttt{\textbackslash qty} for $b$ and $\sigma$. Formatting---deferred, since it changes the List of Key Equations.}
+        Two results follow from \cref{eq:planck}. \emph{Wien's displacement law} gives the wavelength of peak emission, so that hotter bodies peak at shorter wavelengths,
+
+        \begin{empheq}[box=\fbox]{equation}\label{eq:wien-displacement}
+            \lambda_{\max} = \frac{b}{T}, \qquad b \simeq \qty{2.9e-3}{\meter\kelvin},
+        \end{empheq}
+        \keyeqentry{Wien's displacement law}
+
+        and the \emph{Stefan--Boltzmann law} gives the total power radiated per unit area by a black body,
+
+        \begin{empheq}[box=\fbox]{equation}\label{eq:stefan-boltzmann}
+            E_{\text{tot}} = \sigma T^{4}, \qquad \sigma \simeq \qty{5.7e-8}{\watt\per\meter\squared\per\kelvin\tothe{4}}.
+        \end{empheq}
+        \keyeqentry{Stefan--Boltzmann law}
 
 \section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}
 \label{sec:diffraction}
@@ -170,168 +186,174 @@
 
         Interference is the superposition of waves. Where two waves meet in phase they reinforce (a bright fringe), where they meet out of phase they cancel (a dark fringe). This produces a stable pattern only if the waves are \emph{coherent}, meaning the phase difference between them at a given point stays constant in time. An ordinary lamp emits independent wave trains from independent atoms (\cref{sec:light-matter}), so its phase is scrambled within a very short time and no pattern survives, whereas a laser is coherent by construction.
 
-        The classic demonstration is Young's double-slit experiment. Light from a single source passes through one slit and then through two further slits a distance $d$ apart, which act as two point sources of coherent spherical waves:
-
-        \begin{align*}
-            \psi_{1}\left(r_{1},t\right) &= A\left(r_{1}\right)\cos\left(kr_{1} - \omega t\right)\\
-            \psi_{2}\left(r_{2},t\right) &= A\left(r_{2}\right)\cos\left(kr_{2} - \omega t\right).
-        \end{align*}\todo{SIGNIFICANT EDIT: rewrite the two waves in complex form with an explicit phase, then add the sum at the screen and read the fringe condition off it.}
-
-        Adding them gives a wave whose amplitude is modulated by a factor $\cos\!\big(k(r_1-r_2)/2\big)$. This factor is largest (a \emph{bright fringe}) when the two path lengths differ by a whole number of wavelengths,
+        The classic demonstration is Young's double-slit experiment. Light from a single source passes through one slit and then through two further slits a distance $d$ apart, which act as two point sources of coherent spherical waves of equal amplitude $A$. Let $r_{1}$ and $r_{2}$ be the distances from the two slits to a chosen point on the screen, and $k=\nicefrac{2\pi}{\lambda}$ the wavenumber. Writing each wave as a complex exponential and adding them,
 
         \begin{equation*}
-            r_{1} - r_{2} = m\lambda,
+            \psi = A e^{i\left(kr_{1}-\omega t\right)} + A e^{i\left(kr_{2}-\omega t\right)} = 2A\,e^{i\left(k\frac{r_{1}+r_{2}}{2}-\omega t\right)}\cos\left(\frac{k\left(r_{1}-r_{2}\right)}{2}\right),
         \end{equation*}
 
-        and vanishes (a \emph{dark fringe}) when they differ by an odd number of half-wavelengths,
+        which is a wave spreading out from the midpoint of the two slits multiplied by a modulation that depends only on the path difference $\Delta = r_{1}-r_{2}$. What the screen records is the intensity $I \propto \left|\psi\right|^{2} = 4A^{2}\cos^{2}\left(\nicefrac{\pi\Delta}{\lambda}\right)$, largest at a \emph{bright fringe} and zero at a \emph{dark fringe},
 
         \begin{equation*}
-            r_{1} - r_{2} = \frac{2m+1}{2}\lambda,
+            \Delta = m\lambda \quad \text{(bright)}, \qquad \Delta = \frac{2m+1}{2}\lambda \quad \text{(dark)},
         \end{equation*}
 
-        with $m$ an integer. The same experiment performed with single particles is one of the foundations of quantum mechanics (\cref{sec:qm-experimental}).
+        with $m$ an integer. Far from the slits the path difference is $\Delta \simeq d\sin\theta$, with $\theta$ measured from the normal, so the bright fringes lie at $d\sin\theta = m\lambda$. The same experiment performed with single particles is one of the foundations of quantum mechanics (\cref{sec:qm-experimental}).
 
     \subsection{Diffraction}
 
         There is no sharp distinction between diffraction and interference. By convention, the pattern from a \emph{finite number} of discrete coherent sources is called interference, and that from a \emph{continuous} distribution of sources is called diffraction. Physically, diffraction is the bending of waves around obstacles or through apertures: by Huygens' principle every point of a wavefront acts as a source of new spherical wavelets, and their superposition beyond the obstacle (taking amplitudes and phases into account) gives the diffracted pattern. The effect is only noticeable when the obstacle or aperture is comparable in size with the wavelength, which is why sound bends around a doorway and light does not.
 
+        A \emph{diffraction grating} is the double slit repeated: $N$ parallel slits a distance $d$ apart, all illuminated coherently. Every neighbouring pair contributes the same path difference $d\sin\theta$, so all $N$ contributions arrive in phase at the same angles as before, which is the \emph{grating equation}
+
+        \begin{equation*}
+            d\sin\theta = m\lambda,
+        \end{equation*}
+
+        with $m$ the diffraction order and $\theta$ measured from the normal. The extra slits buy sharpness rather than new directions---the more slits, the narrower each maximum---and that is what makes a grating a spectrometer, since the direction of a maximum then depends steeply on $\lambda$.
+
     \subsection{Diffraction of radiation on crystals}
 
-        A \emph{crystal} is a solid whose atoms sit in a pattern that repeats periodically in all three directions---long-range order, described by a lattice of equivalent points together with the group of atoms placed at each of them. There are different types of crystals with different bondings (\cref{sec:atom-molecule}): ionic---NaCl, covalent---diamond, metallic---copper, molecular---ice. A solid without such long-range order, glass being the standard case, is called \emph{amorphous}, and it gives broad haloes\todo{what is a halo} instead of sharp diffraction spots.
+        A \emph{crystal} is a solid whose atoms sit in a pattern that repeats periodically in all three directions---long-range order, described by a lattice of equivalent points together with the group of atoms placed at each of them. There are different types of crystals with different bondings (\cref{sec:atom-molecule}): ionic---NaCl, covalent---diamond, metallic---copper, molecular---ice. A solid without such long-range order, glass being the standard case, is called \emph{amorphous}, and it gives broad diffuse rings, called \emph{haloes}, instead of sharp diffraction spots.
 
-        The regular spacing acts as a three-dimensional diffraction grating, and it works only for radiation whose wavelength is comparable with the atomic spacing of about $10^{-10}$~m---X-rays, or equally the matter waves of neutrons and electrons of the right energy (\cref{eq:de-broglie}). When such radiation falls on a crystal it scatters off the atoms, and because these sit on parallel planes a fixed distance $d$ apart, the waves scattered from successive planes interfere. They reinforce only when the extra path travelled between neighbouring planes is a whole number of wavelengths, which is Bragg's law:
+        The regular spacing acts as a three-dimensional diffraction grating, and it works only for radiation whose wavelength is comparable with the atomic spacing of about \qty{1e-10}{\meter}---X-rays, or equally the matter waves of neutrons and electrons of the right energy (\cref{eq:de-broglie}). When such radiation falls on a crystal it scatters off the atoms, and because these sit on parallel planes a fixed distance $d$ apart, the waves scattered from successive planes interfere. They reinforce only when the extra path travelled between neighbouring planes is a whole number of wavelengths, which is Bragg's law:
 
-        \begin{equation}\label{eq:bragg}
-            n\lambda = 2d\sin\theta,
-        \end{equation}\todo{MODERATE EDIT: add a separate short paragraph giving the grating equation $d\sin\theta = m\lambda$ and saying how it differs from Bragg's law---one row of slits against a stack of planes, and the angle measured from the normal rather than from the plane. The grating equation appears nowhere else in the note.}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:bragg}
+            m\lambda = 2d\sin\theta.
+        \end{empheq}
+        \keyeqentry{Bragg's law}
 
-        where $n$ is the diffraction order, $\lambda$ the wavelength, $d$ the interplanar spacing and $\theta$ the glancing angle (measured between the beam and the crystal plane, not the normal). Strong diffracted beams therefore appear only at particular angles, and measuring those angles gives the spacings and hence the structure. This is how the arrangement of atoms in a solid, and of the atoms in DNA and in proteins, was determined.
+        Here $m$ is the diffraction order, $\lambda$ the wavelength, $d$ the interplanar spacing and $\theta$ the glancing angle. Two things differ from the grating equation. The angle is measured from the plane rather than from the normal, and there is a factor of $2$, because the beam crosses the gap between neighbouring planes twice---once going in and once coming back out---whereas a grating is a single row of slits with no second pass.
 
-        Although the reinforced beam emerges at an angle equal to the angle of incidence, so that the effect is often loosely called \enquote{reflection}, it differs from ordinary reflection: it uses the whole three-dimensional stack of atomic planes rather than just the surface, occurs only at the special Bragg angles rather than at every angle, and yields a much weaker beam than a good mirror.\todo{SIGNIFICANT EDIT: delete the reflection comparison---ordinary reflection is not a single atomic layer either---and put the space into how the measurement is actually done (Laue and powder methods) and what the pattern tells you.}\todo{so a crystal can be illuminated ion reflection and in transmission right? if so does the transmissive case have a $m$ order factor like a grating?}
+        Strong diffracted beams therefore appear only at particular angles, and since a crystal sitting at a random orientation satisfies \cref{eq:bragg} for nothing at all, the experiment has to scan something. The \emph{Laue method} holds a single crystal still and uses a beam containing a broad band of wavelengths, so each set of planes picks out for itself the wavelength that fits, and the pattern of spots shows the symmetry and the orientation of the crystal. The \emph{powder method} does the opposite, sending a single wavelength onto a sample of many small crystallites in random orientations, so that for every spacing $d$ some grain is bound to be turned the right way and the diffracted beams come out as concentric rings. The positions of the spots or rings give the interplanar spacings and the symmetry of the repeating unit, and their relative intensities give what sits inside that unit---which atoms, and where. This is how the arrangement of atoms in a solid, and of the atoms in DNA and in proteins, was determined.\todoans{Both geometries are used, and the law does not change between them. In \emph{reflection} (Bragg geometry) the detector sits on the incident side, which is the usual arrangement for bulk crystals. In \emph{transmission} (Laue geometry) it sits behind the sample, which is what a thin foil in an electron microscope gives. Either way the condition is $m\lambda = 2d\sin\theta$, and the order factor is already there as $m$---it plays exactly the role that $m$ plays in the grating equation. An $m$th-order beam from planes of spacing $d$ is the same thing as a first-order beam from imagined planes of spacing $\nicefrac{d}{m}$.}
 
-\section{Indistinguishability of elementary particles; spin versus statistics, Bose--Einstein condensation}
+\section{Indistinguishability of elementary particles; spin versus statistics, Bose-Einstein condensation}
 \label{sec:indistinguishability}
 
-    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments.\todo{are all fundamental particles indistingisuihable or only like fermions? are atoms identical? what if they have the same state?} In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field,\todo{check what are these fields called (electron field, quark field etc?) and that they in fact exist and this is not hallucinated} much as two middle-C notes sounded on identical strings are the same excitation of the same kind of system rather than two notes that merely happen to match. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:\todoper{verify that the analogy with guitar is good}
+    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments.\todoans{It holds for every species, bosons as well as fermions, and for composite objects too---two rubidium-87 atoms in the same internal state are as identical as two electrons. What makes two objects distinguishable is a measurable label such as a different isotope or a different hyperfine level, not their sitting in different places or moving at different speeds. Sharing a state is a separate question again: forbidden for fermions by the exclusion principle, allowed for bosons, and exploited by Bose--Einstein condensation.} In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field,\todoans{The terminology is standard and the fields are genuine ingredients of the Standard Model: the electron field, the quark fields, the photon field, the Higgs field, one for each species. Nothing hallucinated here.} much as two middle-C notes sounded on identical strings are the same excitation of the same kind of system rather than two notes that merely happen to match. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:\todoper{verify that the analogy with guitar is good}
 
     \begin{equation}\label{eq:identical}
-        \psi(1,2,\dots,N,t) = e^{i\varphi}\,\psi(2,1,\dots,N,t).
+        \psi(1,2,\dots,N,t) = e^{i\theta}\,\psi(2,1,\dots,N,t).
     \end{equation}
 
-    Swapping the same pair a second time returns the original configuration, which forces $e^{2i\varphi}=\pm1$. Hence the wave function of identical particles must be either completely \emph{symmetric} ($+$) or completely \emph{antisymmetric} ($-$) under exchange.
+    Swapping the same pair a second time returns the original configuration, which forces $e^{2i\theta}=1$ and hence $e^{i\theta}=\pm1$. The wave function of identical particles must therefore be either completely \emph{symmetric} ($+$) or completely \emph{antisymmetric} ($-$) under exchange.
 
     \paragraph{The spin--statistics postulate}
 
-        Which sign applies is fixed by the spin. Particles of half-integer spin ($\nicefrac{1}{2}, \nicefrac{3}{2}, \dots$), the \emph{fermions}, have an antisymmetric wave function. Particles of integer spin ($0,1,2,\dots$), the \emph{bosons}, have a symmetric one. An immediate corollary for fermions is the \emph{Pauli exclusion principle}: \emph{an antisymmetric wave function vanishes if two particles share the same state, so no two fermions can occupy the same quantum state}\todo{they vanish by what? addition of wavefunctions? multiplication?}. This is what stacks electrons into shells and gives the periodic table its shape (\cref{sec:atom-molecule}).\todoper{there was a video on yt about that.}
+        Which sign applies is fixed by the spin. Particles of half-integer spin ($\nicefrac{1}{2}, \nicefrac{3}{2}, \dots$), the \emph{fermions}, have an antisymmetric wave function. Particles of integer spin ($0,1,2,\dots$), the \emph{bosons}, have a symmetric one. The rule extends to composite objects by counting constituents: a bound state of an even number of fermions is itself a boson, an odd number makes a fermion, which is why helium-4---two protons, two neutrons, two electrons---is a boson while helium-3, one neutron lighter, is a fermion.
+
+        An immediate corollary for fermions is the \emph{Pauli exclusion principle}: \emph{an antisymmetric wave function vanishes if two particles share the same state, so no two fermions can occupy the same quantum state}. Nothing has to be added or multiplied for it to vanish---if both particles are in the same state then exchanging them leaves the configuration untouched, so \cref{eq:identical} with the minus sign reads $\psi = -\psi$, and the only function equal to minus itself is zero. This is what stacks electrons into shells and gives the periodic table its shape (\cref{sec:atom-molecule}).\todoper{there was a video on yt about that.}
 
     \paragraph{Bose--Einstein condensation}
 
-        Bosons are not bound by the exclusion principle, so any number of them may share one state. For a gas of non-interacting bosons the mean occupation of a state of energy $\varepsilon_k$ is the Bose--Einstein distribution (\cref{eq:bose-einstein}),
+        Bosons are not bound by the exclusion principle, so any number of them may share one state. For a gas of non-interacting bosons the mean occupation of a state of energy $\varepsilon$ is the Bose--Einstein distribution $\ev{n_\varepsilon} = \nicefrac{1}{\left(e^{(\varepsilon-\mu)/\kB T}-1\right)}$ (\cref{eq:bose-einstein}), with $\mu$ the chemical potential (\cref{sec:thermo-potentials}). Because of the $-1$ in the denominator the occupation grows without limit as $\varepsilon$ approaches $\mu$, which is what the lowest state exploits.
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:bose-einstein-dist}
-            n_k = \frac{1}{e^{(\varepsilon_k - \mu)/\kB T} - 1},
-        \end{empheq}
-        \keyeqentry{Bose-Einstein Distribution}\todo{Duplicate: this is \cref{eq:bose-einstein} written a second time. SIGNIFICANT EDIT---keep one boxed copy and cross-reference it from the other section.}
-
-        where $\mu$ is the chemical potential (\cref{sec:thermo-potentials}), $\kB$ the Boltzmann constant and $T$ the temperature. (Here the label $k$ is the wave vector of the state\todo{explain what is meant by wavevector of the state}, not to be confused with $\kB$.) Because of the $-1$ in the denominator, the occupation of the lowest state can grow without limit.
-        
-        Below a critical temperature a large fraction of the particles pile into that single lowest-energy state and behave collectively, almost as one object. This is \emph{Bose--Einstein condensation}. It is not condensation in ordinary space (the atoms are not gathered in one place) but in momentum space, since so many particles come to share the same momentum. The critical temperature is
+        Below a critical temperature a large fraction of the particles pile into that single lowest-energy state and behave collectively, almost as one object. This is \emph{Bose--Einstein condensation}. It is not condensation in ordinary space (the atoms are not gathered in one place) but in momentum space, since so many particles come to share the same momentum. The condition is best remembered through the \emph{thermal de Broglie wavelength} $\lambda_{T}$---the de Broglie wavelength (\cref{eq:de-broglie}) of an atom moving at a typical thermal speed, which lengthens as the gas is cooled. Condensation sets in once $\lambda_{T}$ has grown to the spacing between the atoms, so that their \emph{waves overlap}, that is once $n\lambda_{T}^{3} \simeq 2.6$ with $n$ the number density. Written as a temperature the same condition reads
 
         \begin{equation*}
             T_c \simeq 3.31\,\frac{\hbar^2 n^{2/3}}{m\,\kB},
-        \end{equation*}\todo{does plugging it back into \cref{eq:bose-einstein-dist} reproduce the behaviour discussed?}
+        \end{equation*}\todoans{Not on its own---the single-state formula will not hand you $T_{c}$. $T_{c}$ comes from the normalisation. Set $\mu = 0$, add $\ev{n_\varepsilon}$ over all the \emph{excited} states, and ask at what temperature that sum can no longer accommodate all $N$ particles. Below that temperature the excited states are saturated and the surplus has nowhere to go but the ground state, and the divergence of $\ev{n_\varepsilon}$ as $\varepsilon \to \mu$ is what describes the pile-up once it has started.}
 
-        with $n$ the number density of atoms and $m$ the mass of one atom. It is extremely low for a dilute gas, of order $10^{-7}$~K for the alkali vapours in which the condensate was first made in 1995, because the condensation sets in only once the thermal de Broglie wavelength (\cref{eq:de-broglie}) grows to the spacing between the atoms and their \emph{waves overlap}. Superfluidity and superconductivity are the same phenomenon in disguise, the latter for pairs of electrons bound into composite bosons (\cref{sec:phase-transitions}).\todo{Emphasise the overlap condition---the thermal de Broglie wavelength growing to the interparticle spacing---since that is the line usually quoted.}
+        with $m$ the mass of one atom. It is extremely low for a dilute gas, of order \qty{1e-7}{\kelvin} for the alkali vapours in which the condensate was first made in 1995. Superfluidity and superconductivity are the same phenomenon in disguise, the latter for pairs of electrons bound into composite bosons (\cref{sec:phase-transitions}).
 
-\section{Statistical ensembles; classical and quantum statistics, thermodynamic potentials and their relationship to the statistical sums of respective ensembles}\todo{Terminology: the question title says \enquote{statistical sums}. Say once that the partition function is what the question calls the statistical sum, then keep a single name throughout.}\todo{SIGNIFICANT EDIT (deferred): align the notation with Lim's notes. Any change to $Q$, $\Omega$, $\alpha$, $\beta$ or $\Xi$ propagates to \cref{sec:macroscopic,sec:indistinguishability,sec:bands}, so do it in one pass.}
+\section{Statistical ensembles; classical and quantum statistics, thermodynamic potentials and their relationship to the statistical sums of respective ensembles}
 \label{sec:ensembles}
 
-    A statistical ensemble is a large imaginary collection of copies of a system, each in some microscopic state (microstate) consistent with the same fixed macroscopic conditions. Averaging over the ensemble reproduces the macroscopic (thermodynamic) properties. The three standard ensembles differ in which macroscopic quantities are held fixed, and each is tied to a particular thermodynamic potential through its partition function.
+    A statistical ensemble is a large imaginary collection of copies of a system, each in some microscopic state (microstate) consistent with the same fixed macroscopic conditions. Averaging over the ensemble reproduces the macroscopic (thermodynamic) properties. The three standard ensembles differ in which macroscopic quantities are held fixed, and each is tied to a particular thermodynamic potential through its partition function---which is the object the question calls the \emph{statistical sum}, the two names being for one and the same thing.
 
-    A \emph{partition function}\todo{Notation: $\Omega$ in the microcanonical ensemble, $Q$ in the canonical and the grand canonical. State this here so the three subsections agree.} is a weighted count of the microstates available to the system: weighted, because when the energy is not fixed a microstate of higher energy is exponentially less likely. It does two jobs. It is the denominator that normalises the probability of a microstate, and it is the generating function of the whole thermodynamics: every macroscopic quantity is obtained from it by differentiation, for instance the mean energy as $-\nicefrac{\partial \log Q}{\partial\beta}$ and the pressure as $\kB T\,\nicefrac{\partial \log Q}{\partial V}$. It is the bridge across which a list of microscopic states becomes a thermodynamic potential.\todo{MODERATE EDIT: add one concrete two-level example, $Q = 1 + e^{-\nicefrac{\varepsilon}{\kB T}}$, and read the mean energy off it.}
+    A \emph{partition function} is a weighted count of the microstates available to the system: weighted, because when the energy is not fixed a microstate of higher energy is exponentially less likely. Each ensemble has its own, written $\Omega$, $Z$ and $\mathcal{Z}$ in the three subsections below. It does two jobs. It is the denominator that normalises the probability of a microstate, and it is the generating function of the whole thermodynamics: every macroscopic quantity is obtained from it by differentiation, for instance the mean energy as $-\nicefrac{\partial \ln Z}{\partial\beta}$ and the pressure as $\kB T\,\nicefrac{\partial \ln Z}{\partial V}$. It is the bridge across which a list of microscopic states becomes a thermodynamic potential.
+
+    The smallest possible example shows the machine working. A particle with just two levels, $0$ and $\varepsilon$, has $Z = 1 + e^{-\varepsilon/\kB T}$, and differentiating gives the mean energy $-\nicefrac{\partial \ln Z}{\partial\beta} = \nicefrac{\varepsilon}{\left(e^{\varepsilon/\kB T}+1\right)}$. This tends to $0$ when $\kB T \ll \varepsilon$ and to $\nicefrac{\varepsilon}{2}$ when $\kB T \gg \varepsilon$: a level that costs more than the thermal energy available is simply not reached, and one that costs far less is populated as often as the ground state.
 
     \subsection{The microcanonical ensemble ($N$, $V$, $E$)}
 
         Here the number of particles $N$, the volume $V$ and the energy $E$ are all fixed. Every accessible microstate is equally likely, and the partition function $\Omega$ is just the total number of them. Boltzmann linked this count to the entropy:
 
-        \begin{equation}\label{eq:boltzmann-entropy}
-            S = \kB \log\Omega .
-        \end{equation}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:boltzmann-entropy}
+            S = \kB \ln\Omega .
+        \end{empheq}
+        \keyeqentry{Boltzmann entropy}
 
     \subsection{The canonical ensemble ($N$, $V$, $T$)}
 
-        Fixing the energy exactly is awkward, so instead we let the system exchange heat with a reservoir at fixed temperature $T$ (with $N$ and $V$ still fixed). The microstates are then weighted by the Boltzmann factor\todo{Define it in half a line---$e^{-\nicefrac{E}{\kB T}}$, the exponential penalty on higher energy. It is the second factor of \cref{eq:maxwell-boltzmann}.}, and the partition function is a sum over all microstates $r$:
+        Fixing the energy exactly is awkward, so instead we let the system exchange heat with a reservoir at fixed temperature $T$ (with $N$ and $V$ still fixed). The microstates are then weighted by the \emph{Boltzmann factor} $e^{-E/\kB T}$, the exponential penalty a microstate pays for its energy, which is also the second factor of \cref{eq:maxwell-boltzmann}. The partition function is that factor summed over all microstates $r$:
 
         \begin{equation}\label{eq:canonical-partition}
-            Q_N(V,T) = \sum_{r}\exp\left(-E_r / \kB T\right).
+            Z(N,V,T) = \sum_{r}e^{-E_r/\kB T} .
         \end{equation}
 
-        It yields directly the Helmholtz free energy (\cref{sec:thermo-potentials}),\todo{SIGNIFICANT EDIT: justify why this free energy is the quantity sought---it is the potential whose natural variables $T$, $V$, $N$ are exactly what the canonical ensemble holds fixed.}
+        The potential it yields is the Helmholtz free energy $F$ (\cref{sec:thermo-potentials}), and it has to be that one rather than any other: each potential is fixed by the variables it is naturally a function of, and those of $F$ are $T$, $V$ and $N$---exactly the three the canonical ensemble holds fixed. Hence
 
         \begin{equation}\label{eq:helmholtz}
-            A = -\kB T\log Q_N .
+            F = -\kB T\ln Z .
         \end{equation}
 
     \subsection{The grand canonical ensemble ($\mu$, $V$, $T$)}
 
-        Taking one further step, we also let the particle number vary, fixing instead the chemical potential $\mu$ (with $V$ and $T$). Summing over all microstates \emph{and} all particle numbers gives
+        Taking one further step, we also let the particle number vary, fixing instead the chemical potential $\mu$ (with $V$ and $T$). Each microstate $r$ now carries a particle number $N_r$ as well as an energy $E_r$, and its weight becomes $e^{-\beta\left(E_r-\mu N_r\right)}$, so that admitting a particle is charged at $\mu$ apiece in just the way energy is charged at its own rate:
 
         \begin{equation}\label{eq:grand-partition}
-            Q = \sum_{r,s}\exp\left(-\alpha N_r - \beta E_s\right),
+            \mathcal{Z}(\mu,V,T) = \sum_{r}e^{-\beta\left(E_r - \mu N_r\right)} ,
         \end{equation}
 
-        with $\beta = \nicefrac{1}{\kB T}$ and $\mu = -\nicefrac{\alpha}{\beta}$. This connects to the grand thermodynamic potential by
+        with $\beta = \nicefrac{1}{\kB T}$. Its potential is the \emph{grand potential} $\Xi$, also called the Landau potential, whose natural variables $\mu$, $V$ and $T$ are again precisely what this ensemble fixes:
 
         \begin{equation}\label{eq:grand-potential}
-            \Xi = -\kB T\log Q .
+            \Xi = -\kB T\ln \mathcal{Z} .
         \end{equation}
 
     \subsection{The thermodynamic potentials}\label{sec:thermo-potentials}
 
-        The internal energy $U$ is the natural quantity when the system is isolated, and the first law (\cref{eq:first-law}) written for a reversible change reads $dU = T\,dS - p\,dV + \mu\,dN$.\todo{MIGRATION (deferred): the $\mu\,dN$ term belongs with the first law in \cref{sec:thermodynamics}. Moving it means editing \cref{eq:first-law} and the prose around it.} Its natural variables are therefore $S$, $V$ and $N$. That is inconvenient, because nobody in a laboratory holds entropy fixed---what is easy to hold fixed is temperature, or pressure. Each potential below is $U$ with one such awkward variable traded for the quantity conjugate to it, by subtracting the product of the pair.\todo{SIGNIFICANT EDIT: each bullet should say in one clause \emph{why} that potential is worth defining, not only what it equals.}
+        The internal energy $U$ is the natural quantity when the system is isolated, and the first law (\cref{eq:first-law}) written for a reversible change reads $dU = T\,dS - p\,dV + \mu\,dN$.\todo{MIGRATION (deferred): \cref{eq:first-law} in \texttt{content\_1.tex} states the first law without the $\mu\,dN$ term, so it is introduced here without warning. MODERATE EDIT---introduce that term in \cref{eq:first-law} or explain why it should not be there} Its natural variables are therefore $S$, $V$ and $N$. \emph{Natural variables} are the ones in which the potential's differential closes up with nothing left over, so that every other quantity follows by differentiating it---here $T = \left(\nicefrac{\partial U}{\partial S}\right)_{V,N}$ and $-p = \left(\nicefrac{\partial U}{\partial V}\right)_{S,N}$. That particular set is inconvenient, because nobody in a laboratory holds entropy fixed---what is easy to hold fixed is temperature, or pressure. Each potential below is $U$ with one such awkward variable traded for the quantity conjugate to it, by subtracting the product of the pair.
 
         \begin{itemize}
             \item \textbf{Enthalpy} $H = U + pV$, natural in $S$, $p$, $N$. At constant pressure and with no work other than expansion, $dH = dU + p\,dV = \delta Q$: the heat taken up in a constant-pressure process \emph{is} the change in enthalpy. Since almost all chemistry happens in an open vessel at atmospheric pressure, this is why reaction heats are tabulated as enthalpies.
-            \item \textbf{Helmholtz free energy} $A = U - TS$, natural in $T$, $V$, $N$---exactly the variables of the canonical ensemble, which is why \cref{eq:helmholtz} takes the form it does.\todo{MODERATE EDIT: define \enquote{natural variables} once, before the list---the variables in which the potential's differential carries no leftover terms, so that everything else follows by differentiating it.}
-            \item \textbf{Gibbs free energy} $G = U - TS + pV$, natural in $T$, $p$, $N$. These are the two\todo{not three?} variables an experimenter actually controls, which is why $G$ governs phase equilibria and chemical reactions (\cref{sec:phase-transitions}).
-            \item \textbf{Chemical potential} $\mu = \left(\nicefrac{\partial G}{\partial N}\right)_{T,p}$, the free-energy cost of adding one more particle while $T$ and $p$ are held fixed. The cost is not the kinetic energy of throwing the particle in. Holding $T$ and $p$ fixed means the newcomer must be given its thermal share of the energy, and the system must expand to make room for it, doing work against the surroundings. Against that stands the entropy gained by having one more particle to arrange, and in a dilute gas that gain wins, so $\mu$ is in fact negative. Since $G$ is proportional to the amount of substance, for a single component the derivative is simply $\mu = \nicefrac{G}{N}$, the Gibbs free energy per particle, and being intensive it can be quoted for a phase without saying how much of that phase is present---which is what makes it, rather than $G$ itself, the quantity that decides phase equilibria (\cref{sec:phase-transitions}).\todo{Ambiguity: $\mu$ sits in this list but is a derivative of $G$ rather than a potential of the same kind. Either say so in one clause or move it out of the list.}
+            \item \textbf{Helmholtz free energy} $F = U - TS$, natural in $T$, $V$, $N$---exactly the variables of the canonical ensemble, which is why \cref{eq:helmholtz} takes the form it does.
+            \item \textbf{Gibbs free energy} $G = U - TS + pV$, natural in $T$, $p$, $N$. The first two are what an experimenter actually sets on the bench, $N$ being simply how much substance was put in, which is why $G$ governs phase equilibria and chemical reactions (\cref{sec:phase-transitions}).
+            \item \textbf{Chemical potential} $\mu = \left(\nicefrac{\partial G}{\partial N}\right)_{T,p}$---a derivative of a potential rather than a potential of the same kind, kept in the list because it completes the three conjugate pairs and is what the grand canonical ensemble fixes. It is the free-energy cost of adding one more particle while $T$ and $p$ are held fixed. The cost is not the kinetic energy of throwing the particle in. Holding $T$ and $p$ fixed means the newcomer must be given its thermal share of the energy, and the system must expand to make room for it, doing work against the surroundings. Against that stands the entropy gained by having one more particle to arrange, and in a dilute gas that gain wins, so $\mu$ is in fact negative. Since $G$ is proportional to the amount of substance, for a single component the derivative is simply $\mu = \nicefrac{G}{N}$, the Gibbs free energy per particle, and being intensive it can be quoted for a phase without saying how much of that phase is present---which is what makes it, rather than $G$ itself, the quantity that decides phase equilibria (\cref{sec:phase-transitions}).
         \end{itemize}
 
-        What makes the free energies the quantities to minimise\todo{we did not discuss minimising anything so why suddenly it is important?} is the second law applied to the system \emph{and} its surroundings. Let a system be held at temperature $T$ by a reservoir. The reservoir loses the heat the system gains, so its entropy changes by $-\nicefrac{\delta Q}{T}$, and the total entropy cannot decrease:
+        Defining these potentials says nothing yet about which way a system will move. What singles the free energies out as the quantities to \emph{minimise} is the second law applied to the system \emph{and} its surroundings. Let a system be held at temperature $T$ by a reservoir. The reservoir loses the heat the system gains, so its entropy changes by $-\nicefrac{\delta Q}{T}$, and the total entropy cannot decrease:
 
         \begin{equation*}
             dS_{\text{total}} = dS - \frac{\delta Q}{T} \geq 0 \quad \Longrightarrow \quad \delta Q \leq T\,dS .
         \end{equation*}
 
-        At\todo{TRIM (deferred): the section is already long. Keep the statement that $A$ and $G$ are minimised under their own conditions, and cut the extractable-work argument to a single sentence.} fixed $T$ and $V$ no work is done, so $\delta Q = dU$ and the condition becomes $dU - T\,dS = dA \leq 0$. The Helmholtz free energy of a system at fixed temperature and volume can only fall, and equilibrium is where it stops falling, that is, at its minimum. Repeating the argument at fixed $T$ and $p$, where the system also does work $p\,dV$ against the surroundings, gives $dG \leq 0$ in the same way. So each potential is minimised under precisely the conditions in which it is natural, and the familiar rule that entropy increases is the special case for an isolated system.
+        At fixed $T$ and $V$ no work is done, so $\delta Q = dU$ and the condition becomes $dU - T\,dS = dF \leq 0$. The Helmholtz free energy of a system at fixed temperature and volume can only fall, and equilibrium is where it stops falling, that is, at its minimum. Repeating the argument at fixed $T$ and $p$, where the system also does work $p\,dV$ against the surroundings, gives $dG \leq 0$ in the same way. So each potential is minimised under precisely the conditions in which it is natural, and the familiar rule that entropy increases is the special case for an isolated system.
 
-        The same inequality is what makes the name \enquote{free} energy literal rather than decorative. If the system delivers work $\delta W$ at constant temperature, then $\delta W = \delta Q - dU \leq T\,dS - dU = -dA$. The work that can be extracted is at most the drop in $A$, and not the drop in $U$: of the internal energy, the portion $TS$ is tied up in keeping the system's entropy where it is and must be surrendered to the surroundings as heat. What is left over, $U - TS$, is the part free to become work, and the same argument at constant $p$ makes $-\Delta G$ the ceiling on work of any kind other than pushing the atmosphere aside. The chemical potential plays the analogous role for matter: just as temperature equalises when heat can flow and pressure equalises when volume can be exchanged, $\mu$ equalises when particles can be exchanged, and a difference in $\mu$ is what drives diffusion, evaporation and every phase change.
+        The same inequality is what makes the word \enquote{free} literal: the work extractable at constant temperature is at most $-dF$ and not $-dU$, because the portion $TS$ of the internal energy is tied up in keeping the entropy where it is and must be surrendered to the surroundings as heat, leaving $U-TS$ free to become work. The chemical potential plays the analogous role for matter---just as temperature equalises when heat can flow and pressure equalises when volume can be exchanged, $\mu$ equalises when particles can be exchanged, and a difference in $\mu$ is what drives diffusion, evaporation and every phase change.
 
     \subsection{Quantum statistics}\label{subsec:quantum-statistics}
 
         The same machinery works in quantum mechanics, but for identical particles (\cref{sec:indistinguishability}) the allowed occupations of each energy state are further restricted. The quantity to compare is the mean number of particles $\ev{n_\varepsilon}$ occupying a state of energy $\varepsilon$, and the three statistics differ only in what they permit.
 
         Classically, particles are treated as though they could be labelled, and any number may sit anywhere: the occupation falls off as a plain exponential in the energy. For fermions no state may hold more than one particle, so the occupation can never exceed $1$.
-        
-        At absolute zero the states are filled from the bottom up to an energy called the \emph{Fermi level}, and $\mu$ (\cref{sec:thermo-potentials}) is that level\todo{Explain the identification in one sentence: $\mu$ is the free-energy cost of adding one more particle, and at $T=0$ that particle must go on top of the filled stack, so the cost \emph{is} the Fermi level.}: the distribution is a step, and raising the temperature only rounds off the step over a width of about $\kB T$. This is why only the small fraction of electrons lying within $\kB T$ (\cref{sec:temperature})\todo{Consider one line on what $\kB T$ means in general---the typical thermal energy per degree of freedom, the yardstick every level spacing is compared against.} of the Fermi level can respond to anything at all, and hence why the electronic contribution to a metal's heat capacity and to its paramagnetism (\cref{sec:magnetic-field}) is so much smaller than a classical estimate. For bosons there is no such restriction, the occupation of a low-lying state may grow without bound as $\varepsilon$ approaches $\mu$, and that runaway is Bose--Einstein condensation (\cref{sec:indistinguishability}).\todo{TRIM (deferred): shorten this paragraph once \cref{sec:indistinguishability} is settled, so the two do not say the same thing twice.} In all three cases, whenever the states are so sparsely occupied that $\ev{n_\varepsilon} \ll 1$, the $\pm1$ in the denominators below stops mattering and the quantum distributions collapse onto the classical one---which is the dilute, hot limit in which classical statistical physics is safe.
+
+        At absolute zero the states are filled from the bottom up to an energy called the \emph{Fermi level}, and $\mu$ (\cref{sec:thermo-potentials}) is that level, because $\mu$ is the free-energy cost of adding one more particle and at $T=0$ that particle must go on top of the filled stack, so the cost \emph{is} the level it lands on. The distribution is then a step, and raising the temperature only rounds the step off over a width of about $\kB T$---the typical thermal energy per degree of freedom, and the yardstick against which every level spacing in physics is compared (\cref{sec:temperature}). This is why only the small fraction of electrons lying within $\kB T$ of the Fermi level can respond to anything at all, and hence why the electronic contribution to a metal's heat capacity and to its paramagnetism (\cref{sec:magnetic-field}) is so much smaller than a classical estimate. For bosons there is no such restriction, the occupation of a low-lying state may grow without bound as $\varepsilon$ approaches $\mu$, and that runaway is Bose--Einstein condensation (\cref{sec:indistinguishability}). In all three cases, whenever the states are so sparsely occupied that $\ev{n_\varepsilon} \ll 1$, the $\pm1$ in the denominators below stops mattering and the quantum distributions collapse onto the classical one---which is the dilute, hot limit in which classical statistical physics is safe.
 
         \begin{enumerate}
-            \item \textbf{Maxwell--Boltzmann} (classical): treats particles as distinguishable. It is a good approximation at high temperature and low density, but fails for a dense gas of electrons or photons.\todo{Add the missing equation $\ev{n_\varepsilon} = e^{-\beta(\varepsilon-\mu)}$ here, boxed like the two below. Note that \cref{eq:maxwell-boltzmann} is the \emph{speed} distribution, a different statement, so it cannot simply be cross-referenced in its place.}
-            \item \textbf{Fermi--Dirac}: for fermions, which obey the Pauli exclusion principle (\cref{sec:indistinguishability}), at most one particle per state:\todo{Box all three distributions with \texttt{empheq} and \texttt{\textbackslash keyeqentry}, and settle the duplication with \cref{eq:bose-einstein-dist}. Formatting plus consolidation---deferred.}
-            \begin{equation}\label{eq:fermi-dirac}
+            \item \textbf{Maxwell--Boltzmann} (classical): treats particles as distinguishable. It is a good approximation at high temperature and low density, but fails for a dense gas of electrons or photons.
+            \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-boltzmann-occ}
+                \ev{n_\varepsilon} = e^{-\beta(\varepsilon - \mu)}.
+            \end{empheq}
+            \keyeqentry{Maxwell--Boltzmann occupation number}
+            \item \textbf{Fermi--Dirac}: for fermions, which obey the Pauli exclusion principle (\cref{sec:indistinguishability}), at most one particle per state:
+            \begin{empheq}[box=\fbox]{equation}\label{eq:fermi-dirac}
                 \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} + 1}.
-            \end{equation}
+            \end{empheq}
+            \keyeqentry{Fermi--Dirac distribution}
             \item \textbf{Bose--Einstein}: for bosons, which are indistinguishable but not exclusion-bound:
-            \begin{equation}\label{eq:bose-einstein}
+            \begin{empheq}[box=\fbox]{equation}\label{eq:bose-einstein}
                 \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} - 1}.
-            \end{equation}
+            \end{empheq}
+            \keyeqentry{Bose--Einstein distribution}
         \end{enumerate}
 
 \section{Statistical explanation of the macroscopic properties of systems of many particles: extensive and intensive parameters of the state of the system, equation of state, specific heat (gases and solids), magnetic susceptibility, etc.}
 \label{sec:macroscopic}
 
-    Classical thermodynamics is not itself a statistical theory. It is phenomenological: it defines quantities such as temperature, entropy and pressure by how they behave, states a few laws relating them (\cref{sec:thermodynamics}), and never mentions atoms.\todo{is that really true? too couragous for an oral answer.} Everything it says is therefore true whatever matter turns out to be made of, which is its strength, but it can only relate measured quantities to one another and never supply them---an equation of state or a heat capacity has to be measured and fed in.
-    
+    Classical thermodynamics is not itself a statistical theory. It is phenomenological: it defines quantities such as temperature, entropy and pressure by how they behave, states a few laws relating them (\cref{sec:thermodynamics}), and makes no assumption about what matter is made of.\todoans{Safe to say, and worth saying in that form. Thermodynamics was built and essentially complete before the atomic hypothesis was generally accepted---Carnot in 1824, Clausius and Kelvin in the 1850s---and Ostwald and Mach were still resisting atoms around 1900. That is exactly the point: the laws survived the argument because they never depended on how it came out. \enquote{Makes no assumption about the microscopic constitution of matter} is the defensible version of \enquote{never mentions atoms}.} Everything it says is therefore true whatever matter turns out to be made of, which is its strength, but it can only relate measured quantities to one another and never supply them---an equation of state or a heat capacity has to be measured and fed in.
+
     Statistical physics supplies exactly that missing half. It assumes matter is made of very many particles obeying mechanical laws, and shows that the thermodynamic quantities are averages over their microstates, computed from a partition function (\cref{sec:ensembles}). Two things follow. The laws of thermodynamics are explained rather than postulated---entropy becomes a count of microstates (\cref{eq:boltzmann-entropy}), and the second law becomes the statement that a system drifts to the macrostate realised by overwhelmingly the most microstates (\cref{sec:thermodynamics}). And the numbers thermodynamics leaves open can be calculated from the microscopic model.
 
     \subsection{Extensive and intensive parameters}
@@ -347,20 +369,25 @@
 
     \subsection{The equation of state}
 
-        An equation of state relates the state parameters of a system, and may be written schematically as
+        An equation of state relates the state parameters of a system. For a simple substance any two independent ones fix all the rest, so it may be written schematically as
 
         \begin{equation*}
-            p = p\left(\rho,T,s,u,\dots\right).
+            p = p\left(\rho,T\right).
         \end{equation*}
 
-        The two most common are the ideal-gas law and the van der Waals equation (the latter in a consistent $n$-mole form):
+        The two most common are the ideal-gas law and the van der Waals equation, the latter in a consistent $n$-mole form:
 
-        \begin{align}
-            pV &= nRT \label{eq:ideal-gas}\\
-            \left(p + \frac{a n^{2}}{V^{2}}\right)\left(V - nb\right) &= nRT \label{eq:van-der-waals} .
-        \end{align}\todo{Box both equations with \texttt{empheq} and add a \texttt{\textbackslash keyeqentry} for each. Formatting---deferred, since it changes the List of Key Equations.}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:ideal-gas}
+            pV = nRT ,
+        \end{empheq}
+        \keyeqentry{Ideal-gas law}
 
-        The correction $b$ accounts for the finite volume of the molecules, and $\nicefrac{an^{2}}{V^{2}}$ for their mutual attraction by the van der Waals forces of \cref{sec:atom-molecule}. Statistically, both equations come out of one calculation: evaluate the partition function for a gas and differentiate it with respect to volume. Free point particles give \cref{eq:ideal-gas} exactly, and putting the intermolecular potential back in gives corrections of which \cref{eq:van-der-waals} is the first and crudest. That the attraction term is the one that permits liquefaction, and hence a liquid--gas transition (\cref{sec:phase-transitions}), is the point of including it.\todo{TRIM (deferred): cut the statistical derivation sketch to one sentence---both equations come from differentiating the partition function with respect to volume.}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:van-der-waals}
+            \left(p + \frac{a n^{2}}{V^{2}}\right)\left(V - nb\right) = nRT .
+        \end{empheq}
+        \keyeqentry{van der Waals equation}
+
+        The correction $b$ accounts for the finite volume of the molecules, and $\nicefrac{an^{2}}{V^{2}}$ for their mutual attraction by the van der Waals forces of \cref{sec:atom-molecule}. Both come out of one calculation, differentiating the partition function of the gas with respect to volume (\cref{sec:ensembles}), with \cref{eq:ideal-gas} exact for free point particles and \cref{eq:van-der-waals} the first correction once the intermolecular potential is put back. The attraction term is the one that permits liquefaction and hence a liquid--gas transition (\cref{sec:phase-transitions}).
 
     \subsection{Specific heats}
 
@@ -368,31 +395,38 @@
 
         \begin{equation*}
             c = \frac{\Delta Q}{m\,\Delta T}.
-        \end{equation*}\todo{The partial-derivative form appears in the Ehrenfest classification of \cref{sec:phase-transitions}, where $c_p$ is a second derivative of $\mu$. Decide which section owns it---MIGRATION, deferred.}\todo{MODERATE EDIT: make the gas/solid split explicit, since the question asks for both.}
+        \end{equation*}
 
-        The heat capacity measured while holding some quantity $x$ fixed is $c_x = \left(\nicefrac{\partial Q}{\partial T}\right)_x$. The two usual cases are constant volume and constant pressure. For one mole of a monatomic ideal gas,
+        The heat capacity measured while holding some quantity $x$ fixed is $c_x = \left(\nicefrac{\partial Q}{\partial T}\right)_x$, and the two usual cases are constant volume and constant pressure. Statistically a heat capacity counts the ways a body has of storing energy---the more places energy can go, the more of it must be supplied for the temperature to rise by one degree. Classical \emph{equipartition} gives $\nicefrac{1}{2}\kB T$ to every quadratic term in the energy, and that single rule accounts for both cases below.
 
-        \begin{align*}
-            c_{V} &= \frac{3}{2}R, & c_{p} &= \frac{5}{2}R,
-        \end{align*}
+        \paragraph{Gases}
 
-        so that $c_p = c_V + R$ (the extra energy at constant pressure goes into the work of expansion).
+            A monatomic molecule has nothing but its three directions of translation, so for one mole of a monatomic ideal gas
 
-        Statistically, a heat capacity counts the ways a molecule can store energy. Classical equipartition gives $\nicefrac{1}{2}\kB T$ to every quadratic term in the energy, so three directions of translation give $\nicefrac{3}{2}R$ per mole, and a diatomic gas, which can also rotate about two axes, gives $\nicefrac{5}{2}R$. In a solid each atom is held in place and can both move and be displaced against a restoring force, which is six quadratic terms, so $c = 3R \simeq 25$~J\,mol$^{-1}$\,K$^{-1}$---the Dulong--Petit law, and it is obeyed at room temperature by most simple solids.
+            \begin{equation*}
+                c_{V} = \frac{3}{2}R,\quad  c_{p} = \frac{5}{2}R,
+            \end{equation*}
 
-        Where this reasoning fails is itself informative. Measured heat capacities fall towards zero as the temperature does, and a diatomic gas behaves as though its vibrations, and eventually its rotations, were simply absent. The reason is quantisation: a degree of freedom whose level spacing exceeds $\kB T$ cannot be excited at all and is \enquote{frozen out}, contributing nothing. Equipartition is the high-temperature limit in which the spacing is negligible. The Einstein and Debye models put this right for a solid, the latter giving the observed $c \propto T^{3}$ at low temperature, while in a metal a further term linear in $T$ survives from the few conduction electrons near the Fermi level (\cref{subsec:quantum-statistics}).\todo{TRIM (deferred): keep equipartition, Dulong--Petit and the freezing-out of degrees of freedom. Cut the Einstein/Debye and metal-electron detail to one sentence.}
+            and $c_p = c_V + R$, the extra energy at constant pressure going into the work of expansion. A diatomic molecule can also rotate about two axes, which adds two quadratic terms and raises $c_V$ to $\nicefrac{5}{2}R$.
+
+        \paragraph{Solids}
+
+            In a solid each atom is held in place and can both move and be displaced against a restoring force---three kinetic terms and three potential ones---so $c = 3R \simeq \qty{25}{\joule\per\mole\per\kelvin}$. This is the \emph{Dulong--Petit law}, and most simple solids obey it at room temperature.
+
+        Where this reasoning fails is itself informative. Measured heat capacities fall towards zero as the temperature does, and a diatomic gas behaves as though its vibrations, and eventually its rotations, were simply absent. The reason is quantisation: a degree of freedom whose level spacing exceeds $\kB T$ cannot be excited at all and is \enquote{frozen out}, contributing nothing. Equipartition is therefore the high-temperature limit in which every spacing is negligible, and the quantum treatments that replace it---Einstein's and Debye's for a solid, the Fermi-level argument of \cref{subsec:quantum-statistics} for the conduction electrons in a metal---all amount to putting that freezing-out in properly.
 
     \subsection{Magnetic susceptibility}
 
         For a magnetic system the work done per unit volume in changing the magnetisation $M$---the magnetic moment per unit volume, as in \cref{sec:magnetic-field}---is $dW = \mu_{0}H\,dM$. The isothermal and adiabatic magnetic susceptibilities measure how that magnetisation responds to the applied field, and are dimensionless exactly as $\chi_{m}$ is in \cref{eq:magnetic-susceptibility}:
 
-        \begin{align*}
-            \chi_{T} &= \left(\frac{\partial M}{\partial H}\right)_{T}, & \chi_{S} &= \left(\frac{\partial M}{\partial H}\right)_{S}.
-        \end{align*}\todo{Box the two susceptibilities with \texttt{empheq}. The magnetic cross-references are already in place (\cref{sec:magnetic-field,eq:magnetic-susceptibility}).}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:magnetic-susceptibilities}
+            \chi_{T} = \left(\frac{\partial M}{\partial H}\right)_{T},\quad  \chi_{S} = \left(\frac{\partial M}{\partial H}\right)_{S} .
+        \end{empheq}
+        \keyeqentry{Isothermal and adiabatic magnetic susceptibilities}
 
         Microscopically the susceptibility is a competition. Each atomic moment has a lower energy pointing along the field than against it, so Boltzmann weighting favours alignment, while thermal agitation randomises the directions. Averaging the moment over that weighting gives a magnetisation proportional to $\nicefrac{B}{T}$ and hence Curie's law $\chi_m = \nicefrac{C}{T}$ (\cref{sec:magnetic-field}). It is a good illustration of the general pattern: a macroscopic response function is a thermal average of a microscopic quantity, and its temperature dependence records which of the two effects is winning.
 
-\section{The Dirac and Klein--Gordon equations; examples of physical objects described by these equations}
+\section{Dirac and Klein-Gordon equations; examples of physical objects described by these equations}
 \label{sec:relativistic-eqns}\todoper{KG eqn is mentioned in QM1.  Look it up}
 
     The Schrödinger equation (\cref{eq:tdse}) cannot be the whole story, because it was built from the non-relativistic $E = \nicefrac{p^{2}}{2m}$ (\cref{sec:inertial-frames}). The two equations below are the two ways of repairing this, and they differ in the spin of the particles they end up describing. Both start from the relativistic energy--momentum relation $E^{2} = p^{2}c^{2} + m^{2}c^{4}$ (\cref{eq:energy-momentum}).
@@ -401,32 +435,29 @@
 
     Substituting the usual operators $E \to i\hbar\,\nicefrac{\partial}{\partial t}$ and $\vec{p} \to -i\hbar\nabla$ (\cref{sec:postulates}) directly into \cref{eq:energy-momentum} gives
 
-    \begin{equation}\label{eq:klein-gordon}
+    \begin{empheq}[box=\fbox]{equation}\label{eq:klein-gordon}
         \left( \Box + \frac{m^2c^2}{\hbar^2} \right)\psi(\vec{r},t) = 0,
-    \end{equation}\todo{empheq}
+    \end{empheq}
+    \keyeqentry{Klein--Gordon equation}
 
     where $\Box = \nicefrac{1}{c^2}\partial_t^2 - \nabla^2$ is the d'Alembertian, the four-dimensional analogue of the Laplacian: it is the same combination of derivatives, with the time derivative included on the same footing as the three spatial ones, so it treats spacetime as a whole rather than space alone.
 
-    As to its \emph{form}: it is second order\todo{Justify the order-of-the-equation language once---a first-order-in-time equation fixes the state from a single initial condition and keeps the probability positive---or drop the language throughout this section.} in time and second order in space, and it is nothing other than the ordinary wave equation (\cref{eq:em-wave}) with a mass term added. Setting $m=0$ returns the equation for light exactly, so a massless Klein--Gordon field simply travels at $c$, and the \emph{mass term is what slows it down and gives it a rest energy}. The wave function is a single complex number at each point---one component, no internal structure---and that is the formal statement that it describes a particle of \emph{spin 0}: it has nothing that could point anywhere.\todo{last bit is awkard nad i dont get it }
+    As to its \emph{form}: it is second order in time and second order in space. The order in time is the thing to watch, because an equation first order in time fixes the whole future from the wave function at one instant alone and yields a probability density that stays positive, whereas a second-order one needs the time derivative supplied as a second initial condition and does not---which is one of the two difficulties below. Otherwise the equation is nothing but the ordinary wave equation (\cref{eq:em-wave}) with a mass term added. Setting $m=0$ returns the equation for light exactly, so a massless Klein--Gordon field simply travels at $c$, and the \emph{mass term is what slows it down and gives it a rest energy}.
 
-    Its solutions are plane waves $\psi \propto e^{i(\vec k\cdot\vec r - \omega t)}$ with $\varepsilon = \pm c\sqrt{p^2 + m_0^2c^2}$, and the two historical difficulties are visible in that formula and in the order of the equation. The negative root gives states of negative energy, into which any particle could fall without limit, and being second order in time the equation does not yield a probability density that stays positive. Both objections dissolve in quantum field theory, where $\psi$ is not a probability amplitude for one particle but a field whose excitations are particles, and the negative-energy solutions become antiparticles. Objects governed by it: spin-0 particles, such as the \emph{pion} and the other spin-0 \emph{mesons} (\cref{sec:interactions,sec:particles}), and the \emph{Higgs boson} (\cref{sec:interactions}).\todo{is spin-0 a strict rquirement? or would it be something else? masslessnes or sth}
+    The spin shows up in how many numbers the wave function carries at each point: a particle of spin $s$ needs $2s+1$ of them, one for each orientation its spin can take. The Klein--Gordon wave function is a single complex number, so there is exactly one orientation available, which is another way of saying there is nothing there to orient. That is the formal statement that the equation describes a particle of \emph{spin 0}.
+
+    Its solutions are plane waves $\psi \propto e^{i(\vec k\cdot\vec r - \omega t)}$ with $E = \pm c\sqrt{p^{2} + m^{2}c^{2}}$, and both historical difficulties are visible in that formula and in the order of the equation. The negative root gives states of negative energy, into which any particle could fall without limit, and the second order in time spoils the probability density as just described. Both objections dissolve in quantum field theory, where $\psi$ is not a probability amplitude for one particle but a field whose excitations are particles, and the negative-energy solutions become antiparticles. Objects governed by it: spin-0 particles, such as the \emph{pion} and the other spin-0 \emph{mesons} (\cref{sec:interactions,sec:particles}), and the \emph{Higgs boson} (\cref{sec:interactions}).\todoans{Spin 0, yes, but the statement needs care in one direction. \emph{Every} relativistic field, of any spin, satisfies the Klein--Gordon equation component by component, because all that equation encodes is $E^{2}=p^{2}c^{2}+m^{2}c^{4}$, which holds for everything. What is special about spin 0 is that Klein--Gordon is then the \emph{whole} equation---a one-component field with no further structure and nothing else to satisfy. Masslessness is not required and is a separate matter: the pion and the Higgs are both massive, and setting $m=0$ merely gives a massless scalar, which is the ordinary wave equation.}
 
     \paragraph{The Dirac equation}
 
     Dirac looked for an equation \emph{first} order in time, so as to keep a sensible probability density, and therefore, by relativity, first order in space as well. That means taking a square root of \cref{eq:energy-momentum}, and a linear expression can only square to $p^{2}c^{2}+m^{2}c^{4}$ if its coefficients anticommute, so that the unwanted cross terms cancel. Ordinary numbers cannot do this. Matrices can. For a free particle the result is
 
-    \begin{equation}\label{eq:dirac}
+    \begin{empheq}[box=\fbox]{equation}\label{eq:dirac}
         (i\hbar \gamma^{\mu}\partial_{\mu} - mc)\Psi(x^{\nu}) = 0 .
-    \end{equation}\todo{empheq}
+    \end{empheq}
+    \keyeqentry{Dirac equation}
 
-    Each object in it has a plain reading:
-
-    \begin{itemize}
-        \item $\partial_{\mu}$ is the \emph{four-gradient}, the four-vector (\cref{sec:inertial-frames}) built from the derivatives with respect to the four coordinates $x^{\nu} = (ct,x,y,z)$, that is, $\partial_{\mu} = \left(\nicefrac{\partial}{\partial(ct)}, \nicefrac{\partial}{\partial x}, \nicefrac{\partial}{\partial y}, \nicefrac{\partial}{\partial z}\right)$. It is the relativistic replacement for $\nabla$ (\cref{eq:nabla}), with time included as a fourth direction.\todo{Notation: \cref{sec:inertial-frames} writes four-vectors as a \texttt{bmatrix} column $x^{\mu}$, not as a row $(ct,x,y,z)$. Match it here.}
-        \item An index appearing twice, as $\mu$ does here, is \emph{summed over} its four values by convention, so $\gamma^{\mu}\partial_{\mu}$ is shorthand for a sum of four terms.\todo{TRIM (deferred, significant): cut the gamma-matrix and summation-convention bullets. Keep only that $\Psi$ has four components---two spin states plus two antiparticle states---and which particles obey the equation.}
-        \item The $\gamma^{\mu}$ are the four \emph{gamma matrices}, $4\times4$ constant matrices chosen so that $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu\nu}I$, where $g^{\mu\nu}$ is the metric that fixes the relative sign of the time and space parts. That anticommutation condition is the whole content of \enquote{taking the square root} above.
-        \item $\Psi$ is therefore not one number but a column of four, called a \emph{spinor}: two components for the two spin orientations of the particle and two more for its antiparticle.
-    \end{itemize}
+    Each object in it has a plain reading. The \emph{four-gradient} $\partial_{\mu} = \left[\begin{smallmatrix} \nicefrac{\partial}{\partial(ct)} \\ \nabla \end{smallmatrix}\right]$ is the relativistic replacement for $\nabla$ (\cref{eq:nabla}), a four-vector written as a column exactly as in \cref{sec:inertial-frames}, with time included as a fourth direction. An index appearing twice, as $\mu$ does here, is summed over its four values by convention. The $\gamma^{\mu}$ are four constant $4\times4$ \emph{gamma matrices} whose anticommutation relation $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu\nu}I$ is the entire content of \enquote{taking the square root} above, with $g^{\mu\nu}$ the metric that fixes the relative sign of the time and space parts. Because those matrices are $4\times4$, $\Psi$ is not one number but a column of four, called a \emph{spinor}: two components for the two spin orientations of the particle and two more for its antiparticle.
 
     A common representation, written in $2\times2$ blocks, is
 
@@ -445,11 +476,28 @@
 
     with $\sigma_i$ the \emph{Pauli matrices}, the three $2\times2$ matrices that represent the components of spin through $\hat{S}_{i} = \nicefrac{\hbar}{2}\sigma_{i}$. Two of them have already appeared as $\hat{S}_{z}$ and $\hat{S}_{x}$ in \cref{sec:postulates}, so the spin structure of the Dirac equation is built out of an object already familiar.
 
-    Its form, then, is: first order in the derivatives, matrix-valued, and acting on a four-component object rather than on a single function. Objects governed by it: all spin-$\nicefrac{1}{2}$ particles, that is, every particle of matter---electrons, muons, quarks---free or coupled to the electromagnetic field. Its successes were immediate. Spin was not put in by hand but emerged from the requirement of relativistic invariance alone, together with very nearly the right magnetic moment ($g_S \simeq 2$, \cref{sec:atoms-fields}). It reproduces the fine structure of the hydrogen spectrum. And the extra components it forced on the wave function predicted the positron, found four years later.\todo{last paragrapgh is generally good but $g_s$ is wierd.}
+    Its form, then, is: first order in the derivatives, matrix-valued, and acting on a four-component object rather than on a single function. Objects governed by it: all spin-$\nicefrac{1}{2}$ particles, that is, every particle of matter---electrons, muons, quarks---free or coupled to the electromagnetic field. Its successes were immediate. Spin was not put in by hand but emerged from the requirement of relativistic invariance alone, and with it very nearly the right magnetic moment: the equation gives the electron a spin $g$-factor---the number relating its magnetic moment to its spin (\cref{sec:atoms-fields})---of exactly $2$, against a measured $2.0023$. It reproduces the fine structure of the hydrogen spectrum. And the extra components it forced on the wave function predicted the positron, found four years later.
 
-    \todo{add another paragraph that summarises which equation descirbes what and what are important features. short table or something. only key bullet points.}
+    \Cref{tab:relativistic-eqns} sets the two side by side.
 
-\section{The structure of atomic nuclei and nuclear reactions; binding energy of an atomic nucleus, fission and fusion, alpha and beta decays, decay chains, borders of stability of nuclides}\todo{all terms from this title should be covered: nuclides, decay chains etc..}
+    \begin{table}[H]
+        \centering
+        \renewcommand{\arraystretch}{1.25}
+        \begin{tabularx}{\linewidth}{lLL}
+            \hline
+             & \textbf{Klein--Gordon} & \textbf{Dirac} \\
+            \hline
+            Order in time & \rule{0pt}{2.6ex}second & first \\
+            Wave function & one complex number & column of four, a spinor \\
+            Spin described & $0$ & $\nicefrac{1}{2}$ \\
+            Objects & pion and the other spin-0 mesons, Higgs boson & electrons, muons, quarks, every particle of matter \\
+            \hline
+        \end{tabularx}
+        \caption{The two relativistic wave equations compared. Both throw up negative-energy solutions, and in both those solutions are read as antiparticles once the object is treated as a field rather than as a one-particle wave function.}
+        \label{tab:relativistic-eqns}
+    \end{table}
+
+\section{Structure of atomic nuclei and nuclear reactions; binding energy of an atomic nucleus, fission and fusion, alpha and beta decays, decay chains, borders of stability of nuclides}
 \label{sec:nuclei}
 
     The atomic nucleus is made of protons and neutrons, collectively \emph{nucleons}. The number of protons ($Z$) fixes the chemical element, and the number of neutrons ($N$) distinguishes its isotopes. The nucleons are held together by the strong nuclear force, far stronger than the electromagnetic force but of very short range (about \qtyrange{1}{2}{\femto\metre}, \cref{sec:interactions}).
@@ -458,26 +506,29 @@
 
     \subsection{Binding energy and mass}
 
-        The mass of a nucleus is always \emph{less}\todo{order of magnitude: how much mass comes from binding energy? i remember that nuceleons have 90\% of their mass from binding energy, that ture?}\todo{wait, is that right? does it not depend on the position on the diagram?} than the sum of the masses of the nucleons composing it. The difference is the \emph{mass defect},
+        The mass of a nucleus is always \emph{less} than the sum of the masses of the nucleons composing it---always, for every bound nucleus, since that deficit is what binding means. What varies from one nuclide to another is how large it is, not its sign. The difference is the \emph{mass defect},
 
-        \begin{equation*}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:mass-defect}
             \Delta m = Zm_{p} + Nm_{n} - M(Z,N),
-        \end{equation*}\todo{eq in empheq}
+        \end{empheq}
+        \keyeqentry{Nuclear mass defect}
 
-        and the \emph{binding energy} is that missing mass expressed as energy, $B = \Delta m\,c^{2}$ (\cref{sec:inertial-frames}). It is the energy needed to pull the nucleus apart into free nucleons, and it is missing from the mass precisely because it would have to be supplied to do so. This is mass--energy equivalence in its most direct experimental form, and it is why a nuclear reaction releases so much more energy than a chemical one: the binding involved is millions of times larger per particle.
+        and the \emph{binding energy} is that missing mass expressed as energy, $B = \Delta m\,c^{2}$ (\cref{sec:inertial-frames}). It is the energy needed to pull the nucleus apart into free nucleons, and it is missing from the mass precisely because it would have to be supplied to do so.\todoans{Two different facts are being mixed here, and both are worth having straight. \emph{Nuclear} binding takes about \qty{8.8}{\mega\electronvolt} off a nucleon of roughly \qty{939}{\mega\electronvolt}, so the nuclear mass defect is under $1\%$. The $90$-odd per cent figure belongs to the nucleon itself: the three quarks inside a proton have rest masses adding to about \qty{9}{\mega\electronvolt}, so around $99\%$ of the proton's mass is the energy of the gluon field and the quarks' motion, not the quarks' own mass (\cref{sec:interactions}). Different binding, one level further down.} This is mass--energy equivalence in its most direct experimental form, and it is why a nuclear reaction releases so much more energy than a chemical one: the binding involved is millions of times larger per particle.
 
         What matters for stability is not $B$ but $\nicefrac{B}{A}$, the binding energy \emph{per nucleon} (\cref{fig:binding-energy-curve}).
+
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.6\linewidth]{graphics/energies-function-atomic-mass-number-2241843032.jpg}
             \caption{Binding energy per nucleon as a function of mass number $A$. The curve rises to a maximum near iron and nickel, and falls off slowly for heavier nuclei.}
             \label{fig:binding-energy-curve}
         \end{figure}
-        Plotted against $A$ it gives the binding-energy curve, and almost all of nuclear energetics is contained in its shape. It rises steeply through the light nuclei, reaches a broad maximum of about $8.8$~MeV per nucleon near $A \simeq 56$--$62$ (iron and nickel), and then falls slowly, to about $7.6$~MeV for uranium. A reaction releases energy whenever it moves nucleons to a higher point on this curve, and there are only two ways to do so.
-        
-        Light nuclei climb by \emph{fusing} together, heavy nuclei climb by \emph{splitting} apart, and both therefore run towards iron from their respective sides. Fusing hydrogen releases about $7$~MeV per nucleon, whereas fissioning uranium recovers only the roughly $0.9$~MeV per nucleon by which uranium sits below the peak---some $200$~MeV per fission \todo{more straightforward explanation of uranium case}, but far less per nucleon than fusion.
 
-        The curve itself is reproduced by the \emph{semi-empirical mass formula} of the liquid-drop model, a sum of a volume term proportional to $A$, a surface term that penalises small nuclei, a Coulomb term that penalises large $Z$, an asymmetry term favouring $N \simeq Z$, and a pairing term. The last of these is what puts the local jumps into an otherwise smooth curve: nuclei with even $Z$ and even $N$ are more tightly bound than their odd neighbours, which is why stable even-$Z$ elements have many isotopes and odd-$Z$ ones typically have one or two.\todo{trim a little}
+        Plotted against $A$ it gives the binding-energy curve, and almost all of nuclear energetics is contained in its shape. It rises steeply through the light nuclei, reaches a broad maximum of about \qty{8.8}{\mega\electronvolt} per nucleon near $A \simeq 56$--$62$ (iron and nickel), and then falls slowly, to about \qty{7.6}{\mega\electronvolt} for uranium. A reaction releases energy whenever it moves nucleons to a higher point on this curve. Which way that is depends entirely on where you start, so neither mechanism is a source of energy in itself---fusing nuclei heavier than iron costs energy, and so does splitting nuclei lighter than it.
+
+        Light nuclei therefore climb by \emph{fusing} together and heavy nuclei by \emph{splitting} apart, both running towards iron from their respective sides. Fusing hydrogen into helium releases about \qty{7}{\mega\electronvolt} per nucleon. Uranium sits only about \qty{0.9}{\mega\electronvolt} per nucleon below the peak, so splitting one $235$-nucleon nucleus releases roughly $235 \times 0.9 \simeq \qty{200}{\mega\electronvolt}$---an enormous figure per event, simply because so many nucleons move at once, but some eight times less per nucleon than fusion delivers.
+
+        The curve itself is reproduced by the \emph{semi-empirical mass formula} of the liquid-drop model: a volume term proportional to $A$, a surface term penalising small nuclei, a Coulomb term penalising large $Z$, an asymmetry term favouring $N \simeq Z$, and a pairing term. The pairing term is what puts the local jumps into an otherwise smooth curve, since nuclei with even $Z$ and even $N$ are more tightly bound than their odd neighbours.
 
     \subsection{Structure and reactions}
 
@@ -486,125 +537,152 @@
         Nuclear reactions transform nuclei, often under bombardment by neutrons or protons:
 
         \begin{itemize}
-            \item \textbf{fission} --- a heavy nucleus splits into two (or more) lighter ones, releasing neutrons and a large amount of energy. The released neutrons can trigger further fissions, which is the chain reaction.
-            \item \textbf{fusion} --- two light nuclei merge into a heavier one, releasing energy, but only if they can be brought within range of the strong force against their electrostatic repulsion (\cref{sec:nucleosynthesis}).
-            \item \textbf{alpha decay} --- emission of an alpha particle (a helium-4 nucleus), which is itself a tunnelling process (\cref{sec:tunnelling}).
-            \item \textbf{beta decay} --- emission of an electron ($\beta^{-}$, a neutron turning into a proton) or a positron ($\beta^{+}$, the reverse), together with an (anti)neutrino\todo{antineutrino or neutrino}, via the weak interaction (\cref{sec:interactions}).\todo{Consolidation: the quark-level account is in \cref{sec:interactions} and $\beta^{-}$ decay reappears in \cref{sec:nucleosynthesis}. Decide which section owns the full description---SIGNIFICANT EDIT.}
-            \item \textbf{electron capture} --- the nucleus absorbs one of its own innermost atomic electrons, which converts a proton into a neutron and emits a neutrino. It competes with $\beta^{+}$ decay, has the same effect on $Z$ and $N$, and is the only route open when there is too little energy available to create a positron.
-            \item \textbf{gamma decay} --- emission of a high-energy photon by an excited nucleus returning to its ground state, usually following one of the above.\todo{is that correct? terminology is right etc?}
-        \end{itemize}\todo{state that both fission and fusiion can cost or release enrgy and add one real examples to each mechanism}
+            \item \textbf{fission} --- a heavy nucleus splits into two (or more) lighter ones, releasing neutrons and a large amount of energy. The released neutrons can trigger further fissions, which is the chain reaction. A typical case is ${}^{235}\mathrm{U} + n \rightarrow {}^{141}\mathrm{Ba} + {}^{92}\mathrm{Kr} + 3n$.
+            \item \textbf{fusion} --- two light nuclei merge into a heavier one, releasing energy, but only if they can be brought within range of the strong force against their electrostatic repulsion (\cref{sec:nucleosynthesis}). The easiest reaction to drive is ${}^{2}\mathrm{H} + {}^{3}\mathrm{H} \rightarrow {}^{4}\mathrm{He} + n$, worth \qty{17.6}{\mega\electronvolt}.
+            \item \textbf{alpha decay} --- emission of an alpha particle (a helium-4 nucleus), which is itself a tunnelling process (\cref{sec:tunnelling}), as in ${}^{238}\mathrm{U} \rightarrow {}^{234}\mathrm{Th} + \alpha$.
+            \item \textbf{beta decay} --- emission of an electron ($\beta^{-}$, a neutron turning into a proton, with an electron \emph{antineutrino}) or of a positron ($\beta^{+}$, the reverse, with a neutrino), via the weak interaction. Examples are ${}^{14}\mathrm{C} \rightarrow {}^{14}\mathrm{N} + e^{-} + \bar{\nu}_{e}$ and ${}^{22}\mathrm{Na} \rightarrow {}^{22}\mathrm{Ne} + e^{+} + \nu_{e}$. What happens underneath, one quark changing flavour, is in \cref{sec:interactions}.
+            \item \textbf{electron capture} --- the nucleus absorbs one of its own innermost atomic electrons, which converts a proton into a neutron and emits a neutrino, as in ${}^{40}\mathrm{K} + e^{-} \rightarrow {}^{40}\mathrm{Ar} + \nu_{e}$. It competes with $\beta^{+}$ decay, has the same effect on $Z$ and $N$, and is the only route open when there is too little energy available to create a positron.
+            \item \textbf{gamma decay} --- emission of a high-energy photon by an excited nucleus returning to its ground state, usually following one of the above. It changes neither $Z$ nor $N$, only the energy: ${}^{60}\mathrm{Co}$ beta-decays to an excited ${}^{60}\mathrm{Ni}$, which then sheds two gamma photons.
+        \end{itemize}
 
-        A \emph{radioactive decay series}\todo{Terminology: the question title says \enquote{decay chains}. Use the title's wording here, or say once that the two names mean the same thing.} is a chain of successive decays leading from one unstable nuclide to the next until a stable one is reached. There are four such series in principle, but only three occur naturally today (the thorium, uranium and actinium series). The fourth, the neptunium series, has effectively died out, because its longest-lived member ($^{237}$Np, half-life about $2.1$~million years) is short-lived compared with the age of the Earth.\todo{exaplin the last sentence more straight}\todo{add examples of power plants and bombs}
+        Both directions have been engineered. A reactor runs a controlled chain reaction in ${}^{235}$U or ${}^{239}$Pu, with a moderator to slow the neutrons and control rods to absorb the surplus, while a fission bomb is the same chain reaction left uncontrolled in a supercritical mass. Controlled fusion is not yet a power source, the large experiments being ITER and the National Ignition Facility, whereas a thermonuclear bomb solves the confinement problem crudely by using a fission stage to ignite the fusion fuel.
+
+        A \emph{decay chain}, also called a radioactive decay series, is a succession of decays leading from one unstable nuclide to the next until a stable one is reached. There are four such chains in principle, but only three occur naturally today: the thorium, uranium and actinium series. The fourth, the neptunium series, has died out. Its longest-lived member, ${}^{237}$Np, has a half-life of about $2.1$ million years, so in the $4.5$ billion years since the Earth formed roughly two thousand half-lives have passed and nothing of the original stock survives.
 
     \subsection{Borders of stability of nuclides}
 
-        The limits are set by how many protons or neutrons a nucleus can hold before it becomes unbound (the proton and neutron \enquote{drip lines}\todo{explain the term}), and, for the heaviest nuclei, by fission.
+        Add protons or neutrons to a nucleus indefinitely and at some point it will not hold them: the next one is simply not bound, and falls straight back out. The lines on the chart of nuclides where that happens are the \emph{drip lines}, one for protons and one for neutrons, and they mark the edges of the world of nuclides. For the heaviest nuclei a third limit intervenes before either drip line is reached, namely spontaneous fission.
 
         \begin{itemize}
-            \item \textbf{The proton drip line}: the Coulomb barrier traps protons and lengthens the lifetime of proton-unbound nuclei, so the proton-rich edge is comparatively easy to reach. It has been mapped experimentally, firmly or tentatively, up to about $Z=84$, and proton-rich nuclides have been made as far as neptunium ($Z=93$).
-            \item \textbf{The neutron drip line}: neutrons feel no Coulomb barrier, so the neutron-rich edge is far harder to pin down. It has been established experimentally only up to neon ($Z=10$), and mapping it further is a major current challenge.
-            \item \textbf{Superheavy nuclei}: here the limit is spontaneous fission. Their stability rests on shell effects, and the existence of a predicted \enquote{island of stability} of long-lived superheavy nuclides is still an open question.
-        \end{itemize}\todo{state them more straight forwad and simple such that it is prefectly clear.}
+            \item \textbf{The proton drip line} --- protons are held in by the Coulomb barrier even once they are formally unbound, which lengthens the lifetimes near the edge and makes that edge comparatively easy to reach. It is mapped, firmly or tentatively, up to about $Z=84$, and proton-rich nuclides have been made as far as neptunium ($Z=93$).
+            \item \textbf{The neutron drip line} --- neutrons feel no Coulomb barrier, so nothing holds them in and the neutron-rich edge is far harder to reach. It is established experimentally only up to neon ($Z=10$), and pushing it further is a major current effort.
+            \item \textbf{Superheavy nuclei} --- here the nucleus splits before it runs out of room for nucleons, so the limit is spontaneous fission rather than binding. What stability these nuclei have comes from shell effects, and whether there is a genuine \enquote{island of stability} of long-lived superheavy nuclides remains open.
+        \end{itemize}
 
-\section{Nucleosynthesis\todo{does the term refer to all the mecanisms that produce nuclei?} and sources of energy of stars}
-\label{sec:nucleosynthesis}
+\section{Nucleosynthesis and sources of energy of stars}
+\label{sec:nucleosynthesis}\todoans{Yes, it is the umbrella term: any process that builds atomic nuclei out of pre-existing nucleons or lighter nuclei, which is precisely the four routes listed below. What it does \emph{not} cover is the making of the nucleons themselves out of quarks in the first microsecond---that goes under baryogenesis and hadronisation, and is a stage earlier than anything called nucleosynthesis.}
 
     Elements are produced in four natural ways: \emph{primordial nucleosynthesis} just after the Big Bang, \emph{fusion inside stars}, \emph{neutron capture} in and around dying stars, and \emph{spallation} by cosmic rays.
 
     \paragraph{The Big Bang: $Z \leq 4$}
 
-    The first protons formed once the Universe had cooled enough for quarks to bind into hadrons (roughly $10^{-6}$~s to $1$~s after the Big Bang). \emph{Primordial nucleosynthesis} then followed (about $10$~s to $10^{3}$~s), producing the light nuclei: deuterium ($^{2}$H), tritium ($^{3}$H), helium ($^{3}$He and $^{4}$He), lithium ($^{7}$Li) and beryllium ($^{7}$Be). It stopped there because \emph{no stable nuclide has $A = 5$ or $A = 8$,} so there is no way to build upwards by adding one nucleon at a time, and the Universe thinned and cooled too fast for anything slower.
+    The first protons formed once the Universe had cooled enough for quarks to bind into hadrons (roughly \qtyrange{1e-6}{1}{\second} after the Big Bang). \emph{Primordial nucleosynthesis} then followed (about \qtyrange{10}{1e3}{\second}), producing the light nuclei: deuterium ($^{2}$H), tritium ($^{3}$H), helium ($^{3}$He and $^{4}$He), lithium ($^{7}$Li) and beryllium ($^{7}$Be). It stopped there because \emph{no stable nuclide has $A = 5$ or $A = 8$,} so there is no way to build upwards by adding one nucleon at a time, and the Universe thinned and cooled too fast for anything slower.
 
     \paragraph{Stars: $Z$ up to $26$}
 
-    \emph{Stars} formed much later and drove the next round. They \emph{fuse hydrogen into helium, then helium into carbon} (three $^{4}$He nuclei at once, the triple-alpha process, which is how the $A=8$ gap is bridged), and in the more massive stars carbon, neon, oxygen and silicon burn in turn, each stage requiring a higher temperature than the last and building nuclei up to iron.\todo{Define \enquote{burning} in this context---the fusion of a given fuel, nothing to do with chemical combustion.} There it stops. It is often said that fusion \enquote{stops at iron} because $^{56}$Fe is the most stable nucleus, but this needs care: $^{56}$Fe has the smallest \emph{mass per nucleon}, whereas the largest \emph{binding energy per nucleon} belongs to nickel, $^{62}$Ni (the two differ because the proton and neutron masses are not equal). In practice stellar fusion favours $^{56}$Ni, which is less stable and decays to $^{56}$Fe. Either way, past the peak of the binding-energy curve (\cref{sec:nuclei}) \emph{fusion would consume energy rather than release it}, so it can no longer support the star.
+    \emph{Stars} formed much later and drove the next round. They \emph{fuse hydrogen into helium, then helium into carbon} (three $^{4}$He nuclei at once, the triple-alpha process, which is how the $A=8$ gap is bridged), and in the more massive stars carbon, neon, oxygen and silicon \emph{burn} in turn---burning here meaning the fusion of a given fuel, with nothing chemical about it---each stage requiring a higher temperature than the last and building nuclei up to iron. There it stops. It is often said that fusion \enquote{stops at iron} because $^{56}$Fe is the most stable nucleus, but this needs care: $^{56}$Fe has the smallest \emph{mass per nucleon}, whereas the largest \emph{binding energy per nucleon} belongs to nickel, $^{62}$Ni (the two differ because the proton and neutron masses are not equal). In practice stellar fusion favours $^{56}$Ni, which is less stable and decays to $^{56}$Fe. Either way, past the peak of the binding-energy curve (\cref{sec:nuclei}) \emph{fusion would consume energy rather than release it}, so it can no longer support the star.
 
     \paragraph{Neutron capture: $Z$ above $26$}
 
-    Everything heavier is built not by fusion but by adding neutrons, which feel no Coulomb repulsion and so need no barrier to be overcome, followed by $\beta^{-}$ decay of the neutron-rich product. Two regimes are distinguished by how the capture rate compares with the decay rate. The \emph{s-process} (slow) proceeds in the interiors of evolved low-mass stars, one neutron at a time with leisure to decay in between, and it builds the nuclides lying along the valley of stability up to bismuth. The \emph{r-process} (rapid) dumps many neutrons on a nucleus before any decay can occur, requires an extreme neutron flux, and is responsible for the most neutron-rich heavy nuclides, gold, platinum, thorium and uranium among them. Supernovae were long assumed to be its site, and the merger of two neutron stars observed in $2017$ confirmed at least one such site directly.
+    Everything heavier is built not by fusion but by adding neutrons, which feel no Coulomb repulsion and so need no barrier to be overcome, followed by $\beta^{-}$ decay of the neutron-rich product (\cref{sec:nuclei}). Two regimes are distinguished by how the capture rate compares with the decay rate. The \emph{s-process} (slow) proceeds in the interiors of evolved low-mass stars, one neutron at a time with leisure to decay in between, and it builds the nuclides lying along the valley of stability up to bismuth. The \emph{r-process} (rapid) dumps many neutrons on a nucleus before any decay can occur, requires an extreme neutron flux, and is responsible for the most neutron-rich heavy nuclides, gold, platinum, thorium and uranium among them. Supernovae were long assumed to be its site, and the merger of two neutron stars observed in $2017$ confirmed at least one such site directly.
 
-    \paragraph{Cosmic rays: lithium, beryllium and boron}\todo{Define cosmic rays in one clause---high-energy charged particles, mostly protons, not electromagnetic radiation despite the name, and unrelated to the cosmic microwave background. Say where they come from.}
+    \paragraph{Cosmic rays: lithium, beryllium and boron}
+
+    \emph{Cosmic rays} are high-energy charged particles---about nine parts in ten protons, most of the remainder helium nuclei---and not electromagnetic radiation at all, despite the name and despite any confusion with the cosmic microwave background, which is a separate thing entirely. Most of them are flung out by supernova remnants within our own galaxy, the gentlest come from the Sun, and the very highest energies come from outside the galaxy altogether.
 
     These three light elements are an exception on both counts: stars destroy them rather than make them, and the Big Bang made only a trace of lithium. They come instead from \emph{spallation}, in which a fast cosmic-ray proton strikes a heavier nucleus in the interstellar medium and chips fragments off it.
 
-    \subsection{Thermonuclear reaction}\todo{so it is the same as fusion? or is KE required instead of gamma release?}
+    \subsection{Thermonuclear fusion}
 
-        A \emph{thermonuclear reaction} fuses two light nuclei into a heavier one. Being exothermic, it releases energy (as kinetic energy of the products and gamma rays) that is then shared with the surroundings as heat. The energy released can be found from the mass defect (\cref{sec:nuclei}).
+        A \emph{thermonuclear reaction} is fusion driven by heat: the nuclei get the kinetic energy they need to reach one another from the thermal motion of a hot plasma, so the \enquote{thermo} describes how the barrier is beaten rather than what comes out.\todoans{The same nuclear process as fusion (\cref{sec:nuclei}), so every thermonuclear reaction is fusion but not every fusion is thermonuclear. The word fixes only the input side---nuclei brought together by thermal motion, as in a stellar core or a hydrogen bomb. Fusion can also be driven cold, by firing a beam at a fixed target in an accelerator, or by muon catalysis, where a muon takes the electron's place and shrinks the molecule until the two nuclei touch. The products are the same either way, kinetic energy of the fragments plus gamma rays.} Being exothermic, it releases energy---as kinetic energy of the products and as gamma rays---which is then shared with the surroundings as heat. The energy released can be found from the mass defect (\cref{eq:mass-defect}).
 
-        For hydrogen nuclei (protons) to fuse they must come within the range of the strong force ($\sim1$~fm), but they first have to overcome their mutual electrostatic repulsion, a barrier of order $1$~MeV. Classically this needs a temperature of about $10^{10}$~K, far hotter than any stellar core. Fusion nonetheless proceeds at the much lower core temperatures because of \emph{quantum tunnelling} (\cref{sec:tunnelling}), which lets protons pass through the barrier rather than over it.
+        For hydrogen nuclei (protons) to fuse they must come within the range of the strong force (about \qty{1}{\femto\metre}), but they first have to overcome their mutual electrostatic repulsion, a barrier of order \qty{1}{\mega\electronvolt}. Classically this needs a temperature of about \qty{1e10}{\kelvin}, far hotter than any stellar core. Fusion nonetheless proceeds at the much lower core temperatures because of \emph{quantum tunnelling} (\cref{sec:tunnelling}), which lets protons pass through the barrier rather than over it.
 
-    \subsection{The proton--proton chain}\todo{Retitle to name the Sun, for instance \enquote{The proton--proton chain (the Sun)}, and say in one clause whether stellar hydrogen burning counts as nucleosynthesis.}
+    \subsection{The proton--proton chain (the Sun)}
 
-        The \emph{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It is the main energy source of the Sun and similar stars, and operates in stellar cores at temperatures of a few to a few tens of millions of kelvin. In its commonest branch:
+        The \emph{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It answers both halves of the question at once: it is the main energy source of the Sun and of similar stars, and, since it makes helium out of hydrogen, it is nucleosynthesis as well. It operates in stellar cores at temperatures of a few to a few tens of millions of kelvin. In its commonest branch:
 
-        \begin{equation*}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:pp-chain}
             \begin{aligned}
-                p + p           &\rightarrow {}^{2}\mathrm{H} + e^{+} + \nu_{e} \\
-                {}^{2}\mathrm{H} + p &\rightarrow {}^{3}\mathrm{He} + \gamma \\
-                {}^{3}\mathrm{He} + {}^{3}\mathrm{He} &\rightarrow {}^{4}\mathrm{He} + 2p ,
+            p + p           &\rightarrow {}^{2}\mathrm{H} + e^{+} + \nu_{e} \\
+            {}^{2}\mathrm{H} + p &\rightarrow {}^{3}\mathrm{He} + \gamma \\
+            {}^{3}\mathrm{He} + {}^{3}\mathrm{He} &\rightarrow {}^{4}\mathrm{He} + 2p  ,
             \end{aligned}
-        \end{equation*}
+        \end{empheq}
+        \keyeqentry{Proton--proton chain}
 
-        which overall converts four protons into one $^{4}$He nucleus, two positrons and two neutrinos, releasing about $26.7$~MeV. The first step is the bottleneck, and it is what makes the Sun burn slowly enough to have a long life: it requires one of the two protons to turn into a neutron by the weak interaction (\cref{sec:interactions}) at the very moment of contact, which is an exceedingly improbable coincidence. The neutrinos escape immediately and are the only direct evidence we have of the core, while the photons take a very long time to random-walk their way out. In stars appreciably more massive than the Sun, and hence hotter, the \emph{CNO cycle} takes over instead, using carbon, nitrogen and oxygen as catalysts to achieve the same net conversion.
+        which overall converts four protons into one $^{4}$He nucleus, two positrons and two neutrinos, releasing about \qty{26.7}{\mega\electronvolt}. The first step is the bottleneck, and it is what makes the Sun burn slowly enough to have a long life: it requires one of the two protons to turn into a neutron by the weak interaction (\cref{sec:interactions}) at the very moment of contact, which is an exceedingly improbable coincidence. The neutrinos escape immediately and are the only direct evidence we have of the core, while the photons take a very long time to random-walk their way out. In stars appreciably more massive than the Sun, and hence hotter, the \emph{CNO cycle} takes over instead, using carbon, nitrogen and oxygen as catalysts to achieve the same net conversion.
 
-\section{Classification of elementary particles; quarks, leptons and force carriers, the structure of hadrons}
-\label{sec:particles}\todo{SIGNIFICANT EDIT: this section and \cref{sec:interactions} overlap heavily. Decide which owns the particle inventory and which owns the interactions, then cross-reference. \cref{fig:standard-model-particles} can be referred to rather than reprinted. The word \enquote{elementary} is never defined anywhere in the note.}\todo{SIGNIFICANT EDIT: give one definition each for hadron, lepton, quark, boson, fermion, meson and baryon. Several are at present defined only in passing in \cref{sec:interactions}---move those definitions here and cross-reference them from there.}
+\section{Classification of elementary particles; quarks, leptons and force carriers, structure of hadrons}
+\label{sec:particles}
 
-    The building blocks of matter are the \emph{leptons} and the \emph{quarks}, both spin-$\nicefrac{1}{2}$ fermions. Leptons can exist on their own, whereas quarks are always found bound inside composite particles (hadrons). The interactions between them, their carriers and their ranges are the subject of \cref{sec:interactions}.
+    A particle is \emph{elementary} if it has no known internal structure: nothing smaller has ever been found inside it, and the theory treats it as a point. Quarks, leptons, the force carriers and the Higgs boson are elementary on present evidence, whereas a proton is not, being made of quarks. The full inventory is \cref{fig:standard-model}, and what these particles do to one another---carriers, ranges, strengths---is \cref{sec:interactions}.
 
-    The leptons come in six types (three charged, three neutral), plus their antiparticles (\cref{fig:standard-model-particles}):\todo{Repetition: this list duplicates \cref{sec:interactions} and the figure. If the figure is referred to, the list itself can go---SIGNIFICANT EDIT, part of the split decided above.}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.68\linewidth]{graphics/Standard_Model_of_Elementary_Particles.pdf}
+        \caption{The Standard Model: three generations of quarks and leptons, the force carriers, and the Higgs boson.}
+        \label{fig:standard-model}
+    \end{figure}
 
-    \begin{itemize}
-        \item the electron and the electron neutrino,
-        \item the muon and the muon neutrino,
-        \item the tau and the tau neutrino.
-    \end{itemize}
-
-    The three charged leptons carry electric charge $-1$ (their antiparticles $+1$), while the three neutrinos are electrically neutral. All of them feel the weak interaction.
-
-    The quarks likewise come in six types (\enquote{flavours}), plus antiquarks:
+    Two cuts run through the classification, and they are independent of one another:
 
     \begin{itemize}
-        \item up (u), charge $+\nicefrac{2}{3}$,
-        \item down (d), charge $-\nicefrac{1}{3}$,
-        \item strange (s), charge $-\nicefrac{1}{3}$,
-        \item charm (c), charge $+\nicefrac{2}{3}$,
-        \item bottom (b), charge $-\nicefrac{1}{3}$,
-        \item top (t), charge $+\nicefrac{2}{3}$.
+        \item \textbf{fermion or boson} --- a \emph{fermion} has half-integer spin and obeys the Pauli exclusion principle, so no two may share a state, whereas a \emph{boson} has integer spin and any number may share one (\cref{sec:indistinguishability}). Matter is made of fermions, forces are carried by bosons.
+        \item \textbf{elementary or composite} --- \emph{quarks} and \emph{leptons} are the elementary fermions, while a \emph{hadron} is a composite particle built out of quarks and held together by the strong interaction.
     \end{itemize}
 
-    Besides the electromagnetic and weak interactions, quarks also feel the strong interaction, because they carry \emph{colour charge} (labelled red, green, blue, names with no connection to optics, \cref{sec:interactions}). The carriers of the strong force are $8$ massless \emph{gluons} (\cref{tab:interactions}), which themselves carry colour and therefore interact with one another.
+    \subsection{Quarks and leptons}
 
-    A hadron must be colour-neutral overall. This is achieved either by combining three quarks of three different colours (a \emph{baryon}, such as the proton or neutron) or a quark with an antiquark of the matching anticolour (a \emph{meson}). A useful bookkeeping quantum number is the \emph{baryon number} ($+1$ for baryons, $0$ for mesons).
+        A \emph{lepton} is an elementary fermion that does not feel the strong interaction and can therefore exist on its own. The six come in three pairs, plus their antiparticles:
 
-    A baryon is a type of hadron (a particle built from quarks) made of three quarks bound together by the strong force.\todo{Duplicate: this repeats the definition given in the paragraph immediately above. Delete one of the two.}
+        \begin{itemize}
+            \item the electron and the electron neutrino,
+            \item the muon and the muon neutrino,
+            \item the tau and the tau neutrino.
+        \end{itemize}
 
-    \todo{there should be a sentece about how baryons build aup mass of the universe but there is also anitmatter and dark matter. anti-mass, dakr-mass etc. a little nuance but very brief.}
+        The three charged leptons carry electric charge $-1$ (their antiparticles $+1$), while the three neutrinos are electrically neutral. All of them feel the weak interaction.
+
+        A \emph{quark} is an elementary fermion that does feel the strong interaction, because it carries \emph{colour charge} (\cref{sec:interactions}), and is never found on its own. The six \enquote{flavours}, plus antiquarks, are:
+
+        \begin{itemize}
+            \item up (u), charge $+\nicefrac{2}{3}$,
+            \item down (d), charge $-\nicefrac{1}{3}$,
+            \item strange (s), charge $-\nicefrac{1}{3}$,
+            \item charm (c), charge $+\nicefrac{2}{3}$,
+            \item bottom (b), charge $-\nicefrac{1}{3}$,
+            \item top (t), charge $+\nicefrac{2}{3}$.
+        \end{itemize}
+
+        Both sets are grouped into three \emph{generations}---up and down, charm and strange, top and bottom for the quarks, with the three lepton pairs above in the same order---each generation a heavier copy of the one before. Ordinary matter uses only the first, up and down quarks and the electron, since everything in the other two decays within a fraction of a second.
+
+    \subsection{Force carriers}
+
+        The interactions are carried by spin-1 bosons: eight massless \emph{gluons} for the strong interaction, the massless \emph{photon} for the electromagnetic one, and the heavy $W^{+}$, $W^{-}$ and $Z^{0}$ for the weak. Gluons themselves carry colour, which is why they attract one another and why the strong interaction behaves unlike the other three. The spin-0 \emph{Higgs boson} is not a force carrier at all but the quantum of the field that gives the $W$, the $Z$ and the charged fermions their masses. Carrier masses, ranges and relative strengths are collected in \cref{tab:interactions}.
+
+    \subsection{The structure of hadrons}
+
+        A hadron must be \emph{colour-neutral} overall, and there are exactly two ways of arranging that. Three quarks, one of each colour, make a \emph{baryon}, the proton ($uud$) and the neutron ($udd$) being the two that matter. A quark together with an antiquark of the matching anticolour makes a \emph{meson}, the lightest being the pion. Baryons are therefore composite fermions and mesons composite bosons, which is the two cuts above crossing each other.
+
+        Electric charge is simply the sum of the quark charges: $+\nicefrac{2}{3}+\nicefrac{2}{3}-\nicefrac{1}{3}=+1$ for the proton and $+\nicefrac{2}{3}-\nicefrac{1}{3}-\nicefrac{1}{3}=0$ for the neutron. Mass is not additive in the same way---almost all of a hadron's mass is the energy of the gluon field binding the quarks rather than the quark masses themselves (\cref{sec:interactions}). A useful bookkeeping quantum number is the \emph{baryon number}, $+1$ for a baryon, $-1$ for an antibaryon and $0$ for a meson, conserved in every interaction so far observed, which is why the proton, being the lightest baryon, has nothing it could decay into.
+
+        Baryons are what ordinary matter is made of, but ordinary matter is a small part of the whole: baryonic matter is about $5\%$ of the energy content of the Universe, non-baryonic \emph{dark matter} about $27\%$ and \emph{dark energy} the remaining $68\%$, so of everything that gravitates, some five parts in six are dark. The two dark components are not variants of one thing---dark matter is matter, which clumps and attracts and is what holds galaxies together, whereas dark energy is a property of empty space itself, spread perfectly evenly and pushing, and is what makes the expansion of the Universe accelerate. Neither is odd in its mass: dark matter has ordinary mass and gravitates normally, and what is dark about it is only that it neither emits nor absorbs light. \emph{Antimatter} likewise has ordinary positive mass and falls downwards like anything else---there is no negative mass---and the open question about it is why so little of it survived, when the Big Bang should have made equal amounts.
 
 \section{Band structure of electron states in crystals; metals, semiconductors, insulators}
 \label{sec:bands}
 
     Band theory is the quantum-mechanical account of electrical conduction. Unlike the classical picture, it starts from the wave nature of electrons and from \emph{Fermi--Dirac} statistics (\cref{eq:fermi-dirac}). Its central idea is the \emph{energy band}: a continuous range of energies that electrons in a solid may occupy.
 
-    The bands arise in the same way as molecular orbitals do (\cref{sec:atom-molecule}), only carried to the limit. Bring two atoms together and each atomic level splits in two.\todo{always two or split in general? why split at all?} Bring $10^{23}$ together in a crystal and each level splits into $10^{23}$ levels so closely spaced as to form a continuous band.
-    
-    Between the bands lie \emph{forbidden gaps} in which no electron state exists at all, and these are a consequence of the periodicity of the lattice: an electron wave whose wavelength matches the lattice spacing is Bragg-reflected by the crystal (\cref{eq:bragg}) and cannot propagate through it.\todo{MODERATE EDIT: explain plainly---an electron wave whose wavelength fits the lattice is reflected back on itself and forms a standing wave, so no travelling state exists at that energy. The cross-reference to \cref{eq:bragg} is in place; the explanation is what is missing.}
+    The bands arise in the same way as molecular orbitals do (\cref{sec:atom-molecule}), only carried to the limit. Bring two atoms together and each atomic level splits in two, and in general $N$ atoms give $N$ levels, because once the orbitals overlap the Pauli exclusion principle (\cref{sec:indistinguishability}) will not let the electrons all remain in one and the same state.\todoans{As many levels as there are atoms, not always two---two atoms merely happen to give two. The mechanism is orbital overlap. Far apart, the atoms' orbitals are independent and their levels coincide. As they approach, the two orbitals can combine either in phase or out of phase: the in-phase (bonding) combination piles electron density between the nuclei and lies lower in energy, the out-of-phase (antibonding) one has a node between them and lies higher. Pauli is what forces the split to happen at all, and its size grows with the overlap, which is why the outer bands are wide while the inner levels are barely split.} Bring $10^{23}$ together in a crystal and each level splits into $10^{23}$ levels so closely spaced as to form a continuous band.
+
+    Between the bands lie \emph{forbidden gaps} in which no electron state exists at all, and these are a consequence of the periodicity of the lattice. An electron wave whose wavelength fits the lattice spacing satisfies the Bragg condition (\cref{eq:bragg}) and is reflected straight back on itself, so the forward and backward waves add to a standing wave, which carries nothing anywhere. At those energies there is simply no travelling state for an electron to occupy, and that absence is the gap.
 
     For the outer (valence) electrons two bands matter:
 
     \begin{itemize}
         \item the \textbf{valence band} --- the energies of electrons still bound to their atoms,
         \item the \textbf{conduction band} --- the energies of electrons freed from their atoms, which can then carry current.
-    \end{itemize}\todo{The other mention is \cref{tab:conduction-kinds} in \cref{sec:electric-field}, which now points back here. Check for further mentions before closing this.}
+    \end{itemize}
 
-    Whether a solid conducts depends not on how many electrons it has but on whether a band is partly empty. In a completely full band every state is occupied, so an applied field has nowhere to move an electron to: for every electron it would accelerate one way there is another going the other way, and the two cancel exactly. Only a partly filled band leaves states free just above the occupied ones, and only then can a field produce a net drift. The energy dividing occupied from empty states is the \emph{Fermi level}\todo{add that it is temp-dependent if it is} (\cref{subsec:quantum-statistics}), and what matters is whether it falls inside a band or inside a gap.
+    Whether a solid conducts depends not on how many electrons it has but on whether a band is partly empty. In a completely full band every state is occupied, so an applied field has nowhere to move an electron to: for every electron it would accelerate one way there is another going the other way, and the two cancel exactly. Only a partly filled band leaves states free just above the occupied ones, and only then can a field produce a net drift. The energy dividing occupied from empty states is the \emph{Fermi level} (\cref{subsec:quantum-statistics}), and what matters is whether it falls inside a band or inside a gap. It does shift with temperature, negligibly so in a metal, but appreciably in a semiconductor, where it lies near the middle of the gap and moves with both temperature and doping.
 
     The size of the gap sorts materials into three classes:
 
     \begin{itemize}
         \item \textbf{Metals} have no gap: either the valence band is only partly filled, so its electrons move freely, or the valence and conduction bands overlap. Either way the Fermi level lies within a band, there are many mobile electrons and current flows easily.
-        \item \textbf{Semiconductors} have a small gap (for example Ge $\simeq0.7$~eV, Si $\simeq1.1$~eV, GaAs $\simeq1.4$~eV). At absolute zero the conduction band is empty and the material is an insulator, but at higher temperatures electrons are thermally excited across the gap, leaving mobile \enquote{holes} behind in the valence band, so that conductivity rises with temperature---the opposite of a metal (\cref{sec:electric-field}). Semiconductors can also be \emph{doped}: adding donor atoms with one valence electron too many gives an n-type semiconductor, adding acceptor atoms with one too few gives a p-type one. Joining the two makes a p--n junction, which passes current in one direction only, and that junction is the basis of the diode, the transistor and the solar cell.
-        \item \textbf{Insulators} have a large gap, conventionally above about $3$--$4$~eV (diamond has $5.5$~eV), so almost no electrons reach the conduction band and current barely flows.
-    \end{itemize}\todo{Give the optical range in both nm and eV. \cref{sec:spectroscopy} already has the nm figures ($380$--$750$~nm), so the eV equivalents (roughly $1.7$--$3.3$~eV) are what is missing.}
+        \item \textbf{Semiconductors} have a small gap (for example Ge $\simeq\qty{0.7}{\electronvolt}$, Si $\simeq\qty{1.1}{\electronvolt}$, GaAs $\simeq\qty{1.4}{\electronvolt}$). At absolute zero the conduction band is empty and the material is an insulator, but at higher temperatures electrons are thermally excited across the gap, leaving mobile \enquote{holes} behind in the valence band---a hole being the vacancy a departed electron leaves, which drifts and conducts as though it were a positive charge (\cref{tab:conduction-kinds})---so that conductivity rises with temperature, the opposite of a metal (\cref{sec:electric-field}). Semiconductors can also be \emph{doped}: adding donor atoms with one valence electron too many gives an n-type semiconductor, adding acceptor atoms with one too few gives a p-type one. Joining the two makes a p--n junction, which passes current in one direction only, and that junction is the basis of the diode, the transistor and the solar cell.
+        \item \textbf{Insulators} have a large gap, conventionally above about \qtyrange{3}{4}{\electronvolt} (diamond has \qty{5.5}{\electronvolt}), so almost no electrons reach the conduction band and current barely flows.
+    \end{itemize}
 
-    There is no sharp dividing line between a small-gap semiconductor and a large-gap insulator, and the boundary quoted above is only a convention---some texts put it as high as $6$~eV. The gap also fixes the optical behaviour, since a photon can be absorbed only if it has at least the gap energy: this is why silicon is opaque and diamond, whose gap exceeds the energy of any visible photon (\cref{sec:spectroscopy}), is transparent.
+    The same gap also decides what the material looks like. Visible light spans \qtyrange{380}{750}{\nano\metre} (\cref{sec:spectroscopy}), which in photon energy is roughly \qtyrange{1.7}{3.3}{\electronvolt}. A semiconductor whose gap is around \qty{1}{\electronvolt} therefore has a state waiting for every visible photon, absorbs the lot and looks opaque, whereas an insulator whose gap exceeds \qty{3.3}{\electronvolt} offers a visible photon nowhere to put an electron and is transparent. That is why diamond and quartz are clear and silicon is not.

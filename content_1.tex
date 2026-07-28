@@ -34,7 +34,7 @@
     where the parameter $\gamma$ is known as the Lorentz factor\footnote{In general, time dilation depends solely on the magnitude of the relative velocity between two frames, whereas length contraction is a directional phenomenon that occurs strictly parallel to the axis of motion---the $x$-axis in this standard configuration.}:
 
     \begin{equation}\label{eq:gamma}
-        \gamma = \frac{1}{\sqrt{1 - \beta^2}} \geq 1, \qquad \beta \equiv \frac{v}{c} .
+        \gamma \equiv \frac{1}{\sqrt{1 - \beta^2}} \geq 1, \qquad \beta \equiv \frac{v}{c} .
     \end{equation}
 
     Note that in the limit $\nicefrac{v}{c} \to 0$ we have $\gamma \to 1$ and the Lorentz transformation reduces to the Galilean one (\cref{eq:gallilean}).
@@ -84,7 +84,7 @@
 \section{Fundamental interactions; carriers and ranges of interactions, charges and characteristic energy scales}
 \label{sec:interactions}
 
-    Every process in physics comes down to particles interacting, and every known interaction belongs to one of four families. In a quantum theory an interaction is not a force reaching across empty space but an \emph{exchange}: two particles interact by passing a third particle between them, called the \emph{interaction carrier}. The properties of the carrier---its mass, its spin, and the kind of charge it responds to---fix everything else, in particular how far the interaction reaches and how strong it is.\
+    Every process in physics comes down to particles interacting, and every known interaction belongs to one of four families. In a quantum theory an interaction is not a force reaching across empty space but an \emph{exchange}: two particles interact by passing a third particle between them, called the \emph{interaction carrier}. The properties of the carrier---its mass, its spin, and the kind of charge it responds to---fix everything else, in particular how far the interaction reaches and how strong it is.
 
     \begin{figure}[htbp]
         \centering
@@ -96,13 +96,13 @@
     What each interaction is responsible for:
 
     \begin{itemize}
-        \item \textbf{Strong.} Binds quarks into protons, neutrons and other \emph{hadrons}, meaning particles built out of quarks. What is left over from this binding reaches slightly beyond each nucleon and holds protons and neutrons together in the nucleus. That residue is what overcomes the electrostatic repulsion between the protons and lets nuclei with more than one proton exist at all.
+        \item \textbf{Strong.} Binds quarks into protons, neutrons and other \emph{hadrons}, meaning particles built out of quarks (\cref{sec:particles}). What is left over from this binding reaches slightly beyond each nucleon and holds protons and neutrons together in the nucleus. That residue is what overcomes the electrostatic repulsion between the protons and lets nuclei with more than one proton exist at all.
         \item \textbf{Electromagnetic.} Binds electrons to nuclei, atoms into molecules and molecules into solids, so all of chemistry and all of ordinary matter's rigidity. Light is a propagating disturbance of the same field.
         \item \textbf{Weak.} Converts one kind of quark or lepton into another. It drives beta decay, the first step of hydrogen fusion in stars, and essentially every interaction a neutrino ever has.
         \item \textbf{Gravitational.} Acts on everything that carries energy. It is by far the feeblest between two individual particles, but it dominates on astronomical scales because its charge---mass--energy---comes with one sign only and never cancels.
     \end{itemize}
 
-    The first three are described by the \emph{Standard Model}\footnote{Energies in the table are quoted in \emph{electronvolts}, $1$~eV being the energy an electron gains across a potential difference of one volt, $1\,\mathrm{eV}=1.602\times10^{-19}$~J. Masses are quoted in the same units by \emph{mass--energy equivalence}, $E=mc^{2}$. Strictly the unit is then eV$/c^{2}$, but the $c^{2}$ is left out and one simply says the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2}=1.783\times10^{-36}$~kg.} (\cref{fig:standard-model-particles}), the quantum field theory of elementary particles. Matter in it consists of twelve spin-\nicefrac{1}{2} particles arranged in three generations: six quarks (up and down, charm and strange, top and bottom) and six leptons (electron, muon and tau, each with its neutrino). \emph{Ordinary matter uses only the first generation (up and down quarks and the electron)}while the heavier generations are copies that decay quickly. 
+    The first three are described by the \emph{Standard Model}\footnote{Energies in the table are quoted in \emph{electronvolts}, $1$~eV being the energy an electron gains across a potential difference of one volt, $1\,\mathrm{eV}=1.602\times10^{-19}$~J. Masses are quoted in the same units by \emph{mass--energy equivalence}, $E=mc^{2}$. Strictly the unit is then eV$/c^{2}$, but the $c^{2}$ is left out and one simply says the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2}=1.783\times10^{-36}$~kg.} (\cref{fig:standard-model-particles}), the quantum field theory of elementary particles. Its matter content is twelve spin-\nicefrac{1}{2} particles arranged in three generations, six quarks and six leptons, classified in \cref{sec:particles}. \emph{Ordinary matter uses only the first generation (up and down quarks and the electron)} while the heavier generations are copies that decay quickly.
 
     The interactions are carried by spin-1 vector bosons: eight gluons, the photon, and the $W^{+}$, $W^{-}$ and $Z^{0}$ bosons. One further particle, the spin-0 scalar \emph{Higgs boson} of mass about $125$~GeV, is the quantum of the field that gives the $W$, the $Z$ and the charged fermions their masses. Gravitation stands outside this framework and has no accepted quantum description.
 
@@ -132,9 +132,9 @@
         \includegraphics[width=0.16\textwidth]{graphics/Quark_structure_proton.pdf}
         \caption{Proton.}
         \label{fig:proton}
-    \end{wrapfigure}
+    \end{wrapfigure}\todo{reference in the appropriate secition}
 
-    For example, the proton (\cref{fig:proton}) has quark content $uud$ and the neutron $udd$. Each \emph{baryon} must contain one quark of each colour, but the particular colour carried by each quark is not fixed: gluon exchange constantly reshuffles the assignment among the three, so only the combination as a whole is colour-neutral. The proton and neutron charges follow by adding the individual quark charges, $+\nicefrac{2}{3}$ for up and $-\nicefrac{1}{3}$ for down: $+\nicefrac{2}{3}+\nicefrac{2}{3}-\nicefrac{1}{3}=+1$ for the proton and $+\nicefrac{2}{3}-\nicefrac{1}{3}-\nicefrac{1}{3}=0$ for the neutron.\todo{Repetition: the quark charges and the $uud$/$udd$ content are given again in \cref{sec:particles}. SIGNIFICANT EDIT---decide which section owns this and cross-reference from the other.}
+    For example, the proton (\cref{fig:proton}) has quark content $uud$ and the neutron $udd$, and their electric charges follow by adding the quark charges (\cref{sec:particles}). Each \emph{baryon} must contain one quark of each colour, but the particular colour carried by each quark is not fixed: gluon exchange constantly reshuffles the assignment among the three, so only the combination as a whole is colour-neutral.
 
     The ranges in \cref{tab:interactions} are not independent facts but follow from the carrier masses. An exchanged carrier is never observed directly and so need not balance the energy books---it is \emph{virtual}, in effect borrowed from the vacuum provided the loan is repaid quickly. The energy--time uncertainty relation $\Delta E\,\Delta t\geq\nicefrac{\hbar}{2}$ (\cref{sec:uncertainty}) sets how quickly: borrowing at least the rest energy $mc^{2}$ limits its life to $\Delta t\sim\nicefrac{\hbar}{mc^{2}}$, and travelling at most at the speed of light it covers
 
@@ -314,7 +314,7 @@
 
     \subsection{Limits of applicability of Newton's laws}
 
-        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes more complicated in more intricate coordinate systems. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{sec:variational}), work better.
+        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes more complicated in more intricate coordinate systems\todo{intricate?}. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{sec:variational}), work better.
 
         Quantum mechanics describes the behaviour of particles on a small scale, where Newtonian mechanics fails. The uncertainty principle (\cref{sec:uncertainty}), for example, forbids a particle a sharp position and a sharp momentum at the same time, whereas classical mechanics rests on \emph{exact trajectories}.
 
@@ -360,7 +360,7 @@
         \begin{postulate}{superposition}
             \label{post:superposition}
             Any sum of possible states is itself a possible state: if $\Psi_{1}$ and $\Psi_{2}$ are states, so is $c_{1}\Psi_{1} + c_{2}\Psi_{2}$ with complex $c_{1}, c_{2}$.
-        \end{postulate}
+        \end{postulate}\todo{c1 and c2 are normalised such that the particle is described by either of the wavefunctions which themsleves are normalised such that the total probability is 1.? so a single wavefunction is normalised differently if it is added to another to create a superposition?}
 
         If a system can be prepared in state A and in state B, it can be prepared in the combination \enquote{A + B}, realising both alternatives at once. The equation governing $\Psi$ turns out to be linear (\cref{eq:tdse}), so each term evolves on its own and the system stays a superposition at every later instant.
 
@@ -504,7 +504,7 @@
             \Psi = c_{1}\psi_{1}e^{-\frac{i}{\hbar}E_{1}t} + c_{2}\psi_{2}e^{-\frac{i}{\hbar}E_{2}t} .
         \end{equation*}
 
-        The two phases turn at different rates, so the phase \emph{difference} between the terms grows steadily, and the interference term in $|\Psi|^{2}$ oscillates at the frequency $\omega_{21} = \nicefrac{\left(E_{2}-E_{1}\right)}{\hbar}$. The probability density sloshes back and forth at that frequency instead of standing still, and for an electron in an atom $\omega_{21}$ is precisely the frequency of the light emitted or absorbed on that transition. A \emph{global} phase changes nothing, a \emph{relative} phase changes everything.
+        The two phases turn at different rates, so the phase \emph{difference} between the terms grows steadily, and the interference term in $|\Psi|^{2}$ oscillates at the frequency $\omega_{21} = \nicefrac{\left(E_{2}-E_{1}\right)}{\hbar}$. The probability density sloshes back and forth at that frequency instead of standing still, and for an electron in an atom $\omega_{21}$ is precisely the frequency of the light emitted or absorbed on that transition. A \emph{global} phase changes nothing, a \emph{relative} phase changes everything.\todo{that related to fermi golden rule?}
 
     \subsection{States as vectors: Dirac notation}
 
@@ -648,7 +648,7 @@
 
         Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.\todo{SIGNIFICANT EDIT (deferred): document-wide notation sweep---classical $\vec{L}$ against quantum $\hat{\vec{L}}$, and hats on every operator. It touches all three content files, so do it in one pass.}
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.\todo{SIGNIFICANT EDIT (deferred): document-wide notation sweep---separate notation should be used for quantum and classical angular momentum, and for spin and orbital angular momentum in the entire document. all operators should carry hats}
 
         The precession frequency is given by
 
