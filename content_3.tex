@@ -5,28 +5,32 @@
 \section{Physical foundations of optical spectroscopy; electron, oscillatory and rotational excitations of particles and the corresponding ranges of the spectrum of electromagnetic radiation}
 \label{sec:spectroscopy}
 
-    Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.
+    Optical spectroscopy is an analytical technique which studies the interaction of electromagnetic radiation with matter. By analysing the absorption, emission or scattering of light by atoms and molecules, one obtains information about their electronic, vibrational and rotational structure.\todo{Somewhere the language like rot-rot coupling, spin-ortibt, rotational -vibrational etc should be explained with cross references}
 
-    A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. The larger the energy of a transition, the higher the frequency (and the shorter the wavelength) of the photon absorbed or emitted, since $E = hf = \nicefrac{hc}{\lambda}$. In decreasing order of energy these are electronic, vibrational and rotational excitations, each about one to two orders of magnitude below the one above it. In molecules all three are present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it, and this is what turns what would be one atomic line into a broad structured band.
+    A molecule can store energy in three ways, and they differ greatly in the amount of energy involved. In decreasing order of energy these are \emph{electronic, vibrational} and \emph{rotational} excitations\todo{I understand that these are completely separate from quantum atom description with n,l,m and it treats the whole molecule as an object that responds to external stuff}, each about one to two orders of magnitude below the one above it. In molecules all three are present at once, so a single electronic transition carries a whole comb of vibrational and rotational sub-levels on top of it, and this is what turns what would be one atomic line into a broad structured band.
 
-    A transition is only seen if the light can couple to it, which for absorption and emission means that the motion must change the electric dipole moment of the molecule. This is why a symmetric molecule such as N$_{2}$ has no infrared spectrum at all, while CO$_{2}$ and H$_{2}$O do, and it is the whole basis of the greenhouse effect.
+    A transition is only seen if the light can couple to it, which for absorption and emission means that the motion\todo{motion of what must change what} must change the electric dipole moment of the molecule. This is why a symmetric molecule such as N$_{2}$ has no infrared spectrum at all, while CO$_{2}$ and H$_{2}$O do, and it is the whole basis of the greenhouse effect.\todo{So symmetric molecules are unaffected by EM field around them untill it can couple to electron transistions?}
 
     \subsection{Electronic excitations}
 
-        Electronic excitations are jumps of an electron between the bound energy levels of an atom or molecule (\cref{sec:atom-molecule}). When a photon of the right energy is absorbed, an electron moves from a lower to a higher level, which shows as a line or band in the absorption spectrum. These are the largest steps, a few electronvolts, which puts them in the visible and near-ultraviolet, roughly $200$--$800$~nm. Visible light itself runs from about $380$~nm to $750$~nm, that is from about $790$~THz down to $400$~THz, the edges being a matter of convention rather than of physics. Electronic transitions are also what makes things coloured, since the colour we see is the part of the visible spectrum that was \emph{not} absorbed.
+        Electronic excitations are jumps of an electron between the bound energy levels of an atom or molecule (\cref{sec:atom-molecule}). When a photon of the right energy is absorbed, an electron moves from a lower to a higher level, which shows as a line or band in the absorption spectrum. These are the largest steps, a few electronvolts, which puts them in the visible and near-ultraviolet, roughly $200$--$800$~nm. Visible light itself runs from about $380$~nm to $750$~nm, that is from about $790$~THz down to $400$~THz.
 
     \subsection{Vibrational excitations}
 
-        Vibrational excitations are oscillations of the atoms within a molecule about their equilibrium positions, for example the stretching or bending of a bond. Any potential minimum is harmonic for small displacements, so the levels are those of a harmonic oscillator, $E_{v} = \left(v+\nicefrac{1}{2}\right)\hbar\omega$ with $v = 0,1,2,\dots$ (\cref{sec:quantisation}), and are therefore evenly spaced. The spacing is of order $0.1$~eV, one to two orders of magnitude below an electronic transition, which places them in the infrared, roughly $2.5$--$25$~\si{\micro\metre}. Chemists quote the same thing as a wavenumber, $\nicefrac{1}{\lambda} = 400$--$4000$~cm$^{-1}$, and each functional group has its own characteristic band, which is what makes infrared spectroscopy an identification tool.
+        Vibrational excitations are oscillations of the atoms within a molecule about their equilibrium positions, for example the stretching or bending of a bond. Any potential minimum is harmonic for small displacements, so the levels are those of a harmonic oscillator, $E_{v} = \left(v+\nicefrac{1}{2}\right)\hbar\omega$ with $v = 0,1,2,\dots$ (\cref{sec:quantisation}), and are therefore evenly spaced. The spacing is of order $0.1$~eV, which places them in the infrared, roughly $2.5$--$25$~\si{\micro\metre}.
 
-    \subsection{Rotational excitations}
+    \subsection{Rotational excitations}\todo{same as above - these are not related to quantum orbital angular moment etc? are whole molecules in that sense quantum mechanically described by a completely different wavefucntion than electrons inside them?}
 
-        Rotational excitations are changes in the rotation of the whole molecule about its centre of mass, so they change its angular momentum, which is quantised as in \cref{sec:angular-momentum}. The levels are $E_{J} = BJ(J+1)$ with $J = 0,1,2,\dots$, so unlike the vibrational ladder they are not evenly spaced but spread out as $J$ grows, and the constant $B$ is inversely proportional to the moment of inertia---heavier molecules have more closely spaced levels. These are the smallest steps of the three, of order a few $\mathrm{meV}$ down to much less, giving wavelengths from a fraction of a millimetre to a few centimetres: the far infrared and the microwave region. Rotational spectra are the sharpest of the three and measure bond lengths directly through $B$, though a spectrum with all three kinds of structure at once can be dense and hard to disentangle.
+        Rotational excitations are changes in the rotation of the whole molecule about its centre of mass, so they change its angular momentum, which is quantised as in \cref{sec:angular-momentum}. The levels are $E_{J} = BJ(J+1)$ with $J = 0,1,2,\dots$, so unlike the vibrational ladder they are not evenly spaced but spread out as $J$ grows, and the constant $B$ is inversely proportional to the moment of inertia---heavier molecules have more closely spaced levels. These are the smallest steps of the three, of order a few $\mathrm{meV}$ down to much less, giving wavelengths from a fraction of a millimetre to a few centimetres: the far infrared and the microwave region. Rotational spectra are the sharpest of the three.
 
 \section{Phenomena accompanying the interaction of electromagnetic radiation with atoms and molecules; stimulated and spontaneous emission, absorption}
 \label{sec:light-matter}
 
-    An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon. All three are \emph{resonant}, meaning they occur only when the photon energy $hf$ matches the gap between two levels, and each therefore probes the level scheme directly. Light also interacts off resonance, by \emph{scattering}: elastically, with the photon merely redirected and its energy unchanged (Rayleigh scattering, which is stronger for short wavelengths and is why the sky is blue), or inelastically, with the molecule left in a different vibrational state so that the scattered photon has shifted in frequency (the Raman effect, which reaches vibrations that infrared absorption cannot). A further everyday case is fluorescence, in which a molecule absorbs a high-energy photon, loses a little energy without radiating, and emits a photon of lower energy.
+    An atom or molecule with discrete energy levels can exchange energy with light in three basic ways: it can absorb a photon, emit one spontaneously, or be triggered to emit one by a passing photon. All three are \emph{resonant}, meaning they occur only when the photon energy $hf$ matches the gap between two levels.
+    
+    Light also interacts off resonance,\todo{off resonance is a weird phrasing} by \emph{scattering}: elastically, with the photon merely redirected and its energy unchanged (Rayleigh scattering, which is stronger for short wavelengths and is why the sky is blue), or inelastically, with the molecule left in a different vibrational state so that the scattered photon has shifted in frequency (the \emph{Raman effect}\todo{explained here or referenced}, which reaches vibrations that infrared absorption cannot).
+    
+    A further everyday case is fluorescence, in which a molecule absorbs a high-energy photon, loses a little energy without radiating, and emits a photon of lower energy.
 
     \subsection{Absorption}
 
@@ -34,7 +38,7 @@
 
         In cold, rarefied atomic gases the excited levels are well separated, so only photons of a few sharply defined energies can be absorbed. If white (continuous-spectrum) light passes through such a gas, dark lines appear in the transmitted spectrum at exactly those energies. This is how the composition of a stellar atmosphere is read off.
 
-        In molecules the level scheme is richer, because on top of the electronic levels there are the vibrational and rotational levels of \cref{sec:spectroscopy}. These lie so close together that they merge into broad absorption \emph{bands} rather than sharp lines.
+        In molecules the level scheme is richer, because on top of the electronic levels there are the vibrational and rotational levels of \cref{sec:spectroscopy}. These lie so close together that they merge into broad absorption \emph{bands} rather than sharp lines. Moreover, molecular systemswith many electrons are also intrinsically more complicated and require approximate methods which affect the results.\todo{phrasing ok?}
 
     \subsection{Spontaneous emission}
 
@@ -52,7 +56,7 @@
 
     \subsection{The Einstein coefficients}
 
-        The three processes are put on one footing by writing down their rates per atom. Let $\rho(f)$ be the energy density of the radiation per unit frequency at the transition frequency, and let levels $1$ and $2$ be the lower and the upper one. Then absorption goes at $B_{12}\rho(f)$, stimulated emission at $B_{21}\rho(f)$, and spontaneous emission at $A_{21}$ alone, with no $\rho$ in it, because it needs no incident light. The three constants are the \emph{Einstein coefficients}.
+        The three processes are put on one footing by writing down their rates per atom. Let $\rho(f)$ be the energy density of the radiation per unit frequency at the transition frequency, and let levels $1$ and $2$ be the lower and the upper one.\todo{add one more sentence that clarifyins what is rho} Then absorption goes at $B_{12}\rho(f)$, stimulated emission at $B_{21}\rho(f)$, and spontaneous emission at $A_{21}$ alone, with no $\rho$ in it, because it needs no incident light. The three constants are the \emph{Einstein coefficients}.
 
         Requiring these rates to balance for atoms in equilibrium with black-body radiation (\cref{eq:planck}) fixes two relations between them,
 
@@ -60,20 +64,20 @@
             g_{1}B_{12} = g_{2}B_{21}, \qquad \frac{A_{21}}{B_{21}} = \frac{8\pi hf^{3}}{c^{3}},
         \end{equation*}
 
-        where $g_{1}$ and $g_{2}$ count the states at each level. Two conclusions follow, and they are the reason the formalism is worth quoting. First, absorption and stimulated emission are equally likely per photon, so which one wins depends only on which level holds more atoms. In thermal equilibrium the lower one always does, so a beam is always attenuated. Amplification requires a \emph{population inversion}, $N_{2} > N_{1}$, which cannot occur in equilibrium and has to be created by pumping the medium, and which needs at least three levels to sustain. Second, the ratio $\nicefrac{A_{21}}{B_{21}}$ grows as $f^{3}$, so spontaneous emission swamps stimulated emission at high frequency. That is why the maser came before the laser and why an X-ray laser is hard to build.
+        where $g_{1}$ and $g_{2}$ count the states at each level\todo{what?}. Two conclusions follow, and they are the reason the formalism is worth quoting. First, absorption and stimulated emission are equally likely per photon, so which one wins depends only on which level holds more atoms. In thermal equilibrium the lower one always does, so a beam is always attenuated. Amplification requires a \emph{population inversion}, $N_{2} > N_{1}$, which cannot occur in equilibrium and has to be created by pumping the medium, and which needs at least three levels to sustain. Second, the ratio $\nicefrac{A_{21}}{B_{21}}$ grows as $f^{3}$, so spontaneous emission swamps stimulated emission at high frequency. That is why the maser came before the laser and why an X-ray laser is hard to build.
 
 \section{Atoms in strong electric and magnetic fields (the Stark effect, the Zeeman effect); experimental studies of spin}
 \label{sec:atoms-fields}\todoper{look online for simpler explanation}
 
     The atomic levels and quantum numbers used throughout this section, and the ordering of the splittings by size, are set out in \cref{sec:atom-molecule}. Both effects below are treated as perturbations of the atomic Hamiltonian (\cref{sec:approximate-methods}).
 
-    \paragraph{The Stark effect}
+    \paragraph{The Stark effect---electric perturbation}
 
     The Stark effect is the splitting or shifting of atomic energy levels in an external electric field. We take the field along $z$, so the extra potential energy of the electron is
 
     \begin{equation*}
         \vec{E} = E\hat{e}_z \xrightarrow{} \hat{H}' = eEz = eEr\cos\theta,
-    \end{equation*}
+    \end{equation*}\todo{if this was supposed to be a unit vector ez, do not use it adn siimplify with Ez}
 
     a perturbation added to the atomic Hamiltonian (perturbation theory and the first-order shift are set out in \cref{eq:pt-e1}).
 
@@ -85,7 +89,7 @@
 
     because the ground state is spherically symmetric, so the positive and negative $z$ contributions cancel. The ground state therefore shifts only at \emph{second} order, proportionally to $E^2$ (the quadratic Stark effect).
 
-    Excited levels behave differently when they are degenerate. The $n=2$ states $\ket{200}$ and $\ket{210}$ have the same energy and are mixed by the field, so here we must use \emph{degenerate} perturbation theory: diagonalise $\hat H'$ within the $n=2$ manifold. The only non-zero matrix elements are
+    Excited\todo{I think what follows here may be trimmed to the qualitative conclusions only. diagonalisation, manifolds are stuff not disucces before and i do not understand how they work and they like other things should not be just stated. may trim.} levels behave differently when they are degenerate. The $n=2$ states $\ket{200}$ and $\ket{210}$ have the same energy and are mixed by the field, so here we must use \emph{degenerate} perturbation theory: diagonalise $\hat H'$ within the $n=2$ manifold. The only non-zero matrix elements are
 
     \begin{equation*}
         \bra{200}\hat{H}'\ket{210} = \bra{210}\hat{H}'\ket{200} = -3eEa_0,
@@ -117,9 +121,9 @@
 
     This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate.
 
-    \paragraph{The Zeeman effect}\label{sec:zeeman-effect}
+    \paragraph{The Zeeman effect---magnetic perturbation}\label{sec:zeeman-effect}
 
-    The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, splitting one spectral line into several closely spaced ones.
+    The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, \emph{splitting}\todo{that is correct?} one spectral line into several closely spaced ones.
 
     Taking the field along $z$, the perturbation is $\hat{H}' = -\mu_z B$, where the magnetic moment of the electron is
 
@@ -127,9 +131,9 @@
         \hat{\vec{\mu}} = -\frac{\muB}{\hbar}\left(\hat{\vec{L}} + g_S\,\hat{\vec{S}}\right),
     \end{equation*}
 
-    with $\muB$ the Bohr magneton and $g_S \simeq 2$ the electron spin $g$-factor.
+    with $\muB$ the Bohr magneton\todo{i dont know it. was it ever discussed? trim, define or reference} and $g_S \simeq 2$ the electron spin $g$-factor.
 
-    If the spin plays no role ($S=0$), we have the \emph{normal} Zeeman effect. Since $L_z$ has eigenvalue $\hbar m_l$, the $\hbar$ cancels and the shift is evenly spaced:
+    If\todo{also i think what follows may be trimmed somewhat for an orla answer} the spin plays no role ($S=0$), we have the \emph{normal} Zeeman effect. Since $L_z$ has eigenvalue $\hbar m_l$, the $\hbar$ cancels and the shift is evenly spaced:
 
     \begin{equation*}
         E^{(1)}_{nlm_l} = \bra{nlm_l}\hat{H}'\ket{nlm_l} = \muB B\,m_l .
@@ -145,22 +149,22 @@
 
     \paragraph{Experimental studies of spin}
 
-    The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\nicefrac{1}{2}$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}
+    The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a strongly \emph{inhomogeneous}\todo{meaning? more precise} magnetic field. Any particle with non-zero spin has a magnetic moment whose projection on the field axis is quantised, and in an inhomogeneous field this moment feels a net force that deflects the atom by an amount set by that projection. The beam therefore splits into a discrete number of sub-beams. For silver, quantum mechanics predicts exactly two spots on the screen, corresponding to the two projections of a spin-$\nicefrac{1}{2}$ electron, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}\todo{why silver atoms are associated with only single electron spin. is it valence electron, the only unpaired one or something?}
 
     Three further methods are worth naming:
 
     \begin{itemize}
-        \item \textbf{Magnetic resonance.} A static field splits the spin states by $\Delta E = g\muB B$, and a transverse radio-frequency field drives transitions between them when $hf = \Delta E$, which shows up as a sharp absorption peak. The condition is the same as saying that the driving frequency matches the Larmor precession of the spin (\cref{subsec:quantum-precession}). Applied to electrons this is electron spin resonance, applied to nuclei it is nuclear magnetic resonance, and the latter is the basis of magnetic resonance imaging.
-        \item \textbf{Zeeman spectroscopy.} Counting the lines a spectral line splits into, and measuring their spacing, gives $g_J$ and hence $j$, $l$ and $s$ for the level. Historically it was the anomalous pattern, unexplained by orbital motion alone, that pointed to the existence of spin in the first place.
-        \item \textbf{Precision measurement of $g$.} A single electron held in a Penning trap gives $g_{S}$ to a dozen digits. Its small departure from $2$ is the sharpest test of quantum electrodynamics there is.
+        \item \textbf{Magnetic resonance.} A static field splits the spin states by $\Delta E = g\muB B$, and a transverse radio-frequency field drives transitions between them when $hf = \Delta E$, which shows up as a sharp absorption peak. The condition is the same as saying that the driving frequency matches the Larmor precession of the spin (\cref{subsec:quantum-precession}). Applied to electrons this is electron spin resonance, applied to nuclei it is nuclear magnetic resonance, and the latter is the basis of magnetic resonance imaging.\todo{expand the experimental apporach}
+        \item \textbf{Zeeman spectroscopy.} Counting the lines a spectral line splits into, and measuring their spacing, gives $g_J$ and hence $j$, $l$ and $s$ for the level. Historically it was the anomalous pattern, unexplained by orbital motion alone, that pointed to the existence of spin in the first place.\todo{expand a little. dont add mathematical formalism. just experimental description}
+        \item \textbf{Precision measurement of $g$.} A single electron held in a Penning trap gives $g_{S}$ to a dozen digits. Its small departure from $2$ is the sharpest test of quantum electrodynamics there is.\todo{completely dont understand. define the trap and exaplin this for someone who hears about it for the first time}
     \end{itemize}
 
 \section{Thermal radiation; emissivity and absorption of bodies, Kirchhoff's law, black-body radiation}
 \label{sec:thermal-radiation}
 
-    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the thermal motion of its charged particles. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises. The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
+    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the \emph{thermal motion of its charged particles}. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet\todo{does it go that far?} as the temperature rises. The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
 
-    \subsection{Emissive and absorptive power}
+    \subsection{Emissive and absorptive power}\todo{the question asked about emissivity}
 
         \emph{Emissive power} $E(f,T)$ measures how strongly a body emits: the energy radiated per unit area, per unit time, per unit frequency, at frequency $f$ and temperature $T$.
 
@@ -168,21 +172,22 @@
 
     \subsection{Kirchhoff's law}
 
-        Kirchhoff's law of thermal radiation states that at a fixed temperature the ratio $\varepsilon(f,T)=\nicefrac{E(f,T)}{A(f,T)}$ is the same universal function for \emph{all} bodies. Since a black body has $A=1$, this universal function is simply the emissive power of the black body. In words: a good absorber at some frequency is necessarily an equally good emitter at that frequency, since otherwise a body placed in a cavity at its own temperature would spontaneously heat up or cool down, in breach of the second law (\cref{sec:thermodynamics}).
+        Kirchhoff's law of thermal radiation states that at a fixed temperature the ratio $\varepsilon(f,T)=\nicefrac{E(f,T)}{A(f,T)}$ is the same universal function for \emph{all} bodies\todo{rephrae this sentence all boies hae hte same ratio at the same temp always?}. Since a black body has $A=1$, this universal function is simply the emissive power of the black body. In words: a good absorber at some frequency is necessarily an equally good emitter at that frequency, since otherwise a body placed in a cavity at its own temperature would spontaneously heat up or cool down, in breach of the second law (\cref{sec:thermodynamics}).
 
     \subsection{The black body and Planck's law}
 
-        The calculation has two factors. First, count the standing-wave modes of the field in a cavity: their number per unit volume and per unit frequency grows as $f^{2}$, since ever more ways of fitting a wave into the box appear as the wavelength shortens. Second, give each mode its average energy. Classical equipartition (\cref{sec:macroscopic}) gives every mode the same $\kB T$ regardless of frequency, and the two factors together give the Rayleigh--Jeans law, $\varepsilon \propto f^{2}\kB T$. Since the mode count never stops growing, the predicted power diverges towards short wavelengths and the total radiated power is infinite. This is the \emph{ultraviolet catastrophe}, and it is a failure of the classical prediction rather than an observed effect---the measured spectrum peaks and then falls away.
+        The calculation has two factors. First, count the standing-wave modes of the field in a cavity: their number per unit volume and per unit frequency grows as $f^{2}$, since ever more ways of fitting a wave into the box appear as the wavelength shortens. Second, give each mode its average energy. Classical equipartition (\cref{sec:macroscopic})\todo{check if relevant information is there} gives every mode the same $\kB T$\todo{what statistics is it? maxwell? add refeerence. i though high energy are less likely even clasically...} regardless of frequency, and the two factors together give the Rayleigh--Jeans law, $\varepsilon \propto f^{2}\kB T$. Since the mode count never stops growing, the predicted power diverges towards short wavelengths and the total radiated power is infinite. This is the \emph{ultraviolet catastrophe}, and it is a failure of the classical prediction rather than an observed effect---the measured spectrum peaks and then falls away.
 
-        Planck kept the mode count and replaced the average energy. If a mode of frequency $f$ can only take energy in whole quanta $hf$, then a mode with $hf \gg \kB T$ cannot be excited at all, because there is not enough thermal energy to buy even one quantum. Boltzmann-weighting the ladder of allowed energies gives an average of $\nicefrac{hf}{(e^{hf/\kB T}-1)}$ in place of $\kB T$, and hence
+        Planck kept the mode count and replaced the average energy. If a mode of frequency $f$ can only take energy in whole quanta $hf$, then a mode with $hf \gg \kB T$ cannot be excited at all, because there is not enough thermal energy to buy even one quantum. Boltzmann-weighting the ladder of allowed energies gives an average of $\nicefrac{hf}{(e^{hf/\kB T}-1)}$ in place of $\kB T$, and hence \todo{rephrase the last sentence a little}
 
-        \begin{equation}\label{eq:planck}
+        \begin{empheq}[box=\fbox]{equation}\label{eq:planck}
             \varepsilon(f,T) = \frac{2\pi f^2}{c^2}\,\frac{hf}{e^{hf/\kB T} - 1}.
-        \end{equation}
+        \end{empheq}
+        \keyeqentry{Planck density of states formula}
 
-        The two limits show what has happened. When $hf \ll \kB T$ the exponential may be expanded and the bracket returns $\kB T$, recovering Rayleigh--Jeans, so the classical result survives at low frequency. When $hf \gg \kB T$ the exponential dominates and the emission is cut off exponentially, which removes the divergence. This was the first appearance of the quantum of action anywhere in physics (\cref{sec:qm-experimental}).
+        The two limits show what has happened. When $hf \ll \kB T$ the exponential may be expanded and the bracket returns $\kB T$, recovering Rayleigh--Jeans, so the classical result survives at low frequency. When $hf \gg \kB T$ the exponential dominates and the emission is cut off exponentially, which removes the divergence. This was the first appearance of a quantum anywhere in physics (\cref{sec:qm-experimental}).
 
-        Two limiting laws follow from \cref{eq:planck}: \emph{Wien's displacement law}, giving the wavelength of peak emission, $\lambda_{\max} = \nicefrac{b}{T}$ with $b \simeq 2.9\times10^{-3}$~m\,K, so that hotter bodies peak at shorter wavelengths, and the \emph{Stefan--Boltzmann law}, giving the total power radiated per unit area, $\Phi = \sigma T^4$ with $\sigma \simeq 5.7\times10^{-8}$~W\,m$^{-2}$\,K$^{-4}$.
+        Two limiting laws follow from \cref{eq:planck}: \emph{Wien's displacement law}, giving the wavelength of peak emission, $\lambda_{\max} = \nicefrac{b}{T}$ with $b \simeq 2.9\times10^{-3}$~m\,K, so that hotter bodies peak at shorter wavelengths, and the \emph{Stefan--Boltzmann law}, giving the total power radiated per unit area, $\Phi = \sigma T^4$ with $\sigma \simeq 5.7\times10^{-8}$~W\,m$^{-2}$\,K$^{-4}$.\todo{both equations should be in a centre in a frame to memorise}
 
 \section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}
 \label{sec:diffraction}
