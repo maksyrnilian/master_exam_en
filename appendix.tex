@@ -3,6 +3,15 @@
 \fancyfoot[L]{\small A}
 \appendix
 
+\newgeometry{left=1cm,right=1cm,top=1.5cm,bottom=2.5cm,footskip=1cm,%
+            marginparwidth=1cm,marginparsep=0.3cm}
+\setlength{\headwidth}{\textwidth}   % tell fancyhdr about the new width
 \section{Key equations reference}
 \label{sec:key-equations}
     \printkeyequations
+
+\restoregeometry
+\setlength{\headwidth}{\textwidth}   % and about the restored one
+
+
+    

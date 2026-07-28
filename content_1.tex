@@ -270,7 +270,7 @@
             The axis $\delta\vec{\phi}$ was arbitrary, so the bracket itself must be constant and the angular momentum is conserved,
 
             \begin{equation*}
-                \vec{L} \equiv \vec{r} \times \vec{p} = \const .
+                \vec{L} \equiv \vec{r} \times \vec{p} = \const
             \end{equation*}
 
             In words: if turning the apparatus to face a different direction makes no difference to how it behaves, the combination $\vec{r} \times \vec{p}$ cannot change with time.\todoans{The quantum version of the same statement, if it is wanted: every continuous symmetry is carried out by a unitary operator, that operator is built from a Hermitian \emph{generator}, and if the generator commutes with $\hat{H}$ then \cref{eq:tdse} keeps its expectation value fixed. The generator of rotations is $\hat{\vec{L}}$, of translations $\hat{p}$, and of time translation $\hat{H}$ itself---the same three pairings as above, reached by a different route.}
@@ -695,8 +695,6 @@
             \item \textbf{Classic individual problems.} Many standard problems are variational rather than dynamical: a functional is written down and made stationary, often subject to a constraint. The laws of reflection and refraction follow from Fermat's principle of least time (\cref{sec:em-waves,eq:snell}), the brachistochrone and the hanging chain from least travel time and least potential energy respectively (\cref{sec:variational-intro}), the soap film from least area and others.
         \end{itemize}
 
-        Two older members of the family are worth naming. \emph{Maupertuis' principle} makes the abbreviated action $\int p\,dq$ stationary at fixed energy rather than at fixed elapsed time, so it settles which path in space is taken rather than how it is traversed in time. The \emph{principle of virtual work}, extended to moving systems as \emph{d'Alembert's principle}, is the statics counterpart: a system is in equilibrium when the work done by the applied forces vanishes for every small displacement the constraints allow, which is precisely what lets the forces of constraint drop out of the problem.\todoai{Added to discharge the \enquote{other principles} flag: the Rayleigh--Ritz variational method (the one with real exam value, since it also belongs to \cref{sec:approximate-methods}), plus Maupertuis and virtual work named in a closing paragraph. Gauss's principle of least constraint and the minimum-potential-energy principle of elasticity were considered and left out as too specialised to be worth the breath.}
-
 \section{Laws of thermodynamics}
 \label{sec:thermodynamics}
 
@@ -720,8 +718,7 @@
             dU = \delta Q - p\, dV,
         \end{equation}
 
-        where $dV$ is the change in volume of the system (positive when the system expands---it does work and loses internal energy, $W<0$). Both forms assume a fixed amount of material. If particles may enter or leave, a further term $\mu\,dN$ appears on the right, $\mu$ being the free-energy cost of admitting one more particle (\cref{sec:thermo-potentials}).\todoai{Added to resolve the deferred migration flag in \texttt{content\_3.tex}: \cref{sec:thermo-potentials} used $dU = T\,dS - p\,dV + \mu\,dN$ with no warning that the first law had been stated here without the last term. Amending the boxed law itself would have put a chemical potential into the thermodynamics answer before it is needed, so the term is named here instead and defined where it is used.}
-
+        where $dV$ is the change in volume of the system (positive when the system expands---it does work and loses internal energy, $W<0$). Both forms assume a fixed amount of material. If particles may enter or leave, a further term $\mu\,dN$ appears on the right, $\mu$ being the free-energy cost of admitting one more particle (\cref{sec:thermo-potentials}).
     \subsection{The second law of thermodynamics}
 
         The second law has many different phrasings, but they all say roughly the same thing. They prohibit certain processes from happening. 

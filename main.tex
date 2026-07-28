@@ -4,22 +4,25 @@
 % change margin size and disable \todo notes for a clean, printable version
 
 \begin{document}
+    \newgeometry{left=1cm,right=1cm,top=1.5cm,bottom=2.5cm,footskip=1cm,%
+                marginparwidth=1cm,marginparsep=0.3cm}
+    \setlength{\headwidth}{\textwidth}   % tell fancyhdr about the new width
+    \maketitle
 
-\maketitle
+    \setcounter{tocdepth}{1}
+    \cleardoublepage
+    \phantomsection
+    \label{toc}
+    \tableofcontents
+    \todoper{Check that all section content actually answers the questions.}
+    %\listofkeyequations
+    \restoregeometry
+    \setlength{\headwidth}{\textwidth}   % and about the restored one
 
-\setcounter{tocdepth}{1}
-\cleardoublepage
-\phantomsection
-\label{toc}
-\tableofcontents
-\todoper{Check that all section content actually answers the questions.}
-\listofkeyequations
-
-
-\input{content_1}
-\input{content_2}
-\input{content_3}
-\input{appendix}
+    \input{content_1}
+    \input{content_2}
+    \input{content_3}
+    \input{appendix}
 
 \end{document}
 
