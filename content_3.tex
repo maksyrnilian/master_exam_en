@@ -68,12 +68,14 @@
 
         where $g_{1}$ and $g_{2}$ are the \emph{degeneracies} of the two levels---the number of distinct states sharing one energy, which is what an external field pulls apart in the Zeeman and Stark effects (\cref{sec:atoms-fields}). Two conclusions follow, and they are the reason the formalism is worth quoting. First, the relation between the two $B$ coefficients says that absorption and stimulated emission are equally likely per photon and per state, so which of them wins depends only on which level holds more atoms. In thermal equilibrium the lower one always does, so a beam is always attenuated. Amplification requires a \emph{population inversion}, $N_{2} > N_{1}$, which cannot occur in equilibrium and has to be created by pumping the medium, and which needs at least three levels to sustain.\todoans{Two levels cannot sustain an inversion. Pumping on the very transition meant to lase drives absorption and stimulated emission at equal per-state rates, so the best it can achieve is to equalise the two populations, never to invert them. A third level lets the pump and the lasing transition be different ones, so atoms are lifted high, drop quickly into the upper laser level and pile up there.} Second, the ratio $\nicefrac{A_{21}}{B_{21}}$ grows as $f^{3}$, so spontaneous emission swamps stimulated emission at high frequency. That is why the maser came before the laser and why an X-ray laser is hard to build.
 
-\section{Atoms in strong electric and magnetic fields (the Stark effect, the Zeeman effect); experimental studies of spin}
-\label{sec:atoms-fields}\todoper{look online for simpler explanation}
+\section{Atoms in strong electric and magnetic fields (Stark effect, Zeeman effect); experimental studies of spin}
+\label{sec:atoms-fields}
+
+    Both effects have one idea behind them. A free atom has no preferred direction, so states that differ only in how the atom is oriented---which way the angular momentum points---must have the same energy. An external field singles out a direction, that equality is destroyed, and the states which shared an energy separate. Splitting a spectral line is therefore the direct visible consequence of taking away a symmetry.
 
     The atomic levels and quantum numbers used throughout this section, and the ordering of the splittings by size, are set out in \cref{sec:atom-molecule}. Both effects below are treated as perturbations of the atomic Hamiltonian (\cref{sec:approximate-methods}).
 
-    \paragraph{The Stark effect---electric perturbation}
+    \paragraph{The Stark effect --- electric perturbation}
 
     The Stark effect is the splitting or shifting of atomic energy levels in an external electric field. We take the field along $z$, so the extra potential energy of the electron is
 
@@ -81,7 +83,7 @@
         \hat{H}' = eEz = eEr\cos\theta,
     \end{equation*}
 
-    a perturbation added to the atomic Hamiltonian (perturbation theory and the first-order shift are set out in \cref{eq:pt-e1}).
+    a perturbation added to the atomic Hamiltonian (perturbation theory and the first-order shift are set out in \cref{eq:pt-corrections}).
 
     For the hydrogen \emph{ground state} $\ket{100}$ the first-order shift vanishes:
 
@@ -99,7 +101,7 @@
 
     with $a_{0}$ the Bohr radius (\cref{sec:atom-molecule}). This shift is linear in the field (the linear Stark effect), and it appears already at first order precisely because the level was degenerate---the ground state has nothing to mix with, which is why it must wait until second order.
 
-    \paragraph{The Zeeman effect---magnetic perturbation}\label{sec:zeeman-effect}
+    \paragraph{The Zeeman effect --- magnetic perturbation}\label{sec:zeeman-effect}
 
         The Zeeman effect is the splitting of atomic energy levels in an external magnetic field. Many atomic levels are degenerate, meaning several distinct states share the same energy, distinguished only by quantities such as the orbital angular momentum or the spin. A magnetic field couples differently to states of different magnetic moment and so lifts this degeneracy, splitting one spectral line into several closely spaced ones.
 
@@ -123,7 +125,7 @@
 
     \paragraph{Experimental studies of spin}
 
-        The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a magnetic field that is strongly \emph{inhomogeneous}, meaning its strength changes steeply from one point to the next across the beam. That is the essential requirement: a uniform field would merely twist a magnetic moment, since the pull on one end of the little magnet is cancelled by the push on the other, and only when the two ends sit in fields of different strength does a net force survive. That force is proportional to the projection of the moment on the field axis, and since the projection is quantised the beam splits into a discrete number of sub-beams rather than smearing into a band. Silver is a good choice because a silver atom has a single unpaired outer electron in an s state, so it carries no orbital moment and behaves as one spin-$\nicefrac{1}{2}$: quantum mechanics predicts exactly two spots on the screen, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds). \todoper{Check online}\todoans{Silver is $\left[\text{Kr}\right]4\text{d}^{10}5\text{s}^{1}$. The filled inner shells pair every spin off and contribute nothing, and the one leftover $5$s electron has $l=0$, so there is no orbital moment either. The whole atom therefore behaves as a single spin-$\nicefrac{1}{2}$---which is why the experiment gives a clean two-way split instead of a more complicated pattern. Hydrogen would do as well in principle but is far harder to make into a beam.}
+        The best-known method is the Stern--Gerlach experiment. A beam of atoms (originally silver) is sent through a magnetic field that is strongly \emph{inhomogeneous}, meaning its strength changes steeply from one point to the next across the beam. That is the essential requirement: a uniform field would merely twist a magnetic moment, since the pull on one end of the little magnet is cancelled by the push on the other, and only when the two ends sit in fields of different strength does a net force survive. That force is proportional to the projection of the moment on the field axis, and since the projection is quantised the beam splits into a discrete number of sub-beams rather than smearing into a band. Silver is a good choice because a silver atom has a single unpaired outer electron in an s state, so it carries no orbital moment and behaves as one spin-$\nicefrac{1}{2}$: quantum mechanics predicts exactly two spots on the screen, and this is what is observed (broadened only by the finite beam width and the spread of atomic speeds).\todoans{Silver is $\left[\text{Kr}\right]4\text{d}^{10}5\text{s}^{1}$. The filled inner shells pair every spin off and contribute nothing, and the one leftover $5$s electron has $l=0$, so there is no orbital moment either. The whole atom therefore behaves as a single spin-$\nicefrac{1}{2}$---which is why the experiment gives a clean two-way split instead of a more complicated pattern. Hydrogen would do as well in principle but is far harder to make into a beam.}
 
         Three further methods are worth naming:
 
@@ -136,7 +138,7 @@
 \section{Thermal radiation; emissivity and absorption bodies, Kirchhoff law, blackbody radiation}
 \label{sec:thermal-radiation}
 
-    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the \emph{thermal motion of its charged particles}. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises.\todoans{Yes, it reaches that far. Wien's law puts the peak at about \qty{10}{\micro\meter} (infrared) for a body at \qty{300}{\kelvin}, at about \qty{500}{\nano\meter} (visible) for the Sun's surface at \qty{5800}{\kelvin}, and at about \qty{100}{\nano\meter} (ultraviolet) for a hot blue star at \qty{30000}{\kelvin}.} The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
+    Thermal radiation is the electromagnetic radiation emitted by every body at a temperature above absolute zero, arising from the \emph{thermal motion of its charged particles}. It spans a wide range of wavelengths, from the infrared through the visible and into the ultraviolet as the temperature rises.\todoans{Yes, it reaches that far. Wien's law puts the peak at about \qty{10}{\micro\metre} (infrared) for a body at \qty{300}{\kelvin}, at about \qty{500}{\nano\metre} (visible) for the Sun's surface at \qty{5800}{\kelvin}, and at about \qty{100}{\nano\metre} (ultraviolet) for a hot blue star at \qty{30000}{\kelvin}.} The key idealisation is the \emph{black body}: a perfect absorber and emitter, which absorbs all radiation falling on it regardless of wavelength, direction or polarisation, and emits with the greatest possible efficiency for its temperature. The nearest thing to one in the laboratory is a small hole in the wall of a heated cavity, since anything entering it is almost certain to be absorbed before it finds its way out again.
 
     \subsection{Emissive power, absorptive power and emissivity}
 
@@ -156,10 +158,9 @@
 
         Planck kept the mode count and replaced the average energy. If a mode of frequency $f$ can only take energy in whole quanta $hf$, then a mode with $hf \gg \kB T$ cannot be excited at all, because there is not enough thermal energy to buy even one quantum. Weighting that ladder of allowed energies with the Boltzmann factor gives a mean energy per mode of $\nicefrac{hf}{(e^{hf/\kB T}-1)}$ in place of $\kB T$, and with it
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:planck}
+        \begin{keyeq}{eq:planck}{Planck's law of black-body radiation}
             E_{\text{bb}}(f,T) = \frac{2\pi f^2}{c^2}\,\frac{hf}{e^{hf/\kB T} - 1}.
-        \end{empheq}
-        \keyeqentry{Planck's law of black-body radiation}
+        \end{keyeq}
 
         The same law is often quoted as the energy density inside the cavity per unit frequency, $u(f,T)$, which differs only by the geometric factor relating what sits in the cavity to what escapes through unit area of the hole, $E_{\text{bb}} = \nicefrac{c}{4}\,u$. It is $u$ that the Einstein coefficients are written against (\cref{sec:light-matter}).
 
@@ -167,17 +168,15 @@
 
         Two results follow from \cref{eq:planck}. \emph{Wien's displacement law} gives the wavelength of peak emission, so that hotter bodies peak at shorter wavelengths,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:wien-displacement}
-            \lambda_{\max} = \frac{b}{T}, \qquad b \simeq \qty{2.9e-3}{\meter\kelvin},
-        \end{empheq}
-        \keyeqentry{Wien's displacement law}
+        \begin{keyeq}{eq:wien-displacement}{Wien's displacement law}
+            \lambda_{\max} = \frac{b}{T}, \qquad b \simeq \qty{2.9e-3}{\metre\kelvin},
+        \end{keyeq}
 
         and the \emph{Stefan--Boltzmann law} gives the total power radiated per unit area by a black body,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:stefan-boltzmann}
-            E_{\text{tot}} = \sigma T^{4}, \qquad \sigma \simeq \qty{5.7e-8}{\watt\per\meter\squared\per\kelvin\tothe{4}}.
-        \end{empheq}
-        \keyeqentry{Stefan--Boltzmann law}
+        \begin{keyeq}{eq:stefan-boltzmann}{Stefan--Boltzmann law}
+            E_{\text{tot}} = \sigma T^{4}, \qquad \sigma \simeq \qty{5.7e-8}{\watt\per\metre\squared\per\kelvin\tothe{4}}.
+        \end{keyeq}
 
 \section{Diffraction and interference of waves; coherence, diffraction of radiation on crystals}
 \label{sec:diffraction}
@@ -216,12 +215,11 @@
 
         A \emph{crystal} is a solid whose atoms sit in a pattern that repeats periodically in all three directions---long-range order, described by a lattice of equivalent points together with the group of atoms placed at each of them. There are different types of crystals with different bondings (\cref{sec:atom-molecule}): ionic---NaCl, covalent---diamond, metallic---copper, molecular---ice. A solid without such long-range order, glass being the standard case, is called \emph{amorphous}, and it gives broad diffuse rings, called \emph{haloes}, instead of sharp diffraction spots.
 
-        The regular spacing acts as a three-dimensional diffraction grating, and it works only for radiation whose wavelength is comparable with the atomic spacing of about \qty{1e-10}{\meter}---X-rays, or equally the matter waves of neutrons and electrons of the right energy (\cref{eq:de-broglie}). When such radiation falls on a crystal it scatters off the atoms, and because these sit on parallel planes a fixed distance $d$ apart, the waves scattered from successive planes interfere. They reinforce only when the extra path travelled between neighbouring planes is a whole number of wavelengths, which is Bragg's law:
+        The regular spacing acts as a three-dimensional diffraction grating, and it works only for radiation whose wavelength is comparable with the atomic spacing of about \qty{1e-10}{\metre}---X-rays, or equally the matter waves of neutrons and electrons of the right energy (\cref{eq:de-broglie}). When such radiation falls on a crystal it scatters off the atoms, and because these sit on parallel planes a fixed distance $d$ apart, the waves scattered from successive planes interfere. They reinforce only when the extra path travelled between neighbouring planes is a whole number of wavelengths, which is Bragg's law:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:bragg}
+        \begin{keyeq}{eq:bragg}{Bragg's law}
             m\lambda = 2d\sin\theta.
-        \end{empheq}
-        \keyeqentry{Bragg's law}
+        \end{keyeq}
 
         Here $m$ is the diffraction order, $\lambda$ the wavelength, $d$ the interplanar spacing and $\theta$ the glancing angle. Two things differ from the grating equation. The angle is measured from the plane rather than from the normal, and there is a factor of $2$, because the beam crosses the gap between neighbouring planes twice---once going in and once coming back out---whereas a grating is a single row of slits with no second pass.
 
@@ -230,7 +228,7 @@
 \section{Indistinguishability of elementary particles; spin versus statistics, Bose-Einstein condensation}
 \label{sec:indistinguishability}
 
-    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments.\todoans{It holds for every species, bosons as well as fermions, and for composite objects too---two rubidium-87 atoms in the same internal state are as identical as two electrons. What makes two objects distinguishable is a measurable label such as a different isotope or a different hyperfine level, not their sitting in different places or moving at different speeds. Sharing a state is a separate question again: forbidden for fermions by the exclusion principle, allowed for bosons, and exploited by Bose--Einstein condensation.} In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field,\todoans{The terminology is standard and the fields are genuine ingredients of the Standard Model: the electron field, the quark fields, the photon field, the Higgs field, one for each species. Nothing hallucinated here.} much as two middle-C notes sounded on identical strings are the same excitation of the same kind of system rather than two notes that merely happen to match. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function. Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:\todoper{verify that the analogy with guitar is good}
+    Identical particles (electrons, quarks, photons and so on) cannot be told apart, and this is not merely a practical limitation of our instruments.\todoans{It holds for every species, bosons as well as fermions, and for composite objects too---two rubidium-87 atoms in the same internal state are as identical as two electrons. What makes two objects distinguishable is a measurable label such as a different isotope or a different hyperfine level, not their sitting in different places or moving at different speeds. Sharing a state is a separate question again: forbidden for fermions by the exclusion principle, allowed for bosons, and exploited by Bose--Einstein condensation.} In quantum field theory each kind of particle is an \emph{excitation of a single underlying field}: every electron is a ripple in the one electron field,\todoans{The terminology is standard and the fields are genuine ingredients of the Standard Model: the electron field, the quark fields, the photon field, the Higgs field, one for each species. Nothing hallucinated here.} much as two ripples crossing one pond are two disturbances of the same water rather than two separate objects that happen to look alike. There is therefore no hidden label that could distinguish one electron from another, and this has a sharp consequence for the wave function.\todoai{Analogy replaced, as the flag asked. Two identical guitar strings are two \emph{separate} systems that happen to match, which is exactly the picture the paragraph is arguing against---the point of the field picture is that there is only one system. Ripples on a single pond carry that over correctly. It is still only an analogy: a real field excitation is discrete and carries a definite quantum of energy, which a ripple does not.} Write the wave function of $N$ such particles as $\psi(1,2,\dots,N,t)$, where each number stands for the position and spin coordinates of one particle. Exchanging two particles cannot change any measurable quantity, so it can at most multiply the wave function by a phase:
 
     \begin{equation}\label{eq:identical}
         \psi(1,2,\dots,N,t) = e^{i\theta}\,\psi(2,1,\dots,N,t).
@@ -242,7 +240,7 @@
 
         Which sign applies is fixed by the spin. Particles of half-integer spin ($\nicefrac{1}{2}, \nicefrac{3}{2}, \dots$), the \emph{fermions}, have an antisymmetric wave function. Particles of integer spin ($0,1,2,\dots$), the \emph{bosons}, have a symmetric one. The rule extends to composite objects by counting constituents: a bound state of an even number of fermions is itself a boson, an odd number makes a fermion, which is why helium-4---two protons, two neutrons, two electrons---is a boson while helium-3, one neutron lighter, is a fermion.
 
-        An immediate corollary for fermions is the \emph{Pauli exclusion principle}: \emph{an antisymmetric wave function vanishes if two particles share the same state, so no two fermions can occupy the same quantum state}. Nothing has to be added or multiplied for it to vanish---if both particles are in the same state then exchanging them leaves the configuration untouched, so \cref{eq:identical} with the minus sign reads $\psi = -\psi$, and the only function equal to minus itself is zero. This is what stacks electrons into shells and gives the periodic table its shape (\cref{sec:atom-molecule}).\todoper{there was a video on yt about that.}
+        An immediate corollary for fermions is the \emph{Pauli exclusion principle}: \emph{an antisymmetric wave function vanishes if two particles share the same state, so no two fermions can occupy the same quantum state}. Nothing has to be added or multiplied for it to vanish---if both particles are in the same state then exchanging them leaves the configuration untouched, so \cref{eq:identical} with the minus sign reads $\psi = -\psi$, and the only function equal to minus itself is zero. This is what stacks electrons into shells and gives the periodic table its shape (\cref{sec:atom-molecule}).\todoans{The common trap, if it is pressed: exclusion is not a force. Nothing pushes the electrons apart, and no term appears in the Hamiltonian. What happens is that the states an electron might otherwise occupy are unavailable, so the remaining ones carry more kinetic energy, and it is that kinetic energy which resists compression. The \enquote{degeneracy pressure} holding up a white dwarf is this and nothing else, which is why it survives even at zero temperature, when ordinary thermal pressure has vanished.}
 
     \paragraph{Bose--Einstein condensation}
 
@@ -269,10 +267,9 @@
 
         Here the number of particles $N$, the volume $V$ and the energy $E$ are all fixed. Every accessible microstate is equally likely, and the partition function $\Omega$ is just the total number of them. Boltzmann linked this count to the entropy:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:boltzmann-entropy}
+        \begin{keyeq}{eq:boltzmann-entropy}{Boltzmann entropy}
             S = \kB \ln\Omega .
-        \end{empheq}
-        \keyeqentry{Boltzmann entropy}
+        \end{keyeq}
 
     \subsection{The canonical ensemble ($N$, $V$, $T$)}
 
@@ -304,7 +301,7 @@
 
     \subsection{The thermodynamic potentials}\label{sec:thermo-potentials}
 
-        The internal energy $U$ is the natural quantity when the system is isolated, and the first law (\cref{eq:first-law}) written for a reversible change reads $dU = T\,dS - p\,dV + \mu\,dN$.\todo{MIGRATION (deferred): \cref{eq:first-law} in \texttt{content\_1.tex} states the first law without the $\mu\,dN$ term, so it is introduced here without warning. MODERATE EDIT---introduce that term in \cref{eq:first-law} or explain why it should not be there} Its natural variables are therefore $S$, $V$ and $N$. \emph{Natural variables} are the ones in which the potential's differential closes up with nothing left over, so that every other quantity follows by differentiating it---here $T = \left(\nicefrac{\partial U}{\partial S}\right)_{V,N}$ and $-p = \left(\nicefrac{\partial U}{\partial V}\right)_{S,N}$. That particular set is inconvenient, because nobody in a laboratory holds entropy fixed---what is easy to hold fixed is temperature, or pressure. Each potential below is $U$ with one such awkward variable traded for the quantity conjugate to it, by subtracting the product of the pair.
+        The internal energy $U$ is the natural quantity when the system is isolated, and the first law (\cref{eq:first-law}) written for a reversible change reads $dU = T\,dS - p\,dV + \mu\,dN$, the last term being the one flagged there as appearing only when particles may be exchanged. Its natural variables are therefore $S$, $V$ and $N$. \emph{Natural variables} are the ones in which the potential's differential closes up with nothing left over, so that every other quantity follows by differentiating it---here $T = \left(\nicefrac{\partial U}{\partial S}\right)_{V,N}$ and $-p = \left(\nicefrac{\partial U}{\partial V}\right)_{S,N}$. That particular set is inconvenient, because nobody in a laboratory holds entropy fixed---what is easy to hold fixed is temperature, or pressure. Each potential below is $U$ with one such awkward variable traded for the quantity conjugate to it, by subtracting the product of the pair.
 
         \begin{itemize}
             \item \textbf{Enthalpy} $H = U + pV$, natural in $S$, $p$, $N$. At constant pressure and with no work other than expansion, $dH = dU + p\,dV = \delta Q$: the heat taken up in a constant-pressure process \emph{is} the change in enthalpy. Since almost all chemistry happens in an open vessel at atmospheric pressure, this is why reaction heats are tabulated as enthalpies.
@@ -333,20 +330,17 @@
 
         \begin{enumerate}
             \item \textbf{Maxwell--Boltzmann} (classical): treats particles as distinguishable. It is a good approximation at high temperature and low density, but fails for a dense gas of electrons or photons.
-            \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-boltzmann-occ}
+            \begin{keyeq}{eq:maxwell-boltzmann-occ}{Maxwell--Boltzmann occupation number}
                 \ev{n_\varepsilon} = e^{-\beta(\varepsilon - \mu)}.
-            \end{empheq}
-            \keyeqentry{Maxwell--Boltzmann occupation number}
+            \end{keyeq}
             \item \textbf{Fermi--Dirac}: for fermions, which obey the Pauli exclusion principle (\cref{sec:indistinguishability}), at most one particle per state:
-            \begin{empheq}[box=\fbox]{equation}\label{eq:fermi-dirac}
+            \begin{keyeq}{eq:fermi-dirac}{Fermi--Dirac distribution}
                 \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} + 1}.
-            \end{empheq}
-            \keyeqentry{Fermi--Dirac distribution}
+            \end{keyeq}
             \item \textbf{Bose--Einstein}: for bosons, which are indistinguishable but not exclusion-bound:
-            \begin{empheq}[box=\fbox]{equation}\label{eq:bose-einstein}
+            \begin{keyeq}{eq:bose-einstein}{Bose--Einstein distribution}
                 \ev{n_\varepsilon} = \frac{1}{e^{\beta(\varepsilon - \mu)} - 1}.
-            \end{empheq}
-            \keyeqentry{Bose--Einstein distribution}
+            \end{keyeq}
         \end{enumerate}
 
 \section{Statistical explanation of the macroscopic properties of systems of many particles: extensive and intensive parameters of the state of the system, equation of state, specific heat (gases and solids), magnetic susceptibility, etc.}
@@ -377,15 +371,13 @@
 
         The two most common are the ideal-gas law and the van der Waals equation, the latter in a consistent $n$-mole form:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:ideal-gas}
+        \begin{keyeq}{eq:ideal-gas}{Ideal-gas law}
             pV = nRT ,
-        \end{empheq}
-        \keyeqentry{Ideal-gas law}
+        \end{keyeq}
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:van-der-waals}
+        \begin{keyeq}{eq:van-der-waals}{van der Waals equation}
             \left(p + \frac{a n^{2}}{V^{2}}\right)\left(V - nb\right) = nRT .
-        \end{empheq}
-        \keyeqentry{van der Waals equation}
+        \end{keyeq}
 
         The correction $b$ accounts for the finite volume of the molecules, and $\nicefrac{an^{2}}{V^{2}}$ for their mutual attraction by the van der Waals forces of \cref{sec:atom-molecule}. Both come out of one calculation, differentiating the partition function of the gas with respect to volume (\cref{sec:ensembles}), with \cref{eq:ideal-gas} exact for free point particles and \cref{eq:van-der-waals} the first correction once the intermolecular potential is put back. The attraction term is the one that permits liquefaction and hence a liquid--gas transition (\cref{sec:phase-transitions}).
 
@@ -419,15 +411,14 @@
 
         For a magnetic system the work done per unit volume in changing the magnetisation $M$---the magnetic moment per unit volume, as in \cref{sec:magnetic-field}---is $dW = \mu_{0}H\,dM$. The isothermal and adiabatic magnetic susceptibilities measure how that magnetisation responds to the applied field, and are dimensionless exactly as $\chi_{m}$ is in \cref{eq:magnetic-susceptibility}:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:magnetic-susceptibilities}
+        \begin{keyeq}{eq:magnetic-susceptibilities}{Isothermal and adiabatic magnetic susceptibilities}
             \chi_{T} = \left(\frac{\partial M}{\partial H}\right)_{T},\quad  \chi_{S} = \left(\frac{\partial M}{\partial H}\right)_{S} .
-        \end{empheq}
-        \keyeqentry{Isothermal and adiabatic magnetic susceptibilities}
+        \end{keyeq}
 
         Microscopically the susceptibility is a competition. Each atomic moment has a lower energy pointing along the field than against it, so Boltzmann weighting favours alignment, while thermal agitation randomises the directions. Averaging the moment over that weighting gives a magnetisation proportional to $\nicefrac{B}{T}$ and hence Curie's law $\chi_m = \nicefrac{C}{T}$ (\cref{sec:magnetic-field}). It is a good illustration of the general pattern: a macroscopic response function is a thermal average of a microscopic quantity, and its temperature dependence records which of the two effects is winning.
 
 \section{Dirac and Klein-Gordon equations; examples of physical objects described by these equations}
-\label{sec:relativistic-eqns}\todoper{KG eqn is mentioned in QM1.  Look it up}
+\label{sec:relativistic-eqns}
 
     The Schrödinger equation (\cref{eq:tdse}) cannot be the whole story, because it was built from the non-relativistic $E = \nicefrac{p^{2}}{2m}$ (\cref{sec:inertial-frames}). The two equations below are the two ways of repairing this, and they differ in the spin of the particles they end up describing. Both start from the relativistic energy--momentum relation $E^{2} = p^{2}c^{2} + m^{2}c^{4}$ (\cref{eq:energy-momentum}).
 
@@ -435,10 +426,9 @@
 
     Substituting the usual operators $E \to i\hbar\,\nicefrac{\partial}{\partial t}$ and $\vec{p} \to -i\hbar\nabla$ (\cref{sec:postulates}) directly into \cref{eq:energy-momentum} gives
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:klein-gordon}
+    \begin{keyeq}{eq:klein-gordon}{Klein--Gordon equation}
         \left( \Box + \frac{m^2c^2}{\hbar^2} \right)\psi(\vec{r},t) = 0,
-    \end{empheq}
-    \keyeqentry{Klein--Gordon equation}
+    \end{keyeq}
 
     where $\Box = \nicefrac{1}{c^2}\partial_t^2 - \nabla^2$ is the d'Alembertian, the four-dimensional analogue of the Laplacian: it is the same combination of derivatives, with the time derivative included on the same footing as the three spatial ones, so it treats spacetime as a whole rather than space alone.
 
@@ -452,10 +442,9 @@
 
     Dirac looked for an equation \emph{first} order in time, so as to keep a sensible probability density, and therefore, by relativity, first order in space as well. That means taking a square root of \cref{eq:energy-momentum}, and a linear expression can only square to $p^{2}c^{2}+m^{2}c^{4}$ if its coefficients anticommute, so that the unwanted cross terms cancel. Ordinary numbers cannot do this. Matrices can. For a free particle the result is
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:dirac}
+    \begin{keyeq}{eq:dirac}{Dirac equation}
         (i\hbar \gamma^{\mu}\partial_{\mu} - mc)\Psi(x^{\nu}) = 0 .
-    \end{empheq}
-    \keyeqentry{Dirac equation}
+    \end{keyeq}
 
     Each object in it has a plain reading. The \emph{four-gradient} $\partial_{\mu} = \left[\begin{smallmatrix} \nicefrac{\partial}{\partial(ct)} \\ \nabla \end{smallmatrix}\right]$ is the relativistic replacement for $\nabla$ (\cref{eq:nabla}), a four-vector written as a column exactly as in \cref{sec:inertial-frames}, with time included as a fourth direction. An index appearing twice, as $\mu$ does here, is summed over its four values by convention. The $\gamma^{\mu}$ are four constant $4\times4$ \emph{gamma matrices} whose anticommutation relation $\acomm{\gamma^{\mu}}{\gamma^{\nu}} = 2g^{\mu\nu}I$ is the entire content of \enquote{taking the square root} above, with $g^{\mu\nu}$ the metric that fixes the relative sign of the time and space parts. Because those matrices are $4\times4$, $\Psi$ is not one number but a column of four, called a \emph{spinor}: two components for the two spin orientations of the particle and two more for its antiparticle.
 
@@ -508,10 +497,9 @@
 
         The mass of a nucleus is always \emph{less} than the sum of the masses of the nucleons composing it---always, for every bound nucleus, since that deficit is what binding means. What varies from one nuclide to another is how large it is, not its sign. The difference is the \emph{mass defect},
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:mass-defect}
+        \begin{keyeq}{eq:mass-defect}{Nuclear mass defect}
             \Delta m = Zm_{p} + Nm_{n} - M(Z,N),
-        \end{empheq}
-        \keyeqentry{Nuclear mass defect}
+        \end{keyeq}
 
         and the \emph{binding energy} is that missing mass expressed as energy, $B = \Delta m\,c^{2}$ (\cref{sec:inertial-frames}). It is the energy needed to pull the nucleus apart into free nucleons, and it is missing from the mass precisely because it would have to be supplied to do so.\todoans{Two different facts are being mixed here, and both are worth having straight. \emph{Nuclear} binding takes about \qty{8.8}{\mega\electronvolt} off a nucleon of roughly \qty{939}{\mega\electronvolt}, so the nuclear mass defect is under $1\%$. The $90$-odd per cent figure belongs to the nucleon itself: the three quarks inside a proton have rest masses adding to about \qty{9}{\mega\electronvolt}, so around $99\%$ of the proton's mass is the energy of the gluon field and the quarks' motion, not the quarks' own mass (\cref{sec:interactions}). Different binding, one level further down.} This is mass--energy equivalence in its most direct experimental form, and it is why a nuclear reaction releases so much more energy than a chemical one: the binding involved is millions of times larger per particle.
 
@@ -592,14 +580,13 @@
 
         The \emph{proton--proton chain} is the sequence of reactions that builds one helium nucleus from four protons, releasing energy at each step. It answers both halves of the question at once: it is the main energy source of the Sun and of similar stars, and, since it makes helium out of hydrogen, it is nucleosynthesis as well. It operates in stellar cores at temperatures of a few to a few tens of millions of kelvin. In its commonest branch:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:pp-chain}
+        \begin{keyeq}{eq:pp-chain}{Proton--proton chain}
             \begin{aligned}
             p + p           &\rightarrow {}^{2}\mathrm{H} + e^{+} + \nu_{e} \\
             {}^{2}\mathrm{H} + p &\rightarrow {}^{3}\mathrm{He} + \gamma \\
             {}^{3}\mathrm{He} + {}^{3}\mathrm{He} &\rightarrow {}^{4}\mathrm{He} + 2p  ,
             \end{aligned}
-        \end{empheq}
-        \keyeqentry{Proton--proton chain}
+        \end{keyeq}
 
         which overall converts four protons into one $^{4}$He nucleus, two positrons and two neutrinos, releasing about \qty{26.7}{\mega\electronvolt}. The first step is the bottleneck, and it is what makes the Sun burn slowly enough to have a long life: it requires one of the two protons to turn into a neutron by the weak interaction (\cref{sec:interactions}) at the very moment of contact, which is an exceedingly improbable coincidence. The neutrinos escape immediately and are the only direct evidence we have of the core, while the photons take a very long time to random-walk their way out. In stars appreciably more massive than the Sun, and hence hotter, the \emph{CNO cycle} takes over instead, using carbon, nitrogen and oxygen as catalysts to achieve the same net conversion.
 
@@ -653,7 +640,7 @@
 
     \subsection{The structure of hadrons}
 
-        A hadron must be \emph{colour-neutral} overall, and there are exactly two ways of arranging that. Three quarks, one of each colour, make a \emph{baryon}, the proton ($uud$) and the neutron ($udd$) being the two that matter. A quark together with an antiquark of the matching anticolour makes a \emph{meson}, the lightest being the pion. Baryons are therefore composite fermions and mesons composite bosons, which is the two cuts above crossing each other.
+        A hadron must be \emph{colour-neutral} overall, and there are exactly two ways of arranging that. Three quarks, one of each colour, make a \emph{baryon}, the proton ($uud$, \cref{fig:proton}) and the neutron ($udd$) being the two that matter. A quark together with an antiquark of the matching anticolour makes a \emph{meson}, the lightest being the pion. Baryons are therefore composite fermions and mesons composite bosons, which is the two cuts above crossing each other.
 
         Electric charge is simply the sum of the quark charges: $+\nicefrac{2}{3}+\nicefrac{2}{3}-\nicefrac{1}{3}=+1$ for the proton and $+\nicefrac{2}{3}-\nicefrac{1}{3}-\nicefrac{1}{3}=0$ for the neutron. Mass is not additive in the same way---almost all of a hadron's mass is the energy of the gluon field binding the quarks rather than the quark masses themselves (\cref{sec:interactions}). A useful bookkeeping quantum number is the \emph{baryon number}, $+1$ for a baryon, $-1$ for an antibaryon and $0$ for a meson, conserved in every interaction so far observed, which is why the proton, being the lightest baryon, has nothing it could decay into.
 

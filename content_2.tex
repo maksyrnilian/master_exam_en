@@ -2,7 +2,7 @@
 \cleardoublepage
 \fancyfoot[L]{\small \RomanNumeralCaps{2}}
 
-\section{Flow of an incompressible fluid; Bernoulli's law}
+\section{Flow of incompressible fluid; Bernoulli law}
 \label{sec:bernoulli}
 
     This is a problem of ideal-fluid hydrodynamics, and it rests on three simplifications:
@@ -15,27 +15,25 @@
 
     Applying the principle of conservation of energy to the flow problem, one obtains Bernoulli's law, which is usually written as:
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:bernoulli}
+    \begin{keyeq}{eq:bernoulli}{Bernoulli's law}
         \frac{v^2}{2} + gh + \frac{p}{\rho} = \const
-    \end{empheq}
-    \keyeqentry{Bernoulli's law}
+    \end{keyeq}
 
     where we have, in turn, the kinetic energy, the potential energy and the energy due to pressure, each per unit mass of fluid. The constant keeps the same value all along a \emph{streamline}, meaning the path traced out by a small parcel of fluid as it is carried by the flow, and because the flow was assumed irrotational the same constant in fact serves the whole flow. The relation permits the description of flow through a pipe that changes its cross-section or its height, and it explains the so-called hydrodynamic paradox. Where a pipe narrows, incompressibility forces the liquid to flow faster, since the same volume must pass each second through a smaller area, so by \cref{eq:bernoulli} the larger $\nicefrac{v^2}{2}$ must be offset by a smaller pressure $p$. The counter-intuitive result is that the pressure is \emph{lower} where the pipe is narrow and the flow is fast.
 
-\section{Maxwell's equations, the scalar and vector potentials of the electromagnetic field, the equations of the electromagnetic field in vacuum and in media}
+\section{Maxwell equations, scalar and vector potential of electromagnetic field, equations of electromagnetic field in vacuum and in media}
 \label{sec:maxwell}
 
     \subsection{Maxwell's equations --- general form}
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-general}
+        \begin{keyeq}{eq:maxwell-general}{Maxwell's equations---general form}
             \begin{alignedat}{2}
                 \text{Gauss's law for } \vec{E}                                 & : \quad & \nabla \cdot \vec{E}  & = \frac{\rho_{\text{f}} + \rho_{\text{b}}}{\varepsilon_{0}}\\
                 \text{Gauss's law for } \vec{B}                                 & : \quad & \nabla \cdot \vec{B}  & = 0\\
                 \text{Faraday's law}                                            & : \quad & \nabla \times \vec{E} & = -\frac{\partial \vec{B}}{\partial t}\\
                 \text{Ampère--Maxwell law}                                      & : \quad & \nabla \times \vec{B} & = \mu_{0}\left(\vec{J_{\text{f}}} + \vec{J_{\text{b}}} + \varepsilon_{0}\frac{\partial\vec{E}}{\partial t}\right),
             \end{alignedat}
-        \end{empheq}
-        \keyeqentry{Maxwell's equations---general form}
+        \end{keyeq}
 
         where $\rho$ is a charge density, $\vec{J}$ a current density, $\vec{E}$ the electric field and $\vec{B}$ the \emph{magnetic flux density} (or sometimes \emph{magnetic induction}). Charges and currents are of two kinds. \emph{Free} ones ($\rho_{\text{f}}$, $\vec{J}_{\text{f}}$) are the ones we put there and control, such as the conduction electrons in a wire or the charge deposited on a plate. \emph{Bound} ones ($\rho_{\text{b}}$, $\vec{J}_{\text{b}}$) are locked inside the atoms of a material and can only shift or circulate slightly without leaving them, and it is the applied field itself that induces them. 
         
@@ -51,7 +49,7 @@
             \end{aligned}
         \end{equation*}
 
-        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,\todoper{check kcl math notes}
+        Divergence measures how strongly a given point acts as a source or a sink of a vector field, curl measures the circulation of the field around a point, and the gradient points in the direction in which a scalar field increases fastest. Two integral theorems turn these statements about single points into statements about whole regions. The \emph{divergence theorem} says that the divergence added up over a volume equals the flux out through the surface enclosing it,
 
         \begin{equation}\label{eq:divergence-theorem}
             \int_{V}\nabla\cdot\vec{A}\,dV = \oint_{\partial V}\vec{A}\cdot d\vec{S},
@@ -120,10 +118,9 @@
 
         where $\vec{D}$ --- the electric displacement field,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:D-def}
+        \begin{keyeq}{eq:D-def}{Electric displacement field}
             \vec{D} \equiv \varepsilon_{0}\vec{E} + \vec{P} .
-        \end{empheq}
-        \keyeqentry{Electric displacement field}
+        \end{keyeq}
 
         Adding $\vec{P}$ cancels the bound charge contributions (\cref{eq:bound-charge}), so $\vec{D}$ is the field whose sources are the free charges alone---the ones we control. $\vec{P}$ points in the opposite direction to the field it is producing, so it subtracts from $\vec{E}$.
 
@@ -145,25 +142,23 @@
 
         where $\vec{H}$ --- the \emph{magnetic field} (or \emph{magnetic field strength/intensity}),
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:H-def}
+        \begin{keyeq}{eq:H-def}{Magnetic field strength}
             \vec{H} \equiv \frac{\vec{B}}{\mu_{0}} - \vec{M} .
-        \end{empheq}
-        \keyeqentry{Magetic field strength}
+        \end{keyeq}
 
         The minus here does the same job as the plus in \cref{eq:D-def}. Moving $\nabla\times\vec{M}$ to the left-hand side of the equation above is what subtracts $\vec{M}$, and it removes the bound magnetisation current from the curl, leaving $\vec{H}$ sourced by free currents alone. Both $\vec{D}$ and $\vec{H}$ are therefore devices for hiding the material's own response inside a redefined field, so that only the sources we control appear explicitly.
 
         \needspace{4\baselineskip}
         Maxwell's equation in matter may then finally be rewritten as:
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:maxwell-media}
+        \begin{keyeq}{eq:maxwell-media}{Maxwell's equations---in matter}
             \begin{aligned}
                 \nabla \cdot \vec{D} &= \rho_{\text{f}}\\
                 \nabla \cdot \vec{B} &= 0\\
                 \nabla\times\vec{E} &= -\frac{\partial \vec{B}}{\partial t}\\
                 \nabla\times\vec{H} &= \vec{J}_{\text{f}} + \frac{\partial\vec{D}}{\partial t}
             \end{aligned}
-        \end{empheq}
-        \keyeqentry{Maxwell's equations---in matter}
+        \end{keyeq}
 
     \subsection{The scalar and vector potentials}\label{sec:em-potentitals}
 
@@ -171,17 +166,15 @@
 
         Since $\nabla\cdot\vec{B} = 0$ everywhere, and since \emph{the divergence of any curl vanishes automatically}, $\vec{B}$ may always be written as the curl of some vector field,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:vector-potential}
+        \begin{keyeq}{eq:vector-potential}{Magnetic vector potential}
             \vec{B} = \nabla\times\vec{A},
-        \end{empheq}
-        \keyeqentry{Magnetic vector potential}
+        \end{keyeq}
 
         called the \emph{magnetic vector potential}. Substituting this into Faraday's law gives $\nabla\times\left(\vec{E} + \nicefrac{\partial\vec{A}}{\partial t}\right) = 0$, and \emph{a field whose curl vanishes is the gradient of something}, so
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:scalar-potential}
+        \begin{keyeq}{eq:scalar-potential}{Electric scalar potential and electric field}
             \vec{E} = -\nabla\varphi - \frac{\partial\vec{A}}{\partial t},
-        \end{empheq}
-        \keyeqentry{Electric scalar potential and electric field}
+        \end{keyeq}
 
         where $\varphi$ is the \emph{electric scalar potential}. In electrostatics the second term is absent and $\varphi$ is the familiar potential whose difference between two points is a voltage and can express avarage electric field as ($E=\nicefrac{\Delta V}{\Delta x}$).
 
@@ -195,7 +188,7 @@
 
         whereas $\vec{E}$ and $\vec{B}$ need a rank-2 tensor to hold their six components. The potentials are the more natural relativistic objects as well as the more economical ones.
         
-\section{The electric field in media; dielectric polarisation, conduction, mobility of the charge carriers}
+\section{Electric field in media; dielectric polarization, conduction, mobility of the charge carriers}
 \label{sec:electric-field}
 
     \subsection{Polarisation}
@@ -220,10 +213,9 @@
 
         Underneath $\chi$ there is a microscopic picture. Each atom or molecule acquires the dipole moment $\vec{p} = q\vec{d}$ (\cref{sec:maxwell-matter}), and in a weak field it is proportional to the field acting on it,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:polarisability}
+        \begin{keyeq}{eq:polarisability}{Polarisability}
             \vec{p} = \alpha\vec{E},
-        \end{empheq}
-        \keyeqentry{Polarisability}
+        \end{keyeq}
 
         where $\alpha$ --- the \emph{polarisability}, a measure of how easily that particular atom or molecule is deformed or turned. With $N$ such units per unit volume the polarisation is their sum, $\vec{P} = N\vec{p}$, and comparing it with \cref{eq:polarisation-vector} gives $\chi = \nicefrac{N\alpha}{\varepsilon_{0}}$. Strictly the $\vec{E}$ of \cref{eq:polarisability} is the field at the site of the atom rather than the macroscopic average field, and correcting for the difference turns it into the Clausius--Mossotti formula.
         
@@ -265,17 +257,15 @@
 
         Conduction is the flow of electric charge through a material under an applied field. The carriers do not accelerate freely, because they are scattered by lattice vibrations and by defects, so in a steady field they settle at an average \emph{drift velocity} $v_{\text{d}}$ proportional to the field. The constant of proportionality is the \emph{mobility},
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:mobility}
+        \begin{keyeq}{eq:mobility}{Mobility}
             \mu_{\text{c}} \equiv \frac{v_{\text{d}}}{E},
-        \end{empheq}
-        \keyeqentry{Mobility}
+        \end{keyeq}
 
         which measures how easily a carrier is pushed through a particular material. The current density is then $J = qnv_{\text{d}} = \sigma E$, the local form of Ohm's law, with the \emph{conductivity}
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:conductivity}
+        \begin{keyeq}{eq:conductivity}{Conductivity}
             \sigma = qn\mu_{\text{c}},
-        \end{empheq}
-        \keyeqentry{Conductivity}
+        \end{keyeq}
 
         where $q$ is the charge of one carrier and $n$ their concentration. Only two things can therefore change a conductivity: \emph{how many carriers there are, and how freely each moves}. Temperature acts on both factors in \cref{eq:conductivity}, $n$ and $\mu_{\text{c}}$, and which one wins distinguishes the two standard cases.
 
@@ -317,7 +307,7 @@
 
         In a metal $n$ is fixed, while more lattice vibrations mean more scattering and a smaller $\mu_{\text{c}}$, so the conductivity falls as the material is heated. In a semiconductor $n$ rises steeply with temperature, because carriers must first be excited across the band gap, and that easily outweighs the loss of mobility, so the conductivity rises instead. The conduction band, the valence band and the gap between them are set out in \cref{sec:bands}.
 
-\section{The magnetic field in media; classification of magnetic media, microscopic description of interactions between the magnetic moments of components of the medium (atoms, ions, molecules)}
+\section{Magnetic field in media; classification of magnetic media, microscopic description of interactions between the magnetic moments of components of the medium (atoms, ions, molecules)}
 \label{sec:magnetic-field}
 
     On the microscopic scale every medium has magnetic properties, on account of the spin of its constituent particles and of the motion of the electrons about the nuclei. On the macroscopic scale magnetic behaviour is far less common, because these moments are not ordered over long distances and largely cancel one another. Long-range order can be imposed by an external magnetic field, just as polarisation is imposed by an electric one (\cref{sec:electric-field}).
@@ -330,9 +320,9 @@
 
     where $\chi_{m}$ --- magnetic susceptibility, and $\mu_{\text{r}} \equiv 1+\chi_{m}$ --- relative permeability, the exact counterpart of $\varepsilon_{\text{r}} = 1+\chi$ (\cref{eq:permittivity}). A difference is worth noting: $\chi$ is positive for ordinary dielectrics, whereas $\chi_{m}$ may have either sign, and its sign is what classifies the material. For most media $|\chi_{m}| \sim 10^{-5}$, so magnetically they are almost vacuum ($\mu_{\text{r}} \simeq 1$), while in a ferromagnet $\chi_{m}$ reaches $10^{3}$ or more and the linear relation fails altogether.
     
-    Interactions with a magnetic field are also more subtle than with an electric one: by the Bohr--van Leeuwen theorem a purely classical system in equilibrium has zero mean magnetisation, so every magnetic effect below is a quantum one. Three kinds of medium are usually distinguished.
+    Interactions with a magnetic field are also more subtle than with an electric one: by the Bohr--van Leeuwen theorem a purely classical system in equilibrium has zero mean magnetisation, so every magnetic effect below is a quantum one.
 
-    Three kinds of medium are usually distinguished, and the first division between them is whether the material has any magnetism of its own. Paramagnets and diamagnets do not: each merely responds while an external field is applied, with a magnetisation proportional to it and vanishing the moment it is removed, and the two differ only in the sign of that response. Ferromagnets, antiferromagnets and ferrimagnets do, because their moments order one another rather than waiting to be ordered by the field, so they keep a magnetisation after the field is switched off.\todo{check}
+    Three kinds of medium are usually distinguished, and the first division between them is whether the material has any magnetism of its own. Paramagnets and diamagnets do not: each merely responds while an external field is applied, with a magnetisation proportional to it and vanishing the moment it is removed, and the two differ only in the sign of that response. Ferromagnets, antiferromagnets and ferrimagnets do, because their moments order one another rather than waiting to be ordered by the field, so they keep a magnetisation after the field is switched off.
 
     \subsection{Paramagnets}
 
@@ -360,13 +350,13 @@
 
     \subsection{Ferromagnets, antiferromagnets and ferrimagnets}
 
-        Another category, \emph{ferromagnets}, appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to \emph{point the same way as each other}\todo{why?}, not just as the external field. Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
+        Another category, \emph{ferromagnets}, appears once we include the \emph{exchange interaction}---a quantum effect that makes neighbouring moments prefer to \emph{point the same way as each other}, not just as the external field. It is not a magnetic force between the moments, which would be far too weak. It is the ordinary electrostatic repulsion of the electrons read through the exclusion principle (\cref{sec:indistinguishability}): the total wave function of two electrons must be antisymmetric, so parallel spins force an antisymmetric \emph{spatial} factor, which vanishes where the two electrons coincide and so keeps them further apart and lowers their Coulomb energy. Parallel and antiparallel alignment therefore differ in energy by an electrostatic amount, and the sign of that difference---the sign of the exchange integral---decides whether the material orders ferromagnetically or antiferromagnetically. The same mechanism inside a single atom is Hund's rule (\cref{sec:atom-molecule}).\todoai{MODERATE EDIT resolving the \enquote{why?} flag. The one thing an examiner is likely to press on here is that exchange is electrostatic in origin and only looks magnetic, so that is what the inserted sentences say. The antisymmetry argument is the same one already used for the Pauli principle in \cref{sec:indistinguishability}, so it is cross-referenced rather than restated.} Regions of aligned moments (magnetic domains) form, giving a strong susceptibility and \emph{remanent} magnetisation: magnetisation that survives after the external field is switched off, which is what makes a permanent magnet. The classic ferromagnets are iron, cobalt and nickel.
 
         Such materials are analysed with statistical-physics lattice models that differ in how freely each moment may point: the Ising model allows only up or down, the XY model allows any direction in a plane, and the Heisenberg model allows any direction in space (the most general).
 
         Closely related are \emph{antiferromagnets} and \emph{ferrimagnets}, in which neighbouring moments point in \emph{opposite} directions. In an antiferromagnet the opposing moments are equal and cancel, so there is almost no net magnetisation (manganese oxide and chromium are examples). In a ferrimagnet they are opposite but unequal, so the cancellation is only partial and a net magnetisation remains---macroscopically it behaves like a weaker ferromagnet (magnetite is the classic example).
 
-\section{Electromagnetic waves as solutions of Maxwell's equations; polarisation, reflection and refraction of electromagnetic waves, the Doppler effect}
+\section{Electromagnetic waves as solutions of Maxwell equations; polarization, reflection and refraction of electromagnetic waves, Doppler effect}
 \label{sec:em-waves}
 
     \subsection{Electromagnetic waves as solutions of Maxwell's equations}
@@ -426,18 +416,19 @@
             v = c = \frac{1}{\sqrt{\mu_{0}\varepsilon_{0}}}.
         \end{equation*}
 
-        Performing the same derivation inside a homogeneous, non-magnetic medium \todo{where is the non-magnetic assumption made?} that carries no free charge, so that $\nabla\cdot\vec{E}=0$ and the magnetisation contributes nothing, the sources do not all cancel and we are left with
+        Performing the same derivation inside a homogeneous medium that carries no free charge, so that $\nabla\cdot\vec{E}=0$, the sources do not all cancel and we are left with
 
         \begin{equation*}
             \left(\Delta - \mu_{0}\varepsilon_{0}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{E} = \underbrace{\mu_{0}\frac{\partial\vec{J}_{\text{f}}}{\partial t}}_{\substack{\text{important in} \\ \text{conductors}}} + \underbrace{\mu_{0}\frac{\partial^{2}\vec{P}}{\partial t^{2}}}_{\substack{\text{important in} \\ \text{insulators}}},
         \end{equation*}
 
-        both terms being zero in vacuum. In a transparent insulator the first term is absent and linear polarisation response (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side, replacing $\varepsilon_{0}$ by $\varepsilon_{0}(\chi + 1)=\varepsilon_{0}\varepsilon_{\text{r}}$\todo{correct?}. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
+        both terms being zero in vacuum. The medium is taken to be non-magnetic at exactly one point: the bound current of \cref{sec:maxwell-matter} is $\vec{J}_{\text{b}} = \nabla\times\vec{M} + \nicefrac{\partial\vec{P}}{\partial t}$, and setting $\vec{M}=0$ is what leaves the polarisation term alone on the right.
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:refractive-index}
+        In a transparent insulator the first term is absent and the linear polarisation response (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side. Substituting $\vec{P} = \chi\varepsilon_{0}\vec{E}$ makes the right-hand side $\mu_{0}\varepsilon_{0}\chi\,\nicefrac{\partial^{2}\vec{E}}{\partial t^{2}}$, and moving it across replaces $\varepsilon_{0}$ by $\varepsilon_{0}(1+\chi)=\varepsilon_{0}\varepsilon_{\text{r}}$. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
+
+        \begin{keyeq}{eq:refractive-index}{Refractive index}
             n \equiv \frac{c}{v} = \sqrt{\varepsilon_{\text{r}}\mu_{\text{r}}} \simeq \sqrt{\varepsilon_{\text{r}}}
-        \end{empheq}
-        \keyeqentry{Refractive index}
+        \end{keyeq}
 
         is the \emph{refractive index}, the quantity that appears in Snell's law (\cref{eq:snell}), and the approximation holds because $\mu_{\text{r}} \simeq 1$ for anything transparent. Since each polarisation mechanism stops following the field above its own frequency (\cref{sec:electric-field}), $\varepsilon_{\text{r}}$ and hence $n$ depend on frequency, which is \emph{dispersion} and is why a prism separates colours.
 
@@ -541,7 +532,7 @@
             \quad\Longrightarrow\quad
             f' \to \infty,
         \end{equation}
-        the source's limit is reached at a finite, physical speed---the wave speed itself--- while the observer's is not, since $v_o$ can grow without bound. Source's speed affect the \emph{weffective avelength}, while the observer's speed affect the \emph{perceived frequency}.
+        the source's limit is reached at a finite, physical speed---the wave speed itself---while the observer's is not, since $v_o$ can grow without bound. The source's speed changes the \emph{effective wavelength}, while the observer's speed changes the \emph{perceived frequency}.
 
         \paragraph{Electromagnetic waves}
 
@@ -566,13 +557,12 @@
         \item \textbf{Electromagnetic waves} are oscillating electric and magnetic fields that satisfy the wave equation derived earlier (\cref{eq:em-wave}). They are transverse, travel at $c$ in vacuum and need no medium. In the quantum picture the wave is a stream of photons, each with energy $E = \hbar\omega$ and momentum $p = \hbar k$, where $\omega$ is the angular frequency and $k = \nicefrac{2\pi}{\lambda}$ the wave number.
         \item \textbf{Mechanical waves} are disturbances passing through an elastic medium, as described in \cref{sec:mechanical-media}. They require a medium and may be longitudinal or transverse, with a speed set by the properties of the medium.
         \item \textbf{Matter waves}, or de Broglie waves, express the fact that every particle also behaves as a wave, with the (de Broglie) wavelength
-        \begin{empheq}[box=\fbox]{equation}\label{eq:de-broglie}
+        \begin{keyeq}{eq:de-broglie}{de Broglie wavelength}
             \lambda_{\text{dB}} = \frac{h}{p} = \frac{h}{mv},
-        \end{empheq}
-        \keyeqentry{de Broglie wavelength}
+        \end{keyeq}
         so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. 
         
-        The same relations $E = \hbar\omega$ and $p = \hbar k$ apply, the second being \cref{eq:de-broglie} written in terms of the wavenumber $k = \nicefrac{2\pi}{\lambda}$. Combining them with the classical $E = \nicefrac{p^{2}}{2m}$ gives the free-particle dispersion relation $\omega = \nicefrac{\hbar k^{2}}{2m}$, so matter waves are \emph{dispersive}---unlike light in vacuum, their speed depends on the wavelength. The packet as a whole travels at the group velocity $\nicefrac{d\omega}{dk} = \nicefrac{p}{m} = v$, recovering the classical particle speed. The phase velocity $\nicefrac{\omega}{k} = \nicefrac{v}{2}$ carries no such meaning, as it describes the motion of the individual crests rather than of the particle.\todoper{Look at QMI}
+        The same relations $E = \hbar\omega$ and $p = \hbar k$ apply, the second being \cref{eq:de-broglie} written in terms of the wavenumber $k = \nicefrac{2\pi}{\lambda}$. Combining them with the classical $E = \nicefrac{p^{2}}{2m}$ gives the free-particle dispersion relation $\omega = \nicefrac{\hbar k^{2}}{2m}$, so matter waves are \emph{dispersive}---unlike light in vacuum, their speed depends on the wavelength. The packet as a whole travels at the group velocity $\nicefrac{d\omega}{dk} = \nicefrac{p}{m} = v$, recovering the classical particle speed. The phase velocity $\nicefrac{\omega}{k} = \nicefrac{v}{2}$ carries no such meaning, as it describes the motion of the individual crests rather than of the particle.\todoans{Two things worth having ready if the factor of $\nicefrac{1}{2}$ is queried. It is not a physical prediction: the zero of energy is arbitrary, and putting the rest energy back, $E = \gamma mc^{2}$, gives a phase velocity of $\nicefrac{c^{2}}{v}$ instead, which exceeds $c$. Neither value is a problem, because no signal and no energy travels at the phase velocity---only the group velocity, which comes out as $v$ either way, does.}
     \end{itemize}
 
     \paragraph{Common features and differences}
@@ -609,7 +599,7 @@
         \end{itemize}
 
     \subsection{The order parameter}
-        \todo{is this the best most concise pricutre?}
+
         Knowing that a transition occurs says nothing about what changes at it. The \emph{order parameter} $\eta$ is the single number that does: it is chosen to vanish in the disordered, more symmetric phase and to be nonzero in the ordered one, so it measures how much of the ordering has set in.
 
         Its real use is that it allows a theory of the transition with no microscopic model at all. Near a continuous transition $\eta$ is small, so the free energy may be expanded in powers of it, and symmetry decides which powers may appear. When the two signs of $\eta$ describe physically equivalent states only even powers survive, which gives \emph{Landau theory},
@@ -714,9 +704,9 @@
 
     which measures how much the order of the two operations matters. If it vanishes the observables commute and can be measured simultaneously to any accuracy. If it does not, the spreads of the two quantities obey the relation
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:uncertainty}
+    \begin{keyeq}{eq:uncertainty}{General uncertainty relation}
         \Delta A\,\Delta B \geq \frac{1}{2}\left| \comm{\hat{A}}{\hat{B}} \right| .
-    \end{empheq}
+    \end{keyeq}
 
     Here $\Delta A$ is the ordinary standard deviation of the measured values, built from the expectation values of \cref{sec:postulates},
 
@@ -728,9 +718,9 @@
 
     The most important case is position and momentum. Since $\comm{\hat{x}}{\hat{p}_x} = i\hbar$, the relation gives
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:heisenberg-xp}
+    \begin{keyeq}{eq:heisenberg-xp}{Heisenberg position--momentum relation}
         \Delta x\,\Delta p_x \geq \frac{\hbar}{2},
-    \end{empheq}
+    \end{keyeq}
 
     saturated (turned into an equality) by a Gaussian wave packet, which is therefore the best-localised state possible in position and momentum at once. The energy--time relation $\Delta E\,\Delta t \geq \nicefrac{\hbar}{2}$ used in \cref{sec:interactions} looks the same but does not follow from \cref{eq:uncertainty}, because time is a parameter labelling the evolution and not an observable with an operator. There $\Delta E$ is still an ordinary spread, of the energy, whereas $\Delta t$ is a characteristic time---the interval over which the state changes appreciably, which for an unstable state is its lifetime $\tau$ (\cref{sec:light-matter}). This is directly observable: a level that survives only for a time $\tau$ has no sharp energy, so the line it emits is not infinitely thin but spread over an energy $\Gamma \simeq \nicefrac{\hbar}{\tau}$, the \emph{natural linewidth}, the irreducible width of a spectral line.
 
@@ -751,27 +741,26 @@
 
         With $\lambda$ absorbed into $\hat{H}'$, the corrections to the $n$-th unperturbed level $\left(E_n^{(0)}, \psi_n^{(0)}\right)$ are
 
-        \begin{empheq}[box=\fbox]{align}
-            E_n^{(1)} &= \bra{\psi_n^{(0)}} \hat{H}' \ket{\psi_n^{(0)}} \label{eq:pt-e1}\\
-            \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \label{eq:pt-psi1}\\
-            E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}} \label{eq:pt-e2}
-        \end{empheq}
-        \keyeqentry{Stationary perturbation corrections}
+        \begin{keyeq}{eq:pt-corrections}{Stationary perturbation corrections}
+            \begin{aligned}
+                E_n^{(1)} &= \bra{\psi_n^{(0)}} \hat{H}' \ket{\psi_n^{(0)}} \\
+                \psi_n^{(1)} &= \sum_{m \neq n} \frac{\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}}{E_n^{(0)} - E_m^{(0)}} \psi_m^{(0)} \\
+                E_n^{(2)} &= \sum_{m \neq n} \frac{|\bra{\psi_m^{(0)}} \hat{H}' \ket{\psi_n^{(0)}}|^2}{E_n^{(0)} - E_m^{(0)}}
+            \end{aligned}
+        \end{keyeq}
 
         In words, the first-order shift is the average of the perturbation in the unperturbed state, and the state itself mixes in the other unperturbed states, most strongly those nearest in energy. These formulas hold only for a \emph{non-degenerate} level. If two unperturbed levels share an energy the denominators diverge and the expansion fails, and one must instead diagonalise $\hat{H}'$ within the degenerate set of states---\emph{degenerate perturbation theory}, worked through for the Stark effect in \cref{sec:atoms-fields}.
 
-        Nothing in this is special to energy---the same expansion gives the corrections to the eigenvalues of any observable whose operator is slightly changed---but the Hamiltonian is the case that matters in practice.
-        \todoper{Look at QMII}
+        Nothing in this is special to energy---the same expansion gives the corrections to the eigenvalues of any observable whose operator is slightly changed---but the Hamiltonian is the case that matters in practice.\todoans{One property of $E_{n}^{(2)}$ is worth carrying into the exam, because it is easy to state and easy to be asked. For the \emph{ground} state every denominator $E_{0}^{(0)} - E_{m}^{(0)}$ is negative while the numerator is a squared modulus, so the second-order correction to the ground-state energy is always negative---a perturbation can only push the lowest level down. More generally the terms have the sign of the denominator, so nearby levels repel one another, which is the origin of the phrase \enquote{level repulsion}.}
 
-    \subsection{Fermi Golden Rule}\todoper{A little clearer?}
+    \subsection{Fermi Golden Rule}
     \label{subsec:fermi-golden-rule}
 
-        When the perturbation does depend on time, the shifts of the levels are no longer the point. A time-dependent perturbation drives \emph{transitions} between the unperturbed states, and the quantity to compute is the rate at which the system hops from one to another. For a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, first-order time-dependent perturbation theory gives \emph{Fermi's golden rule}
+        When the perturbation depends on time the shifts of the levels are no longer the point, because the levels are no longer where the system stays. A time-dependent perturbation drives \emph{transitions} between the unperturbed states, and what has to be computed is a \emph{rate}: the probability per unit time of hopping from a starting state $n$ to a final state $m$, written $\Gamma_{n\rightarrow{}m}$ and measured in inverse seconds, so that its reciprocal is a lifetime. For a perturbation oscillating at a single frequency, $\hat{H}'e^{-i\omega t}$, first-order time-dependent perturbation theory gives \emph{Fermi's golden rule}
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:fermi-golden-rule}
+        \begin{keyeq}{eq:fermi-golden-rule}{Fermi Golden Rule}
             \Gamma_{n\rightarrow{}m} \simeq \frac{2\pi}{\hbar} |\bra{\psi_m^{(0)}}\hat{H}'\ket{\psi_n^{(0)}}|^2 \delta\left(E_m^{(0)} - E_n^{(0)} - \hbar\omega\right)
-        \end{empheq}
-        \keyeqentry{Fermi Golden Rule}
+        \end{keyeq}
 
         The delta function enforces energy conservation: the transition happens only if the quantum $\hbar\omega$ supplied by the perturbation matches the gap between the two levels.
 
@@ -807,7 +796,7 @@
 
         where $K = 2k\sin(\nicefrac{\theta}{2})$ is the size of the momentum transfer and $k$ the wave number. As a check, putting the Coulomb potential into this returns exactly the Rutherford scattering formula.
 
-\section{The Schrödinger equation as the basis for understanding the structure of the atom and of the chemical molecule; the periodic table of the elements, chemical bonds}
+\section{Schrödinger equation as the basis for understanding the structure of the atom and chemical molecule; periodic table of elements, chemical bonds}
 \label{sec:atom-molecule}
 
     \subsection{The atom from the Schrödinger equation}
@@ -823,13 +812,13 @@
         which depends on the distance alone, so the equation separates in spherical coordinates and every solution factorises into a radial and an angular part, $\psi_{nlm}(r,\theta,\varphi) = R_{nl}(r)\,Y_{lm}(\theta,\varphi)$, the $Y_{lm}$ being the \emph{spherical harmonics}, the standard set of wave shapes on the surface of a sphere. Physically acceptable solutions---finite, single-valued, normalisable---exist only for particular integer labels, the \emph{quantum numbers} (\cref{sec:angular-momentum}):
 
         \begin{itemize}
-            \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\nicefrac{13.6\,Z^{2}}{n^{2}}$~eV for a one-electron atom, so $13.6$~eV is the energy needed to remove the electron from hydrogen in its ground state.
+            \item \textbf{Principal, $n = 1,2,3,\dots$} --- fixes the energy and roughly the size, $E_{n} = -\qty{13.6}{\electronvolt}\,\nicefrac{Z^{2}}{n^{2}}$ for a one-electron atom, so \qty{13.6}{\electronvolt} is the energy needed to remove the electron from hydrogen in its ground state.
             \item \textbf{Orbital, $l = 0,\dots,n-1$} --- fixes the magnitude of the orbital angular momentum, $|\vec{L}| = \hbar\sqrt{l(l+1)}$, and hence the shape. Written as a letter rather than a number: s, p, d, f for $l = 0,1,2,3$, and alphabetically g, h and onwards beyond that.
             \item \textbf{Magnetic, $m = -l,\dots,+l$} --- fixes its projection on a chosen axis, $L_{z} = m\hbar$, that is, the orientation.
             \item \textbf{Spin, $m_{s} = \pm\nicefrac{1}{2}$} --- the projection of the electron's own spin, doubling every count above.
         \end{itemize}
 
-        One such solution is an \emph{orbital}: a spatial probability distribution for one electron, usually drawn as the surface enclosing most of that probability. In hydrogen the three spatial labels do one job each. $n$ sets the size, which grows roughly as $n^{2}$ from the Bohr radius $a_{0} \simeq 0.053$~nm in the ground state. $l$ sets the shape---an s orbital ($l=0$) is a sphere, a p orbital ($l=1$) is two lobes either side of a nodal plane, and the d orbitals ($l=2$) are mostly four-lobed. $m$ sets the orientation of that shape, so the three p orbitals are the same pair of lobes pointing along $x$, $y$ and $z$.\footnote{The directed orbitals drawn in chemistry are real combinations of the complex $\pm m$ solutions, which is why they point along axes rather than carrying a definite $L_{z}$.}
+        One such solution is an \emph{orbital}: a spatial probability distribution for one electron, usually drawn as the surface enclosing most of that probability. In hydrogen the three spatial labels do one job each. $n$ sets the size, which grows roughly as $n^{2}$ from the Bohr radius $a_{0} \simeq \qty{0.053}{\nano\metre}$ in the ground state. $l$ sets the shape---an s orbital ($l=0$) is a sphere, a p orbital ($l=1$) is two lobes either side of a nodal plane, and the d orbitals ($l=2$) are mostly four-lobed. $m$ sets the orientation of that shape, so the three p orbitals are the same pair of lobes pointing along $x$, $y$ and $z$.\footnote{The directed orbitals drawn in chemistry are real combinations of the complex $\pm m$ solutions, which is why they point along axes rather than carrying a definite $L_{z}$.}
 
         The three spatial labels nest, each one naming a finer division than the last: $n$ alone names a \emph{shell}, $n$ and $l$ together a \emph{subshell}, and all three an individual \emph{orbital}. Since the exclusion principle (\cref{eq:identical}) forbids two electrons the same four labels, one orbital holds two electrons of opposite spin, a subshell holds $2(2l+1)$---two in s, six in p, ten in d, fourteen in f---and a shell holds $2n^{2}$.
 
@@ -845,7 +834,7 @@
 
         \paragraph{Corrections to this picture}
 
-            The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion, the \emph{spin--orbit coupling}. It is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker \emph{magnetic moment of the nucleus}, which is built out of the spins and the orbital motion of the protons and neutrons and whose scale is therefore the \emph{nuclear magneton} $\nicefrac{e\hbar}{2m_{p}}$, smaller than the Bohr magneton $\muB$ (\cref{sec:atoms-fields}) by the electron-to-proton mass ratio of about $\nicefrac{1}{1836}$.\footnote{Why a single nucleon has the moment it does---about $2.79$ nuclear magnetons for the proton, and $-1.91$ for the electrically neutral neutron---is a question about the quarks inside it, one level further down and not needed here.} The hyperfine splitting is smaller than the fine structure by roughly that same ratio, and in hydrogen it splits the ground state by about $6\times10^{-6}$~eV, the transition responsible for the $21$~cm radio line used to map galaxies.
+            The energies above are the \emph{gross structure}. Smaller effects split each level further, and it is worth keeping their sizes in order. The \emph{fine structure} comes from relativistic corrections and from the electron's magnetic moment sitting in the field produced by its own orbital motion, the \emph{spin--orbit coupling}. It is smaller than the gross structure by a factor of order $\alpha^{2}\simeq5\times10^{-5}$, where $\alpha \simeq \nicefrac{1}{137}$ is the fine-structure constant. The \emph{hyperfine structure} comes from the far weaker \emph{magnetic moment of the nucleus}, which is built out of the spins and the orbital motion of the protons and neutrons and whose scale is therefore the \emph{nuclear magneton} $\nicefrac{e\hbar}{2m_{p}}$, smaller than the Bohr magneton $\muB$ (\cref{sec:atoms-fields}) by the electron-to-proton mass ratio of about $\nicefrac{1}{1836}$.\footnote{Why a single nucleon has the moment it does---about $2.79$ nuclear magnetons for the proton, and $-1.91$ for the electrically neutral neutron---is a question about the quarks inside it, one level further down and not needed here.} The hyperfine splitting is smaller than the fine structure by roughly that same ratio, and in hydrogen it splits the ground state by about \qty{6e-6}{\electronvolt}, the transition responsible for the \qty{21}{\centi\metre} radio line used to map galaxies.
 
             An external field splits levels in its turn, into the Zeeman effect for a magnetic field and the Stark effect for an electric one, both of which are worked out in \cref{sec:atoms-fields}.
 
@@ -900,10 +889,9 @@
 
         Because the exponential tail inside the barrier is still nonzero at the far edge, the transmitted amplitude does not vanish: there is a finite probability of the particle emerging. This is measured by the transmission coefficient
 
-        \begin{empheq}[box=\fbox]{equation}
+        \begin{keyeq}{eq:tunnelling-transmission}{Tunnelling transmission coefficient}
             T = \frac{|F|^2}{|A|^2} \propto e^{-2\kappa b},
-        \end{empheq}
-        \keyeqentry{Tunneling transmission coefficient}
+        \end{keyeq}
 
         the proportionality holding for any barrier thick enough to be worth calling one. Everything about tunnelling follows from that exponential. The probability falls off extremely fast with the width $b$ of the barrier and with $\sqrt{m(V_{0}-E)}$, so tunnelling is a serious effect only for light particles and thin, low barriers, and small changes in any of these quantities change the rate by orders of magnitude.
 
@@ -911,7 +899,7 @@
 
         \begin{itemize}
             \item \textbf{Alpha decay.} An $\alpha$ particle (${}^{4}_2\text{He}^{2+}$) inside a heavy nucleus is held by the strong interaction but faces the Coulomb repulsion of the daughter nucleus as a barrier several MeV higher than its own energy. It escapes by tunnelling. Because $T$ depends exponentially on the energy, a spread of only a few MeV in $\alpha$ energies produces half-lives ranging from microseconds to billions of years, which no other mechanism would explain.
-            \item \textbf{Fusion in stars.} Two nuclei must come within about $10^{-15}$~m against their mutual Coulomb repulsion. At the temperature of the Sun's core the typical thermal energy is a thousand times smaller than that barrier, so on classical grounds the Sun should not shine. Fusion proceeds because the rare fast protons tunnel through, and this is also why controlled fusion may be possible at a lower temperature than a classical estimate demands.
+            \item \textbf{Fusion in stars.} Two nuclei must come within about \qty{e-15}{\metre} against their mutual Coulomb repulsion. At the temperature of the Sun's core the typical thermal energy is a thousand times smaller than that barrier, so on classical grounds the Sun should not shine. Fusion proceeds because the rare fast protons tunnel through, and this is also why controlled fusion may be possible at a lower temperature than a classical estimate demands.
             \item \textbf{Scanning tunnelling microscope.} A sharp conducting tip is held a fraction of a nanometre above a surface and a small voltage applied. Electrons tunnel across the gap, and because the current depends exponentially on the width of that gap, moving the tip by the diameter of a single atom changes it by orders of magnitude. Scanning the tip at constant current maps the surface atom by atom.
             \item \textbf{Semiconductor devices.} In a tunnel diode the junction is made so narrow that carriers tunnel straight across it, which gives the device a range of voltages over which the current \emph{falls} as the voltage rises. In flash memory, writing and erasing consist of driving electrons through a thin insulating layer onto an isolated gate, where they stay until driven back.
             \item \textbf{The ammonia molecule.} The nitrogen atom of NH$_3$ sits to one side of the plane of the three hydrogens and tunnels back and forth through it. The two arrangements have the same energy, and the tunnelling splits the ground level into two, the transition between them being the microwave line on which the first maser was built.

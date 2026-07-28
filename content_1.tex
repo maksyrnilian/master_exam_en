@@ -1,7 +1,7 @@
 % !TeX root = main.tex
 \cleardoublepage
 \fancyfoot[L]{\small \RomanNumeralCaps{1}}
-\section{Inertial frames, principles of relativity, the Galilean transformation, the Lorentz transformation and its consequences}
+\section{Inertial frames, principles of relativity, Galilean transformation, Lorentz transformation and its consequences}
 \label{sec:inertial-frames}
 
     An inertial frame is a frame of reference with respect to which every body, not subject to external interactions with other bodies, moves in uniform rectilinear motion or remains at rest. The existence of such a frame is postulated by Newton's first law of motion.
@@ -21,15 +21,14 @@
 
     The Galilean transformations were thereby generalised to the Lorentz transformation to accommodate the Einstein's postulate:
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:lorentz}
+    \begin{keyeq}{eq:lorentz}{Lorentz transformation}
         \begin{aligned}
             t' &= \gamma\left(t-xv/c^2\right) \\
             x' &= \gamma\left(x-tv\right) \\
             y' &= y \\
             z' &= z
         \end{aligned}
-    \end{empheq}
-    \keyeqentry{Lorentz transformation}
+    \end{keyeq}
 
     where the parameter $\gamma$ is known as the Lorentz factor\footnote{In general, time dilation depends solely on the magnitude of the relative velocity between two frames, whereas length contraction is a directional phenomenon that occurs strictly parallel to the axis of motion---the $x$-axis in this standard configuration.}:
 
@@ -71,10 +70,9 @@
 
         Writing out the invariant of the four-momentum gives the \emph{energy--momentum relation}
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:energy-momentum}
+        \begin{keyeq}{eq:energy-momentum}{Energy--momentum--mass relation}
             E^{2} = p^{2}c^{2} + m^{2}c^{4},
-        \end{empheq}
-        \keyeqentry{Energy--momentum--mass relation}
+        \end{keyeq}
 
         where $E$ is the total energy of a free body, $p$ the magnitude of its momentum, and $m$ its \emph{invariant mass}, meaning the mass measured in the frame in which the body is at rest. Two limits carry most of the physics. For a body at rest we have $p=0$ and the relation collapses to Einstein's $E=mc^{2}$, so that mass is itself a store of energy at the conversion rate $c^{2}\simeq\qty{9e16}{\joule\per\kilogram}$---the reason a milligram of mass defect suffices to power a nuclear reaction. For a massless particle such as the photon we have $m=0$ and the relation gives $E=pc$, a case $E=mc^{2}$ cannot describe at all. The invariant mass of a composite system also counts the internal energy of its parts, so a hot or compressed body is very slightly more massive than a cold relaxed one, and roughly \qty{99}{\percent} of a proton's mass is the kinetic energy of its quarks and the energy of the gluon field rather than the quark masses themselves.
 
@@ -102,9 +100,9 @@
         \item \textbf{Gravitational.} Acts on everything that carries energy. It is by far the feeblest between two individual particles, but it dominates on astronomical scales because its charge---mass--energy---comes with one sign only and never cancels.
     \end{itemize}
 
-    The first three are described by the \emph{Standard Model}\footnote{Energies in the table are quoted in \emph{electronvolts}, $1$~eV being the energy an electron gains across a potential difference of one volt, $1\,\mathrm{eV}=1.602\times10^{-19}$~J. Masses are quoted in the same units by \emph{mass--energy equivalence}, $E=mc^{2}$. Strictly the unit is then eV$/c^{2}$, but the $c^{2}$ is left out and one simply says the $W$ boson has a mass of $80$~GeV. In SI units $1$~eV$/c^{2}=1.783\times10^{-36}$~kg.} (\cref{fig:standard-model-particles}), the quantum field theory of elementary particles. Its matter content is twelve spin-\nicefrac{1}{2} particles arranged in three generations, six quarks and six leptons, classified in \cref{sec:particles}. \emph{Ordinary matter uses only the first generation (up and down quarks and the electron)} while the heavier generations are copies that decay quickly.
+    The first three are described by the \emph{Standard Model}\footnote{Energies in the table are quoted in \emph{electronvolts}, \qty{1}{\electronvolt} being the energy an electron gains across a potential difference of one volt, $1\,\mathrm{eV}=\qty{1.602e-19}{\joule}$. Masses are quoted in the same units by \emph{mass--energy equivalence}, $E=mc^{2}$. Strictly the unit is then eV$/c^{2}$, but the $c^{2}$ is left out and one simply says the $W$ boson has a mass of \qty{80}{\giga\electronvolt}. In SI units $1\,\mathrm{eV}/c^{2}=\qty{1.783e-36}{\kilogram}$.} (\cref{fig:standard-model-particles}), the quantum field theory of elementary particles. Its matter content is twelve spin-\nicefrac{1}{2} particles arranged in three generations, six quarks and six leptons, classified in \cref{sec:particles}. \emph{Ordinary matter uses only the first generation (up and down quarks and the electron)} while the heavier generations are copies that decay quickly.
 
-    The interactions are carried by spin-1 vector bosons: eight gluons, the photon, and the $W^{+}$, $W^{-}$ and $Z^{0}$ bosons. One further particle, the spin-0 scalar \emph{Higgs boson} of mass about $125$~GeV, is the quantum of the field that gives the $W$, the $Z$ and the charged fermions their masses. Gravitation stands outside this framework and has no accepted quantum description.
+    The interactions are carried by spin-1 vector bosons: eight gluons, the photon, and the $W^{+}$, $W^{-}$ and $Z^{0}$ bosons. One further particle, the spin-0 scalar \emph{Higgs boson} of mass about \qty{125}{\giga\electronvolt}, is the quantum of the field that gives the $W$, the $Z$ and the charged fermions their masses. Gravitation stands outside this framework and has no accepted quantum description.
 
     \begin{table}[H]
         \centering
@@ -113,13 +111,13 @@
             \hline
             \textbf{interaction} & \textbf{carrier} & \textbf{charge} & \textbf{range} & \textbf{strength} \\
             \hline
-            \rule{0pt}{2.6ex}strong & 8 gluons, massless & colour & $\sim10^{-15}$\,m & $1$ \\
+            \rule{0pt}{2.6ex}strong & 8 gluons, massless & colour & ${\sim}\qty{e-15}{\metre}$ & $1$ \\
             electromagnetic & photon, massless & electric & $\infty$ & $\sim10^{-2}$ \\
-            weak & $W^{\pm}$ , $Z^{0}$ & weak isospin & $\sim10^{-18}$\,m & $\sim10^{-6}$ \\
+            weak & $W^{\pm}$ , $Z^{0}$ & weak isospin & ${\sim}\qty{e-18}{\metre}$ & $\sim10^{-6}$ \\
             gravitational & graviton, hypothetical & mass--energy & $\infty$ & $\sim10^{-39}$ \\
             \hline
         \end{tabular}
-        \caption{The four interactions. All carriers have spin 1 except the graviton, which would have spin 2. The strengths are dimensionless order-of-magnitude estimates for protons at \qty{1}{\femto\meter}, normalised to the strong interaction.}
+        \caption{The four interactions. All carriers have spin 1 except the graviton, which would have spin 2. The strengths are dimensionless order-of-magnitude estimates for protons at \qty{1}{\femto\metre}, normalised to the strong interaction.}
         \label{tab:interactions}
     \end{table}
 
@@ -132,30 +130,29 @@
         \includegraphics[width=0.16\textwidth]{graphics/Quark_structure_proton.pdf}
         \caption{Proton.}
         \label{fig:proton}
-    \end{wrapfigure}\todo{reference in the appropriate secition}
+    \end{wrapfigure}
 
     For example, the proton (\cref{fig:proton}) has quark content $uud$ and the neutron $udd$, and their electric charges follow by adding the quark charges (\cref{sec:particles}). Each \emph{baryon} must contain one quark of each colour, but the particular colour carried by each quark is not fixed: gluon exchange constantly reshuffles the assignment among the three, so only the combination as a whole is colour-neutral.
 
     The ranges in \cref{tab:interactions} are not independent facts but follow from the carrier masses. An exchanged carrier is never observed directly and so need not balance the energy books---it is \emph{virtual}, in effect borrowed from the vacuum provided the loan is repaid quickly. The energy--time uncertainty relation $\Delta E\,\Delta t\geq\nicefrac{\hbar}{2}$ (\cref{sec:uncertainty}) sets how quickly: borrowing at least the rest energy $mc^{2}$ limits its life to $\Delta t\sim\nicefrac{\hbar}{mc^{2}}$, and travelling at most at the speed of light it covers
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:yukawa-range}
+    \begin{keyeq}{eq:yukawa-range}{Compton range of an interaction}
         R \simeq c\,\Delta t \simeq \frac{h}{mc},
-    \end{empheq}
-    \keyeqentry{Compton range of an interaction}
+    \end{keyeq}
 
     the Compton range of the carrier. A heavy carrier therefore gives a short-ranged interaction and a massless one an unlimited range, which is why electromagnetism and gravitation reach as far as they do.
 
-    The strong interaction is the apparent exception, since its carrier is massless and yet it does not reach beyond the nucleus. Its range is set instead by \emph{confinement}: because gluons attract one another, colour charge can never be isolated, and gluons do not travel freely between well-separated particles. What acts between nucleons is a residual effect carried by \emph{pions}, the lightest hadrons, of rest energy about $140$~MeV, and \cref{eq:yukawa-range} then returns the familiar $1.4\times10^{-15}$~m.
+    The strong interaction is the apparent exception, since its carrier is massless and yet it does not reach beyond the nucleus. Its range is set instead by \emph{confinement}: because gluons attract one another, colour charge can never be isolated, and gluons do not travel freely between well-separated particles. What acts between nucleons is a residual effect carried by \emph{pions}, the lightest hadrons, of rest energy about \qty{140}{\mega\electronvolt}, and \cref{eq:yukawa-range} then returns the familiar \qty{1.4e-15}{\metre}.
 
-    Beta decay shows the pieces working together. A down quark inside a neutron turns into an up quark and emits a $W^{-}$, which decays at once into an electron and an electron antineutrino, so that overall $n\to p+e^{-}+\bar{\nu}_{e}$. The energy released (kinetic energy shared among all resultant particles) is a few MeV, thousands of times less than the $80$~GeV needed to make a real $W$. The boson can therefore only ever be virtual, and it is this mismatch of scales---not any small coupling---that makes the weak interaction weak and slow at everyday energies.
+    Beta decay shows the pieces working together. A down quark inside a neutron turns into an up quark and emits a $W^{-}$, which decays at once into an electron and an electron antineutrino, so that overall $n\to p+e^{-}+\bar{\nu}_{e}$. The energy released (kinetic energy shared among all resultant particles) is a few MeV, thousands of times less than the \qty{80}{\giga\electronvolt} needed to make a real $W$. The boson can therefore only ever be virtual, and it is this mismatch of scales---not any small coupling---that makes the weak interaction weak and slow at everyday energies.
 
     Collecting these, each interaction is characterised by three numbers that should be kept apart: the mass--energy of its carrier, the range that follows from it, and the energies at which the interaction shows up in practice.
 
     \begin{itemize}
-        \item \textbf{Electromagnetic.} Carrier the photon, massless, so the range is unlimited. The interaction has no intrinsic energy scale of its own and the energies observed are set by the system: about $1$~eV for a chemical bond, $13.6$~eV to ionise hydrogen, tens of keV for the inner electrons of heavy atoms.
-        \item \textbf{Strong.} The fundamental carriers, the eight gluons, are massless, so \cref{eq:yukawa-range} would give an unlimited range. Confinement removes it: colour cannot be separated, and what acts between nucleons is a residual interaction carried by pions of mass $140$~MeV, giving $R\simeq1.4\times10^{-15}$~m. Quark--quark binding runs to of order $1$~GeV and is what supplies almost all of a hadron's mass, whereas the residual nucleon--nucleon binding left over from it is only about $8$~MeV per nucleon.
-        \item \textbf{Weak.} Carriers the $W^{\pm}$ at $80$~GeV and the $Z^{0}$ at $91$~GeV, giving $R\simeq2\times10^{-18}$~m. The carrier scale and the observed scale are far apart: the energy released in beta decay is only of order MeV, so the boson is always deeply virtual, and it is this mismatch, not a small coupling, that makes the interaction weak at everyday energies.
-        \item \textbf{Gravitational.} The graviton, if it exists, is massless, so the range is unlimited and there is no carrier mass to set a scale. What gravitates is not rest mass but total mass--energy, so a particle accelerated to energy $E$ gravitates as though it had mass $\nicefrac{E}{c^{2}}$, and the gravitational attraction between two such particles grows as $E^{2}$ while the other interactions do not. The \emph{Planck energy} $E_{\mathrm{P}}=\sqrt{\hbar c^{5}/G}\approx10^{19}$~GeV is the point where that growth makes gravitation comparable to the rest, and hence where a quantum description would be needed. It is built from $\hbar$, $c$ and $G$ alone and lies beyond any conceivable accelerator.
+        \item \textbf{Electromagnetic.} Carrier the photon, massless, so the range is unlimited. The interaction has no intrinsic energy scale of its own and the energies observed are set by the system: about \qty{1}{\electronvolt} for a chemical bond, \qty{13.6}{\electronvolt} to ionise hydrogen, tens of \unit{\kilo\electronvolt} for the inner electrons of heavy atoms.
+        \item \textbf{Strong.} The fundamental carriers, the eight gluons, are massless, so \cref{eq:yukawa-range} would give an unlimited range. Confinement removes it: colour cannot be separated, and what acts between nucleons is a residual interaction carried by pions of mass \qty{140}{\mega\electronvolt}, giving $R\simeq\qty{1.4e-15}{\metre}$. Quark--quark binding runs to of order \qty{1}{\giga\electronvolt} and is what supplies almost all of a hadron's mass, whereas the residual nucleon--nucleon binding left over from it is only about \qty{8}{\mega\electronvolt} per nucleon.
+        \item \textbf{Weak.} Carriers the $W^{\pm}$ at \qty{80}{\giga\electronvolt} and the $Z^{0}$ at \qty{91}{\giga\electronvolt}, giving $R\simeq\qty{2e-18}{\metre}$. The carrier scale and the observed scale are far apart: the energy released in beta decay is only of order MeV, so the boson is always deeply virtual, and it is this mismatch, not a small coupling, that makes the interaction weak at everyday energies.
+        \item \textbf{Gravitational.} The graviton, if it exists, is massless, so the range is unlimited and there is no carrier mass to set a scale. What gravitates is not rest mass but total mass--energy, so a particle accelerated to energy $E$ gravitates as though it had mass $\nicefrac{E}{c^{2}}$, and the gravitational attraction between two such particles grows as $E^{2}$ while the other interactions do not. The \emph{Planck energy} $E_{\mathrm{P}}=\sqrt{\nicefrac{\hbar c^{5}}{G}}\approx\qty{e19}{\giga\electronvolt}$ is the point where that growth makes gravitation comparable to the rest, and hence where a quantum description would be needed. It is built from $\hbar$, $c$ and $G$ alone and lies beyond any conceivable accelerator.
     \end{itemize}
 
     \FloatBarrier
@@ -171,26 +168,23 @@
 
         The \emph{Lagrangian} of a system is the difference between its kinetic and its potential energy,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:lagrangian}
+        \begin{keyeq}{eq:lagrangian}{Lagrangian}
             \Lagr \equiv T-V,
-        \end{empheq}
-        \keyeqentry{Lagrangian}
+        \end{keyeq}
 
         and the \emph{action} is the Lagrangian\footnote{Lagrangians are different for different paths. For example, for a freely moving particle $E=\nicefrac{1}{2}mv^2$ but $v(t)$ could take many forms which would differentiatie paths that start and end at the same points---a unifrom motion, a particle that accelerates and then decelerates etc.} accumulated along a path in time,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:action}
+        \begin{keyeq}{eq:action}{Action}
             S \equiv \int_{t_1}^{t_2} \Lagr \, dt .
-        \end{empheq}
-        \keyeqentry{Action}
+        \end{keyeq}
 
         $S$ is not a number belonging to the system but a number belonging to a whole candidate path, one value for every path one might consider. An object that eats a function and returns a number in this way is called a \emph{functional} (\cref{sec:variational}) as opposed to an ordinary function, which takes in a number and returns a number.
 
         Demanding that $S$ be \emph{stationary}---unchanged to first order when the path is deformed slightly with its two endpoints held fixed---singles out the path actually followed and yields the \emph{Euler--Lagrange equation},
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:euler-lagr}
+        \begin{keyeq}{eq:euler-lagr}{Euler--Lagrange equation}
             \frac{d}{dt} \left( \frac{\partial \Lagr}{\partial \dot{q}} \right) = \frac{\partial \Lagr}{\partial q},
-        \end{empheq}
-        \keyeqentry{Euler--Lagrange equation}
+        \end{keyeq}
 
         which is a partiacl differential equation\footnote{
         A \emph{partial derivative} $\nicefrac{\partial f}{\partial x}$ is the rate of change of $f$ with respect to $x$ when every other argument of $f$ is held fixed, so its value depends entirely on which variables those are---thermodynamics makes this explicit by writing the held quantities as subscripts, as in $\left(\nicefrac{\partial U}{\partial V}\right)_{T}$. A \emph{total derivative} $\nicefrac{df}{dt}$ asks a different question: how $f$ changes along an actual path, counting every route by which $t$ influences it. The \emph{chain rule} connects the two,
@@ -279,9 +273,9 @@
                 \vec{L} \equiv \vec{r} \times \vec{p} = \const .
             \end{equation*}
 
-            In words: if turning the apparatus to face a different direction makes no difference to how it behaves, the combination $\vec{r} \times \vec{p}$ cannot change with time.\todoper{Watch Allan Adams on it.}
+            In words: if turning the apparatus to face a different direction makes no difference to how it behaves, the combination $\vec{r} \times \vec{p}$ cannot change with time.\todoans{The quantum version of the same statement, if it is wanted: every continuous symmetry is carried out by a unitary operator, that operator is built from a Hermitian \emph{generator}, and if the generator commutes with $\hat{H}$ then \cref{eq:tdse} keeps its expectation value fixed. The generator of rotations is $\hat{\vec{L}}$, of translations $\hat{p}$, and of time translation $\hat{H}$ itself---the same three pairings as above, reached by a different route.}
 
-\section{Newton's laws of dynamics and the range of their applicability; classical mechanics as a limiting case of quantum mechanics; non-relativistic classical mechanics as a limiting case of relativistic classical mechanics}
+\section{Newton's laws of dynamics and the range of their applicability; classical mechanics as a limiting case of quantum mechanics; nonrelativistic classical mechanics as a limiting case of relativistic classical mechanics}
 \label{sec:newton}
 
     \subsection{Newton's laws of motion}
@@ -314,7 +308,7 @@
 
     \subsection{Limits of applicability of Newton's laws}
 
-        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes more complicated in more intricate coordinate systems\todo{intricate?}. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{sec:variational}), work better.
+        Newton's laws of motion lose their direct validity in non-inertial frames, where it becomes necessary to introduce fictitious forces (sourceless, not subject to the 3rd law). Newtonian mechanics also becomes cumbersome in coordinates other than Cartesian ones, such as polar or spherical ones, and whenever the motion is constrained to a track or a surface, because every force of constraint then has to be written out as a vector and resolved along the axes. In such cases the Lagrangian or Hamiltonian formalisms, based on the principle of least action (\cref{sec:variational}), work better.
 
         Quantum mechanics describes the behaviour of particles on a small scale, where Newtonian mechanics fails. The uncertainty principle (\cref{sec:uncertainty}), for example, forbids a particle a sharp position and a sharp momentum at the same time, whereas classical mechanics rests on \emph{exact trajectories}.
 
@@ -322,7 +316,7 @@
 
         Moreover, Newton assumed that time is absolute, which was only countered 300 years later by Einstein and his theory of relativity, where the Galilean transformation is replaced by the Lorentz transformation (\cref{sec:inertial-frames}) and the two agree only to the extent that $\gamma \to 1$ for $v \ll c$ (\cref{eq:gamma}). For this reason classical mechanics still remains a useful tool for describing non-relativistic phenomena. Again, certain effects are inherently relativistic even though they are directly observable: cosmic-ray muons reach sea level in far greater numbers than their lifetime would allow without time dilation, and the atomic clocks aboard GPS satellites have to be corrected for both special- and general-relativistic effects or the fix drifts by kilometres a day.
 
-\section{The postulates of quantum mechanics; measurement, state of a physical system}
+\section{Postulates of quantum mechanics; measurement, state of a physical system}
 \label{sec:postulates}
 
     Quantum mechanics rests on a handful of \emph{postulates}---statements that are not derived from anything deeper, but assumed, and then justified by the fact that everything they predict turns out to be correct.
@@ -341,10 +335,9 @@
         \begin{postulate}{the Born rule}
             \label{post:born}
             $|\Psi(x,t)|^{2}$ is a \emph{probability density}: the probability of finding the particle between $a$ and $b$ at time $t$ is
-            \begin{empheq}[box=\fbox]{equation}\label{eq:born-position}
+            \begin{keyeq}{eq:born-position}{Born rule}
                 P_{a \le x \le b}(t) = \int^{b}_{a}|\Psi(x,t)|^{2}\,dx .
-            \end{empheq}
-            \keyeqentry{Born rule}
+            \end{keyeq}
         \end{postulate}
 
         Because the particle must be somewhere, the wave function is \emph{normalised},
@@ -360,9 +353,9 @@
         \begin{postulate}{superposition}
             \label{post:superposition}
             Any sum of possible states is itself a possible state: if $\Psi_{1}$ and $\Psi_{2}$ are states, so is $c_{1}\Psi_{1} + c_{2}\Psi_{2}$ with complex $c_{1}, c_{2}$.
-        \end{postulate}\todo{c1 and c2 are normalised such that the particle is described by either of the wavefunctions which themsleves are normalised such that the total probability is 1.? so a single wavefunction is normalised differently if it is added to another to create a superposition?}
+        \end{postulate}\todoans{The premise to drop is that each term is separately normalised inside the sum. Normalisation is a condition on the \emph{whole} state, and it is the coefficients that carry it: for orthonormal $\Psi_{1}$ and $\Psi_{2}$, $\braket{\Psi|\Psi} = |c_{1}|^{2}+|c_{2}|^{2}$, so the requirement is $|c_{1}|^{2}+|c_{2}|^{2}=1$. Nothing is done to $\Psi_{1}$ itself. If the two are not orthogonal a cross term $2\,\mathrm{Re}\left(c_{1}^{*}c_{2}\braket{\Psi_{1}|\Psi_{2}}\right)$ survives and the condition picks it up.}
 
-        If a system can be prepared in state A and in state B, it can be prepared in the combination \enquote{A + B}, realising both alternatives at once. The equation governing $\Psi$ turns out to be linear (\cref{eq:tdse}), so each term evolves on its own and the system stays a superposition at every later instant.
+        If a system can be prepared in state A and in state B, it can be prepared in the combination \enquote{A + B}, realising both alternatives at once. Normalisation constrains the coefficients rather than the terms: for orthonormal $\Psi_{1}$ and $\Psi_{2}$ it requires $|c_{1}|^{2}+|c_{2}|^{2}=1$, which is what keeps the total probability equal to $1$. The equation governing $\Psi$ turns out to be linear (\cref{eq:tdse}), so each term evolves on its own and the system stays a superposition at every later instant.
 
     \subsection{Why the wave function is complex: interference}
 
@@ -382,20 +375,17 @@
 
         Position probabilities come straight out of \cref{eq:born-position}. Every other measurable quantity has to be extracted from $\Psi$, and the tool for that is an \emph{operator}: an instruction that takes one function and returns another. Position acts by multiplication and momentum by differentiation,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:position-operator}
+        \begin{keyeq}{eq:position-operator}{Position and momentum operators}
             \hat{x}\,\Psi = x\,\Psi, \qquad
             \hat{p} = -i\hbar\nabla, \qquad
             \hat{p}_{x} = -i\hbar\frac{\partial}{\partial x} .
-        \end{empheq}
-        \keyeqentry{Position operator}
-        \keyeqentry{Momentum operator}
+        \end{keyeq}
 
         The momentum operator is read off from the de Broglie relation $p = \hbar k$ (\cref{eq:de-broglie}): differentiating a plane wave $e^{ikx}$ brings down a factor $ik$, and $ik \cdot (-i\hbar) = \hbar k$. The operator of the total energy, the \emph{Hamiltonian}, is then built from it exactly as the classical $\Ham = T + V$ (\cref{eq:hamiltonian}) is,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:hamiltonian-operator}
+        \begin{keyeq}{eq:hamiltonian-operator}{Hamiltonian operator}
             \hat{H} = \frac{\hat{p}^{2}}{2m} + V(x) = -\frac{\hbar^{2}}{2m}\nabla^{2} + V(x) ,
-        \end{empheq}
-        \keyeqentry{Hamiltonian operator}
+        \end{keyeq}
 
         where
 
@@ -442,10 +432,9 @@
 
         Applying \cref{eq:eigenvalue} to the energy gives the \emph{time-independent Schrödinger equation},
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:tise}
+        \begin{keyeq}{eq:tise}{Time-independent Schrödinger equation}
             \hat{H}\,\psi(x) = E\,\psi(x) .
-        \end{empheq}
-        \keyeqentry{Time-independent Schrödinger equation}
+        \end{keyeq}
 
         Despite the name, this is not a wave equation---there is no time in it. It is an energy eigenvalue equation, and its solutions are the states of definite energy.
 
@@ -471,10 +460,9 @@
         \begin{postulate}{time evolution}
             \label{post:evolution}
             Between measurements the state evolves according to the time-dependent Schrödinger equation,
-            \begin{empheq}[box=\fbox]{equation}\label{eq:tdse}
+            \begin{keyeq}{eq:tdse}{Time-dependent Schrödinger equation}
                 i\hbar\frac{\partial \Psi}{\partial t} = \hat{H}\Psi .
-            \end{empheq}
-            \keyeqentry{Time-dependent Schrödinger equation}
+            \end{keyeq}
         \end{postulate}
 
         The Schrödinger equation is a guess. It is not derived from anything deeper, and the reasoning behind it runs backwards, from the answer to the equation. Start from a de Broglie wave, $\Psi \propto e^{i(kx-\omega t)}$, and from two relations already supplied by experiment, $E = \hbar\omega$ and $p = \hbar k$. What we want to reproduce is the ordinary classical statement $E = \nicefrac{p^{2}}{2m} + V$, so look at the powers in it: energy appears once, momentum appears squared. We therefore need something that pulls \emph{one} factor of $\omega$ out of the wave, and something that pulls \emph{two} factors of $k$ out of it.
@@ -504,7 +492,7 @@
             \Psi = c_{1}\psi_{1}e^{-\frac{i}{\hbar}E_{1}t} + c_{2}\psi_{2}e^{-\frac{i}{\hbar}E_{2}t} .
         \end{equation*}
 
-        The two phases turn at different rates, so the phase \emph{difference} between the terms grows steadily, and the interference term in $|\Psi|^{2}$ oscillates at the frequency $\omega_{21} = \nicefrac{\left(E_{2}-E_{1}\right)}{\hbar}$. The probability density sloshes back and forth at that frequency instead of standing still, and for an electron in an atom $\omega_{21}$ is precisely the frequency of the light emitted or absorbed on that transition. A \emph{global} phase changes nothing, a \emph{relative} phase changes everything.\todo{that related to fermi golden rule?}
+        The two phases turn at different rates, so the phase \emph{difference} between the terms grows steadily, and the interference term in $|\Psi|^{2}$ oscillates at the frequency $\omega_{21} = \nicefrac{\left(E_{2}-E_{1}\right)}{\hbar}$. The probability density sloshes back and forth at that frequency instead of standing still, and for an electron in an atom $\omega_{21}$ is precisely the frequency of the light emitted or absorbed on that transition. A \emph{global} phase changes nothing, a \emph{relative} phase changes everything.\todoans{Related, but not the same thing. What happens here is the free evolution of a superposition already prepared---no perturbation acts, and no population moves between the levels. Fermi's golden rule (\cref{subsec:fermi-golden-rule}) treats a \emph{time-dependent perturbation} driving population from one level to another and returns a rate, not an oscillation. The bridge between them is that the charge density sloshing at $\omega_{21}$ \emph{is} the oscillating dipole through which the atom couples to the electromagnetic field, and the golden rule is what turns that coupling into an emission or absorption rate.}
 
     \subsection{States as vectors: Dirac notation}
 
@@ -572,7 +560,7 @@
             The Hilbert space of a composite system is the \emph{tensor product} of the spaces of its parts, $\Hilb = \bigotimes_{i}\Hilb_{i}$.\footnote{The tensor product $\Hilb_{1} \otimes \Hilb_{2}$ is the space whose basis vectors are all the pairs formed by taking one basis vector from $\Hilb_{1}$ and one from $\Hilb_{2}$. Its dimensions therefore multiply rather than add: a two-state spin combined with a three-state degree of freedom gives a six-dimensional space, not a five-dimensional one.}
         \end{postulate}
 
-        A state that cannot be written as a single such pair is called \emph{entangled}. Take two spins in\todoper{look at quantum erases experiment}
+        A state that cannot be written as a single such pair is called \emph{entangled}. Take two spins in\todoans{The quantum eraser is the sharpest test of the which-path rule above. Entangle each photon of a double-slit experiment with a partner carrying the which-path information and the fringes vanish---because the information exists somewhere, not because anything was jostled. Measure the partner in a basis that destroys that information and the fringes return, but only inside the subset of runs sorted by the partner's result, which is why nothing is signalled. The delayed-choice version, where the partner is measured after the photon has landed, is not evidence of retrocausality for exactly that reason.}
 
         \begin{equation*}
             \ket{\Psi} = \frac{1}{\sqrt{2}}\left(\ket{\uparrow\uparrow} + \ket{\downarrow\downarrow}\right),
@@ -596,7 +584,7 @@
             \item \textbf{Composite systems}---the Hilbert space of a composite system is the tensor product of the spaces of its parts.
         \end{enumerate}
 
-\section{Angular momentum and precession --- classical and quantum description}
+\section{Angular momentum and precession -- classical and quantum description}
 \label{sec:angular-momentum}
 
     The classical angular momentum of a system is defined as
@@ -609,10 +597,9 @@
 
     In quantum mechanics the same expression is promoted to an operator (\cref{post:observables}), the \emph{orbital} angular momentum
 
-    \begin{empheq}[box=\fbox]{equation}\label{eq:orbital-angular-momentum}
+    \begin{keyeq}{eq:orbital-angular-momentum}{Orbital angular momentum operator}
         \hat{\vec{L}} = -i\hbar\left(\vec{r}\times \nabla\right).
-    \end{empheq}
-    \keyeqentry{Orbital angular momentum operator}
+    \end{keyeq}
 
     A particle also carries \emph{spin}, an angular momentum that is not associated with any motion through space. It transforms under rotations exactly as $\hat{\vec{L}}$ does, but it has no classical counterpart and is not a picture of the particle turning about itself. Like $\hat{\vec{L}}$ it is a vector of three operators, one observable per axis,
 
@@ -648,7 +635,7 @@
 
         Precession is the slow circular drift of the axis of a spinning object. Instead of pointing in a fixed direction, the spin axis itself sweeps around, tracing out the surface of a cone. The familiar example is a spinning toy top: as it spins, its axis does not simply fall over under gravity but slowly circles around the vertical.
 
-        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.\todo{SIGNIFICANT EDIT (deferred): document-wide notation sweep---separate notation should be used for quantum and classical angular momentum, and for spin and orbital angular momentum in the entire document. all operators should carry hats}
+        The angular momentum $\vec{L}$ of the spinning body points along its spin axis, and a torque changes it at the rate $\nicefrac{d\vec{L}}{dt} = \vec{\tau}$. If the torque is perpendicular to $\vec{L}$, then so is the increment it adds, so it turns $\vec{L}$ without lengthening it and the axis sweeps out a cone. For the toy top, gravity acting at the centre of mass supplies the torque, and unless the axis stands exactly vertical that torque is horizontal and therefore perpendicular to $\vec{L}$. The axis moves not along the force but along the torque, which is what makes precession look counter-intuitive.
 
         The precession frequency is given by
 
@@ -661,24 +648,24 @@
     \subsection{Quantum precession}
     \label{subsec:quantum-precession}
 
-        A particle such as an electron carries a magnetic moment $\vec{\mu}$ associated with its spin angular momentum\footnote{
-        An orbital moment behaves the same way, $\vec{\mu} = \gamma\vec{L}$, but with a gyromagnetic ratio half as large. In an atom with unpaired electrons the spin contribution is usually the dominant one, whereas in a diamagnet the spins are paired and only the orbital part survives (\cref{sec:diamagnets}).
-        }$\vec{S}$---the two are proportional, $\vec{\mu} = \gamma\vec{S}$ with $\gamma$ the \emph{gyromagnetic ratio}, and so lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
+        A particle such as an electron carries a magnetic moment $\hat{\vec{\mu}}$ associated with its spin angular momentum\footnote{
+        An orbital moment behaves the same way, $\hat{\vec{\mu}} = \gamma\hat{\vec{L}}$, but with a gyromagnetic ratio half as large. In an atom with unpaired electrons the spin contribution is usually the dominant one, whereas in a diamagnet the spins are paired and only the orbital part survives (\cref{sec:diamagnets}).
+        }$\hat{\vec{S}}$---the two are proportional, $\hat{\vec{\mu}} = \gamma\hat{\vec{S}}$ with $\gamma$ the \emph{gyromagnetic ratio}, and so lie along the same axis. Placed in an external magnetic field $\vec{B}$, the moment feels a torque
 
         \begin{equation*}
-            \vec{\tau} = \vec{\mu}\times \vec{B},
+            \hat{\vec{\tau}} = \hat{\vec{\mu}}\times \vec{B},
         \end{equation*}
 
-        which is perpendicular to $\vec{S}$ and therefore, exactly as in the classical case, makes $\vec{S}$ sweep around the direction of $\vec{B}$ instead of aligning with it. This is \emph{Larmor precession}, the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's angular momentum $\vec{L}$.
+        and taking expectation values on both sides turns the operator statement into one about ordinary vectors, $\nicefrac{d\ev{\hat{\vec{S}}}}{dt} = \ev{\hat{\vec{\tau}}}$, of exactly the classical form. That is why the picture may be drawn classically at all. The torque is perpendicular to $\ev{\hat{\vec{S}}}$, so it makes the mean spin sweep around the direction of $\vec{B}$ instead of aligning with it.
 
-        The rate of this precession, the \emph{Larmor frequency} $\omega_{L} = \gamma B$, depends only on the field strength and not at all on how far $\vec{S}$ is tilted away from $\vec{B}$, because the two factors of $\sin\theta$ that enter the torque and the cone radius cancel. Every spin in a sample therefore turns at the same rate whatever its orientation, which is what makes the effect usable for magnetic resonance.
+        The rate of this precession, the \emph{Larmor frequency} $\omega_{L} = \gamma B$, depends only on the field strength and not at all on how far $\ev{\hat{\vec{S}}}$ is tilted away from $\vec{B}$, because the two factors of $\sin\theta$ that enter the torque and the cone radius cancel. Every spin in a sample therefore turns at the same rate whatever its orientation, which is what makes the effect usable for magnetic resonance.
         
         The same torque acts on an orbital moment, so an electron's orbit precesses too---the electron circulates as before, while the plane of its orbit is carried slowly around the field axis. The difference is that swinging an orbit round in this way carries charge with it, which a swinging spin does not, so the precession is itself a small current whose moment opposes the applied field. That is the origin of \emph{Langevin diamagnetism} (\cref{sec:diamagnets}), and since every orbit precesses at the same rate their moments simply add.
 
-        This is \emph{Larmor precession}: the precession of any magnetic moment about an applied field, whether that moment comes from spin or from orbital motion. It is the direct analogue of gravity making a toy top precess, with the spin angular momentum $\vec{S}$ playing the role of the top's own angular momentum.
+        All of this is \emph{Larmor precession}: the precession of any magnetic moment about an applied field, whether that moment comes from spin or from orbital motion. It is the direct analogue of gravity making a toy top precess, with the mean spin $\ev{\hat{\vec{S}}}$ playing the role of the top's own angular momentum $\vec{L}$.\todoai{Notation sweep done for this section, resolving the deferred flag. Classical angular momenta keep bare arrows ($\vec{L}$, $\vec{\tau}$ in the toy-top paragraphs), quantum ones now carry hat and arrow ($\hat{\vec{S}}$, $\hat{\vec{\mu}}$), and what precesses is written as the expectation value $\ev{\hat{\vec{S}}}$, since an operator does not trace out a cone. One sentence of Ehrenfest justification added. The rest of the note was checked and already conformed---\cref{sec:atoms-fields} and \cref{sec:atom-molecule} use hats correctly, and $\hat{L}^{2}$ is hat-only by \texttt{STYLE.md} \S3. DELETION: the closing paragraph repeated the Larmor definition and the toy-top analogy almost word for word, so its one new idea (spin or orbital alike) was folded in and the duplicate removed.}
 
 \section{Variational principles in physics; examples of equations that can be derived from variational principles}
-\label{sec:variational}\todoper{google other principles}
+\label{sec:variational}
 
     \subsection{What a variational principle is}\label{sec:variational-intro}
 
@@ -704,10 +691,13 @@
             \item \textbf{Feynman's path integral.} The quantum version of the whole scheme. Instead of selecting one path it gives every path a contribution $e^{iS/\hbar}$ and adds them all. Where $S$ is large compared with $\hbar$, neighbouring paths arrive with wildly different phases and cancel, except near the stationary path where the phase barely varies---so the classical principle is recovered as a limit rather than assumed.
             \item \textbf{Maxwell's equations.} The same rule applied to a field rather than a particle: the candidate is now a field configuration filling space and time, and the action of the electromagnetic field together with its coupling to charges is stationary exactly for those configurations obeying Maxwell's equations (\cref{eq:maxwell-general}).
             \item \textbf{Einstein's field equations.} The Einstein--Hilbert action, whose integrand measures the curvature of spacetime, yields the field equations of general relativity. That one rule generates the governing equations of mechanics, electromagnetism and gravitation alike is what makes the variational viewpoint one of the unifying ideas of physics.
+            \item \textbf{The variational method in quantum mechanics.} The ground-state energy is itself a minimum. For \emph{any} trial state $\Psi$ whatever, $\nicefrac{\bra{\Psi}\hat{H}\ket{\Psi}}{\braket{\Psi|\Psi}} \geq E_{0}$, with equality only for the true ground state, because any admixture of a higher eigenstate can only raise the average. Choosing a family of trial functions and minimising over its parameters therefore returns an upper bound on $E_{0}$ that improves as the family is widened. This is the \emph{Rayleigh--Ritz method}, and it is the standard companion to perturbation theory (\cref{sec:approximate-methods}) for cases where nothing small is available to expand in.
             \item \textbf{Classic individual problems.} Many standard problems are variational rather than dynamical: a functional is written down and made stationary, often subject to a constraint. The laws of reflection and refraction follow from Fermat's principle of least time (\cref{sec:em-waves,eq:snell}), the brachistochrone and the hanging chain from least travel time and least potential energy respectively (\cref{sec:variational-intro}), the soap film from least area and others.
         \end{itemize}
 
-\section{The laws of thermodynamics}
+        Two older members of the family are worth naming. \emph{Maupertuis' principle} makes the abbreviated action $\int p\,dq$ stationary at fixed energy rather than at fixed elapsed time, so it settles which path in space is taken rather than how it is traversed in time. The \emph{principle of virtual work}, extended to moving systems as \emph{d'Alembert's principle}, is the statics counterpart: a system is in equilibrium when the work done by the applied forces vanishes for every small displacement the constraints allow, which is precisely what lets the forces of constraint drop out of the problem.\todoai{Added to discharge the \enquote{other principles} flag: the Rayleigh--Ritz variational method (the one with real exam value, since it also belongs to \cref{sec:approximate-methods}), plus Maupertuis and virtual work named in a closing paragraph. Gauss's principle of least constraint and the minimum-potential-energy principle of elasticity were considered and left out as too specialised to be worth the breath.}
+
+\section{Laws of thermodynamics}
 \label{sec:thermodynamics}
 
     \emph{Thermal equilibrium} implies there is no net flow of thermal energy between two systems that can exchange heat. A system is said to be in thermal equilibrium with itself if the temperature within the system is spatially uniform and temporally constant.
@@ -730,7 +720,7 @@
             dU = \delta Q - p\, dV,
         \end{equation}
 
-        where $dV$ is the change in volume of the system (positive when the system expands---it does work and loses internal energy, $W<0$).
+        where $dV$ is the change in volume of the system (positive when the system expands---it does work and loses internal energy, $W<0$). Both forms assume a fixed amount of material. If particles may enter or leave, a further term $\mu\,dN$ appears on the right, $\mu$ being the free-energy cost of admitting one more particle (\cref{sec:thermo-potentials}).\todoai{Added to resolve the deferred migration flag in \texttt{content\_3.tex}: \cref{sec:thermo-potentials} used $dU = T\,dS - p\,dV + \mu\,dN$ with no warning that the first law had been stated here without the last term. Amending the boxed law itself would have put a chemical potential into the thermodynamics answer before it is needed, so the term is named here instead and defined where it is used.}
 
     \subsection{The second law of thermodynamics}
 
@@ -748,7 +738,7 @@
             dS \geq \frac{\delta Q}{T}.
         \end{equation}
 
-        Here $S$ is the \emph{entropy} and $T$ the temperature at which the heat $\delta Q$ crosses the boundary. Entropy\todo{maybe move to thermodynamics section or reference it here} is a \emph{function of state}, meaning its change between two equilibrium states depends only on those two states and not on the path taken between them, and that is what makes the left-hand side usable even though no instrument reads entropy directly.
+        Here $S$ is the \emph{entropy} and $T$ the temperature at which the heat $\delta Q$ crosses the boundary. Entropy (\cref{eq:boltzmann-entropy}) is a \emph{function of state}, meaning its change between two equilibrium states depends only on those two states and not on the path taken between them, and that is what makes the left-hand side usable even though no instrument reads entropy directly.
         
         To obtain $\Delta S$ for a real process, however violent, one connects the same two end states by \emph{any} convenient reversible path and integrates $\nicefrac{\delta Q}{T}$ along that one instead. \Cref{eq:clausius-inequality} then measures the real process against its reversible ideal: the entropy actually gained is never less than the heat transfer accounts for, and the excess is entropy generated by the irreversibility itself. This is what caps the efficiency of every heat engine and fixes which way a process is allowed to run. The equality holds only for reversible processes. For an isolated system ($\delta Q = 0$) it reduces to
 
@@ -765,19 +755,17 @@
 
         Thermodynamically, temperature is defined not by how much energy a system holds but by how reluctantly it accepts more,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:temperature}
+        \begin{keyeq}{eq:temperature}{Thermodynamic temperature}
             \frac{1}{T} \equiv \left(\frac{\partial S}{\partial U}\right)_{V,N},
-        \end{empheq}
-        \keyeqentry{Thermodynamic temperature}
+        \end{keyeq}
 
         so a cold body is one whose entropy rises steeply for a little energy added and a hot body one that barely responds. This is why heat flows from hot to cold: transferring energy from the reluctant body to the eager one raises the total entropy, and the flow stops when the two are equally eager. \emph{Absolute zero} is the limit $\left(\nicefrac{\partial S}{\partial U}\right)\to\infty$, in which the system sits in its ground state---its lowest available configuration---with no thermal excitation left to remove, so that its entropy is at a minimum, and zero if that ground state is unique. Systems whose energy has an upper bound, such as a set of two-state spins, can be driven past the point of maximum entropy into states where adding energy \emph{lowers} it, giving a formally negative temperature. These are hotter than any positive temperature rather than colder, and they are reached by inverting the populations from above rather than by passing through $T=0$, so the third law is untouched.
 
-        For an ideal gas this abstract definition acquires a concrete mechanical meaning: temperature is a measure of the average translational kinetic energy of a molecule,\todo{Move? The candidate target is the equipartition discussion in \cref{sec:macroscopic}, which already carries the general statement. MIGRATION (deferred)---moving it would leave this subsection without its concrete example.}
+        For an ideal gas this abstract definition acquires a concrete mechanical meaning: temperature is a measure of the average translational kinetic energy of a molecule,
 
-        \begin{empheq}[box=\fbox]{equation}\label{eq:kinetic-temperature}
+        \begin{keyeq}{eq:kinetic-temperature}{Kinetic energy and temperature}
             \left\langle E_{\text{kin}} \right\rangle = \tfrac{3}{2} \kB T,
-        \end{empheq}
-        \keyeqentry{Kinetic energy and temperature}
+        \end{keyeq}
 
         one factor of $\nicefrac{1}{2}\kB T$ for each of the three directions of motion. This is the \emph{equipartition theorem} (\cref{sec:macroscopic}), which gives $\nicefrac{1}{2}\kB T$ to every independent way a molecule has of storing energy. Note that \cref{eq:kinetic-temperature} is a property of the ideal gas rather than a definition of temperature---a solid or a photon gas stores its energy quite differently---whereas \cref{eq:temperature} holds for any system whatever.
 

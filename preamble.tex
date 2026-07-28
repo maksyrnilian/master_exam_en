@@ -16,6 +16,7 @@
 \usepackage{braket}               % Dirac bra-ket notation (\bra, \ket, \braket)
 \usepackage{nicefrac}             % compact slanted in-line fractions (\nicefrac)
 \usepackage{empheq}               % \empheq environment for boxing equations
+\usepackage{environ}              % \NewEnviron --- captures an environment body in \BODY (used by keyeq)
 \usepackage{mathrsfs}             % \mathscr --- used for the Hilbert space
 \usepackage{siunitx}
 %\usepackage{romannum}
@@ -125,13 +126,14 @@
 \setlength{\cftsecindent}{0em}
 \setlength{\cftsecnumwidth}{1.5em}
 
-% List of Key Equations --- entries styled identically to ToC sections
+% List of Key Equations --- entries styled identically to ToC sections.
+% No \numberline, so an entry is the display name and the page number alone.
 \newlistof{keyequations}{loe}{List of Key Equations}
 \renewcommand{\cftkeyequationsfont}{\bfseries}
 \renewcommand{\cftkeyequationspagefont}{\bfseries}
 \renewcommand{\cftkeyequationsleader}{\bfseries\cftdotfill{\cftdotsep}}
 \setlength{\cftkeyequationsindent}{0em}
-\setlength{\cftkeyequationsnumwidth}{1.5em}
+\setlength{\cftkeyequationsnumwidth}{0em}
 \setlength{\cftbeforekeyequationsskip}{1.0em plus 1pt}
 
 % Heading typeset as a \section*, exactly as article's \tableofcontents does,
@@ -141,11 +143,6 @@
   \section*{List of Key Equations}%
   \@starttoc{loe}}
 \makeatother
-
-\newcommand{\keyeqentry}[1]{%
-  \phantomsection
-  \addcontentsline{loe}{keyequations}{\protect\numberline{\theequation}#1}%
-}
 
 \newcommand{\RomanNumeralCaps}[1]
     {\MakeUppercase{\romannumeral #1}}
@@ -161,6 +158,87 @@
 \newcommand{\comm}[2]{\left[#1,#2\right]}     % commutator
 \newcommand{\acomm}[2]{\left\{#1,#2\right\}}  % anticommutator
 
+% =====================================================================
+%  Key equations --- capture once, replay in the appendix
+% =====================================================================
+% \begin{keyeq}{<label>}{<display name>} ... \end{keyeq}
+%   * typesets the body boxed and numbered, exactly as the old
+%     \begin{empheq}[box=\fbox]{equation} did,
+%   * attaches \label{<label>},
+%   * adds <display name> to the List of Key Equations,
+%   * stores the body, the name, the label and the enclosing section so
+%     \printkeyequations can reprint the lot in the appendix.
+% There is therefore only ONE copy of each equation in the source and the
+% appendix cannot drift from the text.
+%
+% Constraints on the body:
+%   * no \label inside it (put the label in the first argument instead);
+%     \printkeyequations gobbles stray ones, but the number would be wrong,
+%   * anything legal inside `equation` is legal here --- aligned,
+%     alignedat, gathered, arrays. A bare & or \\ at the top level is not.
+%
+% This block must sit AFTER hyperref, cleveref, titlesec and tocbibind,
+% because it wraps whatever definition of \section they leave behind.
+
+\makeatletter
+
+% --- remember the title of the section currently being typeset --------
+% \@currentlabelname is unusable here: a \caption between the heading and
+% the equation would overwrite it with the caption text.
+\newcommand{\keyeq@cursec}{}
+\let\keyeq@oldsection\section
+\renewcommand{\section}{\@ifstar{\keyeq@sectionstar}{\keyeq@section}}
+\newcommand{\keyeq@sectionstar}[1]{\keyeq@oldsection*{#1}}
+\newcommand{\keyeq@section}[2][\relax]{%
+  \gdef\keyeq@cursec{#2}%
+  \ifx\relax#1\relax\keyeq@oldsection{#2}\else\keyeq@oldsection[#1]{#2}\fi}
+
+\newcounter{keyeqno}
+
+\NewEnviron{keyeq}[2]{%
+  \stepcounter{keyeqno}%
+  \expandafter\global\expandafter\let\csname keyeq@body@\thekeyeqno\endcsname\BODY
+  \expandafter\gdef\csname keyeq@name@\thekeyeqno\endcsname{#2}%
+  \expandafter\xdef\csname keyeq@lab@\thekeyeqno\endcsname{#1}%
+  \expandafter\xdef\csname keyeq@secno@\thekeyeqno\endcsname{\thesection}%
+  \expandafter\global\expandafter\let\csname keyeq@sectitle@\thekeyeqno\endcsname\keyeq@cursec
+  \begin{empheq}[box=\fbox]{equation}\label{#1}
+    \BODY
+  \end{empheq}%
+  \phantomsection
+  \addcontentsline{loe}{keyequations}{#2}%
+}
+
+% --- reprint every captured equation, grouped by section --------------
+\newcommand{\printkeyequations}{%
+  \begingroup
+  \let\label\@gobble                     % never re-issue a label on replay
+  \def\keyeq@prevsecno{\relax}%
+  \count@=0\relax
+  \loop\ifnum\count@<\value{keyeqno}\relax
+    \advance\count@ by 1\relax
+    \edef\keyeq@i{\the\count@}%
+    \edef\keyeq@thissecno{\csname keyeq@secno@\keyeq@i\endcsname}%
+    \ifx\keyeq@thissecno\keyeq@prevsecno\else
+      \Needspace*{6\baselineskip}%
+      \bigskip\noindent{\Large\bfseries\csname keyeq@sectitle@\keyeq@i\endcsname}\par
+      \vspace{6pt}%
+      \let\keyeq@prevsecno\keyeq@thissecno
+    \fi
+    \Needspace*{6\baselineskip}%
+    \par\noindent\hspace*{3em}\textbf{\csname keyeq@name@\keyeq@i\endcsname}\hfill
+      \cref{\csname keyeq@lab@\keyeq@i\endcsname},
+      p.~\pageref{\csname keyeq@lab@\keyeq@i\endcsname}\par
+    \vspace{-0.5\baselineskip}%
+    \begin{equation*}
+      \csname keyeq@body@\keyeq@i\endcsname
+    \end{equation*}
+  \repeat
+  \endgroup
+}
+
+\makeatother
+
 
 % =====================================================================
 %  House style --- full version in STYLE.md
@@ -175,7 +253,8 @@
 % Vector-valued operators carry hat and arrow: \hat{\vec{L}}. Components: \hat{L}_{z}.
 % Differentials are a plain italic d, not \mathrm{d}. Inexact ones are \delta Q.
 % f is frequency, never \nu. \varepsilon_{0}, never \epsilon_{0}.
-% Equations that must be memorised: \begin{empheq}[box=\fbox]{equation}.
+% Equations that must be memorised: \begin{keyeq}{eq:label}{Display name}.
+%   Boxed, numbered, listed and replayed in the appendix. No \label inside the body.
 % No semicolons in prose. British spelling. \enquote{} for quotation marks.
 % Em-dash as --- with no surrounding spaces. Three exceptions, all spaced:
 %   a symbol gloss after a display, a label gloss at the head of a list item,
