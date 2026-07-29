@@ -44,6 +44,9 @@
 \usepackage[left=1cm, top=1.5cm, bottom=2.5cm, right=5cm, marginparwidth=4.4cm, marginparsep=0.3cm, footskip=1cm, asymmetric]{geometry}
 %\usepackage[margin=3.6cm, marginparwidth=3.1cm]{geometry}  % page margins; width of \todo notes
 \usepackage{marginfix}
+\usepackage{multicol}
+\setlength{\columnsep}{3em}
+\setlength{\columnseprule}{0.0  pt}  % set to 0.4pt for a dividing rule
 
 % --- colours  --------------------------------------------------------
 \usepackage[dvipsnames]{xcolor}   % named colours (dvipsnames palette, e.g. Maroon)
@@ -64,14 +67,14 @@
 % --- title page metadata ---------------------------------------------
 \title{%
 	\vspace*{2cm}
-	{\Huge Master Diploma Examination}\thanks{Translated into English with some modifications from an analogous text of \textit{Krokosz et al.}}\\[1cm]
+	{\Huge Master Diploma Examination}\thanks{Inspired by and partly reproduced from an analogous text in Polish by \textit{Krokosz et al.}}\\[1cm]
 	{\Large Revision Notes---Physics (Studies in English)}\\[0.4cm]
 	{\large Faculty of Physics, University of Warsaw}\\
 }
 
 % --- comments --------------------------------------------------------
-\usepackage[]{todonotes}                            % margin \todo notes used as revision flags; optional argument [disable] suppresses them for a clean, printable version (also change the margins then)
-
+\usepackage[disable]{todonotes}                            % margin \todo notes used as revision flags; optional argument [disable] suppresses them for a clean, printable version (also change the margins then)
+%\usepackage[disable]{todonotes} 
 \newcommand{\todoper}[1]{\todo[backgroundcolor=red!25,linecolor=red!55]{#1}}       % red   --- persistent note, to be checked again later
 \newcommand{\todoai}[1]{\todo[backgroundcolor=green!25,linecolor=green!55]{#1}}    % green --- rewritten and checked, comment from AI
 \newcommand{\merr}{\textcolor{red}{\textbf{(!)}}} % marked mistakes (explanations in `%-comments`)

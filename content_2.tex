@@ -100,9 +100,9 @@
 
         where $\chi$ --- electric susceptibility of a material. Polarisation moves bound charge only, and
 
-        \begin{equation}\label{eq:bound-charge}
+        \begin{keyeq}{eq:bound-charge}{Divergence of polarisation and bound charge}
             \nabla\cdot\vec{P}=-\rho_{\text{b}}.
-        \end{equation}
+        \end{keyeq}
 
         Since $\vec{P}$ points from the negative end of each dipole to the positive end, a region out of which $\vec{P}$ spreads (positive divergence) is one from which positive bound charge has been carried away, so what remains there is negative. In other words, the electric field that is caused by $\vec{P}$ points roughly in the opposite direction to $\vec{P}$.
 
@@ -118,17 +118,17 @@
 
         where $\vec{D}$ --- the electric displacement field,
 
-        \begin{keyeq}{eq:D-def}{Electric displacement field}
+        \begin{empheq}[box=\fbox]{align}
             \vec{D} \equiv \varepsilon_{0}\vec{E} + \vec{P} .
-        \end{keyeq}
+        \end{empheq}
 
         Adding $\vec{P}$ cancels the bound charge contributions (\cref{eq:bound-charge}), so $\vec{D}$ is the field whose sources are the free charges alone---the ones we control. $\vec{P}$ points in the opposite direction to the field it is producing, so it subtracts from $\vec{E}$.
 
         Matter responds magnetically as well. Every atom carries a small circulating current (\cref{eq:orbital-angular-momentum,subsec:quantum-precession}) and so a magnetic dipole moment, which for a simplest model of a wire-carrying loop is defined as $\vec{\mu} = I\vec{A}$, where $I$ is the current and $\vec{A}$ is the area vector of the loop. The average moment per unit volume is the \emph{magnetisation} $\vec{M}$. Inside a uniformly magnetised body, neighbouring loops run in opposite directions where they meet and cancel, so a net current survives only at the surface, or anywhere $\vec{M}$ varies from place to place. Added up, what is left is $\nabla\times\vec{M}$. A polarisation that changes in time is on top of that a genuine motion of bound charge, hence a current $\nicefrac{\partial\vec{P}}{\partial t}$. The two together make the bound current
 
-        \begin{equation*}
+        \begin{keyeq}{eq:bound-current}{Bound current}
             \vec{J}_{\text{b}} = \nabla\times\vec{M} + \frac{\partial\vec{P}}{\partial t}.
-        \end{equation*}
+        \end{keyeq}
 
         From the Ampère--Maxwell law, we then have
 
@@ -205,9 +205,9 @@
 
         Keeping the linear term alone and substituting it into the definition of the displacement field (\cref{eq:D-def}) gives
 
-        \begin{equation}\label{eq:permittivity}
+        \begin{keyeq}{eq:D-def}{Electric displacement field}
             \vec{D} = \varepsilon_{0}\vec{E} + \vec{P} = \varepsilon_{0}\left(1+\chi\right)\vec{E} \equiv \varepsilon_{0}\varepsilon_{\text{r}}\vec{E},
-        \end{equation}
+        \end{keyeq}
 
         where $\varepsilon_{\text{r}} \equiv 1+\chi$ --- relative permittivity (dielectric constant) of the material, which fixes the refractive index (\cref{eq:refractive-index}). It is $1$ in vacuum and a few for ordinary glasses and plastics, but in general it is complex and frequency-dependent, its imaginary part recording absorption, and in a metal below the plasma frequency it is negative---which is what governs the behaviour of EM waves in media (\cref{sec:em-waves}). The three mechanisms below add up to it (\cref{eq:polarisability-sum}), and each stops contributing at a different frequency.
 
@@ -237,9 +237,10 @@
 
         \begin{minipage}{1\textwidth}
             \paragraph{Orientational polarisation}
-            \begin{wrapfigure}{L}{0.2\textwidth}
+                \begin{wrapfigure}{L}{0.3\textwidth}
                     \centering
-                    \includegraphics[width=0.18\textwidth]{graphics/water_molecule.pdf}
+                    \captionsetup{justification=raggedright}
+                    \includegraphics[width=0.28\textwidth]{graphics/water_molecule.pdf}
                     \caption{Water molecule.}
                     \label{fig:water-molecule}
                 \end{wrapfigure}
@@ -314,9 +315,9 @@
 
     The bookkeeping is also the same. The average magnetic dipole moment per unit volume is the magnetisation $\vec{M}$, and it is hidden inside the redefined field $\vec{H} \equiv \nicefrac{\vec{B}}{\mu_{0}} - \vec{M}$ (\cref{eq:H-def}), which is sourced by the free currents we control and by nothing else (\cref{sec:maxwell-matter}). Taking the response to be linear in $\vec{H}$,
 
-    \begin{equation}\label{eq:magnetic-susceptibility}
-        \vec{M} = \chi_{m}\vec{H} \quad \Longrightarrow \quad \vec{B} = \mu_{0}\left(1+\chi_{m}\right)\vec{H} \equiv \mu_{0}\mu_{\text{r}}\vec{H},
-    \end{equation}
+    \begin{keyeq}{eq:magnetic-susceptibility}{Magnetic susceptibility}
+            \vec{M} = \chi_{m}\vec{H} \quad \Longrightarrow \quad \vec{B} = \mu_{0}\left(1+\chi_{m}\right)\vec{H} \equiv \mu_{0}\mu_{\text{r}}\vec{H},
+    \end{keyeq}
 
     where $\chi_{m}$ --- magnetic susceptibility, and $\mu_{\text{r}} \equiv 1+\chi_{m}$ --- relative permeability, the exact counterpart of $\varepsilon_{\text{r}} = 1+\chi$ (\cref{eq:permittivity}). A difference is worth noting: $\chi$ is positive for ordinary dielectrics, whereas $\chi_{m}$ may have either sign, and its sign is what classifies the material. For most media $|\chi_{m}| \sim 10^{-5}$, so magnetically they are almost vacuum ($\mu_{\text{r}} \simeq 1$), while in a ferromagnet $\chi_{m}$ reaches $10^{3}$ or more and the linear relation fails altogether.
     
@@ -405,9 +406,9 @@
 
         Both of these equations are standard forms of the wave equation, generally written as:
 
-        \begin{equation*}
+        \begin{keyeq}{eq:wave-equation}{Wave equation}
             \left(\Delta - \frac{1}{v^{2}}\frac{\partial^{2}}{\partial t^{2}}\right)\vec{F} = 0,
-        \end{equation*}
+        \end{keyeq}
 
         where $v$ is the propagation speed. From this it follows that the speed of propagation of an electromagnetic wave in vacuum is
 
@@ -426,7 +427,7 @@
         In a transparent insulator the first term is absent and the linear polarisation response (\cref{eq:polarisation-vector}) collects the second one back into the left-hand side. Substituting $\vec{P} = \chi\varepsilon_{0}\vec{E}$ makes the right-hand side $\mu_{0}\varepsilon_{0}\chi\,\nicefrac{\partial^{2}\vec{E}}{\partial t^{2}}$, and moving it across replaces $\varepsilon_{0}$ by $\varepsilon_{0}(1+\chi)=\varepsilon_{0}\varepsilon_{\text{r}}$. The wave equation is recovered with a smaller speed $v = \nicefrac{c}{n}$, where
 
         \begin{keyeq}{eq:refractive-index}{Refractive index}
-            n \equiv \frac{c}{v} = \sqrt{\varepsilon_{\text{r}}\mu_{\text{r}}} \simeq \sqrt{\varepsilon_{\text{r}}}
+            n \equiv \frac{c}{v}, \quad n^2=\varepsilon_{\text{r}}\mu_{\text{r}} \simeq \varepsilon_{\text{r}}
         \end{keyeq}
 
         is the \emph{refractive index}, the quantity that appears in Snell's law (\cref{eq:snell}), and the approximation holds because $\mu_{\text{r}} \simeq 1$ for anything transparent. Since each polarisation mechanism stops following the field above its own frequency (\cref{sec:electric-field}), $\varepsilon_{\text{r}}$ and hence $n$ depend on frequency, which is \emph{dispersion} and is why a prism separates colours.
@@ -561,7 +562,11 @@
         \end{keyeq}
         so the wave nature is easiest to see for light particles such as electrons, whose diffraction and interference are used in electron microscopy and diffraction imaging. A localised particle corresponds not to a single wavelength but to a \emph{wave packet}---a superposition of many waves. 
         
-        The same relations $E = \hbar\omega$ and $p = \hbar k$ apply, the second being \cref{eq:de-broglie} written in terms of the wavenumber $k = \nicefrac{2\pi}{\lambda}$. Combining them with the classical $E = \nicefrac{p^{2}}{2m}$ gives the free-particle dispersion relation $\omega = \nicefrac{\hbar k^{2}}{2m}$, so matter waves are \emph{dispersive}---unlike light in vacuum, their speed depends on the wavelength. The packet as a whole travels at the group velocity $\nicefrac{d\omega}{dk} = \nicefrac{p}{m} = v$, recovering the classical particle speed. The phase velocity $\nicefrac{\omega}{k} = \nicefrac{v}{2}$ carries no such meaning, as it describes the motion of the individual crests rather than of the particle.\todoans{Two things worth having ready if the factor of $\nicefrac{1}{2}$ is queried. It is not a physical prediction: the zero of energy is arbitrary, and putting the rest energy back, $E = \gamma mc^{2}$, gives a phase velocity of $\nicefrac{c^{2}}{v}$ instead, which exceeds $c$. Neither value is a problem, because no signal and no energy travels at the phase velocity---only the group velocity, which comes out as $v$ either way, does.}
+        The same relations important relations apply
+        \begin{keyeq}{eq:de-broglie-relations}{de Broglie relations}
+            E=\hbar\omega, \quad p = \hbar k, \quad k = \frac{2\pi}{\lambda}.
+        \end{keyeq}
+        Combining them with the classical $E = \nicefrac{p^{2}}{2m}$ gives the free-particle dispersion relation $\omega = \nicefrac{\hbar k^{2}}{2m}$, so matter waves are \emph{dispersive}---unlike light in vacuum, their speed depends on the wavelength. The packet as a whole travels at the group velocity $\nicefrac{d\omega}{dk} = \nicefrac{p}{m} = v$, recovering the classical particle speed. The phase velocity $\nicefrac{\omega}{k} = \nicefrac{v}{2}$ carries no such meaning, as it describes the motion of the individual crests rather than of the particle.\todoans{Two things worth having ready if the factor of $\nicefrac{1}{2}$ is queried. It is not a physical prediction: the zero of energy is arbitrary, and putting the rest energy back, $E = \gamma mc^{2}$, gives a phase velocity of $\nicefrac{c^{2}}{v}$ instead, which exceeds $c$. Neither value is a problem, because no signal and no energy travels at the phase velocity---only the group velocity, which comes out as $v$ either way, does.}
     \end{itemize}
 
     \paragraph{Common features and differences}
